@@ -1,0 +1,28 @@
+{
+  "name": "shopware-developer-documentation-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "shopware AG",
+    "email": "info@shopware.com"
+  },
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-prismjs": "^2.0.0-beta.35",
+    "@vuepress/plugin-search": "^1.9.7",
+    "vuepress": "^1.5.3"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.0.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.16"
+  },
+  "resolutions": {
+    "watchpack": "1.6.1"
+  }
+}
