@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
     <header
       class="w-full h-20 bg-shopware-gray-dark flex justify-center drop-shadow drop-shadow-lg"
     >
@@ -17,11 +17,11 @@
       </div>
     </header>
 
-    <div class="w-full flex justify-center bg-shopware-gray-light">
+    <div class="w-full flex flex-1 justify-center bg-shopware-gray-light">
       <div class="w-full md:max-w-screen-2xl flex">
         <nav>
           <div class="w-72 flex-none border-r border-slate-300 pl-5 text-sm">
-            <ul class="sw-navigation list-none text-blue-600">
+            <ul class="sw-navigation list-none text-shopware">
               <a href="/">
                 <li>Home</li>
               </a>
@@ -45,8 +45,8 @@
           </div>
         </nav>
 
-        <main>
-          <div class="grow bg-white px-16 py-6">
+        <main class="flex">
+          <div class="flex flex-grow bg-white px-16 py-6">
             <Content />
           </div>
         </main>
@@ -67,14 +67,9 @@ export default {
     };
   },
   mounted: function (ctx) {
+    console.error("config", this.$site);
     this.sidebar = this.$site.themeConfig?.sidebar["/"];
     this.page = this.$page;
   },
 };
 </script>
-
-<style>
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-</style>

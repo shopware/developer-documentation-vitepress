@@ -1,17 +1,16 @@
 const { description } = require("../../package.json");
+const useShopwareTheme = require("vuepress-theme-shopware-docs/config");
 // const theme = require("@shopware/docs-theme");
 
-module.exports = {
+module.exports = useShopwareTheme({
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: "Vuepress Docs Boilerplate",
+  title: "Vuepress Docs Boilerplate!",
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
   description: description,
-
-  theme: "vuepress-theme-shopware-docs",
 
   /**
    * Extra tags to be injected to the page HTML `<head>`
@@ -26,6 +25,8 @@ module.exports = {
       { name: "apple-mobile-web-app-status-bar-style", content: "black" },
     ],
   ],
+
+  // theme: "vuepress-theme-shopware-docs",
 
   /**
    * Theme configuration, here is the default theme configuration for VuePress.
@@ -52,4 +53,4 @@ module.exports = {
   //     require("autoprefixer"),
   //   ],
   // },
-};
+});

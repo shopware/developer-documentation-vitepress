@@ -1,23 +1,56 @@
-module.exports = {
-  searchPlaceholder: "Foobar",
+const path = require("path");
 
-  themeConfig: {
-    searchPlaceholder: 'Search... ("/" or "s")',
-  },
+module.exports = (options, ctx) => {
+  const enableSmoothScroll = true; // themeConfig.smoothScroll === true;
 
-  plugins: [
-    [
+  return {
+    themeConfig: {
+      searchPlaceholder: 'Search... ("/" or "s")',
+    },
+
+    plugins: [
+      ["@vuepress/active-header-links", options.activeHeaderLinks],
       "@vuepress/search",
-      {
-        searchMaxSuggestions: 10,
-      },
+      "@vuepress/plugin-nprogress",
+      [
+        "container",
+        {
+          type: "tip",
+          defaultTitle: {
+            "/": "TIP",
+          },
+        },
+      ],
+      [
+        "container",
+        {
+          type: "warning",
+          defaultTitle: {
+            "/": "WARNING",
+          },
+        },
+      ],
+      [
+        "container",
+        {
+          type: "danger",
+          defaultTitle: {
+            "/": "DANGER",
+          },
+        },
+      ],
+      [
+        "container",
+        {
+          type: "details",
+          before: (info) =>
+            `<details class="custom-block details">${
+              info ? `<summary>${info}</summary>` : ""
+            }\n`,
+          after: () => "</details>\n",
+        },
+      ],
+      ["smooth-scroll", enableSmoothScroll],
     ],
-    "@silvanite/tailwind",
-    // [
-    //   "@silvanite/tailwind",
-    //   {
-    //     config: require("../tailwind.config.js"),
-    //   },
-    // ],
-  ],
+  };
 };
