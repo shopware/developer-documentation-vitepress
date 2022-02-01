@@ -2,7 +2,9 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: [
-    "./src/.vuepress/theme/*"
+    "./src/.vuepress/theme/*.vue",
+    "./src/.vuepress/theme/global-components/*.vue",
+    "./src/*.md"
   ],
   theme: {
     colors: {

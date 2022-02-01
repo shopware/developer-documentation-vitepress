@@ -1,10 +1,4 @@
 module.exports = {
-  searchPlaceholder: "Foobar",
-
-  themeConfig: {
-    searchPlaceholder: 'Search... ("/" or "s")',
-  },
-
   plugins: [
     ['@vuepress/search', {
       searchMaxSuggestions: 10

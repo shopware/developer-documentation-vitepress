@@ -1,68 +1,24 @@
 <template>
-  <div>
-    <header class="w-full h-20 bg-shopware-gray-dark flex justify-center drop-shadow drop-shadow-lg">
-      
-      <div class="w-full flex justify-between md:max-w-screen-2xl">
-        <div class="w-72 flex px-6 items-center border-r border-slate-600">
-          <img class="h-10" src="https://www.gitbook.com/cdn-cgi/image/height=40,fit=contain,dpr=2,format=auto/https%3A%2F%2F1272924779-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-28427.appspot.com%2Fo%2Fspaces%252F-MK3m-IGvXbMka6Y6_g7%252Favatar-rectangle-1603813941220.png%3Fgeneration%3D1603813941884466%26alt%3Dmedia" alt="">
-        </div>
-        <div class="w-56 flex items-center text-slate-200 text-sm">
-          <SearchBox />
-        </div>
-      </div>
+  <div class="w-full bg-shopware-gray-light">
 
-    </header>
+    <Header />
+    <!-- Start Header -->
 
-    <div class="w-full flex justify-center bg-shopware-gray-light">
-      
-      <div class="w-full md:max-w-screen-2xl flex">
 
+    <div class="w-full pt-20 md:max-w-screen-2xl mx-auto grid grid-cols-5 bg-shopware-gray-light">
+      <div class="border-r border-slate-300 pl-5 py-6 text-sm">
         <nav>
-
-          <div class="w-72 flex-none border-r border-slate-300 pl-5 text-sm">
-            
-              <ul class="sw-navigation list-none">
-                <a href="/">
-                  <li>Home</li>
-                </a>
-                <a
-                  v-for="item in sidebar"
-                  :key="item.key" :href="item.path"
-                  >
-                  <li
-                    v-bind:class="{ active: $page.regularPath === item.path }">
-                    {{ item.title }}
-                  </li>
-                  <!-- <ul v-if="$page.regularPath === item.path">
-                    {{ item.children }}<a
-                    v-for="subItem in item.children"
-                    :key="subItem.key" :href="subItem"
-                    >
-                      <li
-                        v-bind:class="{ active: $page.regularPath === subItem.path }">
-                        {{ subItem.title }}
-                      </li>
-                    </a>
-                  </ul> -->
-                </a>
-              </ul>
-
-          </div>
-        
+          <Navigation :sidebar="sidebar" />
         </nav>
-
-        <main>
-
-          <div class="grow bg-white px-16 py-6">
-            
-            <Content/>
-
-          </div>
-
-        </main>
-
       </div>
-
+      <div class="col-span-3 bg-white px-16 py-6">
+        <main>
+          <Content/>
+        </main>
+      </div>
+      <div class="bg-white py-16 text-sm">
+        <AnchorLinks v-if="!$frontmatter.hideAnchorNavigation" :page="page" />
+      </div>
     </div>
 
   </div>
@@ -71,11 +27,14 @@
 
 <script>
 import SearchBox from '@SearchBox'
+import Navigation from './global-components/Navigation'
+import Header from './global-components/Header'
+import AnchorLinks from './global-components/AnchorLinks'
 
 export default {
   name: 'Layout',
 
-  components: { SearchBox },
+  components: { Header, Navigation, AnchorLinks, SearchBox },
 
   data: () => {
     return {
@@ -92,7 +51,7 @@ export default {
 </script>
 
 <style lang="stylus">
-// @import "./styles/prism.css"; /* Hack, because plugin is not loaded*/
+@import "./styles/prism.css"; /* Hack, because plugin is not loaded*/
 </style>
 
 <style>
@@ -165,34 +124,23 @@ main a:hover {
     @apply opacity-100;
 }
 
-.search-box {
-  @apply w-full;
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  display: block;
+  overflow-x: auto;
 }
 
-.search-box input {
-  @apply w-full;
+tr {
+    border-top: 1px solid #dfe2e5;
 }
 
-/* Custom CSS Classes */
-
-.sw-navigation a {
-  @apply text-slate-700;
+tr:nth-child(2n) {
+    background-color: #f6f8fa;
 }
 
-.sw-navigation li {
-  @apply px-4 py-2 font-medium;
+td, th {
+    border: 1px solid #dfe2e5;
+    padding: 0.6em 1em;
 }
-
-.sw-navigation li.active {
-  @apply border border-r-0 border-slate-300 bg-white text-shopware;
-}
-
-.sw-navigation li:hover {
-  @apply bg-slate-200;
-}
-
-.sw-navigation li.active:hover {
-  @apply bg-white;
-}
-
 </style>

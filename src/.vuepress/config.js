@@ -4,7 +4,7 @@ module.exports = {
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: 'Shopware Developers',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -33,6 +33,7 @@ module.exports = {
     editLinkText: '',
     lastUpdated: false,
     sidebar: require('./sidebar.js'),
+    searchPlaceholder: 'Search... ("/" or "s")',
   },
 
   /**
