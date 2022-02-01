@@ -1,14 +1,10 @@
 <template>
   <ul class="sw-navigation list-none">
-    <a href="/">
+    <router-link to="/">
       <li>Home</li>
-    </a>
-    <a
-      v-for="item in sidebar"
-      :key="item.key" :href="item.path"
-      >
-      <li
-        v-bind:class="{ active: $page.regularPath === item.path }">
+    </router-link>
+    <router-link v-for="item in sidebar" :key="item.key" :to="item.path">
+      <li v-bind:class="{ active: $page.regularPath === item.path }">
         {{ item.title }}
       </li>
       <!-- <ul v-if="$page.regularPath === item.path">
@@ -22,21 +18,21 @@
           </li>
         </a>
       </ul> -->
-    </a>
+    </router-link>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'Navigation',
+  name: "Navigation",
 
   props: {
     sidebar: {
       type: Array,
-      default: () => []
-    }
-  }
-}
+      default: () => [],
+    },
+  },
+};
 </script>
 
 <style>
