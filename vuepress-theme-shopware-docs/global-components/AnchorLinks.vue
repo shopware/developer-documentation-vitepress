@@ -1,22 +1,30 @@
 <template>
   <ul class="list-none m-0 p-0 border-l anchor-links-list">
-    <li class="px-6 py-2 leading-5" v-for="section in page.headers" :key="section.slug">
-      <a :class="getLevelClass(section.level)" :href="getAnchorLink(section.slug)">{{ section.title }}</a>
+    <li
+      class="px-6 py-2 leading-5"
+      v-for="section in pageHeaders"
+      :key="section.slug"
+    >
+      <a
+        :class="getLevelClass(section.level)"
+        :href="getAnchorLink(section.slug)"
+        >{{ section.title }}</a
+      >
     </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: 'AnchorLinks',
+  name: "AnchorLinks",
 
   props: {
     page: {
       type: Object,
       default: () => {
-        headers: []
-      }
-    }
+        headers: [];
+      },
+    },
   },
 
   methods: {
@@ -25,10 +33,16 @@ export default {
     },
 
     getLevelClass(level) {
-      return `level-${level}`;  
-    }
-  }
-}
+      return `level-${level}`;
+    },
+  },
+
+  computed: {
+    pageHeaders() {
+      return this.page?.headers || [];
+    },
+  },
+};
 </script>
 
 <style>
