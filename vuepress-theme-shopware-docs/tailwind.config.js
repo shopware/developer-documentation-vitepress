@@ -1,9 +1,10 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  // content: [
-  //   "./src/.vuepress/theme/*"
-  // ],
+  content: [
+    "./*.vue",
+    "./global-components/*.vue",
+  ],
   theme: {
     colors: {
       shopware: "#189eff",
