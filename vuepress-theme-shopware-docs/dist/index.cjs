@@ -51,6 +51,7 @@ module.exports = (options, ctx) => {
         },
       ],
       ["smooth-scroll", enableSmoothScroll],
+      [require("./plugin.js")],
     ],
   };
 };
