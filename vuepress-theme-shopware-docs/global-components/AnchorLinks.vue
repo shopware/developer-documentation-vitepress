@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-none m-0 p-0 border-l anchor-links-list">
+  <ul class="list-none m-0 p-0 border-l dark:border-slate-800 anchor-links-list">
     <li
       class="px-6 py-2 leading-5"
       v-for="section in pageHeaders"

@@ -1,22 +1,23 @@
 <template>
   <div class="w-full bg-shopware-gray-light dark:bg-slate-900">
 
+    <div class="absolute left-0 top-0 w-screen h-screen opacity-20">
+      <img class="w-full" src="https://tailwindcss.com/_next/static/media/docs-dark@30.77f062b5fd90f0d2cd4752cd9a8649c8.avif" alt="">
+    </div>
+
     <Header />
     <!-- Start Header -->
 
-    <div class="w-full pt-20 md:max-w-screen-2xl mx-auto grid grid-cols-5 bg-shopware-gray-light dark:bg-slate-900">
-      <div class="border-r border-slate-300 dark:border-slate-800 pl-5 py-6 text-sm">
-        <nav v-if="!($frontmatter.sidebar !== undefined && $frontmatter.sidebar === false)">
-          <Navigation :sidebar="sidebar" />
-        </nav>
-      </div>
-      <div class="col-span-3 bg-white dark:bg-slate-900 px-16 py-6">
+    <div class="w-full md:max-w-screen-2xl mx-auto grid grid-cols-5">
+      <div class="px-16 py-6 col-span-3">
         <main>
           <Content/>
         </main>
       </div>
-      <div class="bg-white dark:bg-slate-900 py-16 text-sm">
-        <AnchorLinks v-if="!$frontmatter.hideAnchorNavigation" :page="page" />
+      <div class="flex justify-center col-span-2">
+        <div class="mt-56 w-10/12 h-fit">
+
+        </div>
       </div>
     </div>
 
@@ -51,7 +52,7 @@ export default {
 
 <style>
 h1, h2, h3, h4, h5, h6 {
-  @apply font-semibold text-slate-800 dark:text-slate-300;
+  @apply font-semibold text-slate-800;
 }
 
 h1 {
@@ -59,7 +60,7 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl pt-2 pb-1 my-5 border-b dark:border-slate-700;
+  @apply text-2xl pt-2 pb-1 my-5 border-b;
 }
 
 h3 {
@@ -87,7 +88,7 @@ ul ul {
 }
 
 ol, p, ul {
-  @apply leading-7 text-slate-800 dark:text-slate-400 break-words;
+  @apply leading-7 text-slate-800 break-words;
 }
 
 /* code {

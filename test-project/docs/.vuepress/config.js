@@ -41,16 +41,4 @@ module.exports = useShopwareTheme({
     lastUpdated: false,
     sidebar: require("./sidebar.js"),
   },
-
-  /**
-   * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
-   */
-  // plugins: ["@vuepress/plugin-back-to-top", "@vuepress/plugin-medium-zoom"],
-
-  // postcss: {
-  //   plugins: [
-  //     require("tailwindcss")("./tailwind.config.js"),
-  //     require("autoprefixer"),
-  //   ],
-  // },
 });

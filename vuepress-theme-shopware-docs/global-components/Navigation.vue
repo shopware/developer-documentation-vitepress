@@ -39,11 +39,11 @@ export default {
 /* Custom CSS Classes */
 
 .sw-navigation a {
-  @apply text-slate-700;
+  @apply text-slate-700 dark:text-slate-400;
 }
 
 .sw-navigation li {
-  @apply border border-shopware-gray-light px-4 py-2 font-medium;
+  @apply border border-shopware-gray-light dark:border-slate-900 px-4 py-2 font-medium;
 }
 
 .sw-navigation li.active {
@@ -51,7 +51,7 @@ export default {
 }
 
 .sw-navigation li:hover {
-  @apply border-slate-200 bg-slate-200;
+  @apply border-slate-200 dark:border-slate-800 bg-slate-200 dark:bg-slate-800;
 }
 
 .sw-navigation li.active:hover {
