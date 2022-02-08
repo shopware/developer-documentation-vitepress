@@ -4,7 +4,7 @@ layout: HomeLayout
 ---
 
 <div class="w-full md:max-w-screen-2xl mx-auto pt-20">
-  <h1 class="text-6xl tracking-wide font-extrabold mb-16" style="background-image: url('https://www.shopware.com/media/image/24/73/97/gradient-wavey-rectangle.jpg');-webkit-background-clip: text;
+  <h1 class="text-6xl font-extrabold mb-16" style="background-image: url('https://www.shopware.com/media/image/24/73/97/gradient-wavey-rectangle.jpg');-webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-position: center;
       background-size: cover;">Join a vibrant ecosystem<br> of creative minds</h1>
@@ -52,7 +52,7 @@ layout: HomeLayout
       </h3>
     </div>
     <p class="text-sm  dark:text-slate-300">
-      Build custom storefronts from using our Store API or build them upon pre-configured boilerplate examples
+      Build custom storefronts from using our Store API or build upon reference implementations using technologies like Vue.js or react.
     </p>
     <p><a class="text-black text-sm  dark:text-slate-300" href="#">→ learn more</a></p>
   </div>

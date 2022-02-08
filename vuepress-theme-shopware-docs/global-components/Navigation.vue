@@ -39,7 +39,7 @@ export default {
 /* Custom CSS Classes */
 
 .sw-navigation a {
-  @apply text-slate-700 dark:text-slate-400;
+  @apply text-slate-700 dark:text-slate-300;
 }
 
 .sw-navigation li {
