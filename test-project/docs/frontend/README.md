@@ -1,95 +1,28 @@
 ---
+layout: SectionLayout
 sidebar: false
 ---
 
+# Build outstanding shopping experiences
 
-<center>
+<div class="grid grid-cols-2 gap-20">
 
-**🚀 Quickstart** or [learn more](/landing/getting-started/)
+<div>
 
-</center>
+Shopware offers a flexible customer-facing API that will allow you to build highly custom shopping experiences. Either start from scratch with our API reference or get some help using one of our SDKs.
+
+If you want to start with something more off-the-shelf, but still have all the flexibility you need at hand - check out [Shopware Frontends]()
 
 ```bash
-npx @shopware-pwa/cli init 		# Initialize project
-yarn dev 						# start dev server
+yarn showpare-pwa init
 ```
 
-<center>
-...or play 🎲 on CodeSandbox:
-
-[![Edit shopware-pwa v1.0.1](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/sleepy-shannon-rnv8l?file=/README.md)
-
-</center>
-
----
-
-<div class="flex-container">
-
-<div class="md-50">
-
-### [Project](/landing/project/)
-
-Understand the goal and scope of this project
-
-### [Getting started](/landing/getting-started/)
-
-Quickstart and finding your way around
-
-### [Fundamentals](/landing/fundamentals/)
-
-Get to understand the core components of the application
-
-### [Cookbook](/landing/cookbook/)
-
-See how to work with the project in specific cases
-
-- [FAQ & Troubleshooting](/landing/resources/troubleshooting/)
-
 </div>
 
-<div class="md-50">
-	
-### [Concepts](/landing/concepts/)
-Guides for functional concepts like CMS or Checkout
+<div>
 
-### [Operations](/landing/operations) <Badge text="new" type="info"/>
-
-Best practices, release notes, [migration guides](/landing/operations/migrations/), guidelines for setup, hosting and deployment
-
-### [Resources](/landing/resources/)
-
-Roadmap, Package API references and related projects
-
-- [Composables API docs](/landing/resources/api/composables/)
-- [Shopware 6 API client](/landing/resources/api/shopware-6-client/)
+<img class="w-full" src="../assets/login-screen.svg">
 
 </div>
 
 </div>
-
-<center style="margin-top: 100px;">
-
-Made with ❤️ by shopware AG & Vue Storefront
-
-</center>
-
-<style>
-.flex-container {
-	display: block;
-	margin-top: 25px;
-}
-
-.preview-image {
-	width: 50%;
-}
-
-@media screen and (min-width: 720px) {
-	.flex-container {
-		display: flex;
-	}
-
-	.md-50 {
-		width: 50%;
-	}
-}
-</style>

@@ -6,9 +6,10 @@
       </div>
 
       <div class="col-span-3 flex px-8 text-white items-center justify-end gap-10 font-light text-md">
-        <div><router-link class="text-white" to="/app">Docs</router-link></div>
-        <div><router-link class="text-white" to="/admin/guide">Learning</router-link></div>
-        <div><router-link class="text-white" to="/">Community</router-link></div>
+        <div><router-link class="text-white" to="/app">Apps</router-link></div>
+        <div><router-link class="text-white" to="/theme">Themes</router-link></div>
+        <div><router-link class="text-white" to="/frontend">Frontends</router-link></div>
+        <div><router-link class="text-white" to="/integration">Integrations</router-link></div>
       </div>
 
       <div class="w-72 flex px-6 items-center text-slate-200 text-sm border-l border-slate-600">

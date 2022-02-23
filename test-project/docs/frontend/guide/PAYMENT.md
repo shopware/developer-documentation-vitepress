@@ -73,7 +73,7 @@ Response:
 
 or using [**@shopware-pwa/shopware-6-client**](https://www.npmjs.com/package/@shopware-pwa/shopware-6-client)
 
-```
+```javascript
 import { createOrder } from "@shopware-pwa/shopware-6-client"
 
 const response: Promise<Order> = createOrder()
@@ -106,7 +106,7 @@ POST store-api/v3/payment-method
 
 or using [**@shopware-pwa/shopware-6-client**](https://www.npmjs.com/package/@shopware-pwa/shopware-6-client)
 
-```
+```js
 import { getAvailablePaymentMethods } from "@shopware-pwa/shopware-6-client"
 
 const response: Promise<PaymentMethod[]> = getAvailablePaymentMethods()

@@ -18,14 +18,26 @@ export default {
       isDarkMode: false
     }
   },
+  
+  mounted: function () {
+    this.isDarkMode = window.localStorage.getItem('theme') === 'dark' || (window.matchMedia('(prefers-color-scheme: dark)').matches && window.localStorage.getItem('theme') !== 'light');
+  },
+
+  watch: {
+    isDarkMode: function (isDarkMode) {
+      if(isDarkMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  },
 
   methods: {
     toggleDarkMode: function () {
-      if (localStorage.getItem('theme') === 'light') {
-        document.documentElement.classList.add('dark')
+      if (!this.isDarkMode) {
         localStorage.setItem('theme' , 'dark');
       } else {
-        document.documentElement.classList.remove('dark')
         localStorage.setItem('theme' , 'light');
       }
 
