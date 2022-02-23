@@ -1,0 +1,26 @@
+{
+  "name": "vuepress-theme-shopware-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "config.js",
+  "files": [
+    "index.js",
+    "config.js",
+    "dist",
+    "Layout.vue"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@vuepress/plugin-active-header-links": "1.9.7",
+    "@vuepress/plugin-nprogress": "1.9.7",
+    "@vuepress/plugin-search": "1.9.7",
+    "@vuepress/types": "1.9.7",
+    "docsearch.js": "^2.6.3",
+    "tailwindcss": "3.0.18",
+    "vuepress-plugin-container": "^2.1.5",
+    "vuepress-plugin-smooth-scroll": "^0.0.10"
+  }
+}
