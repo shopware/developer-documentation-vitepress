@@ -1,13 +1,11 @@
-@import './prism.css';
+@import "./prism.css";
 
-div[class*=language-] {
+div[class*="language-"] {
   @apply my-5 rounded-lg relative;
-  background-color: #1e293b !important;
 }
 
-pre[class*=language-] {
-  @apply  overflow-hidden p-8 text-[0.9375rem] relative z-10 leading-6;
-  background: transparent;
+pre[class*="language-"] {
+  @apply overflow-hidden p-8 text-md relative z-10 leading-6;
 }
 
 .highlight-lines {
@@ -15,5 +13,5 @@ pre[class*=language-] {
 }
 
 .highlight-lines .highlighted {
-  background-color: rgba(15, 20, 30, .66);
+  background-color: rgba(15, 20, 30, 0.66);
 }

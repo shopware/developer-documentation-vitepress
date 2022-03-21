@@ -6,15 +6,16 @@
   "private": true,
   "workspaces": [
     "vuepress-theme-shopware-docs",
-    "test-project"
+    "test-project",
+    "test-project-vite"
   ],
   "authors": {
     "name": "shopware AG",
     "email": "info@shopware.com"
   },
   "scripts": {
-    "dev": "cd ./test-project && yarn dev",
-    "build": "cd ./test-project && yarn build"
+    "dev": "cd ./test-project-vite && yarn dev",
+    "build": "cd ./test-project-vite && yarn build"
   },
   "license": "MIT"
 }

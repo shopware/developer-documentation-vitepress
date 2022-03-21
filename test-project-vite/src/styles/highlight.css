@@ -1,0 +1,29 @@
+div[class*="language-"] {
+  @apply my-5 rounded-lg relative;
+}
+
+pre {
+  @apply p-8 text-base relative z-10 leading-6 bg-#151515;
+}
+
+.highlighted-line {
+  @apply py-1 block bg-dark-100;
+}
+
+pre code {
+  @apply text-white;
+}
+
+.accent {
+  background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
+  /* background: -webkit-repeating-radial-gradient(
+    top left,
+    circle,
+    #017bff,
+    #01cfff 10%,
+    #017bff 30%
+  ); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
