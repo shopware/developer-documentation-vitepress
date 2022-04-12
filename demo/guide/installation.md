@@ -1,106 +1,189 @@
-# Installation
+<h1 class="text-6xl mb-16 font-extrabold accent">Shopware documentation theme installation</h1>
 
-> This page is just for checking styling of common markdown contents
+Welcome in Shopware documentation theme!
 
-## Ordered List
+## Quickstart
 
-1. Automatically apply classes for CSS transitions and animations
-2. Integrate 3rd-party CSS animation libraries, such as Animate.css(opens new window)
-3. Use JavaScript to directly manipulate the DOM during transition hooks
-4. Integrate 3rd-party JavaScript animation libraries
+Add `vitepress-shopware-docs` to your vitepress dependencies:
 
-## Content Inside List
+```bash
+pnpm add vitepress-shopware-docs
+```
 
-1. Here's some `<inline-code>`
+## Project setup dependencies
 
-2. Here's some nested code
+Your `package.json` should look similar to this
 
-    ```js
-    const foo = 'hello'
-    ```
+```json{11}
+{
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "dev": "vitepress",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "dependencies": {
+    "vitepress-shopware-docs": "^0.0.1",
+    "vitepress": "^0.22.2",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "^16.9.1"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "react",
+        "react-dom",
+        "@types/react"
+      ]
+    }
+  }
+}
+```
 
-## Unordered List
+## Vitepress config
 
-Quick ways to start playing with a Vue project
+Create `.vitepress/config.ts` file, example to edit for your needs:
 
-- Via CDN: `<script src="https://unpkg.com/vue@next"></script>`
-- In-browser playground on [Codepen](https://codepen.io/yyx990803/pen/OJNoaZL)
-- Scaffold via [Vite](https://github.com/vitejs/vite):
+```typescript
+import { defineConfigWithTheme } from "vitepress";
+import type { Config as ThemeConfig } from "vitepress-shopware-docs";
+import baseConfig from "vitepress-shopware-docs/config";
 
-  ```bash
-  # npm
-  npm init @vitejs/app
-  # yarn
-  yarn create @vitejs/app
-  # select vue template
-  ```
+const nav = [
+  {
+    text: "Guide",
+    activeMatch: `^/(guide|cookbook|examples)/`,
+    items: [
+      { text: "Guide", link: "/guide/introduction" },
+      { text: "Examples", link: "/examples/" },
+    ],
+  },
+  {
+    text: "API",
+    activeMatch: `^/api/`,
+    link: "/api/",
+  },
+];
 
-- Scaffold via [vue-cli](https://cli.vuejs.org/):
+export const sidebar = {
+  "/guide/": [
+    {
+      text: "Getting Started",
+      items: [
+        { text: "Introduction", link: "/guide/introduction" },
+        {
+          text: "Quick Start",
+          link: "/guide/quick-start",
+        },
+      ],
+    },
+  ],
+  "/api/": [
+    {
+      text: "Global API",
+      items: [
+        { text: "Application", link: "/api/application" },
+        {
+          text: "General",
+          link: "/api/general",
+        },
+      ],
+    },
+  ],
+};
 
-  ```bash
-  npm install -g @vue/cli # OR yarn global add @vue/cli
-  vue create hello-vue3
-  # select vue 3 preset
-  ```
+export default defineConfigWithTheme<ThemeConfig>({
+  extends: baseConfig,
 
-## Custom Blocks
+  lang: "en-US",
+  title: "Shopware",
+  description: "Documentation for Shopware developers",
+  srcDir: "docs",
+  // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
+  scrollOffset: "header",
 
-:::tip Requires intermediate knowledge
-The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+  head: [],
 
-- List inside block
-- List inside block with [link](/) and `code`.
-:::
+  themeConfig: {
+    nav,
+    sidebar,
 
-The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.
+    algolia: {
+      indexName: "",
+      appId: "",
+      apiKey: "",
+      // searchParameters: {
+      //   facetFilters: ["version:v1"],
+      // },
+    },
 
-:::warning Warning
-The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+    socialLinks: [
+      { icon: "github", link: "https://github.com/shopware/" },
+      { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
+      { icon: "slack", link: "https://slack.shopware.com" },
+    ],
 
-- List inside block with [link](/) and `code`.
-:::
+    // remove if edit not needed
+    editLink: {
+      repo: "shopware/developer-documentation-vuepress",
+      text: "Edit this page on GitHub",
+    },
+  },
 
-:::danger Danger Zone
-The official guide assumes intermediate level knowledge of `HTML, CSS, and JavaScript`. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required. And here is a [link](/).
+  vite: {
+    define: {
+      __VUE_OPTIONS_API__: false,
+    },
+    server: {
+      host: true,
+      fs: {
+        // for when developing with locally linked theme
+        allow: ["../.."],
+      },
+    },
+    build: {
+      minify: "terser",
+      chunkSizeWarningLimit: Infinity,
+    },
+    json: {
+      stringify: true,
+    },
+  },
 
-1. List inside block with [link](/)
-2. List inside block with [link](/) and `code`.
-:::
+  vue: {
+    reactivityTransform: true,
+  },
+});
+```
 
-## Tables
+## Theme setup
 
-### Other Projects
+Create new file `.vitepress/theme/index.ts`:
 
-| Project               | NPM                             | Repo                 |
-| --------------------- | ------------------------------- | -------------------- |
-| @vue/babel-plugin-jsx | [![rc][jsx-badge]][jsx-npm]     | [[GitHub][jsx-code]] |
-| eslint-plugin-vue     | [![stable][epv-badge]][epv-npm] | [[GitHub][epv-code]] |
-| @vue/test-utils       | [![beta][vtu-badge]][vtu-npm]   | [[GitHub][vtu-code]] |
-| vue-class-component   | [![beta][vcc-badge]][vcc-npm]   | [[GitHub][vcc-code]] |
-| vue-loader            | [![beta][vl-badge]][vl-npm]     | [[GitHub][vl-code]]  |
-| rollup-plugin-vue     | [![beta][rpv-badge]][rpv-npm]   | [[GitHub][rpv-code]] |
+```typescript
+// import './styles/index.css'
+import { h, App } from "vue";
+import { VPTheme } from "vitepress-shopware-docs";
 
-[jsx-badge]: https://img.shields.io/npm/v/@vue/babel-plugin-jsx.svg
-[jsx-npm]: https://www.npmjs.com/package/@vue/babel-plugin-jsx
-[jsx-code]: https://github.com/vuejs/jsx-next
-[vd-badge]: https://img.shields.io/npm/v/@vue/devtools/beta.svg
-[vd-npm]: https://www.npmjs.com/package/@vue/devtools/v/beta
-[vd-code]: https://github.com/vuejs/vue-devtools/tree/next
-[epv-badge]: https://img.shields.io/npm/v/eslint-plugin-vue.svg
-[epv-npm]: https://www.npmjs.com/package/eslint-plugin-vue
-[epv-code]: https://github.com/vuejs/eslint-plugin-vue
-[vtu-badge]: https://img.shields.io/npm/v/@vue/test-utils/next.svg
-[vtu-npm]: https://www.npmjs.com/package/@vue/test-utils/v/next
-[vtu-code]: https://github.com/vuejs/vue-test-utils-next
-[jsx-badge]: https://img.shields.io/npm/v/@ant-design-vue/babel-plugin-jsx.svg
-[jsx-npm]: https://www.npmjs.com/package/@ant-design-vue/babel-plugin-jsx
-[jsx-code]: https://github.com/vueComponent/jsx
-[vcc-badge]: https://img.shields.io/npm/v/vue-class-component/next.svg
-[vcc-npm]: https://www.npmjs.com/package/vue-class-component/v/next
-[vcc-code]: https://github.com/vuejs/vue-class-component/tree/next
-[vl-badge]: https://img.shields.io/npm/v/vue-loader/next.svg
-[vl-npm]: https://www.npmjs.com/package/vue-loader/v/next
-[vl-code]: https://github.com/vuejs/vue-loader/tree/next
-[rpv-badge]: https://img.shields.io/npm/v/rollup-plugin-vue/next.svg
-[rpv-npm]: https://www.npmjs.com/package/rollup-plugin-vue/v/next
-[rpv-code]: https://github.com/vuejs/rollup-plugin-vue/tree/next
+export default Object.assign({}, VPTheme, {
+  Layout: () => {
+    // @ts-ignore
+    return h(VPTheme.Layout, null, {
+      // banner: () => h(Banner),
+      // "content-top": () => h("h1", "We have important Announcement!"),
+      // 'sidebar-top': () => h(PreferenceSwitch),
+      // 'aside-mid': () => h(SponsorsAside),
+      // 'aside-bottom': () => h(VueJobs)
+    });
+  },
+  enhanceApp({ app }: { app: App }) {
+    // app.provide('some-injection-key-if-needed', VALUE)
+  },
+});
+```
