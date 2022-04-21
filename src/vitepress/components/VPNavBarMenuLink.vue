@@ -35,7 +35,7 @@ const { page } = useData()
   line-height: calc(var(--vt-nav-height) - 1px);
   font-size: 13px;
   font-weight: 500;
-  color: var(--vt-c-text-1);
+  color: #eee; /* Shopware Theme */
   transition: color 0.25s;
 }
 

@@ -158,7 +158,7 @@ function load() {
 }
 
 .DocSearch-Button .DocSearch-Search-Icon {
-  color: var(--vt-c-text-2);
+  color: var(--vt-c-text-dark-2);
   transition: color 0.5s;
   fill: currentColor;
   width: 18px;
@@ -176,14 +176,14 @@ function load() {
 }
 
 .DocSearch-Button:hover .DocSearch-Search-Icon {
-  color: var(--vt-c-text-1);
+  color: var(--vt-c-brand); /* Shopware Theme */
 }
 
 .DocSearch-Button-Placeholder {
   transition: color 0.5s;
   font-size: 13px;
   font-weight: 500;
-  color: var(--vt-c-text-2);
+  color: var(--vt-c-text-dark-2); /* Shopware Theme */
   display: none;
   padding: 0 10px 0 0;
 }
@@ -195,12 +195,12 @@ function load() {
 }
 
 .DocSearch-Button:hover .DocSearch-Button-Placeholder {
-  color: var(--vt-c-text-1);
+  color: var(--vt-c-brand); /* Shopware Theme */
 }
 
 .DocSearch-Button .DocSearch-Button-Key {
   margin-top: 2px;
-  border: 1px solid var(--vt-c-divider);
+  border: 1px solid var(--vt-c-text-dark-2); /* Shopware Theme */
   border-right: none;
   border-radius: 4px 0 0 4px;
   display: none;
@@ -212,7 +212,7 @@ function load() {
 }
 
 .DocSearch-Button .DocSearch-Button-Key + .DocSearch-Button-Key {
-  border-right: 1px solid var(--vt-c-divider);
+  border-right: 1px solid var(--vt-c-text-dark-2); /* Shopware Theme */
   border-left: none;
   border-radius: 0 4px 4px 0;
   padding-left: 2px;
@@ -236,7 +236,7 @@ function load() {
   height: 20px;
   margin: 0;
   width: auto;
-  color: var(--vt-c-text-3);
+  color: var(--vt-c-text-dark-2);
   transition: color 0.5s;
   display: inline-block;
   padding: 0 1px;

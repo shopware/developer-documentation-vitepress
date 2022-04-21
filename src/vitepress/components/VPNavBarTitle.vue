@@ -1,7 +1,6 @@
 <template>
   <a class="VPNavBarTitle" href="/">
-    <img src="/img/logo.svg" alt="Shopware" class="w-36px h-36px mr-2" />
-    <span class="text-lg font-bold">Shopware Docs</span>
+    <img src="./../assets/shopware-docs.svg" alt="Shopware" class="h-40px" />
   </a>
 </template>
 
