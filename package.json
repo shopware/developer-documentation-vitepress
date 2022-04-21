@@ -25,7 +25,7 @@
     "type": "tsc --noEmit",
     "test": "pnpm run lint && pnpm run type",
     "dev": "vitepress dev demo",
-    "demo-build": "vitepress build demo",
+    "build": "vitepress build demo",
     "serve": "pnpm run demo-build && vitepress serve demo"
   },
   "dependencies": {

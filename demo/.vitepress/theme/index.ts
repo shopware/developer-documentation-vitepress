@@ -1,4 +1,4 @@
-import { VPTheme } from "vitepress-shopware-docs";
+import { VPTheme } from "../../../src/vitepress";
 import { h } from "vue";
 
 export default {
