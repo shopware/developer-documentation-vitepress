@@ -16,10 +16,10 @@ aside: false
         Apps
       </h3>
     </div>
-    <p class="text-sm  ">
+    <p class="text-sm">
       Apps are a way to enhance the functionality of or add features to your store
     </p>
-    <p><router-link class="text-sm  " to="/app/">→ learn more</router-link></p>
+    <p><a class="text-sm" href="/app/">→ learn more</a></p>
   </div>
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
@@ -42,10 +42,10 @@ aside: false
         Custom Frontends
       </h3>
     </div>
-    <p class="text-sm  ">
+    <p class="text-sm">
       Build custom storefronts from using our Store API or build upon reference implementations using technologies like Vue.js or react.
     </p>
-    <p><a class="text-sm  " href="#">→ learn more</a></p>
+    <p><a class="text-sm" href="#">→ learn more</a></p>
   </div>
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
@@ -55,10 +55,10 @@ aside: false
         Integrations
       </h3>
     </div>
-    <p class="text-sm  ">
+    <p class="text-sm">
       Connect 3rd party systems with Shopware using our API to transfer products, orders or other types of data
     </p>
-    <p><a class="text-sm  " href="#">→ learn more</a></p>
+    <p><a class="text-sm" href="#">→ learn more</a></p>
   </div>
 
 </div>
@@ -76,7 +76,7 @@ aside: false
         Shopware Core
       </h3>
     </div>
-    <p class="text-sm  ">
+    <p class="text-sm">
       The entire headless Shopware Core source code is available on GitHub.
     </p>
   </div>
@@ -88,7 +88,7 @@ aside: false
         Shopware API Documentation
       </h3>
     </div>
-    <p class="text-sm  ">
+    <p class="text-sm">
       Explore our collection of HTTP API endpoints
     </p>
   </div>
