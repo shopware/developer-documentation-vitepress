@@ -40,6 +40,7 @@ defineProps<{
   padding: 0 12px 0 24px;
   height: var(--vt-nav-height);
   background-color: var(--sw-nav-bg);
+  backdrop-filter: blur(12px);
   transition: border-color 0.5s, background-color 0.5s;
 }
 

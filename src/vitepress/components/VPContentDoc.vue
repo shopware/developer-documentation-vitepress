@@ -4,7 +4,7 @@ import { useData } from "vitepress";
 import VPContentDocOutline from "./VPContentDocOutline.vue";
 import VPContentDocFooter from "./VPContentDocFooter.vue";
 import type { Config } from "../config";
-import { VTLink, VTIconEdit } from "../../core";
+import { VTLink, VTIconGitHub } from "../../core";
 
 const { page, frontmatter, theme } = useData<Config>();
 
@@ -47,7 +47,7 @@ const pageClass = computed(() => {
             class="edit-link"
             v-if="theme.editLink && frontmatter.editLink !== false"
           >
-            <VTIconEdit class="vt-icon" />
+            <VTIconGitHub class="vt-icon" />
             <VTLink :href="repoUrl" :no-icon="true">{{
               theme.editLink.text
             }}</VTLink>

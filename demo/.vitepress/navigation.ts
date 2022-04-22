@@ -1,4 +1,4 @@
-import type { NavItem } from "vitepress-shopware-docs/src/vitepress/config";
+import type { NavItem } from "../../src/vitepress/config";
 
 const nav: NavItem[] = [
     {
@@ -49,6 +49,19 @@ const nav: NavItem[] = [
                 {
                     text: "Component Library",
                     link: "/resources/meteor-icon-kit",
+                }
+            ]
+        },
+        {
+            text: "Learning",
+            items: [
+                {
+                    text: "Academy",
+                    link: "https://academy.shopware.com/",
+                },
+                {
+                  text: "YouTube",
+                  link: "https://www.youtube.com/user/shopwareAG"
                 }
             ]
         }

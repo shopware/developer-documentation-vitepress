@@ -51,7 +51,7 @@ watchPostEffect(async () => {
   width: calc(100vw - 64px);
   max-width: var(--vp-sidebar-width-mobile);
   opacity: 0;
-  background-color: var(--vt-c-bg);
+  background-color: var(--sw-sidebar-bg);
   box-shadow: var(--vt-c-shadow-3);
   overflow-x: hidden;
   overflow-y: auto;
@@ -74,7 +74,7 @@ watchPostEffect(async () => {
   .VPSidebar {
     top: calc(var(--vt-nav-height) + var(--vt-banner-height, 0px));
     z-index: 1;
-    border-right: 1px solid var(--vt-c-divider-light);
+    border-right: 1px solid var(--sw-sidebar-border);
     width: var(--vp-sidebar-width-small);
     max-width: 100%;
     opacity: 1;
