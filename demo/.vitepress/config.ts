@@ -1,12 +1,16 @@
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig } from "../../src/vitepress/config";
 import baseConfig from "../../src/vitepress/config/baseConfig";
+
 import apps from "./sidebar/apps";
+import paas from "./sidebar/docs/products/paas";
 import nav from "./navigation";
+
 import { SidebarConfig } from "../../src/vitepress/config";
 
 const sidebar : SidebarConfig = {
-  '/apps/': apps
+  '/apps/': apps,
+  '/docs/products/paas/': paas
 }
 
 export default defineConfigWithTheme<ThemeConfig>({

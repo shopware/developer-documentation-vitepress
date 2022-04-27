@@ -1,4 +1,4 @@
-import { SidebarGroup } from "vitepress-shopware-docs/src/vitepress/config";
+import { SidebarGroup } from "../../../src/vitepress/config";
 
 const apps: SidebarGroup[] = [
       {
