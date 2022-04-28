@@ -1,21 +1,60 @@
 {
-  "name": "shopware-developer-documentation-template",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "private": true,
-  "workspaces": [
-    "vuepress-theme-shopware-docs",
-    "test-project",
-    "test-project-vite"
+  "name": "vitepress-shopware-docs",
+  "version": "0.0.3",
+  "description": "Vitepress theme for Shopware",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./config": "./src/vitepress/config/baseConfig.js",
+    "./highlight": "./src/vitepress/config/highlight.js"
+  },
+  "files": [
+    "src",
+    "types"
   ],
-  "authors": {
-    "name": "shopware AG",
-    "email": "info@shopware.com"
-  },
+  "keywords": [
+    "vue",
+    "shopware",
+    "vitepress"
+  ],
+  "author": "Shopware team",
+  "license": "MIT",
   "scripts": {
-    "dev": "cd ./test-project-vite && yarn dev",
-    "build": "cd ./test-project-vite && yarn build"
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "type": "tsc --noEmit",
+    "test": "pnpm run lint && pnpm run type",
+    "dev": "vitepress dev demo",
+    "build": "vitepress build demo",
+    "serve": "pnpm run demo-build && vitepress serve demo"
   },
-  "license": "MIT"
+  "dependencies": {
+    "@docsearch/css": "^3.0.0-alpha.41",
+    "@docsearch/js": "^3.0.0-alpha.41",
+    "@iconify-json/carbon": "^1.1.2",
+    "@vueuse/core": "^7.3.0",
+    "body-scroll-lock": "^3.1.5",
+    "normalize.css": "^8.0.1",
+    "shiki": "^0.9.15",
+    "unocss": "^0.31.0"
+  },
+  "devDependencies": {
+    "@types/body-scroll-lock": "^2.6.1",
+    "@types/estree": "^0.0.48",
+    "prettier": "^2.4.1",
+    "typescript": "~4.3.5",
+    "vitepress": "^0.22.3",
+    "vue": "^3.2.26"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "react",
+        "react-dom",
+        "vite",
+        "@types/react"
+      ]
+    }
+  }
 }
