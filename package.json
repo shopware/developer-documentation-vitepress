@@ -1,6 +1,6 @@
 {
   "name": "vitepress-shopware-docs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Vitepress theme for Shopware",
   "main": "src/index.ts",
   "exports": {
@@ -29,22 +29,22 @@
     "serve": "pnpm run demo-build && vitepress serve demo"
   },
   "dependencies": {
-    "@docsearch/css": "^3.0.0-alpha.41",
-    "@docsearch/js": "^3.0.0-alpha.41",
-    "@iconify-json/carbon": "^1.1.2",
-    "@vueuse/core": "^7.3.0",
+    "@docsearch/css": "^3.0.0",
+    "@docsearch/js": "^3.0.0",
+    "@iconify-json/carbon": "^1.1.4",
+    "@vueuse/core": "^8.5.0",
     "body-scroll-lock": "^3.1.5",
     "normalize.css": "^8.0.1",
-    "shiki": "^0.9.15",
-    "unocss": "^0.31.0"
+    "shiki": "^0.10.1",
+    "unocss": "^0.33.5"
   },
   "devDependencies": {
-    "@types/body-scroll-lock": "^2.6.1",
-    "@types/estree": "^0.0.48",
-    "prettier": "^2.4.1",
-    "typescript": "~4.3.5",
-    "vitepress": "^0.22.3",
-    "vue": "^3.2.26"
+    "@types/body-scroll-lock": "^3.1.0",
+    "@types/estree": "^0.0.51",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "vitepress": "^0.22.4",
+    "vue": "^3.2.33"
   },
   "pnpm": {
     "peerDependencyRules": {
