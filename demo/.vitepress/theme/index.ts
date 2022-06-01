@@ -4,13 +4,15 @@ import { h } from "vue";
 import ActionItem from "./components/ActionItem.vue";
 import RegistrationForm from "./components/RegistrationForm.vue";
 import LandingWrapper from "./components/LandingWrapper.vue";
+import PageRef from "./components/PageRef.vue";
 
 export default {
   ...VPTheme,
   enhanceApp({ app }) {
     app.component('ActionItem', ActionItem),
     app.component('RegistrationForm', RegistrationForm),
-    app.component('LandingWrapper', LandingWrapper)
+    app.component('LandingWrapper', LandingWrapper),
+    app.component('PageRef', PageRef)
   },
   Layout() {
     return h(VPTheme.Layout, null, {

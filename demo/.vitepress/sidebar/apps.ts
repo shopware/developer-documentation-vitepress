@@ -9,8 +9,16 @@ const apps: SidebarGroup[] = [
             link: '/apps/'
           },
           {
-            text: 'Getting started',
-            link: '/apps/apps'
+            text: 'Developer Sandboxes',
+            link: '/apps/sandboxes/'
+          },
+          {
+            text: 'Quick Start Guides',
+            link: '/apps/starter-guides/'
+          },
+          {
+            text: 'Headless',
+            link: '/apps/headless/'
           }
         ]
       },
@@ -30,6 +38,14 @@ const apps: SidebarGroup[] = [
             link: '/maintenance'
           },
           {
+            text: 'Flow Builder',
+            link: '/maintenance'
+          },
+          {
+            text: 'Custom Data',
+            link: '/maintenance'
+          },
+          {
             text: 'Configuration',
             link: '/maintenance'
           },
@@ -43,15 +59,11 @@ const apps: SidebarGroup[] = [
         text: 'REFERENCE',
         items: [
           { 
-            text: 'Admin Extension API',
+            text: 'Shopware CLI',
             link: '/setup'
           },
           {
             text: 'App Scripts',
-            link: '/maintenance'
-          },
-          {
-            text: 'Webhooks',
             link: '/maintenance'
           },
           {
@@ -61,7 +73,15 @@ const apps: SidebarGroup[] = [
           {
             text: 'Store API',
             link: '/maintenance'
-          }
+          },
+          { 
+            text: 'Admin Extension API',
+            link: '/setup'
+          },
+          {
+            text: 'Webhooks',
+            link: '/maintenance'
+          },
         ]
       },
       {

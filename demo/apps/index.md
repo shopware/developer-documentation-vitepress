@@ -1,17 +1,42 @@
+---
+sidebar: true
+---
+
 <h1 class="accent">Build the functionalities merchants need</h1>
 
 Leverage Shopware's extension APIs to build unique extensions that boost merchants businesses. Use the powerful plugin system to build highly custom extensions or build apps using your platform of choice.
 
-:::tip Build your first Shopware app
+## How to start
 
-Learn how to set up your development environment and
-start coding within a couple minutes.
+It doesn't take more than a text editor to get started developing apps. The easiest way to get going is through creating a Sandbox. **Developer sandboxes** are Shopware environments that you can use to test the API, develop Apps or explore features of the Shopware platform.
 
-➡ [App Starter Guide](./apps.md)
+<!-- <a href="../create-demo" target="_blank"><button class="p-3 bg-#189eff rounded-md text-white text-14px block mx-auto"> Create a Developer Sandbox</button></a> -->
 
-:::
+<RegistrationForm collapsed="collapsed"/>
 
-## Topics related to App Development
+## Starter guides
+
+The amount of topics to start with can be overwhelming. For that reason we have prepared a handful of step-by-step tutorials to follow along that make you familiar with some of our concepts:
+
+<PageRef page="https://developer.shopware.com/docs/guides/plugins/apps/starter/add-api-endpoint" title="Create a custom API endpoint" sub="Shows you how to extend the API with a custom defined endpoint" />
+
+<PageRef page="https://developer.shopware.com/docs/guides/plugins/apps/starter/product-translator" title="Extend the Admin UI" sub="Extend the Admin panel by adding some custom content to a module" />
+
+<PageRef page="https://developer.shopware.com/docs/guides/plugins/apps/starter/product-translator" title="Create a new storefront theme" sub="Override the default storefront theme by adding custom templates and styles" />
+
+## Product areas
+
+If you prefer to dig into a specific topic directly, choose from one of the product areas. You can also find them on the left all the time.
+
+<PageRef page="./checkout/" title="Checkout" sub="Apply discounts, price calculations or control shipping method availabilities" />
+<PageRef page="./payment/" title="Payment" sub="Handle payments from different gateways or process refunds" />
+<PageRef page="./storefront/" title="Storefront" sub="Build extensions or themes for the customer storefront using templates or custom styles" />
+<PageRef page="./flow-builder/" title="Flow Builder" sub="Add custom actions that for third party integrations or automate processes" />
+<PageRef page="./custom-data/" title="Custom Data" sub="Store custom data, entites or relationships in your Shopware store" />
+<PageRef page="./configuration/" title="Configuration" sub="Add configuration options to allow users to control your App's behavior" />
+<PageRef page="./administration/" title="Administration" sub="Explore the possibilities of custom admin modules or extensions" />
+
+## Related topics
 
 <div class="grid grid-cols-2 gap-4">
 

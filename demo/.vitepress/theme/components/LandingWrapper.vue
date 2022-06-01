@@ -20,7 +20,9 @@
                 </ActionItem>
             </div>
         </div>
-        <RegistrationForm />
+        <div class="flex flex-col mx-8 2xl:mx-24 mt-10 xl:mt-30">
+            <RegistrationForm title="Get started now" />
+        </div>
     </div>
 </template>
 
