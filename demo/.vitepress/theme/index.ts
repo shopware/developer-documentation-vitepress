@@ -1,8 +1,17 @@
 import { VPTheme } from "../../../src/vitepress";
 import { h } from "vue";
 
+import ActionItem from "./components/ActionItem.vue";
+import RegistrationForm from "./components/RegistrationForm.vue";
+import LandingWrapper from "./components/LandingWrapper.vue";
+
 export default {
   ...VPTheme,
+  enhanceApp({ app }) {
+    app.component('ActionItem', ActionItem),
+    app.component('RegistrationForm', RegistrationForm),
+    app.component('LandingWrapper', LandingWrapper)
+  },
   Layout() {
     return h(VPTheme.Layout, null, {
       // uncomment to test layout slots
