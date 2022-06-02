@@ -27,11 +27,11 @@ const nav: NavItem[] = [
             items: [
                 {
                     text: "Store API",
-                    link: "/resources/admin-extension-api",
+                    link: "/resources/api/store-api-reference",
                 },
                 {
                     text: "Admin API",
-                    link: "/resources/admin-extension-api",
+                    link: "/resources/api/admin-api-reference",
                 }
             ]
         },
@@ -40,7 +40,7 @@ const nav: NavItem[] = [
             items: [
                 {
                     text: "Admin Extension API",
-                    link: "/resources/admin-extension-api",
+                    link: "/resources/api/store-api-reference",
                 },
                 {
                     text: "Meteor Icon Kit",

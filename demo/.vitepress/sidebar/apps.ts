@@ -27,7 +27,7 @@ const apps: SidebarGroup[] = [
         items: [
           { 
             text: 'Checkout',
-            link: '/setup'
+            link: '/apps/checkout/'
           },
           {
             text: 'Payment',
