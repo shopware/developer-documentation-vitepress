@@ -3,12 +3,6 @@ page: true
 footer: false
 ---
 
-<script>
-
-import('https://unpkg.com/@stoplight/elements-dev-portal/web-components.min.js')
-
-</script>
-
 <div class="">
 
 <div class="p-3 bg-#f5f7f9 text-sm border-b-1px border-b-#ddd sticky top-80px z-10">
