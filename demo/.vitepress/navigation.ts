@@ -8,15 +8,15 @@ const nav: NavItem[] = [
     },
     {
       text: "Themes",
-      link: "/themes",
+      link: "/themes/",
     },
     {
       text: "Frontends",
-      link: "/themes",
+      link: "/frontends/",
     },
     {
       text: "Integrations",
-      link: "/themes",
+      link: "/integrations/",
     },
     {
       text: "Resources",

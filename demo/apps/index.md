@@ -2,7 +2,7 @@
 sidebar: true
 ---
 
-<h1 class="accent">Build the functionalities merchants need</h1>
+<h1 class="accent font-black" style="font-weight: 900; font-family: 'Poppins';">Build the functionalities merchants need</h1>
 
 Leverage Shopware's extension APIs to build unique extensions that boost merchants businesses. Use the powerful plugin system to build highly custom extensions or build apps using your platform of choice.
 

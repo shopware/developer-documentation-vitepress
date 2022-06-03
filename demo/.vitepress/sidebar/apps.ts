@@ -2,10 +2,10 @@ import { SidebarGroup } from "../../../src/vitepress/config";
 
 const apps: SidebarGroup[] = [
       {
-        text: 'APP DEVELOPMENT',
+        text: '',
         items: [
           { 
-            text: 'Home',
+            text: 'Apps',
             link: '/apps/'
           },
           {
@@ -31,7 +31,7 @@ const apps: SidebarGroup[] = [
           },
           {
             text: 'Payment',
-            link: '/maintenance'
+            link: '/apps/payment/'
           },
           {
             text: 'Storefront',
