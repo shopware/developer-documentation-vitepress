@@ -5,7 +5,7 @@ footer: false
 
 <div class="p-3 bg-#f5f7f9 text-sm border-b-1px border-b-#ddd sticky top-80px z-10">
     <div class="max-w-1376px mx-auto">
-        Resources > HTTP APIs > Store API Reference
+        Resources > HTTP APIs > Admin API Reference
     </div>
 </div>
 
