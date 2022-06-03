@@ -11,19 +11,23 @@ footer: false
 
 <link rel="stylesheet" href="https://unpkg.com/@stoplight/elements-dev-portal/styles.min.css">
 
-<script>
+<script setup>
+import {onMounted} from 'vue'
 
-import('https://unpkg.com/@stoplight/elements-dev-portal/web-components.min.js')
+onMounted(() => {
+  import('@stoplight/elements-dev-portal/web-components.min.js')
+})
 
 </script>
 
-<elements-stoplight-project
+<ClientOnly>
+  <elements-stoplight-project
   projectId="cHJqOjEwNjA0NQ"
   router="hash"
   collapseTableOfContents="true"
   hideMocking="true"
-  hideTryIt="true"
-></elements-stoplight-project>
+  hideTryIt="true"> </elements-stoplight-project>
+</ClientOnly>
 
 <style>
     

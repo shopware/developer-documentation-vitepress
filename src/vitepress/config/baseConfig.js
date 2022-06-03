@@ -95,6 +95,15 @@ module.exports = async () => ({
     highlight: await require("./highlight")(),
   },
 
+  vue: {
+    reactivityTransform: true,
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag.startsWith("elements-"),
+      },
+    },
+  },
+
   shouldPreload: (link) => {
     // make algolia chunk prefetch instead of preload
     return !link.includes("Algolia");

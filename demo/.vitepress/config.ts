@@ -8,10 +8,10 @@ import nav from "./navigation";
 
 import { SidebarConfig } from "../../src/vitepress/config";
 
-const sidebar : SidebarConfig = {
-  '/apps/': apps,
-  '/docs/products/paas/': paas
-}
+const sidebar: SidebarConfig = {
+  "/apps/": apps,
+  "/docs/products/paas/": paas,
+};
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
