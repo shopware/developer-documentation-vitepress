@@ -4,17 +4,17 @@ aside: false
 ---
 
 <div class="w-full md:max-w-screen-2xl mx-auto pt-20">
-  <h1 class="text-6xl mb-16 font-extrabold accent">Join a vibrant ecosystem<br> of creative minds</h1>
+  <h1 class="accent font-black" style="font-weight: 900; font-family: 'Poppins'; font-size: 3.2rem;">Join a vibrant ecosystem<br> of creative minds</h1>
 </div>
 
 <div class="grid grid-cols-2 gap-5 mb-16">
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
-      <h3 class="accent flex gap-2">
+      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
         <div i-carbon-model-alt class="h-7 w-7 text-shopware" />
         Apps
-      </h3>
+      </span>
     </div>
     <p class="text-sm">
       Apps are a way to enhance the functionality of or add features to your store
@@ -24,10 +24,10 @@ aside: false
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
-      <h3 class="accent flex gap-2">
+      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
       <div i-carbon-cobb-angle class="h-7 w-7 text-shopware" />
         Themes
-      </h3>
+      </span>
     </div>
     <p class="text-sm">
       Using themes, merchants are able to style their stores individually
@@ -37,10 +37,10 @@ aside: false
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
-      <h3 class="accent flex gap-2">
+      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
       <div i-carbon-image class="h-7 w-7 text-shopware" />
         Custom Frontends
-      </h3>
+      </span>
     </div>
     <p class="text-sm">
       Build custom storefronts from using our Store API or build upon reference implementations using technologies like Vue.js or react.
@@ -50,10 +50,10 @@ aside: false
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
-      <h3 class="accent flex gap-2">
+      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
       <div i-carbon-connect class="h-7 w-7 text-shopware" />
         Integrations
-      </h3>
+      </span>
     </div>
     <p class="text-sm">
       Connect 3rd party systems with Shopware using our API to transfer products, orders or other types of data
@@ -71,10 +71,10 @@ aside: false
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
-      <h3 class="accent flex gap-2">
+      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
       <div i-carbon-logo-github class="h-7 w-7 text-shopware" />
         Shopware Core
-      </h3>
+      </span>
     </div>
     <p class="text-sm">
       The entire headless Shopware Core source code is available on GitHub.
@@ -83,10 +83,10 @@ aside: false
 
    <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
-      <h3 class="accent flex gap-2">
+      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
       <div i-carbon-terminal class="h-7 w-7 text-shopware" />
         Shopware API Documentation
-      </h3>
+      </span>
     </div>
     <p class="text-sm">
       Explore our collection of HTTP API endpoints

@@ -34,5 +34,25 @@ onMounted(() => {
 </div>
 
 <style>
-    
+/* TODO: Extract into stylesheet */
+div > .sl-text-5xl {
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+   background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+
+.sl-elements-api .sl-bg-canvas-100 {
+  background-color: #f5f7f9;
+}
+
+.sl-elements-api .sl-bg-primary-tint {
+  background-color: #f5f7f9;
+  color: #189eff;
+  font-weight: 500;
+}
 </style>
