@@ -32,6 +32,8 @@ export default defineConfigWithTheme<ThemeConfig>({
   head: [],
 
   themeConfig: {
+    appearance: false,
+
     nav,
     sidebar,
 
