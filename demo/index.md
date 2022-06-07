@@ -1,13 +1,16 @@
 ---
 sidebar: false
 aside: false
+page: true
 ---
 
-<div class="w-full md:max-w-screen-2xl mx-auto pt-20">
-  <h1 class="accent font-black" style="font-weight: 900; font-family: 'Poppins'; font-size: 3.2rem;">Join a vibrant ecosystem<br> of creative minds</h1>
+<div class="w-full  md:max-w-1376px 2xl:px-0 mx-auto px-10">
+
+<div class="pt-20">
+  <h1 class="accent font-black leading-20 " style="font-weight: 900; font-family: 'Poppins'; font-size: 3.8rem;">Join a vibrant ecosystem<br> of creative minds</h1>
 </div>
 
-<div class="grid grid-cols-2 gap-5 mb-16">
+<div class="grid grid-cols-2 gap-5 mb-16 pt-5">
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
@@ -63,7 +66,7 @@ aside: false
 
 </div>
 
-<div class="w-full md:max-w-screen-2xl mx-auto">
+<div>
   <h1 class="text-4xl tracking-wide mb-10 accent">Explore Resources</h1>
 </div>
 
@@ -92,5 +95,7 @@ aside: false
       Explore our collection of HTTP API endpoints
     </p>
   </div>
+
+</div>
 
 </div>

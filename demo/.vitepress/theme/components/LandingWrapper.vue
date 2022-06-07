@@ -1,11 +1,11 @@
 <template>
-    <div class="grid xl:grid-cols-2 w-full 2xl:max-w-10/12 mx-auto">
-        <div class="mx-8 2xl:mx-24 mt-16 xl:mt-28">
+    <div class="grid xl:grid-cols-2 gap-10 2xl">
+        <div class="mx-8 2xl:mx-0 mt-16 xl:mt-28">
             <h2 class="text-3rem font-extrabold leading-15 mb-5 mt-0">Create your personal Developer Sandbox</h2>
             <!-- <p class="text-#999 text-16px subpixel-antialiased my-0">Get started developing integrations, apps or frontends from your personal dashboard.</p> -->
             <p class="text-#999 text-16px subpixel-antialiased my-0">And start developing, testing, or exploring the features Shopware has to offer.</p>
 
-            <div class="grid sm:grid-cols-2 gap-4 mt-10">
+            <div class="grid sm:grid-cols-2 gap-10 mt-14">
                 <ActionItem heading="Headless Frontends">
                     Build custom frontends on top of our Store API and get going with our quick start tutorials or dedicated SDKs for API development.
                 </ActionItem>
@@ -20,7 +20,7 @@
                 </ActionItem>
             </div>
         </div>
-        <div class="flex flex-col mx-8 2xl:mx-24 mt-10 xl:mt-30">
+        <div class="flex flex-col mx-8 2xl:mx-0 mt-10 xl:mt-30">
             <RegistrationForm title="Get started now" />
         </div>
     </div>

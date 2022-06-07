@@ -72,7 +72,7 @@ const apps: SidebarGroup[] = [
           },
           {
             text: 'Store API',
-            link: '/maintenance'
+            link: 'https://shopware.stoplight.io/docs/store-api/YXBpOjgyNjU2MzM-shopware-store-api'
           },
           { 
             text: 'Admin Extension API',

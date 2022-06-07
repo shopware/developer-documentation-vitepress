@@ -34,6 +34,7 @@
     "@iconify-json/carbon": "^1.1.4",
     "@stoplight/elements-dev-portal": "^1.7.3",
     "@vueuse/core": "^8.5.0",
+    "axios": "^0.27.2",
     "body-scroll-lock": "^3.1.5",
     "normalize.css": "^8.0.1",
     "shiki": "^0.10.1",
@@ -54,7 +55,9 @@
         "react",
         "react-dom",
         "vite",
-        "@types/react"
+        "@types/react",
+        "mkdirp",
+        "@stoplight/mosaic-code-viewer"
       ]
     }
   }
