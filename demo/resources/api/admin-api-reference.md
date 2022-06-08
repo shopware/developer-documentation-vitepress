@@ -28,7 +28,3 @@ onMounted(() => {
   hideMocking="true"
   hideTryIt="true"> </elements-stoplight-project>
 </ClientOnly>
-
-<style>
-
-</style>
