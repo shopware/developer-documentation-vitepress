@@ -65,7 +65,6 @@
 <script>
 
 import { reactive, ref, useAttrs } from 'vue';
-import axios from 'axios';
 
 export default {
 
@@ -115,7 +114,6 @@ export default {
                     };
 
                     // Call SBP API
-                    // let response = axios.post('', cloudShopData);
                 } else {
                     error.value = "Passwords do not match";
                 }
