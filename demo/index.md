@@ -2,6 +2,7 @@
 sidebar: false
 aside: false
 page: true
+footer: false
 ---
 
 <div class="w-full  md:max-w-1376px 2xl:px-0 mx-auto px-10">
@@ -70,7 +71,7 @@ page: true
   <h1 class="text-4xl tracking-wide mb-10 accent">Explore Resources</h1>
 </div>
 
-<div class="grid gap-5">
+<div class="grid gap-5 mb-10">
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
