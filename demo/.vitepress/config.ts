@@ -11,13 +11,13 @@ import nav from "./navigation";
 
 import { SidebarConfig } from "../../src/vitepress/config";
 
-const sidebar : SidebarConfig = {
-  '/apps/': apps,
-  '/themes/': themes,
-  '/frontends/': frontends,
-  '/integrations/': integrations,
-  '/docs/products/paas/': paas
-}
+const sidebar: SidebarConfig = {
+  "/apps/": apps,
+  "/themes/": themes,
+  "/frontends/": frontends,
+  "/integrations/": integrations,
+  "/docs/products/paas/": paas,
+};
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
