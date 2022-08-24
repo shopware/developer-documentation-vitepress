@@ -20,6 +20,15 @@ code span {
   font-family: var(--vt-font-family-mono);
 }
 
+/* Fixing empty space at top of code blocks */
+button.copy {
+  display: none;
+}
+
+span.lang {
+  display: none;
+}
+
 /* Start API Reference Styles */
 
 div > .sl-text-5xl {

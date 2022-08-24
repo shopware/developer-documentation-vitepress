@@ -29,23 +29,23 @@
     "serve": "pnpm run build && vitepress serve demo --port 5002"
   },
   "dependencies": {
-    "@docsearch/css": "^3.1.1",
-    "@docsearch/js": "^3.1.1",
-    "@iconify-json/carbon": "^1.1.6",
-    "@stoplight/elements-dev-portal": "^1.8.0",
+    "@docsearch/css": "^3.2.1",
+    "@docsearch/js": "^3.2.1",
+    "@iconify-json/carbon": "^1.1.7",
+    "@stoplight/elements-dev-portal": "^1.8.4",
     "@vueuse/core": "^8.9.4",
     "axios": "^0.27.2",
     "body-scroll-lock": "^3.1.5",
     "normalize.css": "^8.0.1",
     "shiki": "^0.10.1",
-    "unocss": "^0.44.3"
+    "unocss": "^0.44.7"
   },
   "devDependencies": {
     "@types/body-scroll-lock": "^3.1.0",
     "@types/estree": "^0.0.51",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
-    "vitepress": "^1.0.0-alpha.4",
+    "vitepress": "^1.0.0-alpha.10",
     "vue": "^3.2.37"
   },
   "pnpm": {
