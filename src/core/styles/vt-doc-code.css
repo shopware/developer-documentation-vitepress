@@ -89,6 +89,8 @@
   font-size: var(--vt-doc-code-font-size);
   color: #a6accd;
   transition: color 0.5s;
+  width: fit-content;
+  min-width: 100%;
 }
 
 .vt-doc .highlight-lines {
@@ -199,4 +201,69 @@
 .vt-doc [class~='language-sh']:before,
 .vt-doc [class~='language-bash']:before {
   content: 'sh';
+}
+
+.vt-doc [class*='language-'] code .highlighted {
+  background-color: var(--vt-code-line-highlight-color);
+  transition: background-color 0.5s;
+  margin: 0 -24px;
+  padding: 0 24px;
+  width: calc(100% + 2 * 24px);
+  display: inline-block;
+}
+
+.vt-doc [class*='language-'] > button.copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--vt-code-block-bg);
+  opacity: 0;
+  cursor: pointer;
+  background-image: var(--vt-icon-copy);
+  background-position: 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  transition: opacity 0.4s;
+}
+
+.vt-doc [class*='language-']:hover > button.copy,
+.vt-doc [class*='language-'] > button.copy:focus {
+  opacity: 1;
+}
+
+.vt-doc [class*='language-'] > button.copy:hover {
+  background-color: var(--vp-code-copy-code-hover-bg);
+}
+
+.vt-doc [class*='language-'] > button.copy.copied,
+.vt-doc [class*='language-'] > button.copy:hover.copied {
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--vp-code-copy-code-hover-bg);
+  background-image: var(--vp-icon-copied);
+}
+
+.vt-doc [class*='language-'] > button.copy.copied::before,
+.vt-doc [class*='language-'] > button.copy:hover.copied::before {
+  position: relative;
+  left: -65px;
+  display: block;
+  border-radius: 4px 0 0 4px;
+  padding-top: 8px;
+  width: 64px;
+  height: 40px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--vp-code-copy-code-active-text);
+  background-color: var(--vp-code-copy-code-hover-bg);
+  white-space: nowrap;
+  content: 'Copied';
 }
