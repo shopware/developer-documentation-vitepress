@@ -1,20 +1,23 @@
 <script lang="ts" setup>
-import { useData } from 'vitepress'
-import { inject } from 'vue'
-import { MenuItemWithLink } from '../../core'
-import { isActive } from '../support/utils'
+import { useData } from "vitepress";
+import { inject } from "vue";
+import { MenuItemWithLink } from "../../core";
+import { isActive, isPartiallyActive } from "../support/utils";
 
-defineProps<{
-  item: MenuItemWithLink
-}>()
+const props = defineProps<{
+  item: MenuItemWithLink;
+  showPartiallyActive?: boolean;
+}>();
 
-const { page } = useData()
-const closeSideBar = inject('close-sidebar') as () => void
+const { page } = useData();
+const closeSideBar = inject("close-sidebar") as () => void;
+
+const activeMethod = props.showPartiallyActive ? isPartiallyActive : isActive;
 </script>
 
 <template>
   <a
-    :class="{ link: true, active: isActive(page.relativePath, item.link) }"
+    :class="{ link: true, active: activeMethod(page.relativePath, item.link) }"
     :href="item.link"
     @click="closeSideBar"
   >
