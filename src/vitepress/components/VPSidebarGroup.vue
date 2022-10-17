@@ -1,18 +1,21 @@
 <script lang="ts" setup>
-import { MenuItemWithLink } from '../../core'
-import VPSidebarLink from './VPSidebarLink.vue'
-import { isActive } from '../support/utils'
-import { useData } from 'vitepress'
+import { MenuItemWithLink } from "../../core";
+import VPSidebarLink from "./VPSidebarLink.vue";
+import { isActive, isPartiallyActive } from "../support/utils";
+import { useData } from "vitepress";
 
 const props = defineProps<{
-  text: string
-  items: MenuItemWithLink[]
-}>()
+  text: string;
+  items: MenuItemWithLink[];
+  showPartiallyActive?: boolean;
+}>();
 
-const { page } = useData()
+const activeMethod = props.showPartiallyActive ? isPartiallyActive : isActive;
+
+const { page } = useData();
 function hasActiveLink() {
-  const { relativePath } = page.value
-  return props.items.some((item) => isActive(relativePath, item.link))
+  const { relativePath } = page.value;
+  return props.items.some((item) => activeMethod(relativePath, item.link));
 }
 </script>
 
@@ -25,7 +28,7 @@ function hasActiveLink() {
     </div>
 
     <template v-for="item in items" :key="item.link">
-      <VPSidebarLink :item="item" />
+      <VPSidebarLink :item="item" :showPartiallyActive="showPartiallyActive" />
     </template>
   </section>
 </template>
