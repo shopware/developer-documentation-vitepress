@@ -57,13 +57,6 @@ module.exports = async () => ({
   },
 
   head: [
-    [
-      "link",
-      {
-        rel: "icon",
-        href: "/img/logo.svg",
-      },
-    ],
     ...(process.env.NODE_ENV === "production"
       ? [
           [
