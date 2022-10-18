@@ -12,7 +12,12 @@ const props = defineProps<{
 const { page } = useData();
 const closeSideBar = inject("close-sidebar") as () => void;
 
-const activeMethod = props.showPartiallyActive ? isPartiallyActive : isActive;
+function activeMethod(currentPath: string, matchPath: string) {
+  if (props.showPartiallyActive) {
+    return isPartiallyActive(currentPath, matchPath);
+  }
+  return isActive(currentPath, matchPath);
+}
 </script>
 
 <template>
@@ -21,7 +26,7 @@ const activeMethod = props.showPartiallyActive ? isPartiallyActive : isActive;
     :href="item.link"
     @click="closeSideBar"
   >
-    <p class="link-text">{{ item.text }}</p>
+    <p class="link-text">{{ item.text }} XX</p>
   </a>
 </template>
 

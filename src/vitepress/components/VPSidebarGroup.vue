@@ -10,7 +10,12 @@ const props = defineProps<{
   showPartiallyActive?: boolean;
 }>();
 
-const activeMethod = props.showPartiallyActive ? isPartiallyActive : isActive;
+function activeMethod(currentPath: string, matchPath: string) {
+  if (props.showPartiallyActive) {
+    return isPartiallyActive(currentPath, matchPath);
+  }
+  return isActive(currentPath, matchPath);
+}
 
 const { page } = useData();
 function hasActiveLink() {

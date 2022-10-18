@@ -29,19 +29,21 @@ function hasActiveLink(items: SidebarGroup["items"]) {
   return items.some((item) => isPartiallyActive(relativePath, item.link));
 }
 
-const currentActiveGroup = computed(() => {
-  const groups = sidebar.value;
-  return groups.findLast((group: SidebarGroup) => hasActiveLink(group.items));
-});
-const currentActiveGeoupElement = computed(() => {
-  const activeGroup = currentActiveGroup.value;
-  if (!activeGroup) return null;
-  return activeGroup.items.find((item: MenuItemWithLink) =>
-    isPartiallyActive(page.value.relativePath, item.link)
+const currentActiveGroup = ref();
+const currentActiveGroupElement = ref();
+
+watchPostEffect(async () => {
+  currentActiveGroup.value = sidebar.value.findLast((group: SidebarGroup) =>
+    hasActiveLink(group.items)
+  );
+  currentActiveGroupElement.value = currentActiveGroup.value?.items?.find(
+    (item: MenuItemWithLink) =>
+      isPartiallyActive(page.value.relativePath, item.link)
   );
 });
+
 const shouldShowAdditionalMenu = computed(() => {
-  return !!currentActiveGeoupElement.value?.items;
+  return !!currentActiveGroupElement.value?.items;
 });
 </script>
 
@@ -67,7 +69,9 @@ const shouldShowAdditionalMenu = computed(() => {
           <VPSidebarGroup
             :text="group.text"
             :items="group.items"
-            :showPartiallyActive="currentActiveGroup.text === group.text"
+            :showPartiallyActive="
+              currentActiveGroup && currentActiveGroup.text === group.text
+            "
           />
         </div>
         <slot name="bottom" />
@@ -76,18 +80,19 @@ const shouldShowAdditionalMenu = computed(() => {
         class="VPSidebarNav"
         aria-labelledby="sidebar-aria-label"
         tabindex="-1"
+        v-if="currentActiveGroupElement"
       >
         <span id="sidebar-aria-label" class="visually-hidden"
-          >{{ currentActiveGeoupElement.text }} section navigation</span
+          >{{ currentActiveGroupElement.text }} section navigation</span
         >
         <h2
-          v-if="currentActiveGeoupElement.items"
+          v-if="currentActiveGroupElement.items"
           class="font-bold pb-3 uppercase"
         >
-          {{ currentActiveGeoupElement.text }}
+          {{ currentActiveGroupElement.text }}
         </h2>
         <div
-          v-for="group in currentActiveGeoupElement.items"
+          v-for="group in currentActiveGroupElement.items"
           :key="group.text"
           class="group"
         >
