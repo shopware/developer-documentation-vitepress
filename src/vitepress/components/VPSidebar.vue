@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed } from "@vue/reactivity";
 import { useData } from "vitepress";
-import { nextTick, ref, watchPostEffect } from "vue";
+import { nextTick, ref, watchEffect, watchPostEffect } from "vue";
 import { useSidebar } from "../composables/sidebar";
 import { isPartiallyActive } from "../support/utils";
 import VPSidebarGroup from "./VPSidebarGroup.vue";
@@ -32,7 +32,7 @@ function hasActiveLink(items: SidebarGroup["items"]) {
 const currentActiveGroup = ref();
 const currentActiveGroupElement = ref();
 
-watchPostEffect(async () => {
+watchEffect(async () => {
   currentActiveGroup.value = sidebar.value.findLast((group: SidebarGroup) =>
     hasActiveLink(group.items)
   );
