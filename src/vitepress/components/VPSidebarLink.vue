@@ -26,7 +26,7 @@ function activeMethod(currentPath: string, matchPath: string) {
     :href="item.link"
     @click="closeSideBar"
   >
-    <p class="link-text">{{ item.text }} XX</p>
+    <p class="link-text">{{ item.text }}</p>
   </a>
 </template>
 
