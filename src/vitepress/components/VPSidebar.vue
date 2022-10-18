@@ -31,6 +31,7 @@ function hasActiveLink(items: SidebarGroup["items"]) {
 
 const currentActiveGroup = ref();
 const currentActiveGroupElement = ref();
+const shouldShowAdditionalMenu = ref();
 
 watchEffect(async () => {
   currentActiveGroup.value = sidebar.value.findLast((group: SidebarGroup) =>
@@ -40,10 +41,7 @@ watchEffect(async () => {
     (item: MenuItemWithLink) =>
       isPartiallyActive(page.value.relativePath, item.link)
   );
-});
-
-const shouldShowAdditionalMenu = computed(() => {
-  return !!currentActiveGroupElement.value?.items;
+  shouldShowAdditionalMenu.value = !!currentActiveGroupElement.value?.items;
 });
 </script>
 
