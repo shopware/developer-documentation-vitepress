@@ -88,6 +88,20 @@ footer: false
     </p>
   </div>
 
+  <a href="/docs/summary">
+  <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
+    <div class="flex items-center">
+      <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
+      <div i-carbon-model-alt class="h-7 w-7 text-shopware" />
+        Shopware Developer Docs
+      </span>
+    </div>
+    <p class="text-sm">
+      Browse the old structure of our developer documentation.
+    </p>
+  </div>
+  </a>
+
    <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">

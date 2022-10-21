@@ -71,7 +71,7 @@ const pageClass = computed(() => {
 
 .content {
   margin: 0 auto;
-  max-width: 688px;
+  max-width: 768px; /* was 688px */
   position: relative;
 }
 

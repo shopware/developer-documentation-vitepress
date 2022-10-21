@@ -7,6 +7,9 @@
         <div v-if="icon" class="flex w-14 items-center">
           <img :src="icon" class="w-14 h-14 object-cover" />
         </div>
+        <div v-else-if="video">
+          <div i-carbon-logo-youtube class="h-7 w-7 text-shopware" />
+        </div>
         <div class="flex-1">
           {{ title }}
           <div
@@ -38,12 +41,15 @@ export default {
 
     let target = ref(attrs.target || "");
 
+    let video = ref(attrs.video === "");
+
     return {
       title,
       page,
       sub,
       icon,
       target,
+      video
     };
   },
 };

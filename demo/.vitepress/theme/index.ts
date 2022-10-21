@@ -5,7 +5,7 @@ import ActionItem from "./components/ActionItem.vue";
 import RegistrationForm from "./components/RegistrationForm.vue";
 import LandingWrapper from "./components/LandingWrapper.vue";
 import PageRef from "./components/PageRef.vue";
-import TopBar from "./components/TopBar.vue";
+// import TopBar from "./components/TopBar.vue";
 
 export default {
   ...VPTheme,
@@ -13,8 +13,8 @@ export default {
     app.component('ActionItem', ActionItem),
     app.component('RegistrationForm', RegistrationForm),
     app.component('LandingWrapper', LandingWrapper),
-    app.component('PageRef', PageRef),
-    app.component('TopBar', TopBar)
+    app.component('PageRef', PageRef)
+    // app.component('TopBar', TopBar)
   },
   Layout() {
     return h(VPTheme.Layout, null, {

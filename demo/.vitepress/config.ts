@@ -32,7 +32,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   head: [],
 
   themeConfig: {
-    appearance: false,
+    appearance: true,
 
     nav,
     sidebar,
