@@ -5,6 +5,7 @@ import ActionItem from "./components/ActionItem.vue";
 import RegistrationForm from "./components/RegistrationForm.vue";
 import LandingWrapper from "./components/LandingWrapper.vue";
 import PageRef from "./components/PageRef.vue";
+import CodeBlock from "./components/CodeBlock.vue";
 // import TopBar from "./components/TopBar.vue";
 
 export default {
@@ -13,7 +14,8 @@ export default {
     app.component('ActionItem', ActionItem),
     app.component('RegistrationForm', RegistrationForm),
     app.component('LandingWrapper', LandingWrapper),
-    app.component('PageRef', PageRef)
+    app.component('PageRef', PageRef),
+    app.component('CodeBlock', CodeBlock)
     // app.component('TopBar', TopBar)
   },
   Layout() {
