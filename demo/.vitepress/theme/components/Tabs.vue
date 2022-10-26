@@ -23,7 +23,8 @@ provide('activeTitle', activeTitle)
         <button
             v-for="(tab, index) in tabs"
             @click="active = index"
-            class="rounded-t-md bg-gray-100 dark:bg-#313131 px-3 py-2" v-bind:class="[index == active ? 'text-gray-900 dark:text-gray-200' : 'text-gray-400 dark:text-gray-500']">
+            class="rounded-t-md bg-gray-100 dark:bg-#313131 px-3 py-2 text-sm"
+            v-bind:class="[index == active ? 'text-gray-900 dark:text-gray-200' : 'text-gray-400 dark:text-gray-500']">
             {{ tab.title }}
         </button>
     </div>
