@@ -26,7 +26,7 @@ footer: false
     <p class="text-sm">
       Apps are a way to enhance the functionality of or add features to your store
     </p>
-    <p class="mt-4"><a class="text-sm" href="/apps">→ learn more</a></p>
+    <p class="mt-4"><a class="text-sm" href="/apps/">→ learn more</a></p>
   </div>
 
   <div class="bg-white dark:bg-slate-800 shadow-md hover:bg-shopware-gray-light transition transition-all rounded-lg p-5">
