@@ -1,4 +1,4 @@
-import type { NavItem } from "../../src/vitepress/config";
+import type { NavItem } from "../vitepress/config";
 
 const nav: NavItem[] = [
     {

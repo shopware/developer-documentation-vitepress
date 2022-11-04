@@ -1,6 +1,6 @@
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig } from "../../src/vitepress/config";
-import baseConfig from "../../src/vitepress/config/baseConfig";
+import shopwareBaseConfig from "../../src/shopware/shopwareBaseConfig";
 
 import apps from "./sidebar/apps";
 import themes from "./sidebar/themes";
@@ -20,7 +20,7 @@ const sidebar: SidebarConfig = {
 };
 
 export default defineConfigWithTheme<ThemeConfig>({
-  extends: baseConfig,
+  extends: shopwareBaseConfig,
 
   lang: "en-US",
   title: "Shopware",
@@ -32,9 +32,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   head: [],
 
   themeConfig: {
-    appearance: true,
-
-    nav,
     sidebar,
 
     algolia: {
@@ -45,12 +42,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       //   facetFilters: ["version:v1"],
       // },
     },
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/shopware/" },
-      { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
-      { icon: "slack", link: "https://slack.shopware.com" },
-    ],
 
     // remove if edit not needed
     editLink: {
