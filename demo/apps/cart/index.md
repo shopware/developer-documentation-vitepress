@@ -6,7 +6,7 @@ Besides, the cart gives various options to change a price of an item in the cart
 
 ## Changing the cart behavior
 
-Using App Scripts (cart scripts), you can [manipulate your cart](https://developer.shopware.com/docs/resources/references/app-reference/script-reference/cart-manipulation-script-services-reference) details to:
+Using [App Scripts](https://developer.shopware.com/docs/resources/references/adr/app/2021-10-21-app-scripting) (cart scripts), you can [manipulate your cart](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#overview) details to:
 
 * [Calculate cart](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart)
 * [Add line items](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items)
@@ -14,6 +14,8 @@ Using App Scripts (cart scripts), you can [manipulate your cart](https://develop
 * [Add custom data](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-custom-data-to-line-items)
 * [Add errors and notifications](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#add-errors-and-notifications-to-the-cart)
 * [Run rule-based cart scripts](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts)
+
+Refer to [cart manipulation services](https://developer.shopware.com/docs/resources/references/app-reference/script-reference/cart-manipulation-script-services-reference) that allows you to make these changes.
 
 ## Changing the look
 
