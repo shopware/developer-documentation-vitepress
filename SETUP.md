@@ -49,57 +49,14 @@ Create `.vitepress/config.ts` file, example to edit for your needs:
 ```
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
-import baseConfig from "vitepress-shopware-docs/config";
-
-const nav = [
-  {
-    text: "Guide",
-    activeMatch: `^/(guide|cookbook|examples)/`,
-    items: [
-      { text: "Guide", link: "/guide/introduction" },
-      { text: "Examples", link: "/examples/" },
-    ],
-  },
-  {
-    text: "API",
-    activeMatch: `^/api/`,
-    link: "/api/",
-  },
-];
-
-export const sidebar = {
-  "/guide/": [
-    {
-      text: "Getting Started",
-      items: [
-        { text: "Introduction", link: "/guide/introduction" },
-        {
-          text: "Quick Start",
-          link: "/guide/quick-start",
-        },
-      ],
-    },
-  ],
-  "/api/": [
-    {
-      text: "Global API",
-      items: [
-        { text: "Application", link: "/api/application" },
-        {
-          text: "General",
-          link: "/api/general",
-        },
-      ],
-    },
-  ],
-};
+import shopwareBaseConfig from "vitepress-shopware-docs";
 
 export default defineConfigWithTheme<ThemeConfig>({
-  extends: baseConfig,
+  extends: shopwareBaseConfig,
 
   lang: "en-US",
   title: "Shopware",
-  description: "Documentation for Shopware developers",
+  description: "Name of the documentation",
   srcDir: "docs",
   // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
   scrollOffset: "header",
@@ -107,7 +64,6 @@ export default defineConfigWithTheme<ThemeConfig>({
   head: [],
 
   themeConfig: {
-    nav,
     sidebar,
 
     algolia: {
@@ -118,12 +74,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       //   facetFilters: ["version:v1"],
       // },
     },
-
-    socialLinks: [
-      { icon: "github", link: "https://github.com/shopware/" },
-      { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
-      { icon: "slack", link: "https://slack.shopware.com" },
-    ],
 
     // remove if edit not needed
     editLink: {
