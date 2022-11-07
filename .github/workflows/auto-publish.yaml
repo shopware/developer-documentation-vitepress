@@ -17,7 +17,7 @@ jobs:
           tag_name: "v%s"
           tag_message: "v%s"
           create_tag: "false"
-          commit_pattern: "^chore: release"
+          commit_pattern: "^chore: release (\\S+)"
           workspace: "."
           publish_command: "yarn"
           publish_args: "--non-interactive"
