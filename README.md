@@ -21,5 +21,7 @@ Please follow the [setup instructions](./SETUP.md) for more information on how t
 To publish package add commit to `main` with the following convention:
 
 ```
-chore: release 0.1.6
+chore: release
 ```
+
+you need to set this version in a `package.json` file as well.
