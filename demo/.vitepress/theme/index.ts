@@ -1,27 +1,8 @@
 import { VPTheme } from "../../../src/vitepress";
 import { h } from "vue";
 
-import ActionItem from "./components/ActionItem.vue";
-import RegistrationForm from "./components/RegistrationForm.vue";
-import LandingWrapper from "./components/LandingWrapper.vue";
-import PageRef from "./components/PageRef.vue";
-import CodeBlock from "./components/CodeBlock.vue";
-import Tabs from "./components/Tabs.vue";
-import Tab from "./components/Tab.vue";
-// import TopBar from "./components/TopBar.vue";
-
 export default {
   ...VPTheme,
-  enhanceApp({ app }) {
-    app.component('ActionItem', ActionItem),
-    app.component('RegistrationForm', RegistrationForm),
-    app.component('LandingWrapper', LandingWrapper),
-    app.component('PageRef', PageRef),
-    app.component('CodeBlock', CodeBlock),
-    app.component('Tabs', Tabs)
-    app.component('Tab', Tab)
-    // app.component('TopBar', TopBar)
-  },
   Layout() {
     return h(VPTheme.Layout, null, {
       // uncomment to test layout slots

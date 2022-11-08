@@ -1,8 +1,8 @@
-  <h1 class="text-6xl mb-16 font-extrabold accent">Shopware documentation theme installation</h1>
+  <h1 class="text-6xl mb-16 font-semibold accent">Shopware Documentation Theme</h1>
 
-  Welcome in Shopware documentation theme!
+  <PageRef title="Shopware Documentation Theme Components" sub="All components available for usage in the documentation theme" page="/components"/>
 
-  ## Quickstart
+  ## Installation
 
   Add `vitepress-shopware-docs` to your vitepress dependencies:
 
@@ -12,178 +12,126 @@
 
   ## Project setup dependencies
 
-  Your `package.json` should look similar to this
+Your `package.json` should look similar to this
 
-  ```json{11}
-  {
-    "engines": {
-      "node": ">=14.0.0"
-    },
-    "scripts": {
-      "dev": "vitepress",
-      "build": "vitepress build",
-      "serve": "vitepress serve"
-    },
-    "dependencies": {
-      "vitepress-shopware-docs": "^0.0.1",
-      "vitepress": "^0.22.2",
-      "vue": "^3.2.31"
-    },
-    "devDependencies": {
-      "@types/markdown-it": "^12.2.3",
-      "@types/node": "^16.9.1"
-    },
-    "pnpm": {
-      "peerDependencyRules": {
-        "ignoreMissing": [
-          "@algolia/client-search",
-          "react",
-          "react-dom",
-          "@types/react"
-        ]
-      }
+```json
+{
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "scripts": {
+    "dev": "vitepress",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "dependencies": {
+    "vitepress-shopware-docs": "^0.0.1",
+    "vitepress": "^0.22.2",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/node": "^16.9.1"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "react",
+        "react-dom",
+        "@types/react"
+      ]
     }
   }
-  ```
+}
+```
 
-  ## Vitepress config
+## Vitepress config
 
-  Create `.vitepress/config.ts` file, example to edit for your needs:
+Create `.vitepress/config.ts` file, example to edit for your needs:
 
-  ```typescript
-  import { defineConfigWithTheme } from "vitepress";
-  import type { Config as ThemeConfig } from "vitepress-shopware-docs";
-  import baseConfig from "vitepress-shopware-docs/config";
+```ts
+import { defineConfigWithTheme } from "vitepress";
+import type { Config as ThemeConfig } from "vitepress-shopware-docs";
+import shopwareBaseConfig from "vitepress-shopware-docs";
 
-  const nav = [
-    {
-      text: "Guide",
-      activeMatch: `^/(guide|cookbook|examples)/`,
-      items: [
-        { text: "Guide", link: "/guide/introduction" },
-        { text: "Examples", link: "/examples/" },
-      ],
-    },
-    {
-      text: "API",
-      activeMatch: `^/api/`,
-      link: "/api/",
-    },
-  ];
+export default defineConfigWithTheme<ThemeConfig>({
+  extends: shopwareBaseConfig,
 
-  export const sidebar = {
-    "/guide/": [
-      {
-        text: "Getting Started",
-        items: [
-          { text: "Introduction", link: "/guide/introduction" },
-          {
-            text: "Quick Start",
-            link: "/guide/quick-start",
-          },
-        ],
-      },
-    ],
-    "/api/": [
-      {
-        text: "Global API",
-        items: [
-          { text: "Application", link: "/api/application" },
-          {
-            text: "General",
-            link: "/api/general",
-          },
-        ],
-      },
-    ],
-  };
+  lang: "en-US",
+  title: "Shopware",
+  description: "Name of the documentation",
+  srcDir: "docs",
+  // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
+  scrollOffset: "header",
 
-  export default defineConfigWithTheme<ThemeConfig>({
-    extends: baseConfig,
+  head: [],
 
-    lang: "en-US",
-    title: "Shopware",
-    description: "Documentation for Shopware developers",
-    srcDir: "docs",
-    // srcExclude: ["tutorial/**/description.md"], In case we need something to be excluded
-    scrollOffset: "header",
+  themeConfig: {
+    sidebar,
 
-    head: [],
-
-    themeConfig: {
-      nav,
-      sidebar,
-
-      algolia: {
-        indexName: "",
-        appId: "",
-        apiKey: "",
-        // searchParameters: {
-        //   facetFilters: ["version:v1"],
-        // },
-      },
-
-      socialLinks: [
-        { icon: "github", link: "https://github.com/shopware/" },
-        { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
-        { icon: "slack", link: "https://slack.shopware.com" },
-      ],
-
-      // remove if edit not needed
-      editLink: {
-        repo: "shopware/developer-documentation-vuepress",
-        text: "Edit this page on GitHub",
-      },
+    algolia: {
+      indexName: "",
+      appId: "",
+      apiKey: "",
+      // searchParameters: {
+      //   facetFilters: ["version:v1"],
+      // },
     },
 
-    vite: {
-      define: {
-        __VUE_OPTIONS_API__: false,
-      },
-      server: {
-        host: true,
-        fs: {
-          // for when developing with locally linked theme
-          allow: ["../.."],
-        },
-      },
-      build: {
-        minify: "terser",
-        chunkSizeWarningLimit: Infinity,
-      },
-      json: {
-        stringify: true,
+    // remove if edit not needed
+    editLink: {
+      repo: "shopware/developer-documentation-vuepress",
+      text: "Edit this page on GitHub",
+    },
+  },
+
+  vite: {
+    define: {
+      __VUE_OPTIONS_API__: false,
+    },
+    server: {
+      host: true,
+      fs: {
+        // for when developing with locally linked theme
+        allow: ["../.."],
       },
     },
-
-    vue: {
-      reactivityTransform: true,
+    build: {
+      minify: "terser",
+      chunkSizeWarningLimit: Infinity,
     },
-  });
-  ```
-
-  ## Theme setup
-
-  Create new file `.vitepress/theme/index.ts`:
-
-  ```typescript
-  // import './styles/index.css'
-  import { h, App } from "vue";
-  import { VPTheme } from "vitepress-shopware-docs";
-
-  export default Object.assign({}, VPTheme, {
-    Layout: () => {
-      // @ts-ignore
-      return h(VPTheme.Layout, null, {
-        // banner: () => h(Banner),
-        // "content-top": () => h("h1", "We have important Announcement!"),
-        // 'sidebar-top': () => h(PreferenceSwitch),
-        // 'aside-mid': () => h(SponsorsAside),
-        // 'aside-bottom': () => h(VueJobs)
-      });
+    json: {
+      stringify: true,
     },
-    enhanceApp({ app }: { app: App }) {
-      // app.provide('some-injection-key-if-needed', VALUE)
-    },
-  });
-  ```
+  },
+
+  vue: {
+    reactivityTransform: true,
+  },
+});
+```
+
+## Theme setup
+
+Create new file `.vitepress/theme/index.ts`:
+
+```ts
+import { h, App } from "vue";
+import { VPTheme } from "vitepress-shopware-docs";
+
+import CustomComponent from "./components/CustomComponent.vue";
+
+export default Object.assign({}, VPTheme, {
+  enhanceApp(ctx: { app: App }) {
+    // Call parent enhanceApp, so Custom Showpare Components are available
+    VPTheme.enhanceApp(ctx);
+
+    // Register custom components
+    app.component('PageRef', PageRef),
+
+    // Provide additional credentials if required
+    ctx.app.provide('some-injection-key-if-needed', VALUE);
+  },
+});
+```
