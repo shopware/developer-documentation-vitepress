@@ -31,4 +31,4 @@ Usings Plugins also, you can
 
 The appearance of the cart can be changed in multiple ways.
 
-With Template Extensions, you can extend or override the cart look of our default storefront. However, remember that the template extension will only be available for merchants that use our default storefront. Some merchants who build their projects upon Custom Frontends will not be able to benefit from your extension.
+With [template extensions](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/customize-templates), you can extend or override the cart look of our default storefront. However, remember that the template extension will only be available for merchants that use our default storefront. Some merchants who build their projects upon custom frontends will not be able to benefit from your extension.
