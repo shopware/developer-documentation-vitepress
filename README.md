@@ -6,13 +6,22 @@ Please follow the [setup instructions](./SETUP.md) for more information on how t
 
 ## Structure
 
-* Shopware Developer Platform `developer.shopware.com`
-  * Apps `/apps`
-  * Themes `/themes`
-  * Custom Frontends `/custom-frontends`
-  * Integrations `/integrations`
-  * Docs (old docs) `/docs`
-    * All existing docs are still available under `/docs` and will be embedded / linked from the new structure
-  * Resources `/resources`
-    * Additional resources like API references, icon kits, etc.
+- Shopware Developer Platform `developer.shopware.com`
+  - Apps `/apps`
+  - Themes `/themes`
+  - Custom Frontends `/custom-frontends`
+  - Integrations `/integrations`
+  - Docs (old docs) `/docs`
+    - All existing docs are still available under `/docs` and will be embedded / linked from the new structure
+  - Resources `/resources`
+    - Additional resources like API references, icon kits, etc.
 
+## Collaboration
+
+To publish package add commit to `main` with the following convention:
+
+```
+chore: release x.y.z
+```
+
+you need to set this version in a `package.json` file as well.
