@@ -7,7 +7,7 @@ Besides, the cart gives various options to change a price of an item in the cart
 ## Changing the cart behavior
 
 
-Using [App Scripts](https://developer.shopware.com/docs/resources/references/adr/app/2021-10-21-app-scripting) (cart scripts), you can [manipulate your cart](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#overview) details to:
+Using [App Scripts](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts) (cart scripts), you can [manipulate your cart](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#overview) details to:
 
 * [Calculate cart](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart)
 * [Add line items](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#line-items)
