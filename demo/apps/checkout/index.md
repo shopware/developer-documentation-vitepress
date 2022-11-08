@@ -24,4 +24,3 @@ With [template extensions](https://developer.shopware.com/docs/guides/plugins/pl
 
 However, keep in mind that template extension will only be available for merchants that use our default storefront. Some merchants build their project upon [Custom Frontends]() will not be able to benefit from your extension.
 
-Refer to [checkout section](https://developer.shopware.com/docs/resources/references/adr/checkout) for more related information.
