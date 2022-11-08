@@ -6,6 +6,8 @@ Besides, the cart gives various options to change a price of an item in the cart
 
 ## Changing the cart behavior
 
+Behaviour of the cart can be extended via [Apps](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts) or [Plugins](https://developer.shopware.com/docs/guides/plugins/plugins/checkout/cart)
+
 Using [App Scripts](https://developer.shopware.com/docs/resources/references/adr/app/2021-10-21-app-scripting) (cart scripts), you can [manipulate your cart](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#overview) details to:
 
 * [Calculate cart](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#calculating-the-cart)
@@ -16,6 +18,15 @@ Using [App Scripts](https://developer.shopware.com/docs/resources/references/adr
 * [Run rule-based cart scripts](https://developer.shopware.com/docs/guides/plugins/apps/app-scripts/cart-manipulation#rule-based-cart-scripts)
 
 Refer to [cart manipulation services](https://developer.shopware.com/docs/resources/references/app-reference/script-reference/cart-manipulation-script-services-reference) that allows you to make these changes.
+
+Usings Plugins also, you can
+
+* [Add cart collector/processor](https://developer.shopware.com/docs/guides/plugins/plugins/checkout/cart/add-cart-processor-collector)
+* [Add cart items](https://developer.shopware.com/docs/guides/plugins/plugins/checkout/cart/add-cart-items)
+* [Add cart discounts](https://developer.shopware.com/docs/guides/plugins/plugins/checkout/cart/add-cart-discounts)
+* [Add cart validator](https://developer.shopware.com/docs/guides/plugins/plugins/checkout/cart/add-cart-validator)
+* [Change price items](https://developer.shopware.com/docs/guides/plugins/plugins/checkout/cart/change-price-of-item)
+* [Customize price calculation](https://developer.shopware.com/docs/guides/plugins/plugins/checkout/cart/customize-price-calculation)
 
 ## Changing the look
 
