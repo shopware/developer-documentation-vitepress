@@ -1,15 +1,12 @@
 import { defineConfigWithTheme } from "vitepress";
-import type { Config as ThemeConfig } from "../../src/vitepress/config";
-import shopwareBaseConfig from "../../src/shopware/shopwareBaseConfig";
+import type { Config as ThemeConfig, SidebarConfig } from "../../src/vitepress/config";
+import baseConfig from "../../src/vitepress/config/baseConfig";
 
 import apps from "./sidebar/apps";
 import themes from "./sidebar/themes";
 import frontends from "./sidebar/frontends";
 import integrations from "./sidebar/integrations";
 import paas from "./sidebar/docs/products/paas";
-import nav from "./navigation";
-
-import { SidebarConfig } from "../../src/vitepress/config";
 
 const sidebar: SidebarConfig = {
   "/apps/": apps,
@@ -20,7 +17,7 @@ const sidebar: SidebarConfig = {
 };
 
 export default defineConfigWithTheme<ThemeConfig>({
-  extends: shopwareBaseConfig,
+  extends: baseConfig,
 
   lang: "en-US",
   title: "Shopware",
