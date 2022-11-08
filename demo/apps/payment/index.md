@@ -2,7 +2,7 @@
 
 Shopware 6's [payment system](https://developer.shopware.com/docs/concepts/commerce/checkout-concept/payments) is an integral part of the checkout process that deals with payment transactions from customers to merchants and visa-versa.
 
-When a customer buys a product using any payment method (debit card, credit card, PayPal, etc.), it follows a [payment transaction flow](https://developer.shopware.com/docs/resources/references/adr/checkout/2021-10-01-payment-flow) that passes through the sequential steps of payment from start to approval to finish the payment.
+When a customer buys a product using any payment method (debit card, credit card, PayPal, etc.), it follows a [payment transaction flow](https://developer.shopware.com/docs/concepts/commerce/checkout-concept/payments#payment-flow) that passes through the sequential steps of payment from start to approval to finish the payment.
 
 Payment handlers integrate seamlessly into the point of sale and let your customers pay for orders with one or more payment methods during the checkout process.
 
