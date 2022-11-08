@@ -20,7 +20,7 @@ You can also extend it via [plugins](https://developer.shopware.com/docs/guides/
 
 The appearance of the checkout can be changed in multiple ways
 
-With [Template Extensions](#), you can extend or override the checkout look of our default storefront.
+With [template extensions](https://developer.shopware.com/docs/guides/plugins/plugins/storefront/customize-templates), you can extend or override the checkout look of our default storefront.
 
 However, keep in mind that template extension will only be available for merchants that use our default storefront. Some merchants build their project upon [Custom Frontends]() will not be able to benefit from your extension.
 
