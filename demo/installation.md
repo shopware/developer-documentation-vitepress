@@ -69,10 +69,10 @@ Options you probably want to change are
 ```ts
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig } from "vitepress-shopware-docs";
-import shopwareBaseConfig from "vitepress-shopware-docs";
+import baseConfig from "vitepress-shopware-docs/config";
 
 export default defineConfigWithTheme<ThemeConfig>({
-  extends: shopwareBaseConfig,
+  extends: baseConfig,
 
   lang: "en-US",
   title: "Shopware",

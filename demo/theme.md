@@ -10,7 +10,8 @@ The following documentation websites are using the Shopware Documentation Theme
 
 | Website                                                                | Content Source                                                                         | Status      |
 | ---------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ----------- |
-| [Developer Documentation](https://developer.shopware.com)              | [shopware/docs](https://github.com/shopware/docs)                                      | planned     |
+| [Developer Portal](https://developer.shopware.com/)                    | [shopware/developer-portal](https://github.com/shopware/developer-portal)              | Production  |
+| [Developer Documentation](https://developer.shopware.com/docs)         | [shopware/docs](https://github.com/shopware/docs)                                      | planned     |
 | [Meteor Icon Kit](https://shopware.github.io/meteor-icon-kit/)         | [shopware/meteor-icon-kit](https://github.com/shopware/meteor-icon-kit/tree/main/docs) | in progress |
 | [Frontends Documentation](https://shopware-frontends-docs.vercel.app/) | [shopware/frontends](https://github.com/shopware/frontends/tree/main/apps/docs/src)    | in progress |
 | [Store API Reference](https://shopware.stoplight.io/docs/store-api)    | [shopware/store-api-reference](https://github.com/shopware/store-api-reference)        | planned     |

@@ -111,5 +111,5 @@ module.exports = async () => ({
       { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
       { icon: "slack", link: "https://slack.shopware.com" },
     ],
-}
+  }
 });
