@@ -1,6 +1,6 @@
 # Cart
 
-The cart allows you to handle cart operations. [Shopware's cart](https://developer.shopware.com/docs/concepts/commerce/checkout-concept/cart) resides in the checkout bundle and is a central part of the checkout process. The cart has a defined [cart process](https://developer.shopware.com/docs/resources/guidelines/code/cart-process).
+The cart allows you to handle cart operations. [Shopware's cart](https://developer.shopware.com/docs/concepts/commerce/checkout-concept/cart) is a central part of the checkout process. The cart has a defined [cart process](https://developer.shopware.com/docs/resources/guidelines/code/cart-process).
 
 Besides, the cart gives various options to change a price of an item in the cart using a cart collector and processor, adding cart items, discounts, customizing price calculations, splitting cart line items, etc.
 
