@@ -1,16 +1,16 @@
-  <h1 class="text-6xl mb-16 font-semibold accent">Shopware Documentation Theme</h1>
+<h1 class="text-6xl mb-16 font-semibold accent">Shopware Documentation Theme</h1>
 
-  <PageRef title="Shopware Documentation Theme Components" sub="All components available for usage in the documentation theme" page="/components"/>
+<PageRef title="Shopware Documentation Theme Components" sub="All components available for usage in the documentation theme" page="/components"/>
 
-  ## Installation
+## Installation
 
-  Add `vitepress-shopware-docs` to your vitepress dependencies:
+Add `vitepress-shopware-docs` to your package dependencies
 
-  ```bash
-  pnpm add vitepress-shopware-docs
-  ```
+```bash
+pnpm add vitepress-shopware-docs
+```
 
-  ## Project setup dependencies
+## Project setup dependencies
 
 Your `package.json` should look similar to this
 
@@ -48,7 +48,23 @@ Your `package.json` should look similar to this
 
 ## Vitepress config
 
-Create `.vitepress/config.ts` file, example to edit for your needs:
+Create a `.vitepress/config.ts` that contains your theme configuration.
+
+Please do not edit `themeConfig.nav`, as it is provided by the global theme to ensure a consistent overall navigation.
+
+Also see the official Vitepress default theme [configuration reference](https://vitepress.vuejs.org/config/theme-configs).
+
+### Theme Config Setup
+
+Options you probably want to change are
+
+| Option                 | Description                                                                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------- |
+| `title`                | Title of the website                                                                               |
+| `description`          | Description of the website                                                                         |
+| `srcDir`               | Directory of the documentation source files                                                        |
+| `themeConfig.sidebar`  | Sidebar navigation setup ([more information](https://vitepress.vuejs.org/guide/theme-sidebar))     |
+| `themeConfig.editLink` | "Edit on Github" link at page bottom ([more information](https://vitepress.vuejs.org/guide/theme-edit-link#edit-link)) |
 
 ```ts
 import { defineConfigWithTheme } from "vitepress";
@@ -69,15 +85,6 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   themeConfig: {
     sidebar,
-
-    algolia: {
-      indexName: "",
-      appId: "",
-      apiKey: "",
-      // searchParameters: {
-      //   facetFilters: ["version:v1"],
-      // },
-    },
 
     // remove if edit not needed
     editLink: {
@@ -114,17 +121,21 @@ export default defineConfigWithTheme<ThemeConfig>({
 
 ## Theme setup
 
-Create new file `.vitepress/theme/index.ts`:
+Tell Vitepress to use a custom theme by creating a `.vitepress/theme/index.ts` file.
 
-```ts
-import { h, App } from "vue";
+You can register and use custom components just in any other Vue application using the `enhanceApp` hook.
+
+For more information, see the official Vitepress documentation on [custom components](https://vitepress.vuejs.org/guide/using-vue#registering-global-components-in-the-theme).
+
+```ts{7-16}
+import { App } from "vue";
 import { VPTheme } from "vitepress-shopware-docs";
 
 import CustomComponent from "./components/CustomComponent.vue";
 
 export default Object.assign({}, VPTheme, {
   enhanceApp(ctx: { app: App }) {
-    // Call parent enhanceApp, so Custom Showpare Components are available
+    // Call parent enhanceApp, so custom Shopware components are available
     VPTheme.enhanceApp(ctx);
 
     // Register custom components
