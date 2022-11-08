@@ -16,6 +16,8 @@ const {
   transformerVariantGroup,
 } = require("unocss");
 
+const navigation = require("./navigation")
+
 // for local-linked development
 const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
 
@@ -101,4 +103,13 @@ module.exports = async () => ({
     // make algolia chunk prefetch instead of preload
     return !link.includes("Algolia");
   },
+  themeConfig: {
+    nav: navigation,
+    appearance: true,
+    socialLinks: [
+      { icon: "github", link: "https://github.com/shopware/" },
+      { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
+      { icon: "slack", link: "https://slack.shopware.com" },
+    ],
+}
 });

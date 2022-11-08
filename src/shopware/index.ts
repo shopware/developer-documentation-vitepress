@@ -1,4 +1,3 @@
-export * from "./shopwareBaseConfig";
 export { default as ActionItem } from "./components/ActionItem.vue"
 export { default as CodeBlock } from "./components/CodeBlock.vue"
 export { default as LandingWrapper } from "./components/LandingWrapper.vue"

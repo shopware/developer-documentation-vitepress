@@ -1,6 +1,6 @@
 import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig, SidebarConfig } from "../../src/vitepress/config";
-import shopwareBaseConfig from "../../src/shopware/shopwareBaseConfig";
+import baseConfig from "../../src/vitepress/config/baseConfig";
 
 import apps from "./sidebar/apps";
 import themes from "./sidebar/themes";
@@ -17,7 +17,7 @@ const sidebar: SidebarConfig = {
 };
 
 export default defineConfigWithTheme<ThemeConfig>({
-  extends: shopwareBaseConfig,
+  extends: baseConfig,
 
   lang: "en-US",
   title: "Shopware",
