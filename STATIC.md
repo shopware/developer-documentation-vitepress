@@ -57,6 +57,32 @@ $ cp ../developer-documentation-vitepress/.github/helpers/sub-publish.yml ./gith
 
 This workflow will trigger a rebuild workflow in the main docs repository and create a new PR.
 
+### Sidebar configuration
+
+Sidebar can be configured by custom YML in your .md file (frontmatter).
+
+```markdown
+
+\```
+sidebar:
+  title: Custom title
+  position: 123
+  class: custom-class
+  nolink: true
+\```
+
+```
+
+#### Reformatting YML frontmatter configuration in .md files by PhpStorm
+
+Please, enable registry key `markdown.experimental.frontmatter.support.enable=true` in your PhpStorm registry settings.
+
+See [https://youtrack.jetbrains.com/issue/IDEA-291881/Frontmatter-Support](IDEA-291881) in JetBrains issue tracker for more info.
+
+```
+Shift+Shift -> Registry -> Find and enable key
+```
+
 # Standalone / advanced
 
 This approach gives you more power over custom components, config and any other custom code. Please,
