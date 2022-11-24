@@ -26,13 +26,13 @@
 
 <script setup>
 import {useAttrs, ref} from "vue";
-import {useConfig} from "../../../../src/vitepress/composables/config";
+import {useConfig} from "../../vitepress/composables/config";
 
 const {config} = useConfig();
 const attrs = useAttrs();
 
-const getSidebarItem = (key, attr) => {
-  const exploded = key.split('.');
+const getSidebarItem = (url, attr) => {
+  const exploded = url.split('/').filter(part => part.length || part.length !== '..');
   const [firstLevel, secondLevel] = exploded;
   const firstLevelItem = config.value.sidebar[`/${firstLevel}/`];
   const secondLevelItem = firstLevelItem.find(({text}) => text.toLowerCase() === secondLevel.toLowerCase());
@@ -48,9 +48,8 @@ const getSidebarItem = (key, attr) => {
   return `Building ${key}->${attr} | ${secondLevelItem[mapper[attr] || attr]}`;
 }
 
-const getAttr = (attr) => ref(attrs.path ? getSidebarItem(path.value, attr) : attrs[attr]);
+const getAttr = (attr) => ref(attrs.page ? getSidebarItem(page.value, attr) : attrs[attr]);
 
-const path = ref(attrs.path);
 const page = ref(attrs.page);
 const icon = ref(attrs.icon || "");
 const target = ref(attrs.target || "");
