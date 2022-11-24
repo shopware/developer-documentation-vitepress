@@ -17,6 +17,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # @T00D00 - "pnpm run build" fails with symlinks
       - name: Clone sub-docs
         run: |
           git clone git@github.com/shopware/frontends.git docs/frontends

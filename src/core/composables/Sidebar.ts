@@ -183,7 +183,7 @@ export function readSidebar(as: string, folder = "./src/", root = false) {
 
       reduced.push({
         link: `/${as}/${file}/`,
-        text: niceName(file), //`${file}`,// file.toUpperCase(),
+        text: niceName(file),
         items: links,
       });
 
