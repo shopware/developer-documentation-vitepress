@@ -32,6 +32,10 @@ module.exports = async () => ({
     optimizeDeps: {
       exclude: deps,
     },
+    resolve: {
+      // for mounting static sub-repos
+      preserveSymlinks: true
+    },
     plugins: [
       Unocss.default(
         defineConfig({

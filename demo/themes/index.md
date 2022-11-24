@@ -14,4 +14,6 @@ Shopware's theme system is based on [Twig.js](#) and an inheritance mechanism, s
 
 </div>
 
-<PageRef page="/docs/guides/plugins/themes/create-a-theme" title="Create a Theme" sub="Create your first theme from scratch, install and activate it in your development store" />
+<PageRef page="/docs/guides/plugins/themes/create-a-theme"
+title="Create a Theme2"
+sub="Create your first theme from scratch, install and activate it in your development store" />

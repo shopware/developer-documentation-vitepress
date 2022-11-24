@@ -2,19 +2,7 @@ import { defineConfigWithTheme } from "vitepress";
 import type { Config as ThemeConfig, SidebarConfig } from "../../src/vitepress/config";
 import baseConfig from "../../src/vitepress/config/baseConfig";
 
-import apps from "./sidebar/apps";
-import themes from "./sidebar/themes";
-import frontends from "./sidebar/frontends";
-import integrations from "./sidebar/integrations";
-import paas from "./sidebar/docs/products/paas";
-
-const sidebar: SidebarConfig = {
-  "/apps/": apps,
-  "/themes/": themes,
-  "/frontends/": frontends,
-  "/integrations/": integrations,
-  "/docs/products/paas/": paas,
-};
+import sidebar from "./sidebar";
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -65,9 +53,5 @@ export default defineConfigWithTheme<ThemeConfig>({
     json: {
       stringify: true,
     },
-  },
-
-  vue: {
-    reactivityTransform: true,
   },
 });

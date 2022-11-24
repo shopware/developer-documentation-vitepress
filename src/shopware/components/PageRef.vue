@@ -24,33 +24,38 @@
   </div>
 </template>
 
-<script>
-import { useAttrs, ref } from "vue";
+<script setup>
+import {useAttrs, ref} from "vue";
+import {useConfig} from "../../../../src/vitepress/composables/config";
 
-export default {
-  setup() {
-    let attrs = useAttrs();
+const {config} = useConfig();
+const attrs = useAttrs();
 
-    let title = ref(attrs.title);
+const getSidebarItem = (key, attr) => {
+  const exploded = key.split('.');
+  const [firstLevel, secondLevel] = exploded;
+  const firstLevelItem = config.value.sidebar[`/${firstLevel}/`];
+  const secondLevelItem = firstLevelItem.find(({text}) => text.toLowerCase() === secondLevel.toLowerCase());
 
-    let page = ref(attrs.page);
+  if (!secondLevelItem) {
+    return 'Cannot find second level item!';
+  }
 
-    let icon = ref(attrs.icon || "");
+  const mapper = {
+    title: 'text',
+  };
 
-    let sub = ref(attrs.sub || "");
+  return `Building ${key}->${attr} | ${secondLevelItem[mapper[attr] || attr]}`;
+}
 
-    let target = ref(attrs.target || "");
+const getAttr = (attr) => ref(attrs.path ? getSidebarItem(path.value, attr) : attrs[attr]);
 
-    let video = ref(attrs.video === "");
+const path = ref(attrs.path);
+const page = ref(attrs.page);
+const icon = ref(attrs.icon || "");
+const target = ref(attrs.target || "");
+const video = ref(attrs.video === "");
 
-    return {
-      title,
-      page,
-      sub,
-      icon,
-      target,
-      video
-    };
-  },
-};
+const title = getAttr('title');
+const sub = getAttr('sub');
 </script>
