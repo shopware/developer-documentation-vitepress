@@ -13,7 +13,7 @@
         <div class="flex-1">
           {{ title }}
           <div
-            v-if="sub.length > 0"
+            v-if="sub?.length > 0"
             class="mt-2 text-gray font-normal text-xs block"
           >
             {{ sub }}
@@ -35,7 +35,7 @@ const getSidebarItem = (url, attr) => {
   const exploded = url.split('/').filter(part => part.length || part.length !== '..');
   const [firstLevel, secondLevel] = exploded;
   const firstLevelItem = config.value.sidebar[`/${firstLevel}/`];
-  const secondLevelItem = firstLevelItem.find(({text}) => text.toLowerCase() === secondLevel.toLowerCase());
+  const secondLevelItem = firstLevelItem?.find(({text}) => text.toLowerCase() === secondLevel.toLowerCase());
 
   if (!secondLevelItem) {
     return 'Cannot find second level item!';

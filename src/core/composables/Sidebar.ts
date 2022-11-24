@@ -1,5 +1,4 @@
 import fs from "fs-extra";
-import path from "path";
 import matter from "gray-matter";
 import removeMd from "remove-markdown";
 import { SidebarConfig, SidebarGroup } from "../../vitepress/config";
