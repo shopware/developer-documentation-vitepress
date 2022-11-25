@@ -4,6 +4,13 @@ import baseConfig from "../../src/vitepress/config/baseConfig";
 
 import sidebar from "./sidebar";
 
+interface SidebarItem {
+  text: string,
+  description: string,
+  link: string,
+  items: SidebarItem[]
+}
+
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
 
@@ -54,4 +61,25 @@ export default defineConfigWithTheme<ThemeConfig>({
       stringify: true,
     },
   },
+
+  async buildEnd(){
+    // @ts-ignore
+    const reduced = [];
+    const reduce = (tree: SidebarItem[]) => {
+      tree.forEach(item => {
+        const {text, description, link, items} = item;
+        reduced.push({text, description, link});
+        items && reduce(items)
+      })
+    }
+
+    Object.keys(sidebar)
+      // @ts-ignore
+      .forEach(key => reduce(sidebar[key]));
+
+    console.log(JSON.stringify(reduced).length);
+
+    //await console.log('BUILD END2', sidebar);
+    //throw "test"
+  }
 });
