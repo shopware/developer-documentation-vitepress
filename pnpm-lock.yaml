@@ -8,6 +8,7 @@ specifiers:
   '@types/body-scroll-lock': ^3.1.0
   '@types/estree': ^0.0.52
   '@types/fs-extra': ^9.0.13
+  '@types/remove-markdown': ^0.3.1
   '@vueuse/core': ^9.5.0
   axios: ^0.27.2
   body-scroll-lock: ^3.1.5
@@ -39,6 +40,7 @@ devDependencies:
   '@types/body-scroll-lock': 3.1.0
   '@types/estree': 0.0.52
   '@types/fs-extra': 9.0.13
+  '@types/remove-markdown': 0.3.1
   fs-extra: 10.1.0
   gray-matter: 4.0.3
   prettier: 2.7.1
@@ -1140,6 +1142,10 @@ packages:
       '@types/scheduler': 0.16.2
       csstype: 3.1.0
     dev: false
+
+  /@types/remove-markdown/0.3.1:
+    resolution: {integrity: sha512-JpJNEJEsmmltyL2LdE8KRjJ0L2ad5vgLibqNj85clohT9AyTrfN6jvHxStPshDkmtcL/ShFu0p2tbY7DBS1mqQ==}
+    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}

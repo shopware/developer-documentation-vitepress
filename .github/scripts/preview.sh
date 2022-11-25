@@ -1,8 +1,9 @@
 #! /usr/bin/env bash
 set -e
 
-# run this script to mount current dir/docs/foo into ../developer-documentation-vitepress/demo/foo
+# run this script to SYMLINK dir/docs/foo into ../developer-documentation-vitepress/demo/foo
 # example: sh ../developer-documentation-vitepress/.github/scripts/preview.sh apps/docs/src frontends
+# this only works for DEV preview
 
 # prepare variables
 SRC=$PWD"/"$1
@@ -33,5 +34,4 @@ fi
 
 # run dev preview
 echo "Building parent"
-# cd ../developer-documentation-vitepress
 npm run dev --prefix ../developer-documentation-vitepress
