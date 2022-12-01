@@ -64,11 +64,12 @@ Sidebar can be configured by custom YML in your .md file (frontmatter).
 ```markdown
 
 \```
-sidebar:
+nav:
   title: Custom title
   position: 123
   class: custom-class
   nolink: true
+  hidden: true
 \```
 
 ```
