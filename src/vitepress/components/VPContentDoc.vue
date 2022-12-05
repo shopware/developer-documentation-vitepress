@@ -4,7 +4,7 @@ import { useData } from "vitepress";
 import VPContentDocOutline from "./VPContentDocOutline.vue";
 import VPContentDocFooter from "./VPContentDocFooter.vue";
 import type { Config } from "../config";
-import { VTLink, VTIconGitHub } from "../../core";
+import { VTLink, VTIconGitHub, VTIconStackOverflow } from "../../core";
 
 const { page, frontmatter, theme } = useData<Config>();
 
@@ -43,6 +43,7 @@ const pageClass = computed(() => {
         <slot name="content-top" />
         <main>
           <Content class="vt-doc" :class="pageClass" />
+
           <p
             class="edit-link"
             v-if="theme.editLink && frontmatter.editLink !== false"
@@ -52,6 +53,16 @@ const pageClass = computed(() => {
               theme.editLink.text
             }}</VTLink>
           </p>
+
+          <p
+            class="edit-link"
+            v-if="theme.editLink && frontmatter.stackOverflowLink !== false"
+          >
+            <VTIconStackOverflow class="vt-icon" />
+            <VTLink :href="'https://stackoverflow.com/questions/ask?tags=shopware'"
+                    :no-icon="true">Ask a question on StackOverflow</VTLink>
+          </p>
+
         </main>
         <slot name="content-bottom" />
         <VPContentDocFooter v-if="frontmatter.footer !== false" />
@@ -95,8 +106,11 @@ const pageClass = computed(() => {
 }
 
 .edit-link {
-  margin: 0 0 32px;
+  margin: 0 0 16px;
   /* text-align: center; */
+}
+.edit-link:last-child {
+  margin: 0 0 32px;
 }
 
 .edit-link .vt-link {
