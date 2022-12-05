@@ -28,6 +28,7 @@ The amount of topics to start with can be overwhelming. For that reason we have 
 
 If you prefer to dig into a specific topic directly, choose from one of the product areas. You can also find them on the left all the time.
 
+<PageRef path="/apps/checkout" />
 <PageRef page="./checkout/" title="Checkout" sub="Apply discounts, price calculations or control shipping method availabilities" />
 <PageRef page="./payment/" title="Payment" sub="Handle payments from different gateways or process refunds" />
 <PageRef page="./storefront/" title="Storefront" sub="Build extensions or themes for the customer storefront using templates or custom styles" />

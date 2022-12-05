@@ -5,6 +5,7 @@ import { isActive, isPartiallyActive } from "../support/utils";
 import { useData } from "vitepress";
 
 const props = defineProps<{
+  link: string,
   text: string;
   items: MenuItemWithLink[];
   showPartiallyActive?: boolean;
@@ -28,7 +29,12 @@ function hasActiveLink() {
   <section class="VPSidebarGroup">
     <div class="title">
       <h2 class="title-text" :class="{ active: hasActiveLink() }">
-        {{ text }}
+        <VPSidebarLink
+            v-if="link"
+            :item="{text, link}"
+            :showPartiallyActive="showPartiallyActive"
+            :link-class="null"/>
+        <template v-else>{{ text }}</template>
       </h2>
     </div>
 
@@ -55,5 +61,6 @@ function hasActiveLink() {
   font-weight: 600;
   color: var(--vt-c-text-1);
   transition: color 0.5s;
+  text-transform: uppercase;
 }
 </style>

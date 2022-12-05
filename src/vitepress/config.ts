@@ -99,6 +99,7 @@ export interface MultiSidebarConfig {
 }
 
 export interface SidebarGroup {
+  link?: string;
   text: string;
   items: Array<MenuItemWithLink | AdditionalMenuItemWithContext>;
 }

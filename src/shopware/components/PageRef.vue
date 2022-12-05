@@ -13,7 +13,7 @@
         <div class="flex-1">
           {{ title }}
           <div
-            v-if="sub.length > 0"
+            v-if="sub?.length > 0"
             class="mt-2 text-gray font-normal text-xs block"
           >
             {{ sub }}
@@ -24,33 +24,80 @@
   </div>
 </template>
 
-<script>
-import { useAttrs, ref } from "vue";
+<script setup>
+import {useAttrs, ref} from "vue";
+import {useConfig} from "../../vitepress/composables/config";
+import {useRoute} from "vitepress";
 
-export default {
-  setup() {
-    let attrs = useAttrs();
+const {config} = useConfig();
+const attrs = useAttrs();
+const route = useRoute();
 
-    let title = ref(attrs.title);
+const transformRelativeRoute = (url) => {
+  if (url.startsWith('/')) {
+    return url;
+  }
 
-    let page = ref(attrs.page);
+  let parentPath = route.path;
+  if (!parentPath.endsWith('/')) {
+    // remove last path, we are not in directory at the moment
+    parentPath = parentPath.split('/').reverse().slice(1).reverse().join('/');
+  } else {
+    // remove last /
+    parentPath = parentPath.substring(0, parentPath.length - 1);
+  }
 
-    let icon = ref(attrs.icon || "");
+  if (url.startsWith('./')) {
+    // remove . from url, keep the same level
+    return `${parentPath}${url.substring(1)}`;
+  }
 
-    let sub = ref(attrs.sub || "");
+  const splitPath = parentPath.split('/');
+  const countTwoDots = url.split('/').filter(part => part === '..').length;
 
-    let target = ref(attrs.target || "");
+  return `${splitPath.slice(0, splitPath.length - countTwoDots)}${url.substring('../'.length * countTwoDots)}`;
+}
 
-    let video = ref(attrs.video === "");
+const getSidebarItem = (attr) => {
+  // hardcoded title or sub/description
+  if (attrs[attr]) {
+    return attrs[attr];
+  }
 
-    return {
-      title,
-      page,
-      sub,
-      icon,
-      target,
-      video
-    };
-  },
-};
+  const url = attrs.page;
+  // cannot auto-resolve attrs for external or empty urls
+  if (!url || url.startsWith('https://') || url.startsWith('http://') || url.startsWith('//')) {
+    return attrs[attr];
+  }
+
+  const absolute = transformRelativeRoute(url);
+  const levels = absolute.substring(1).split('/');
+
+  const [firstLevel, secondLevel] = levels;
+  const firstLevelItem = config.value.sidebar[`/${firstLevel}/`];
+
+  const secondLevelItem = firstLevelItem?.find(({text}) => text.toLowerCase() === secondLevel.toLowerCase() || text.toLowerCase() === `${secondLevel.toLowerCase()}.html`);
+
+  if (!secondLevelItem) {
+    // @T00D00 - make it dynamic
+    return 'Cannot find second level item!';
+  }
+
+  const mapper = {
+    title: 'text',
+  };
+
+  return `${secondLevelItem[mapper[attr]] || attr}`;
+  // return `Building ${url}->${attr} | ${secondLevelItem[mapper[attr]] || attr}`;
+}
+
+const getAttr = (attr) => ref(getSidebarItem(attr));
+
+const page = ref(attrs.page);
+const icon = ref(attrs.icon || "");
+const target = ref(attrs.target || "");
+const video = ref(attrs.video === "");
+
+const title = getAttr('title');
+const sub = getAttr('sub');
 </script>

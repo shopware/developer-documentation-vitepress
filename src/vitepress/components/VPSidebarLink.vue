@@ -4,10 +4,13 @@ import { inject } from "vue";
 import { MenuItemWithLink } from "../../core";
 import { isActive, isPartiallyActive } from "../support/utils";
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   item: MenuItemWithLink;
   showPartiallyActive?: boolean;
-}>();
+  linkClass?: string;
+}>(), {
+  linkClass: 'link-text'
+});
 
 const { page } = useData();
 const closeSideBar = inject("close-sidebar") as () => void;
@@ -26,7 +29,7 @@ function activeMethod(currentPath: string, matchPath: string) {
     :href="item.link"
     @click="closeSideBar"
   >
-    <p class="link-text">{{ item.text }}</p>
+    <p :class="linkClass">{{ item.text }}</p>
   </a>
 </template>
 
@@ -47,7 +50,8 @@ function activeMethod(currentPath: string, matchPath: string) {
   transition: color 0.25s;
 }
 
-.link.active .link-text {
+.link.active .link-text,
+.title-text .link.active {
   font-weight: 600;
   color: var(--vt-c-brand);
   transition: color 0.25s;

@@ -1,20 +1,15 @@
 import { defineConfigWithTheme } from "vitepress";
-import type { Config as ThemeConfig, SidebarConfig } from "../../src/vitepress/config";
+import type { Config as ThemeConfig } from "../../src/vitepress/config";
 import baseConfig from "../../src/vitepress/config/baseConfig";
 
-import apps from "./sidebar/apps";
-import themes from "./sidebar/themes";
-import frontends from "./sidebar/frontends";
-import integrations from "./sidebar/integrations";
-import paas from "./sidebar/docs/products/paas";
+import sidebar from "./sidebar";
 
-const sidebar: SidebarConfig = {
-  "/apps/": apps,
-  "/themes/": themes,
-  "/frontends/": frontends,
-  "/integrations/": integrations,
-  "/docs/products/paas/": paas,
-};
+interface SidebarItem {
+  text: string,
+  description: string,
+  link: string,
+  items: SidebarItem[]
+}
 
 export default defineConfigWithTheme<ThemeConfig>({
   extends: baseConfig,
@@ -67,7 +62,24 @@ export default defineConfigWithTheme<ThemeConfig>({
     },
   },
 
-  vue: {
-    reactivityTransform: true,
-  },
+  async buildEnd(){
+    // @ts-ignore
+    const reduced = [];
+    const reduce = (tree: SidebarItem[]) => {
+      tree.forEach(item => {
+        const {text, description, link, items} = item;
+        reduced.push({text, description, link});
+        items && reduce(items)
+      })
+    }
+
+    Object.keys(sidebar)
+      // @ts-ignore
+      .forEach(key => reduce(sidebar[key]));
+
+    console.log(JSON.stringify(reduced).length);
+
+    //await console.log('BUILD END2', sidebar);
+    //throw "test"
+  }
 });

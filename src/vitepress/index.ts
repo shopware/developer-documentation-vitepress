@@ -23,12 +23,11 @@ const VPTheme: Theme = {
     // app.component('RegistrationForm', RegistrationForm),
     // app.component('LandingWrapper', LandingWrapper),
     // app.component('TopBar', TopBar),
-    app.component('PageRef', PageRef),
-    app.component('CodeBlock', CodeBlock),
-    app.component('Tabs', Tabs),
-    app.component('Tab', Tab)
-  }
-
+    app.component("PageRef", PageRef),
+      app.component("CodeBlock", CodeBlock),
+      app.component("Tabs", Tabs),
+      app.component("Tab", Tab);
+  },
 };
 
 export { VPTheme };

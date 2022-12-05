@@ -1,6 +1,9 @@
 import { SidebarGroup } from "../../../src/vitepress/config";
+import {readSidebar} from "../../../src/core/composables/Sidebar";
 
-const apps: SidebarGroup[] = [
+const apps: SidebarGroup[] = readSidebar('apps', './demo/apps/');
+
+/*const apps: SidebarGroup[] = [
   {
     text: "",
     items: [
@@ -129,6 +132,6 @@ const apps: SidebarGroup[] = [
       },
     ],
   },
-];
+];*/
 
 export default apps;

@@ -18,19 +18,25 @@ const {
 
 const navigation = require("./navigation")
 
+import { withMermaid } from "vitepress-plugin-mermaid";
+
 // for local-linked development
 const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
 
 /**
  * @type {() => Promise<import('vitepress').UserConfig>}
  */
-module.exports = async () => ({
+module.exports = async () => withMermaid({
   vite: {
     ssr: {
       noExternal: deps,
     },
     optimizeDeps: {
       exclude: deps,
+    },
+    resolve: {
+      // for mounting static sub-repos
+      preserveSymlinks: true
     },
     plugins: [
       Unocss.default(

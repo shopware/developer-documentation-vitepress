@@ -16,14 +16,14 @@ Vitepress provides a set of markdown extensions that can be used to style code b
 
 A block component to reference other pages in the documentation or external pages.
 
-| Property | required | Description |
-| --- | --- | --- |
-| title | true | Title of the page |
-| page | true | Path to the page |
-| sub | false | Subtitle of the page |
-| icon | false | Icon of the reference |
-| target | false | href target of the reference |
-| video | false | Set, if a video is refernced |
+| Property | required | Description                   |
+|----------|----------|-------------------------------|
+| page     | true     | Path to the page              |
+| title    | false    | Title of the page             |
+| sub      | false    | Subtitle of the page          |
+| icon     | false    | Icon of the reference         |
+| target   | false    | href target of the reference  |
+| video    | false    | Set, if a video is referenced |
 
 ```vue-html
 <PageRef
@@ -49,9 +49,9 @@ A component to organize content of different types in tabs.
 
 Each tab is defined by a `Tab` component.
 
-| Property | required | Description |
-| --- | --- | --- |
-| title | true | Title of the tab |
+| Property | required | Description      |
+|----------|----------|------------------|
+| title    | true     | Title of the tab |
 
 Each tab can contain arbitrary content.
 
@@ -121,9 +121,9 @@ Pass this JSON within the request body of your API call.
 
 Code blocks are used to display code snippets together with a title or reference to a file.
 
-| Property | required | Description |
-| --- | --- | --- |
-| title | false | Title of the code block |
+| Property | required | Description             |
+|----------|----------|-------------------------|
+| title    | false    | Title of the code block |
 
 ````vue-html
 <CodeBlock title="src/index.html">
