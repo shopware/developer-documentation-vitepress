@@ -16,9 +16,9 @@ const {
   transformerVariantGroup,
 } = require("unocss");
 
-const navigation = require("./navigation")
+const navigation = require("./navigation");
 
-import { withMermaid } from "vitepress-plugin-mermaid";
+const { withMermaid } = require("vitepress-plugin-mermaid");
 
 // for local-linked development
 const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
