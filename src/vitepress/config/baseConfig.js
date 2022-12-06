@@ -16,7 +16,9 @@ const {
   transformerVariantGroup,
 } = require("unocss");
 
-const navigation = require("./navigation");
+// remove navigation from the library
+// const navigation = require("./navigation");
+const navigation = [];
 
 const { withMermaid } = require("vitepress-plugin-mermaid");
 
