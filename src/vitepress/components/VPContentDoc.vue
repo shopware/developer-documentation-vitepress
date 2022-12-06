@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { useData } from "vitepress";
+import {useData, useRoute} from "vitepress";
 import VPContentDocOutline from "./VPContentDocOutline.vue";
 import VPContentDocFooter from "./VPContentDocFooter.vue";
 import type { Config } from "../config";
@@ -8,11 +8,34 @@ import { VTLink, VTIconGitHub, VTIconStackOverflow } from "../../core";
 
 const { page, frontmatter, theme } = useData<Config>();
 
+const route = useRoute();
+
 const hashMatch = /#(\w+)$/;
 
+const getMatchedRepos = (items) => {
+  return items.reduce((reduced, item) => {
+    // compare nav items with defined link and repo
+    if (item.link && item.repo && route.path.match(`^${item.link}`)) {
+      reduced.push(item.repo);
+    }
+
+    // check for sub-items, deep-first
+    if (item.items) {
+      reduced = [
+        ...getMatchedRepos(item.items),
+        ...reduced,
+      ];
+    }
+
+    return reduced;
+  }, []);
+}
+
 const repoUrl = computed(() => {
-  const repo =
-    theme.value.editLink?.repo || "shopware/developer-documentation-vuepress";
+  const repo = getMatchedRepos(theme.value.nav)[0]
+      || theme.value.editLink?.repo
+      || "shopware/developer-documentation-vuepress";
+
   const branch = repo.match(hashMatch)?.[1] || "main";
   return `https://github.com/${repo}/edit/${branch}/src/${page.value.relativePath}`;
 });
