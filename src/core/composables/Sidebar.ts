@@ -349,3 +349,30 @@ export function makeSidebarConfig(
 
   return config;
 }
+
+export const buildSidebarNav = (links) => links.reduce((data, item) => {
+  const {link, text, items, from, repo} = item;
+
+  // build sidebar
+  if (link) {
+    data.sidebar[link] = readSidebar(link.substring(1, link.length - 2), from, false);
+  }
+
+  // add to navigation
+  const nav = {
+    text,
+    link,
+  };
+  if (link) {
+    nav.activeMatch = `^${link}`;
+  }
+  if (repo) {
+    nav.repo = repo;
+  }
+  if (items) {
+    nav.items = items;
+  }
+  data.nav.push(nav);
+
+  return data;
+}, {sidebar: {}, nav: []});
