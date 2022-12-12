@@ -355,7 +355,7 @@ export const buildSidebarNav = (links) => links.reduce((data, item) => {
 
   // build sidebar
   if (link) {
-    data.sidebar[link] = readSidebar(link.substring(1, link.length - 2), from, false);
+    data.sidebar[link] = readSidebar(link.substring(1, link.length - 1), from, false);
   }
 
   // add to navigation

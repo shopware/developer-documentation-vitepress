@@ -10,13 +10,14 @@ const { page, frontmatter, theme } = useData<Config>();
 
 const route = useRoute();
 
-const hashMatch = /#(\w+)$/;
-
 const getMatchedRepos = (items) => {
   return items.reduce((reduced, item) => {
     // compare nav items with defined link and repo
     if (item.link && item.repo && route.path.match(`^${item.link}`)) {
-      reduced.push(item.repo);
+      reduced.push({
+        repo: item.repo,
+        mount: item.mount,
+      });
     }
 
     // check for sub-items, deep-first
@@ -32,12 +33,15 @@ const getMatchedRepos = (items) => {
 }
 
 const repoUrl = computed(() => {
-  const repo = getMatchedRepos(theme.value.nav)[0]
+  const matchedRepo = getMatchedRepos(theme.value.nav)[0];
+  const repo = matchedRepo?.repo
       || theme.value.editLink?.repo
       || "shopware/developer-documentation-vuepress";
 
-  const branch = repo.match(hashMatch)?.[1] || "main";
-  return `https://github.com/${repo}/edit/${branch}/src/${page.value.relativePath}`;
+  const branch = repo.match(/#(\w+)$/)?.[1] || "main";
+  const folder = matchedRepo?.mount
+      || 'src';
+  return `https://github.com/${repo}/edit/${branch}/${folder}/${page.value.relativePath}`;
 });
 
 const pageClass = computed(() => {
