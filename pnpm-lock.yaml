@@ -8,6 +8,8 @@ specifiers:
   '@types/body-scroll-lock': ^3.1.0
   '@types/estree': ^0.0.52
   '@types/fs-extra': ^9.0.13
+  '@types/markdown-it': ^12.2.3
+  '@types/node': ^18.11.14
   '@types/remove-markdown': ^0.3.1
   '@vueuse/core': ^9.5.0
   axios: ^0.27.2
@@ -22,7 +24,7 @@ specifiers:
   terser: ^5.15.1
   typescript: ^4.9.3
   unocss: ^0.46.5
-  vitepress: 1.0.0-alpha.31
+  vitepress: 1.0.0-alpha.32
   vitepress-plugin-mermaid: ^2.0.8
   vue: ^3.2.45
 
@@ -40,18 +42,20 @@ dependencies:
   normalize.css: 8.0.1
   shiki: 0.11.1
   unocss: 0.46.5
-  vitepress-plugin-mermaid: 2.0.8_gg23ocu2dw6mtxracnhuatgtly
+  vitepress-plugin-mermaid: 2.0.8_hvm2zxz7tcjwou7d7fw4h4xrqa
 
 devDependencies:
   '@types/body-scroll-lock': 3.1.0
   '@types/estree': 0.0.52
   '@types/fs-extra': 9.0.13
+  '@types/markdown-it': 12.2.3
+  '@types/node': 18.11.17
   '@types/remove-markdown': 0.3.1
   prettier: 2.7.1
   remove-markdown: 0.5.0
   terser: 5.15.1
   typescript: 4.9.3
-  vitepress: 1.0.0-alpha.31_terser@5.15.1
+  vitepress: 1.0.0-alpha.32_6dih7kb24lmnzfb2dpzu2iqgq4
   vue: 3.2.45
 
 packages:
@@ -1254,7 +1258,7 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 18.11.9
+      '@types/node': 18.11.17
     dev: true
 
   /@types/hast/2.3.4:
@@ -1271,6 +1275,17 @@ packages:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: false
 
+  /@types/linkify-it/3.0.2:
+    resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
+    dev: true
+
+  /@types/markdown-it/12.2.3:
+    resolution: {integrity: sha512-GKMHFfv3458yYy+v/N8gjufHO6MSZKCOXpZc5GXIWWy8uldwfmPn98vp81gZ5f9SVw8YYBctgfJ22a2d7AOMeQ==}
+    dependencies:
+      '@types/linkify-it': 3.0.2
+      '@types/mdurl': 1.0.2
+    dev: true
+
   /@types/mdast/3.0.10:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
@@ -1279,11 +1294,9 @@ packages:
 
   /@types/mdurl/1.0.2:
     resolution: {integrity: sha512-eC4U9MlIcu2q0KQmXszyn5Akca/0jrQmwDRgpAMJai7qBWq4amIQhZyNau4VYGtCeALvW1/NtjzJJ567aZxfKA==}
-    dev: false
 
-  /@types/node/18.11.9:
-    resolution: {integrity: sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg==}
-    dev: true
+  /@types/node/18.11.17:
+    resolution: {integrity: sha512-HJSUJmni4BeDHhfzn6nF0sVmd1SMezP7/4F0Lq+aXzmp2xm9O7WXrUtHW/CHlYVtZUbByEvWidHqRtcJXGF2Ng==}
 
   /@types/parse5/6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
@@ -1493,7 +1506,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.0.0_terser@5.15.1
+      vite: 4.0.0_6dih7kb24lmnzfb2dpzu2iqgq4
       vue: 3.2.45
 
   /@vue/compiler-core/3.2.45:
@@ -4857,7 +4870,7 @@ packages:
       vfile-message: 3.1.2
     dev: false
 
-  /vite/4.0.0_terser@5.15.1:
+  /vite/4.0.0_6dih7kb24lmnzfb2dpzu2iqgq4:
     resolution: {integrity: sha512-ynad+4kYs8Jcnn8J7SacS9vAbk7eMy0xWg6E7bAhS1s79TK+D7tVFGXVZ55S7RNLRROU1rxoKlvZ/qjaB41DGA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -4882,6 +4895,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.11.17
       esbuild: 0.16.4
       postcss: 8.4.19
       resolve: 1.22.1
@@ -4890,7 +4904,7 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
 
-  /vitepress-plugin-mermaid/2.0.8_gg23ocu2dw6mtxracnhuatgtly:
+  /vitepress-plugin-mermaid/2.0.8_hvm2zxz7tcjwou7d7fw4h4xrqa:
     resolution: {integrity: sha512-ywWxTeg9kMv7ZPf/igCBF4ZHhWZAyRtbPnA12ICQuNK2AMp7r5IHOfnuX1EJQf8gNdsh8bcvvSvm8Ll92fdOTw==}
     peerDependencies:
       mermaid: ^8.0.0 || ^9.0.0
@@ -4898,11 +4912,11 @@ packages:
       vitepress: ^0.21.6 || ^1.0.0 || ^1.0.0-alpha
     dependencies:
       mermaid: 9.1.7
-      vitepress: 1.0.0-alpha.31_terser@5.15.1
+      vitepress: 1.0.0-alpha.32_6dih7kb24lmnzfb2dpzu2iqgq4
     dev: false
 
-  /vitepress/1.0.0-alpha.31_terser@5.15.1:
-    resolution: {integrity: sha512-FWFXLs7WLbFbemxjBWo2S2+qUZCIoeLLyAKfVUpIu3LUB8oQ8cyIANRGO6f6zsM51u2bvJU9Sm+V6Z0WjOWS2Q==}
+  /vitepress/1.0.0-alpha.32_6dih7kb24lmnzfb2dpzu2iqgq4:
+    resolution: {integrity: sha512-Q45N1cLdRr8MAu/+wAKKow7CNQD4sNBlSNsW1UxYfkvSgwPN/dlEmpEkQl/uOpE3C1kv3jvvEJVY0RAIaJFWYQ==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.0
@@ -4912,7 +4926,7 @@ packages:
       '@vueuse/core': 9.6.0_vue@3.2.45
       body-scroll-lock: 4.0.0-beta.0
       shiki: 0.11.1
-      vite: 4.0.0_terser@5.15.1
+      vite: 4.0.0_6dih7kb24lmnzfb2dpzu2iqgq4
       vue: 3.2.45
     transitivePeerDependencies:
       - '@algolia/client-search'

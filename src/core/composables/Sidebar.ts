@@ -266,6 +266,19 @@ function getMeta(folder: string, file: string): ObjectMeta {
 }
 
 export function readSidebar(as: string, folder = "./src/", root = false) {
+  // allow missing mount points in dev env
+  if (process.env.SHOPWARE_DEV) {
+    try {
+      if (!fs.statSync(folder).isDirectory()) {
+        console.error(`WARNING: Should be a directory ${folder}`);
+        return [];
+      }
+    } catch (e) {
+      console.error(`WARNING: Missing directory ${folder}\n`, e);
+      return [];
+    }
+  }
+
   return fs
     .readdirSync(folder)
     .reduce(
