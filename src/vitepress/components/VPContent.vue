@@ -5,12 +5,14 @@ import VPPage from './VPPage.vue'
 import VPHome from './VPHome.vue'
 import VPDoc from './VPDoc.vue'
 import { inject } from 'vue'
+import { useCopyCode } from "../composables/copy-code";
 
 const route = useRoute()
 const { frontmatter } = useData()
 const { hasSidebar } = useSidebar()
 
 const NotFound = inject('NotFound')
+useCopyCode();
 </script>
 
 <template>

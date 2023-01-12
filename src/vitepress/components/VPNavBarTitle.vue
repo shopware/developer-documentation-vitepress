@@ -8,21 +8,34 @@ const { hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <div class="VPNavBarTitle" :class="{ 'has-sidebar': hasSidebar }">
-    <a class="title" :href="site.base">
-      <slot name="nav-bar-title-before" />
-      <VPImage class="logo" :image="theme.logo" />
-      <template v-if="theme.siteTitle">{{ theme.siteTitle }}</template>
-      <template v-else-if="theme.siteTitle === undefined">{{ site.title }}</template>
-      <slot name="nav-bar-title-after" />
+  <div class="flex items-center">
+    <a class="VPNavBarTitle" :href="withBase('/')" :class="{ 'has-sidebar': hasSidebar }">
+      <img
+          src="./../assets/shopware-docs.svg"
+          alt="Shopware"
+          class="VPNavBarImage"
+      />
     </a>
+    <a :href="withBase('/installation.html')"
+    ><span class="accent text-xl">EA</span></a
+    >
   </div>
 </template>
+
+<script setup>
+import { withBase } from "vitepress";
+</script>
 
 <style scoped>
 .VPNavBarTitle {
   flex-shrink: 0;
   border-bottom: 1px solid transparent;
+  color: var(--vt-c-brand);
+}
+
+.VPNavBarImage {
+  width: 90%;
+  height: 40px;
 }
 
 @media (min-width: 960px) {

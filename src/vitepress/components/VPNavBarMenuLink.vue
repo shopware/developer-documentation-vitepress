@@ -36,12 +36,13 @@ const { page } = useData()
   line-height: var(--vp-nav-height-mobile);
   font-size: 14px;
   font-weight: 500;
-  color: var(--vp-c-text-1);
+  color: #eee; /* Shopware Theme */
   transition: color 0.25s;
 }
 
 .VPNavBarMenuLink.active {
-  color: var(--vp-c-brand);
+  border-bottom: 1px solid var(--vt-c-brand);
+  color: var(--vt-c-brand);
 }
 
 .VPNavBarMenuLink:hover {

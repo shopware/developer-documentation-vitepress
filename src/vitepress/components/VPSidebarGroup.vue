@@ -2,16 +2,19 @@
 import type { DefaultTheme } from 'vitepress/theme'
 import { ref, watchEffect } from 'vue'
 import { useData } from 'vitepress'
-import { isActive } from '../support/utils.js'
+import { isActive, isPartiallyActive } from '../support/utils.js'
 import VPIconPlusSquare from './icons/VPIconPlusSquare.vue'
 import VPIconMinusSquare from './icons/VPIconMinusSquare.vue'
 import VPSidebarLink from './VPSidebarLink.vue'
+import { MenuItemWithLink } from "../../core";
 
 const props = defineProps<{
   text?: string
+  link: string
   items: DefaultTheme.SidebarItem[]
   collapsible?: boolean
   collapsed?: boolean
+  showPartiallyActive?: boolean
 }>()
 
 const collapsed = ref(false)
@@ -19,9 +22,19 @@ watchEffect(() => {
   collapsed.value = !!(props.collapsible && props.collapsed)
 })
 
+function activeMethod(currentPath: string, matchPath?: string) {
+  if (props.showPartiallyActive) {
+    return isPartiallyActive(currentPath, matchPath);
+  }
+  return isActive(currentPath, matchPath);
+}
+
 const { page } = useData()
 watchEffect(() => {
-  if(props.items.some((item) => { return isActive(page.value.relativePath, item.link) })){
+  const { relativePath } = page.value;
+  if(props.items.some((item) => {
+    return activeMethod(relativePath, item.link);
+  })){
     collapsed.value = false
   }
 })
@@ -41,7 +54,14 @@ function toggle() {
       :role="collapsible ? 'button' : undefined"
       @click="toggle"
     >
-      <h2 v-html="text" class="title-text"></h2>
+      <h2 class="title-text" :class="{ active: hasActiveLink() }">
+        <VPSidebarLink
+            v-if="link"
+            :item="{text, link}"
+            :showPartiallyActive="showPartiallyActive"
+            :link-class="null"/>
+        <template v-else>{{ text }}</template>
+      </h2>
       <div class="action">
         <VPIconMinusSquare class="icon minus" />
         <VPIconPlusSquare class="icon plus" />
@@ -50,7 +70,7 @@ function toggle() {
 
     <div class="items">
       <template v-for="item in items" :key="item.link">
-        <VPSidebarLink :item="item" />
+        <VPSidebarLink :item="item" :showPartiallyActive="showPartiallyActive" />
       </template>
     </div>
   </section>
