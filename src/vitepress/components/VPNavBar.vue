@@ -1,7 +1,9 @@
 <script lang="ts" setup>
+import { useSidebar } from '../composables/sidebar.js'
 import VPNavBarTitle from './VPNavBarTitle.vue'
 import VPNavBarSearch from './VPNavBarSearch.vue'
 import VPNavBarMenu from './VPNavBarMenu.vue'
+import VPNavBarTranslations from './VPNavBarTranslations.vue'
 import VPNavBarAppearance from './VPNavBarAppearance.vue'
 import VPNavBarSocialLinks from './VPNavBarSocialLinks.vue'
 import VPNavBarExtra from './VPNavBarExtra.vue'
@@ -10,19 +12,31 @@ import VPNavBarHamburger from './VPNavBarHamburger.vue'
 defineProps<{
   isScreenOpen: boolean
 }>()
+
+defineEmits<{
+  (e: 'toggle-screen'): void
+}>()
+
+const { hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <div class="VPNavBar">
+  <div class="VPNavBar" :class="{ 'has-sidebar' : hasSidebar }">
     <div class="container">
-      <VPNavBarTitle />
+      <VPNavBarTitle>
+        <template #nav-bar-title-before><slot name="nav-bar-title-before" /></template>
+        <template #nav-bar-title-after><slot name="nav-bar-title-after" /></template>
+      </VPNavBarTitle>
 
       <div class="content">
+        <slot name="nav-bar-content-before" />
         <VPNavBarSearch class="search" />
         <VPNavBarMenu class="menu" />
+        <VPNavBarTranslations class="translations" />
         <VPNavBarAppearance class="appearance" />
         <VPNavBarSocialLinks class="social-links" />
         <VPNavBarExtra class="extra" />
+        <slot name="nav-bar-content-after" />
         <VPNavBarHamburger
           class="hamburger"
           :active="isScreenOpen"
@@ -36,23 +50,40 @@ defineProps<{
 <style scoped>
 .VPNavBar {
   position: relative;
-  border-bottom: 1px solid var(--vt-c-divider-light);
-  padding: 0 12px 0 24px;
-  height: var(--vt-nav-height);
-  background-color: var(--sw-nav-bg);
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--vp-c-divider-light);
+  padding: 0 8px 0 24px;
+  height: var(--vp-nav-height-mobile);
   transition: border-color 0.5s, background-color 0.5s;
+  pointer-events: none;
 }
 
 @media (min-width: 768px) {
   .VPNavBar {
-    padding: 0 12px 0 32px;
+    padding: 0 32px;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 960px) {
   .VPNavBar {
-    padding: 0 32px;
+    height: var(--vp-nav-height-desktop);
+    border-bottom: 0;
+  }
+
+  .VPNavBar.has-sidebar .content {
+    margin-right: -100vw;
+    padding-right: 100vw;
+    background: var(--vp-c-bg-alpha-without-backdrop);
+  }
+
+  @supports (
+    (backdrop-filter: saturate(50%) blur(8px)) or
+      (-webkit-backdrop-filter: saturate(50%) blur(8px))
+  ) {
+    .VPNavBar.has-sidebar .content {
+      -webkit-backdrop-filter: saturate(50%) blur(8px);
+      backdrop-filter: saturate(50%) blur(8px);
+      background: var(--vp-c-bg-alpha-with-backdrop);
+    }
   }
 }
 
@@ -60,7 +91,12 @@ defineProps<{
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: var(--vp-screen-max-width);
+  max-width: calc(var(--vp-layout-max-width) - 64px);
+  pointer-events: none;
+}
+
+.container :deep(*) {
+  pointer-events: auto;
 }
 
 .content {
@@ -70,13 +106,29 @@ defineProps<{
   flex-grow: 1;
 }
 
-.menu + .appearance {
+.menu + .translations::before,
+.menu + .appearance::before,
+.menu + .social-links::before,
+.translations + .appearance::before,
+.appearance + .social-links::before {
+  margin-right: 8px;
   margin-left: 8px;
+  width: 1px;
+  height: 24px;
+  background-color: var(--vp-c-divider-light);
+  content: "";
 }
-.menu + .social-links {
-  margin-left: 12px;
+
+.menu + .appearance::before,
+.translations + .appearance::before {
+  margin-right: 16px;
 }
-.appearance + .social-links {
-  margin-left: 12px;
+
+.appearance + .social-links::before {
+  margin-left: 16px;
+}
+
+.social-links {
+  margin-right: -8px;
 }
 </style>

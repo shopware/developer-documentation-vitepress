@@ -1,66 +1,128 @@
 <script lang="ts" setup>
-import { MenuItemWithLink } from "../../core";
-import VPSidebarLink from "./VPSidebarLink.vue";
-import { isActive, isPartiallyActive } from "../support/utils";
-import { useData } from "vitepress";
+import type { DefaultTheme } from 'vitepress/theme'
+import { ref, watchEffect } from 'vue'
+import { useData } from 'vitepress'
+import { isActive } from '../support/utils.js'
+import VPIconPlusSquare from './icons/VPIconPlusSquare.vue'
+import VPIconMinusSquare from './icons/VPIconMinusSquare.vue'
+import VPSidebarLink from './VPSidebarLink.vue'
 
 const props = defineProps<{
-  link: string,
-  text: string;
-  items: MenuItemWithLink[];
-  showPartiallyActive?: boolean;
-}>();
+  text?: string
+  items: DefaultTheme.SidebarItem[]
+  collapsible?: boolean
+  collapsed?: boolean
+}>()
 
-function activeMethod(currentPath: string, matchPath: string) {
-  if (props.showPartiallyActive) {
-    return isPartiallyActive(currentPath, matchPath);
+const collapsed = ref(false)
+watchEffect(() => {
+  collapsed.value = !!(props.collapsible && props.collapsed)
+})
+
+const { page } = useData()
+watchEffect(() => {
+  if(props.items.some((item) => { return isActive(page.value.relativePath, item.link) })){
+    collapsed.value = false
   }
-  return isActive(currentPath, matchPath);
-}
+})
 
-const { page } = useData();
-function hasActiveLink() {
-  const { relativePath } = page.value;
-  return props.items.some((item) => activeMethod(relativePath, item.link));
+function toggle() {
+  if (props.collapsible) {
+    collapsed.value = !collapsed.value
+  }
 }
 </script>
 
 <template>
-  <section class="VPSidebarGroup">
-    <div class="title">
-      <h2 class="title-text" :class="{ active: hasActiveLink() }">
-        <VPSidebarLink
-            v-if="link"
-            :item="{text, link}"
-            :showPartiallyActive="showPartiallyActive"
-            :link-class="null"/>
-        <template v-else>{{ text }}</template>
-      </h2>
+  <section class="VPSidebarGroup" :class="{ collapsible, collapsed }">
+    <div
+      v-if="text"
+      class="title"
+      :role="collapsible ? 'button' : undefined"
+      @click="toggle"
+    >
+      <h2 v-html="text" class="title-text"></h2>
+      <div class="action">
+        <VPIconMinusSquare class="icon minus" />
+        <VPIconPlusSquare class="icon plus" />
+      </div>
     </div>
 
-    <template v-for="item in items" :key="item.link">
-      <VPSidebarLink :item="item" :showPartiallyActive="showPartiallyActive" />
-    </template>
+    <div class="items">
+      <template v-for="item in items" :key="item.link">
+        <VPSidebarLink :item="item" />
+      </template>
+    </div>
   </section>
 </template>
 
 <style scoped>
 .title {
-  padding: 6px 0;
-}
-
-@media (min-width: 960px) {
-  .title {
-    padding: 4px 0;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
 }
 
 .title-text {
+  padding-top: 6px;
+  padding-bottom: 6px;
   line-height: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--vt-c-text-1);
-  transition: color 0.5s;
-  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--vp-c-text-1);
+}
+
+.action {
+  display: none;
+  position: relative;
+  margin-right: -8px;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  color: var(--vp-c-text-3);
+  transition: color 0.25s;
+}
+
+.VPSidebarGroup.collapsible .action {
+  display: block;
+}
+
+.VPSidebarGroup.collapsible .title {
+  cursor: pointer;
+}
+
+.title:hover .action {
+  color: var(--vp-c-text-2);
+}
+
+.icon {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.icon.minus { opacity: 1; }
+.icon.plus  { opacity: 0; }
+
+.VPSidebarGroup.collapsed .icon.minus { opacity: 0; }
+.VPSidebarGroup.collapsed .icon.plus  { opacity: 1; }
+
+.items {
+  overflow: hidden;
+}
+
+.VPSidebarGroup.collapsed .items {
+  margin-bottom: -22px;
+  max-height: 0;
+}
+
+@media (min-width: 960px) {
+  .VPSidebarGroup.collapsed .items {
+    margin-bottom: -14px;
+  }
 }
 </style>

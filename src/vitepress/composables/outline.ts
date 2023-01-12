@@ -1,134 +1,180 @@
-import { onMounted, onUnmounted, onUpdated, Ref } from "vue";
-import { Header } from "vitepress";
-import { useMediaQuery } from "@vueuse/core";
-import { MenuItemWithLink } from "../../core";
+import type { DefaultTheme } from 'vitepress/theme'
+import { onMounted, onUnmounted, onUpdated, type Ref } from 'vue'
+import type { Header } from '../../shared.js'
+import { useAside } from '../composables/aside.js'
+import { throttleAndDebounce } from '../support/utils.js'
 
-interface HeaderWithChildren extends Header {
-  children?: Header[];
-  hidden?: boolean;
+// magic number to avoid repeated retrieval
+const PAGE_OFFSET = 71
+
+export type MenuItem = Omit<Header, 'slug' | 'children'> & {
+  children?: MenuItem[]
 }
 
-interface MenuItemWithLinkAndChildren extends MenuItemWithLink {
-  children?: MenuItemWithLinkAndChildren[];
-  hidden?: boolean;
+export function getHeaders(pageOutline: DefaultTheme.Config['outline']) {
+  if (pageOutline === false) return []
+  let updatedHeaders: MenuItem[] = []
+  document
+    .querySelectorAll<HTMLHeadingElement>('h2, h3, h4, h5, h6')
+    .forEach((el) => {
+      if (el.textContent && el.id) {
+        updatedHeaders.push({
+          level: Number(el.tagName[1]),
+          title: el.innerText.replace(/\s+#\s*$/, ''),
+          link: `#${el.id}`
+        })
+      }
+    })
+  return resolveHeaders(updatedHeaders, pageOutline)
 }
 
-export function resolveHeaders(headers: HeaderWithChildren[]) {
-  return mapHeaders(groupHeaders(headers));
+export function resolveHeaders(
+  headers: MenuItem[],
+  levelsRange: Exclude<DefaultTheme.Config['outline'], false> = 2
+) {
+  const levels: [number, number] =
+    typeof levelsRange === 'number'
+      ? [levelsRange, levelsRange]
+      : levelsRange === 'deep'
+      ? [2, 6]
+      : levelsRange
+
+  return groupHeaders(headers, levels)
 }
 
-function groupHeaders(headers: Header[]): HeaderWithChildren[] {
-  headers = headers.map((h) => Object.assign({}, h));
-  let lastH2: HeaderWithChildren | undefined;
-  for (const h of headers) {
-    if (h.level === 2) {
-      lastH2 = h;
-    } else if (lastH2 && h.level <= 3) {
-      (lastH2.children || (lastH2.children = [])).push(h);
+function groupHeaders(headers: MenuItem[], levelsRange: [number, number]) {
+  const result: MenuItem[] = []
+
+  headers = headers.map((h) => ({ ...h }))
+  headers.forEach((h, index) => {
+    if (h.level >= levelsRange[0] && h.level <= levelsRange[1]) {
+      if (addToParent(index, headers, levelsRange)) {
+        result.push(h)
+      }
+    }
+  })
+
+  return result
+}
+
+function addToParent(
+  currIndex: number,
+  headers: MenuItem[],
+  levelsRange: [number, number]
+) {
+  if (currIndex === 0) {
+    return true
+  }
+
+  const currentHeader = headers[currIndex]
+  for (let index = currIndex - 1; index >= 0; index--) {
+    const header = headers[index]
+
+    if (
+      header.level < currentHeader.level &&
+      header.level >= levelsRange[0] &&
+      header.level <= levelsRange[1]
+    ) {
+      if (header.children == null) header.children = []
+      header.children.push(currentHeader)
+      return false
     }
   }
-  return headers.filter((h) => h.level === 2);
-}
 
-function mapHeaders(
-  headers: HeaderWithChildren[]
-): MenuItemWithLinkAndChildren[] {
-  return headers.map((header) => ({
-    text: header.title,
-    link: `#${header.slug}`,
-    children: header.children ? mapHeaders(header.children) : undefined,
-    hidden: header.hidden,
-  }));
+  return true
 }
 
 export function useActiveAnchor(
   container: Ref<HTMLElement>,
-  bg: Ref<HTMLElement>
+  marker: Ref<HTMLElement>
 ) {
-  const isOutlineEnabled = useMediaQuery("(min-width: 1280px)");
-  const onScroll = throttleAndDebounce(setActiveLink, 100);
+  const { isAsideEnabled } = useAside()
 
-  function setActiveLink(): void {
-    if (!isOutlineEnabled.value) {
-      return;
+  const onScroll = throttleAndDebounce(setActiveLink, 100)
+
+  let prevActiveLink: HTMLAnchorElement | null = null
+
+  onMounted(() => {
+    requestAnimationFrame(setActiveLink)
+    window.addEventListener('scroll', onScroll)
+  })
+
+  onUpdated(() => {
+    // sidebar update means a route change
+    activateLink(location.hash)
+  })
+
+  onUnmounted(() => {
+    window.removeEventListener('scroll', onScroll)
+  })
+
+  function setActiveLink() {
+    if (!isAsideEnabled.value) {
+      return
     }
 
     const links = [].slice.call(
-      container.value.querySelectorAll(".outline-link")
-    ) as HTMLAnchorElement[];
+      container.value.querySelectorAll('.outline-link')
+    ) as HTMLAnchorElement[]
 
     const anchors = [].slice
-      .call(document.querySelectorAll(".content .header-anchor"))
-      .filter((anchor: HTMLAnchorElement) =>
-        links.some((link) => link.hash === anchor.hash)
-      ) as HTMLAnchorElement[];
+      .call(document.querySelectorAll('.content .header-anchor'))
+      .filter((anchor: HTMLAnchorElement) => {
+        return links.some((link) => {
+          return link.hash === anchor.hash && anchor.offsetParent !== null
+        })
+      }) as HTMLAnchorElement[]
+
+    const scrollY = window.scrollY
+    const innerHeight = window.innerHeight
+    const offsetHeight = document.body.offsetHeight
+    const isBottom = Math.abs(scrollY + innerHeight - offsetHeight) < 1
 
     // page bottom - highlight last one
-    if (
-      anchors.length &&
-      window.scrollY + window.innerHeight === document.body.offsetHeight
-    ) {
-      activateLink(anchors[anchors.length - 1].hash);
-      return;
+    if (anchors.length && isBottom) {
+      activateLink(anchors[anchors.length - 1].hash)
+      return
     }
 
     for (let i = 0; i < anchors.length; i++) {
-      const anchor = anchors[i];
-      const nextAnchor = anchors[i + 1];
+      const anchor = anchors[i]
+      const nextAnchor = anchors[i + 1]
 
-      const [isActive, hash] = isAnchorActive(i, anchor, nextAnchor);
+      const [isActive, hash] = isAnchorActive(i, anchor, nextAnchor)
 
       if (isActive) {
-        history.replaceState(null, document.title, hash ? hash : " ");
-        activateLink(hash);
-        return;
+        activateLink(hash)
+        return
       }
     }
   }
 
-  let prevActiveLink: HTMLAnchorElement | null = null;
-
-  function activateLink(hash: string | null): void {
+  function activateLink(hash: string | null) {
     if (prevActiveLink) {
-      prevActiveLink.classList.remove("active");
+      prevActiveLink.classList.remove('active')
     }
 
-    const activeLink = (prevActiveLink =
-      hash == null
-        ? null
-        : (container.value.querySelector(
-            `a[href="${decodeURIComponent(hash)}"]`
-          ) as HTMLAnchorElement));
+    if (hash !== null) {
+      prevActiveLink = container.value.querySelector(
+        `a[href="${decodeURIComponent(hash)}"]`
+      )
+    }
+
+    const activeLink = prevActiveLink
+
     if (activeLink) {
-      activeLink.classList.add("active");
-      bg.value.style.opacity = "1";
-      bg.value.style.top = activeLink.offsetTop + 33 + "px";
+      activeLink.classList.add('active')
+      marker.value.style.top = activeLink.offsetTop + 33 + 'px'
+      marker.value.style.opacity = '1'
     } else {
-      bg.value.style.opacity = "0";
-      bg.value.style.top = "33px";
+      marker.value.style.top = '33px'
+      marker.value.style.opacity = '0'
     }
   }
-
-  onMounted(() => {
-    requestAnimationFrame(setActiveLink);
-    window.addEventListener("scroll", onScroll);
-  });
-
-  onUpdated(() => {
-    // sidebar update means a route change
-    activateLink(location.hash);
-  });
-
-  onUnmounted(() => {
-    window.removeEventListener("scroll", onScroll);
-  });
 }
 
-// magic number to avoid repeated retrieval
-const pageOffset = 56;
-
 function getAnchorTop(anchor: HTMLAnchorElement): number {
-  return anchor.parentElement!.offsetTop - pageOffset - 15;
+  return anchor.parentElement!.offsetTop - PAGE_OFFSET
 }
 
 function isAnchorActive(
@@ -136,40 +182,19 @@ function isAnchorActive(
   anchor: HTMLAnchorElement,
   nextAnchor: HTMLAnchorElement | undefined
 ): [boolean, string | null] {
-  const scrollTop = window.scrollY;
+  const scrollTop = window.scrollY
 
   if (index === 0 && scrollTop === 0) {
-    return [true, null];
+    return [true, null]
   }
 
   if (scrollTop < getAnchorTop(anchor)) {
-    return [false, null];
+    return [false, null]
   }
 
   if (!nextAnchor || scrollTop < getAnchorTop(nextAnchor)) {
-    return [true, anchor.hash];
+    return [true, anchor.hash]
   }
 
-  return [false, null];
-}
-
-function throttleAndDebounce(fn: () => void, delay: number): () => void {
-  let timeout: number;
-  let called = false;
-
-  return () => {
-    if (timeout) {
-      clearTimeout(timeout);
-    }
-
-    if (!called) {
-      fn();
-      called = true;
-      setTimeout(() => {
-        called = false;
-      }, delay);
-    } else {
-      timeout = setTimeout(fn, delay);
-    }
-  };
+  return [false, null]
 }

@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import { useConfig } from '../composables/config'
+import { useData } from 'vitepress'
 import VPNavScreenMenuLink from './VPNavScreenMenuLink.vue'
 import VPNavScreenMenuGroup from './VPNavScreenMenuGroup.vue'
 
-const { config } = useConfig()
+const { theme } = useData()
 </script>
 
 <template>
-  <nav v-if="config.nav" class="VPNavScreenMenu">
-    <template v-for="item in config.nav" :key="item.text">
+  <nav v-if="theme.nav" class="VPNavScreenMenu">
+    <template v-for="item in theme.nav" :key="item.text">
       <VPNavScreenMenuLink
         v-if="'link' in item"
         :text="item.text"

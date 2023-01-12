@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { VTLink } from '../../core'
 import { inject } from 'vue'
+import VPLink from './VPLink.vue'
 
 defineProps<{
   text: string
@@ -11,9 +11,9 @@ const closeScreen = inject('close-screen') as () => void
 </script>
 
 <template>
-  <VTLink class="VPNavScreenMenuGroupLink" :href="link" @click="closeScreen">
+  <VPLink class="VPNavScreenMenuGroupLink" :href="link" @click="closeScreen">
     {{ text }}
-  </VTLink>
+  </VPLink>
 </template>
 
 <style scoped>
@@ -22,12 +22,12 @@ const closeScreen = inject('close-screen') as () => void
   line-height: 32px;
   font-size: 13px;
   font-weight: 400;
-  color: var(--vt-c-text-1);
+  color: var(--vp-c-text-1);
   transition: color 0.25s;
-  margin-left: 0.6em;
+  margin-left: 12px;
 }
 
 .VPNavScreenMenuGroupLink:hover {
-  color: var(--vt-c-brand);
+  color: var(--vp-c-brand);
 }
 </style>

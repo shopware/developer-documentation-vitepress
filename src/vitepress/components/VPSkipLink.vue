@@ -1,31 +1,29 @@
 <script lang="ts" setup>
-import { ref, watch } from "vue";
-import { useRoute } from "vitepress";
+import { ref, watch } from 'vue'
+import { useRoute } from 'vitepress'
 
-const route = useRoute();
-const backToTop = ref();
+const route = useRoute()
+const backToTop = ref()
 
-watch(
-  () => route.path,
-  () => backToTop.value.focus()
-);
+watch(() => route.path, () => backToTop.value.focus())
 
-const focusOnTargetAnchor = ({ target }: Event) => {
-  const el = document.querySelector(
-    (target as HTMLAnchorElement).hash!
-  ) as HTMLAnchorElement;
+function focusOnTargetAnchor({ target }: Event) {
+  const el = document.querySelector<HTMLAnchorElement>(
+    (target as HTMLAnchorElement).hash
+  )
 
   if (el) {
     const removeTabIndex = () => {
-      el.removeAttribute("tabindex");
-      el.removeEventListener("blur", removeTabIndex);
-    };
-    el.setAttribute("tabindex", "-1");
-    el.addEventListener("blur", removeTabIndex);
-    el.focus();
-    window.scrollTo(0, 0);
+      el.removeAttribute('tabindex')
+      el.removeEventListener('blur', removeTabIndex)
+    }
+
+    el.setAttribute('tabindex', '-1')
+    el.addEventListener('blur', removeTabIndex)
+    el.focus()
+    window.scrollTo(0, 0)
   }
-};
+}
 </script>
 
 <template>
@@ -41,25 +39,34 @@ const focusOnTargetAnchor = ({ target }: Event) => {
 
 <style scoped>
 .VPSkipLink {
-  top: 0.25rem;
-  left: 0.25rem;
-  padding: 0.65rem 1.5rem;
+  top: 8px;
+  left: 8px;
+  padding: 8px 16px;
   z-index: 999;
-  font-size: 0.9em;
+  border-radius: 8px;
+  font-size: 12px;
   font-weight: bold;
   text-decoration: none;
-  color: var(--vt-c-brand);
-  box-shadow: var(--vt-shadow-3);
-  background-color: var(--vt-c-bg);
-  border-radius: 8px;
+  color: var(--vp-c-brand);
+  box-shadow: var(--vp-shadow-3);
+  background-color: var(--vp-c-bg);
 }
-.dark .VPSkipLink {
-  color: var(--vt-c-brand);
-}
+
 .VPSkipLink:focus {
   height: auto;
   width: auto;
   clip: auto;
   clip-path: none;
+}
+
+.dark .VPSkipLink {
+  color: var(--vp-c-green);
+}
+
+@media (min-width: 1280px) {
+  .VPSkipLink {
+    top: 14px;
+    left: 16px;
+  }
 }
 </style>

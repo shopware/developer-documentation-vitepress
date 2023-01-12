@@ -1,28 +1,27 @@
 <script lang="ts" setup>
-import { VTSocialLinks } from '../../core'
-import { useConfig } from '../composables/config'
+import { useData } from 'vitepress'
+import VPSocialLinks from './VPSocialLinks.vue'
 
-const { config } = useConfig()
+const { theme } = useData()
 </script>
 
 <template>
-  <VTSocialLinks
-    v-if="config.socialLinks"
+  <VPSocialLinks
+    v-if="theme.socialLinks"
     class="VPNavBarSocialLinks"
-    size="small"
-    :links="config.socialLinks"
+    :links="theme.socialLinks"
   />
 </template>
 
 <style scoped>
 .VPNavBarSocialLinks {
   display: none;
-  margin-right: -10px;
 }
 
 @media (min-width: 1280px) {
   .VPNavBarSocialLinks {
     display: flex;
+    align-items: center;
   }
 }
 </style>

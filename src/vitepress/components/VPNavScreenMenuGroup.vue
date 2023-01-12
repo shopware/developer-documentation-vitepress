@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { VTIconPlus, MenuItemChild } from '../../core'
+import VPIconPlus from './icons/VPIconPlus.vue'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 import VPNavScreenMenuGroupSection from './VPNavScreenMenuGroupSection.vue'
 
 const props = defineProps<{
   text: string
-  items: MenuItemChild[]
+  items: any[]
 }>()
 
 const isOpen = ref(false)
@@ -29,7 +29,7 @@ function toggle() {
       @click="toggle"
     >
       <span class="button-text">{{ text }}</span>
-      <VTIconPlus class="button-icon" />
+      <VPIconPlus class="button-icon" />
     </button>
 
     <div :id="groupId" class="items">
@@ -54,14 +54,16 @@ function toggle() {
 
 <style scoped>
 .VPNavScreenMenuGroup {
-  border-bottom: 1px solid var(--vt-c-divider-light);
+  border-bottom: 1px solid var(--vp-c-divider-light);
   height: 48px;
   overflow: hidden;
   transition: border-color 0.5s;
 }
+
 .VPNavScreenMenuGroup .items {
   visibility: hidden;
 }
+
 .VPNavScreenMenuGroup.open .items {
   visibility: visible;
 }
@@ -73,7 +75,7 @@ function toggle() {
 
 .VPNavScreenMenuGroup.open .button {
   padding-bottom: 6px;
-  color: var(--vt-c-brand);
+  color: var(--vp-c-brand);
 }
 
 .VPNavScreenMenuGroup.open .button-icon {
@@ -89,28 +91,27 @@ function toggle() {
   line-height: 24px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--vt-c-text-1);
+  color: var(--vp-c-text-1);
   transition: color 0.25s;
 }
 
 .button:hover {
-  color: var(--vt-c-brand);
+  color: var(--vp-c-brand);
 }
 
 .button-icon {
   width: 14px;
   height: 14px;
-  fill: var(--vt-c-text-2);
+  fill: var(--vp-c-text-2);
   transition: fill 0.5s, transform 0.25s;
 }
 
 .group:first-child {
-  padding-top: 4px;
+  padding-top: 0px;
 }
-.group + .group {
-  padding-top: 8px;
-}
+
+.group + .group,
 .group + .item {
-  padding-top: 8px;
+  padding-top: 4px;
 }
 </style>

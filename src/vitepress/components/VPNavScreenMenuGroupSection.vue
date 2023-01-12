@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { MenuItemWithLink } from '../../core'
+import type { DefaultTheme } from 'vitepress/theme'
 import VPNavScreenMenuGroupLink from './VPNavScreenMenuGroupLink.vue'
 
 defineProps<{
   text?: string
-  items: MenuItemWithLink[]
+  items: DefaultTheme.NavItemWithLink[]
 }>()
 </script>
 
@@ -27,10 +27,9 @@ defineProps<{
 
 .title {
   line-height: 32px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  color: var(--vt-c-text-2);
-  text-transform: uppercase;
+  color: var(--vp-c-text-2);
   transition: color 0.25s;
 }
 </style>

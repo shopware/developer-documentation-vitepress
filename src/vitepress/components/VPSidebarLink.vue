@@ -1,67 +1,88 @@
 <script lang="ts" setup>
-import { useData } from "vitepress";
-import { inject } from "vue";
-import { MenuItemWithLink } from "../../core";
-import { isActive, isPartiallyActive } from "../support/utils";
+import type { DefaultTheme } from 'vitepress/theme'
+import { type Ref, computed, inject, ref, watchEffect } from 'vue'
+import { useData } from 'vitepress'
+import { useSidebar } from '../composables/sidebar.js'
+import { isActive } from '../support/utils.js'
+import VPLink from './VPLink.vue'
 
-const props = withDefaults(defineProps<{
-  item: MenuItemWithLink;
-  showPartiallyActive?: boolean;
-  linkClass?: string;
-}>(), {
-  linkClass: 'link-text'
-});
+const props = withDefaults(
+  defineProps<{ item: DefaultTheme.SidebarItem; depth?: number }>(),
+  { depth: 1 }
+)
 
-const { page } = useData();
-const closeSideBar = inject("close-sidebar") as () => void;
+const { page, frontmatter } = useData()
+const maxDepth = computed<number>(
+  () => frontmatter.value.sidebarDepth || Infinity
+)
 
-function activeMethod(currentPath: string, matchPath: string) {
-  if (props.showPartiallyActive) {
-    return isPartiallyActive(currentPath, matchPath);
+const active = computed(() =>
+  isActive(page.value.relativePath, props.item.link)
+)
+
+const { isSidebarEnabled } = useSidebar()
+const closeSideBar = inject('close-sidebar') as () => void
+const isSidebarOpen = inject('is-sidebar-open') as Ref<boolean>
+
+const link = ref<InstanceType<typeof VPLink> | null>(null)
+watchEffect(() => {
+  if (isSidebarOpen.value && active.value) {
+    link.value?.$el?.focus()
   }
-  return isActive(currentPath, matchPath);
-}
+})
 </script>
 
 <template>
-  <a
-    :class="{ link: true, active: activeMethod(page.relativePath, item.link) }"
+  <VPLink
+    class="link"
+    :class="{ active }"
+    :style="{ paddingLeft: 16 * (depth - 1) + 'px' }"
     :href="item.link"
+    :tabindex="isSidebarEnabled || isSidebarOpen ? 0 : -1"
     @click="closeSideBar"
+    ref="link"
   >
-    <p :class="linkClass">{{ item.text }}</p>
-  </a>
+    <span v-html="item.text" class="link-text" :class="{ light: depth > 1 }"></span>
+  </VPLink>
+  <template
+    v-if="'items' in item && depth < maxDepth"
+    v-for="child in item.items"
+    :key="child.link"
+  >
+    <VPSidebarLink :item="child" :depth="depth + 1" />
+  </template>
 </template>
 
 <style scoped>
 .link {
   display: block;
-  padding: 6px 0;
+  margin: 4px 0;
+  color: var(--vp-c-text-2);
+  transition: color 0.5s;
 }
 
-@media (min-width: 960px) {
-  .link {
-    padding: 4px 0;
-  }
+.link:hover {
+  color: var(--vp-c-text-1);
 }
 
-.link:hover .link-text {
-  color: var(--vt-c-brand-text-1);
-  transition: color 0.25s;
+.link.active {
+  color: var(--vp-c-brand);
 }
 
-.link.active .link-text,
-.title-text .link.active {
-  font-weight: 600;
-  color: var(--vt-c-brand);
-  transition: color 0.25s;
+.link :deep(.icon) {
+  width: 12px;
+  height: 12px;
+  fill: currentColor;
 }
 
 .link-text {
   line-height: 20px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--vt-c-text-2);
-  transition: color 0.5s;
+}
+
+.link-text.light {
+  font-size: 13px;
+  font-weight: 400;
 }
 </style>

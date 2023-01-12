@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 import VPNavScreenMenu from './VPNavScreenMenu.vue'
 import VPNavScreenAppearance from './VPNavScreenAppearance.vue'
+import VPNavScreenTranslations from './VPNavScreenTranslations.vue'
 import VPNavScreenSocialLinks from './VPNavScreenSocialLinks.vue'
 
 defineProps<{
@@ -28,9 +29,12 @@ function unlockBodyScroll() {
   >
     <div v-if="open" class="VPNavScreen" ref="screen">
       <div class="container">
+        <slot name="nav-screen-content-before" />
         <VPNavScreenMenu class="menu" />
+        <VPNavScreenTranslations class="translations" />
         <VPNavScreenAppearance class="appearance" />
         <VPNavScreenSocialLinks class="social-links" />
+        <slot name="nav-screen-content-after" />
       </div>
     </div>
   </transition>
@@ -39,15 +43,16 @@ function unlockBodyScroll() {
 <style scoped>
 .VPNavScreen {
   position: fixed;
-  top: calc(var(--vt-nav-height) + var(--vt-banner-height, 0px));
+  top: calc(var(--vp-nav-height-mobile) + var(--vp-layout-top-height, 0px));
   right: 0;
   bottom: 0;
   left: 0;
   padding: 0 32px;
   width: 100%;
-  background-color: var(--vt-c-bg);
-  transition: background-color 0.5s;
+  background-color: var(--vp-c-bg);
   overflow-y: auto;
+  transition: background-color 0.5s;
+  pointer-events: auto;
 }
 
 .VPNavScreen.fade-enter-active,
@@ -82,7 +87,9 @@ function unlockBodyScroll() {
   max-width: 288px;
 }
 
-.menu + .appearance {
+.menu + .translations,
+.menu + .appearance,
+.translations + .appearance {
   margin-top: 24px;
 }
 
@@ -91,6 +98,6 @@ function unlockBodyScroll() {
 }
 
 .appearance + .social-links {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 </style>

@@ -1,24 +1,31 @@
 <script lang="ts" setup>
 import '@docsearch/css'
+import { defineAsyncComponent, ref, onMounted, onUnmounted } from 'vue'
 import { useData } from 'vitepress'
-import { ref, defineAsyncComponent, onMounted, onUnmounted } from 'vue'
+
+const VPAlgoliaSearchBox = __ALGOLIA__
+  ? defineAsyncComponent(() => import('./VPAlgoliaSearchBox.vue'))
+  : () => null
 
 const { theme } = useData()
-const VPAlgoliaSearchBox = defineAsyncComponent(
-  () => import('./VPAlgoliaSearchBox.vue')
-)
 
 // to avoid loading the docsearch js upfront (which is more than 1/3 of the
 // payload), we delay initializing it until the user has actually clicked or
-// hit the hotkey to invoke it
+// hit the hotkey to invoke it.
 const loaded = ref(false)
-const metaKey = ref()
+
+const metaKey = ref(`'Meta'`)
 
 onMounted(() => {
+  if (!theme.value.algolia) {
+    return
+  }
+
   // meta key detect (same logic as in @docsearch/js)
-  metaKey.value.textContent = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
-    ? '⌘'
-    : 'Ctrl'
+  metaKey.value = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
+    ? `'⌘'`
+    : `'Ctrl'`
+
   const handleSearchHotKey = (e: KeyboardEvent) => {
     if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault()
@@ -26,10 +33,13 @@ onMounted(() => {
       remove()
     }
   }
+
   const remove = () => {
     window.removeEventListener('keydown', handleSearchHotKey)
   }
+
   window.addEventListener('keydown', handleSearchHotKey)
+
   onUnmounted(remove)
 })
 
@@ -43,6 +53,7 @@ function load() {
 <template>
   <div v-if="theme.algolia" class="VPNavBarSearch">
     <VPAlgoliaSearchBox v-if="loaded" />
+
     <div v-else id="docsearch" @click="load">
       <button
         type="button"
@@ -51,9 +62,9 @@ function load() {
       >
         <span class="DocSearch-Button-Container">
           <svg
+            class="DocSearch-Search-Icon"
             width="20"
             height="20"
-            class="DocSearch-Search-Icon"
             viewBox="0 0 20 20"
           >
             <path
@@ -63,13 +74,13 @@ function load() {
               fill-rule="evenodd"
               stroke-linecap="round"
               stroke-linejoin="round"
-            ></path>
+            />
           </svg>
-          <span class="DocSearch-Button-Placeholder">Search</span>
+          <span class="DocSearch-Button-Placeholder">{{ theme.algolia?.buttonText || 'Search' }}</span>
         </span>
         <span class="DocSearch-Button-Keys">
-          <span class="DocSearch-Button-Key" ref="metaKey">Meta</span>
-          <span class="DocSearch-Button-Key">K</span>
+          <kbd class="DocSearch-Button-Key"></kbd>
+          <kbd class="DocSearch-Button-Key">K</kbd>
         </span>
       </button>
     </div>
@@ -80,53 +91,41 @@ function load() {
 .VPNavBarSearch {
   display: flex;
   align-items: center;
-  padding-left: 16px;
 }
 
 @media (min-width: 768px) {
   .VPNavBarSearch {
     flex-grow: 1;
+    padding-left: 24px;
+  }
+}
+
+@media (min-width: 960px) {
+  .VPNavBarSearch {
+    padding-left: 32px;
   }
 }
 
 .DocSearch {
-  --docsearch-primary-color: var(--vt-c-brand);
+  --docsearch-primary-color: var(--vp-c-brand);
   --docsearch-highlight-color: var(--docsearch-primary-color);
-  --docsearch-text-color: var(--vt-c-text-1);
-  --docsearch-muted-color: var(--vt-c-text-2);
+  --docsearch-text-color: var(--vp-c-text-1);
+  --docsearch-muted-color: var(--vp-c-text-2);
   --docsearch-searchbox-shadow: none;
   --docsearch-searchbox-focus-background: transparent;
   --docsearch-key-gradient: transparent;
   --docsearch-key-shadow: none;
-  --docsearch-modal-background: var(--vt-c-bg-soft);
-  --docsearch-footer-background: var(--vt-c-bg);
+  --docsearch-modal-background: var(--vp-c-bg-soft);
+  --docsearch-footer-background: var(--vp-c-bg);
 }
 
 .dark .DocSearch {
   --docsearch-modal-shadow: none;
   --docsearch-footer-shadow: none;
-  --docsearch-logo-color: var(--vt-c-text-2);
-  --docsearch-hit-background: var(--vt-c-bg-mute);
-  --docsearch-hit-color: var(--vt-c-text-2);
+  --docsearch-logo-color: var(--vp-c-text-2);
+  --docsearch-hit-background: var(--vp-c-bg-mute);
+  --docsearch-hit-color: var(--vp-c-text-2);
   --docsearch-hit-shadow: none;
-}
-
-.dark .DocSearch-Footer {
-  border-top: 1px solid var(--vt-c-divider);
-}
-
-.dark .DocSearch-Form {
-  background-color: var(--vt-c-bg-mute);
-}
-
-.DocSearch-Form {
-  background-color: white;
-  border: 1px solid var(--vt-c-brand);
-}
-
-.DocSearch-Button-Container {
-  align-items: center;
-  display: flex;
 }
 
 .DocSearch-Button {
@@ -134,18 +133,22 @@ function load() {
   justify-content: center;
   align-items: center;
   margin: 0;
-  width: 48px;
+  padding: 0;
+  width: 32px;
   height: 55px;
   background: transparent;
+  transition: border-color 0.25s;
 }
 
 .DocSearch-Button:hover {
   background: transparent;
 }
+
 .DocSearch-Button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
+
 .DocSearch-Button:focus:not(:focus-visible) {
   outline: none !important;
 }
@@ -153,92 +156,132 @@ function load() {
 @media (min-width: 768px) {
   .DocSearch-Button {
     justify-content: flex-start;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 0 10px 0 12px;
     width: 100%;
+    height: 40px;
+    background-color: var(--vp-c-bg-alt);
+  }
+
+  .DocSearch-Button:hover {
+    border-color: var(--vp-c-brand);
+    background: var(--vp-c-bg-alt);
   }
 }
 
+.DocSearch-Button .DocSearch-Button-Container {
+  display: flex;
+  align-items: center;
+}
+
 .DocSearch-Button .DocSearch-Search-Icon {
-  color: var(--vt-c-text-dark-2);
-  transition: color 0.5s;
-  fill: currentColor;
-  width: 18px;
-  height: 18px;
   position: relative;
+  width: 16px;
+  height: 16px;
+  color: var(--vp-c-text-1);
+  fill: currentColor;
+  transition: color 0.5s;
+}
+
+.DocSearch-Button:hover .DocSearch-Search-Icon {
+  color: var(--vp-c-text-1);
 }
 
 @media (min-width: 768px) {
   .DocSearch-Button .DocSearch-Search-Icon {
     top: 1px;
-    margin-right: 10px;
-    width: 15px;
-    height: 15px;
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+    color: var(--vp-c-text-2);
   }
 }
 
-.DocSearch-Button:hover .DocSearch-Search-Icon {
-  color: var(--vt-c-brand); /* Shopware Theme */
-}
-
-.DocSearch-Button-Placeholder {
-  transition: color 0.5s;
+.DocSearch-Button .DocSearch-Button-Placeholder {
+  display: none;
+  margin-top: 2px;
+  padding: 0 16px 0 0;
   font-size: 13px;
   font-weight: 500;
-  color: var(--vt-c-text-dark-2); /* Shopware Theme */
-  display: none;
-  padding: 0 10px 0 0;
+  color: var(--vp-c-text-2);
+  transition: color 0.5s;
 }
 
-@media (min-width: 960px) {
-  .DocSearch-Button-Placeholder {
+.DocSearch-Button:hover .DocSearch-Button-Placeholder {
+  color: var(--vp-c-text-1);
+}
+
+@media (min-width: 768px) {
+  .DocSearch-Button .DocSearch-Button-Placeholder {
     display: inline-block;
   }
 }
 
-.DocSearch-Button:hover .DocSearch-Button-Placeholder {
-  color: var(--vt-c-brand); /* Shopware Theme */
+.DocSearch-Button .DocSearch-Button-Keys {
+  display: none;
+  min-width: auto;
+}
+
+@media (min-width: 768px) {
+  .DocSearch-Button .DocSearch-Button-Keys {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .DocSearch-Button .DocSearch-Button-Key {
-  margin-top: 2px;
-  border: 1px solid var(--vt-c-text-dark-2); /* Shopware Theme */
+  display: block;
+  margin: 2px 0 0 0;
+  border: 1px solid var(--vp-c-divider);
   border-right: none;
   border-radius: 4px 0 0 4px;
-  display: none;
   padding-left: 6px;
+  min-width: 0;
+  width: auto;
   height: 22px;
   line-height: 22px;
+  font-family: var(--vp-font-family-base);
+  font-size: 12px;
+  font-weight: 500;
   transition: color 0.5s, border-color 0.5s;
-  min-width: 0;
 }
 
 .DocSearch-Button .DocSearch-Button-Key + .DocSearch-Button-Key {
-  border-right: 1px solid var(--vt-c-text-dark-2); /* Shopware Theme */
+  border-right: 1px solid var(--vp-c-divider);
   border-left: none;
   border-radius: 0 4px 4px 0;
   padding-left: 2px;
   padding-right: 6px;
 }
 
-.DocSearch-Button:hover .DocSearch-Button-Key {
-  border-color: var(--vt-c-brand-light);
-  color: var(--vt-c-brand-light);
+.DocSearch-Button .DocSearch-Button-Key:first-child {
+  font-size: 1px;
+  letter-spacing: -12px;
+  color: transparent;
 }
 
-@media (min-width: 768px) {
-  .DocSearch-Button .DocSearch-Button-Key {
-    display: inline-block;
-  }
-}
-
-.DocSearch-Button-Key {
+.DocSearch-Button .DocSearch-Button-Key:first-child:after {
+  content: v-bind(metaKey);
   font-size: 12px;
-  font-weight: 500;
-  height: 20px;
-  margin: 0;
-  width: auto;
-  color: var(--vt-c-text-dark-2);
-  transition: color 0.5s;
-  display: inline-block;
-  padding: 0 1px;
+  letter-spacing: normal;
+  color: var(--docsearch-muted-color);
+}
+
+.DocSearch-Button .DocSearch-Button-Key:first-child > * {
+  display: none;
+}
+
+.dark .DocSearch-Footer {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.DocSearch-Form {
+  border: 1px solid var(--vp-c-brand);
+  background-color: var(--vp-c-white);
+}
+
+.dark .DocSearch-Form {
+  background-color: var(--vp-c-bg-mute);
 }
 </style>

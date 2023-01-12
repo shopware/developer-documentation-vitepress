@@ -1,51 +1,53 @@
-<script lang="ts" setup>
+<script setup lang="ts">
 import { useData } from 'vitepress'
-import { VTLink } from '../../core'
+import { useSidebar } from '../composables/sidebar.js'
 
 const { theme } = useData()
+const { hasSidebar } = useSidebar()
 </script>
 
 <template>
-  <div class="VPFooter">
-    <p v-if="theme.footer?.license" class="license">
-      Released under the <VTLink class="link" :href="theme.footer.license.link" no-icon>{{ theme.footer.license.text }}</VTLink>.
-    </p>
-
-    <p v-if="theme.footer?.copyright" class="copyright">
-      {{ theme.footer.copyright }}
-    </p>
-  </div>
+  <footer v-if="theme.footer" class="VPFooter" :class="{ 'has-sidebar': hasSidebar }">
+    <div class="container">
+      <p v-if="theme.footer.message" class="message" v-html="theme.footer.message"></p>
+      <p v-if="theme.footer.copyright" class="copyright" v-html="theme.footer.copyright"></p>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
 .VPFooter {
-  border-top: 1px solid var(--vt-c-bg-soft);
-  padding: 23px 0 24px;
-  background-color: var(--vt-c-bg-soft);
-  transition: border-top 0.5s, background-color 0.5s;
+  position: relative;
+  z-index: var(--vp-z-index-footer);
+  border-top: 1px solid var(--vp-c-divider-light);
+  padding: 32px 24px;
+  background-color: var(--vp-c-bg);
 }
 
-.dark .VPFooter {
-  border-top: 1px solid var(--vt-c-divider-light);
-  background-color: var(--vt-c-bg);
+.VPFooter.has-sidebar {
+  display: none;
 }
 
-.license,
-.copyright {
+@media (min-width: 768px) {
+  .VPFooter {
+    padding: 32px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--vp-layout-max-width);
   text-align: center;
-  line-height: 20px;
-  font-size: 12px;
+}
+
+.message,
+.copyright {
+  line-height: 24px;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--vt-c-text-2);
-  transition: color 0.25s;
+  color: var(--vp-c-text-2);
 }
 
-.link {
-  color: var(--vt-c-text-1);
-  transition: color 0.25s;
-}
-
-.link:hover {
-  color: var(--vt-c-text-2);
-}
+.message   { order: 2; }
+.copyright { order: 1; }
 </style>

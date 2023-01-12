@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { VTSwitchAppearance } from '../../core'
-import { useConfig } from '../composables/config'
+import { useData } from 'vitepress'
+import VPSwitchAppearance from './VPSwitchAppearance.vue'
 
-const { config } = useConfig()
+const { site } = useData()
 </script>
 
 <template>
-  <div v-if="config.appearance" class="VPNavBarAppearance">
-    <VTSwitchAppearance />
+  <div v-if="site.appearance" class="VPNavBarAppearance">
+    <VPSwitchAppearance />
   </div>
 </template>
 
@@ -18,7 +18,8 @@ const { config } = useConfig()
 
 @media (min-width: 1280px) {
   .VPNavBarAppearance {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 }
 </style>

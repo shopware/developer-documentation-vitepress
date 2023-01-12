@@ -1,15 +1,15 @@
 <script lang="ts" setup>
-import { useConfig } from '../composables/config'
+import { useData } from 'vitepress'
 import VPNavBarMenuLink from './VPNavBarMenuLink.vue'
 import VPNavBarMenuGroup from './VPNavBarMenuGroup.vue'
 
-const { config } = useConfig()
+const { theme } = useData()
 </script>
 
 <template>
-  <nav v-if="config.nav" aria-labelledby="main-nav-aria-label" class="VPNavBarMenu">
+  <nav v-if="theme.nav" aria-labelledby="main-nav-aria-label" class="VPNavBarMenu">
     <span id="main-nav-aria-label" class="visually-hidden">Main Navigation</span>
-    <template v-for="item in config.nav" :key="item.text">
+    <template v-for="item in theme.nav" :key="item.text">
       <VPNavBarMenuLink v-if="'link' in item" :item="item" />
       <VPNavBarMenuGroup v-else :item="item" />
     </template>
