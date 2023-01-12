@@ -57,7 +57,7 @@ watchEffect(() => {
     @click="closeSideBar"
     ref="link"
   >
-    <span v-html="item.text" :class="linkClass" :class="{ light: depth > 1 }"></span>
+    <span v-html="item.text" :class="{linkClass, light: depth > 1}"></span>
   </VPLink>
   <template
     v-if="'items' in item && depth < maxDepth"

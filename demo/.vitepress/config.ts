@@ -39,6 +39,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     editLink: {
       repo: "shopware/developer-documentation-vuepress",
       text: "Edit this page on GitHub",
+      pattern: "shopware/developer-documentation-vuepress",
     },
   },
 

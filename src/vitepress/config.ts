@@ -40,6 +40,7 @@ export interface Config {
      */
     repo?: string;
     text?: string;
+    pattern?: string,
   };
 
   /**

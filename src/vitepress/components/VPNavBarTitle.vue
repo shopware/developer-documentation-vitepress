@@ -2,6 +2,7 @@
 import { useData } from 'vitepress'
 import { useSidebar } from '../composables/sidebar.js'
 import VPImage from './VPImage.vue'
+import { withBase } from "vitepress";
 
 const { site, theme } = useData()
 const { hasSidebar } = useSidebar()
@@ -21,10 +22,6 @@ const { hasSidebar } = useSidebar()
     >
   </div>
 </template>
-
-<script setup>
-import { withBase } from "vitepress";
-</script>
 
 <style scoped>
 .VPNavBarTitle {
