@@ -24,9 +24,7 @@ const maxDepth = computed<number>(
   () => frontmatter.value.sidebarDepth || Infinity
 )
 
-const active = computed(() =>
-  isActive(page.value.relativePath, props.item.link)
-)
+const active = computed(() => isActive(page.value.relativePath, props.item.link))
 
 const { isSidebarEnabled } = useSidebar()
 const closeSideBar = inject('close-sidebar') as () => void
@@ -41,9 +39,9 @@ function activeMethod(currentPath: string, matchPath: string) {
 
 const link = ref<InstanceType<typeof VPLink> | null>(null)
 watchEffect(() => {
-  if (isSidebarOpen.value && active.value) {
+  /*if (isSidebarOpen.value && active.value) {
     link.value?.$el?.focus()
-  }
+  }*/
 })
 </script>
 

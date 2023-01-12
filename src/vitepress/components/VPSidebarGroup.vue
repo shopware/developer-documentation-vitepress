@@ -7,6 +7,7 @@ import VPIconPlusSquare from './icons/VPIconPlusSquare.vue'
 import VPIconMinusSquare from './icons/VPIconMinusSquare.vue'
 import VPSidebarLink from './VPSidebarLink.vue'
 import { MenuItemWithLink } from "../../core";
+import {SidebarGroup} from "../config";
 
 const props = defineProps<{
   text?: string
@@ -43,6 +44,12 @@ function toggle() {
   if (props.collapsible) {
     collapsed.value = !collapsed.value
   }
+}
+
+function hasActiveLink(items: SidebarGroup["items"]) {
+  const {relativePath} = page.value;
+  return false;
+  // return items.some((item) => isPartiallyActive(relativePath, item.link));
 }
 </script>
 
