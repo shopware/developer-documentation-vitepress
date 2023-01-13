@@ -1,35 +1,24 @@
 <script lang="ts" setup>
-import { useData } from "vitepress";
-import { inject } from "vue";
-import { MenuItemWithLink } from "../../core";
-import { isActive, isPartiallyActive } from "../support/utils";
+import { useData } from 'vitepress'
+import { inject } from 'vue'
+import { MenuItemWithLink } from '../../core'
+import { isActive } from '../support/utils'
 
-const props = withDefaults(defineProps<{
-  item: MenuItemWithLink;
-  showPartiallyActive?: boolean;
-  linkClass?: string;
-}>(), {
-  linkClass: 'link-text'
-});
+defineProps<{
+  item: MenuItemWithLink
+}>()
 
-const { page } = useData();
-const closeSideBar = inject("close-sidebar") as () => void;
-
-function activeMethod(currentPath: string, matchPath: string) {
-  if (props.showPartiallyActive) {
-    return isPartiallyActive(currentPath, matchPath);
-  }
-  return isActive(currentPath, matchPath);
-}
+const { page } = useData()
+const closeSideBar = inject('close-sidebar') as () => void
 </script>
 
 <template>
   <a
-    :class="{ link: true, active: activeMethod(page.relativePath, item.link) }"
+    :class="{ link: true, active: isActive(page.relativePath, item.link) }"
     :href="item.link"
     @click="closeSideBar"
   >
-    <p :class="linkClass">{{ item.text }}</p>
+    <p class="link-text">{{ item.text }}</p>
   </a>
 </template>
 
@@ -50,8 +39,7 @@ function activeMethod(currentPath: string, matchPath: string) {
   transition: color 0.25s;
 }
 
-.link.active .link-text,
-.title-text .link.active {
+.link.active .link-text {
   font-weight: 600;
   color: var(--vt-c-brand);
   transition: color 0.25s;

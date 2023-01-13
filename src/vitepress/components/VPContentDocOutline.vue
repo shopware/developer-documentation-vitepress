@@ -1,42 +1,38 @@
 <script setup lang="ts">
-import { useData } from "vitepress";
-import { resolveHeaders, useActiveAnchor } from "../composables/outline";
-import { computed, inject, ref } from "vue";
+import { useData } from 'vitepress'
+import { resolveHeaders, useActiveAnchor } from '../composables/outline'
+import { computed, inject, ref } from 'vue'
+import { useConfig } from '../composables/config'
 
-const { page, frontmatter } = useData();
-const container = ref();
-const marker = ref();
-useActiveAnchor(container, marker);
+const { page, frontmatter } = useData()
+const { config } = useConfig()
+const container = ref()
+const marker = ref()
+useActiveAnchor(container, marker)
 
-const filterHeaders = inject("filter-headers", null) as any;
+const filterHeaders = inject('filter-headers', null) as any
 const filteredHeaders = computed(() => {
-  return filterHeaders
-    ? page.value.headers.map((h) => {
-        return filterHeaders(h) ? h : Object.assign({}, h, { hidden: true });
-      })
-    : page.value.headers;
-});
+  return resolveHeaders(page.value.headers, filterHeaders)
+})
 
 const handleClick = ({ target: el }: Event) => {
-  const id = "#" + (el as HTMLAnchorElement).href!.split("#")[1];
-  const heading = document.querySelector(id) as HTMLAnchorElement;
-  heading?.focus();
-};
+  const id = '#' + (el as HTMLAnchorElement).href!.split('#')[1]
+  const heading = document.querySelector(id) as HTMLAnchorElement
+  heading?.focus()
+}
 </script>
 
 <template>
   <div class="VPContentDocOutline" ref="container">
     <div class="outline-marker" ref="marker" />
-    <div class="outline-title">On this page</div>
+    <div class="outline-title">{{ config.i18n?.toc ?? 'On this page' }}</div>
     <nav aria-labelledby="doc-outline-aria-label">
-      <span id="doc-outline-aria-label" class="visually-hidden"
-        >Table of Contents for current page</span
-      >
+      <span id="doc-outline-aria-label" class="visually-hidden">{{
+        config.i18n?.ariaToC ?? 'Table of Contents for current page'
+      }}</span>
       <ul class="root">
         <li
-          v-for="{ text, link, children, hidden } in resolveHeaders(
-            filteredHeaders
-          )"
+          v-for="{ text, link, children, hidden } in filteredHeaders"
           v-show="!hidden"
         >
           <a class="outline-link" :href="link" @click="handleClick">{{
@@ -96,7 +92,7 @@ const handleClick = ({ target: el }: Event) => {
 .outline-marker {
   opacity: 0;
   position: absolute;
-  background-color: var(--vt-c-brand);
+  background-color: var(--vt-c-green);
   border-radius: 4px;
   width: 4px;
   height: 20px;

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import { computed } from "vue";
-import VTIconExternalLink from "./icons/VTIconExternalLink.vue";
+import { computed } from 'vue'
+import VTIconExternalLink from './icons/VTIconExternalLink.vue'
 
 const props = defineProps<{
-  href?: string;
-  noIcon?: boolean;
-}>();
+  href?: string
+  noIcon?: boolean
+}>()
 
-const isExternal = computed(() => props.href && /^[a-z]+:/i.test(props.href));
+const isExternal = computed(() => props.href && /^[a-z]+:/i.test(props.href))
 </script>
 
 <template>

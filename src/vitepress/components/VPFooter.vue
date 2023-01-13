@@ -1,18 +1,22 @@
 <script lang="ts" setup>
-import { useData } from 'vitepress'
 import { VTLink } from '../../core'
+import { useConfig } from '../composables/config'
 
-const { theme } = useData()
+const { config } = useConfig()
 </script>
 
 <template>
   <div class="VPFooter">
-    <p v-if="theme.footer?.license" class="license">
-      Released under the <VTLink class="link" :href="theme.footer.license.link" no-icon>{{ theme.footer.license.text }}</VTLink>.
+    <p v-if="config.footer?.license" class="license">
+      {{ config.i18n?.footerLicense?.before ?? 'Released under the '
+      }}<VTLink class="link" :href="config.footer.license.link" no-icon>{{
+        config.footer.license.text
+      }}</VTLink
+      >{{ config.i18n?.footerLicense?.after ?? '.' }}
     </p>
 
-    <p v-if="theme.footer?.copyright" class="copyright">
-      {{ theme.footer.copyright }}
+    <p v-if="config.footer?.copyright" class="copyright">
+      {{ config.footer.copyright }}
     </p>
   </div>
 </template>
@@ -20,7 +24,7 @@ const { theme } = useData()
 <style scoped>
 .VPFooter {
   border-top: 1px solid var(--vt-c-bg-soft);
-  padding: 23px 0 24px;
+  padding: 23px 24px 24px;
   background-color: var(--vt-c-bg-soft);
   transition: border-top 0.5s, background-color 0.5s;
 }

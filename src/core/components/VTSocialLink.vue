@@ -5,7 +5,6 @@ import VTIconFacebook from './icons/VTIconFacebook.vue'
 import VTIconGitHub from './icons/VTIconGitHub.vue'
 import VTIconLinkedIn from './icons/VTIconLinkedIn.vue'
 import VTIconSlack from './icons/VTIconSlack.vue'
-import VTIconStackOverflow from './icons/VTIconStackOverflow.vue'
 import VTIconTwitter from './icons/VTIconTwitter.vue'
 import VTIconLanguages from './icons/VTIconLanguages.vue'
 
@@ -23,7 +22,6 @@ const icons = {
   github: VTIconGitHub,
   linkedin: VTIconLinkedIn,
   slack: VTIconSlack,
-  stackoverflow: VTIconStackOverflow,
   twitter: VTIconTwitter,
   languages: VTIconLanguages
 }

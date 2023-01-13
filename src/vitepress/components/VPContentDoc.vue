@@ -1,53 +1,29 @@
 <script lang="ts" setup>
-import { computed } from "vue";
-import {useData, useRoute} from "vitepress";
-import VPContentDocOutline from "./VPContentDocOutline.vue";
-import VPContentDocFooter from "./VPContentDocFooter.vue";
-import type { Config } from "../config";
-import { VTLink, VTIconGitHub, VTIconStackOverflow } from "../../core";
+import { computed } from 'vue'
+import { useData } from 'vitepress'
+import VPContentDocOutline from './VPContentDocOutline.vue'
+import VPContentDocFooter from './VPContentDocFooter.vue'
+import VPCarbonAds from './VPCarbonAds.vue'
+import { VTLink, VTIconEdit } from '../../core'
+import { useConfig } from '../composables/config'
 
-const { page, frontmatter, theme } = useData<Config>();
+const { page, frontmatter } = useData()
+const { config } = useConfig()
 
-const route = useRoute();
-
-const getMatchedRepos = (items) => {
-  return items.reduce((reduced, item) => {
-    // compare nav items with defined link and repo
-    if (item.link && item.repo && route.path.match(`^${item.link}`)) {
-      reduced.push({
-        repo: item.repo,
-        mount: item.mount,
-      });
-    }
-
-    // check for sub-items, deep-first
-    if (item.items) {
-      reduced = [
-        ...getMatchedRepos(item.items),
-        ...reduced,
-      ];
-    }
-
-    return reduced;
-  }, []);
-}
+const hashMatch = /#(\w+)$/
 
 const repoUrl = computed(() => {
-  const matchedRepo = getMatchedRepos(theme.value.nav)[0];
-  const repo = matchedRepo?.repo
-      || theme.value.editLink?.repo
-      || "shopware/developer-documentation-vuepress";
-
-  const branch = repo.match(/#(\w+)$/)?.[1] || "main";
-  const folder = matchedRepo?.mount
-      || 'src';
-  return `https://github.com/${repo}/edit/${branch}/${folder}/${page.value.relativePath}`;
-});
+  const repo = config.value.editLink?.repo || 'vuejs/docs'
+  const branch = repo.match(hashMatch)?.[1] || 'main'
+  return `https://github.com/${repo.split('#')[0]}/edit/${branch}/src/${
+    page.value.relativePath
+  }`
+})
 
 const pageClass = computed(() => {
-  const { relativePath } = page.value;
-  return relativePath.slice(0, relativePath.indexOf("/"));
-});
+  const { relativePath } = page.value
+  return relativePath.slice(0, relativePath.indexOf('/'))
+})
 </script>
 
 <template>
@@ -63,6 +39,7 @@ const pageClass = computed(() => {
             v-if="page.headers && frontmatter.outline !== false"
           />
           <slot name="aside-mid" />
+          <VPCarbonAds v-if="config.carbonAds && frontmatter.ads !== false" />
           <slot name="aside-bottom" />
         </div>
       </div>
@@ -70,26 +47,15 @@ const pageClass = computed(() => {
         <slot name="content-top" />
         <main>
           <Content class="vt-doc" :class="pageClass" />
-
           <p
             class="edit-link"
-            v-if="theme.editLink && frontmatter.editLink !== false"
+            v-if="config.editLink && frontmatter.editLink !== false"
           >
-            <VTIconGitHub class="vt-icon" />
+            <VTIconEdit class="vt-icon" />
             <VTLink :href="repoUrl" :no-icon="true">{{
-              theme.editLink.text
+              config.editLink.text
             }}</VTLink>
           </p>
-
-          <p
-            class="edit-link"
-            v-if="theme.editLink && frontmatter.stackOverflowLink !== false"
-          >
-            <VTIconStackOverflow class="vt-icon" />
-            <VTLink :href="'https://stackoverflow.com/questions/ask?tags=shopware'"
-                    :no-icon="true">Ask a question on StackOverflow</VTLink>
-          </p>
-
         </main>
         <slot name="content-bottom" />
         <VPContentDocFooter v-if="frontmatter.footer !== false" />
@@ -109,7 +75,7 @@ const pageClass = computed(() => {
 
 .content {
   margin: 0 auto;
-  max-width: 768px; /* was 688px */
+  max-width: 688px;
   position: relative;
 }
 
@@ -133,11 +99,8 @@ const pageClass = computed(() => {
 }
 
 .edit-link {
-  margin: 0 0 16px;
-  /* text-align: center; */
-}
-.edit-link:last-child {
   margin: 0 0 32px;
+  /* text-align: center; */
 }
 
 .edit-link .vt-link {
