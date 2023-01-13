@@ -159,7 +159,7 @@ function load() {
 }
 
 .DocSearch-Button .DocSearch-Search-Icon {
-  color: var(--vt-c-text-2);
+  color: var(--vt-c-text-dark-2);
   transition: color 0.5s;
   fill: currentColor;
   width: 18px;
@@ -167,7 +167,7 @@ function load() {
   position: relative;
 }
 .DocSearch-Button:hover .DocSearch-Search-Icon {
-  color: var(--vt-c-text-1);
+  color: var(--vt-c-brand); /* Shopware Theme */
 }
 @media (min-width: 768px) {
   .DocSearch-Button .DocSearch-Search-Icon {
@@ -182,12 +182,12 @@ function load() {
   transition: color 0.5s;
   font-size: 13px;
   font-weight: 500;
-  color: var(--vt-c-text-2);
+  color: var(--vt-c-text-dark-2); /* Shopware Theme */
   display: none;
   padding: 0 10px 0 0;
 }
 .DocSearch-Button:hover .DocSearch-Button-Placeholder {
-  color: var(--vt-c-text-1);
+  color: var(--vt-c-brand); /* Shopware Theme */
 }
 @media (min-width: 960px) {
   .DocSearch-Button-Placeholder {

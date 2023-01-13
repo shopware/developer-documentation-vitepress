@@ -1,5 +1,5 @@
 <template>
-  <a class="VPNavBarTitle" href="/">
+  <!--<a class="VPNavBarTitle" href="/">
     <slot name="navbar-title">
       <svg class="logo" viewBox="0 0 128 128" width="24" height="24">
         <path
@@ -13,8 +13,22 @@
       </svg>
       <span class="text">Vue.js</span>
     </slot>
+  </a>-->
+  <a class="VPNavBarTitle" :href="withBase('/')">
+    <img
+        src="./../assets/shopware-docs.svg"
+        alt="Shopware"
+        class="VPNavBarImage"
+    />
   </a>
+  <a :href="withBase('/installation.html')"
+  ><span class="accent text-xl">EA</span></a
+  >
 </template>
+
+<script setup>
+import { withBase } from "vitepress";
+</script>
 
 <style scoped>
 .VPNavBarTitle {
@@ -22,11 +36,17 @@
   align-items: center;
   padding-top: 1px;
   height: var(--vt-nav-height);
+  color: var(--vt-c-brand);
   transition: opacity 0.25s;
 }
 
 .VPNavBarTitle:hover {
   opacity: 0.6;
+}
+
+.VPNavBarImage {
+  width: 90%;
+  height: 40px;
 }
 
 .logo {
