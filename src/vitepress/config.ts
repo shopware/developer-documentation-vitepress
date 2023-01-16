@@ -68,14 +68,6 @@ export interface Config {
   algolia?: AlgoliaSearchOptions
 
   /**
-   * CarbonAds configuration
-   */
-  carbonAds?: {
-    code: string
-    placement: string
-  }
-
-  /**
    * Translation/Locales links
    */
   localeLinks?: LocaleLinkItem[]

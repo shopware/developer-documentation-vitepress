@@ -1,3 +1,5 @@
+// import "tailwindcss/tailwind.css";
+import "uno.css";
 import './styles/index.css'
 import VPApp from './components/VPApp.vue'
 import VPNotFound from './components/VPNotFound.vue'

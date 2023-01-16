@@ -4,9 +4,20 @@
  *
  * It runs in Node.js.
  */
+const Unocss = require("unocss/vite");
+const {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetTypography,
+  presetUno,
+  presetWebFonts,
+  transformerDirectives,
+  transformerVariantGroup,
+} = require("unocss");
 
 // for local-linked development
-const deps = ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
+const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
 
 /**
  * @type {() => Promise<import('vitepress').UserConfig>}
@@ -18,7 +29,31 @@ module.exports = async () => ({
     },
     optimizeDeps: {
       exclude: deps
-    }
+    },
+    plugins: [
+      Unocss.default(
+        defineConfig({
+          shortcuts: [["text-shopware", "text-#0489EA"]],
+          presets: [
+            presetUno(),
+            presetAttributify(),
+            presetIcons({
+              scale: 1.2,
+              warn: true
+            }),
+            presetTypography(),
+            presetWebFonts({
+              fonts: {
+                sans: "DM Sans",
+                serif: "DM Serif Display",
+                mono: "DM Mono"
+              }
+            })
+          ],
+          transformers: [transformerDirectives(), transformerVariantGroup()]
+        })
+      )
+    ]
   },
 
   head: [
@@ -26,7 +61,7 @@ module.exports = async () => ({
       'link',
       {
         rel: 'icon',
-        href: '/logo.svg'
+        href: "/img/logo.svg"
       }
     ],
     ...(process.env.NODE_ENV === 'production'

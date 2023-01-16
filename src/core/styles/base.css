@@ -24,6 +24,21 @@ body {
   overflow-wrap: break-word;
 }
 
+/* For gradient titles */
+.accent {
+  background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
+  /* background: -webkit-repeating-radial-gradient(
+    top left,
+    circle,
+    #017bff,
+    #01cfff 10%,
+    #017bff 30%
+  ); */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 blockquote,
 dl,
 dd,

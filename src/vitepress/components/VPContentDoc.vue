@@ -3,7 +3,6 @@ import { computed } from 'vue'
 import { useData } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
-import VPCarbonAds from './VPCarbonAds.vue'
 import { VTLink, VTIconEdit } from '../../core'
 import { useConfig } from '../composables/config'
 
@@ -39,7 +38,6 @@ const pageClass = computed(() => {
             v-if="page.headers && frontmatter.outline !== false"
           />
           <slot name="aside-mid" />
-          <VPCarbonAds v-if="config.carbonAds && frontmatter.ads !== false" />
           <slot name="aside-bottom" />
         </div>
       </div>
