@@ -1,36 +1,36 @@
-import { withBase } from "vitepress";
-import { ref } from "vue";
+import { withBase } from 'vitepress'
+import { ref } from 'vue'
 
-export const hashRE = /#.*$/;
-export const extRE = /(index)?\.(md|html)$/;
-export const outboundRE = /^[a-z]+:/i;
+export const hashRE = /#.*$/
+export const extRE = /(index)?\.(md|html)$/
+export const outboundRE = /^[a-z]+:/i
 
 export function isExternal(path: string): boolean {
-  return outboundRE.test(path);
+  return outboundRE.test(path)
 }
 
 export function ensureStartingSlash(path: string): string {
-  return /^\//.test(path) ? path : `/${path}`;
+  return /^\//.test(path) ? path : `/${path}`
 }
 
 export function normalizeLink(url: string): string {
   if (isExternal(url)) {
-    return url;
+    return url
   }
-  const { pathname, search, hash } = new URL(url, "http://vuejs.org");
+  const { pathname, search, hash } = new URL(url, 'http://vuejs.org')
   return withBase(
-    pathname.endsWith("/") || pathname.endsWith(".html")
+    pathname.endsWith('/') || pathname.endsWith('.html')
       ? url
-      : `${pathname.replace(/(\.md)?$/, ".html")}${search}${hash}`
-  );
+      : `${pathname.replace(/(\.md)?$/, '.html')}${search}${hash}`
+  )
 }
 
-const inBrowser = typeof window !== "undefined";
-const hashRef = ref(inBrowser ? location.hash : "");
+const inBrowser = typeof window !== 'undefined'
+const hashRef = ref(inBrowser ? location.hash : '')
 if (inBrowser) {
-  window.addEventListener("hashchange", () => {
-    hashRef.value = location.hash;
-  });
+  window.addEventListener('hashchange', () => {
+    hashRef.value = location.hash
+  })
 }
 
 export function isActive(
@@ -39,35 +39,23 @@ export function isActive(
   asRegex = false
 ): boolean {
   if (matchPath === undefined) {
-    return false;
+    return false
   }
-  currentPath = normalize(`/${currentPath}`);
+  currentPath = normalize(`/${currentPath}`)
   if (asRegex) {
-    return new RegExp(matchPath).test(currentPath);
+    return new RegExp(matchPath).test(currentPath)
   } else {
     if (normalize(matchPath) !== currentPath) {
-      return false;
+      return false
     }
-    const hashMatch = matchPath.match(hashRE);
+    const hashMatch = matchPath.match(hashRE)
     if (hashMatch) {
-      return hashRef.value === hashMatch[0];
+      return hashRef.value === hashMatch[0]
     }
-    return true;
+    return true
   }
-}
-
-export function isPartiallyActive(
-  currentPath: string,
-  matchPath?: string
-): boolean {
-  if (matchPath === undefined) {
-    return false;
-  }
-  currentPath = normalize(`/${currentPath}`);
-  matchPath = normalize(`${matchPath}`);
-  return currentPath.startsWith(matchPath);
 }
 
 export function normalize(path: string): string {
-  return decodeURI(path).replace(hashRE, "").replace(extRE, "");
+  return decodeURI(path).replace(hashRE, '').replace(extRE, '')
 }

@@ -1,27 +1,18 @@
 <script lang="ts" setup>
-import { MenuItemWithLink } from "../../core";
-import VPSidebarLink from "./VPSidebarLink.vue";
-import { isActive, isPartiallyActive } from "../support/utils";
-import { useData } from "vitepress";
+import { MenuItemWithLink } from '../../core'
+import VPSidebarLink from './VPSidebarLink.vue'
+import { isActive } from '../support/utils'
+import { useData } from 'vitepress'
 
 const props = defineProps<{
-  link: string,
-  text: string;
-  items: MenuItemWithLink[];
-  showPartiallyActive?: boolean;
-}>();
+  text: string
+  items: MenuItemWithLink[]
+}>()
 
-function activeMethod(currentPath: string, matchPath: string) {
-  if (props.showPartiallyActive) {
-    return isPartiallyActive(currentPath, matchPath);
-  }
-  return isActive(currentPath, matchPath);
-}
-
-const { page } = useData();
+const { page } = useData()
 function hasActiveLink() {
-  const { relativePath } = page.value;
-  return props.items.some((item) => activeMethod(relativePath, item.link));
+  const { relativePath } = page.value
+  return props.items.some((item) => isActive(relativePath, item.link))
 }
 </script>
 
@@ -29,17 +20,12 @@ function hasActiveLink() {
   <section class="VPSidebarGroup">
     <div class="title">
       <h2 class="title-text" :class="{ active: hasActiveLink() }">
-        <VPSidebarLink
-            v-if="link"
-            :item="{text, link}"
-            :showPartiallyActive="showPartiallyActive"
-            :link-class="null"/>
-        <template v-else>{{ text }}</template>
+        {{ text }}
       </h2>
     </div>
 
     <template v-for="item in items" :key="item.link">
-      <VPSidebarLink :item="item" :showPartiallyActive="showPartiallyActive" />
+      <VPSidebarLink :item="item" />
     </template>
   </section>
 </template>
@@ -61,6 +47,5 @@ function hasActiveLink() {
   font-weight: 600;
   color: var(--vt-c-text-1);
   transition: color 0.5s;
-  text-transform: uppercase;
 }
 </style>

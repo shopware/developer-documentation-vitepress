@@ -1,36 +1,36 @@
-import { ref, computed } from "vue";
-import { useRoute, useData } from "vitepress";
-import { getSidebar } from "../support/sidebar";
-import { useConfig } from "./config";
+import { ref, computed } from 'vue'
+import { useRoute, useData } from 'vitepress'
+import { getSidebar } from '../support/sidebar'
+import { useConfig } from './config'
 
 export function useSidebar() {
-  const route = useRoute();
-  const { config } = useConfig();
-  const { frontmatter } = useData();
+  const route = useRoute()
+  const { config } = useConfig()
+  const { frontmatter } = useData()
 
-  const isOpen = ref(false);
+  const isOpen = ref(false)
 
   const sidebar = computed(() => {
-    const sidebarConfig = config.value.sidebar;
-    const relativePath = route.data.relativePath;
+    const sidebarConfig = config.value.sidebar
+    const relativePath = route.data.relativePath
 
-    return sidebarConfig ? getSidebar(sidebarConfig, relativePath) : [];
-  });
+    return sidebarConfig ? getSidebar(sidebarConfig, relativePath) : []
+  })
 
   const hasSidebar = computed(
     () => frontmatter.value.sidebar !== false && sidebar.value.length > 0
-  );
+  )
 
   function open() {
-    isOpen.value = true;
+    isOpen.value = true
   }
 
   function close() {
-    isOpen.value = false;
+    isOpen.value = false
   }
 
   function toggle() {
-    isOpen.value ? close() : open();
+    isOpen.value ? close() : open()
   }
 
   return {
@@ -39,6 +39,6 @@ export function useSidebar() {
     hasSidebar,
     open,
     close,
-    toggle,
-  };
+    toggle
+  }
 }
