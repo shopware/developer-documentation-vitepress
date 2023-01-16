@@ -56,6 +56,18 @@ export function isActive(
   }
 }
 
+export function isPartiallyActive(
+  currentPath: string,
+  matchPath?: string
+): boolean {
+  if (matchPath === undefined) {
+    return false;
+  }
+  currentPath = normalize(`/${currentPath}`);
+  matchPath = normalize(`${matchPath}`);
+  return currentPath.startsWith(matchPath);
+}
+
 export function normalize(path: string): string {
   return decodeURI(path).replace(hashRE, '').replace(extRE, '')
 }

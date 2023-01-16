@@ -159,9 +159,16 @@ export interface MultiSidebarConfig {
 }
 
 export interface SidebarGroup {
+  link?: string
   text: string
-  items: MenuItemWithLink[]
+  items: Array<MenuItemWithLink | AdditionalMenuItemWithContext>;
 }
+
+export type AdditionalMenuItemWithContext = {
+  text: string;
+  link: string;
+  items: SidebarGroup[];
+};
 
 export interface i18nConfig {
   search?: string

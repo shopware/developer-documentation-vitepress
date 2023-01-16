@@ -16,19 +16,37 @@ const {
   transformerVariantGroup,
 } = require("unocss");
 
+// remove navigation from the library
+// const navigation = require("./navigation");
+const navigation = [];
+
+const { withMermaid } = require("vitepress-plugin-mermaid");
+
 // for local-linked development
 const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
 
 /**
  * @type {() => Promise<import('vitepress').UserConfig>}
  */
-module.exports = async () => ({
+module.exports = async () => withMermaid({
   vite: {
     ssr: {
       noExternal: deps
     },
     optimizeDeps: {
       exclude: deps
+    },
+    resolve: {
+      // for mounting static sub-repos in dev env
+      preserveSymlinks: true
+    },
+    // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?
+    // https://github.com/vuejs/vitepress/blob/main/rollup.config.ts ?
+    build: {
+      rollupOptions: {
+        preserveSymlinks: true,
+        shimMissingExports: true
+      }
     },
     plugins: [
       Unocss.default(
@@ -57,13 +75,6 @@ module.exports = async () => ({
   },
 
   head: [
-    [
-      'link',
-      {
-        rel: 'icon',
-        href: "/img/logo.svg"
-      }
-    ],
     ...(process.env.NODE_ENV === 'production'
       ? [
           [
@@ -81,8 +92,28 @@ module.exports = async () => ({
       : [])
   ],
 
+  vue: {
+    reactivityTransform: true,
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => tag.startsWith("elements-")
+      }
+    }
+  },
+
   shouldPreload: (link) => {
     // make algolia chunk prefetch instead of preload
     return !link.includes('Algolia')
+  },
+
+  themeConfig: {
+    nav: navigation,
+    appearance: true,
+    socialLinks: [
+      { icon: "github", link: "https://github.com/shopware/" },
+      { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
+      { icon: "slack", link: "https://slack.shopware.com" },
+      { icon: "stackoverflow", link: "https://stackoverflow.com/questions/tagged/shopware" }
+    ]
   }
 })
