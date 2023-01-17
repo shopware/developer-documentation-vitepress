@@ -195,51 +195,58 @@ function load() {
   }
 }
 
-.DocSearch-Button:hover .DocSearch-Button-Placeholder {
-  color: var(--vt-c-brand); /* Shopware Theme */
-}
-
-.DocSearch-Button .DocSearch-Button-Key {
-  margin-top: 2px;
-  border: 1px solid var(--vt-c-text-dark-2); /* Shopware Theme */
-  border-right: none;
-  border-radius: 4px 0 0 4px;
+.DocSearch-Button .DocSearch-Button-Keys {
   display: none;
-  padding-left: 6px;
+  gap: 2px;
+  min-width: auto;
+  box-sizing: border-box;
+  border: 1px solid var(--vt-c-text-dark-2); /* Shopware Theme */
+  border-radius: 4px;
+  padding: 0 6px;
+  font-family: inherit;
+  font-size: 12px;
   height: 22px;
   line-height: 22px;
+  font-weight: 500;
   transition: color 0.5s, border-color 0.5s;
-  min-width: 0;
 }
-
-.DocSearch-Button .DocSearch-Button-Key + .DocSearch-Button-Key {
-  border-right: 1px solid var(--vt-c-text-dark-2); /* Shopware Theme */
-  border-left: none;
-  border-radius: 0 4px 4px 0;
-  padding-left: 2px;
-  padding-right: 6px;
-}
-
-.DocSearch-Button:hover .DocSearch-Button-Key {
+.DocSearch-Button:hover .DocSearch-Button-Keys {
   border-color: var(--vt-c-brand-light);
-  color: var(--vt-c-brand-light);
 }
-
 @media (min-width: 768px) {
-  .DocSearch-Button .DocSearch-Button-Key {
-    display: inline-block;
+  .DocSearch-Button .DocSearch-Button-Keys {
+    display: flex;
   }
 }
 
-.DocSearch-Button-Key {
-  font-size: 12px;
-  font-weight: 500;
-  height: 20px;
-  margin: 0;
+.DocSearch-Button .DocSearch-Button-Key {
   width: auto;
-  color: var(--vt-c-text-dark-2);
+  min-width: auto;
+  font-family: inherit;
+  font-size: 12px;
+  height: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+.DocSearch-Button .DocSearch-Button-Key:first-child {
+  font-size: 1px;
+  letter-spacing: -1px;
+  color: transparent;
+}
+.DocSearch-Button .DocSearch-Button-Key:first-child::after {
+  content: v-bind(metaKey);
+}
+
+.DocSearch-Button .DocSearch-Button-Key:first-child::after,
+.DocSearch-Button .DocSearch-Button-Key:last-child {
+  font-size: 12px;
+  letter-spacing: normal;
+  color: var(--vt-c-text-dark-2); /* Shopware Theme */
   transition: color 0.5s;
-  display: inline-block;
-  padding: 0 1px;
+}
+.DocSearch-Button:hover .DocSearch-Button-Key:first-child::after,
+.DocSearch-Button:hover .DocSearch-Button-Key:last-child {
+  color: var(--vt-c-brand-light);
 }
 </style>
