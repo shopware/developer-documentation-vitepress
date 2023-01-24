@@ -4,6 +4,7 @@
  *
  * It runs in Node.js.
  */
+import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
 const Unocss = require("unocss/vite");
 const {
   defineConfig,
@@ -63,24 +64,13 @@ module.exports = async () => withMermaid({
           transformers: [transformerDirectives(), transformerVariantGroup()],
         })
       ),
+      ViteWebfontDownload([
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@800&display=swap'
+      ]),
     ],
   },
 
   head: [
-    ...(process.env.NODE_ENV === "production"
-      ? [
-          [
-            "link",
-            {
-              rel: "preload",
-              href: "/assets/inter-latin.7b37fe23.woff2",
-              as: "font",
-              type: "font/woff2",
-              crossorigin: "anonymous",
-            },
-          ],
-        ]
-      : []),
     [
       "script",
       {},
