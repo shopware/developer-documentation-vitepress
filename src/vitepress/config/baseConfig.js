@@ -4,7 +4,7 @@
  *
  * It runs in Node.js.
  */
-import { ViteWebfontDownload } from 'vite-plugin-webfont-dl';
+const { ViteWebfontDownload } = require('vite-plugin-webfont-dl');
 const Unocss = require("unocss/vite");
 const {
   defineConfig,
