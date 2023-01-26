@@ -7,13 +7,8 @@
 const Unocss = require("unocss/vite");
 const {
   defineConfig,
-  presetAttributify,
   presetIcons,
-  presetTypography,
   presetUno,
-  presetWebFonts,
-  transformerDirectives,
-  transformerVariantGroup,
 } = require("unocss");
 
 // remove navigation from the library
@@ -46,21 +41,11 @@ module.exports = async () => withMermaid({
           shortcuts: [["text-shopware", "text-#0489EA"]],
           presets: [
             presetUno(),
-            presetAttributify(),
             presetIcons({
               scale: 1.2,
               warn: true,
             }),
-            presetTypography(),
-            presetWebFonts({
-              fonts: {
-                sans: "DM Sans",
-                serif: "DM Serif Display",
-                mono: "DM Mono",
-              },
-            }),
           ],
-          transformers: [transformerDirectives(), transformerVariantGroup()],
         })
       ),
     ],
