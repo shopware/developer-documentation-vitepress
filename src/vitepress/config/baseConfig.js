@@ -38,6 +38,7 @@ module.exports = async () => withMermaid({
     plugins: [
       Unocss.default(
         defineConfig({
+          shortcuts: [["text-shopware", "text-#0489EA"]],
           presets: [
             presetUno(),
             presetIcons({
