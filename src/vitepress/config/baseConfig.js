@@ -7,13 +7,8 @@
 const Unocss = require("unocss/vite");
 const {
   defineConfig,
-  presetAttributify,
   presetIcons,
-  presetTypography,
   presetUno,
-  presetWebFonts,
-  transformerDirectives,
-  transformerVariantGroup,
 } = require("unocss");
 
 // remove navigation from the library
@@ -31,13 +26,13 @@ const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
 module.exports = async () => withMermaid({
   vite: {
     ssr: {
-      noExternal: deps
+      noExternal: deps,
     },
     optimizeDeps: {
-      exclude: deps
+      exclude: deps,
     },
     resolve: {
-      // for mounting static sub-repos in dev env
+      // for mounting static sub-repos
       preserveSymlinks: true
     },
     // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?
@@ -54,58 +49,47 @@ module.exports = async () => withMermaid({
           shortcuts: [["text-shopware", "text-#0489EA"]],
           presets: [
             presetUno(),
-            presetAttributify(),
             presetIcons({
               scale: 1.2,
-              warn: true
+              warn: true,
             }),
-            presetTypography(),
-            presetWebFonts({
-              fonts: {
-                sans: "DM Sans",
-                serif: "DM Serif Display",
-                mono: "DM Mono"
-              }
-            })
           ],
-          transformers: [transformerDirectives(), transformerVariantGroup()]
         })
-      )
-    ]
+      ),
+    ],
   },
 
   head: [
-    ...(process.env.NODE_ENV === 'production'
-      ? [
-          [
-            'link',
-            {
-              rel: 'preload',
-              // comes from vite, update this if the font file is changed
-              href: '/assets/inter-latin.4fe6132f.woff2',
-              as: 'font',
-              type: 'font/woff2',
-              crossorigin: 'anonymous'
-            }
-          ]
-        ]
-      : [])
+    [
+      "script",
+      {},
+      require("fs").readFileSync(
+        require("path").resolve(
+          __dirname,
+          "./inlined-scripts/applyDarkMode.js"
+        ),
+        "utf-8"
+      ),
+    ],
   ],
+
+  markdown: {
+    highlight: await require("./highlight")(),
+  },
 
   vue: {
     reactivityTransform: true,
     template: {
       compilerOptions: {
-        isCustomElement: (tag) => tag.startsWith("elements-")
-      }
-    }
+        isCustomElement: (tag) => tag.startsWith("elements-"),
+      },
+    },
   },
 
   shouldPreload: (link) => {
     // make algolia chunk prefetch instead of preload
-    return !link.includes('Algolia')
+    return !link.includes("Algolia");
   },
-
   themeConfig: {
     nav: navigation,
     appearance: true,
@@ -113,7 +97,7 @@ module.exports = async () => withMermaid({
       { icon: "github", link: "https://github.com/shopware/" },
       { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
       { icon: "slack", link: "https://slack.shopware.com" },
-      { icon: "stackoverflow", link: "https://stackoverflow.com/questions/tagged/shopware" }
-    ]
+      { icon: "stackoverflow", link: "https://stackoverflow.com/questions/tagged/shopware" },
+    ],
   }
-})
+});
