@@ -34,14 +34,17 @@ const currentActiveGroupElement = ref();
 const shouldShowAdditionalMenu = ref();
 
 watchEffect(async () => {
-  currentActiveGroup.value = sidebar.value.findLast((group: SidebarGroup) =>
-    hasActiveLink(group.items)
-  );
+  if (sidebar.value && typeof sidebar.value?.findLast === "function") {
+    currentActiveGroup.value = sidebar.value?.findLast((group: SidebarGroup) =>
+      hasActiveLink(group.items)
+    );
+  }
   currentActiveGroupElement.value = currentActiveGroup.value?.items?.find(
     (item: MenuItemWithLink) =>
       isPartiallyActive(page.value.relativePath, item.link)
   );
-  shouldShowAdditionalMenu.value = !!currentActiveGroupElement.value?.items?.length;
+  shouldShowAdditionalMenu.value =
+    !!currentActiveGroupElement.value?.items?.length;
 });
 </script>
 
@@ -84,10 +87,7 @@ watchEffect(async () => {
         <span id="sidebar-aria-label" class="visually-hidden"
           >{{ currentActiveGroupElement.text }} section navigation</span
         >
-        <h2
-          v-if="shouldShowAdditionalMenu"
-          class="font-bold pb-3 uppercase"
-        >
+        <h2 v-if="shouldShowAdditionalMenu" class="font-bold pb-3 uppercase">
           {{ currentActiveGroupElement.text }}
         </h2>
         <div
