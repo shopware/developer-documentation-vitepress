@@ -35,6 +35,14 @@ module.exports = async () => withMermaid({
       // for mounting static sub-repos
       preserveSymlinks: true
     },
+    // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?
+    // https://github.com/vuejs/vitepress/blob/main/rollup.config.ts ?
+    build: {
+      rollupOptions: {
+        preserveSymlinks: true,
+        shimMissingExports: true
+      }
+    },
     plugins: [
       Unocss.default(
         defineConfig({

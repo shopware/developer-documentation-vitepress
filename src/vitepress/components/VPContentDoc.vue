@@ -1,12 +1,13 @@
 <script lang="ts" setup>
-import { computed } from "vue";
-import {useData, useRoute} from "vitepress";
-import VPContentDocOutline from "./VPContentDocOutline.vue";
-import VPContentDocFooter from "./VPContentDocFooter.vue";
-import type { Config } from "../config";
-import { VTLink, VTIconGitHub, VTIconStackOverflow } from "../../core";
+import { computed } from 'vue'
+import { useData, useRoute } from 'vitepress'
+import VPContentDocOutline from './VPContentDocOutline.vue'
+import VPContentDocFooter from './VPContentDocFooter.vue'
+import { VTLink, VTIconGitHub, VTIconStackOverflow } from "../../core"
+import { useConfig } from '../composables/config'
 
-const { page, frontmatter, theme } = useData<Config>();
+const { page, frontmatter, theme } = useData()
+const { config } = useConfig()
 
 const route = useRoute();
 
@@ -16,7 +17,7 @@ const getMatchedRepos = (items) => {
     if (item.link && item.repo && route.path.match(`^${item.link}`)) {
       reduced.push({
         repo: item.repo,
-        mount: item.mount,
+        mount: item.mount
       });
     }
 
@@ -24,36 +25,36 @@ const getMatchedRepos = (items) => {
     if (item.items) {
       reduced = [
         ...getMatchedRepos(item.items),
-        ...reduced,
+        ...reduced
       ];
     }
 
     return reduced;
   }, []);
-}
+};
 
 const repoUrl = computed(() => {
   const matchedRepo = getMatchedRepos(theme.value.nav)[0];
   const repo = matchedRepo?.repo
-      || theme.value.editLink?.repo
-      || "shopware/developer-documentation-vuepress";
+    || theme.value.editLink?.repo
+    || "shopware/developer-documentation-vuepress";
 
   const branch = repo.match(/#(\w+)$/)?.[1] || "main";
   const folder = matchedRepo?.mount
-      || 'src';
+    || "src";
   return `https://github.com/${repo}/edit/${branch}/${folder}/${page.value.relativePath}`;
 });
 
 const pageClass = computed(() => {
-  const { relativePath } = page.value;
-  return relativePath.slice(0, relativePath.indexOf("/"));
-});
+  const { relativePath } = page.value
+  return relativePath.slice(0, relativePath.indexOf('/'))
+})
 </script>
 
 <template>
   <div
     class="VPContentDoc"
-    :class="{ 'has-aside': frontmatter.aside !== false }"
+    :class="{ 'has-aside': frontmatter.aside !== false, 'is-wide': frontmatter.wide === true }"
   >
     <div class="container">
       <div class="aside" v-if="frontmatter.aside !== false">
@@ -70,14 +71,13 @@ const pageClass = computed(() => {
         <slot name="content-top" />
         <main>
           <Content class="vt-doc" :class="pageClass" />
-
           <p
             class="edit-link"
-            v-if="theme.editLink && frontmatter.editLink !== false"
+            v-if="config.editLink && frontmatter.editLink !== false"
           >
             <VTIconGitHub class="vt-icon" />
             <VTLink :href="repoUrl" :no-icon="true">{{
-              theme.editLink.text
+              config.editLink.text
             }}</VTLink>
           </p>
 
@@ -87,9 +87,9 @@ const pageClass = computed(() => {
           >
             <VTIconStackOverflow class="vt-icon" />
             <VTLink :href="'https://stackoverflow.com/questions/ask?tags=shopware'"
-                    :no-icon="true">Ask a question on StackOverflow</VTLink>
+                    :no-icon="true">Ask a question on StackOverflow
+            </VTLink>
           </p>
-
         </main>
         <slot name="content-bottom" />
         <VPContentDocFooter v-if="frontmatter.footer !== false" />
@@ -172,11 +172,22 @@ const pageClass = computed(() => {
   .VPContentDoc {
     padding: 64px 0 96px 64px;
   }
-  .VPContentDoc:not(.has-sidebar.has-aside) {
-    padding-left: calc((100vw - 688px) / 2);
+  .VPContentDoc/*:not(.has-sidebar.has-aside)*/ {
+    /*padding-left: calc((100vw - 688px) / 2);*/
   }
   .VPContentDoc.has-aside:not(.has-sidebar) {
     padding-left: calc((100vw - 688px - 320px) / 2);
+  }
+  .VPContentDoc.is-wide {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .VPContentDoc.is-wide .container {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .VPContentDoc.is-wide .content {
+    max-width: 100%;
   }
   .container {
     display: flex;

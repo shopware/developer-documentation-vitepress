@@ -1,29 +1,31 @@
 <script lang="ts" setup>
-import { computed } from "@vue/reactivity";
+import { nextTick, ref, watchEffect, watchPostEffect } from 'vue'
+import { useConfig } from '../composables/config'
+import { useSidebar } from '../composables/sidebar'
+import VPSidebarGroup from './VPSidebarGroup.vue'
 import { useData } from "vitepress";
-import { nextTick, ref, watchEffect, watchPostEffect } from "vue";
-import { useSidebar } from "../composables/sidebar";
 import { isPartiallyActive } from "../support/utils";
-import VPSidebarGroup from "./VPSidebarGroup.vue";
 import { SidebarGroup } from "../config";
 import { MenuItemWithLink } from "src/core";
 
-const { sidebar, hasSidebar } = useSidebar();
+const { sidebar, hasSidebar } = useSidebar()
+const { config } = useConfig()
 
 const props = defineProps<{
-  open: boolean;
-}>();
+  open: boolean
+}>()
 
 // A11y: Focus Nav element when menu has opened
-let navEl = ref<(Element & { focus(): void }) | null>(null);
+let navEl = ref<(Element & { focus(): void }) | null>(null)
 watchPostEffect(async () => {
   if (props.open) {
-    await nextTick();
-    navEl.value?.focus();
+    await nextTick()
+    navEl.value?.focus()
   }
-});
+})
 
 const { page } = useData();
+
 function hasActiveLink(items: SidebarGroup["items"]) {
   const { relativePath } = page.value;
   return items.some((item) => isPartiallyActive(relativePath, item.link));
@@ -49,7 +51,7 @@ watchEffect(async () => {
   <aside
     v-if="hasSidebar"
     ref="navEl"
-    class="VPSidebar flex"
+    class="VPSidebar"
     :class="{ open, 'has-additional-menu': shouldShowAdditionalMenu }"
     @click.stop
   >
@@ -61,7 +63,7 @@ watchEffect(async () => {
       >
         <slot name="top" />
         <span id="sidebar-aria-label" class="visually-hidden"
-          >Sidebar Navigation</span
+        >Sidebar Navigation</span
         >
         <div v-for="group in sidebar" :key="group.text" class="group">
           <VPSidebarGroup
@@ -81,9 +83,9 @@ watchEffect(async () => {
         tabindex="-1"
         v-if="currentActiveGroupElement"
       >
-        <span id="sidebar-aria-label" class="visually-hidden"
-          >{{ currentActiveGroupElement.text }} section navigation</span
-        >
+              <span id="sidebar-aria-label" class="visually-hidden"
+              >{{ currentActiveGroupElement.text }} section navigation</span
+              >
         <h2
           v-if="shouldShowAdditionalMenu"
           class="font-bold pb-3 uppercase"

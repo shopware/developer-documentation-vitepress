@@ -1,4 +1,10 @@
 <template>
+  <!--<a class="VPNavBarTitle" href="/">
+    <slot name="navbar-title">
+      <img src="/img/logo.svg" alt="Shopware" class="w-36px h-36px mr-2" />
+      <span class="text-lg font-bold">Shopware Docs</span>
+    </slot>
+  </a>-->
   <div class="flex items-center">
     <a class="VPNavBarTitle" :href="withBase('/')">
       <img
@@ -8,7 +14,7 @@
       />
     </a>
     <a :href="withBase('/installation.html')"
-      ><span class="accent text-xl">EA</span></a
+    ><span class="accent text-xl">EA</span></a
     >
   </div>
 </template>

@@ -1,0 +1,243 @@
+diff --git a/src/core/styles/base.css b/src/core/styles/base.css
+index 81e6415..c590bbf 100644
+--- a/src/core/styles/base.css
++++ b/src/core/styles/base.css
+@@ -23,6 +23,21 @@ body {
+   -moz-osx-font-smoothing: grayscale;
+ }
+ 
++/* For gradient titles */
++.accent {
++  background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
++  /* background: -webkit-repeating-radial-gradient(
++    top left,
++    circle,
++    #017bff,
++    #01cfff 10%,
++    #017bff 30%
++  ); */
++  background-clip: text;
++  -webkit-background-clip: text;
++  -webkit-text-fill-color: transparent;
++}
++
+ blockquote,
+ dl,
+ dd,
+diff --git a/src/core/styles/variables.css b/src/core/styles/variables.css
+index 2cc67cd..f69cbea 100644
+--- a/src/core/styles/variables.css
++++ b/src/core/styles/variables.css
+@@ -106,9 +106,9 @@
+   --vt-c-text-inverse-3: var(--vt-c-text-dark-3);
+   --vt-c-text-inverse-4: var(--vt-c-text-dark-4);
+ 
+-  --vt-c-brand: var(--vt-c-green);
+-  --vt-c-brand-light: var(--vt-c-green-light);
+-  --vt-c-brand-dark: var(--vt-c-green-dark);
++  --vt-c-brand: var(--vt-c-blue);
++  --vt-c-brand-light: var(--vt-c-blue-light);
++  --vt-c-brand-dark: var(--vt-c-blue-dark);
+   --vt-c-brand-highlight: var(--vt-c-brand-dark);
+ }
+ 
+diff --git a/src/core/styles/vt-doc-base.css b/src/core/styles/vt-doc-base.css
+index 6a50e56..33c042e 100644
+--- a/src/core/styles/vt-doc-base.css
++++ b/src/core/styles/vt-doc-base.css
+@@ -57,6 +57,7 @@
+ 
+ .vt-doc .header-anchor {
+   float: left;
++  top: 0;
+   margin-left: -0.87em;
+   padding-right: 0.23em;
+   font-weight: 500;
+diff --git a/src/vitepress/components/VPContentDoc.vue b/src/vitepress/components/VPContentDoc.vue
+index 5e4e886..8d20c55 100644
+--- a/src/vitepress/components/VPContentDoc.vue
++++ b/src/vitepress/components/VPContentDoc.vue
+@@ -36,7 +36,6 @@ const pageClass = computed(() => {
+             v-if="page.headers && frontmatter.outline !== false"
+           />
+           <slot name="aside-mid" />
+-          <VPCarbonAds v-if="theme.carbonAds && frontmatter.ads !== false" />
+           <slot name="aside-bottom" />
+         </div>
+       </div>
+diff --git a/src/vitepress/components/VPContentDocOutline.vue b/src/vitepress/components/VPContentDocOutline.vue
+index 032b913..29191f1 100644
+--- a/src/vitepress/components/VPContentDocOutline.vue
++++ b/src/vitepress/components/VPContentDocOutline.vue
+@@ -96,7 +96,7 @@ const handleClick = ({ target: el }: Event) => {
+ .outline-marker {
+   opacity: 0;
+   position: absolute;
+-  background-color: var(--vt-c-green);
++  background-color: var(--vt-c-brand);
+   border-radius: 4px;
+   width: 4px;
+   height: 20px;
+diff --git a/src/vitepress/components/VPNavBarTitle.vue b/src/vitepress/components/VPNavBarTitle.vue
+index a362ba7..d7b34a5 100644
+--- a/src/vitepress/components/VPNavBarTitle.vue
++++ b/src/vitepress/components/VPNavBarTitle.vue
+@@ -1,16 +1,7 @@
+ <template>
+   <a class="VPNavBarTitle" href="/">
+-    <svg class="logo" viewBox="0 0 128 128" width="24" height="24">
+-      <path
+-        fill="#42b883"
+-        d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z"
+-      />
+-      <path
+-        fill="#35495e"
+-        d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z"
+-      />
+-    </svg>
+-    <span class="text">Vue.js</span>
++    <img src="/img/logo.svg" alt="Shopware" class="w-36px h-36px mr-2" />
++    <span class="text-lg font-bold">Shopware Docs</span>
+   </a>
+ </template>
+ 
+@@ -26,17 +17,4 @@
+ .VPNavBarTitle:hover {
+   opacity: 0.6;
+ }
+-
+-.logo {
+-  position: relative;
+-}
+-
+-.logo + .text {
+-  padding-left: 8px;
+-}
+-
+-.text {
+-  font-size: 16px;
+-  font-weight: 500;
+-}
+ </style>
+diff --git a/src/vitepress/components/VPSkipLink.vue b/src/vitepress/components/VPSkipLink.vue
+index 669563a..ca3affa 100644
+--- a/src/vitepress/components/VPSkipLink.vue
++++ b/src/vitepress/components/VPSkipLink.vue
+@@ -48,13 +48,13 @@ const focusOnTargetAnchor = ({ target }: Event) => {
+   font-size: 0.9em;
+   font-weight: bold;
+   text-decoration: none;
+-  color: var(--vt-c-green);
++  color: var(--vt-c-brand);
+   box-shadow: var(--vt-shadow-3);
+   background-color: var(--vt-c-bg);
+   border-radius: 8px;
+ }
+ .dark .VPSkipLink {
+-  color: var(--vt-c-green);
++  color: var(--vt-c-brand);
+ }
+ .VPSkipLink:focus {
+   height: auto;
+diff --git a/src/vitepress/config.ts b/src/vitepress/config.ts
+index 201b1b1..7466078 100644
+--- a/src/vitepress/config.ts
++++ b/src/vitepress/config.ts
+@@ -60,14 +60,6 @@ export interface Config {
+    * Algolia configuration for the site search.
+    */
+   algolia?: AlgoliaSearchOptions;
+-
+-  /**
+-   * CarbonAds configuration
+-   */
+-  carbonAds?: {
+-    code: string;
+-    placement: string;
+-  };
+ }
+ 
+ /**
+diff --git a/src/vitepress/config/baseConfig.js b/src/vitepress/config/baseConfig.js
+index f264b43..43c7e96 100644
+--- a/src/vitepress/config/baseConfig.js
++++ b/src/vitepress/config/baseConfig.js
+@@ -4,9 +4,20 @@
+  *
+  * It runs in Node.js.
+  */
++const Unocss = require("unocss/vite");
++const {
++  defineConfig,
++  presetAttributify,
++  presetIcons,
++  presetTypography,
++  presetUno,
++  presetWebFonts,
++  transformerDirectives,
++  transformerVariantGroup,
++} = require("unocss");
+ 
+ // for local-linked development
+-const deps = ['@vue/theme', '@vueuse/core', 'body-scroll-lock']
++const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
+ 
+ /**
+  * @type {() => Promise<import('vitepress').UserConfig>}
+@@ -17,17 +28,41 @@ module.exports = async () => ({
+       noExternal: deps,
+     },
+     optimizeDeps: {
+-      exclude: deps
+-    }
++      exclude: deps,
++    },
++    plugins: [
++      Unocss.default(
++        defineConfig({
++          shortcuts: [["text-shopware", "text-#0489EA"]],
++          presets: [
++            presetUno(),
++            presetAttributify(),
++            presetIcons({
++              scale: 1.2,
++              warn: true,
++            }),
++            presetTypography(),
++            presetWebFonts({
++              fonts: {
++                sans: "DM Sans",
++                serif: "DM Serif Display",
++                mono: "DM Mono",
++              },
++            }),
++          ],
++          transformers: [transformerDirectives(), transformerVariantGroup()],
++        })
++      ),
++    ],
+   },
+ 
+   head: [
+     [
+       "link",
+       {
+-        rel: 'icon',
+-        href: '/logo.svg'
+-      }
++        rel: "icon",
++        href: "/img/logo.svg",
++      },
+     ],
+     ...(process.env.NODE_ENV === "production"
+       ? [
+diff --git a/src/vitepress/index.ts b/src/vitepress/index.ts
+index 566eef0..39cc2bf 100644
+--- a/src/vitepress/index.ts
++++ b/src/vitepress/index.ts
+@@ -1,3 +1,5 @@
++// import "tailwindcss/tailwind.css";
++import "uno.css";
+ import "./styles/index.css";
+ import VPApp from "./components/VPApp.vue";
+ import VPNotFound from "./components/VPNotFound.vue";

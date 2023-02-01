@@ -1,10 +1,10 @@
 // import "tailwindcss/tailwind.css";
 import "uno.css";
-import "./styles/index.css";
-import VPApp from "./components/VPApp.vue";
-import VPNotFound from "./components/VPNotFound.vue";
-import { Theme } from "vitepress";
-import { withConfigProvider } from "./composables/config";
+import './styles/index.css'
+import VPApp from './components/VPApp.vue'
+import VPNotFound from './components/VPNotFound.vue'
+import { Theme } from 'vitepress'
+import { withConfigProvider } from './composables/config'
 
 // import ActionItem from "./../shopware/components/ActionItem.vue";
 // import RegistrationForm from "./../shopware/components/RegistrationForm.vue";
@@ -27,9 +27,9 @@ const VPTheme: Theme = {
       app.component("CodeBlock", CodeBlock),
       app.component("Tabs", Tabs),
       app.component("Tab", Tab);
-  },
+  }
 };
 
-export { VPTheme };
+export { VPTheme }
 
-export type { Config } from "./config";
+export type { Config } from './config'

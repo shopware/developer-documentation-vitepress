@@ -1,16 +1,22 @@
 <script setup lang="ts">
 import docsearch from '@docsearch/js'
-import { useRoute, useRouter, useData } from 'vitepress'
+import { useRoute, useRouter } from 'vitepress'
 import { onMounted } from 'vue'
-import { DocSearchHit } from '@docsearch/react/dist/esm/types'
-import { AlgoliaSearchOptions } from '../config'
+import { useConfig } from '../composables/config'
+import type { AlgoliaSearchOptions } from '../config'
 
-const { theme } = useData()
+// partial type only containing what we need
+interface DocSearchHit {
+  url: string
+}
+
+const { config } = useConfig()
 const route = useRoute()
 const router = useRouter()
 
 onMounted(() => {
-  initialize(theme.value.algolia)
+  // this component will only render if user has configured algolia
+  initialize(config.value.algolia!)
   setTimeout(poll, 16)
 })
 
@@ -30,9 +36,12 @@ function poll() {
 function initialize(userOptions: AlgoliaSearchOptions) {
   // Note: multi-lang search support is removed since the theme
   // doesn't support multiple locales as of now
-
   const options = Object.assign({}, userOptions, {
     container: '#docsearch',
+
+    getMissingResultsUrl({ query }: { query: string }) {
+      return `https://github.com/vuejs/docs/issues/new?title=Missing%20search%20result%20for%20${query}`
+    },
 
     navigator: {
       navigate: ({ itemUrl }: { itemUrl: string }) => {
