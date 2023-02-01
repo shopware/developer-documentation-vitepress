@@ -54,7 +54,7 @@ const pageClass = computed(() => {
 <template>
   <div
     class="VPContentDoc"
-    :class="{ 'has-aside': frontmatter.aside !== false }"
+    :class="{ 'has-aside': frontmatter.aside !== false, 'is-wide': frontmatter.wide === true }"
   >
     <div class="container">
       <div class="aside" v-if="frontmatter.aside !== false">
@@ -172,11 +172,22 @@ const pageClass = computed(() => {
   .VPContentDoc {
     padding: 64px 0 96px 64px;
   }
-  .VPContentDoc:not(.has-sidebar.has-aside) {
-    padding-left: calc((100vw - 688px) / 2);
+  .VPContentDoc/*:not(.has-sidebar.has-aside)*/ {
+    /*padding-left: calc((100vw - 688px) / 2);*/
   }
   .VPContentDoc.has-aside:not(.has-sidebar) {
     padding-left: calc((100vw - 688px - 320px) / 2);
+  }
+  .VPContentDoc.is-wide {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+  .VPContentDoc.is-wide .container {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .VPContentDoc.is-wide .content {
+    max-width: 100%;
   }
   .container {
     display: flex;
