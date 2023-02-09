@@ -1,10 +1,5 @@
 # About
 
-Repository `developer-documentation-vitepress` provides two ways to write documentation:
-
-- embedded/basic
-- standalone/advanced
-
 | Feature                   | Basic | Standalone          |
 |---------------------------|-------|---------------------|
 | Custom Vue SFC components | No    | Yes                 |
@@ -20,24 +15,21 @@ Use this approach when the base project provides you with all generic components
 
 Sidebar can be configured by custom YML in your .md file (frontmatter).
 
-```markdown
-
-\```
+```yaml
 nav:
   title: Custom title
   position: 123
   class: custom-class
   nolink: true
   hidden: true
-\```
-
 ```
 
 #### Reformatting YML frontmatter configuration in .md files by PhpStorm
 
 Please, enable registry key `markdown.experimental.frontmatter.support.enable=true` in your PhpStorm registry settings.
 
-See [https://youtrack.jetbrains.com/issue/IDEA-291881/Frontmatter-Support](IDEA-291881) in JetBrains issue tracker for more info.
+See [https://youtrack.jetbrains.com/issue/IDEA-291881/Frontmatter-Support](IDEA-291881) in JetBrains issue tracker for
+more info.
 
 ```
 Shift+Shift -> Registry -> Find and enable key
@@ -46,10 +38,11 @@ Shift+Shift -> Registry -> Find and enable key
 # Standalone / advanced
 
 This approach gives you more power over custom components, config and any other custom code. Please,
-see [./SETUP.md](SETUP) for more info on how to get the project running, 
+see [./SETUP.md](SETUP) for more info on how to get the project running,
 and [`developer-portal`](/shopware/developer-portal) for more info on the actual implementation.
 
 ## All features
+
 ## Sidebar auto-generation
 
 See `.vitepress/navigation.ts` to see how the sidebar is configured and auto-generated.
@@ -68,7 +61,23 @@ Algolia search is integrated with their DocSearch feature.
 
 ## Mermaid
 
-Mermaid plugin is built-in for drawing diagrams and charts.
+```mermaid
+graph LR;
+    K([<img src='/vitepress-plugin-mermaid/K.png' width='60' >])-.->G((<img id='git' src='/vitepress-plugin-mermaid/Octocat.png' width='50' >));
+    H([<img id='helm' src='/vitepress-plugin-mermaid/helm.png' width='60' >])-.->G
+    G-->A;
+    A(<img src='/vitepress-plugin-mermaid/argo-cd.png' width='60' >)-->D(<img src='/vitepress-plugin-mermaid/ocp.png' width='60' >);
+classDef img fill:none,color:none,stroke:none,border-radius:50px
+class G,D,A,K,H img
+click G "http://www.github.com" "This is a link" _blank
+click K "https://kustomize.io/" _blank
+```
+
+```mermaid
+pie title Do you like Shopware?
+    "Yes" : 386
+    "Yes, but in yellow" : 15
+```
 
 ## APIs
 
@@ -77,6 +86,16 @@ Internal APIs (Store & Admin) are automatically generated with Stoplight.
 ## Sitemap
 
 Generate sitemap for SERP.
+
+## VueJS Components
+
+### PageRef
+
+`<PageRef>`
+
+### Tabs
+
+`<Tabs>` and `<Tab>`
 
 # External config
 
