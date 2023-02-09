@@ -2,19 +2,11 @@
 
 This is a base theme for all developer documentation websites in the Shopware Product ecosystem.
 
-Please follow the [setup instructions](./SETUP.md) for more information on how to use this theme.
+Please follow the:
 
-## Structure
-
-- Shopware Developer Platform `developer.shopware.com`
-  - Apps `/apps`
-  - Themes `/themes`
-  - Custom Frontends `/custom-frontends`
-  - Integrations `/integrations`
-  - Docs (old docs) `/docs`
-    - All existing docs are still available under `/docs` and will be embedded / linked from the new structure
-  - Resources `/resources`
-    - Additional resources like API references, icon kits, etc.
+- [setup instructions](./SETUP.md) for more information on how to use this theme.
+- [features](./FEATURES.md) for more information on globally available features.
+- [`developer-portal`](/shopware/developer-portal) for the actual implementation of this library.
 
 ## Collaboration
 
