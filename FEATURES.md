@@ -1,17 +1,6 @@
-# About
+# Features
 
-| Feature                   | Basic | Standalone          |
-|---------------------------|-------|---------------------|
-| Custom Vue SFC components | No    | Yes                 |
-| Autobuild sidebar         | Yes   | No (available)      |
-| Included in sitemap       | Yes   | No (can be mounted) |
-| PageRef autolink          | Yes   | No (can be mounted) |
-
-# Embedded / basic
-
-Use this approach when the base project provides you with all generic components you need.
-
-### Sidebar configuration
+## Sidebar configuration
 
 Sidebar can be configured by custom YML in your .md file (frontmatter).
 
@@ -23,25 +12,6 @@ nav:
   nolink: true
   hidden: true
 ```
-
-#### Reformatting YML frontmatter configuration in .md files by PhpStorm
-
-Please, enable registry key `markdown.experimental.frontmatter.support.enable=true` in your PhpStorm registry settings.
-
-See [https://youtrack.jetbrains.com/issue/IDEA-291881/Frontmatter-Support](IDEA-291881) in JetBrains issue tracker for
-more info.
-
-```
-Shift+Shift -> Registry -> Find and enable key
-```
-
-# Standalone / advanced
-
-This approach gives you more power over custom components, config and any other custom code. Please,
-see [./SETUP.md](SETUP) for more info on how to get the project running,
-and [`developer-portal`](/shopware/developer-portal) for more info on the actual implementation.
-
-## All features
 
 ## Sidebar auto-generation
 
@@ -89,13 +59,33 @@ Generate sitemap for SERP.
 
 ## VueJS Components
 
+### ActionItem
+
+`<ActionItem>`
+
+### CodeBlock
+
+`<CodeBlock>`
+
+### LandingWrapper
+
+`<LandingWrapper>`
+
 ### PageRef
 
 `<PageRef>`
 
+### RegistrationForm
+
+`<RegistrationForm>`
+
 ### Tabs
 
 `<Tabs>` and `<Tab>`
+
+### TopBar
+
+`<TopBar>`
 
 # External config
 
@@ -110,14 +100,7 @@ commands. If you'll use `link` command, you need to run your script manually, as
 ## Standalone usage
 
 As we've built `developer-portal`, you can base another separate project by using `developer-documentation-vitepress`
-package.
-
-# Notes
-
-## PHPStorm configuration (frontmatter)
-
-Activate `markdown.experimental.frontmatter.support.enable` to enable proper formatting of frontmatter sections in your
-.md files.
+package. See [SETUP](./SETUP.md) for more info on the process.
 
 # Beta
 
