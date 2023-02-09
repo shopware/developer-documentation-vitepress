@@ -1,4 +1,4 @@
-import { SidebarGroup } from "../../../../../../src/vitepress/config";
+import { SidebarGroup } from "../../../../src/vitepress/config";
 
 const concepts: SidebarGroup[] = [{
     text: "Concepts",
