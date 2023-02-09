@@ -115,34 +115,38 @@ Mermaid plugin is built-in for drawing diagrams and charts.
 
 Internal APIs (Store & Admin) are automatically generated with Stoplight.
 
+## Sitemap
+
+Generate sitemap for SERP.
+
+# External config
+
 ## Extending
 
 After the CLI clones your git repo, and before it builds docs, you can enrich output by
 creating `.github/scripts/docs-after-clone.sh` in your repository. This is only supported in `embed` and `clone`
 commands. If you'll use `link` command, you need to run your script manually, as needed.
 
+## Copying static assets
+
 ## Standalone usage
 
 As we've built `developer-portal`, you can base another separate project by using `developer-documentation-vitepress`
 package.
 
-## Notes
+# Notes
 
-### PHPStorm configuration (frontmatter)
+## PHPStorm configuration (frontmatter)
 
 Activate `markdown.experimental.frontmatter.support.enable` to enable proper formatting of frontmatter sections in your
 .md files.
 
-# Future
+# Beta
 
-## Sitemap
-
-Generate sitemap for SERP.
-
-## Visual testing
+## Visual (regression) testing
 
 Visually compare changes to prevent some issues.
 
-## Change report
+## Change report generation
 
 Generate change report for developer marketing team.
