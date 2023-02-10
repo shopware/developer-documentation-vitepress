@@ -1,8 +1,55 @@
 # Features
 
+## VueJS Components
+
+Custom VueJS SFC are supported by default.
+
+<!--
+
+### ActionItem
+
+`<ActionItem>`
+
+### LandingWrapper
+
+`<LandingWrapper>`
+
+### TopBar
+
+`<TopBar>`
+
+### RegistrationForm
+
+`<RegistrationForm>`
+
+-->
+
+### `<CodeBlock>`
+
+![](./demo/public/examples/code-block.png)
+
+### `<PageRef>`
+
+![](./demo/public/examples/page-ref.png)
+
+### `<Tabs>` and `<Tab>`
+
+![](./demo/public/examples/tabs.png)
+
+## Sidebar auto-generation
+
+Sidebar can be automatically generated using the `buildSidebarNav` helper which traverses through all links (folders),
+builds a structure with metadata available on every page, and navigation config with `repo` property to change the 
+source of .md files (for the "Edit on GitHub" link to work properly).
+
+See `.vitepress/navigation.ts` to see how the sidebar is configured and auto-generated.
+
 ## Sidebar configuration
 
-Sidebar can be configured by custom YML in your .md file (frontmatter).
+Sidebar can be configured by custom YML in your .md file (frontmatter). This allows us to change the `title` displayed
+in the sidebar, change the `position` of item in the sidebar, add custom `class` and display the link differently, use
+`nolink` to display the text only, and use `hidden` to hide the item from the sidebar because all articles are
+automatically added to the sidebar.
 
 ```yaml
 nav:
@@ -12,18 +59,6 @@ nav:
   nolink: true
   hidden: true
 ```
-
-## Sidebar auto-generation
-
-See `.vitepress/navigation.ts` to see how the sidebar is configured and auto-generated.
-
-## Versioning
-
-See `.github/scripts/embed.sh` and `cli/src/data.ts`.
-
-## Custom components
-
-Custom VueJS SFC are supported by default.
 
 ## Search
 
@@ -57,36 +92,6 @@ Internal APIs (Store & Admin) are automatically generated with Stoplight.
 
 Generate sitemap for SERP.
 
-## VueJS Components
-
-### ActionItem
-
-`<ActionItem>`
-
-### CodeBlock
-
-`<CodeBlock>`
-
-### LandingWrapper
-
-`<LandingWrapper>`
-
-### PageRef
-
-`<PageRef>`
-
-### RegistrationForm
-
-`<RegistrationForm>`
-
-### Tabs
-
-`<Tabs>` and `<Tab>`
-
-### TopBar
-
-`<TopBar>`
-
 # External config
 
 ## Extending
@@ -99,8 +104,8 @@ commands. If you'll use `link` command, you need to run your script manually, as
 
 ## Standalone usage
 
-As we've built `developer-portal`, you can base another separate project by using `developer-documentation-vitepress`
-package. See [SETUP](./SETUP.md) for more info on the process.
+Similar to how we've built `developer-portal`, you can base another separate project by using
+`developer-documentation-vitepress` package. See [SETUP](./SETUP.md) for more info on the process.
 
 # Beta
 
