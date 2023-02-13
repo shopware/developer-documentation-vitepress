@@ -24,6 +24,10 @@ const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
  * @type {() => Promise<import('vitepress').UserConfig>}
  */
 module.exports = async () => withMermaid({
+  lang: "en-US",
+  srcDir: ".",
+  scrollOffset: "header",
+
   vite: {
     ssr: {
       noExternal: deps,
@@ -38,6 +42,8 @@ module.exports = async () => withMermaid({
     // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?
     // https://github.com/vuejs/vitepress/blob/main/rollup.config.ts ?
     build: {
+      minify: "terser",
+      chunkSizeWarningLimit: Infinity,
       rollupOptions: {
         preserveSymlinks: true,
         shimMissingExports: true
@@ -57,6 +63,19 @@ module.exports = async () => withMermaid({
         })
       ),
     ],
+    define: {
+      __VUE_OPTIONS_API__: false,
+    },
+    server: {
+      host: true,
+      fs: {
+        // for when developing with locally linked theme
+        allow: ["../.."],
+      },
+    },
+    json: {
+      stringify: true,
+    },
   },
 
   head: [
@@ -65,8 +84,8 @@ module.exports = async () => withMermaid({
       {},
       require("fs").readFileSync(
         require("path").resolve(
-          __dirname,
-          "./inlined-scripts/applyDarkMode.js"
+            __dirname,
+            "./inlined-scripts/applyDarkMode.js"
         ),
         "utf-8"
       ),
@@ -90,14 +109,19 @@ module.exports = async () => withMermaid({
     // make algolia chunk prefetch instead of preload
     return !link.includes("Algolia");
   },
+
   themeConfig: {
     nav: navigation,
     appearance: true,
     socialLinks: [
-      { icon: "github", link: "https://github.com/shopware/" },
-      { icon: "twitter", link: "https://twitter.com/ShopwareDevs" },
-      { icon: "slack", link: "https://slack.shopware.com" },
-      { icon: "stackoverflow", link: "https://stackoverflow.com/questions/tagged/shopware" },
+      {icon: "github", link: "https://github.com/shopware/"},
+      {icon: "twitter", link: "https://twitter.com/ShopwareDevs"},
+      {icon: "slack", link: "https://slack.shopware.com"},
+      {icon: "stackoverflow", link: "https://stackoverflow.com/questions/tagged/shopware"},
     ],
+    editLink: {
+      repo: "shopware/developer-documentation-template",
+      text: "Edit this page on GitHub",
+    },
   }
 });
