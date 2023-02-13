@@ -1,1 +1,0 @@
-<RegistrationForm title="My custom title" :collapsed="false"></RegistrationForm>
