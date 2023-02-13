@@ -1,6 +1,6 @@
 import { SidebarGroup } from "../../../src/vitepress/config";
-import {readSidebar} from "../../../src/core/composables/Sidebar";
+import {transformLinkToSidebar} from "../../../src/core/composables/Sidebar";
 
-const apps: SidebarGroup[] = readSidebar('apps', './demo/apps/');
+const apps: SidebarGroup[] = transformLinkToSidebar('./demo/', '/apps/');
 
 export default apps;

@@ -1,6 +1,6 @@
 import { SidebarGroup } from "../../../src/vitepress/config";
-import {readSidebar} from "../../../src/core/composables/Sidebar";
+import {transformLinkToSidebar} from "../../../src/core/composables/Sidebar";
 
-const themes: SidebarGroup[] = readSidebar('themes', './demo/themes/');
+const themes: SidebarGroup[] = transformLinkToSidebar('./demo/', '/themes/');
 
 export default themes;
