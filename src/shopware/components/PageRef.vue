@@ -55,7 +55,7 @@ const transformRelativeRoute = (url) => {
   const splitPath = parentPath.split('/');
   const countTwoDots = url.split('/').filter(part => part === '..').length;
 
-  return `${splitPath.slice(0, splitPath.length - countTwoDots)}${url.substring('../'.length * countTwoDots)}`;
+  return `${splitPath.slice(0, splitPath.length - countTwoDots).join('/')}/${url.substring('../'.length * countTwoDots)}`;
 }
 
 const getSidebarItem = (attr) => {
