@@ -28,70 +28,13 @@
 import {useAttrs, ref} from "vue";
 import {useConfig} from "../../vitepress/composables/config";
 import {useRoute} from "vitepress";
+import {getSidebarItem} from "../utils/sidebar";
 
 const {config} = useConfig();
 const attrs = useAttrs();
 const route = useRoute();
 
-const transformRelativeRoute = (url) => {
-  if (url.startsWith('/')) {
-    return url;
-  }
-
-  let parentPath = route.path;
-  if (!parentPath.endsWith('/')) {
-    // remove last path, we are not in directory at the moment
-    parentPath = parentPath.split('/').reverse().slice(1).reverse().join('/');
-  } else {
-    // remove last /
-    parentPath = parentPath.substring(0, parentPath.length - 1);
-  }
-
-  if (url.startsWith('./')) {
-    // remove . from url, keep the same level
-    return `${parentPath}${url.substring(1)}`;
-  }
-
-  const splitPath = parentPath.split('/');
-  const countTwoDots = url.split('/').filter(part => part === '..').length;
-
-  return `${splitPath.slice(0, splitPath.length - countTwoDots).join('/')}/${url.substring('../'.length * countTwoDots)}`;
-}
-
-const getSidebarItem = (attr) => {
-  // hardcoded title or sub/description
-  if (attrs[attr]) {
-    return attrs[attr];
-  }
-
-  const url = attrs.page;
-  // cannot auto-resolve attrs for external or empty urls
-  if (!url || url.startsWith('https://') || url.startsWith('http://') || url.startsWith('//')) {
-    return attrs[attr];
-  }
-
-  const absolute = transformRelativeRoute(url);
-  const levels = absolute.substring(1).split('/');
-
-  const [firstLevel, secondLevel] = levels;
-  const firstLevelItem = config.value.sidebar[`/${firstLevel}/`];
-
-  const secondLevelItem = firstLevelItem?.find(({text}) => text.toLowerCase() === secondLevel.toLowerCase() || text.toLowerCase() === `${secondLevel.toLowerCase()}.html`);
-
-  if (!secondLevelItem) {
-    // @T00D00 - make it dynamic
-    return 'Cannot find second level item!';
-  }
-
-  const mapper = {
-    title: 'text',
-  };
-
-  return `${secondLevelItem[mapper[attr]] || attr}`;
-  // return `Building ${url}->${attr} | ${secondLevelItem[mapper[attr]] || attr}`;
-}
-
-const getAttr = (attr) => ref(getSidebarItem(attr));
+const getAttr = (attr) => ref(getSidebarItem(config.value.sidebar, route, attrs, attr));
 
 const page = ref(attrs.page);
 const icon = ref(attrs.icon || "");

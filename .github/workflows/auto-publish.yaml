@@ -3,15 +3,42 @@ on:
   push:
     branches:
       - main
-      - DX-248-3
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  npm-publish:
-    name: npm-publish
+  test:
+    name: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Test CLI
+        run: pnpm test:unit
+
+  npm-publish:
+    name: npm-publish
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
       - name: Publish if version has been updated
         uses: pascalgn/npm-publish-action@1.3.9
         with: # All of these inputs are optional
