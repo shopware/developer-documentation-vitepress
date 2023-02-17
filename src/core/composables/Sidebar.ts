@@ -290,8 +290,8 @@ export function transformLinkToSidebar(root: string, link: string) {
                 reduced: Array<MenuItemWithLink | AdditionalMenuItemWithContext>,
                 file
             ) => {
-                // skip files/dirs starting with .
-                if (file[0] === ".") {
+                // skip files/dirs starting with . or _
+                if (file[0] === "." || file[0] === "_") {
                     return reduced;
                 }
 
@@ -345,7 +345,7 @@ export function makeSidebarConfig(
 ): SidebarConfig {
     fs.readdirSync(root).forEach((dir) => {
         // skip hidden files/dirs
-        if (dir[0] === ".") {
+        if (dir[0] === "." || dir[0] === "_") {
             return;
         }
 
