@@ -24,6 +24,7 @@
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "type": "tsc --noEmit",
     "test": "pnpm run lint && pnpm run type",
+    "test:unit": "vitest run -r __tests__/unit --sequence.shuffle",
     "dev": "vitepress dev demo",
     "build": "vitepress build demo",
     "serve": "pnpm run build && vitepress serve demo --port 5002"
@@ -57,7 +58,10 @@
     "typescript": "^4.9.4",
     "vitepress": "1.0.0-alpha.40",
     "vue": "^3.2.45",
-    "google-fonts-helper": "^3.2.2"
+    "google-fonts-helper": "^3.2.2",
+    "vitest": "^0.28.5",
+    "get-port": "^6.1.2",
+    "@vitejs/plugin-vue": "^4.0.0"
   },
   "pnpm": {
     "peerDependencyRules": {

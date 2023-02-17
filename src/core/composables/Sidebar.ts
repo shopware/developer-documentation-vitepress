@@ -290,8 +290,16 @@ export function transformLinkToSidebar(root: string, link: string) {
                 reduced: Array<MenuItemWithLink | AdditionalMenuItemWithContext>,
                 file
             ) => {
+                // skip files/dirs starting with .
+                if (file[0] === ".") {
+                    return reduced;
+                }
+
                 if (!fs.statSync(`${folder}${file}`).isDirectory()) {
-                    //meta[`${folder}${file}`] = getMeta(folder, file);
+                    reduced.push({
+                        link: `/${as}/${file}`,
+                        text: niceName(file),
+                    });
 
                     return reduced;
                 } else if (fs.existsSync(`${folder}${file}/index.md`)) {
@@ -299,10 +307,6 @@ export function transformLinkToSidebar(root: string, link: string) {
                     `${folder}${file}`,
                     `/index.md`
                   );*/
-                }
-
-                if (file[0] === ".") {
-                    return reduced;
                 }
 
                 // collect links

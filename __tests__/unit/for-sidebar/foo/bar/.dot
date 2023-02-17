@@ -1,0 +1,32 @@
+'{
+  "/foo/": [
+    {
+      "link": "/foo/bar/",
+      "text": "Bar",
+      "items": [
+        {
+          "text": "Bar1",
+          "link": "/foo/bar/bar1.html",
+          "items": []
+        },
+        {
+          "text": "Foo2",
+          "link": "/foo/bar/foo2.html",
+          "items": []
+        }
+      ]
+    },
+    {
+      "link": "/foo/bar3.md",
+      "text": "Bar3.md"
+    },
+    {
+      "link": "/foo/foo4.md",
+      "text": "Foo4.md"
+    },
+    {
+      "link": "/foo/index.md",
+      "text": "Index.md"
+    }
+  ]
+}'
