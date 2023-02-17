@@ -116,20 +116,6 @@ const baseSidebar = {
         link: '/three-levels/'
     }]
 };
-const paths = [
-    // fake
-    '/',
-    '/foo',
-    '/foo.html',
-    '/foo/',
-    '/foo/bar',
-    '/foo/bar.html',
-    '/foo/bar/',
-    '/foo/bar/baz',
-    '/foo/bar/baz.html',
-    '/foo/bar/baz',
-    // real
-];
 
 const rootRoute = {
     path: '/',
