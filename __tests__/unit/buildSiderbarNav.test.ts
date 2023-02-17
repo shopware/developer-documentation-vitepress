@@ -45,15 +45,18 @@ describe('builds sidebar', async () => {
             '    },\n' +
             '    {\n' +
             '      "link": "/foo/bar3.md",\n' +
-            '      "text": "Bar3.md"\n' +
+            '      "text": "Bar3",\n' +
+            '      "items": []\n' +
             '    },\n' +
             '    {\n' +
             '      "link": "/foo/foo4.md",\n' +
-            '      "text": "Foo4.md"\n' +
+            '      "text": "Foo4",\n' +
+            '      "items": []\n' +
             '    },\n' +
             '    {\n' +
-            '      "link": "/foo/index.md",\n' +
-            '      "text": "Index.md"\n' +
+            '      "link": "/foo/",\n' +
+            '      "text": "Foo",\n' +
+            '      "items": []\n' +
             '    }\n' +
             '  ]\n' +
             '}');

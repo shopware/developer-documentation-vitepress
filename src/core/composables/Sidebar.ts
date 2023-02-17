@@ -296,10 +296,19 @@ export function transformLinkToSidebar(root: string, link: string) {
                 }
 
                 if (!fs.statSync(`${folder}${file}`).isDirectory()) {
-                    reduced.push({
-                        link: `/${as}/${file}`,
-                        text: niceName(file),
-                    });
+                    if (file === 'index.md') {
+                        reduced.push({
+                            link: `/${as}/`,
+                            text: niceName(as),
+                            items: [],
+                        });
+                    } else {
+                        reduced.push({
+                            link: `/${as}/${file}`,
+                            text: niceName(file.substring(0, file.length - '.md'.length)),
+                            items: [],
+                        });
+                    }
 
                     return reduced;
                 } else if (fs.existsSync(`${folder}${file}/index.md`)) {
