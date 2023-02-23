@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
+import SwagRelatedArticles from '../../shopware/components/SwagRelatedArticles.vue'
 import { VTLink, VTIconGitHub, VTIconStackOverflow } from "../../core"
 import { useConfig } from '../composables/config'
 
@@ -71,6 +72,9 @@ const pageClass = computed(() => {
         <slot name="content-top" />
         <main>
           <Content class="vt-doc" :class="pageClass" />
+
+          <SwagRelatedArticles></SwagRelatedArticles>
+
           <p
             class="edit-link"
             v-if="config.editLink && frontmatter.editLink !== false"
