@@ -1,7 +1,11 @@
 <template>
   <div v-if="articles.length">
     <b class="mb-2">Continue with related topics:</b>
-    <PageRef v-for="link in articles" :page="link"></PageRef>
+    <PageRef
+      v-for="link in articles"
+      :page="link.page"
+      :title="link.title"
+    ></PageRef>
   </div>
 </template>
 
@@ -9,20 +13,29 @@
 import { ref, onMounted } from "vue";
 import axios from "axios";
 import { useData, useRoute } from "vitepress";
+import { useConfig } from "../../vitepress/composables/config";
 
-const articles = ref(["/apps/checkout/item-1", "/apps/checkout/item-2"]);
+const articles = ref([]);
 const route = useRoute();
+const { config } = useConfig();
+const similarArticlesHost = config.value.swag?.similarArticlesHost;
 
 onMounted(async () => {
+  if (!similarArticlesHost) {
+    return;
+  }
   try {
-    //const host = "http://172.18.0.1:10002";
-    const host = 'http://ai-ml.fly.dev';
-    const { data } = await axios.post(`${host}/query`, {
+    const { data } = await axios.post(`${similarArticlesHost}/query`, {
       query: route.path,
     });
     articles.value = [
       ...articles.value,
-      ...data.results.map(({source}) => source.substring('/data/docs/src'.length).replace(/\.[^/.]+$/, ""))
+      ...data.results.map(({ source, heading }) => ({
+        page: source
+          .substring("/data/docs/src".length)
+          .replace(/\.[^/.]+$/, ".html"),
+        title: heading,
+      })),
     ];
   } catch (e) {
     console.error(e);
