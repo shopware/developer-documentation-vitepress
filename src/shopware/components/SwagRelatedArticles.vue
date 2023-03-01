@@ -27,9 +27,9 @@ onMounted(async () => {
   }
   try {
     const { data } = await axios.post(
-      `${similarArticlesHost}/query`,
+      `${similarArticlesHost}/neighbours`,
       {
-        search: route.path,
+        id: route.path.replace(/\.[^/.]+$/, ".md").substring(1),
       },
       {
         headers: {
