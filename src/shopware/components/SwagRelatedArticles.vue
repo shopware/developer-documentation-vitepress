@@ -1,6 +1,6 @@
 <template>
-  <div v-if="articles.length">
-    <b class="mb-2">Continue with related topics:</b>
+  <div v-if="articles.length" class="vt-doc">
+    <b class="mb-2 flex">Continue with related topics:</b>
     <PageRef
       v-for="link in articles"
       :page="link.page"
@@ -25,9 +25,17 @@ onMounted(async () => {
     return;
   }
   try {
-    const { data } = await axios.post(`${similarArticlesHost}/query`, {
-      query: route.path,
-    });
+    const { data } = await axios.post(
+      `${similarArticlesHost}/query`,
+      {
+        search: route.path,
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
     articles.value = [
       ...articles.value,
       ...data.results.map(({ source, heading }) => ({
