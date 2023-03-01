@@ -5,6 +5,7 @@
       v-for="link in articles"
       :page="link.page"
       :title="link.title"
+      :sub="link.description"
     ></PageRef>
   </div>
 </template>
@@ -38,11 +39,10 @@ onMounted(async () => {
     );
     articles.value = [
       ...articles.value,
-      ...data.results.map(({ source, heading }) => ({
-        page: source
-          .substring("/data/docs/src".length)
-          .replace(/\.[^/.]+$/, ".html"),
+      ...data.results.map(({ id, heading, description }) => ({
+        page: `/${id.replace(/\.[^/.]+$/, ".html")}`,
         title: heading,
+        description: description,
       })),
     ];
   } catch (e) {
