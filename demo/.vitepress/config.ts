@@ -12,5 +12,10 @@ export default defineConfigWithTheme<ThemeConfig>({
 
   themeConfig: {
     sidebar,
+    // @ts-ignore
+    swag: {
+      // "http://172.18.0.1:10002"
+      similarArticlesHost: 'https://ai-ml.fly.dev',
+    }
   },
 });
