@@ -26,10 +26,15 @@ onMounted(async () => {
     return;
   }
   try {
+    let id = route.path.replace(/\.[^/.]+$/, ".md").substring(1);
+    if (id.endsWith('/')) {
+      id = `${id}index.md`;
+    }
+
     const { data } = await axios.post(
       `${similarArticlesHost}/neighbours`,
       {
-        id: route.path.replace(/\.[^/.]+$/, ".md").substring(1),
+        id: id,
       },
       {
         headers: {
@@ -40,7 +45,7 @@ onMounted(async () => {
     articles.value = [
       ...articles.value,
       ...data.results.map(({ id, heading, description }) => ({
-        page: `/${id.replace(/\.[^/.]+$/, ".html")}`,
+        page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '')}`,
         title: heading,
         description: description,
       })),
