@@ -1,11 +1,11 @@
 <template>
-  <div v-if="articles.length" class="vt-doc" :key="route.path">
-    <b class="mb-2 flex">Continue with related topics:</b>
+  <div v-if="articles.length" class="vt-doc --similar-articles" :key="route.path">
+    <h2>Continue with related topics:</h2>
     <PageRef
         v-for="link in articles"
         :page="link.page"
         :title="link.title"
-        :sub=""
+        :sub="''"
     ></PageRef>
   </div>
 </template>

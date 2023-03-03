@@ -60,7 +60,7 @@ const traverse = (items: AdditionalMenuItemWithContext[], url: string) => {
 
 export const getSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: SetupContext['attrs'], attr: string) => {
     // hardcoded title or sub/description
-    if (attrs[attr]) {
+    if (attrs[attr] || typeof attrs[attr] === 'string') {
         return attrs[attr];
     }
 
