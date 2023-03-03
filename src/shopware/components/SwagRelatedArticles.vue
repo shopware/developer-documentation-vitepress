@@ -1,8 +1,9 @@
 <template>
-  <div v-if="articles.length" class="vt-doc --similar-articles" :key="route.path">
+  <div v-if="articles.length" class="vt-doc --similar-articles">
     <h2>Continue with related topics:</h2>
     <PageRef
         v-for="link in articles"
+        :key="link.page"
         :page="link.page"
         :title="link.title"
         :sub="''"
@@ -12,7 +13,6 @@
 
 <script async setup>
 import {ref, onMounted, watch} from "vue";
-import axios from "axios";
 import {useData, useRoute} from "vitepress";
 import {useConfig} from "../../vitepress/composables/config";
 
@@ -31,17 +31,19 @@ const fetchSimilarArticles = async () => {
       id = `${id}index.md`;
     }
 
-    const {data} = await axios.post(
+    const response = await fetch(
         `${similarArticlesHost}/neighbours`,
         {
-          id: id,
-        },
-        {
+          method: 'POST',
+          body: JSON.stringify({
+            id: id,
+          }),
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
     );
+    const data = await response.json();
     articles.value = data.results.map(({id, heading, description}) => ({
       page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '')}`,
       title: heading,
