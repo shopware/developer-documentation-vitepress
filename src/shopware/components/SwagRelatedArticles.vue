@@ -5,7 +5,7 @@
         v-for="link in articles"
         :page="link.page"
         :title="link.title"
-        :sub="link.description"
+        :sub=""
     ></PageRef>
   </div>
 </template>
