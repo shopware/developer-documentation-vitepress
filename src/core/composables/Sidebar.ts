@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import matter from "gray-matter";
-// import removeMd from "remove-markdown";
+import removeMd from "remove-markdown";
 import {
     AdditionalMenuItemWithContext,
     SidebarConfig,
@@ -91,15 +91,20 @@ const getAllFiles = function (dirPath: string): ObjectOfFiles {
     return objectOfFiles;
 };
 
-const niceName = (name: string): string =>
-    name
+const niceName = (name: string): string => {
+    if (name.endsWith('.md')) {
+        name = name.substring(0, name.length - '.md'.length);
+    }
+
+    return name
         // replace - and _
         .replace(/([\-_])/g, " ")
-        // insert a space before all caps
-        .replace(/([A-Z])/g, " $1")
+        // replace double spaces
+        .replace(/\s{2,}/g, " ")
         .trim()
         // uppercase the first character
         .replace(/^./, (str) => str.toUpperCase());
+}
 
 const getMetas = (folder: string, tree: FilesystemTree): MetaCollection => {
     return (
@@ -204,24 +209,48 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
         .map(({position, ...item}) => item);
 };
 
-export const getAllLinks = (as: string, dirPath: string) =>
-    reduceTree(as, dirPath, getAllFiles(dirPath));
+export const getAllLinks = (as: string, dirPath: string) => reduceTree(as, dirPath, getAllFiles(dirPath));
 
-function getTitle(data: FrontmatterConfig, content: FrontmatterContent) {
-    return (data?.head || []).find(
-            ({name}) => name === "og:title"
-        )?.content
-        || data?.nav?.title
-        || content?.content?.[0];
+function getTitle(data: FrontmatterConfig, content: string, filename: string) {
+    let title;
+
+    // 1 - custom title from nav.title frontmatter
+    title = data?.nav?.title;
+    if (title) {
+        return title;
+    }
+
+    // 2 - title from og:title
+    title = (data?.head || []).find(({name}) => name === "og:title")?.content;
+    if (title) {
+        return title;
+    }
+
+    // 3 - first heading from the content
+    title = content.split('\n').find(line => line[0] === '#');
+    if (title) {
+        title = removeMd(title || '').trim();
+        if (title) {
+            return title;
+        }
+    }
+
+    // 4 - transform filename
+    return niceName(filename);
 }
 
 function getDescription(data: FrontmatterConfig, content: FrontmatterContent) {
+    // 1 - og:description
     let description = (data?.head || []).find(
         ({name}) => name === "og:description"
     )?.content;
+
+    // 2 - nav.description
     if (!description) {
         description = data?.nav?.description;
     }
+
+    // 3 - first line?
     if (!description) {
         description = content?.content?.[0];
     }
@@ -235,11 +264,7 @@ function getMeta(folder: string, file: string): ObjectMeta {
         excerpt_separator: "<!-- more -->",
     });
 
-    const {data, content /*, excerpt, path*/} = grayMatter;
-    /*const contents = removeMd(excerpt)
-      .trim()
-      .split(/\r\n|\n|\r/);*/
-
+    const {data, content} = grayMatter;
     const nav = data.nav || {};
 
     if (!content?.length) {
@@ -250,7 +275,8 @@ function getMeta(folder: string, file: string): ObjectMeta {
     if (!nav.title) {
         nav.title = getTitle(
             <FrontmatterConfig>data,
-            <FrontmatterContent>content
+            content,
+            file
         )
     }
 
@@ -283,6 +309,8 @@ export function transformLinkToSidebar(root: string, link: string) {
         }
     }
 
+    const metas = getMetas(folder, getAllFiles(folder));
+
     return fs
         .readdirSync(folder)
         .reduce(
@@ -309,13 +337,13 @@ export function transformLinkToSidebar(root: string, link: string) {
                     if (file === 'index.md') {
                         reduced.push({
                             link: `/${as}/`,
-                            text: niceName(as),
+                            text: /*metas[file].title || */niceName(as),
                             items: [],
                         });
                     } else {
                         reduced.push({
-                            link: `/${as}/${file}`,
-                            text: niceName(file.substring(0, file.length - '.md'.length)),
+                            link: `/${as}/${file.substring(0, file.length - '.md'.length)}.html`,
+                            text: metas[file].title || niceName(file),
                             items: [],
                         });
                     }

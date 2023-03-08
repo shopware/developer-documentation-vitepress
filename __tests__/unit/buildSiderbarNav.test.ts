@@ -32,6 +32,21 @@ describe('builds sidebar', async () => {
             '      "text": "Bar",\n' +
             '      "items": [\n' +
             '        {\n' +
+            '          "text": "Bar1 custom title",\n' +
+            '          "link": "/foo/bar/bar1-custom-both.html",\n' +
+            '          "items": []\n' +
+            '        },\n' +
+            '        {\n' +
+            '          "text": "Bar1 custom heading",\n' +
+            '          "link": "/foo/bar/bar1-custom-heading.html",\n' +
+            '          "items": []\n' +
+            '        },\n' +
+            '        {\n' +
+            '          "text": "Bar1 custom title",\n' +
+            '          "link": "/foo/bar/bar1-custom-title.html",\n' +
+            '          "items": []\n' +
+            '        },\n' +
+            '        {\n' +
             '          "text": "Bar1",\n' +
             '          "link": "/foo/bar/bar1.html",\n' +
             '          "items": []\n' +
@@ -44,12 +59,27 @@ describe('builds sidebar', async () => {
             '      ]\n' +
             '    },\n' +
             '    {\n' +
-            '      "link": "/foo/bar3.md",\n' +
+            '      "link": "/foo/bar-With-small_API-custom-with-nav-heading.html",\n' +
+            '      "text": "Custom title",\n' +
+            '      "items": []\n' +
+            '    },\n' +
+            '    {\n' +
+            '      "link": "/foo/bar-With-small_API-custom.html",\n' +
+            '      "text": "Custom title",\n' +
+            '      "items": []\n' +
+            '    },\n' +
+            '    {\n' +
+            '      "link": "/foo/bar-With-small_API.html",\n' +
+            '      "text": "Bar With small API",\n' +
+            '      "items": []\n' +
+            '    },\n' +
+            '    {\n' +
+            '      "link": "/foo/bar3.html",\n' +
             '      "text": "Bar3",\n' +
             '      "items": []\n' +
             '    },\n' +
             '    {\n' +
-            '      "link": "/foo/foo4.md",\n' +
+            '      "link": "/foo/foo4.html",\n' +
             '      "text": "Foo4",\n' +
             '      "items": []\n' +
             '    },\n' +
