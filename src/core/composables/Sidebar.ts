@@ -295,7 +295,17 @@ export function transformLinkToSidebar(root: string, link: string) {
                     return reduced;
                 }
 
+                if (file === 'node_modules') {
+                    return reduced;
+                }
+
+                let hasIndex = false;
                 if (!fs.statSync(`${folder}${file}`).isDirectory()) {
+                    // skip non .md files
+                    if (!file.endsWith('.md')) {
+                        return reduced;
+                    }
+
                     if (file === 'index.md') {
                         reduced.push({
                             link: `/${as}/`,
@@ -312,6 +322,7 @@ export function transformLinkToSidebar(root: string, link: string) {
 
                     return reduced;
                 } else if (fs.existsSync(`${folder}${file}/index.md`)) {
+                    hasIndex = true;
                     /*meta[`${folder}${file}/index.md`] = getMeta(
                     `${folder}${file}`,
                     `/index.md`
@@ -326,12 +337,14 @@ export function transformLinkToSidebar(root: string, link: string) {
                     return reduced;
                 }
 
-                reduced.push({
-                    link: `/${as}/${file}/`,
-                    text: niceName(file),
-                    // @ts-ignore
-                    items: links,
-                });
+                if (links.length || hasIndex) {
+                    reduced.push({
+                        link: `/${as}/${file}/`,
+                        text: niceName(file),
+                        // @ts-ignore
+                        items: links,
+                    });
+                }
 
                 return reduced;
             },
