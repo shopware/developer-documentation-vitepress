@@ -20,6 +20,11 @@ interface MetaCollection {
     [key: string]: ObjectMeta;
 }
 
+interface MetaWithTree {
+    meta: MetaCollection;
+    tree: FilesystemTree;
+}
+
 interface ObjectMeta {
     hidden?: boolean;
     title: string;
@@ -112,9 +117,11 @@ const getTitleFromFilename = (name: string): string => {
     );
 };
 
-const getMetas = (folder: string, tree: FilesystemTree): MetaCollection => {
-    return (
-        Object.keys(tree)
+const getMetas = (folder: string): MetaWithTree => {
+    const tree: FilesystemTree = getAllFiles(folder);
+
+    return {
+        meta: Object.keys(tree)
             .reduce((reduced, file) => {
                 const meta = tree[file];
                 if (typeof meta === "string") {
@@ -126,13 +133,17 @@ const getMetas = (folder: string, tree: FilesystemTree): MetaCollection => {
                 }
 
                 return reduced;
-            }, <MetaCollection>{})
-    );
+            }, <MetaCollection>{}),
+        tree,
+    };
 };
 
-const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
+const reduceTree = (as: string, dirPath: string) => {
     // use metas to sort items correctly
-    const metas = getMetas(dirPath, tree);
+    const {
+        meta: metas,
+        tree
+    } = getMetas(dirPath);
 
     const reduced = Object.keys(tree)
         .reduce((reduced: ItemLink[], file, i) => {
@@ -175,18 +186,18 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
             // directory
             const newItem: ItemLink = {
                 text: metas[file]?.title || getTitleFromFilename(file),
-                items: reduceTree(
-                    `${as}/${file}`,
-                    `${dirPath}${file}/`,
-                    <FilesystemTree>filepath
-                ),
+                items: reduceTree(`${as}/${file}`, `${dirPath}${file}/`),
                 position: metas[file]?.position || 999,
                 description: metas[file]?.description,
             };
 
             // push link when linked
             if (!metas[file]?.nolink) {
-                newItem.link = `/${as}/${file}/`;
+                const {meta: indexMetas} = getMetas(`${dirPath}${file}/`);
+                if ("index.md" in indexMetas) {
+                    // only when it has index.md
+                    newItem.link = `/${as}/${file}/`;
+                }
             }
 
             reduced.push(newItem);
@@ -305,7 +316,7 @@ export function transformLinkToSidebar(root: string, link: string) {
         }
     }
 
-    const metas = getMetas(folder, getAllFiles(folder));
+    const {meta: metas} = getMetas(folder);
 
     // handle root-index files differently
     let index = null;
@@ -366,16 +377,12 @@ export function transformLinkToSidebar(root: string, link: string) {
 
                 // collect links
                 const dirPath = `${folder}${file}/`;
-                const links = reduceTree(
-                    `${as}/${file}`,
-                    dirPath,
-                    getAllFiles(dirPath)
-                );
+                const links = reduceTree(`${as}/${file}`, dirPath);
 
                 // skip empty sections
                 if (links.length || hasIndex) {
                     reduced.push({
-                        link: `/${as}/${file}/`,
+                        link: hasIndex ? `/${as}/${file}/` : '#',
                         text: getTitleFromFilename(file),
                         // @ts-ignore
                         items: links,
