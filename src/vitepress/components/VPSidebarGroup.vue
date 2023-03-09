@@ -9,6 +9,7 @@ const props = defineProps<{
   text: string;
   items: MenuItemWithLink[];
   showPartiallyActive?: boolean;
+  chevron: boolean;
 }>();
 
 function activeMethod(currentPath: string, matchPath: string) {
@@ -31,8 +32,9 @@ function hasActiveLink() {
       <h2 class="title-text" :class="{ active: hasActiveLink() }">
         <VPSidebarLink
             v-if="link"
-            :item="{text, link}"
+            :item="{text, link, items}"
             :showPartiallyActive="showPartiallyActive"
+            :chevron="chevron"
             :link-class="null"/>
         <template v-else>{{ text }}</template>
       </h2>
@@ -41,10 +43,12 @@ function hasActiveLink() {
     <template v-for="item in items" :key="item.link">
       <VPSidebarGroup
           v-if="item.items && item.link?.endsWith('/')"
+          :chevron="true"
+          :class="{ '--expanded': hasActiveLink() }"
           :text="item.text"
           :link="item.link"
           :items="item.items"/>
-      <VPSidebarLink v-else :item="item" :showPartiallyActive="showPartiallyActive" />
+      <VPSidebarLink v-else :item="item" :showPartiallyActive="showPartiallyActive" :chevron="chevron" />
     </template>
   </section>
 </template>
@@ -71,10 +75,11 @@ function hasActiveLink() {
 </style>
 
 <style>
-.VPSidebarGroup .VPSidebarGroup {
-  margin-left: .5rem;
-}
 .VPSidebarGroup .VPSidebarGroup > a {
-  margin-left: .5rem;
+  margin-left: 1.2rem;
+  display: none;
+}
+.VPSidebarGroup .VPSidebarGroup.--expanded > a {
+  display: block;
 }
 </style>

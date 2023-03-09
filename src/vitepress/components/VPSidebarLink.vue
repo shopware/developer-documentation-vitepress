@@ -1,13 +1,15 @@
 <script lang="ts" setup>
 import { useData } from "vitepress";
-import { inject } from "vue";
+import {computed, inject} from "vue";
 import { MenuItemWithLink } from "../../core";
 import { isActive, isPartiallyActive } from "../support/utils";
+import {VTIconChevronRight, VTIconChevronDown} from "../../core";
 
 const props = withDefaults(defineProps<{
   item: MenuItemWithLink;
   showPartiallyActive?: boolean;
   linkClass?: string;
+  chevron?: boolean;
 }>(), {
   linkClass: 'link-text'
 });
@@ -21,15 +23,23 @@ function activeMethod(currentPath: string, matchPath: string) {
   }
   return isActive(currentPath, matchPath);
 }
+
+const hasActive = computed(() => activeMethod(page.value.relativePath, props.item.link))
 </script>
 
 <template>
   <a
-    :class="{ link: true, active: activeMethod(page.relativePath, item.link) }"
+    :class="{ link: true, active: hasActive }"
     :href="item.link"
     @click="closeSideBar"
   >
-    <p :class="linkClass">{{ item.text }}</p>
+    <p :class="linkClass">
+      <template v-if="chevron && item.items?.length">
+        <VTIconChevronRight v-if="!hasActive" class="vt-link-icon" />
+        <VTIconChevronDown v-else class="vt-link-icon" />
+      </template>
+      {{ item.text }}
+    </p>
   </a>
 </template>
 
@@ -63,5 +73,11 @@ function activeMethod(currentPath: string, matchPath: string) {
   font-weight: 500;
   color: var(--vt-c-text-2);
   transition: color 0.5s;
+}
+
+.vt-link-icon {
+  margin-left: 0;
+  width: 16px;
+  height: 16px;
 }
 </style>
