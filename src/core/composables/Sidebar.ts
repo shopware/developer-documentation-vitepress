@@ -98,6 +98,7 @@ const removeExtension = (name: string) => {
 
 const getTitleFromFilename = (name: string): string => {
     name = removeExtension(name);
+    name = name.split('/').reverse()[0];
 
     return (
         name
