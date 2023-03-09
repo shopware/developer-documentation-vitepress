@@ -39,7 +39,12 @@ function hasActiveLink() {
     </div>
 
     <template v-for="item in items" :key="item.link">
-      <VPSidebarLink :item="item" :showPartiallyActive="showPartiallyActive" />
+      <VPSidebarGroup
+          v-if="item.items && item.link?.endsWith('/')"
+          :text="item.text"
+          :link="item.link"
+          :items="item.items"/>
+      <VPSidebarLink v-else :item="item" :showPartiallyActive="showPartiallyActive" />
     </template>
   </section>
 </template>
@@ -62,5 +67,14 @@ function hasActiveLink() {
   color: var(--vt-c-text-1);
   transition: color 0.5s;
   text-transform: uppercase;
+}
+</style>
+
+<style>
+.VPSidebarGroup .VPSidebarGroup {
+  margin-left: .5rem;
+}
+.VPSidebarGroup .VPSidebarGroup > a {
+  margin-left: .5rem;
 }
 </style>

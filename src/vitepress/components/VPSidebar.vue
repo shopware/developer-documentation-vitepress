@@ -43,7 +43,7 @@ watchEffect(async () => {
     (item: MenuItemWithLink) =>
       isPartiallyActive(page.value.relativePath, item.link)
   );
-  shouldShowAdditionalMenu.value = !!currentActiveGroupElement.value?.items?.length;
+  shouldShowAdditionalMenu.value = false;//!!currentActiveGroupElement.value?.items?.length;
 });
 </script>
 
@@ -77,7 +77,7 @@ watchEffect(async () => {
         </div>
         <slot name="bottom" />
       </nav>
-      <nav
+      <!--<nav
         class="VPSidebarNav"
         aria-labelledby="sidebar-aria-label"
         tabindex="-1"
@@ -100,7 +100,7 @@ watchEffect(async () => {
         >
           <VPSidebarGroup :text="group.text" :items="group.items" />
         </div>
-      </nav>
+      </nav>-->
     </div>
   </aside>
 </template>
