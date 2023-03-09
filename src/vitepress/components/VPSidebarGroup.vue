@@ -3,6 +3,7 @@ import { MenuItemWithLink } from "../../core";
 import VPSidebarLink from "./VPSidebarLink.vue";
 import { isActive, isPartiallyActive } from "../support/utils";
 import { useData } from "vitepress";
+import { ref, computed } from "vue";
 
 const props = defineProps<{
   link: string,
@@ -20,21 +21,39 @@ function activeMethod(currentPath: string, matchPath: string) {
 }
 
 const { page } = useData();
-function hasActiveLink() {
-  const { relativePath } = page.value;
-  return props.items.some((item) => activeMethod(relativePath, item.link));
+const hasActiveLink = computed(() => {
+  let { relativePath } = page.value;
+  // make root
+  if (relativePath.endsWith('/index.md')) {
+    relativePath = relativePath.substring(0, relativePath.length - 'index.md'.length);
+  }
+  const absolutePath = `/${relativePath}`;
+  return absolutePath === props.link
+      || (relativePath.endsWith('/') && absolutePath.startsWith(props.link))
+      || props.items.some((item) => activeMethod(relativePath, item.link));
+})
+
+const isExpanded = ref(false);
+const toggleExpanded = () => {
+  if (props.link !== '#') {
+    return;
+  }
+
+  isExpanded.value = !isExpanded.value;
 }
 </script>
 
 <template>
-  <section class="VPSidebarGroup">
+  <section class="VPSidebarGroup"
+           :class="{ '--expanded': hasActiveLink || isExpanded }">
     <div class="title">
-      <h2 class="title-text" :class="{ active: hasActiveLink() }">
+      <h2 class="title-text" :class="{ active: hasActiveLink || isExpanded }">
         <VPSidebarLink
             v-if="link"
             :item="{text, link, items}"
             :showPartiallyActive="showPartiallyActive"
             :chevron="chevron"
+            @click.native="toggleExpanded"
             :link-class="null"/>
         <template v-else>{{ text }}</template>
       </h2>
@@ -42,9 +61,8 @@ function hasActiveLink() {
 
     <template v-for="item in items" :key="item.link">
       <VPSidebarGroup
-          v-if="item.items && item.link?.endsWith('/')"
+          v-if="item?.items?.length && (item?.link?.endsWith('/') || item.link === '#')"
           :chevron="true"
-          :class="{ '--expanded': hasActiveLink() }"
           :text="item.text"
           :link="item.link"
           :items="item.items"/>

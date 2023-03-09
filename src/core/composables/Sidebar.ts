@@ -183,10 +183,17 @@ const reduceTree = (as: string, dirPath: string) => {
                 return reduced;
             }
 
+            // get sub-metas
+            const {
+                metas: subMetas,
+                items: subItems,
+            } = reduceTree(`${as}/${file}`, `${dirPath}${file}/`);
+
             // directory
             const newItem: ItemLink = {
                 text: metas[file]?.title || getTitleFromFilename(file),
-                items: reduceTree(`${as}/${file}`, `${dirPath}${file}/`),
+                items: subItems,
+                link: 'index.md' in subMetas ? `/${as}/${file}/` : '#',
                 position: metas[file]?.position || 999,
                 description: metas[file]?.description,
             };
@@ -206,10 +213,18 @@ const reduceTree = (as: string, dirPath: string) => {
         }, []);
 
     // sort reduced by metas?
-    return reduced
+    const items = reduced
         .sort((a: ItemLink, b: ItemLink) => {
-            const aPosition = a.position || 999;
-            const bPosition = b.position || 999;
+            let aPosition = a.position || 999;
+            let bPosition = b.position || 999;
+
+            // move directories to the top
+            if (a.link?.endsWith('#') || a.link?.endsWith('/')) {
+                aPosition -= 2000;
+            }
+            if (b.link?.endsWith('#') || b.link?.endsWith('/')) {
+                bPosition -= 2000;
+            }
 
             if (aPosition < bPosition) {
                 return -1;
@@ -220,6 +235,12 @@ const reduceTree = (as: string, dirPath: string) => {
             return 0;
         })
         .map(({position, ...item}) => item);
+
+    return {
+        items,
+        metas,
+        tree,
+    };
 };
 
 function getTitle(data: FrontmatterConfig, content: string, filename: string) {
@@ -377,7 +398,7 @@ export function transformLinkToSidebar(root: string, link: string) {
 
                 // collect links
                 const dirPath = `${folder}${file}/`;
-                const links = reduceTree(`${as}/${file}`, dirPath);
+                const {items: links} = reduceTree(`${as}/${file}`, dirPath);
 
                 // skip empty sections
                 if (links.length || hasIndex) {
@@ -403,13 +424,13 @@ export function transformLinkToSidebar(root: string, link: string) {
         };
     }
 
+    if (!index) {
+        return items;
+    }
+
     if (inIndex.length) {
         // add discovered root-items
         index.items = inIndex;
-    }
-
-    if (!index) {
-        return items;
     }
 
     // prepend index items to discovered items

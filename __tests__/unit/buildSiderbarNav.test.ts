@@ -89,6 +89,17 @@ describe('builds sidebar', async () => {
             "          \"items\": []\n" +
             "        }\n" +
             "      ]\n" +
+            "    },\n" +
+            "    {\n" +
+            "      \"link\": \"#\",\n" +
+            "      \"text\": \"No index\",\n" +
+            "      \"items\": [\n" +
+            "        {\n" +
+            "          \"text\": \"File\",\n" +
+            "          \"link\": \"/foo/no-index/file.html\",\n" +
+            "          \"items\": []\n" +
+            "        }\n" +
+            "      ]\n" +
             "    }\n" +
             "  ]\n" +
             "}"

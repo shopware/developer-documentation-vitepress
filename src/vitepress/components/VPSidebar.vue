@@ -66,6 +66,7 @@ watchEffect(async () => {
         >Sidebar Navigation</span
         >
         <div v-for="group in sidebar" :key="group.text" class="group">
+          <pre v-if="false">{{ JSON.stringify(group, null, 2) }}</pre>
           <VPSidebarGroup
             :link="group.link"
             :text="group.text"
