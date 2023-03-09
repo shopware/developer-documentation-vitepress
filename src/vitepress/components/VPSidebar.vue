@@ -71,9 +71,7 @@ watchEffect(async () => {
             :link="group.link"
             :text="group.text"
             :items="group.items"
-            :showPartiallyActive="
-              currentActiveGroup && currentActiveGroup.text === group.text
-            "
+            :show-partially-active="currentActiveGroup && currentActiveGroup.text === group.text"
           />
         </div>
         <slot name="bottom" />
