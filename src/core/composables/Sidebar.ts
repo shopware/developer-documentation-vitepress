@@ -429,30 +429,31 @@ export const buildSidebarNav = (root: string, links: { link?: string, text: stri
     }, {});
 
     // append default links from 1st-level navigation
-    return links.reduce((data, item) => {
-        const {link, text, items, repo} = item;
+    return links
+        .reduce((data, item) => {
+            const {link, text, items, repo} = item;
 
-        // build sidebar
-        if (link) {
-            data.sidebar[link] = transformLinkToSidebar(root, link);
-        }
+            // build sidebar
+            if (link) {
+                data.sidebar[link] = transformLinkToSidebar(root, link);
+            }
 
-        // add to navigation
-        const nav = {
-            text,
-            link,
-        };
-        if (link) {
-            nav.activeMatch = `^${link}`;
-        }
-        if (repo) {
-            nav.repo = repo;
-        }
-        if (items) {
-            nav.items = items;
-        }
-        data.nav.push(nav);
+            // add to navigation
+            const nav = {
+                text,
+                link,
+            };
+            if (link) {
+                nav.activeMatch = `^${link}`;
+            }
+            if (repo) {
+                nav.repo = repo;
+            }
+            if (items) {
+                nav.items = items;
+            }
+            data.nav.push(nav);
 
-        return data;
-    }, {sidebar, nav: []})
+            return data;
+        }, {sidebar, nav: []})
 };
