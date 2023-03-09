@@ -3,7 +3,6 @@ import matter from "gray-matter";
 import removeMd from "remove-markdown";
 import {
     AdditionalMenuItemWithContext,
-    SidebarConfig,
 } from "../../vitepress/config";
 import {MenuItemWithLink} from "vitepress-shopware-docs";
 
@@ -91,7 +90,7 @@ const getAllFiles = function (dirPath: string): ObjectOfFiles {
     return objectOfFiles;
 };
 
-const niceName = (name: string): string => {
+const getTitleFromFilename = (name: string): string => {
     if (name.endsWith('.md')) {
         name = name.substring(0, name.length - '.md'.length);
     }
@@ -160,7 +159,7 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
                 const filename = file.substring(0, file.length - ".md".length);
 
                 reduced.push({
-                    text: metas[file]?.title || niceName(filename),
+                    text: metas[file]?.title || getTitleFromFilename(file),
                     link: `/${as}/${filename}.html`,
                     items: [],
                     position: metas[file]?.position || 999,
@@ -172,7 +171,7 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
 
             // directory
             const newItem: ItemLink = {
-                text: metas[file]?.title || niceName(file),
+                text: metas[file]?.title || getTitleFromFilename(file),
                 items: reduceTree(
                     `${as}/${file}`,
                     `${dirPath}${file}/`,
@@ -209,8 +208,6 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
         .map(({position, ...item}) => item);
 };
 
-export const getAllLinks = (as: string, dirPath: string) => reduceTree(as, dirPath, getAllFiles(dirPath));
-
 function getTitle(data: FrontmatterConfig, content: string, filename: string) {
     let title;
 
@@ -236,7 +233,7 @@ function getTitle(data: FrontmatterConfig, content: string, filename: string) {
     }
 
     // 4 - transform filename
-    return niceName(filename);
+    return getTitleFromFilename(filename);
 }
 
 function getDescription(data: FrontmatterConfig, content: FrontmatterContent) {
@@ -337,13 +334,13 @@ export function transformLinkToSidebar(root: string, link: string) {
                     if (file === 'index.md') {
                         reduced.push({
                             link: `/${as}/`,
-                            text: /*metas[file].title || */niceName(as),
+                            text: /*metas[file].title || */getTitleFromFilename(as),
                             items: [],
                         });
                     } else {
                         reduced.push({
                             link: `/${as}/${file.substring(0, file.length - '.md'.length)}.html`,
-                            text: metas[file].title || niceName(file),
+                            text: metas[file].title || getTitleFromFilename(file),
                             items: [],
                         });
                     }
@@ -358,17 +355,14 @@ export function transformLinkToSidebar(root: string, link: string) {
                 }
 
                 // collect links
-                const links = getAllLinks(`${as}/${file}`, `${folder}${file}/`);
+                const dirPath = `${folder}${file}/`;
+                const links = reduceTree(`${as}/${file}`, dirPath, getAllFiles(dirPath));
 
                 // skip empty sections
-                if (!Object.keys(links).length) {
-                    return reduced;
-                }
-
                 if (links.length || hasIndex) {
                     reduced.push({
                         link: `/${as}/${file}/`,
-                        text: niceName(file),
+                        text: getTitleFromFilename(file),
                         // @ts-ignore
                         items: links,
                     });
@@ -378,47 +372,6 @@ export function transformLinkToSidebar(root: string, link: string) {
             },
             []
         );
-}
-
-export function makeSidebarConfig(
-    root: string,
-    config: SidebarConfig
-): SidebarConfig {
-    fs.readdirSync(root).forEach((dir) => {
-        // skip hidden files/dirs
-        if (dir[0] === "." || dir[0] === "_") {
-            return;
-        }
-
-        // skip files
-        if (!fs.statSync(`${root}${dir}`).isDirectory()) {
-            return;
-        }
-
-        // skip existent dirs
-        if (Object.keys(config).includes(`/${dir}/`)) {
-            return;
-        }
-
-        // skip resource dirs
-        if (["resources", "public"].includes(dir)) {
-            return;
-        }
-
-        const links = getAllLinks(dir, `${root}${dir}/`);
-        // skip empty sections
-        if (!Object.keys(links).length) {
-            return;
-        }
-
-        // append new config
-        config = <SidebarConfig>{
-            ...config,
-            [`/${dir}/`]: links,
-        };
-    });
-
-    return config;
 }
 
 export const buildSidebarNav = (root: string, links: { link?: string, text: string, items?: [], repo?: string }[], sublinks?: string[]) => {
