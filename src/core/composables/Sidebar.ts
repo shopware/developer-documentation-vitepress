@@ -392,9 +392,11 @@ export function transformLinkToSidebar(root: string, link: string) {
         index = {
             link: "#",
             text: getTitleFromFilename(as),
-            items: inIndex,
+            items: [],
         };
-    } else {
+    }
+
+    if (inIndex.length) {
         // add discovered root-items
         index.items = inIndex;
     }
