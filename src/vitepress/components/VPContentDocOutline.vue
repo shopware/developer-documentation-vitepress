@@ -38,7 +38,7 @@ const handleClick = ({ target: el }: Event) => {
           <a class="outline-link" :href="link" @click="handleClick">{{
             text
           }}</a>
-          <ul v-if="children && frontmatter.outline === 'deep'">
+          <ul v-if="children && frontmatter.outline !== 'shallow'">
             <li v-for="{ text, link, hidden } in children" v-show="!hidden">
               <a
                 class="outline-link nested"
