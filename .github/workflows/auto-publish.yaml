@@ -34,6 +34,7 @@ jobs:
   npm-publish:
     name: npm-publish
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
     needs: test
     steps:
       - name: Checkout repository

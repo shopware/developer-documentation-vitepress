@@ -43,7 +43,7 @@ watchEffect(async () => {
     (item: MenuItemWithLink) =>
       isPartiallyActive(page.value.relativePath, item.link)
   );
-  shouldShowAdditionalMenu.value = !!currentActiveGroupElement.value?.items?.length;
+  shouldShowAdditionalMenu.value = false;//!!currentActiveGroupElement.value?.items?.length;
 });
 </script>
 
@@ -66,18 +66,17 @@ watchEffect(async () => {
         >Sidebar Navigation</span
         >
         <div v-for="group in sidebar" :key="group.text" class="group">
+          <pre v-if="false">{{ JSON.stringify(group, null, 2) }}</pre>
           <VPSidebarGroup
             :link="group.link"
             :text="group.text"
             :items="group.items"
-            :showPartiallyActive="
-              currentActiveGroup && currentActiveGroup.text === group.text
-            "
+            :show-partially-active="currentActiveGroup && currentActiveGroup.text === group.text"
           />
         </div>
         <slot name="bottom" />
       </nav>
-      <nav
+      <!--<nav
         class="VPSidebarNav"
         aria-labelledby="sidebar-aria-label"
         tabindex="-1"
@@ -100,7 +99,7 @@ watchEffect(async () => {
         >
           <VPSidebarGroup :text="group.text" :items="group.items" />
         </div>
-      </nav>
+      </nav>-->
     </div>
   </aside>
 </template>

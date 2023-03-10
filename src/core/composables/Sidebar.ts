@@ -1,10 +1,7 @@
 import fs from "fs-extra";
 import matter from "gray-matter";
-// import removeMd from "remove-markdown";
-import {
-    AdditionalMenuItemWithContext,
-    SidebarConfig,
-} from "../../vitepress/config";
+import removeMd from "remove-markdown";
+import {AdditionalMenuItemWithContext} from "../../vitepress/config";
 import {MenuItemWithLink} from "vitepress-shopware-docs";
 
 interface ObjectOfFiles {
@@ -21,6 +18,11 @@ interface FilesystemTree {
 
 interface MetaCollection {
     [key: string]: ObjectMeta;
+}
+
+interface MetaWithTree {
+    meta: MetaCollection;
+    tree: FilesystemTree;
 }
 
 interface ObjectMeta {
@@ -91,20 +93,35 @@ const getAllFiles = function (dirPath: string): ObjectOfFiles {
     return objectOfFiles;
 };
 
-const niceName = (name: string): string =>
-    name
-        // replace - and _
-        .replace(/([\-_])/g, " ")
-        // insert a space before all caps
-        .replace(/([A-Z])/g, " $1")
-        .trim()
-        // uppercase the first character
-        .replace(/^./, (str) => str.toUpperCase());
+const removeExtension = (name: string) => {
+    if (!name.endsWith(".md")) {
+        return name;
+    }
 
-const getMetas = (folder: string, tree: FilesystemTree): MetaCollection => {
+    return name.substring(0, name.length - ".md".length);
+}
+
+const getTitleFromFilename = (name: string): string => {
+    name = removeExtension(name);
+    name = name.split('/').reverse()[0];
+
     return (
-        Object.keys(tree)
-            //.filter(file => file !== 'index.md')
+        name
+            // replace - and _
+            .replace(/([\-_])/g, " ")
+            // replace double spaces
+            .replace(/\s{2,}/g, " ")
+            .trim()
+            // uppercase the first character
+            .replace(/^./, (str) => str.toUpperCase())
+    );
+};
+
+const getMetas = (folder: string): MetaWithTree => {
+    const tree: FilesystemTree = getAllFiles(folder);
+
+    return {
+        meta: Object.keys(tree)
             .reduce((reduced, file) => {
                 const meta = tree[file];
                 if (typeof meta === "string") {
@@ -116,16 +133,19 @@ const getMetas = (folder: string, tree: FilesystemTree): MetaCollection => {
                 }
 
                 return reduced;
-            }, <MetaCollection>{})
-    );
+            }, <MetaCollection>{}),
+        tree,
+    };
 };
 
-const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
+const reduceTree = (as: string, dirPath: string) => {
     // use metas to sort items correctly
-    const metas = getMetas(dirPath, tree);
+    const {
+        meta: metas,
+        tree
+    } = getMetas(dirPath);
 
     const reduced = Object.keys(tree)
-        // .filter(file => file !== 'index.md')
         .reduce((reduced: ItemLink[], file, i) => {
             // hide entry
             if (metas[file]?.hidden) {
@@ -152,11 +172,9 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
             const filepath = tree[file];
             if (typeof filepath === "string") {
                 // file
-                const filename = file.substring(0, file.length - ".md".length);
-
                 reduced.push({
-                    text: metas[file]?.title || niceName(filename),
-                    link: `/${as}/${filename}.html`,
+                    text: metas[file]?.title || getTitleFromFilename(file),
+                    link: `/${as}/${removeExtension(file)}.html`,
                     items: [],
                     position: metas[file]?.position || 999,
                     description: metas[file]?.description,
@@ -165,21 +183,28 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
                 return reduced;
             }
 
+            // get sub-metas
+            const {
+                metas: subMetas,
+                items: subItems,
+            } = reduceTree(`${as}/${file}`, `${dirPath}${file}/`);
+
             // directory
             const newItem: ItemLink = {
-                text: metas[file]?.title || niceName(file),
-                items: reduceTree(
-                    `${as}/${file}`,
-                    `${dirPath}${file}/`,
-                    <FilesystemTree>filepath
-                ),
+                text: metas[file]?.title || getTitleFromFilename(file),
+                items: subItems,
+                link: 'index.md' in subMetas ? `/${as}/${file}/` : '#',
                 position: metas[file]?.position || 999,
                 description: metas[file]?.description,
             };
 
             // push link when linked
             if (!metas[file]?.nolink) {
-                newItem.link = `/${as}/${file}/`;
+                const {meta: indexMetas} = getMetas(`${dirPath}${file}/`);
+                if ("index.md" in indexMetas) {
+                    // only when it has index.md
+                    newItem.link = `/${as}/${file}/`;
+                }
             }
 
             reduced.push(newItem);
@@ -188,10 +213,18 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
         }, []);
 
     // sort reduced by metas?
-    return reduced
+    const items = reduced
         .sort((a: ItemLink, b: ItemLink) => {
-            const aPosition = a.position || 999;
-            const bPosition = b.position || 999;
+            let aPosition = a.position || 999;
+            let bPosition = b.position || 999;
+
+            // move directories to the top
+            if (a.link?.endsWith('#') || a.link?.endsWith('/')) {
+                aPosition -= 2000;
+            }
+            if (b.link?.endsWith('#') || b.link?.endsWith('/')) {
+                bPosition -= 2000;
+            }
 
             if (aPosition < bPosition) {
                 return -1;
@@ -202,26 +235,54 @@ const reduceTree = (as: string, dirPath: string, tree: FilesystemTree) => {
             return 0;
         })
         .map(({position, ...item}) => item);
+
+    return {
+        items,
+        metas,
+        tree,
+    };
 };
 
-export const getAllLinks = (as: string, dirPath: string) =>
-    reduceTree(as, dirPath, getAllFiles(dirPath));
+function getTitle(data: FrontmatterConfig, content: string, filename: string) {
+    let title;
 
-function getTitle(data: FrontmatterConfig, content: FrontmatterContent) {
-    return (data?.head || []).find(
-            ({name}) => name === "og:title"
-        )?.content
-        || data?.nav?.title
-        || content?.content?.[0];
+    // 1 - custom title from nav.title frontmatter
+    title = data?.nav?.title;
+    if (title) {
+        return title;
+    }
+
+    // 2 - title from og:title
+    title = (data?.head || []).find(({name}) => name === "og:title")?.content;
+    if (title) {
+        return title;
+    }
+
+    // 3 - first heading from the content
+    title = content.split("\n").find((line) => line[0] === "#");
+    if (title) {
+        title = removeMd(title || "").trim();
+        if (title) {
+            return title;
+        }
+    }
+
+    // 4 - transform filename
+    return getTitleFromFilename(filename);
 }
 
 function getDescription(data: FrontmatterConfig, content: FrontmatterContent) {
+    // 1 - og:description
     let description = (data?.head || []).find(
         ({name}) => name === "og:description"
     )?.content;
+
+    // 2 - nav.description
     if (!description) {
         description = data?.nav?.description;
     }
+
+    // 3 - first line?
     if (!description) {
         description = content?.content?.[0];
     }
@@ -235,11 +296,7 @@ function getMeta(folder: string, file: string): ObjectMeta {
         excerpt_separator: "<!-- more -->",
     });
 
-    const {data, content /*, excerpt, path*/} = grayMatter;
-    /*const contents = removeMd(excerpt)
-      .trim()
-      .split(/\r\n|\n|\r/);*/
-
+    const {data, content} = grayMatter;
     const nav = data.nav || {};
 
     if (!content?.length) {
@@ -248,10 +305,7 @@ function getMeta(folder: string, file: string): ObjectMeta {
 
     // read title
     if (!nav.title) {
-        nav.title = getTitle(
-            <FrontmatterConfig>data,
-            <FrontmatterContent>content
-        )
+        nav.title = getTitle(<FrontmatterConfig>data, content, file);
     }
 
     // read description
@@ -268,7 +322,7 @@ function getMeta(folder: string, file: string): ObjectMeta {
 export function transformLinkToSidebar(root: string, link: string) {
     const as = link.substring(1, link.length - 1);
     const folder = `${root}${as}/`;
-    console.log(`Creating sidebar ${folder}`)
+    console.log(`Creating sidebar ${folder}`);
 
     // allow missing mount points in dev env
     if (process.env.SHOPWARE_DEV) {
@@ -283,7 +337,13 @@ export function transformLinkToSidebar(root: string, link: string) {
         }
     }
 
-    return fs
+    const {meta: metas} = getMetas(folder);
+
+    // handle root-index files differently
+    let index = null;
+    let inIndex = [];
+
+    let items = fs
         .readdirSync(folder)
         .reduce(
             (
@@ -295,92 +355,93 @@ export function transformLinkToSidebar(root: string, link: string) {
                     return reduced;
                 }
 
+                if (file === "node_modules") {
+                    return reduced;
+                }
+
+                let hasIndex = false;
                 if (!fs.statSync(`${folder}${file}`).isDirectory()) {
-                    if (file === 'index.md') {
-                        reduced.push({
+                    // skip non .md files
+                    if (!file.endsWith(".md")) {
+                        return reduced;
+                    }
+
+                    if (file === "index.md") {
+                        // special handling for root index
+                        index = {
                             link: `/${as}/`,
-                            text: niceName(as),
+                            text: getTitleFromFilename(as),
                             items: [],
-                        });
+                        };
+                        /*reduced.push({
+                                        link: `/${as}/`,
+                                        text: getTitleFromFilename(as),
+                                        items: [],
+                                    });*/
                     } else {
-                        reduced.push({
-                            link: `/${as}/${file}`,
-                            text: niceName(file.substring(0, file.length - '.md'.length)),
+                        // special handle root links
+                        inIndex.push({
+                            link: `/${as}/${removeExtension(file)}.html`,
+                            text: metas[file].title || getTitleFromFilename(file),
                             items: [],
                         });
                     }
 
                     return reduced;
                 } else if (fs.existsSync(`${folder}${file}/index.md`)) {
+                    hasIndex = true;
                     /*meta[`${folder}${file}/index.md`] = getMeta(
-                    `${folder}${file}`,
-                    `/index.md`
-                  );*/
+                              `${folder}${file}`,
+                              `/index.md`
+                            );*/
                 }
 
                 // collect links
-                const links = getAllLinks(`${as}/${file}`, `${folder}${file}/`);
+                const dirPath = `${folder}${file}/`;
+                const {items: links} = reduceTree(`${as}/${file}`, dirPath);
 
                 // skip empty sections
-                if (!Object.keys(links).length) {
-                    return reduced;
+                if (links.length || hasIndex) {
+                    reduced.push({
+                        link: hasIndex ? `/${as}/${file}/` : '#',
+                        text: getTitleFromFilename(file),
+                        // @ts-ignore
+                        items: links,
+                    });
                 }
-
-                reduced.push({
-                    link: `/${as}/${file}/`,
-                    text: niceName(file),
-                    // @ts-ignore
-                    items: links,
-                });
 
                 return reduced;
             },
             []
         );
-}
 
-export function makeSidebarConfig(
-    root: string,
-    config: SidebarConfig
-): SidebarConfig {
-    fs.readdirSync(root).forEach((dir) => {
-        // skip hidden files/dirs
-        if (dir[0] === "." || dir[0] === "_") {
-            return;
-        }
-
-        // skip files
-        if (!fs.statSync(`${root}${dir}`).isDirectory()) {
-            return;
-        }
-
-        // skip existent dirs
-        if (Object.keys(config).includes(`/${dir}/`)) {
-            return;
-        }
-
-        // skip resource dirs
-        if (["resources", "public"].includes(dir)) {
-            return;
-        }
-
-        const links = getAllLinks(dir, `${root}${dir}/`);
-        // skip empty sections
-        if (!Object.keys(links).length) {
-            return;
-        }
-
-        // append new config
-        config = <SidebarConfig>{
-            ...config,
-            [`/${dir}/`]: links,
+    if (!index && inIndex.length) {
+        // manually create missing index
+        index = {
+            link: "#",
+            text: getTitleFromFilename(as),
+            items: [],
         };
-    });
+    }
 
-    return config;
+    if (!index) {
+        return items;
+    }
+
+    if (inIndex.length) {
+        // add discovered root-items
+        index.items = inIndex;
+    }
+
+    // prepend index items to discovered items
+    return [index, ...items];
 }
 
-export const buildSidebarNav = (root: string, links: { link?: string, text: string, items?: [], repo?: string }[], sublinks?: string[]) => {
+export const buildSidebarNav = (
+    root: string,
+    links: { link?: string; text: string; items?: []; repo?: string }[],
+    sublinks?: string[]
+) => {
     // build custom links
     const sidebar = (sublinks || []).reduce((sidebar, link: string) => {
         sidebar[link] = transformLinkToSidebar(root, link);
@@ -388,30 +449,33 @@ export const buildSidebarNav = (root: string, links: { link?: string, text: stri
     }, {});
 
     // append default links from 1st-level navigation
-    return links.reduce((data, item) => {
-        const {link, text, items, repo} = item;
+    return links.reduce(
+        (data, item) => {
+            const {link, text, items, repo} = item;
 
-        // build sidebar
-        if (link) {
-            data.sidebar[link] = transformLinkToSidebar(root, link);
-        }
+            // build sidebar
+            if (link) {
+                data.sidebar[link] = transformLinkToSidebar(root, link);
+            }
 
-        // add to navigation
-        const nav = {
-            text,
-            link,
-        };
-        if (link) {
-            nav.activeMatch = `^${link}`;
-        }
-        if (repo) {
-            nav.repo = repo;
-        }
-        if (items) {
-            nav.items = items;
-        }
-        data.nav.push(nav);
+            // add to navigation
+            const nav = {
+                text,
+                link,
+            };
+            if (link) {
+                nav.activeMatch = `^${link}`;
+            }
+            if (repo) {
+                nav.repo = repo;
+            }
+            if (items) {
+                nav.items = items;
+            }
+            data.nav.push(nav);
 
-        return data;
-    }, {sidebar, nav: []})
+            return data;
+        },
+        {sidebar, nav: []}
+    );
 };
