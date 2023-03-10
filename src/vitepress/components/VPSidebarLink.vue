@@ -10,12 +10,21 @@ const props = withDefaults(defineProps<{
   showPartiallyActive?: boolean;
   linkClass?: string;
   chevron?: boolean;
+  expanded?: boolean;
 }>(), {
   linkClass: 'link-text'
 });
 
 const { page } = useData();
-const closeSideBar = inject("close-sidebar") as () => void;
+// const closeSideBar = inject("close-sidebar") as () => {};
+const handleClick = (e) => {
+  if (props.item.link !== '#') {
+    return;
+  }
+
+  e.preventDefault();
+  e.stopPropagation();
+}
 
 function activeMethod(currentPath: string, matchPath: string) {
   if (props.showPartiallyActive) {
@@ -31,11 +40,11 @@ const hasActive = computed(() => activeMethod(page.value.relativePath, props.ite
   <a
     :class="{ link: true, active: hasActive }"
     :href="item.link"
-    @click="closeSideBar"
+    @click="handleClick"
   >
     <p :class="linkClass">
       <template v-if="chevron && item.items?.length">
-        <VTIconChevronRight v-if="!hasActive" class="vt-link-icon" />
+        <VTIconChevronRight v-if="!expanded" class="vt-link-icon" />
         <VTIconChevronDown v-else class="vt-link-icon" />
       </template>
       {{ item.text }}

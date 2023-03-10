@@ -33,10 +33,11 @@ const hasActiveLink = computed(() => {
       || props.items.some((item) => activeMethod(relativePath, item.link));
 })
 
-const isExpanded = ref(false);
-const toggleExpanded = () => {
-  if (props.link !== '#') {
-    return;
+const isExpanded = ref(hasActiveLink.value);
+const toggleExpanded = (e) => {
+  if (props.link === '#') {
+    e.preventDefault();
+    e.stopPropagation();
   }
 
   isExpanded.value = !isExpanded.value;
@@ -45,7 +46,7 @@ const toggleExpanded = () => {
 
 <template>
   <section class="VPSidebarGroup"
-           :class="{ '--expanded': hasActiveLink || isExpanded }">
+           :class="{ '--expanded': /*hasActiveLink || */isExpanded }">
     <div class="title">
       <h2 class="title-text" :class="{ active: hasActiveLink || isExpanded }">
         <VPSidebarLink
@@ -53,6 +54,7 @@ const toggleExpanded = () => {
             :item="{text, link, items}"
             :showPartiallyActive="showPartiallyActive"
             :chevron="chevron"
+            :expanded="isExpanded"
             @click.native="toggleExpanded"
             :link-class="null"/>
         <template v-else>{{ text }}</template>
@@ -66,7 +68,11 @@ const toggleExpanded = () => {
           :text="item.text"
           :link="item.link"
           :items="item.items"/>
-      <VPSidebarLink v-else :item="item" :showPartiallyActive="showPartiallyActive" :chevron="chevron" />
+      <VPSidebarLink v-else
+                     :item="item"
+                     :showPartiallyActive="showPartiallyActive"
+                     :chevron="chevron"
+                     :expanded="isExpanded" />
     </template>
   </section>
 </template>
