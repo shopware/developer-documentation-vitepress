@@ -99,11 +99,20 @@ const toggleExpanded = (e) => {
 </style>
 
 <style>
-.VPSidebarGroup .VPSidebarGroup > a {
-  margin-left: 1.2rem;
+.VPSidebarGroup .VPSidebarGroup {
+  margin-left: .6rem;
+}
+.VPSidebarGroup > a {
+  margin-left: 1.8rem;
+}
+.VPSidebarGroup .VPSidebarGroup .VPSidebarGroup {
   display: none;
 }
-.VPSidebarGroup .VPSidebarGroup.--expanded > a {
+.VPSidebarGroup .VPSidebarGroup > a {
+  display: none;
+}
+.VPSidebarGroup .VPSidebarGroup.--expanded > a,
+.VPSidebarGroup .VPSidebarGroup.--expanded > .VPSidebarGroup {
   display: block;
 }
 </style>
