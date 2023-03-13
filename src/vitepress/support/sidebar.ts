@@ -17,12 +17,21 @@ export function getSidebar(
 
   path = ensureStartingSlash(path)
 
+  const sidebars = {};
   for (const dir in sidebar) {
     // make sure the multi sidebar key starts with slash too
     if (path.startsWith(ensureStartingSlash(dir))) {
-      return sidebar[dir]
+      sidebars[dir] = sidebar[dir];
     }
   }
 
-  return []
+  if (!Object.keys(sidebars).length) {
+    return []
+  }
+
+  let maxKey = Object.keys(sidebars).sort(function(a, b){
+    return b.length - a.length;
+  })[0];
+
+  return sidebars[maxKey];
 }

@@ -362,6 +362,12 @@ export function transformLinkToSidebar(root: string, link: string) {
                     return reduced;
                 }
 
+                // skip versioned folders
+                const versionRegex = /^v\d+\.\d+$/;
+                if (file.match(versionRegex)) {
+                    return reduced;
+                }
+
                 let hasIndex = false;
                 if (!fs.statSync(`${folder}${file}`).isDirectory()) {
                     // skip non .md files
