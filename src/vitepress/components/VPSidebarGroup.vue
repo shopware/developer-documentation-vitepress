@@ -102,6 +102,12 @@ const toggleExpanded = (e) => {
 .VPSidebarGroup .VPSidebarGroup {
   margin-left: .6rem;
 }
+.group > .VPSidebarGroup > .VPSidebarGroup {
+  margin-left: 0;
+}
+.group > .VPSidebarGroup > a {
+  margin-left: 1.2rem;
+}
 .VPSidebarGroup > a {
   margin-left: 1.8rem;
 }
