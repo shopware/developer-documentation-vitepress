@@ -103,18 +103,21 @@ const removeExtension = (name: string) => {
 
 const getTitleFromFilename = (name: string): string => {
     name = removeExtension(name);
-    name = name.split('/').reverse()[0];
+    let lastName = name.split('/').reverse()[0];
 
-    return (
-        name
-            // replace - and _
-            .replace(/([\-_])/g, " ")
-            // replace double spaces
-            .replace(/\s{2,}/g, " ")
-            .trim()
-            // uppercase the first character
-            .replace(/^./, (str) => str.toUpperCase())
-    );
+    // replace index with folder name
+    if (lastName === 'index') {
+        lastName = name.split('/').reverse()[1] || lastName;
+    }
+
+    return lastName
+        // replace - and _
+        .replace(/([\-_])/g, " ")
+        // replace double spaces
+        .replace(/\s{2,}/g, " ")
+        .trim()
+        // uppercase the first character
+        .replace(/^./, (str) => str.toUpperCase());
 };
 
 const getMetas = (folder: string): MetaWithTree => {
@@ -173,7 +176,7 @@ const reduceTree = (as: string, dirPath: string) => {
             if (typeof filepath === "string") {
                 // file
                 reduced.push({
-                    text: metas[file]?.title || getTitleFromFilename(file),
+                    text: metas[file]?.title || getTitleFromFilename(`${as}/${file}`),
                     link: `/${as}/${removeExtension(file)}.html`,
                     items: [],
                     position: metas[file]?.position || 999,
@@ -191,7 +194,7 @@ const reduceTree = (as: string, dirPath: string) => {
 
             // directory
             const newItem: ItemLink = {
-                text: metas[file]?.title || getTitleFromFilename(file),
+                text: metas[file]?.title || getTitleFromFilename(`/${as}/${file}`),
                 items: subItems,
                 link: 'index.md' in subMetas ? `/${as}/${file}/` : '#',
                 position: metas[file]?.position || 999,
@@ -305,7 +308,7 @@ function getMeta(folder: string, file: string): ObjectMeta {
 
     // read title
     if (!nav.title) {
-        nav.title = getTitle(<FrontmatterConfig>data, content, file);
+        nav.title = getTitle(<FrontmatterConfig>data, content, `${folder}${file}`);
     }
 
     // read description
