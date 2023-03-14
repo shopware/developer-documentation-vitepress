@@ -15,6 +15,19 @@ export function getSidebar(
     return sidebar
   }
 
+  const [sidebars, key] = getSidebarsWithMainKey(sidebar, path);
+
+  if (!sidebars) {
+    return [];
+  }
+
+  return sidebars[key];
+}
+
+export function getSidebarsWithMainKey(
+    sidebar: SidebarConfig | undefined,
+    path: string
+) {
   path = ensureStartingSlash(path)
 
   const sidebars = {};
@@ -26,12 +39,12 @@ export function getSidebar(
   }
 
   if (!Object.keys(sidebars).length) {
-    return []
+    return [null, null]
   }
 
   let maxKey = Object.keys(sidebars).sort(function(a, b){
     return b.length - a.length;
   })[0];
 
-  return sidebars[maxKey];
+  return [sidebars, maxKey];
 }
