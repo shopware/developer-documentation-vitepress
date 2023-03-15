@@ -44,7 +44,7 @@ const fetchSimilarArticles = async () => {
     // filter inclusions and exclusions by sidebar
     const filters = config.value.swag?.similarArticlesFilter;
     if (filters && key && key in filters) {
-      payload.filter = filters[key];
+      payload.filters = filters[key];
     }
 
     const response = await fetch(
