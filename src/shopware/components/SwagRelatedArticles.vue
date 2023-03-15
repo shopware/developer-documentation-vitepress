@@ -45,6 +45,8 @@ const fetchSimilarArticles = async () => {
     const filters = config.value.swag?.similarArticlesFilter;
     if (filters && key && key in filters) {
       payload.filters = filters[key];
+    } else if ("default" in filters) {
+      payload.filters = filters.default;
     }
 
     const response = await fetch(
