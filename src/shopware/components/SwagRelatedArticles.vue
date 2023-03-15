@@ -15,10 +15,14 @@
 import {ref, onMounted, watch} from "vue";
 import {useData, useRoute} from "vitepress";
 import {useConfig} from "../../vitepress/composables/config";
+import {useSidebar} from "../../vitepress/composables/sidebar";
+import { getSidebarsWithMainKey } from '../../vitepress/support/sidebar'
 
 const articles = ref([]);
 const route = useRoute();
 const {config} = useConfig();
+const { sidebar, hasSidebar } = useSidebar();
+const { page } = useData();
 const similarArticlesHost = config.value.swag?.similarArticlesHost;
 
 const fetchSimilarArticles = async () => {
@@ -31,13 +35,23 @@ const fetchSimilarArticles = async () => {
       id = `${id}index.md`;
     }
 
+    const [sidebars, key] = getSidebarsWithMainKey(config.value.sidebar, page.value.relativePath);
+
+    const payload = {
+      id: id,
+    };
+
+    // filter inclusions and exclusions by sidebar
+    const filters = config.value.swag?.similarArticlesFilter;
+    if (filters && key && key in filters) {
+      payload.filter = filters[key];
+    }
+
     const response = await fetch(
         `${similarArticlesHost}/neighbours`,
         {
           method: 'POST',
-          body: JSON.stringify({
-            id: id,
-          }),
+          body: JSON.stringify(payload),
           headers: {
             "Content-Type": "application/json",
           },
