@@ -35,6 +35,11 @@ const fetchSimilarArticles = async () => {
       id = `${id}index.md`;
     }
 
+    if (!id.length) {
+      articles.value = [];
+      return;
+    }
+
     const [sidebars, key] = getSidebarsWithMainKey(config.value.sidebar, page.value.relativePath);
 
     const payload = {
