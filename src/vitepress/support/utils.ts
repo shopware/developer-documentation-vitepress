@@ -16,6 +16,8 @@ export function ensureStartingSlash(path: string): string {
 export function normalizeLink(url: string): string {
   if (isExternal(url)) {
     return url
+  } else if (url === '#') {
+    return url;
   }
   const { pathname, search, hash } = new URL(url, 'http://vuejs.org')
   return withBase(
