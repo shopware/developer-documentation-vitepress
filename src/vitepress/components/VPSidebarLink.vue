@@ -1,13 +1,12 @@
 <script lang="ts" setup>
 import { useData } from "vitepress";
-import {computed, inject} from "vue";
+import { computed, ref, onMounted } from "vue";
 import { MenuItemWithLink } from "../../core";
-import { isActive, isPartiallyActive } from "../support/utils";
+import { isActive } from "../support/utils";
 import {VTIconChevronRight, VTIconChevronDown} from "../../core";
 
 const props = withDefaults(defineProps<{
   item: MenuItemWithLink;
-  showPartiallyActive?: boolean;
   linkClass?: string;
   chevron?: boolean;
   expanded?: boolean;
@@ -18,20 +17,23 @@ const props = withDefaults(defineProps<{
 const { page } = useData();
 // const closeSideBar = inject("close-sidebar") as () => {};
 
-function activeMethod(currentPath: string, matchPath: string) {
-  if (props.showPartiallyActive) {
-    return isPartiallyActive(currentPath, matchPath);
-  }
-  return isActive(currentPath, matchPath);
-}
+const hasActive = computed(() => isActive(page.value.relativePath, props.item.link))
 
-const hasActive = computed(() => activeMethod(page.value.relativePath, props.item.link))
+const root = ref(null);
+onMounted(() => {
+  if (!hasActive.value || !root.value) {
+    return;
+  }
+
+  root.value.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+});
 </script>
 
 <template>
   <a
     :class="{ link: true, active: hasActive }"
     :href="item.link"
+    ref="root"
   >
     <p :class="linkClass">
       <template v-if="chevron && item.items?.length">

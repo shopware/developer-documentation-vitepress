@@ -1,39 +1,34 @@
 <script lang="ts" setup>
 import { MenuItemWithLink } from "../../core";
 import VPSidebarLink from "./VPSidebarLink.vue";
-import { isActive, isPartiallyActive } from "../support/utils";
 import { useData } from "vitepress";
 import { ref, computed } from "vue";
+import { hasActiveSublink } from "../support/utils";
 
 const props = defineProps<{
   link: string,
   text: string;
   items: MenuItemWithLink[];
-  showPartiallyActive?: boolean;
   chevron: boolean;
 }>();
 
-function activeMethod(currentPath: string, matchPath: string) {
-  if (props.showPartiallyActive) {
-    return isPartiallyActive(currentPath, matchPath);
-  }
-  return isActive(currentPath, matchPath);
-}
-
 const { page } = useData();
-const hasActiveLink = computed(() => {
+const hasAnyActiveLink = computed(() => {
   let { relativePath } = page.value;
+
   // make root
   if (relativePath.endsWith('/index.md')) {
     relativePath = relativePath.substring(0, relativePath.length - 'index.md'.length);
+  } else if (relativePath.endsWith('.md')) {
+    relativePath = `${relativePath.substring(0, relativePath.length - '.md' . length)}.html`;
   }
+
   const absolutePath = `/${relativePath}`;
-  return absolutePath === props.link
-      || (relativePath.endsWith('/') && absolutePath.startsWith(props.link))
-      || props.items.some((item) => activeMethod(relativePath, item.link));
+  return absolutePath.startsWith(props.link)
+      || hasActiveSublink(props.items, absolutePath);
 })
 
-const isExpanded = ref(hasActiveLink.value);
+const isExpanded = ref(hasAnyActiveLink.value);
 const toggleExpanded = (e) => {
   if (props.link === '#') {
     e.preventDefault();
@@ -48,11 +43,10 @@ const toggleExpanded = (e) => {
   <section class="VPSidebarGroup"
            :class="{ '--expanded': /*hasActiveLink || */isExpanded }">
     <div class="title">
-      <h2 class="title-text" :class="{ active: hasActiveLink || isExpanded }">
+      <h2 class="title-text">
         <VPSidebarLink
             v-if="link"
             :item="{text, link, items}"
-            :showPartiallyActive="showPartiallyActive"
             :chevron="chevron"
             :expanded="isExpanded"
             @click.native="toggleExpanded"
@@ -70,7 +64,6 @@ const toggleExpanded = (e) => {
           :items="item.items"/>
       <VPSidebarLink v-else
                      :item="item"
-                     :showPartiallyActive="showPartiallyActive"
                      :chevron="chevron"
                      :expanded="isExpanded" />
     </template>
