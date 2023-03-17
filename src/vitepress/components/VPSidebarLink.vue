@@ -20,13 +20,15 @@ const { page } = useData();
 const hasActive = computed(() => isActive(page.value.relativePath, props.item.link))
 
 const root = ref(null);
-onMounted(() => {
+const scrollIntoView = () => {
   if (!hasActive.value || !root.value) {
     return;
   }
 
   root.value.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
-});
+}
+
+onMounted(() => scrollIntoView);
 </script>
 
 <template>

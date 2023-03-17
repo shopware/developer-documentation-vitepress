@@ -43,7 +43,7 @@ function flattenGroup(group, items) {
   for (const link of group.items || []) {
     items = flattenGroup(link, items);
   }
-  
+
   return items;
 }
 
