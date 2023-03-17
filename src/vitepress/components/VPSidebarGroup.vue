@@ -2,8 +2,11 @@
 import { MenuItemWithLink } from "../../core";
 import VPSidebarLink from "./VPSidebarLink.vue";
 import { useData } from "vitepress";
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import { hasActiveSublink } from "../support/utils";
+import { useRouter } from 'vitepress';
+
+const router = useRouter()
 
 const props = defineProps<{
   link: string,
@@ -37,6 +40,11 @@ const toggleExpanded = (e) => {
 
   isExpanded.value = !isExpanded.value;
 }
+
+watch(
+    () => router.route.data.relativePath,
+    (path) => isExpanded.value = hasAnyActiveLink.value,
+    { immediate: true });
 </script>
 
 <template>

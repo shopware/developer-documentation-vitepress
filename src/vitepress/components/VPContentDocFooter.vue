@@ -27,14 +27,26 @@ const links = computed(() => {
 })
 
 function getFlatSideBarLinks(sidebar: SidebarGroup[]): MenuItemWithLink[] {
-  const links: MenuItemWithLink[] = []
+  let flattened: MenuItemWithLink[] = []
   for (const group of sidebar) {
-    for (const link of group.items) {
-      links.push(link)
-    }
+    flattened = flattenGroup(group, flattened);
   }
-  return links
+
+  return flattened
 }
+
+function flattenGroup(group, items) {
+  if (group.link !== '#') {
+    items.push(group);
+  }
+
+  for (const link of group.items || []) {
+    items = flattenGroup(link, items);
+  }
+  
+  return items;
+}
+
 </script>
 
 <template>
