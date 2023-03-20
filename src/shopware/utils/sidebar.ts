@@ -82,13 +82,18 @@ export const getSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: Setu
         absolute
     );
 
+    if (!finalLink) {
+        // fallback to index
+        if (!absolute.endsWith('/')) {
+            return getSidebarItem(sidebar, route, {...attrs, page: `${attrs.page}/`}, attr);
+        }
+
+        return null;
+    }
+
     const mapper = {
         title: 'text',
     };
 
-    if (!finalLink) {
-        return null;
-    }
-
-    return `${finalLink[mapper[attr]] || null/* || attr*/}`;
+    return finalLink[mapper[attr]] || null;
 }
