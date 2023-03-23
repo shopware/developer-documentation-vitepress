@@ -11,11 +11,15 @@ import {configSymbol} from "../../vitepress/composables/config";
 provide(configSymbol, computed(() => ({
   nav: [],
   sidebar: {
-    '/my-page': {
-      text: 'My page',
-      link: '/my-page',
+    '/my/': {
+      text: 'My',
+      link: '/my/',
       items: []
     }
+  },
+  swag: {
+    similarArticlesHost: 'https://knowledge-index.shopware.com',
+    similarArticlesFilter: {}
   }
 })))
 </script>

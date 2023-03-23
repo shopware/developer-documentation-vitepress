@@ -12,6 +12,9 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    fetchMock: {
+      debug: true,
+    },
   },
 };
 

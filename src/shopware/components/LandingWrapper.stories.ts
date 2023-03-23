@@ -1,12 +1,12 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
-import TopBar from "./TopBar.vue";
+import LandingWrapper from "./LandingWrapper.vue";
 import {render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/TopBar',
-    render: render(TopBar)
-} satisfies Meta<typeof TopBar>;
+    title: 'Shopware/LandingWrapper',
+    render: render(LandingWrapper),
+} satisfies Meta<typeof LandingWrapper>;
 
 type Story = StoryObj<typeof meta>;
 

@@ -2,20 +2,14 @@ import type {Meta, StoryObj} from '@storybook/vue3';
 
 import Tabs from "./Tabs.vue";
 import Tab from "./Tab.vue";
+import {render} from "../stories/helpers";
 
 const meta = {
-    title: 'Component/Tabs',
-    component: Tabs,
-    args: {
-        page: 'my-page'
-    },
-    render: (args: any) => ({
-        components: {Tabs, Tab},
-        setup() {
-            return {args}
-        },
+    title: 'Shopware/Tabs',
+    render: render(Tabs, {
+        components: {Tab},
         template: '<Tabs><Tab title="First tab">First tab content</Tab><Tab title="Second tab">Second tab content</Tab></Tabs>'
-    })
+    }),
 } satisfies Meta<typeof Tabs>;
 
 type Story = StoryObj<typeof meta>;

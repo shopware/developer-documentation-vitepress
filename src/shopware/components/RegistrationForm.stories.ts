@@ -1,12 +1,12 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
-import TopBar from "./TopBar.vue";
+import RegistrationForm from "./RegistrationForm.vue";
 import {render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/TopBar',
-    render: render(TopBar)
-} satisfies Meta<typeof TopBar>;
+    title: 'Shopware/RegistrationForm',
+    render: render(RegistrationForm),
+} satisfies Meta<typeof RegistrationForm>;
 
 type Story = StoryObj<typeof meta>;
 
