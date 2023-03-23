@@ -19,4 +19,12 @@ export default defineConfigWithTheme<ThemeConfig>({
       similarArticlesFilter: {}
     }
   },
+
+  build: {
+    rollupOptions: {
+      external: [
+          'fsevents'
+      ]
+    }
+  }
 });

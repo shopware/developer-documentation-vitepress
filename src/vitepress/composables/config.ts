@@ -18,7 +18,7 @@ import {
 import { MenuItem, MenuItemChild } from '../../core'
 import { normalizeLink } from '../support/utils'
 
-const configSymbol: InjectionKey<Ref<Config>> = Symbol('config')
+export const configSymbol: InjectionKey<Ref<Config>> = Symbol('config')
 
 /**
  * Wrap root App component to provide the resolved theme config
