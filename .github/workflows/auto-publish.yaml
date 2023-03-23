@@ -31,6 +31,11 @@ jobs:
       - name: Test CLI
         run: pnpm test:unit
 
+      - name: Test Chromatic + Storybook
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: pnpm chromatic
+
   npm-publish:
     name: npm-publish
     runs-on: ubuntu-latest
