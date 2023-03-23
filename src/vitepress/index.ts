@@ -11,6 +11,7 @@ import { withConfigProvider } from './composables/config'
 // import LandingWrapper from "./../shopware/components/LandingWrapper.vue";
 // import TopBar from "./../shopware/components/TopBar.vue";
 import PageRef from "./../shopware/components/PageRef.vue";
+import YoutubeRef from "./../shopware/components/YoutubeRef.vue";
 import CodeBlock from "./../shopware/components/CodeBlock.vue";
 import Tabs from "./../shopware/components/Tabs.vue";
 import Tab from "./../shopware/components/Tab.vue";
@@ -23,7 +24,8 @@ const VPTheme: Theme = {
     // app.component('RegistrationForm', RegistrationForm),
     // app.component('LandingWrapper', LandingWrapper),
     // app.component('TopBar', TopBar),
-    app.component("PageRef", PageRef),
+      app.component("YoutubeRef", YoutubeRef),
+      app.component("PageRef", PageRef),
       app.component("CodeBlock", CodeBlock),
       app.component("Tabs", Tabs),
       app.component("Tab", Tab);
