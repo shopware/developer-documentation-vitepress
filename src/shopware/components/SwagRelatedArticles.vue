@@ -66,7 +66,7 @@ const fetchSimilarArticles = async () => {
     );
     const data = await response.json();
     articles.value = data.results.map(({id, heading, description}) => ({
-      page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '')}`,
+      page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '').replace('##', '#/')}`,
       title: heading,
       description: description,
     }));
