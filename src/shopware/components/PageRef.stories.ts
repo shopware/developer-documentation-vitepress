@@ -11,6 +11,7 @@ const meta = {
         sub: 'My description'
     },
     render: render(PageRef),
+
 } satisfies Meta<typeof PageRef>;
 
 type Story = StoryObj<typeof meta>;
@@ -18,3 +19,4 @@ type Story = StoryObj<typeof meta>;
 export default meta;
 
 export const Default: Story = {};
+
