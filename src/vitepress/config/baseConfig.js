@@ -18,7 +18,7 @@ const navigation = [];
 //const { withMermaid } = require("vitepress-plugin-mermaid");
 
 // for local-linked development
-const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock"];
+const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock", "fsevents"];
 
 /**
  * @type {() => Promise<import('vitepress').UserConfig>}
