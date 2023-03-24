@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Install Node.js
         uses: actions/setup-node@v3
@@ -30,6 +32,11 @@ jobs:
 
       - name: Test CLI
         run: pnpm test:unit
+
+      - name: Test Chromatic + Storybook
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: pnpm chromatic
 
   npm-publish:
     name: npm-publish

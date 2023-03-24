@@ -4,9 +4,9 @@
   >
     <h4>{{ title }}</h4>
     <iframe width="100%"
-            style="aspect-ratio: 16/9;"
+            class="c-youtube-ref_iframe"
             :src="`https://www.youtube-nocookie.com/embed/${video}`"
-            title="YouTube video player"
+            :title="title"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen></iframe>
@@ -19,3 +19,9 @@ const props = defineProps<{
   title: string;
 }>();
 </script>
+
+<style>
+.c-youtube-ref_iframe {
+  aspect-ratio: 16/9;
+}
+</style>

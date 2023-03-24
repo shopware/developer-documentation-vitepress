@@ -17,7 +17,9 @@
     "shopware",
     "vitepress"
   ],
-  "author": "Shopware team",
+  "author": {
+    "name": "Shopware team"
+  },
   "license": "MIT",
   "scripts": {
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
@@ -27,7 +29,10 @@
     "test:unit": "vitest run -r __tests__/unit --sequence.shuffle",
     "dev": "vitepress dev demo",
     "build": "vitepress build demo",
-    "serve": "pnpm run build && vitepress serve demo --port 5002"
+    "serve": "pnpm run build && vitepress serve demo --port 5002",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --exit-zero-on-changes"
   },
   "dependencies": {
     "@docsearch/css": "^3.3.3",
@@ -39,6 +44,7 @@
     "axios": "^0.27.2",
     "body-scroll-lock": "^3.1.5",
     "fs-extra": "^11.1.0",
+    "fsevents": "^2.3.2",
     "gray-matter": "^4.0.3",
     "mermaid": "9.1.7",
     "normalize.css": "^8.0.1",
@@ -47,6 +53,14 @@
     "vitepress-plugin-mermaid": "^2.0.10"
   },
   "devDependencies": {
+    "@storybook/builder-vite": "^7.0.0-rc.6",
+    "@storybook/addon-essentials": "^7.0.0-rc.6",
+    "@storybook/addon-interactions": "^7.0.0-rc.6",
+    "@storybook/addon-links": "^7.0.0-rc.6",
+    "@storybook/blocks": "^7.0.0-rc.6",
+    "@storybook/testing-library": "^0.0.14-next.1",
+    "@storybook/vue3": "^7.0.0-rc.6",
+    "@storybook/vue3-vite": "^7.0.0-rc.6",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/estree": "^0.0.52",
     "@types/fs-extra": "^11.0.1",
@@ -54,13 +68,18 @@
     "@types/node": "^18.15.0",
     "@types/remove-markdown": "^0.3.1",
     "@vitejs/plugin-vue": "^4.0.0",
+    "chromatic": "^6.17.2",
     "get-port": "^6.1.2",
     "google-fonts-helper": "^3.2.4",
     "prettier": "^2.8.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "remove-markdown": "^0.5.0",
+    "storybook": "^7.0.0-rc.6",
+    "storybook-addon-fetch-mock": "^1.0.1",
     "terser": "^5.16.6",
     "typescript": "^4.9.5",
-    "vitepress": "1.0.0-alpha.51",
+    "vitepress": "1.0.0-alpha.61",
     "vitest": "^0.28.5",
     "vue": "^3.2.47"
   },

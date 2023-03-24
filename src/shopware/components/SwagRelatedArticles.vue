@@ -6,8 +6,8 @@
         :key="link.page"
         :page="link.page"
         :title="link.title"
-        :sub="''"
-    ></PageRef>
+        :sub="link.description || ''"
+    />
   </div>
 </template>
 
@@ -17,6 +17,7 @@ import {useData, useRoute} from "vitepress";
 import {useConfig} from "../../vitepress/composables/config";
 import {useSidebar} from "../../vitepress/composables/sidebar";
 import { getSidebarsWithMainKey } from '../../vitepress/support/sidebar'
+import PageRef from "./PageRef.vue";
 
 const articles = ref([]);
 const route = useRoute();

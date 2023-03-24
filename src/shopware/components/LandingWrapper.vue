@@ -37,3 +37,8 @@ h2 {
     background-size: cover;
 }
 </style>
+
+<script setup>
+import ActionItem from "./ActionItem.vue";
+import RegistrationForm from "./RegistrationForm.vue";
+</script>
