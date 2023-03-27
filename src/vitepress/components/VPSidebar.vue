@@ -3,6 +3,7 @@ import { nextTick, ref, watchPostEffect } from 'vue'
 import { useConfig } from '../composables/config'
 import { useSidebar } from '../composables/sidebar'
 import VPSidebarGroup from './VPSidebarGroup.vue'
+import SwagSidebarVersionSwitcher from "../../shopware/components/SwagSidebarVersionSwitcher.vue";
 import { useData } from "vitepress";
 
 const { sidebar, hasSidebar } = useSidebar()
@@ -42,6 +43,7 @@ const { page } = useData();
         <span id="sidebar-aria-label" class="visually-hidden"
         >Sidebar Navigation</span
         >
+        <SwagSidebarVersionSwitcher />
         <div v-for="group in sidebar" :key="group.text" class="group">
           <VPSidebarGroup
             :link="group.link"
