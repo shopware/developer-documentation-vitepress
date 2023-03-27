@@ -93,6 +93,7 @@ module.exports = async () => /*withMermaid*/({
   ],
 
   markdown: {
+    headers: true,
     highlight: await require("./highlight")(),
   },
 
