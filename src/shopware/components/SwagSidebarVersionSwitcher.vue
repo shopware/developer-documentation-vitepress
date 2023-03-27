@@ -1,10 +1,12 @@
 <template>
-  Version:
-  <select
-      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-      v-model="selectedVersion">
-    <option v-for="(title, value) in versions" :value="value">{{ title }}</option>
-  </select>
+  <div v-if="Object.keys(versions).length" class="SwagSidebarVersionSwitcher">
+    Version:
+    <select
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        v-model="selectedVersion">
+      <option v-for="(title, value) in versions" :value="value">{{ title }}</option>
+    </select>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +19,7 @@ const route = useRoute();
 
 const versionSwitcherConfig = config.value?.swag?.versionSwitcher ?? {};
 const versionPaths = versionSwitcherConfig?.paths ?? [];
-const versions = versionPaths.find(paths => Object.keys(paths).find(key => route.path.startsWith(`/${key}`)));
+const versions = versionPaths.find(paths => Object.keys(paths).find(key => route.path.startsWith(`/${key}`))) ?? {};
 
 const versionMatch = Object.keys(versions ?? {})
     .filter(key => route.path.startsWith(`/${key}`))
