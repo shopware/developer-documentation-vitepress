@@ -39,12 +39,23 @@ export function getSidebarsWithMainKey(
   }
 
   if (!Object.keys(sidebars).length) {
-    return [null, null]
+    return [null, null, null]
   }
 
-  let maxKey = Object.keys(sidebars).sort(function(a, b){
+  const keys = Object.keys(sidebars).sort(function(a, b){
     return b.length - a.length;
-  })[0];
+  });
+  const maxKey = keys[0];
+  const nextKey = keys[1] ?? null;
 
-  return [sidebars, maxKey];
+  return [sidebars, maxKey, nextKey];
+}
+
+export function touch(object, callback) {
+  callback(object);
+  return object;
+}
+
+export function flattenSidebar(items) {
+  return items.reduce((reduced, item) => touch(reduced, reduced => reduced.push(item, ...flattenSidebar(item.items || []))), []);
 }
