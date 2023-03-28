@@ -18,13 +18,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       similarArticlesHost: 'https://ai-ml.fly.dev',
       similarArticlesFilter: {},
       versionSwitcher: {
-        paths: [
-          {
-            'docs': 'Latest (v6.5)',
-            'docs/v6.4': 'v6.4',
-            'docs/v6.3': 'v6.3',
-          }
-        ]
+        paths: []
       }
     }
   },
