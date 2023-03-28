@@ -1,5 +1,7 @@
 <template>
-  <a :href="parent.link" v-if="parent" :key="relativePath">Go back to {{ parent.text }}</a>
+  <a v-if="parent"
+     class="flex mb-4"
+     :href="parent.link">Go back to {{ parent.text }}</a>
 </template>
 
 <script setup lang="ts">
