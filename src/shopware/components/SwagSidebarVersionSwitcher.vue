@@ -12,10 +12,14 @@
 <script setup lang="ts">
 import {ref, watch} from "vue";
 import {useConfig} from "../../vitepress/composables/config";
-import {useRoute} from "vitepress";
+import {useRoute, useRouter} from "vitepress";
+import {flattenSidebar} from "../../vitepress/support/sidebar";
 
 const {config} = useConfig();
 const route = useRoute();
+const router = useRouter();
+
+const sidebarConfig = config.value.sidebar;
 
 const versionSwitcherConfig = config.value?.swag?.versionSwitcher ?? {};
 const versionPaths = versionSwitcherConfig?.paths ?? [];
@@ -37,12 +41,30 @@ const selectedVersion = ref(versionMatch[0] ?? null);
 
 watch(
     selectedVersion,
-    value => {
-      console.log('version changed', value);
-      // navigate to correct path, try to find:
-      // - the same article
-      // - the nearest section
-      // - root
+    (newValue, oldValue) => {
+      const newSidebar = flattenSidebar(sidebarConfig[`/${newValue}/`] ?? []);
+
+      // find the closest value in the new sidebar
+      const relativePath = '/' + route.data.relativePath
+          .replace('/index.md', '/')
+          .replace('.md', '.html')
+          .substring(oldValue.length + 1); // add /
+
+      // compare docs/v6.4 and docs with /docs/v6.4/foo and /docs/foo
+      const newLinks = newSidebar
+          .filter(item => item.link !== '#' && relativePath.startsWith(item.link.substring(newValue.length + 1)))
+          .sort((a, b) => {
+            if (a.link.length > b.link.length) {
+              return -1;
+            } else if (a.link.length < b.link.length) {
+              return 1;
+            }
+
+            return 0;
+          });
+
+      const link = newLinks[0]?.link ?? ('/' + newValue + '/');
+      router.go(link);
     }
 )
 </script>

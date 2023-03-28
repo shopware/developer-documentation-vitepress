@@ -21,8 +21,8 @@ export default defineConfigWithTheme<ThemeConfig>({
         paths: [
           {
             'docs': 'Latest (v6.5)',
-            'docs/v6.4/': 'v6.4',
-            'docs/v6.3/': 'v6.3',
+            'docs/v6.4': 'v6.4',
+            'docs/v6.3': 'v6.3',
           }
         ]
       }
