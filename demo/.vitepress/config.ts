@@ -16,7 +16,10 @@ export default defineConfigWithTheme<ThemeConfig>({
     // @ts-ignore
     swag: {
       similarArticlesHost: 'https://ai-ml.fly.dev',
-      similarArticlesFilter: {}
+      similarArticlesFilter: {},
+      versionSwitcher: {
+        paths: []
+      }
     }
   },
 

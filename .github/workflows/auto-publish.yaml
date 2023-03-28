@@ -34,6 +34,7 @@ jobs:
         run: pnpm test:unit
 
       - name: Test Chromatic + Storybook
+        if: ${{ github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'chromatic') }}
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         run: pnpm chromatic

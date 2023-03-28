@@ -55,14 +55,14 @@ const pageClass = computed(() => {
 <template>
   <div
     class="VPContentDoc"
-    :class="{ 'has-aside': frontmatter.aside !== false, 'is-wide': frontmatter.wide === true }"
+    :class="{ 'has-aside': frontmatter.aside !== false && page.headers.length, 'is-wide': frontmatter.wide === true }"
   >
     <div class="container">
-      <div class="aside" v-if="frontmatter.aside !== false">
+      <div class="aside" v-if="frontmatter.aside !== false && page.headers.length">
         <div class="aside-container">
           <slot name="aside-top" />
           <VPContentDocOutline
-            v-if="page.headers && frontmatter.outline !== false"
+            v-if="page.headers.length && frontmatter.outline !== false"
           />
           <slot name="aside-mid" />
           <slot name="aside-bottom" />
