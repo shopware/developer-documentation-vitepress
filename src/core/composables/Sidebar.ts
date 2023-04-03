@@ -462,8 +462,11 @@ export const buildSidebarNav = (
         (data, item) => {
             const {link, text, items, repo} = item;
 
+            // skip external links
+            const isExternal = link?.startsWith('https://') || link?.startsWith('http://');
+
             // build sidebar
-            if (link) {
+            if (!isExternal && link) {
                 data.sidebar[link] = transformLinkToSidebar(root, link);
             }
 
