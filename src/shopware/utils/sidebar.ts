@@ -37,7 +37,7 @@ const traverse = (items: AdditionalMenuItemWithContext[], url: string) => {
     let matchedItems: AdditionalMenuItemWithContext[] = [];
     const parts = url.substring(1).split('/');
     for (let i = parts.length; i >= 0; i--) {
-        const partialLink = `/${parts.slice(0, i).join('/')}`;
+        const partialLink = `/${parts.slice(0, i).join('/')}`.split('#')[0];
         matchedItems = flattenItems.filter(({link}) => link === partialLink || link === `${partialLink}.html`);
         if (matchedItems.length) {
             break;
