@@ -22,13 +22,16 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7
+      - run: corepack enable
+      - run: pnpm --version
 
-      - name: Install dependencies
-        run: pnpm i
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "pnpm"
+          cache-dependency-path: "**/pnpm-lock.yaml"
+      - name: install
+        run: pnpm install --frozen-lockfile --prefer-offline
 
       - name: Test CLI
         run: pnpm test:unit
