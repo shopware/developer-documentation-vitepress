@@ -58,17 +58,25 @@ const traverse = (items: AdditionalMenuItemWithContext[], url: string) => {
     return matchedItems[0] || null;
 }
 
+export const trimDatetime = value => {
+    if (value?.match(/^\d\d\d\d-\d\d-\d\d - /)) {
+        return value.substring('XXXX-XX-XX - '.length);
+    }
+
+    return value;
+}
+
 export const getSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: SetupContext['attrs'], attr: string) => {
     // hardcoded title or sub/description
     if (attrs[attr] || typeof attrs[attr] === 'string') {
-        return attrs[attr];
+        return trimDatetime(attrs[attr]);
     }
 
     // @ts-ignore
     const page: string = attrs.page;
     // cannot auto-resolve attrs for external or empty urls
     if (!page || page.startsWith('https://') || page.startsWith('http://') || page.startsWith('//')) {
-        return attrs[attr];
+        return trimDatetime(attrs[attr]);
     }
 
     const absolute = transformRelativeRoute(route, page);
@@ -95,5 +103,5 @@ export const getSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: Setu
         title: 'text',
     };
 
-    return finalLink[mapper[attr]] || null;
+    return trimDatetime(finalLink[mapper[attr]] || null);
 }
