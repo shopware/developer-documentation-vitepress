@@ -73,26 +73,6 @@ nav:
   hidden: true
 ```
 
-## Mermaid
-
-```mermaid
-graph LR;
-    K([<img src='/vitepress-plugin-mermaid/K.png' width='60' >])-.->G((<img id='git' src='/vitepress-plugin-mermaid/Octocat.png' width='50' >));
-    H([<img id='helm' src='/vitepress-plugin-mermaid/helm.png' width='60' >])-.->G
-    G-->A;
-    A(<img src='/vitepress-plugin-mermaid/argo-cd.png' width='60' >)-->D(<img src='/vitepress-plugin-mermaid/ocp.png' width='60' >);
-classDef img fill:none,color:none,stroke:none,border-radius:50px
-class G,D,A,K,H img
-click G "http://www.github.com" "This is a link" _blank
-click K "https://kustomize.io/" _blank
-```
-
-```mermaid
-pie title Do you like Shopware?
-    "Yes" : 386
-    "Yes, but in yellow" : 42
-```
-
 ## APIs
 
 Internal APIs (Store & Admin) are automatically generated with Stoplight.
