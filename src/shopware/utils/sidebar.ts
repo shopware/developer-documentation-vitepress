@@ -1,6 +1,7 @@
 import {Route} from "vitepress";
 import {AdditionalMenuItemWithContext, SidebarConfig} from "../../vitepress/config";
 import {SetupContext} from "@vue/runtime-core";
+import {getSidebarsWithMainKey} from "../../vitepress/support/sidebar";
 
 export const transformRelativeRoute = (route: Route, url: string) => {
     if (!url || url.startsWith('https://') || url.startsWith('http://') || url.startsWith('/')) {
@@ -79,21 +80,31 @@ export const getSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: Setu
         return trimDatetime(attrs[attr]);
     }
 
-    const absolute = transformRelativeRoute(route, page);
-    const [firstLevel] = absolute.substring(1).split('/');
+    // get correct sidebar
+    let absolute = transformRelativeRoute(route, page);
+    const [sidebars, key] = getSidebarsWithMainKey(sidebar, absolute);
 
-    // @ts-ignore
-    const firstLevelItems = sidebar[`/${firstLevel}/`];
+    if (!key) {
+        return null;
+    }
 
+    // force .html extension
+    if (absolute.endsWith('.md')) {
+        absolute = absolute.replace('.md', '.html');
+    } else if (!absolute.endsWith('/') && !absolute.endsWith('.html')) {
+        absolute = `${absolute}.html`;
+    }
+
+    // find link in the sidebar
     let finalLink = traverse(
-        firstLevelItems || [],
+        sidebars[key],
         absolute
     );
 
     if (!finalLink) {
         // fallback to index
         if (!absolute.endsWith('/')) {
-            return getSidebarItem(sidebar, route, {...attrs, page: `${attrs.page}/`}, attr);
+            return getSidebarItem(sidebar, route, {...attrs, page: `${page.replace('.html', '')}/`}, attr);
         }
 
         return null;
