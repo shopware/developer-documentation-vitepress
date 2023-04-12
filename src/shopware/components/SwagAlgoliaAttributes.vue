@@ -2,7 +2,6 @@
   <div class="SwagAlgoliaAttributes hidden">
     <span class="SwagAlgoliaAttributes_area">{{ point.repository }}</span>
     <span class="SwagAlgoliaAttributes_version">{{ point.version }}</span>
-    <span class="SwagAlgoliaAttributes_parent">{{ parent }}</span>
   </div>
 </template>
 
