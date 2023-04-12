@@ -17,16 +17,16 @@ const baseSidebar = {
                 link: '/two-levels/level-2-1',
             },
             {
+                text: 'Level 2.2 root',
+                link: '/two-levels/level-2-2/',
+            },
+            {
                 text: 'Level 2.2',
                 link: '/two-levels/level-2-2',
             },
             {
                 text: 'Level 2.1 root',
                 link: '/two-levels/level-2-1/',
-            },
-            {
-                text: 'Level 2.2 root',
-                link: '/two-levels/level-2-2/',
             }
         ],
         text: 'Level 2',
@@ -158,6 +158,12 @@ describe('render correct content', async () => {
 
         link = getSidebarItem(baseSidebar, rootRoute, {page: '/two-levels/level-2-1/'}, 'title');
         expect(link).to.equal('Level 2.1 root');
+
+        link = getSidebarItem(baseSidebar, rootRoute, {page: '/two-levels/level-2-2'}, 'title');
+        expect(link).to.equal('Level 2.2');
+
+        link = getSidebarItem(baseSidebar, rootRoute, {page: '/two-levels/level-2-2/'}, 'title');
+        expect(link).to.equal('Level 2.2 root');
     })
 
     test('three levels', async () => {
