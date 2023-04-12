@@ -68,6 +68,20 @@ export const trimDatetime = value => {
 }
 
 export const getSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: SetupContext['attrs'], attr: string) => {
+    const item = getExactSidebarItem(sidebar, route, attrs, attr);
+
+    if (item || !attrs.page || attrs.page.endsWith('/')) {
+        return item;
+    }
+
+    // fallback to index
+    return getExactSidebarItem(sidebar, route, {
+        ...attrs,
+        page: `${attrs.page.replace('.html', '')}/`
+    }, attr);
+}
+
+export const getExactSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: SetupContext['attrs'], attr: string) => {
     // hardcoded title or sub/description
     if (attrs[attr] || typeof attrs[attr] === 'string') {
         return trimDatetime(attrs[attr]);
@@ -102,11 +116,6 @@ export const getSidebarItem = (sidebar: SidebarConfig, route: Route, attrs: Setu
     );
 
     if (!finalLink) {
-        // fallback to index
-        if (!absolute.endsWith('/')) {
-            return getSidebarItem(sidebar, route, {...attrs, page: `${page.replace('.html', '')}/`}, attr);
-        }
-
         return null;
     }
 
