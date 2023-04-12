@@ -4,46 +4,30 @@ import { useData, useRoute } from 'vitepress'
 import VPContentDocOutline from './VPContentDocOutline.vue'
 import VPContentDocFooter from './VPContentDocFooter.vue'
 import SwagRelatedArticles from '../../shopware/components/SwagRelatedArticles.vue'
+import SwagAlgoliaAttributes from "../../shopware/components/SwagAlgoliaAttributes.vue";
 import { VTLink, VTIconGitHub, VTIconStackOverflow } from "../../core"
 import { useConfig } from '../composables/config'
+import {getEmbeddingPoint} from "../../shopware/composables/repos";
 
 const { page, frontmatter, theme } = useData()
 const { config } = useConfig()
 
 const route = useRoute();
 
-const getMatchedRepos = (items) => {
-  return items.reduce((reduced, item) => {
-    // compare nav items with defined link and repo
-    if (item.link && item.repo && route.path.match(`^${item.link}`)) {
-      reduced.push({
-        repo: item.repo,
-        mount: item.mount
-      });
-    }
-
-    // check for sub-items, deep-first
-    if (item.items) {
-      reduced = [
-        ...getMatchedRepos(item.items),
-        ...reduced
-      ];
-    }
-
-    return reduced;
-  }, []);
-};
-
 const repoUrl = computed(() => {
-  const matchedRepo = getMatchedRepos(theme.value.nav)[0];
-  const repo = matchedRepo?.repo
-    || theme.value.editLink?.repo
-    || "shopware/developer-documentation-vuepress";
+  const embeddingPoint = getEmbeddingPoint(config.value?.swag?.embeds ?? [], route.path)
 
-  const branch = repo.match(/#(\w+)$/)?.[1] || "main";
-  const folder = matchedRepo?.mount
-    || "src";
-  return `https://github.com/${repo}/edit/${branch}/${folder}/${page.value.relativePath}`;
+  const repo = embeddingPoint.repository;
+  const branch = embeddingPoint.branch || "main";
+  const dst = embeddingPoint.dst || "/";
+  let folder = embeddingPoint.folder || "main";
+  if (folder !== '.') {
+    folder = `/${folder}`;
+  } else {
+    folder = '';
+  }
+
+  return `https://github.com/shopware/${repo}/edit/${branch}${folder}/${page.value.relativePath.substring(dst.length - 1)}`;
 });
 
 const pageClass = computed(() => {
@@ -71,6 +55,8 @@ const pageClass = computed(() => {
       <div class="content">
         <slot name="content-top" />
         <main>
+          <SwagAlgoliaAttributes />
+
           <Content class="vt-doc" :class="pageClass" />
 
           <SwagRelatedArticles></SwagRelatedArticles>
