@@ -40,7 +40,7 @@ function initialize(userOptions: AlgoliaSearchOptions) {
     container: '#docsearch',
 
     getMissingResultsUrl({ query }: { query: string }) {
-      return `https://github.com/vuejs/docs/issues/new?title=Missing%20search%20result%20for%20${query}`
+      return `https://github.com/shopware/docs/issues/new?title=Missing%20search%20result%20for%20${query}`
     },
 
     navigator: {
@@ -103,6 +103,36 @@ function initialize(userOptions: AlgoliaSearchOptions) {
         },
         __v: null
       }
+    },
+
+    /*resultsFooterComponent({ state }) {
+      return {
+        // The HTML `tag`
+        type: 'a',
+        ref: undefined,
+        constructor: undefined,
+        key: state.query,
+        // Its props
+        props: {
+          href: 'https://docsearch.algolia.com/apply',
+          target: '_blank',
+          onClick: (event) => {
+            console.log(event);
+          },
+          // Raw text rendered in the HTML element
+          children: `${state.context.nbHits} hits found!`,
+        },
+        __v: null,
+      };
+    },*/
+
+    // https://www.algolia.com/doc/api-reference/search-api-parameters/
+    searchParameters: {
+      /*filters: [],
+      facetFilters: [],
+      facets: [],*/
+      hitsPerPage: 30,
+      length: 30,
     }
   })
 
