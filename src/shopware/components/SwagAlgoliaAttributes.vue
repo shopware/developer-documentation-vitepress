@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {computed} from "vue";
 import {useConfig} from "../../vitepress/composables/config";
 import {useData, useRoute} from "vitepress";
 

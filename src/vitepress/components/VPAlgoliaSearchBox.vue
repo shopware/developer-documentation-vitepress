@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import docsearch from '@docsearch/js'
 import { useRoute, useRouter } from 'vitepress'
-import { onMounted } from 'vue'
+import {computed, onMounted} from 'vue'
 import { useConfig } from '../composables/config'
 import type { AlgoliaSearchOptions } from '../config'
+import {getEmbeddingPoint} from "../../shopware/composables/repos";
 
 // partial type only containing what we need
 interface DocSearchHit {
@@ -13,6 +14,9 @@ interface DocSearchHit {
 const { config } = useConfig()
 const route = useRoute()
 const router = useRouter()
+
+const embedsConfig = config.value?.swag?.embeds ?? [];
+const point = computed(() => getEmbeddingPoint(embedsConfig, route.path));
 
 onMounted(() => {
   // this component will only render if user has configured algolia
@@ -105,38 +109,42 @@ function initialize(userOptions: AlgoliaSearchOptions) {
       }
     },
 
-    /*resultsFooterComponent({ state }) {
+    resultsFooterComponent({ state }) {
+      if (!point.value.hasMultiple) {
+        return null;
+      }
+
       return {
         // The HTML `tag`
-        type: 'a',
+        type: 'span',
         ref: undefined,
         constructor: undefined,
         key: state.query,
         // Its props
         props: {
-          href: 'https://docsearch.algolia.com/apply',
+          /*href: '/',
           target: '_blank',
           onClick: (event) => {
             console.log(event);
-          },
+          },*/
           // Raw text rendered in the HTML element
-          children: `${state.context.nbHits} hits found!`,
+          children: `You are only seeing results from the ${point.value.version} branch. To search for a different version, switch versions in the sidebar.`,
         },
         __v: null,
       };
-    },*/
+    },
 
     // https://www.algolia.com/doc/api-reference/search-api-parameters/
     searchParameters: {
-      /*filters: [],
-      facetFilters: [],
-      facets: [],*/
+      // requires adding "Attributes for faceting" under Algolia > Index > Configuration
+      filters: `version:${point.value.version}`,
       hitsPerPage: 30,
       length: 30,
+      offset: 0,
     }
   })
 
-  docsearch(options)
+  const response = docsearch(options)
 }
 
 function isSpecialClick(event: MouseEvent) {

@@ -4,8 +4,8 @@ export const getEmbeddingPoint = (embeds, routePath) => {
     if (!repository) {
         return {
             repository: 'unknown',
-            version: 'none',
-            branch: 'none',
+            version: 'main',
+            branch: 'main',
             folder: '.',
         };
     }
@@ -17,5 +17,6 @@ export const getEmbeddingPoint = (embeds, routePath) => {
         folder: repository.folder,
         branch: repository.points[point],
         dst: point,
+        hasMultiple: Object.keys(repository.points).length > 1,
     };
 }
