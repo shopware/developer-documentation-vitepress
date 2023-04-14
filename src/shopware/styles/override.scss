@@ -68,6 +68,12 @@ html.dark {
   }
 }
 
+.VPNavBar {
+  .container > .title {
+    display: flex;
+  }
+}
+
 .VPNavBarMenuGroup {
   .title {
     color: rgba(60, 60, 60, .333);
@@ -90,7 +96,7 @@ html.dark {
 }
 
 .Layout .VPSidebar {
-  padding-top: 0;
+  padding-top: 1.5rem;
   padding-bottom: 0;
   margin-top: var(--vp-nav-height);
   border-right: 1px solid var(--sw-sidebar-border);
@@ -123,4 +129,26 @@ html.dark {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 1440px) {
+ .VPDoc:not(.has-sidebar) {
+   .container.container,
+   .content.content {
+     max-width: 100%;
+   }
+ }
+}
+
+@media (min-width: 960px) {
+ .VPDoc:not(.has-sidebar) {
+   .container.container,
+   .content.content {
+     max-width: 100%;
+   }
+ }
+}
+
+.VPContent {
+  overflow-x: hidden;
 }
