@@ -156,7 +156,7 @@ const reduceTree = (as: string, dirPath: string) => {
             }
 
             // add custom links (menu items)
-            if (metas[file]?.items) {
+            if (metas[file]?.items.length) {
                 metas[file].items.forEach((item) => {
                     if (!item.items) {
                         item.items = [];
