@@ -1,6 +1,6 @@
 import { defineConfigWithTheme } from "vitepress";
-import type { Config as ThemeConfig } from "../../src/vitepress/config";
-import baseConfig from "../../src/vitepress/config/baseConfig";
+import type { Config as ThemeConfig } from "../../src/shopware/config";
+import baseConfig from "../../src/shopware/config/baseConfig";
 
 import navigation from "./navigation";
 
