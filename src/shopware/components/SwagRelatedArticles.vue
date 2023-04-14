@@ -14,9 +14,9 @@
 <script async setup>
 import {ref, onMounted, watch} from "vue";
 import {useData, useRoute} from "vitepress";
-import {useConfig} from "../../vitepress/composables/config";
-import {useSidebar} from "../../vitepress/composables/sidebar";
-import { getSidebarsWithMainKey } from '../../vitepress/support/sidebar'
+import {useConfig} from "../composables/config";
+import {useSidebar} from "../composables/sidebar-vp";
+import { getSidebarsWithMainKey } from '../support/sidebar'
 import PageRef from "./PageRef.vue";
 
 const articles = ref([]);

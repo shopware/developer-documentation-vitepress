@@ -1,7 +1,7 @@
 import {Route} from "vitepress";
-import {AdditionalMenuItemWithContext, SidebarConfig} from "../../vitepress/config";
+import {AdditionalMenuItemWithContext, SidebarConfig} from "../config";
 import {SetupContext} from "@vue/runtime-core";
-import {getSidebarsWithMainKey} from "../../vitepress/support/sidebar";
+import {getSidebarsWithMainKey} from "../support/sidebar";
 
 export const transformRelativeRoute = (route: Route, url: string) => {
     if (!url || url.startsWith('https://') || url.startsWith('http://') || url.startsWith('/')) {

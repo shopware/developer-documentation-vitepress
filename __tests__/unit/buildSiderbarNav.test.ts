@@ -1,4 +1,4 @@
-import {buildSidebarNav} from "../../src/core/composables/Sidebar";
+import {buildSidebarNav} from "../../src/shopware/composables/Sidebar";
 import {expect} from "vitest";
 
 describe('builds sidebar', async () => {

@@ -2,7 +2,7 @@
  * We are extending from the default theme.
  */
 import Theme from 'vitepress/theme'
-import {withConfigProvider} from './composables/config'
+import {withConfigProvider} from '../shopware/composables/config'
 import {h} from 'vue'
 
 
