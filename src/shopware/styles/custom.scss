@@ -1,0 +1,13 @@
+.vt-doc.--similar-articles h2 {
+    margin-top: 6rem;
+    font-size: 20px;
+}
+
+.VPDoc.has-aside :not(:has(.outline-link)) {
+    .aside {
+        display: none;
+    }
+    .content-container {
+        max-width: 100%;
+    }
+}
