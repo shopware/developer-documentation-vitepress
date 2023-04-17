@@ -1,28 +1,60 @@
 :root {
-  --sw-nav-bg: #142432;
-  --sw-sidebar-bg: #f5f7f9;
-  --sw-sidebar-border: #d3dce4;
-  --sw-brand: #3b8eed;
+  --c-blue-brand: #3b8eed;
 
-  --vt-c-brand: #3b8eed;
+  --c-blue-dark: #142432;
+
+  --c-white-100: #f5f7f9;
+  --c-white-200: #d3dce4;
+
+  --c-gray-100: rgba(235, 235, 235, .6);
+  --c-gray-200: rgba(160, 160, 160, .5);
+  --c-gray-300: rgba(100, 100, 100, 1);
+  --c-gray-500: rgba(60, 60, 60, .7);
+
+  --c-black-1000: #000;
+}
+
+:root {
+  --sw-nav-bg: var(--c-blue-dark);
+  --sw-sidebar-bg: var(--c-white-100);
+  --sw-sidebar-border: var(--c-white-200);
+  --sw-brand: var(--c-blue-brand);
+
+  --vt-c-brand: var(--c-blue-brand);
+  --vp-c-brand-dark: var(--sw-nav-bg);
 
   --vp-nav-bg-color: var(--sw-nav-bg);
   --vp-c-brand: var(--sw-brand);
-  --vp-c-text-2: rgba(235, 235, 235, .6);
+  --vp-c-text-2: var(--c-gray-100);
   --vp-c-bg-alt: transparent;
   --vp-sidebar-bg-color: var(--sw-sidebar-bg);
   --vp-sidebar-bg-color--dark: transparent;
   --vp-nav-height: 80px;
   --vp-custom-block-info-text: var(--sw-nav-bg);
 
-  --sidebar-link-color: rgba(60, 60, 60, .7);
+  --sidebar-link-color: var(--c-gray-500);
   --sidebar-link-color--dark: var(--vp-c-text-2);
+
+  --sw-outline-link: rgba(60, 60, 60, .333);
+  --sw-sidebar-link-color: #213547;
+  --sw-sidebar-heading-color: var(--vp-c-text-1);
+  --vp-c-divider: var(--vp-c-text-2);
+
+  --c-text-100: var(--c-gray-500);
+  --c-link: var(--c-blue-brand);
 }
 
 html.dark {
   --vp-sidebar-bg-color: var(--vp-sidebar-bg-color--dark);
   --sidebar-link-color: var(--sidebar-link-color--dark);
   --vp-c-text-1: var(--sidebar-link-color--dark);
+
+  --sw-nav-bg: var(--vp-c-bg);
+  --sw-sidebar-bg: var(--c-black-1000);
+  --vp-sidebar-bg-color: var(--c-black-1000);
+
+  --sw-outline-link: var(--c-gray-300);
+  --sw-sidebar-heading-color: var(--c-gray-300);
 }
 
 .VPNav {
@@ -39,6 +71,12 @@ html.dark {
   }
 }
 
+.VPContent {
+  .quote {
+    color: var(--c-text-100);
+  }
+}
+
 .nav .VPSidebarItem {
   --vp-c-text-2: var(--vp-c-text-1);
   --vp-c-text-1: #213547;
@@ -48,6 +86,7 @@ html.dark {
     line-height: 20px;
     font-size: 13px;
     font-weight: 600;
+    color: var(--sw-sidebar-heading-color);
   }
 
   &.level-1 .text {
@@ -82,7 +121,7 @@ html.dark {
   }
 
   .link {
-    color: #213547;
+    color: var(--sw-sidebar-link-color);
     font-size: 13px;
     line-height: 26px;
     font-weight: normal;
@@ -91,7 +130,7 @@ html.dark {
 
 .VPDocAsideOutline {
   .outline-link {
-    color: rgba(60, 60, 60, .333);
+    color: var(--sw-outline-link);
   }
 }
 
@@ -151,4 +190,31 @@ html.dark {
 
 .VPContent {
   overflow-x: hidden;
+}
+
+.unstyled {
+  .vp-doc & p {
+    margin: 0 auto;
+  }
+}
+
+.e-heading {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    right: 0;
+    height: 1px;
+    content: '';
+    display: block;
+    background-color: var(--vp-c-divider);
+  }
+}
+
+.as-link {
+  color: var(--c-link);
 }

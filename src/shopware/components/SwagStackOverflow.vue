@@ -3,8 +3,9 @@
       class="edit-link"
       v-if="theme.editLink && frontmatter.stackOverflowLink !== false"
   >
-    <!--<VTIconStackOverflow class="vt-icon"/>-->
+    <VTIconStackOverflow class="vt-icon"/>
     <a target="_blank"
+       class="as-link"
        :href="'https://stackoverflow.com/questions/ask?tags=shopware'">
       Ask a question on StackOverflow
     </a>

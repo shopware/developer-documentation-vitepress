@@ -1,6 +1,6 @@
 <template>
   <div v-if="articles.length" class="vt-doc --similar-articles">
-    <h2>Continue with related topics:</h2>
+    <h2 class="e-heading">Continue with related topics:</h2>
     <PageRef
         v-for="link in articles"
         :key="link.page"
