@@ -1,6 +1,6 @@
 import {computed} from 'vue'
 import {useData} from "vitepress";
-import {getEditLink} from "vitepress-shopware-docs";
+import {getEditLink} from "../composables/repos";
 
 export function useEditLink() {
     const {theme, page} = useData()

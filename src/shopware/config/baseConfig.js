@@ -10,6 +10,7 @@ const {
   presetIcons,
   presetUno,
 } = require("unocss");
+const path = require("path");
 
 const iconStackoverflow = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">\n' +
     '    <path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" />\n' +
@@ -40,7 +41,11 @@ module.exports = async () => ({
     },
     resolve: {
       // for mounting static sub-repos
-      preserveSymlinks: true
+      preserveSymlinks: true,
+
+      alias: {
+        '../composables/edit-link': path.resolve(__dirname, '../composables/edit-link.ts'),
+      }
     },
     // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?
     // https://github.com/vuejs/vitepress/blob/main/rollup.config.ts ?
