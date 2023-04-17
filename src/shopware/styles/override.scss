@@ -159,8 +159,15 @@ html.dark {
   }
 }
 
-.vp-doc a:hover {
-  text-decoration: none;
+.vp-doc a,
+.prev-next a {
+  color: var(--vp-c-brand);
+  transition: color 0.25s;
+
+  &:hover {
+    text-decoration: none;
+    color: var(--vp-c-brand-dark);
+  }
 }
 
 .accent {

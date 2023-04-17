@@ -1,4 +1,3 @@
-
 export const getEmbeddingPoint = (embeds, routePath) => {
     const repository = embeds.find(embed => Object.keys(embed.points).find(point => routePath.startsWith(point)));
     if (!repository) {
@@ -19,4 +18,21 @@ export const getEmbeddingPoint = (embeds, routePath) => {
         dst: point,
         hasMultiple: Object.keys(repository.points).length > 1,
     };
+}
+
+export const getEditLink = ({relativePath, embeds}: { relativePath: string, embeds: [] }) => {
+    const routePath = `/${relativePath.replace('.html', '.md')}`;
+    const embeddingPoint = getEmbeddingPoint(embeds ?? [], routePath)
+
+    const repo = embeddingPoint.repository;
+    const branch = embeddingPoint.branch || "main";
+    const dst = embeddingPoint.dst || "/";
+    let folder = embeddingPoint.folder || "main";
+    if (folder !== '.') {
+        folder = `/${folder}`;
+    } else {
+        folder = '';
+    }
+
+    return `https://github.com/shopware/${repo}/edit/${branch}${folder}/${relativePath.substring(dst.length - 1)}`;
 }

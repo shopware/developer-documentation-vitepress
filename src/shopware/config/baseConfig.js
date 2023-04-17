@@ -124,7 +124,7 @@ module.exports = async () => ({
       {icon: {svg: iconStackoverflow}, link: "https://stackoverflow.com/questions/tagged/shopware"}
     ],
     editLink: {
-      repo: "shopware/developer-documentation-template",
+      pattern: 'https://github.com/shopware/developer-portal',
       text: "Edit this page on GitHub",
     },
   }

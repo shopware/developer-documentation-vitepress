@@ -7,3 +7,4 @@ export { default as Tabs } from "./components/Tabs.vue";
 export { default as TopBar } from "./components/TopBar.vue";
 
 export * from "./theme";
+export * from "./composables/repos";
