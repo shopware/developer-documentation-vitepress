@@ -7,10 +7,13 @@
   --c-white-100: #f5f7f9;
   --c-white-200: #d3dce4;
 
-  --c-gray-100: rgba(235, 235, 235, .6);
+  --c-gray-50: #f8f8f8;
+  --c-gray-100: rgba(226, 232, 240, 1);
+  --c-gray-150: rgba(235, 235, 235, .6);
   --c-gray-200: rgba(160, 160, 160, .5);
   --c-gray-300: rgba(100, 100, 100, 1);
   --c-gray-500: rgba(60, 60, 60, .7);
+  --c-gray-900: #1e1e20;
 
   --c-black-1000: #000;
 }
@@ -26,7 +29,7 @@
 
   --vp-nav-bg-color: var(--sw-nav-bg);
   --vp-c-brand: var(--sw-brand);
-  --vp-c-text-2: var(--c-gray-100);
+  --vp-c-text-2: var(--c-gray-150);
   --vp-c-bg-alt: transparent;
   --vp-sidebar-bg-color: var(--sw-sidebar-bg);
   --vp-sidebar-bg-color--dark: transparent;
@@ -41,8 +44,11 @@
   --sw-sidebar-heading-color: var(--vp-c-text-1);
   --vp-c-divider: var(--vp-c-text-2);
 
+  --c-text: var(--c-gray-500);
   --c-text-100: var(--c-gray-500);
   --c-link: var(--c-blue-brand);
+
+  --vp-c-bg: var(--c-gray-50);
 }
 
 html.dark {
@@ -59,6 +65,9 @@ html.dark {
   --sw-outline-link: var(--c-gray-300);
   --sw-sidebar-heading-color: var(--c-gray-300);
   --vp-c-divider: var(--c-gray-500);
+
+  --vp-c-bg: var(--c-gray-900);
+  --c-text: var(--c-gray-150);
 }
 
 .VPNav {
@@ -207,6 +216,10 @@ html.dark {
   .vp-doc & p {
     margin: 0 auto;
   }
+}
+
+.vp-doc h2.isolated {
+  border-top: none;
 }
 
 .e-heading {
