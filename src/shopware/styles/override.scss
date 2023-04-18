@@ -2,6 +2,7 @@
   --c-blue-brand: #3b8eed;
 
   --c-blue-dark: #142432;
+  --c-blue-dark2: #213547;
 
   --c-white-100: #f5f7f9;
   --c-white-200: #d3dce4;
@@ -36,7 +37,7 @@
   --sidebar-link-color--dark: var(--vp-c-text-2);
 
   --sw-outline-link: rgba(60, 60, 60, .333);
-  --sw-sidebar-link-color: #213547;
+  --sw-sidebar-link-color: var(--c-blue-dark2);
   --sw-sidebar-heading-color: var(--vp-c-text-1);
   --vp-c-divider: var(--vp-c-text-2);
 
@@ -53,8 +54,11 @@ html.dark {
   --sw-sidebar-bg: var(--c-black-1000);
   --vp-sidebar-bg-color: var(--c-black-1000);
 
+  --sw-sidebar-link-color: var(--c-gray-300);
+
   --sw-outline-link: var(--c-gray-300);
   --sw-sidebar-heading-color: var(--c-gray-300);
+  --vp-c-divider: var(--c-gray-500);
 }
 
 .VPNav {
@@ -115,7 +119,7 @@ html.dark {
 
 .VPNavBarMenuGroup {
   .title {
-    color: rgba(60, 60, 60, .333);
+    color: var(--sw-sidebar-heading-color);
     font-size: 11px;
     text-transform: uppercase;
   }
