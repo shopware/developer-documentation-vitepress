@@ -9,6 +9,7 @@ const {
   defineConfig,
   presetIcons,
   presetUno,
+  transformerDirectives,
 } = require("unocss");
 const path = require("path");
 
@@ -69,6 +70,9 @@ module.exports = async () => ({
               warn: true,
             }),
           ],
+          transformers: [
+            transformerDirectives(),
+          ]
         })
       ),
     ],

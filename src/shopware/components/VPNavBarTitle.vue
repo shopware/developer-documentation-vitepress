@@ -7,9 +7,9 @@
           class="VPNavBarImage"
       />
     </a>
-    <a :href="withBase('/installation.html')"
+    <!--<a :href="withBase('/installation.html')"
     ><span class="accent text-xl">EA</span></a
-    >
+    >-->
   </div>
 </template>
 
@@ -28,8 +28,14 @@ import { withBase } from "vitepress";
 }
 
 .VPNavBarImage {
-  width: 90%;
-  height: 40px;
+    width: 90%;
+    height: 20px;
+}
+
+@media (min-width: 640px) {
+    .VPNavBarImage {
+        height: 40px;
+    }
 }
 
 .VPNavBarTitle:hover {

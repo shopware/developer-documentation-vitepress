@@ -1,14 +1,13 @@
 <template>
-  <p
-      class="edit-link-button"
-      v-if="theme.editLink && frontmatter.stackOverflowLink !== false"
-  >
-    <VTIconStackOverflow class="edit-link-icon"/>
-    <a target="_blank"
-       :href="'https://stackoverflow.com/questions/ask?tags=shopware'">
-      Ask a question on StackOverflow
-    </a>
-  </p>
+    <div class="edit-info"
+         v-if="theme.editLink && frontmatter.stackOverflowLink !== false">
+        <div class="edit-link">
+            <a class="VPLink link edit-link-button" href="https://stackoverflow.com/questions/ask?tags=shopware" target="_blank" rel="noreferrer">
+                <VTIconStackOverflow class="edit-link-icon"/>
+                Ask a question on StackOverflow
+            </a>
+        </div>
+    </div>
 </template>
 
 <style lang="scss">

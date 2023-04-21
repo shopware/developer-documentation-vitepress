@@ -15,6 +15,13 @@ import CodeBlock from "./../shopware/components/CodeBlock.vue";
 import Tabs from "./../shopware/components/Tabs.vue";
 import Tab from "./../shopware/components/Tab.vue";
 
+/**
+ * Shared cards and lists.
+ */
+import SwagCard from "./../shopware/components/SwagCard.vue";
+import SwagLandingCard from "./../shopware/components/SwagLandingCard.vue";
+import SwagLandingCardList from "./../shopware/components/SwagLandingCardList.vue";
+
 // broken components
 // import ActionItem from "./../shopware/components/ActionItem.vue";
 // import RegistrationForm from "./../shopware/components/RegistrationForm.vue";
@@ -27,6 +34,7 @@ import Tab from "./../shopware/components/Tab.vue";
 import SwagRelatedArticles from "../shopware/components/SwagRelatedArticles.vue";
 import SwagSidebarVersionSwitcher from "../shopware/components/SwagSidebarVersionSwitcher.vue";
 import SwagStackOverflow from "../shopware/components/SwagStackOverflow.vue";
+import SwagBreadcrumbs from "./components/SwagBreadcrumbs.vue";
 
 /**
  * Import styles at the end.
@@ -40,6 +48,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
             withConfigProvider(Theme.Layout),
             null,
             {
+                'doc-before': () => h(SwagBreadcrumbs),
                 'doc-footer-before': () => [
                     h(SwagRelatedArticles),
                     h(SwagStackOverflow)
@@ -59,6 +68,10 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
         app.component("CodeBlock", CodeBlock);
         app.component("Tabs", Tabs);
         app.component("Tab", Tab);
+
+        app.component("SwagCard", SwagCard);
+        app.component("SwagLandingCard", SwagLandingCard);
+        app.component("SwagLandingCardList", SwagLandingCardList);
 
         /**
          * Allow extending from sub-apps.

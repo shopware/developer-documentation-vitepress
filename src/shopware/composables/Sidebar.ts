@@ -66,6 +66,13 @@ interface FrontmatterContent {
     content?: string[];
 }
 
+const endWithSlash = text => text.endsWith('/') ? text : `${text}/`;
+const startWithSlash = text => text.startsWith('/') ? text : `/${text}`;
+const surroundWithSlash = text => endWithSlash(startWithSlash(text));
+
+const getCollapsed = (depth, items) => depth < 1 || !items.length ? null : true;
+// const getCollapsed = (depth, items) => null;
+
 const getAllFiles = function (dirPath: string): ObjectOfFiles {
     const objectOfFiles: ObjectOfFiles = {};
     fs.readdirSync(dirPath).forEach(function (file: string) {
@@ -102,6 +109,10 @@ const removeExtension = (name: string) => {
 }
 
 const getTitleFromFilename = (name: string): string => {
+    if (name === '') {
+        return 'Index';
+    }
+
     name = removeExtension(name);
     let lastName = name.split('/').reverse()[0];
 
@@ -141,7 +152,15 @@ const getMetas = (folder: string): MetaWithTree => {
     };
 };
 
-const reduceTree = (as: string, dirPath: string) => {
+const nullifyLink = item => {
+    if (item.link === '#') {
+        delete item.link;
+    }
+
+    return item;
+}
+
+const reduceTree = (as: string, dirPath: string, depth = 1) => {
     // use metas to sort items correctly
     const {
         meta: metas,
@@ -177,10 +196,11 @@ const reduceTree = (as: string, dirPath: string) => {
                 // file
                 reduced.push({
                     text: metas[file]?.title || getTitleFromFilename(`${as}/${file}`),
-                    link: `/${as}/${removeExtension(file)}.html`,
+                    link: `${surroundWithSlash(as)}${removeExtension(file)}.html`,
                     items: [],
                     position: metas[file]?.position || 999,
                     description: metas[file]?.description,
+                    collapsed: getCollapsed(depth, []),
                 });
 
                 return reduced;
@@ -190,23 +210,24 @@ const reduceTree = (as: string, dirPath: string) => {
             const {
                 metas: subMetas,
                 items: subItems,
-            } = reduceTree(`${as}/${file}`, `${dirPath}${file}/`);
+            } = reduceTree(`${endWithSlash(as)}${file}`, `${dirPath}${file}/`, depth + 1);
 
             // directory
-            const newItem: ItemLink = {
+            const newItem: ItemLink = nullifyLink({
                 text: metas[file]?.title || getTitleFromFilename(`/${as}/${file}`),
                 items: subItems,
-                link: 'index.md' in subMetas ? `/${as}/${file}/` : '#',
+                link: 'index.md' in subMetas ? `${surroundWithSlash(as)}${file}/` : '#',
                 position: metas[file]?.position || 999,
                 description: metas[file]?.description,
-            };
+                collapsed: getCollapsed(depth, subItems),
+            });
 
             // push link when linked
             if (!metas[file]?.nolink) {
                 const {meta: indexMetas} = getMetas(`${dirPath}${file}/`);
                 if ("index.md" in indexMetas) {
                     // only when it has index.md
-                    newItem.link = `/${as}/${file}/`;
+                    newItem.link = `${surroundWithSlash(as)}${file}/`;
                 }
             }
 
@@ -326,8 +347,13 @@ function getMeta(folder: string, file: string): ObjectMeta {
 }
 
 export function transformLinkToSidebar(root: string, link: string) {
-    const as = link.substring(1, link.length - 1);
-    const folder = `${root}${as}/`;
+    // usually, this starts with alpha and ends with alpha character
+    // except for when the link is "/"
+    const as = link === '/'
+        ? '' :
+        link.substring(1, link.length - 1);
+
+    const folder = `${root}${endWithSlash(as)}`;
     console.log(`Creating sidebar ${folder}`);
 
     // allow missing mount points in dev env
@@ -380,17 +406,20 @@ export function transformLinkToSidebar(root: string, link: string) {
 
                     if (file === "index.md") {
                         // special handling for root index
+                        const items = metas['index.md']?.items || [];
                         index = {
-                            link: `/${as}/`,
+                            link: surroundWithSlash(as),
                             text: getTitleFromFilename(as),
-                            items: metas['index.md']?.items || [],
+                            items: items,
+                            collapsed: getCollapsed(0, items),
                         };
                     } else {
                         // special handle root links
                         inIndex.push({
-                            link: `/${as}/${removeExtension(file)}.html`,
+                            link: `${surroundWithSlash(as)}${removeExtension(file)}.html`,
                             text: metas[file].title || getTitleFromFilename(file),
                             items: [],
+                            collapsed: getCollapsed(0, []),
                         });
                     }
 
@@ -401,16 +430,17 @@ export function transformLinkToSidebar(root: string, link: string) {
 
                 // collect links
                 const dirPath = `${folder}${file}/`;
-                const {items: links} = reduceTree(`${as}/${file}`, dirPath);
+                const {items: links} = reduceTree(`${endWithSlash(as)}${file}`, dirPath);
 
                 // skip empty sections
                 if (links.length || hasIndex) {
-                    reduced.push({
-                        link: hasIndex ? `/${as}/${file}/` : '#',
+                    reduced.push(nullifyLink({
+                        link: hasIndex ? `${surroundWithSlash(as)}${file}/` : '#',
                         text: getTitleFromFilename(file),
                         // @ts-ignore
                         items: links,
-                    });
+                        collapsed: getCollapsed(0, links),
+                    }));
                 }
 
                 return reduced;
@@ -420,18 +450,19 @@ export function transformLinkToSidebar(root: string, link: string) {
 
     if (!index && inIndex.length) {
         // manually create missing index
-        index = {
+        index = nullifyLink({
             link: "#",
             text: getTitleFromFilename(as),
             items: [],
-        };
+            collapsed: getCollapsed(1, inIndex),
+        });
     }
 
     if (!index) {
         return items;
     }
 
-    // when index has hardocoded links, skip auto-generated ones
+    // when index has hardcoded links, skip auto-generated ones
     if (index.items.length) {
         return index.items;
     }
