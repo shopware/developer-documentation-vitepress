@@ -18,6 +18,7 @@ import Tab from "./../shopware/components/Tab.vue";
 /**
  * Shared cards and lists.
  */
+import SwagLanding from "./../shopware/components/SwagLanding.vue";
 import SwagCard from "./../shopware/components/SwagCard.vue";
 import SwagLandingCard from "./../shopware/components/SwagLandingCard.vue";
 import SwagLandingCardList from "./../shopware/components/SwagLandingCardList.vue";
@@ -72,6 +73,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
         app.component("SwagCard", SwagCard);
         app.component("SwagLandingCard", SwagLandingCard);
         app.component("SwagLandingCardList", SwagLandingCardList);
+        app.component("SwagLanding", SwagLanding);
 
         /**
          * Allow extending from sub-apps.

@@ -35,7 +35,7 @@ const props = defineProps({
     right: -100%;
     content: '';
     display: block;
-    background-color: var(--sw-sidebar-bg);
+    background-color: var(--c-exposed);
   }
 
   &.--alternative {

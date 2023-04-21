@@ -10,6 +10,9 @@ dependencies:
   '@iconify-json/carbon':
     specifier: ^1.1.16
     version: 1.1.16
+  '@shopware-ag/meteor-icon-kit':
+    specifier: ^5.1.0
+    version: 5.1.0
   '@stoplight/elements-dev-portal':
     specifier: ^1.9.10
     version: 1.9.10(@babel/core@7.21.8)(react-dom@18.2.0)(react@18.2.0)
@@ -2409,6 +2412,12 @@ packages:
     dependencies:
       '@sentry/types': 6.19.7
       tslib: 1.14.1
+    dev: false
+
+  /@shopware-ag/meteor-icon-kit@5.1.0:
+    resolution: {integrity: sha512-dcgKOGZUqBW2ZeLAmkv3mEDzEK9efOtcdcMDpv/imCAWloDe7DJLhmNSZLqK5hS+3OXInYhWB8iyjrBp0Ipu8g==}
+    dependencies:
+      js-md5: 0.7.3
     dev: false
 
   /@sinclair/typebox@0.25.24:
@@ -8257,6 +8266,10 @@ packages:
 
   /js-cookie@2.2.1:
     resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
+    dev: false
+
+  /js-md5@0.7.3:
+    resolution: {integrity: sha512-ZC41vPSTLKGwIRjqDh8DfXoCrdQIyBgspJVPXHBGu4nZlAEvG3nf+jO9avM9RmLiGakg7vz974ms99nEV0tmTQ==}
     dev: false
 
   /js-sha3@0.8.0:
