@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
 import PageRef from "./PageRef.vue";
-import {render} from "../stories/helpers";
+import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
     title: 'Shopware/PageRef',
@@ -19,4 +19,6 @@ type Story = StoryObj<typeof meta>;
 export default meta;
 
 export const Default: Story = {};
+
+export const Dark: Story = DarkVariation(Default)
 
