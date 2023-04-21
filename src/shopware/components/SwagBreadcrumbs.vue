@@ -122,8 +122,6 @@ const breadcrumbs = computed(() => {
         return [];
     }
 
-    console.log(sidebarConfig);
-
     // try with root sidebar so we get the full tree
     const flattened = flattenSidebar(getCurrentTree(
         sidebarConfig['/'] ?? sidebars[key],
