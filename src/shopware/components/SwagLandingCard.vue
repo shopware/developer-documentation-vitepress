@@ -1,7 +1,9 @@
 <template>
     <div class="SwagLandingCard c-any-card">
-        <a :href="page" v-if="icon">
-            <SwagIcon class="SwagLandingCard__icon" :icon="icon"/>
+        <a :href="page" v-if="icon || $slots.icon">
+            <slot name="icon">
+                <SwagIcon class="SwagLandingCard__icon" :icon="icon" :type="iconType"/>
+            </slot>
         </a>
         <div>
             <a :href="page">
@@ -60,6 +62,10 @@ const props = defineProps({
     icon: {
         type: String,
         required: true,
+    },
+    iconType: {
+        type: String,
+        default: 'regular',
     }
 });
 </script>

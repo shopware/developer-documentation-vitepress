@@ -1,8 +1,5 @@
 <template>
-    <span class="SwagIcon"
-          :style="{'--icon-src': `url(${publicPath}/icons/${type}/${icon}.svg)`}"
-          :sid="`meteor-icon-kit__solid-${icon}`"
-    ></span>
+    <span class="SwagIcon" :style="{'--icon-src': `url(${publicPath}/icons/${type}/${icon}.svg)`}"></span>
 </template>
 
 <style lang="scss">
@@ -15,6 +12,7 @@
 </style>
 
 <script lang="ts" setup>
+// :id="`meteor-icon-kit__${type}-${icon}`"
 import {PropType} from "vue";
 
 enum IconTypeEnum {
@@ -29,7 +27,8 @@ const props = defineProps({
     },
     type: {
         type: String as PropType<IconTypeEnum>,
-        required: true,
+        required: false,
+        default: 'regular',
     }
 });
 
