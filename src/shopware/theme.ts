@@ -14,6 +14,7 @@ import YoutubeRef from "./../shopware/components/YoutubeRef.vue";
 import CodeBlock from "./../shopware/components/CodeBlock.vue";
 import Tabs from "./../shopware/components/Tabs.vue";
 import Tab from "./../shopware/components/Tab.vue";
+import SwagIcon from "./../shopware/components/SwagIcon.vue";
 
 /**
  * Shared cards and lists.
@@ -69,6 +70,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
         app.component("CodeBlock", CodeBlock);
         app.component("Tabs", Tabs);
         app.component("Tab", Tab);
+        app.component("SwagIcon", SwagIcon);
 
         app.component("SwagCard", SwagCard);
         app.component("SwagLandingCard", SwagLandingCard);
