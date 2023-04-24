@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col gap-10">
 
-    <div class="flex md:flex-row gap-10 content-center">
+    <div class="flex flex-col md:flex-row gap-10 content-center items-center md:items-start">
 
-      <div class="md:basis-4/6 gap-10 flex flex-col">
+      <div class="md:basis-[calc(66.666667%+2.5rem)] gap-10 flex flex-col">
         <h1 class="accent font-black">
           <slot name="title" v-if="!title"></slot>
           <template v-else>{{ title }}</template>
@@ -20,9 +20,9 @@
         </div>
       </div>
 
-      <div>
+      <div class="md:basis-2/6">
         <slot name="image">
-            <img class="md:basis-2/6" :src="image" :alt="title" />
+            <img :src="image" :alt="title" class="w-100" />
         </slot>
       </div>
 
