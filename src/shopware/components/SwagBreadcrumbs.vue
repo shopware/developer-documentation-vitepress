@@ -16,7 +16,12 @@
                               d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                               clip-rule="evenodd"></path>
                     </svg>
-                    <a :href="breadcrumb.link"
+                    <span v-if="!breadcrumb.link"
+                          class="SwagBreadcrumbs__span">{{
+                        breadcrumb.text
+                        }}</span>
+                    <a v-else
+                       :href="breadcrumb.link"
                        :class="[breadcrumb.color ? 'SwagBreadcrumbs__button' : 'SwagBreadcrumbs__link', breadcrumb.color]">{{
                         breadcrumb.text
                         }}</a>
@@ -38,10 +43,14 @@
     @apply ml-1 md:ml-2;
   }
 
+  &__span,
   &__link {
     @apply text-sm font-medium text-gray-700;
-    @apply hover:text-blue-600;
     @apply dark:text-gray-400 dark:hover:text-white;
+  }
+
+  &__link {
+    @apply hover:text-blue-600;
   }
 
   &__button {
@@ -122,17 +131,20 @@ const breadcrumbs = computed(() => {
         return [];
     }
 
-    // try with root sidebar so we get the full tree
-    const flattened = flattenSidebar(getCurrentTree(
+    const tree = getCurrentTree(
         sidebarConfig['/'] ?? sidebars[key],
         realUrl.value
-    ));
+    );
+
+    // try with root sidebar so we get the full tree
+    const flattened = flattenSidebar(tree);
 
     // find the deepest item that matches
     // then return all parents
     // const filtered = flattened.filter(({link}) => realUrl.value.startsWith(link));
 
     return flattened
+        .slice(1)
         .map(({link, text}) => ({link, text}))
         .map(breadcrumb => {
             const colorCode = colorCoding.find(colorCode => colorCode.link === breadcrumb.link);
