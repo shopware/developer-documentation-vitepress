@@ -358,3 +358,32 @@ html.dark {
 .VPDoc:not(.has-aside) > .container > .content {
   @apply pr-0;
 }
+
+.VPDoc .VPDocOutlineDropdown {
+  button,
+  .outline-link {
+    color: var(--c-text);
+  }
+}
+
+.VPLocalNavOutlineDropdown {
+  .outline-link {
+    color: var(--c-text);
+  }
+}
+
+.VPLocalNav {
+  .menu,
+  .VPLocalNavOutlineDropdown button {
+    color: var(--c-text);
+  }
+}
+
+.VPDoc.has-aside {
+  :not(:has(.outline-link)) .aside {
+    display: none;
+  }
+  .content-container {
+    max-width: 100%;
+  }
+}

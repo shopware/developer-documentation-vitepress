@@ -13,10 +13,9 @@
         <div v-html="description" v-else></div>
 
         <div>
-          <slot name="ctas" v-if="!ctas?.length"></slot>
-          <template v-else>
-            <PageRef v-for="cta in ctas" :page="cta.page" :title="cta.title" :sub="cta.sub"/>
-          </template>
+          <slot name="ctas">
+              <PageRef v-for="cta in ctas" :page="cta.page" :title="cta.title" :sub="cta.sub"/>
+          </slot>
         </div>
       </div>
 
