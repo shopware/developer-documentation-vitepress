@@ -35,7 +35,7 @@ const props = defineProps({
 });
 
 const publicPath = import.meta.env.MODE === 'development' && !('STORYBOOK' in import.meta.env)
-    ? '/@fs/www/developer-portal/node_modules/@shopware-ag/meteor-icon-kit'
+    ? `${(new URL(import.meta.url)).pathname.replace('/vitepress-shopware-docs/src/shopware/components/SwagIcon.vue', '/')}@shopware-ag/meteor-icon-kit`
     : '';
 
 const iconStyle = computed(() => ({'--icon-src': `url("${publicPath}/icons/${props.type}/${props.icon}.svg")`}))
