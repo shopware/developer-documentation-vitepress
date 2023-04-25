@@ -4,7 +4,7 @@ import RegistrationForm from "./RegistrationForm.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/RegistrationForm',
+    title: 'Default/RegistrationForm',
     render: render(RegistrationForm),
 } satisfies Meta<typeof RegistrationForm>;
 

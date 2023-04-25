@@ -4,7 +4,7 @@ import ActionItem from "./ActionItem.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/ActionItem',
+    title: 'Default/ActionItem',
     args: {
         heading: 'Headless Frontends',
     },

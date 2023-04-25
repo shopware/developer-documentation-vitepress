@@ -5,7 +5,7 @@ import PageRef from "./PageRef.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/SwagRelatedArticles',
+    title: 'Swag/RelatedArticles',
     render: render(SwagRelatedArticles, {components: {PageRef}}),
     parameters: {
         fetchMock: {

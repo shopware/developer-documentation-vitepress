@@ -5,7 +5,7 @@ import PageRef from "./PageRef.vue";
 import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/LandingCard',
+    title: 'Swag/LandingCard',
     render: render(SwagLandingCard, {
         components: {PageRef},
         slot: `<template #title>Landing Card Title</template><template #sub>Landing card sub</template>`,

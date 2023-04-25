@@ -5,9 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import {useConfig} from "../../vitepress/composables/config";
+import {useConfig} from "../../shopware/composables/config";
 import {useRoute} from "vitepress";
-import {getSidebarsWithMainKey, flattenSidebar} from "../../vitepress/support/sidebar";
+import {getSidebarsWithMainKey, flattenSidebar} from "../../shopware/support/sidebar";
 import {computed, watch} from "vue";
 
 const {config} = useConfig();

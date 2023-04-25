@@ -26,6 +26,11 @@ const props = defineProps({
 <style lang="scss">
 .SwagCard {
   cursor: pointer;
+  @apply flex flex-col content-start flex-wrap;
+  /*display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  flex-wrap: wrap;*/
 
   &__description {
     color: var(--c-text);

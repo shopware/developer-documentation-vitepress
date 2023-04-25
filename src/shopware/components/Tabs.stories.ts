@@ -5,10 +5,10 @@ import Tab from "./Tab.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/Tabs',
+    title: 'Default/Tabs',
     render: render(Tabs, {
         components: {Tab},
-        template: '<Tabs><Tab title="First tab">First tab content</Tab><Tab title="Second tab">Second tab content</Tab></Tabs>'
+        slot: '<Tab title="First tab">First tab content</Tab><Tab title="Second tab">Second tab content</Tab>'
     }),
 } satisfies Meta<typeof Tabs>;
 

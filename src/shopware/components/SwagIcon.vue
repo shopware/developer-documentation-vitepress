@@ -8,6 +8,8 @@
   -webkit-mask: var(--icon-src) no-repeat center;
   mask: var(--icon-src) no-repeat center;
   display: block;
+  width: 2rem;
+  height: 2rem;
 }
 </style>
 
@@ -32,7 +34,7 @@ const props = defineProps({
     }
 });
 
-const publicPath = import.meta.env.MODE === 'development'
+const publicPath = import.meta.env.MODE === 'development' && !('STORYBOOK' in import.meta.env)
     ? '/@fs/www/developer-portal/node_modules/@shopware-ag/meteor-icon-kit'
     : '';
 </script>

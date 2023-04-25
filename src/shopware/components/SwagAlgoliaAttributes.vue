@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import {computed} from "vue";
-import {useConfig} from "../../vitepress/composables/config";
+import {useConfig} from "../../shopware/composables/config";
 import {useData, useRoute} from "vitepress";
 
 import {getEmbeddingPoint} from "../../shopware/composables/repos";

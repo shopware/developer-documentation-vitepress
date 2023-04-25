@@ -19,11 +19,11 @@
         </div>
       </div>
 
-      <div class="md:basis-2/6">
+      <!--<div class="md:basis-2/6">
         <slot name="image">
             <img :src="image" :alt="title" class="w-100" />
         </slot>
-      </div>
+      </div>-->
 
     </div>
 
@@ -56,25 +56,20 @@ import SwagLandingCardList from "./SwagLandingCardList.vue";
 const props = defineProps({
   title: {
     type: String,
-    required: true,
   },
   description: {
     type: String,
-    required: false,
   },
   image: {
     type: String,
-    required: true,
   },
   ctas: {
     type: Array,
-    required: false,
-    default: []
+    default: () => []
   },
   exposed: {
     type: Array,
-    required: false,
-    default: []
+    default: () => []
   }
 });
 </script>

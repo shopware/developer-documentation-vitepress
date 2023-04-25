@@ -4,7 +4,7 @@ import LandingWrapper from "./LandingWrapper.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/LandingWrapper',
+    title: 'Default/LandingWrapper',
     render: render(LandingWrapper),
 } satisfies Meta<typeof LandingWrapper>;
 

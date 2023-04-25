@@ -15,7 +15,7 @@ const code = '<div class="language-html"><button title="Copy Code" class="copy">
     '<span class="line"></span></code></pre></div>';
 
 const meta = {
-    title: 'Shopware/CodeBlock',
+    title: 'Default/CodeBlock',
     args: {
         title: 'my/code/block.html',
     },

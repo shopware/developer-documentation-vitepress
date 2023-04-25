@@ -4,7 +4,7 @@ import PageRef from "./PageRef.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Shopware/PageRef',
+    title: 'Default/PageRef',
     args: {
         page: 'my-page',
         title: 'My title',

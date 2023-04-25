@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <slot/>
-  </div>
+    <div>
+        <slot/>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -13,18 +13,45 @@ import {computed, provide} from "vue";
 import {configSymbol} from "../../shopware/composables/config";
 
 provide(configSymbol, computed(() => ({
-  nav: [],
-  sidebar: {
-    '/my/': {
-      text: 'My',
-      link: '/my/',
-      items: []
+    nav: [],
+    sidebar: {
+        '/': [
+            {
+                text: 'Root',
+                link: '/',
+                items: [
+                    {
+                        text: 'My',
+                        link: '/my/',
+                        items: [
+                            {
+                                text: 'Route',
+                                link: '/my/route.html',
+                                items: []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        '/my/': [
+            {
+                text: 'My',
+                link: '/my/',
+                items: [
+                    {
+                        text: 'Route',
+                        link: '/my/route.html',
+                        items: []
+                    }
+                ]
+            }
+        ]
+    },
+    swag: {
+        similarArticlesHost: 'https://knowledge-index.shopware.com',
+        similarArticlesFilter: {}
     }
-  },
-  swag: {
-    similarArticlesHost: 'https://knowledge-index.shopware.com',
-    similarArticlesFilter: {}
-  }
 })))
 
 // remove previously added classes
