@@ -1,5 +1,5 @@
 <template>
-    <span class="SwagIcon" :style="{'--icon-src': `url(${publicPath}/icons/${type}/${icon}.svg)`}"></span>
+    <span class="SwagIcon" :style="iconStyle"></span>
 </template>
 
 <style lang="scss">
@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 // :id="`meteor-icon-kit__${type}-${icon}`"
-import {PropType} from "vue";
+import {computed, PropType} from "vue";
 
 enum IconTypeEnum {
     REGULAR = "regular",
@@ -37,4 +37,6 @@ const props = defineProps({
 const publicPath = import.meta.env.MODE === 'development' && !('STORYBOOK' in import.meta.env)
     ? '/@fs/www/developer-portal/node_modules/@shopware-ag/meteor-icon-kit'
     : '';
+
+const iconStyle = computed(() => ({'--icon-src': `url("${publicPath}/icons/${props.type}/${props.icon}.svg")`}))
 </script>
