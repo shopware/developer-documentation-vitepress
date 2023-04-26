@@ -4,12 +4,14 @@
       <img :src="image" v-if="image" class="w-full h-full object-cover" />
       <img src="../assets/shopware-placeholder.svg" v-else class="w-full h-full object-cover" />
     </div>
-    <div class="flex">
-      <a :href="page" v-if="icon || $slots.icon">
-        <slot name="icon">
-          <SwagIcon class="SwagLandingCard__icon" :icon="icon" :type="iconType" />
-        </slot>
-      </a>
+    <div class="flex items-center">
+      <div v-if="icon || $slots.icon" class="p-4">
+        <a :href="page">
+          <slot name="icon">
+            <SwagIcon class="SwagLandingCard__icon" :icon="icon" :type="iconType" />
+          </slot>
+        </a>
+      </div>
       <div class="p-4">
         <a :href="page">
           <div class="mb-2 tracking-tight dark:text-white">

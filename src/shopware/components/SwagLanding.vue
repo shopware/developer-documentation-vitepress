@@ -3,7 +3,7 @@
 
     <div class="grid grid-cols-3 gap-10">
 
-      <div class="flex flex-col col-span-2 leading-7">
+      <div class="flex flex-col col-span-3 xl:col-span-2 leading-7">
         <h1 class="accent font-black">
           <slot name="title" v-if="!title"></slot>
           <template v-else>{{ title }}</template>
