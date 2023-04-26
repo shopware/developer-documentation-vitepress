@@ -1,29 +1,31 @@
 <template>
-  <div class="flex flex-col gap-10">
+  <div class="flex flex-col gap-10 mt-8">
 
-    <div class="flex flex-col md:flex-row gap-10 content-center items-center md:items-start">
+    <div class="grid grid-cols-3 gap-10">
 
-      <div class="md:basis-[calc(66.666667%+2.5rem)] gap-10 flex flex-col">
+      <div class="flex flex-col col-span-2 leading-7">
         <h1 class="accent font-black">
           <slot name="title" v-if="!title"></slot>
           <template v-else>{{ title }}</template>
         </h1>
 
-        <slot name="description" v-if="!description"></slot>
-        <div v-html="description" v-else></div>
-
         <div>
+          <slot name="description" v-if="!description"></slot>
+          <div v-html="description" v-else></div>
+        </div>
+
+        <div class="mt-10">
           <slot name="ctas">
               <PageRef v-for="cta in ctas" :page="cta.page" :title="cta.title" :sub="cta.sub"/>
           </slot>
         </div>
       </div>
 
-      <!--<div class="md:basis-2/6">
-        <slot name="image">
+      <div>
+        <!-- <slot name="image">
             <img :src="image" :alt="title" class="w-100" />
-        </slot>
-      </div>-->
+        </slot> -->
+      </div>
 
     </div>
 

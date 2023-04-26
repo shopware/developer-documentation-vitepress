@@ -1,5 +1,5 @@
 <template>
-    <nav class="SwagBreadcrumbs hidden lg:flex mb-6" aria-label="Breadcrumb"
+    <nav class="SwagBreadcrumbs hidden lg:flex mb-10" aria-label="Breadcrumb"
          v-if="breadcrumbs.length > 1">
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
             <!--<li class="inline-flex items-center">
@@ -66,16 +66,16 @@
   @apply from-blue-500;
 }
 
-.from-indigo-500 {
-  @apply from-indigo-500;
-}
-
-.to-indigo-700 {
-  @apply to-indigo-700;
-}
-
 .to-blue-700 {
   @apply to-blue-700;
+}
+
+.from-purple-500 {
+  @apply from-purple-500;
+}
+
+.to-purple-700 {
+  @apply to-purple-700;
 }
 </style>
 

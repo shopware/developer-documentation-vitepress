@@ -1,5 +1,5 @@
 <template>
-  <div class="SwagLandingCardListWrapper relative">
+  <div class="SwagLandingCardListWrapper relative flex flex-col gap-4 leading-7">
     <h3><slot name="title"></slot></h3>
     <slot name="description"></slot>
     <div class="gap-10 SwagLandingCardList pt-5 pb-10 grid sm:grid-cols-2 md:grid-cols-3">
@@ -35,7 +35,7 @@ const props = defineProps({
     right: -100%;
     content: '';
     display: block;
-    background-color: var(--c-exposed);
+    @apply bg-#f5f7f9 dark:bg-#1e1e20;
   }
 
   &.--alternative {

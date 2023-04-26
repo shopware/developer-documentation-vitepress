@@ -1,31 +1,32 @@
 <template>
-    <div class="SwagLandingCard c-any-card">
-        <a :href="page" v-if="icon || $slots.icon">
-            <slot name="icon">
-                <SwagIcon class="SwagLandingCard__icon" :icon="icon" :type="iconType"/>
-            </slot>
-        </a>
-        <div>
-            <a :href="page">
-                <h5 class="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
-                    <slot name="title">{{ title }}</slot>
-                </h5>
-            </a>
-            <a :href="page" class="SwagLandingCard_sub font-normal text-xs">
-                <slot name="sub">{{ sub }}</slot>
-            </a>
-        </div>
+  <div class="SwagLandingCard c-any-card">
+    <div class="h-36 overflow-hidden bg-gradient-to-r" :class="gradient">
+      <img :src="image" v-if="image" class="w-full h-full object-cover" />
+      <img src="../assets/shopware-placeholder.svg" v-else class="w-full h-full object-cover" />
     </div>
+    <div class="flex">
+      <a :href="page" v-if="icon || $slots.icon">
+        <slot name="icon">
+          <SwagIcon class="SwagLandingCard__icon" :icon="icon" :type="iconType" />
+        </slot>
+      </a>
+      <div class="p-4">
+        <a :href="page">
+          <div class="mb-2 tracking-tight dark:text-white">
+            <slot name="title">{{ title }}</slot>
+          </div>
+        </a>
+        <div class="mt-2 text-gray font-normal text-xs block">
+          <slot name="sub">{{ sub }}</slot>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .SwagLandingCard {
-  @apply basis-1/3 hover:scale-110 rounded-l-[0.375rem] border-1px border-#eeeeee rounded-md flex flex-row items-center gap-4 p-4;
-  &_sub {
-    margin: 0;
-    line-height: 133%;
-    @apply text-gray-700 dark:text-gray-400;
-  }
+  @apply border-px border-#eeeeee rounded-md flex flex-col overflow-hidden;
 
   &__icon {
     background-color: var(--c-link);
@@ -43,29 +44,53 @@
 
 <script setup lang="ts">
 const props = defineProps({
-    page: {
-        type: String,
-        required: true,
-    },
-    title: {
-        type: String,
-        required: true,
-    },
-    sub: {
-        type: String,
-        required: true,
-    },
-    image: {
-        type: String,
-        required: true,
-    },
-    icon: {
-        type: String,
-        required: true,
-    },
-    iconType: {
-        type: String,
-        default: 'regular',
-    }
+  page: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: false,
+  },
+  sub: {
+    type: String,
+    required: false,
+  },
+  image: {
+    type: String,
+    required: false,
+  },
+  icon: {
+    type: String,
+    required: false,
+  },
+  iconType: {
+    type: String,
+    default: "regular",
+  },
 });
+
+let childGradients = [
+  "from-sky-500 to-indigo-500",
+  "from-indigo-500 to-purple-500",
+  "from-purple-500 to-pink-500",
+  "from-pink-500 to-red-500",
+  "from-red-500 to-yellow-500",
+  "from-yellow-500 to-green-500",
+  "from-green-500 to-teal-500",
+  "from-teal-500 to-blue-500",
+  "from-blue-500 to-sky-500",
+  "from-indigo-500 to-sky-500",
+  "from-purple-500 to-indigo-500",
+  "from-pink-500 to-purple-500",
+  "from-red-500 to-pink-500",
+  "from-yellow-500 to-red-500",
+  "from-green-500 to-yellow-500",
+  "from-teal-500 to-green-500",
+  "from-blue-500 to-teal-500",
+  "from-sky-500 to-blue-500",
+];
+
+let gradient = childGradients[props?.page?.length % childGradients.length || 0];
+
 </script>
