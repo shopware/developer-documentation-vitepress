@@ -7,9 +7,9 @@
         <slot name="title"></slot>
       </span>
     </div>
-    <p class="SwagCard__description text-sm">
+    <div class="SwagCard__description text-sm">
       <slot name="description"></slot>
-    </p>
+    </div>
     <!--<p class="mt-4"><a class="text-sm" :href="link">→ learn more</a></p>-->
   </a>
 </template>

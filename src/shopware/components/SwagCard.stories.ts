@@ -2,13 +2,13 @@ import type {Meta, StoryObj} from '@storybook/vue3';
 
 import SwagCard from "./SwagCard.vue";
 import PageRef from "./PageRef.vue";
-import {render, DarkVariation} from "../stories/helpers";
+import {DarkVariation, loremWords, loremParagraphs, render} from "../stories/helpers";
 
 const meta = {
     title: 'Swag/Card',
     render: render(SwagCard, {
         components: {PageRef},
-        slot: `<template #title>Card Title</template><template #description>Card description</template>`,
+        slot: `<template #title>${loremWords()}</template><template #description>${loremParagraphs(1, 0, 'plain')}</template>`,
     }),
 } satisfies Meta<typeof SwagCard>;
 

@@ -49,8 +49,10 @@ provide(configSymbol, computed(() => ({
         ]
     },
     swag: {
-        similarArticlesHost: 'https://knowledge-index.shopware.com',
-        similarArticlesFilter: {}
+        similarArticles: {
+            host: 'https://knowledge-index.shopware.com',
+            filter: {}
+        }
     }
 })))
 

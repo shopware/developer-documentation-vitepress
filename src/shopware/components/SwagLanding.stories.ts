@@ -1,11 +1,11 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
 import SwagLanding from "./SwagLanding.vue";
-import {render, DarkVariation} from "../stories/helpers";
+import {DarkVariation, loremSentences, loremWords, render} from "../stories/helpers";
 
 const template = [
-    '<template #title>My SWAG title</template>',
-    '<template #description>My SWAG description</template>',
+    `<template #title>${loremWords(5)}</template>`,
+    `<template #description>${loremSentences(5)}</template>`,
 ];
 
 const meta = {

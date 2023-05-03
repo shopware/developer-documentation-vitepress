@@ -24,7 +24,10 @@ export const useData = () => {
 }
 
 export const useRoute = () => ({
-    path: '/my/route.html'
+    path: '/my/route.html',
+    data: {
+        relativePath: 'my/route.md',
+    }
 })
 
 export const useRouter = () => ({})

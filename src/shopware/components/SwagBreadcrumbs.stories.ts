@@ -5,7 +5,9 @@ import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
     title: 'Swag/Breadcrumbs',
-    render: render(SwagBreadcrumbs),
+    render: render(SwagBreadcrumbs, {
+        rootClass: null,
+    }),
 } satisfies Meta<typeof SwagBreadcrumbs>;
 
 type Story = StoryObj<typeof meta>;

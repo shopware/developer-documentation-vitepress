@@ -1,14 +1,14 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
 import PageRef from "./PageRef.vue";
-import {DarkVariation, render} from "../stories/helpers";
+import {DarkVariation, loremSentences, loremWords, render} from "../stories/helpers";
 
 const meta = {
     title: 'Default/PageRef',
     args: {
         page: 'my-page',
-        title: 'My title',
-        sub: 'My description'
+        title: loremWords(),
+        sub: loremSentences(2)
     },
     render: render(PageRef),
 
