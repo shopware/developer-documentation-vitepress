@@ -24,7 +24,7 @@ const route = useRoute();
 const {config} = useConfig();
 const { sidebar, hasSidebar } = useSidebar();
 const { page } = useData();
-const similarArticlesHost = config.value.swag?.similarArticlesHost;
+const similarArticlesHost = config.value.swag?.similarArticles?.Host;
 
 const fetchSimilarArticles = async () => {
   if (!similarArticlesHost) {
@@ -48,7 +48,7 @@ const fetchSimilarArticles = async () => {
     };
 
     // filter inclusions and exclusions by sidebar
-    const filters = config.value.swag?.similarArticlesFilter;
+    const filters = config.value.swag?.similarArticles?.filter;
     if (filters && key && key in filters) {
       payload.filters = filters[key];
     } else if ("default" in filters) {

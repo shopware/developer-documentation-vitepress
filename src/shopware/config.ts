@@ -5,6 +5,53 @@ import {
   SocialLink
 } from '../core'
 
+export interface SwagNavConfig {
+  hidden?: boolean
+  position?: number
+  title?: string
+  class?: string
+  items?: MenuItemWithLink[]
+}
+
+export interface SwagEmbedsConfig {
+  repository: string
+  points: {
+    [key: string]: string
+  }
+  folder: string
+}
+
+export interface SwagSimilarArticlesConfig {
+  host: string
+  filter: {
+    [key: string]: {
+      exclude?: string[]
+      include?: string[]
+    }
+  }
+}
+
+export interface SwagVersionSwitcherConfig {
+  paths: {
+    [key: string]: string
+  }[]
+}
+
+export interface SwagColorCodingConfig {
+  link: string
+  color: string
+}
+
+export interface SwagConfig {
+  stackOverflowLink?: boolean
+  related?: boolean
+  nav?: SwagNavConfig
+  embeds?: SwagEmbedsConfig[]
+  similarArticles?: SwagSimilarArticlesConfig
+  versionSwitcher?: SwagVersionSwitcherConfig
+  colorCoding?: SwagColorCodingConfig[]
+}
+
 export interface Config {
   /**
    * The appearance option to enable/disable light/dark mode.
@@ -71,6 +118,11 @@ export interface Config {
    * Translation/Locales links
    */
   localeLinks?: LocaleLinkItem[]
+
+  /**
+   * SWAG config
+   */
+  swag: SwagConfig
 }
 
 /**

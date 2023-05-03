@@ -1,5 +1,11 @@
 import { defineConfigWithTheme } from "vitepress";
-import type { Config as ThemeConfig } from "../../src/shopware/config";
+import type {
+  Config as ThemeConfig,
+  SwagColorCodingConfig,
+  SwagEmbedsConfig,
+  SwagSimilarArticlesConfig,
+  SwagVersionSwitcherConfig
+} from "../../src/shopware/config";
 import baseConfig from "../../src/shopware/config/baseConfig";
 
 import navigation from "./navigation";
@@ -15,11 +21,15 @@ export default defineConfigWithTheme<ThemeConfig>({
     ...navigation,
     // @ts-ignore
     swag: {
-      similarArticlesHost: 'https://ai-ml.fly.dev',
-      similarArticlesFilter: {},
+      embeds: [] as SwagEmbedsConfig[],
+      similarArticles: {
+        host: 'https://ai-ml.fly.dev',
+        filter: {},
+      } as SwagSimilarArticlesConfig,
       versionSwitcher: {
         paths: []
-      }
+      } as SwagVersionSwitcherConfig,
+      colorCoding: [] as SwagColorCodingConfig[]
     }
   },
 

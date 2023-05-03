@@ -1,6 +1,6 @@
 <template>
     <div class="edit-info"
-         v-if="theme.editLink && frontmatter.stackOverflowLink !== false">
+         v-if="theme.editLink && frontmatter?.swag?.stackOverflowLink !== false">
         <div class="edit-link">
             <a class="VPLink link edit-link-button" href="https://stackoverflow.com/questions/ask?tags=shopware" target="_blank" rel="noreferrer">
                 <VTIconStackOverflow class="edit-link-icon"/>
