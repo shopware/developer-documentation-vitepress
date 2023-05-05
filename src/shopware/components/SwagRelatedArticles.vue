@@ -22,11 +22,18 @@ import PageRef from "./PageRef.vue";
 const articles = ref([]);
 const route = useRoute();
 const {config} = useConfig();
-const { sidebar, hasSidebar } = useSidebar();
+const { sidebar } = useSidebar();
 const { page } = useData();
-const similarArticlesHost = config.value.swag?.similarArticles?.Host;
+const similarArticlesHost = config.value.swag?.similarArticles?.host;
+const { frontmatter } = useData()
+
+const shouldFetchRelated = () => !frontmatter.value?.swag || !('related' in frontmatter.value.swag) || frontmatter.value.swag.related;
 
 const fetchSimilarArticles = async () => {
+  if (!shouldFetchRelated()) {
+      articles.value = [];
+      return;
+  }
   if (!similarArticlesHost) {
     return;
   }
