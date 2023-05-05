@@ -411,3 +411,32 @@ html.dark {
 .vp-doc th {
   @apply text-#3d3d3d dark:text-#ebebeb;
 }
+
+// override @media min-width
+.VPNav {
+  .VPNavBarMenu {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .VPNavBarMenu {
+      display: none;
+    }
+    .VPNavBarHamburger {
+      display: flex;
+    }
+    .VPNavScreen {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .VPNavBarMenu {
+      display: flex;
+    }
+    .VPNavBarHamburger,
+    .VPNavScreen {
+      display: none;
+    }
+  }
+}
