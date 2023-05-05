@@ -1,6 +1,6 @@
 <template>
   <div v-if="articles.length" class="vt-doc --similar-articles">
-    <h2>Continue with related topics:</h2>
+    <h2 class="e-heading">Continue with related topics:</h2>
     <PageRef
         v-for="link in articles"
         :key="link.page"
@@ -14,19 +14,26 @@
 <script async setup>
 import {ref, onMounted, watch} from "vue";
 import {useData, useRoute} from "vitepress";
-import {useConfig} from "../../vitepress/composables/config";
-import {useSidebar} from "../../vitepress/composables/sidebar";
-import { getSidebarsWithMainKey } from '../../vitepress/support/sidebar'
+import {useConfig} from "../composables/config";
+import {useSidebar} from "../composables/sidebar-vp";
+import { getSidebarsWithMainKey } from '../support/sidebar'
 import PageRef from "./PageRef.vue";
 
 const articles = ref([]);
 const route = useRoute();
 const {config} = useConfig();
-const { sidebar, hasSidebar } = useSidebar();
+const { sidebar } = useSidebar();
 const { page } = useData();
-const similarArticlesHost = config.value.swag?.similarArticlesHost;
+const similarArticlesHost = config.value.swag?.similarArticles?.host;
+const { frontmatter } = useData()
+
+const shouldFetchRelated = () => !frontmatter.value?.swag || !('related' in frontmatter.value.swag) || frontmatter.value.swag.related;
 
 const fetchSimilarArticles = async () => {
+  if (!shouldFetchRelated()) {
+      articles.value = [];
+      return;
+  }
   if (!similarArticlesHost) {
     return;
   }
@@ -48,7 +55,7 @@ const fetchSimilarArticles = async () => {
     };
 
     // filter inclusions and exclusions by sidebar
-    const filters = config.value.swag?.similarArticlesFilter;
+    const filters = config.value.swag?.similarArticles?.filter;
     if (filters && key && key in filters) {
       payload.filters = filters[key];
     } else if ("default" in filters) {

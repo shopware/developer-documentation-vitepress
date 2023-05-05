@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <a :href="page" :target="target">
+  <div class="PageRef">
+    <a class="PageRef__link" :href="page" :target="target">
       <div
-        class="flex gap-3 border-1px border-#eeeeee rounded-md p-4 shadow-md bg-#fdfdfd mb-6 hover:shadow-lg hover:border-#e8e8e8 dark:border-#444 dark:bg-#222 dark:hover:border-#333 dark:hover:bg-#212121"
+        class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4 mb-6"
       >
         <div v-if="icon" class="flex w-14 items-center">
           <img :src="icon" class="w-14 h-14 object-cover" />
@@ -24,9 +24,21 @@
   </div>
 </template>
 
+<style lang="scss">
+.PageRef {
+  &__link {
+    color: var(--c-link);
+    font-weight: 500;
+    &:hover {
+      color: var(--c-link--hover)
+    }
+  }
+}
+</style>
+
 <script setup>
 import {useAttrs, ref} from "vue";
-import {useConfig} from "../../vitepress/composables/config";
+import {useConfig} from "../composables/config";
 import {useRoute} from "vitepress";
 import {getSidebarItem} from "../utils/sidebar";
 

@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
 import { mergeConfig } from 'vite';
-import baseConfig from "../src/vitepress/config/baseConfig";
+import baseConfig from "../src/shopware/config/baseConfig";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -17,11 +17,18 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  core: {
-    builder: '@storybook/builder-vite',
-  },
+  staticDirs: [
+    '../src',
+    '../node_modules/@shopware-ag/meteor-icon-kit',
+  ],
   viteFinal: async (config, {configType}) => {
     return mergeConfig(mergeConfig(config, (await baseConfig()).vite), {
+      theme: {
+        editLink: {
+          editLink: 'test',
+          text: 'Edit this page on GitHub',
+        }
+      },
       resolve: {
         alias: {
           vitepress: '/__mocks__/vitepress',

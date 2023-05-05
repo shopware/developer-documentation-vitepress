@@ -1,4 +1,4 @@
-import {buildSidebarNav} from "../../src/core/composables/Sidebar";
+import {buildSidebarNav} from "../../src/shopware/composables/Sidebar";
 
 export default buildSidebarNav('./demo/', [], [
     '/apps/',

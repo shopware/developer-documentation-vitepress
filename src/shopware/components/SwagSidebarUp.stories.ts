@@ -1,12 +1,12 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
-import TopBar from "./TopBar.vue";
-import {DarkVariation, render} from "../stories/helpers";
+import SwagSidebarUp from "./SwagSidebarUp.vue";
+import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Default/TopBar',
-    render: render(TopBar)
-} satisfies Meta<typeof TopBar>;
+    title: 'Swag/SidebarUp',
+    render: render(SwagSidebarUp),
+} satisfies Meta<typeof SwagSidebarUp>;
 
 type Story = StoryObj<typeof meta>;
 
