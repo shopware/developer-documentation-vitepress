@@ -306,9 +306,17 @@ html.dark {
   }
 }
 
-@media (min-width: 960px) {
-  .VPNav .VPNavBar.has-sidebar {
+.VPNav {
+  .title {
+    height: var(--vp-nav-height);
+  }
+  .VPNavBar {
     border-bottom-color: var(--vp-c-divider);
+  }
+  @media (min-width: 960px) {
+    .VPNavBar.has-sidebar {
+      border-bottom-color: var(--vp-c-divider);
+    }
   }
 }
 

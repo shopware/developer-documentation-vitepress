@@ -2,7 +2,7 @@
   <div class="flex items-center">
     <a class="VPNavBarTitle" :href="withBase('/')">
       <img
-          src="../assets/shopware-docs.svg"
+          src="../assets/shopware-docs-mobile.svg"
           alt="Shopware"
           class="VPNavBarImage"
       />
@@ -28,14 +28,8 @@ import { withBase } from "vitepress";
 }
 
 .VPNavBarImage {
-    width: 90%;
-    height: 20px;
-}
-
-@media (min-width: 640px) {
-    .VPNavBarImage {
-        height: 40px;
-    }
+    width: 187px;
+    height: auto;
 }
 
 .VPNavBarTitle:hover {
