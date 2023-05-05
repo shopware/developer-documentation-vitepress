@@ -16,4 +16,4 @@ To publish package add commit to `main` with the following convention:
 chore: release x.y.z
 ```
 
-you need to set this version in a `package.json` file as well.
+You need to set this version in a `package.json` file as well.
