@@ -58,8 +58,8 @@ devDependencies:
     specifier: ^7.0.0
     version: 7.0.0(react-dom@18.2.0)(react@18.2.0)
   '@storybook/builder-vite':
-    specifier: ^7.0.0-rc.6
-    version: 7.0.0-rc.6(typescript@4.9.5)
+    specifier: ^7.0.0
+    version: 7.0.0(typescript@4.9.5)
   '@storybook/testing-library':
     specifier: ^0.0.14-next.1
     version: 0.0.14-next.1
@@ -3639,50 +3639,6 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/builder-vite@7.0.0-rc.6(typescript@4.9.5):
-    resolution: {integrity: sha512-96+OB4ZWf3HkRUmkQr+vnSKOss4W+05RSyogShqMsqrsx7dqSTUzXvASLKN6/+ptl9Qem4TQwujthBKgmYK19A==}
-    peerDependencies:
-      '@preact/preset-vite': '*'
-      '@storybook/mdx1-csf': '>=1.0.0-next.1'
-      typescript: '>= 4.3.x'
-      vite: ^3.0.0 || ^4.0.0
-      vite-plugin-glimmerx: '*'
-    peerDependenciesMeta:
-      '@preact/preset-vite':
-        optional: true
-      '@storybook/mdx1-csf':
-        optional: true
-      typescript:
-        optional: true
-      vite:
-        optional: true
-      vite-plugin-glimmerx:
-        optional: true
-    dependencies:
-      '@storybook/channel-postmessage': 7.0.0-rc.6
-      '@storybook/channel-websocket': 7.0.0-rc.6
-      '@storybook/client-logger': 7.0.0-rc.6
-      '@storybook/core-common': 7.0.0-rc.6
-      '@storybook/csf-plugin': 7.0.0-rc.6
-      '@storybook/mdx2-csf': 1.1.0-next.1
-      '@storybook/node-logger': 7.0.0-rc.6
-      '@storybook/preview': 7.0.0-rc.6
-      '@storybook/preview-api': 7.0.0-rc.6
-      '@storybook/types': 7.0.0-rc.6
-      browser-assert: 1.2.1
-      es-module-lexer: 0.9.3
-      express: 4.18.2
-      fs-extra: 11.1.0
-      glob: 8.1.0
-      glob-promise: 6.0.2(glob@8.1.0)
-      magic-string: 0.27.0
-      rollup: 3.19.1
-      slash: 3.0.0
-      typescript: 4.9.5
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@storybook/channel-postmessage@7.0.0:
     resolution: {integrity: sha512-Sy3oHL/xDRjUiHnM0ncnkbOE5pK3O72MjOoiLJX4FCI90w03KM4+F/N0eU2cXl6yXHuCyI5eJisEzQxTNsaJiw==}
     dependencies:
@@ -3745,15 +3701,6 @@ packages:
       core-js: 3.30.1
       global: 4.4.0
       telejson: 6.0.8
-    dev: true
-
-  /@storybook/channel-websocket@7.0.0-rc.6:
-    resolution: {integrity: sha512-onACSEWj2BMLT4ZsOTiRuKliDgjhNGa/4rYAs1BV+AbCUeqD6t9WxYYa2Msc6VIwHPqQ6lrmazix0YYJsJCXLQ==}
-    dependencies:
-      '@storybook/channels': 7.0.0-rc.6
-      '@storybook/client-logger': 7.0.0-rc.6
-      '@storybook/global': 5.0.0
-      telejson: 7.1.0
     dev: true
 
   /@storybook/channels@7.0.0:
@@ -4177,15 +4124,6 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/csf-plugin@7.0.0-rc.6:
-    resolution: {integrity: sha512-AEQn16YgcgExMrS8GNdS3wVTQCc8L+RLc0IaT/EMAf8okM1brjfgEqkIYngci9ZUWQdbphF4qA6j4U7DTvVw1A==}
-    dependencies:
-      '@storybook/csf-tools': 7.0.0-rc.6
-      unplugin: 0.10.2
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@storybook/csf-tools@7.0.0:
     resolution: {integrity: sha512-JIslbrcectcZFJJAhaOBRxNLPkBWIugNsdOTVHk3BHIu2tgF8U5No6Y+grYYooVLUhbRKYKCzXo0Hs89pbLtUw==}
     dependencies:
@@ -4452,10 +4390,6 @@ packages:
 
   /@storybook/preview@7.0.0:
     resolution: {integrity: sha512-6fSR9zt5fzEQE7iP538Txg2xVG5ndyzAYdSZfMB7LKPBWc8har6EgnpbX9OSPeoEf96/VFRGa/OSS7nV32xFHQ==}
-    dev: true
-
-  /@storybook/preview@7.0.0-rc.6:
-    resolution: {integrity: sha512-BiI2h6vFQ3VtT5BbYlW4Lw+9QDdM8R5KtiqPLUDzS7h7fsrZxZmCCybeNP/mz2LNUkk5B4XENY+dx/lM3QSLaQ==}
     dev: true
 
   /@storybook/react-dom-shim@7.0.0(react-dom@18.2.0)(react@18.2.0):
@@ -10929,14 +10863,6 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
-
-  /rollup@3.19.1:
-    resolution: {integrity: sha512-lAbrdN7neYCg/8WaoWn/ckzCtz+jr70GFfYdlf50OF7387HTg+wiuiqJRFYawwSPpqfqDNYqK7smY/ks2iAudg==}
-    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: true
 
   /rollup@3.21.5:
     resolution: {integrity: sha512-a4NTKS4u9PusbUJcfF4IMxuqjFzjm6ifj76P54a7cKnvVzJaG12BLVR+hgU2YDGHzyMMQNxLAZWuALsn8q2oQg==}
