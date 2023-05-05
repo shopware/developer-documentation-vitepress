@@ -26,7 +26,7 @@
 
 <script setup>
 import {useAttrs, ref} from "vue";
-import {useConfig} from "../../vitepress/composables/config";
+import {useConfig} from "../composables/config";
 import {useRoute} from "vitepress";
 import {getSidebarItem} from "../utils/sidebar";
 

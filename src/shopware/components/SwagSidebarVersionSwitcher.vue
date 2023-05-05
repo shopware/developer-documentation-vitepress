@@ -11,9 +11,9 @@
 
 <script setup lang="ts">
 import {ref, watch} from "vue";
-import {useConfig} from "../../vitepress/composables/config";
+import {useConfig} from "../composables/config";
 import {useRoute, useRouter} from "vitepress";
-import {flattenSidebar} from "../../vitepress/support/sidebar";
+import {flattenSidebar} from "../support/sidebar";
 
 const {config} = useConfig();
 const route = useRoute();

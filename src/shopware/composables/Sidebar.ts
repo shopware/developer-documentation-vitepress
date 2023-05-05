@@ -156,7 +156,7 @@ const reduceTree = (as: string, dirPath: string) => {
             }
 
             // add custom links (menu items)
-            if (metas[file]?.items) {
+            if (metas[file]?.items.length) {
                 metas[file].items.forEach((item) => {
                     if (!item.items) {
                         item.items = [];
@@ -319,6 +319,9 @@ function getMeta(folder: string, file: string): ObjectMeta {
         );
     }
 
+    // add custom items
+    nav.items = data.items || [];
+
     return nav;
 }
 
@@ -380,13 +383,8 @@ export function transformLinkToSidebar(root: string, link: string) {
                         index = {
                             link: `/${as}/`,
                             text: getTitleFromFilename(as),
-                            items: [],
+                            items: metas['index.md']?.items || [],
                         };
-                        /*reduced.push({
-                                        link: `/${as}/`,
-                                        text: getTitleFromFilename(as),
-                                        items: [],
-                                    });*/
                     } else {
                         // special handle root links
                         inIndex.push({
@@ -399,10 +397,6 @@ export function transformLinkToSidebar(root: string, link: string) {
                     return reduced;
                 } else if (fs.existsSync(`${folder}${file}/index.md`)) {
                     hasIndex = true;
-                    /*meta[`${folder}${file}/index.md`] = getMeta(
-                              `${folder}${file}`,
-                              `/index.md`
-                            );*/
                 }
 
                 // collect links
@@ -437,13 +431,23 @@ export function transformLinkToSidebar(root: string, link: string) {
         return items;
     }
 
+    // when index has hardocoded links, skip auto-generated ones
+    if (index.items.length) {
+        return index.items;
+    }
+
+    //let hardcoded = index.items;
     if (inIndex.length) {
         // add discovered root-items
         index.items = inIndex;
     }
 
     // prepend index items to discovered items
-    return [index, ...items];
+    return [
+        //...hardcoded,
+        index,
+        ...items,
+    ];
 }
 
 export const buildSidebarNav = (
