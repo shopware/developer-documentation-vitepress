@@ -17,3 +17,9 @@ chore: release x.y.z
 ```
 
 You need to set this version in a `package.json` file as well.
+
+## Versioning
+
+There are 2 versions of documentation template available:
+ - v0.x (branch `v0`) - hard-forked version of old VueJS theme
+ - v1.x (branch `main`) - extended version of the official Vitepress theme
