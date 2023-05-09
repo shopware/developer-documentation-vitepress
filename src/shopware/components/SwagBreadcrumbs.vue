@@ -98,27 +98,40 @@ const realUrl = computed(() => '/' + relativePath.value
     .replace('.md', '.html'));
 
 const getCurrentTree = (items, url) => {
+    if (items.length === 0) {
+        return [];
+    }
+
+    let found = false;
     return items.reduce((reduced, item) => {
+        if (found) {
+            return reduced;
+        }
+
         // break on exact match
         if (item.link === url) {
+            found = true;
             reduced.push({
                 text: item.text,
                 link: item.link,
             });
             return reduced;
         }
-        const found = getCurrentTree(item.items || [], url);
-        if (!found.length) {
+
+        // break when no matches
+        const sub = getCurrentTree(item.items || [], url);
+        if (!sub.length) {
             return reduced;
         }
 
         // push current item along with children items
+        found = true;
         reduced.push(
             {
                 text: item.text,
                 link: item.link,
             },
-            ...found
+            ...sub
         );
         return reduced;
     }, []);
@@ -144,7 +157,7 @@ const breadcrumbs = computed(() => {
     // const filtered = flattened.filter(({link}) => realUrl.value.startsWith(link));
 
     return flattened
-        .slice(1)
+        //.slice(1)
         .map(({link, text}) => ({link, text}))
         .map(breadcrumb => {
             const colorCode = colorCoding.find(colorCode => colorCode.link === breadcrumb.link);
