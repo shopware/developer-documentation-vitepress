@@ -84,7 +84,16 @@ const getCollapsed = (depth, items) => depth < 1 || !items.length ? null : true;
 
 const getAllFiles = function (dirPath: string): ObjectOfFiles {
     const objectOfFiles: ObjectOfFiles = {};
-    fs.readdirSync(dirPath).forEach(function (file: string) {
+    
+    let files;
+    try {
+        files = fs.readdirSync(dirPath);
+    } catch (e) {
+        console.error(e);
+        return objectOfFiles;
+    }
+
+    files.forEach(function (file: string) {
         // skip files and dirs starting with . or _
         if ([".", "_"].includes(file[0])) {
             return;
