@@ -1,12 +1,12 @@
 <template>
-  <div v-if="Object.keys(versions).length" class="SwagSidebarVersionSwitcher">
-    <!-- Version: -->
-    <select
-        class="SwagSidebarVersionSwitcher_select"
-        v-model="selectedVersion">
-      <option v-for="(title, value) in versions" :value="value">{{ title }}</option>
-    </select>
-  </div>
+    <div v-if="Object.keys(versions).length" class="SwagSidebarVersionSwitcher">
+        <!-- Version: -->
+        <select
+                class="SwagSidebarVersionSwitcher_select"
+                v-model="selectedVersion">
+            <option v-for="(title, value) in versions" :value="value">{{ title }}</option>
+        </select>
+    </div>
 </template>
 
 <style lang="scss">
@@ -37,46 +37,62 @@ const versionSwitcherConfig = config.value?.swag?.versionSwitcher ?? {};
 const versionPaths = versionSwitcherConfig?.paths ?? [];
 const versions = computed(() => versionPaths.find(paths => Object.keys(paths).find(key => route.path.startsWith(`/${key}`))) ?? {});
 
-const versionMatch = Object.keys(versions.value)
+const versionMatch = computed(() => Object.keys(versions.value)
     .filter(key => route.path.startsWith(`/${key}`))
     .sort((a, b) => {
-      if (a.length > b.length) {
-        return -1;
-      } else if (a.length < b.length) {
-        return 1;
-      }
+        if (a.length > b.length) {
+            return -1;
+        } else if (a.length < b.length) {
+            return 1;
+        }
 
-      return 0;
-    })
+        return 0;
+    }));
 
-const selectedVersion = ref(versionMatch[0] ?? null);
+const selectedVersion = ref('');
+
+watch(
+    () => route.path,
+    () => {
+        selectedVersion.value = versionMatch.value[0] ?? null;
+    },
+    {
+        immediate: true,
+    }
+);
 
 watch(
     selectedVersion,
     (newValue, oldValue) => {
-      const newSidebar = flattenSidebar(sidebarConfig[`/${newValue}/`] ?? []);
+        // skip navigation to other pages
+        if (!newValue) {
+            return;
+        }
 
-      // find the closest value in the new sidebar
-      const relativePath = '/' + route.data.relativePath
-          .replace('/index.md', '/')
-          .replace('.md', '.html')
-          .substring(oldValue.length + 1); // add /
+        // find the closest value in the new sidebar
+        let relativePath = '/' + route.data.relativePath
+            .replace('/index.md', '/')
+            .replace('.md', '.html')
+            .substring(oldValue?.length + 1);
 
-      // compare docs/v6.4 and docs with /docs/v6.4/foo and /docs/foo
-      const newLinks = newSidebar
-          .filter(item => item.link !== '#' && relativePath.startsWith(item.link.substring(newValue.length + 1)))
-          .sort((a, b) => {
-            if (a.link.length > b.link.length) {
-              return -1;
-            } else if (a.link.length < b.link.length) {
-              return 1;
-            }
+        // compare docs/v6.4 and docs with /docs/v6.4/foo and /docs/foo
+        const newSidebar = flattenSidebar(sidebarConfig[`/${newValue}/`] ?? [])
+            .filter(({link}) => link && link !== '#' && relativePath.startsWith(link.substring(newValue.length + 1)));
 
-            return 0;
-          });
+        // prioritize longer links
+        const newLinks = newSidebar
+            .sort((a, b) => {
+                if (a.link.length > b.link.length) {
+                    return -1;
+                } else if (a.link.length < b.link.length) {
+                    return 1;
+                }
 
-      const link = newLinks[0]?.link ?? ('/' + newValue + '/');
-      router.go(link);
+                return 0;
+            });
+
+        const link = newLinks[0]?.link ?? ('/' + newValue + '/');
+        router.go(link);
     }
 )
 </script>
