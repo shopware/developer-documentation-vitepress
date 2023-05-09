@@ -69,6 +69,15 @@ interface FrontmatterContent {
 const endWithSlash = text => text.endsWith('/') ? text : `${text}/`;
 const startWithSlash = text => text.startsWith('/') ? text : `/${text}`;
 const surroundWithSlash = text => endWithSlash(startWithSlash(text));
+const stripSlashes = text => {
+    if (text.endsWith('/')) {
+        text = text.substring(0, text.length - 1);
+    }
+    if (text.startsWith('/')) {
+        text = text.substring(1);
+    }
+    return text;
+};
 
 const getCollapsed = (depth, items) => depth < 1 || !items.length ? null : true;
 // const getCollapsed = (depth, items) => null;
@@ -353,7 +362,7 @@ export function transformLinkToSidebar(root: string, link: string) {
         ? '' :
         link.substring(1, link.length - 1);
 
-    const folder = `${root}${endWithSlash(as)}`;
+    const folder = `${root}${as.length ? endWithSlash(as) : as}`;
     console.log(`Creating sidebar ${folder}`);
 
     // allow missing mount points in dev env
