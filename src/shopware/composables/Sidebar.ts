@@ -84,7 +84,7 @@ const getCollapsed = (depth, items) => depth < 1 || !items.length ? null : true;
 
 const getAllFiles = function (dirPath: string): ObjectOfFiles {
     const objectOfFiles: ObjectOfFiles = {};
-    
+
     let files;
     try {
         files = fs.readdirSync(dirPath);
@@ -99,7 +99,7 @@ const getAllFiles = function (dirPath: string): ObjectOfFiles {
             return;
         }
 
-        if (fs.statSync(`${dirPath}${file}`).isDirectory()) {
+        if (fs.existsSync(`${dirPath}${file}`) && fs.statSync(`${dirPath}${file}`).isDirectory()) {
             const files = getAllFiles(`${dirPath}${file}/`);
 
             // skip empty dirs
