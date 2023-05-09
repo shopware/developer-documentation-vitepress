@@ -7,7 +7,8 @@ by VitePress itself, such as Markdown formatting, frontmatter configuration and 
 
 ## VueJS Components
 
-Custom VueJS SFC are supported by default.
+See our [Storybook/Chromatic library](https://www.chromatic.com/library?appId=641c40f658d13de7d99ad1d9) with collection 
+of all VueJS components that are registered by default and styled for light and dark themes.
 
 <!--
 
@@ -43,11 +44,43 @@ attribute. It automatically fetches all the relevant data (including `title` and
 
 ![](./demo/public/examples/page-ref.png)
 
+### `<YoutubeRef>`
+
+`YoutubeRef` component displays `title` and `video` from Youtube.
+
+![](./demo/public/examples/youtube-ref.png)
+
 ### `<Tabs>` and `<Tab>`
 
 `Tabs` and `Tab` components can be used for organizing contents in tabs.
 
 ![](./demo/public/examples/tabs.png)
+
+### `<SwagLandingPage>`
+
+Landing page component provides you with `title` and `description` slots, `ctas` slot for `PageRef` components, and
+`exposed` slots for `SwagLandingCardList` component.
+
+![](./demo/public/examples/landing-page.png)
+
+### `<SwagLandingCard>`
+
+`SwagLandingCard` provides you with `page`, `title` an `sub` slots (and properties as default slot value).
+
+![](./demo/public/examples/landing-card.png)
+
+### `<SwagCard>`
+
+`SwagCard` provides you with `page`, `title` an `description` slots (and properties as default slot value).
+
+![](./demo/public/examples/card.png)
+
+### `<SwagIcon>`
+
+`SwagIcon` provides you with all icons from the [Meteor Icon Kit](https://github.com/shopware/meteor-icon-kit) - you 
+only need to set required `icon` property and optional `type`.
+
+![](./demo/public/examples/icon.png)
 
 ## Sidebar auto-generation
 

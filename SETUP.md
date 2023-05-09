@@ -13,7 +13,7 @@ Your `package.json` should look similar to this
 ```
 {
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=18.0.0"
   },
   "scripts": {
     "dev": "vitepress",
@@ -21,8 +21,8 @@ Your `package.json` should look similar to this
     "serve": "vitepress serve"
   },
   "dependencies": {
-    "vitepress-shopware-docs": "^0.0.1",
-    "vitepress": "^0.22.2",
+    "vitepress-shopware-docs": "^1.0.0",
+    "vitepress": "^1.0.0-alpha.75",
     "vue": "^3.2.31"
   },
   "devDependencies": {
@@ -80,30 +80,6 @@ export default defineConfigWithTheme<ThemeConfig>({
       repo: "shopware/developer-documentation-vuepress",
       text: "Edit this page on GitHub",
     },
-  },
-
-  vite: {
-    define: {
-      __VUE_OPTIONS_API__: false,
-    },
-    server: {
-      host: true,
-      fs: {
-        // for when developing with locally linked theme
-        allow: ["../.."],
-      },
-    },
-    build: {
-      minify: "terser",
-      chunkSizeWarningLimit: Infinity,
-    },
-    json: {
-      stringify: true,
-    },
-  },
-
-  vue: {
-    reactivityTransform: true,
   },
 });
 ```
