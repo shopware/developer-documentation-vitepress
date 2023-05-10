@@ -12,3 +12,11 @@
     @apply hover:shadow-lg hover:border-#e8e8e8;
     @apply dark:border-#444 dark:bg-#272727 dark:hover:border-#333 dark:hover:bg-#333;
 }
+
+.accent {
+    background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}

@@ -234,15 +234,6 @@ html.dark {
   color: var(--c-blue-brand-dark);
 }
 
-.accent,
-.vp-doc > div > h1:first-child {
-  background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-}
-
 .VPContent {
   overflow-x: hidden;
   @apply bg-white dark:bg-#222;
