@@ -20,8 +20,8 @@ export default meta;
 
 export const Default: Story = {};
 
-export const DefaultHover: Story = HoverVariation(Default);
+export const DefaultHover: Story = HoverVariation(Default, '.c-any-card');
 
 export const Dark: Story = DarkVariation(Default);
 
-export const DarkHover: Story = HoverVariation(Dark);
+export const DarkHover: Story = HoverVariation(Dark, '.c-any-card');

@@ -54,11 +54,18 @@ export const DarkVariation = (data?: object) => ({
     }
 })
 
-export const HoverVariation = (data: object) => ({
+/**
+ * .pseudo-hover only works with light (default) theme by default because the .pseudo-hover class is added to th
+ * #storybook-root element, while the .dark class is added to the html element. Therefore, we need to manually define
+ * the element on which the .pseudo-hover class is added.
+ */
+export const HoverVariation = (data: object, hover: boolean | object | string = true) => ({
     ...data,
     parameters: {
         ...(data.parameters || {}),
-        pseudo: {hover: true},
+        pseudo: {
+            hover,
+        },
     }
 })
 
