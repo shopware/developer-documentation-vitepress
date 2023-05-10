@@ -10,7 +10,8 @@
 .c-any-card {
     @apply shadow-md bg-#fdfdfd transition transition-all;
     @apply hover:shadow-lg hover:border-#e8e8e8;
-    @apply dark:border-#444 dark:bg-#272727 dark:hover:border-#333 dark:hover:bg-#333;
+    @apply dark:border-#444 dark:bg-#333;
+    @apply dark:hover:border-#272727 dark:hover:bg-#333;
 }
 
 .accent {
