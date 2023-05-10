@@ -36,7 +36,7 @@
 
   &_li {
     @apply flex items-center;
-    &:nth-child(n+4) {
+    &:nth-child(n+5) {
       min-width: 0;
     }
   }
