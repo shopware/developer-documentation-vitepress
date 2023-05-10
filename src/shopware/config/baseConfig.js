@@ -46,7 +46,8 @@ module.exports = async () => ({
 
       alias: {
         '../composables/edit-link': path.resolve(__dirname, '../composables/edit-link.ts'),
-        './VPNavBarTitle.vue': path.resolve(__dirname, '../components/VPNavBarTitle.vue'),
+        './VPNavBarTitle.vue': path.resolve(__dirname, '../components/override/VPNavBarTitle.vue'),
+        './VPAlgoliaSearchBox.vue': path.resolve(__dirname, '../components/override/VPAlgoliaSearchBox.vue'),
       }
     },
     // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?

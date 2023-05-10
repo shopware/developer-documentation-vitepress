@@ -2,7 +2,7 @@
   <div class="flex items-center">
     <a class="VPNavBarTitle" :href="withBase('/')">
       <img
-          src="../assets/shopware-docs-mobile.svg"
+          src="../../assets/shopware-docs-mobile.svg"
           alt="Shopware"
           class="VPNavBarImage"
       />
