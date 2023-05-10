@@ -37,6 +37,7 @@ import SwagRelatedArticles from "../shopware/components/SwagRelatedArticles.vue"
 import SwagSidebarVersionSwitcher from "../shopware/components/SwagSidebarVersionSwitcher.vue";
 import SwagStackOverflow from "../shopware/components/SwagStackOverflow.vue";
 import SwagBreadcrumbs from "./components/SwagBreadcrumbs.vue";
+import SwagAlgoliaAttributes from "./components/SwagAlgoliaAttributes.vue";
 
 /**
  * Import styles at the end.
@@ -50,10 +51,13 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
             withConfigProvider(Theme.Layout),
             null,
             {
-                'doc-before': () => h(SwagBreadcrumbs),
+                'doc-before': () => [
+                    h(SwagAlgoliaAttributes),
+                    h(SwagBreadcrumbs),
+                ],
                 'doc-footer-before': () => [
                     h(SwagRelatedArticles),
-                    h(SwagStackOverflow)
+                    h(SwagStackOverflow),
                 ],
                 'sidebar-nav-before': () => h(SwagSidebarVersionSwitcher),
             }
