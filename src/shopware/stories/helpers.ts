@@ -54,6 +54,14 @@ export const DarkVariation = (data?: object) => ({
     }
 })
 
+export const HoverVariation = (data: object) => ({
+    ...data,
+    parameters: {
+        ...(data.parameters || {}),
+        pseudo: {hover: true},
+    }
+})
+
 export enum LoremIpsumType {
     WORDS = 'Words',
     SENTENCES = 'Sentences',

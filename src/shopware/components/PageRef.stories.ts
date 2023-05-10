@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/vue3';
 
 import PageRef from "./PageRef.vue";
-import {DarkVariation, loremSentences, loremWords, render} from "../stories/helpers";
+import {DarkVariation, HoverVariation, loremSentences, loremWords, render} from "../stories/helpers";
 
 const meta = {
     title: 'Default/PageRef',
@@ -20,5 +20,8 @@ export default meta;
 
 export const Default: Story = {};
 
-export const Dark: Story = DarkVariation(Default)
+export const DefaultHover: Story = HoverVariation(Default);
 
+export const Dark: Story = DarkVariation(Default);
+
+export const DarkHover: Story = HoverVariation(Dark);

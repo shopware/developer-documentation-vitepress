@@ -2,7 +2,7 @@ import type {Meta, StoryObj} from '@storybook/vue3';
 
 import SwagLandingCard from "./SwagLandingCard.vue";
 import PageRef from "./PageRef.vue";
-import {DarkVariation, loremWords, loremSentences, render} from "../stories/helpers";
+import {DarkVariation, loremWords, loremSentences, render, HoverVariation} from "../stories/helpers";
 
 const meta = {
     title: 'Swag/LandingCard',
@@ -18,4 +18,8 @@ export default meta;
 
 export const Default: Story = {};
 
-export const Dark: Story = DarkVariation(Default)
+export const DefaultHover: Story = HoverVariation(Default);
+
+export const Dark: Story = DarkVariation(Default);
+
+export const DarkHover: Story = HoverVariation(Dark);
