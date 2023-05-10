@@ -2,7 +2,7 @@
   <div class="PageRef">
     <a class="PageRef__link" :href="page" :target="target">
       <div
-        class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4 mb-6"
+        class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4"
       >
         <div v-if="icon" class="flex w-14 items-center">
           <img :src="icon" class="w-14 h-14 object-cover" />
@@ -10,7 +10,7 @@
         <div v-else-if="video">
           <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
         </div>
-        <div class="flex-1">
+        <div class="flex-1 ellipsis">
           {{ title }}
           <div
             v-if="sub?.length > 0"

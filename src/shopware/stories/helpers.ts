@@ -93,3 +93,7 @@ export const loremParagraphs = (num: number | [number, number] = 5, seed?: strin
     seed,
     format
 })
+
+export const swagLandingCards = (num: number) => Array.apply(null, Array(num))
+    .map((u, i) => `<SwagLandingCard icon="activity"><template #title>${loremWords([3, 8], i)}</template><template #sub>${loremSentences([3, 5], i)}</template></SwagLandingCard>`)
+    .join("")

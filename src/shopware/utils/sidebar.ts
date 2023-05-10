@@ -60,6 +60,10 @@ const traverse = (items: AdditionalMenuItemWithContext[], url: string) => {
 }
 
 export const trimDatetime = value => {
+    if (typeof value !== 'string') {
+        return value;
+    }
+
     if (value?.match(/^\d\d\d\d-\d\d-\d\d - /)) {
         return value.substring('XXXX-XX-XX - '.length);
     }
@@ -123,5 +127,5 @@ export const getExactSidebarItem = (sidebar: SidebarConfig, route: Route, attrs:
         title: 'text',
     };
 
-    return trimDatetime(finalLink[mapper[attr]] || null);
+    return trimDatetime(finalLink[mapper[attr]] || finalLink[attr] || null);
 }

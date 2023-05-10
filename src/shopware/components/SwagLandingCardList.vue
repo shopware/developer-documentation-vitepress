@@ -1,7 +1,7 @@
 <template>
   <div class="SwagLandingCardListWrapper relative flex flex-col gap-4 leading-7">
-    <h3><slot name="title"></slot></h3>
-    <slot name="description"></slot>
+    <h3 v-if="$slots.title"><slot name="title"></slot></h3>
+    <slot v-if="$slots.description" name="description"></slot>
     <div class="gap-10 SwagLandingCardList pt-5 pb-10 grid sm:grid-cols-2 md:grid-cols-3">
       <slot name="cards">
         <SwagLandingCard v-for="item in exposed" v-bind="item"/>

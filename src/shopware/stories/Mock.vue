@@ -11,42 +11,14 @@ const props = defineProps({
 
 import {computed, provide} from "vue";
 import {configSymbol} from "../../shopware/composables/config";
+import {useData} from "vitepress";
+
+const {theme} = useData();
 
 provide(configSymbol, computed(() => ({
     nav: [],
     sidebar: {
-        '/': [
-            {
-                text: 'Root',
-                link: '/',
-                items: [
-                    {
-                        text: 'My',
-                        link: '/my/',
-                        items: [
-                            {
-                                text: 'Route',
-                                link: '/my/route.html',
-                                items: []
-                            }
-                        ]
-                    }
-                ]
-            }
-        ],
-        '/my/': [
-            {
-                text: 'My',
-                link: '/my/',
-                items: [
-                    {
-                        text: 'Route',
-                        link: '/my/route.html',
-                        items: []
-                    }
-                ]
-            }
-        ]
+        ...theme.value.sidebar,
     },
     swag: {
         similarArticles: {

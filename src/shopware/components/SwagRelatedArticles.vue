@@ -1,14 +1,16 @@
 <template>
-  <div v-if="articles.length" class="vt-doc --similar-articles">
-    <h2 class="e-heading">Continue with related topics:</h2>
-    <PageRef
-        v-for="link in articles"
-        :key="link.page"
-        :page="link.page"
-        :title="link.title"
-        :sub="link.description || ''"
-    />
-  </div>
+    <div v-if="articles.length" class="vt-doc --similar-articles mb-8">
+        <h2 class="e-heading">Continue with related topics:</h2>
+        <div class="grid gap-6">
+            <PageRef
+                    v-for="link in articles"
+                    :key="link.page"
+                    :page="link.page"
+                    :title="link.title"
+                    :sub="link.description || ''"
+            />
+        </div>
+    </div>
 </template>
 
 <script async setup>

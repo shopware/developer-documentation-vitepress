@@ -15,9 +15,11 @@
         </div>
 
         <div class="mt-10">
-          <slot name="ctas">
-              <PageRef v-for="cta in ctas" :page="cta.page" :title="cta.title" :sub="cta.sub"/>
-          </slot>
+            <div class="grid gap-6">
+              <slot name="ctas">
+                  <PageRef v-for="cta in ctas" :page="cta.page" :title="cta.title" :sub="cta.sub"/>
+              </slot>
+            </div>
         </div>
       </div>
 
@@ -52,7 +54,6 @@ h1 {
 </style>
 
 <script setup lang="ts">
-import SwagLandingCard from "./SwagLandingCardList.vue";
 import SwagLandingCardList from "./SwagLandingCardList.vue";
 
 const props = defineProps({

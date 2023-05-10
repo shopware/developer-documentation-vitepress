@@ -15,7 +15,54 @@ export const useData = () => {
                 text: 'Edit this page on GitHub'
             },
             sidebar: {
-                '/': {},
+                '/': [
+                    {
+                        text: 'Root',
+                        link: '/',
+                        items: [
+                            {
+                                text: 'My',
+                                link: '/my/',
+                                items: [
+                                    {
+                                        text: 'Route',
+                                        link: '/my/route.html',
+                                        items: []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                '/my/': [
+                    {
+                        text: 'My',
+                        link: '/my/',
+                        items: [
+                            {
+                                text: 'Route',
+                                link: '/my/route.html',
+                                items: [
+                                    {
+                                        text: 'Sub 1',
+                                        link: '/my/route/sub-1.html',
+                                        items: [],
+                                    },
+                                    {
+                                        text: 'Sub 2',
+                                        link: '/my/route/sub-2.html',
+                                        items: [],
+                                    },
+                                    {
+                                        text: 'Sub 3',
+                                        link: '/my/route/sub-3.html',
+                                        items: [],
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             },
             nav: [],
             swag: {}

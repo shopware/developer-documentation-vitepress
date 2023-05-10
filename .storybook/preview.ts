@@ -17,6 +17,9 @@ import '../src/shopware/styles/override.scss'
 import '../src/shopware/styles/custom.scss'
 //import '../src/shopware/styles/_index.scss'
 
+// add custom storybook styles
+import '../src/shopware/styles/storybook.scss'
+
 import "uno.css";
 
 const preview: Preview = {
