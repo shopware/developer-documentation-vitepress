@@ -53,16 +53,14 @@ const selectedVersion = ref(versionMatch.value[0] ?? null);
 
 watch(
     () => route.path,
-    () => {
-        selectedVersion.value = versionMatch.value[0] ?? null;
-    },
+    (value) => selectedVersion.value = versionMatch.value[0] ?? null,
 );
 
 watch(
     selectedVersion,
     (newValue, oldValue) => {
         // skip navigation to other pages
-        if (!newValue) {
+        if (!newValue || !oldValue || oldValue === newValue) {
             return;
         }
 
