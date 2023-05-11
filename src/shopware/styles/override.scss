@@ -388,7 +388,7 @@ html.dark {
     }
   }
 
-  &:not(.has-aside) > .container > .content {
+  &:not(.has-aside,.has-sidebar) > .container > .content {
     @apply px-0;
   }
 

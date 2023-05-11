@@ -7,7 +7,7 @@
         <slot name="title"></slot>
       </span>
     </div>
-    <div class="SwagCard__description text-sm">
+    <div class="SwagCard_description text-sm">
       <slot name="description"></slot>
     </div>
     <!--<p class="mt-4"><a class="text-sm" :href="link">→ learn more</a></p>-->
@@ -32,7 +32,7 @@ const props = defineProps({
   align-content: flex-start;
   flex-wrap: wrap;*/
 
-  &__description {
+  &_description {
     color: var(--c-text);
   }
 }

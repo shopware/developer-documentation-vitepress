@@ -1,6 +1,6 @@
 <template>
   <div class="PageRef">
-    <a class="PageRef__link" :href="page" :target="target">
+    <a class="PageRef_link" :href="page" :target="target">
       <div
         class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4"
       >
@@ -14,7 +14,7 @@
           {{ title }}
           <div
             v-if="sub?.length > 0"
-            class="mt-2 text-gray font-normal text-xs block"
+            class="PageRef_sub mt-2 text-gray font-normal text-xs block"
           >
             {{ sub }}
           </div>
@@ -26,7 +26,10 @@
 
 <style lang="scss">
 .PageRef {
-  &__link {
+  &_sub {
+    max-width: 0;
+  }
+  &_link {
     color: var(--c-link);
     font-weight: 500;
     &:hover {

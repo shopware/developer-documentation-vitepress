@@ -14,7 +14,7 @@
 </style>
 
 <script lang="ts" setup>
-// :id="`meteor-icon-kit__${type}-${icon}`"
+// :id="`meteor-icon-kit_${type}-${icon}`"
 import {computed, PropType} from "vue";
 
 enum IconTypeEnum {

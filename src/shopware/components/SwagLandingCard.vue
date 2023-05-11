@@ -8,7 +8,7 @@
       <!--<div v-if="icon || $slots.icon" class="p-4">
         <a :href="page">
           <slot name="icon">
-            <SwagIcon class="SwagLandingCard__icon" :icon="icon" :type="iconType" />
+            <SwagIcon class="SwagLandingCard_icon" :icon="icon" :type="iconType" />
           </slot>
         </a>
       </div>-->
@@ -28,14 +28,14 @@
 .SwagLandingCard {
   @apply border-px border-#eeeeee rounded-md flex flex-col overflow-hidden;
 
-  &__icon {
+  &_icon {
     background-color: var(--c-link);
     width: 3rem;
     height: 3rem;
   }
 
   &:hover {
-    .SwagLandingCard__icon {
+    .SwagLandingCard_icon {
       background-color: var(--c-link--hover);
     }
   }

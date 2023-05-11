@@ -10,12 +10,12 @@
                           clip-rule="evenodd"></path>
                 </svg>
                 <span v-if="!breadcrumb.link"
-                      class="SwagBreadcrumbs__span">{{
+                      class="SwagBreadcrumbs_span">{{
                     breadcrumb.text
                     }}</span>
                 <a v-else
                    :href="breadcrumb.link"
-                   :class="[breadcrumb.color ? 'SwagBreadcrumbs__button' : 'SwagBreadcrumbs__link', breadcrumb.color]">{{
+                   :class="[breadcrumb.color ? 'SwagBreadcrumbs_button' : 'SwagBreadcrumbs_link', breadcrumb.color]">{{
                     breadcrumb.text
                     }}</a>
             </li>
@@ -25,7 +25,7 @@
 
 <style lang="scss">
 .SwagBreadcrumbs {
-  li:not(:first-child) .SwagBreadcrumbs__link {
+  li:not(:first-child) .SwagBreadcrumbs_link {
     @apply ml-1 md:ml-2;
   }
 
@@ -41,20 +41,20 @@
     }
   }
 
-  &__span,
-  &__link {
+  &_span,
+  &_link {
     @apply text-sm font-medium text-gray-700;
     @apply dark:text-gray-400 dark:hover:text-white;
   }
 
-  &__link {
+  &_link {
     @apply hover:text-blue-600;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
 
-  &__button {
+  &_button {
     @apply inline-flex items-center px-3 py-1.5 ml-2 text-sm font-normal text-center text-white rounded-lg;
     @apply bg-gradient-to-r;
     @apply focus:ring-4 focus:outline-none focus:ring-gray-100;
