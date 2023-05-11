@@ -16,7 +16,7 @@
     @apply bg-white border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5;
     @apply focus:ring-blue-500 focus:border-blue-500;
     @apply dark:bg-#272727 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
-    @apply dark:focus:ring-blue-500 dark:focus:border-blue-500
+    @apply focus:dark:ring-blue-500 focus:dark:border-blue-500;
   }
 }
 </style>

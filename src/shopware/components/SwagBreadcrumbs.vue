@@ -44,7 +44,7 @@
   &_span,
   &_link {
     @apply text-sm font-medium text-gray-700;
-    @apply dark:text-gray-400 dark:hover:text-white;
+    @apply dark:text-gray-400 hover:dark:text-white;
   }
 
   &_link {
@@ -58,7 +58,7 @@
     @apply inline-flex items-center px-3 py-1.5 ml-2 text-sm font-normal text-center text-white rounded-lg;
     @apply bg-gradient-to-r;
     @apply focus:ring-4 focus:outline-none focus:ring-gray-100;
-    @apply dark:focus:ring-gray-700;
+    @apply focus:dark:ring-gray-700;
   }
 }
 
