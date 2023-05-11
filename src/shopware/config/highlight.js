@@ -38,7 +38,7 @@ function getHighlightLinesConfig(linesConfig = '') {
   return linesToHighlight;
 }
 
-module.exports = async (theme = 'material-palenight') => {
+module.exports = async (theme = 'material-theme-palenight') => {
   const highlighter = await require('shiki').getHighlighter({
     theme
   })
