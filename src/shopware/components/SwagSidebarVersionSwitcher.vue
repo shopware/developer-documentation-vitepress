@@ -49,16 +49,13 @@ const versionMatch = computed(() => Object.keys(versions.value)
         return 0;
     }));
 
-const selectedVersion = ref('');
+const selectedVersion = ref(versionMatch.value[0] ?? null);
 
 watch(
     () => route.path,
     () => {
         selectedVersion.value = versionMatch.value[0] ?? null;
     },
-    {
-        immediate: true,
-    }
 );
 
 watch(
