@@ -35,6 +35,6 @@ main:has(.vp-doc > div:empty) {
     text-overflow: ellipsis;
 }
 
-main .PageRef {
+main :not(.grid) > .PageRef {
     padding-bottom: 1.5rem;
 }

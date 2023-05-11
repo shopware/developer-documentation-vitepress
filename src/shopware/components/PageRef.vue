@@ -10,7 +10,7 @@
         <div v-else-if="video">
           <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
         </div>
-        <div class="flex-1 ellipsis">
+        <div class="flex-1">
           {{ title }}
           <div
             v-if="sub?.length > 0"
@@ -26,9 +26,6 @@
 
 <style lang="scss">
 .PageRef {
-  &_sub {
-    max-width: 0;
-  }
   &_link {
     color: var(--c-link);
     font-weight: 500;
