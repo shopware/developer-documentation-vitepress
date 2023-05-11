@@ -1,5 +1,5 @@
 <template>
-  <div class="SwagLandingCard c-any-card">
+  <a :href="page" class="SwagLandingCard c-any-card">
     <div class="h-36 overflow-hidden bg-gradient-to-r" :class="gradient">
       <img :src="image" v-if="image" class="w-full h-full object-cover" />
       <img src="../assets/shopware-placeholder.svg" v-else class="w-full h-full object-cover" />
@@ -13,17 +13,15 @@
         </a>
       </div>-->
       <div class="p-4">
-        <a :href="page">
           <div class="mb-2 tracking-tight dark:text-white">
             <slot name="title">{{ title }}</slot>
           </div>
-        </a>
         <div class="mt-2 text-gray font-normal text-xs block">
           <slot name="sub">{{ sub }}</slot>
         </div>
       </div>
     </div>
-  </div>
+  </a>
 </template>
 
 <style lang="scss" scoped>
