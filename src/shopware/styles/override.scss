@@ -8,16 +8,10 @@
   --c-white-100: #f5f7f9;
   --c-white-200: #d3dce4;
 
-  --c-gray-50: #f8f8f8;
-  --c-gray-100: rgba(226, 232, 240, 1);
-  --c-gray-150: rgba(235, 235, 235, .6);
-  --c-gray-200: rgba(160, 160, 160, .5);
-  --c-gray-300: rgba(100, 100, 100, 1);
-  --c-gray-500: rgba(60, 60, 60, .7);
-  --c-gray-600: rgba(53, 53, 53, .75);
-  --c-gray-700: rgba(45, 45, 46, .80);
-  --c-gray-800: rgba(38, 38, 39, .85);
-  --c-gray-900: #1e1e20;
+  // range from 225-30
+  @for $i from 0 through 20 {
+    --c-gray-#{calc($i*50)}: rgb(#{calc(195 / 20 * (20 - $i) + 30)}, #{calc(195 / 20 * (20 - $i) + 30)}, #{calc(195 / 20 * (20 - $i) + 30)});
+  }
 
   --c-black-1000: #000;
   --c-exposed: #cce0ff;
@@ -32,9 +26,10 @@
   --vt-c-brand: var(--c-blue-brand);
   --vp-c-brand-dark: var(--sw-nav-bg);
 
+  --vp-c-text-2: var(--c-gray-300);
+
   --vp-nav-bg-color: var(--sw-nav-bg);
   --vp-c-brand: var(--sw-brand);
-  --vp-c-text-2: var(--c-gray-150);
   --vp-c-bg-alt: transparent;
   --vp-sidebar-bg-color: var(--sw-sidebar-bg);
   --vp-sidebar-bg-color--dark: transparent;
@@ -47,7 +42,7 @@
   --sw-outline-link: rgba(60, 60, 60, .333);
   --sw-sidebar-link-color: var(--c-blue-dark2);
   --sw-sidebar-heading-color: var(--vp-c-text-1);
-  --vp-c-divider: var(--vp-c-text-2);
+  --vp-c-divider: var(--c-gray-0);
 
   --c-text: var(--c-gray-500);
   --c-text-100: var(--c-gray-500);
@@ -55,8 +50,12 @@
   --c-link: var(--c-blue-brand);
   --c-link--hover: var(--c-blue-brand-dark);
 
-  --vp-c-bg: var(--c-gray-50);
-  --vp-c-bg-soft: var(--c-gray-100);
+  --vp-c-bg: var(--c-white-100);
+  --vp-c-bg-soft: rgba(226, 232, 240, 1);
+  --vp-c-bg-soft-mute: rgba(226, 232, 240, 1);
+
+  --sw-heading-divider: var(--c-gray-600);
+  --sw-submenu-divider: var(--c-gray-0);
 }
 
 html.dark {
@@ -64,31 +63,43 @@ html.dark {
   --vp-c-text-1: var(--sidebar-link-color--dark);
   --vp-c-text-1: #ccc;
 
-  --sw-nav-bg: var(--vp-c-bg);
-  --sw-sidebar-bg: var(--c-black-1000);
+  --vp-c-bg: var(--c-gray-1000);
+  --vp-c-bg-soft: var(--c-gray-950);
 
+  --sw-nav-bg: var(--vp-c-bg);
+
+  --sw-sidebar-bg: var(--vp-c-bg);
+  --vp-sidebar-bg-color: var(--c-gray-1000);
   --sw-sidebar-link-color: var(--c-gray-150);
+  --sw-sidebar-heading-color: var(--c-gray-600);
+  --sw-sidebar-border: var(--c-gray-900);
+
+  --sw-heading-divider: var(--c-gray-850);
 
   --sw-outline-link: var(--c-gray-300);
-  --sw-sidebar-heading-color: var(--c-gray-300);
-  --sw-sidebar-border: var(--c-gray-500);
-  --vp-c-divider: var(--c-gray-500);
-  --vp-c-gutter: var(--c-gray-500);
+  --vp-c-divider: var(--c-gray-900);
+  --vp-c-gutter: var(--c-gray-900);
 
   --vp-custom-block-info-text: var(--vp-c-text-2);
 
-  --vp-c-bg: var(--c-gray-900);
-  --vp-c-bg-soft: var(--c-gray-700);
-
-  --vp-sidebar-bg-color: var(--c-gray-900);
   --c-text: var(--c-gray-150);
   --c-heading-sub: #ddd;
   --c-exposed: var(--c-gray-800);
+
+  --vp-c-bg-soft-mute: var(--c-gray-1000);
+  --sw-submenu-divider: var(--c-gray-900);
+}
+
+.VPMenu {
+  --vp-c-divider: var(--sw-submenu-divider);
 }
 
 .VPNav {
   background-color: var(--sw-nav-bg);
   --vp-c-text-1: #eee;
+  .content {
+    --vp-c-divider: var(--sw-heading-divider);
+  }
 
   .VPNavBarMenuLink,
   .VPNavBarMenuGroup .text {
@@ -428,5 +439,12 @@ html.dark {
   .menu,
   .VPLocalNavOutlineDropdown button {
     color: var(--c-text);
+  }
+}
+
+.DocSearch {
+  &,
+  &-Hit-path {
+    --docsearch-text-color: var(--c-text);
   }
 }
