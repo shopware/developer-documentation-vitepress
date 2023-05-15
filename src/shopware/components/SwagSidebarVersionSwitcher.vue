@@ -3,6 +3,7 @@
         <!-- Version: -->
         <select
                 class="SwagSidebarVersionSwitcher_select"
+                @change="findClosestArticle"
                 v-model="selectedVersion">
             <option v-for="(title, value) in versions" :value="value">{{ title }}</option>
         </select>
@@ -50,44 +51,41 @@ const versionMatch = computed(() => Object.keys(versions.value)
     }));
 
 const selectedVersion = ref(versionMatch.value[0] ?? null);
+const oldValue = ref(selectedVersion.value);
 
 watch(
     () => route.path,
     (value) => selectedVersion.value = versionMatch.value[0] ?? null,
 );
 
-watch(
-    selectedVersion,
-    (newValue, oldValue) => {
-        // skip navigation to other pages
-        if (!newValue || !oldValue || oldValue === newValue) {
-            return;
-        }
+const findClosestArticle = () => {
+    const newValue = selectedVersion.value;
 
-        // find the closest value in the new sidebar
-        let relativePath = '/' + route.data.relativePath
-            .replace('/index.md', '/')
-            .replace('.md', '.html')
-            .substring(oldValue?.length + 1);
+    // find the closest value in the new sidebar
+    let relativePath = '/' + route.data.relativePath
+        .replace('/index.md', '/')
+        .replace('.md', '.html')
+        .substring(oldValue.value?.length + 1);
 
-        // compare docs/v6.4 and docs with /docs/v6.4/foo and /docs/foo
-        const newSidebar = flattenSidebar(sidebarConfig[`/${newValue}/`] ?? [])
-            .filter(({link}) => link && link !== '#' && relativePath.startsWith(link.substring(newValue.length + 1)));
+    // compare docs/v6.4 and docs with /docs/v6.4/foo and /docs/foo
+    const newSidebar = flattenSidebar(sidebarConfig[`/${newValue}/`] ?? [])
+        .filter(({link}) => link && link !== '#' && relativePath.startsWith(link.substring(newValue.length + 1)));
 
-        // prioritize longer links
-        const newLinks = newSidebar
-            .sort((a, b) => {
-                if (a.link.length > b.link.length) {
-                    return -1;
-                } else if (a.link.length < b.link.length) {
-                    return 1;
-                }
+    // prioritize longer links
+    const newLinks = newSidebar
+        .sort((a, b) => {
+            if (a.link.length > b.link.length) {
+                return -1;
+            } else if (a.link.length < b.link.length) {
+                return 1;
+            }
 
-                return 0;
-            });
+            return 0;
+        });
 
-        const link = newLinks[0]?.link ?? ('/' + newValue + '/');
-        router.go(link);
-    }
-)
+    const link = newLinks[0]?.link ?? ('/' + newValue + '/');
+    router.go(link);
+
+    oldValue.value = newValue;
+}
 </script>
