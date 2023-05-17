@@ -77,6 +77,23 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
 
         // @ts-expect-error vue-tsc thinks this should return Vue JSX but it returns the required React one
         hitComponent({ hit, children }) {
+            const hitPoint = getEmbeddingPoint(theme.value?.swag?.embeds ?? [], hit.url);
+
+            // add the label
+            if (children?.props?.children[1]?.props?.children.length) {
+                children.props.children[1].props.children.push({
+                    __v: null,
+                    type: 'span',
+                    ref: undefined,
+                    constructor: undefined,
+                    key: undefined,
+                    props: {
+                        class: 'DocSearch-Hit-label',
+                        children: [hitPoint.repository, hitPoint.branch].join('@'),
+                    }
+                });
+            }
+
             return {
                 __v: null,
                 type: 'a',
@@ -114,3 +131,27 @@ function getRelativePath(absoluteUrl: string) {
 <template>
     <div id="docsearch" />
 </template>
+
+<style lang="scss">
+/*.DocSearch-Hit-Container {
+    height: auto;
+    padding: calc(var(--docsearch-spacing) / 3) var(--docsearch-spacing) calc(var(--docsearch-spacing) / 3) 0;
+}*/
+
+.DocSearch-Hit-content-wrapper {
+    flex-direction: row;
+    align-items: center;
+    place-content: flex-start;
+    gap: .5rem;
+}
+
+.DocSearch-Hit-label {
+    font-size: 12px;
+    font-weight: normal;
+    padding: .125rem .25rem;
+    background-color: var(--docsearch-highlight-color);
+    color: var(--docsearch-hit-active-color);
+    align-self: flex-start;
+    border-radius: .125rem;
+}
+</style>
