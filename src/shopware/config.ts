@@ -21,6 +21,11 @@ export interface SwagEmbedsConfig {
   folder: string
 }
 
+export interface SwagSectionsConfig {
+  title: string
+  matches: string[]
+}
+
 export interface SwagSimilarArticlesConfig {
   host: string
   filter: {
@@ -47,6 +52,7 @@ export interface SwagConfig {
   related?: boolean
   nav?: SwagNavConfig
   embeds?: SwagEmbedsConfig[]
+  sections?: SwagSectionsConfig[]
   similarArticles?: SwagSimilarArticlesConfig
   versionSwitcher?: SwagVersionSwitcherConfig
   colorCoding?: SwagColorCodingConfig[]

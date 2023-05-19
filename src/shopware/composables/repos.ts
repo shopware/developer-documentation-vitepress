@@ -1,3 +1,5 @@
+import {SwagSectionsConfig} from "../config";
+
 export const getEmbeddingPoint = (embeds, routePath) => {
     const repository = embeds.find(embed => Object.keys(embed.points).find(point => routePath.startsWith(point)));
     if (!repository) {
@@ -18,6 +20,10 @@ export const getEmbeddingPoint = (embeds, routePath) => {
         dst: point,
         hasMultiple: Object.keys(repository.points).length > 1,
     };
+}
+
+export const getSection = (sections: SwagSectionsConfig[], routePath: string): string => {
+    return sections.find((section: SwagSectionsConfig) => section.matches.find(match => routePath.startsWith(match)))?.title || 'Documentation';
 }
 
 export const getEditLink = ({relativePath, embeds}: { relativePath: string, embeds: [] }) => {
