@@ -16,6 +16,146 @@
   /* Colors */
   --vp-code-line-highlight-color: rgba(0, 0, 0, 0.5);
 
+  /* shopware design system */
+  /* https://brand.shopware.com/d/4sqe4JPrMHUU/design-guidelines#/basics/colors */
+  /* primary colors */
+  --sw-c-blue-light: #E3F3FF;
+  --sw-c-blue-brand: #189EFF;
+  --sw-c-blue-vivacious: #0870FF;
+  --sw-c-blue-dark: #0B539B;
+  --sw-c-blue-: #06325F;
+
+  /* secondary colors */
+  --sw-c-cyan-green: #57D9A3;
+  --sw-c-purple-soft: #A092F0;
+  --sw-c-cyan-soft: #6AD6F0;
+  --sw-c-pink-light: #FF85C2;
+  --sw-c-orange-: #F88962;
+  --sw-c-yellow: #FFD700;
+
+  /* alternative colors */
+  --sw-c-concrete-900: rgb(186,186,186);
+
+  --sw-c-blue-vivacious-50: rgb(227,243,255);
+  --sw-c-blue-vivacious-100: rgb(186,226,255);
+  --sw-c-blue-vivacious-200: rgb(140,207,255);
+  --sw-c-blue-vivacious-300: rgb(93,187,255);
+  --sw-c-blue-vivacious-400: rgb(59,173,255);
+  --sw-c-blue-vivacious-500: rgb(24,158,255);
+  --sw-c-blue-vivacious-600: rgb(21,150,255);
+  --sw-c-blue-vivacious-700: rgb(17,140,255);
+  --sw-c-blue-vivacious-800: rgb(14,130,255);
+  --sw-c-blue-vivacious-900: rgb(8,112,255);
+
+  --sw-c-blue-dark-50: rgb(231,241,252);
+  --sw-c-blue-dark-100: rgb(207,228,248);
+  --sw-c-blue-dark-200: rgb(183,214,245);
+  --sw-c-blue-dark-300: rgb(111,173,235);
+  --sw-c-blue-dark-400: rgb(63,145,229);
+  --sw-c-blue-dark-500: rgb(15,118,222);
+  --sw-c-blue-dark-600: rgb(14,106,200);
+  --sw-c-blue-dark-700: rgb(12,94,178);
+  --sw-c-blue-dark-800: rgb(11,83,155);
+  --sw-c-blue-dark-900: rgb(9,71,133);
+
+  --sw-c-gray-dark-50: rgb(102,127,153);
+  --sw-c-gray-dark-100: rgb(92,115,138);
+  --sw-c-gray-dark-200: rgb(82,102,122);
+  --sw-c-gray-dark-300: rgb(71,89,107);
+  --sw-c-gray-dark-400: rgb(61,76,92);
+  --sw-c-gray-dark-500: rgb(51,64,77);
+  --sw-c-gray-dark-600: rgb(41,51,61);
+  --sw-c-gray-dark-700: rgb(31,38,46);
+  --sw-c-gray-dark-800: rgb(20,25,31);
+  --sw-c-gray-dark-900: rgb(10,13,15);
+
+  --sw-c-gray-50: rgb(249,250,251);
+  --sw-c-gray-100: rgb(240,242,245);
+  --sw-c-gray-200: rgb(224,230,235);
+  --sw-c-gray-300: rgb(209,217,224);
+  --sw-c-gray-400: rgb(194,204,214);
+  --sw-c-gray-500: rgb(179,191,204);
+  --sw-c-gray-600: rgb(163,179,194);
+  --sw-c-gray-700: rgb(148,166,184);
+  --sw-c-gray-800: rgb(133,153,173);
+  --sw-c-gray-900: rgb(117,140,163);
+
+  @soft-cyan-lime-green: rgb(87,217,163);
+  @very-blue: rgb(160,146,240);
+  @soft-cyan: rgb(106,214,240);
+  @very-light-pink: rgb(255,133,194);
+  @soft-orange: rgb(248,137,98);
+  @pure-yellow: rgb(255,215,0);
+
+  --sw-c-green-50: rgb(235,250,244);
+  --sw-c-green-100: rgb(205,244,227);
+  --sw-c-green-200: rgb(171,236,209);
+  --sw-c-green-300: rgb(137,228,191);
+  --sw-c-green-400: rgb(112,223,177);
+  --sw-c-green-500: rgb(87,217,163);
+  --sw-c-green-600: rgb(79,213,155);
+  --sw-c-green-700: rgb(70,207,145);
+  --sw-c-green-800: rgb(60,202,136);
+  --sw-c-green-900: rgb(44,192,119);
+
+  --sw-c-purple-50: rgb(244,242,253);
+  --sw-c-purple-100: rgb(227,222,251);
+  --sw-c-purple-200: rgb(208,201,248);
+  --sw-c-purple-300: rgb(189,179,245);
+  --sw-c-purple-400: rgb(174,162,242);
+  --sw-c-purple-500: rgb(160,146,240);
+  --sw-c-purple-600: rgb(152,138,238);
+  --sw-c-purple-700: rgb(142,127,236);
+  --sw-c-purple-800: rgb(132,117,233);
+  --sw-c-purple-900: rgb(115,99,229);
+
+  --sw-c-cyan-50: rgb(237,250,253);
+  --sw-c-cyan-100: rgb(210,243,251);
+  --sw-c-cyan-200: rgb(181,235,248);
+  --sw-c-cyan-300: rgb(151,226,245);
+  --sw-c-cyan-400: rgb(128,220,242);
+  --sw-c-cyan-500: rgb(106,214,240);
+  --sw-c-cyan-600: rgb(98,209,238);
+  --sw-c-cyan-700: rgb(87,204,236);
+  --sw-c-cyan-800: rgb(77,198,233);
+  --sw-c-cyan-900: rgb(60,188,229);
+
+  --sw-c-pink-50: rgb(255,240,248);
+  --sw-c-pink-100: rgb(255,218,237);
+  --sw-c-pink-200: rgb(255,194,225);
+  --sw-c-pink-300: rgb(255,170,212);
+  --sw-c-pink-400: rgb(255,151,203);
+  --sw-c-pink-500: rgb(255,133,194);
+  --sw-c-pink-600: rgb(255,125,188);
+  --sw-c-pink-700: rgb(255,114,180);
+  --sw-c-pink-800: rgb(255,104,172);
+  --sw-c-pink-900: rgb(255,85,159);
+
+  --sw-c-orange-50: rgb(254,241,236);
+  --sw-c-orange-100: rgb(253,220,208);
+  --sw-c-orange-200: rgb(252,196,177);
+  --sw-c-orange-300: rgb(250,172,145);
+  --sw-c-orange-400: rgb(249,155,122);
+  --sw-c-orange-500: rgb(248,137,98);
+  --sw-c-orange-600: rgb(247,129,90);
+  --sw-c-orange-700: rgb(246,118,80);
+  --sw-c-orange-800: rgb(245,108,70);
+  --sw-c-orange-900: rgb(243,89,52);
+
+  --sw-c-yellow-50: rgb(255,250,224);
+  --sw-c-yellow-100: rgb(255,243,179);
+  --sw-c-yellow-200: rgb(255,235,128);
+  --sw-c-yellow-300: rgb(255,227,77);
+  --sw-c-yellow-400: rgb(255,221,38);
+  --sw-c-yellow-500: rgb(255,215,0);
+  --sw-c-yellow-600: rgb(255,211,0);
+  --sw-c-yellow-700: rgb(255,205,0);
+  --sw-c-yellow-800: rgb(255,199,0);
+  --sw-c-yellow-900: rgb(255,190,0);
+
+  /* typography */
+  /* https://brand.shopware.com/d/4sqe4JPrMHUU/design-guidelines#/basics/typography */
+  /* see fonts.css */
 }
 
 /**
