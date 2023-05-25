@@ -6,11 +6,6 @@ import {withConfigProvider} from '../shopware/composables/config'
 import {h} from 'vue'
 
 /**
- * Make Algolia InstantSearch globally available.
- */
-import InstantSearch from 'vue-instantsearch/vue3/es';
-
-/**
  * Component that we want to make globally available.
  */
 import PageRef from "./../shopware/components/PageRef.vue";
@@ -71,8 +66,6 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
     })(),
     //NotFound: VPNotFound,
     enhanceApp({app, router, siteData}) {
-        app.use(InstantSearch);
-
         // app.component('ActionItem', ActionItem),
         // app.component('RegistrationForm', RegistrationForm),
         // app.component('LandingWrapper', LandingWrapper),
