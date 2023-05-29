@@ -122,4 +122,11 @@ main :not(.grid) > .PageRef {
             --btn-color--hover: white;
         }
     }
+
+    &.--transparent {
+        --btn-bg: transparent;
+        --btn-bg--hover: transparent;
+        --btn-color: var(--sw-c-gray-dark-100);
+        --btn-color--hover: var(--sw-c-gray-dark-200);
+    }
 }
