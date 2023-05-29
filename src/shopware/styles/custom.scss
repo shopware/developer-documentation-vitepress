@@ -4,13 +4,29 @@
 }
 
 .c-any-card {
-    @apply shadow-md bg-#fdfdfd transition transition-all;
+    //@apply shadow-md bg-#fdfdfd transition transition-all;
+    @apply bg-#fff transition transition-all;
     @apply hover:shadow-lg hover:border-#e8e8e8;
-    @apply dark:border-#444 dark:bg-#333;
+    //@apply dark:border-#444 dark:bg-#333;
+    @apply dark:border-#444;
     @apply hover:dark:border-#333 hover:dark:bg-#272727;
+
+    //border: 1px solid #ececec;
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
+
+    &:hover {
+        box-shadow: 0 10px 32px -8px rgb(0 0 0 / 25%);
+    }
+    .dark & {
+        background-color: var(--sw-c-gray-dark-600);
+        &:hover {
+            background-color: var(--sw-c-gray-dark-500);
+        }
+    }
 }
 
 .accent {
+    //background: linear-gradient(180deg, #0094ff 32.29%, #bbe2ff);
     background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
     background-clip: text;
     -webkit-background-clip: text;
@@ -37,4 +53,41 @@ main:has(.vp-doc > div:empty) {
 
 main :not(.grid) > .PageRef {
     padding-bottom: 1.5rem;
+}
+
+.font-poppins {
+    font-family: 'Poppins'
+}
+
+.btn,
+.vp-doc .btn {
+    @apply text-sm font-medium transition transition-all;
+    @apply bg-blue text-white px-6 py-3;
+    @apply rounded-sm;
+    @apply font-normal;
+    @apply no-underline;
+
+    color: white;
+    background-color: var(--sw-c-blue-brand); // 500
+    font-weight: 400 !important;
+
+    &:hover {
+        background-color: var(--sw-c-blue-vivacious-700);
+        text-decoration: none;
+    }
+
+    &.--secondary {
+        background-color: var(--sw-c-blue-vivacious-50);
+        color: var(--sw-c-blue-brand); // 500
+        &:hover {
+            background-color: var(--sw-c-blue-vivacious-100);
+        }
+        .dark & {
+            background-color: var(--sw-c-blue-dark-800);
+            color: white;
+            &:hover {
+                background-color: var(--sw-c-blue-dark-700);
+            }
+        }
+    }
 }

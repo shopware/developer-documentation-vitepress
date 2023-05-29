@@ -18,8 +18,15 @@ onMounted(() =>
 );
 </script>
 
+<style lang="scss">
+.Tab_slot {
+  @apply px-5 pt-3 pb-1;
+  background-color: var(--sw-sidebar-bg);
+}
+</style>
+
 <template>
-    <div v-if="isActive" class="px-5 pt-3 pb-1 bg-gray-100 dark:bg-#313131">
+    <div v-if="isActive" class="Tab_slot">
         <slot></slot>
     </div>
 </template>

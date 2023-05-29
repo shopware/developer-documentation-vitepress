@@ -13,10 +13,10 @@
         </a>
       </div>-->
       <div class="p-4">
-          <div class="mb-2 tracking-tight dark:text-white">
+          <div class="SwagLandingCard_title">
             <slot name="title">{{ title }}</slot>
           </div>
-        <div class="mt-2 text-gray font-normal text-xs block">
+        <div class="SwagLandingCard_description">
           <slot name="sub">{{ sub }}</slot>
         </div>
       </div>
@@ -38,6 +38,16 @@
     .SwagLandingCard_icon {
       background-color: var(--c-link--hover);
     }
+  }
+
+  &_title {
+    @apply mb-2 tracking-tight;
+    @apply font-normal;
+  }
+
+  &_description {
+    @apply mt-2 font-light text-sm block;
+    color: var(--c-text-light);
   }
 }
 </style>
