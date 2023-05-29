@@ -4,10 +4,22 @@
 }
 
 .c-any-card {
-    @apply shadow-md bg-#fdfdfd transition transition-all;
+    @apply bg-#fff transition transition-all;
     @apply hover:shadow-lg hover:border-#e8e8e8;
-    @apply dark:border-#444 dark:bg-#333;
-    @apply hover:dark:border-#333 hover:dark:bg-#272727;
+    @apply dark:border-#444;
+    @apply hover:dark:border-#333;
+
+    box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
+
+    &:hover {
+        box-shadow: 0 10px 32px -8px rgb(0 0 0 / 25%);
+    }
+    .dark & {
+        background-color: var(--sw-c-gray-dark-600);
+        &:hover {
+            background-color: var(--sw-c-gray-dark-500);
+        }
+    }
 }
 
 .accent {
@@ -37,4 +49,8 @@ main:has(.vp-doc > div:empty) {
 
 main :not(.grid) > .PageRef {
     padding-bottom: 1.5rem;
+}
+
+.font-poppins {
+    font-family: 'Poppins'
 }

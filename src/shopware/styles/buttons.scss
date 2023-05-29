@@ -1,0 +1,75 @@
+.btn,
+.vp-doc .btn {
+    @apply transition transition-all rounded-sm font-normal no-underline;
+
+    --btn-color: white;
+    --btn-color--hover: white;
+    --btn-bg: var(--sw-c-blue-brand);
+    --btn-bg--hover: var(--sw-c-blue-vivacious-700);
+
+    color: var(--btn-color);
+    background-color: var(--btn-bg);
+    font-weight: 400 !important;
+
+    &:hover {
+        color: var(--btn-color--hover);
+        background-color: var(--btn-bg--hover);
+        text-decoration: none;
+    }
+
+    // size variations
+    @apply text-sm px-6 py-3;
+    &.--xs {
+        @apply text-xs px-4 py-2;
+    }
+    &.--sm {
+        @apply text-sm px-6 py-3;
+    }
+    &.--md {
+        @apply text-md px-8 py-4;
+    }
+    &.--lg {
+        @apply text-lg px-10 py-5;
+    }
+    &.--xl {
+        @apply text-xl px-12 py-6;
+    }
+
+    // color variations
+    &.--secondary {
+        --btn-bg: var(--sw-c-blue-vivacious-50);
+        --btn-bg--hover: var(--sw-c-blue-vivacious-100);
+        --btn-color: var(--sw-c-blue-brand);
+        --btn-color--hover: var(--sw-c-blue-brand);
+        .dark & {
+            --btn-bg: var(--sw-c-blue-dark-800);
+            --btn-bg--hover: var(--sw-c-blue-dark-700);
+            --btn-color: white;
+            --btn-color--hover: white;
+        }
+    }
+
+    &.--subtle {
+        --btn-bg: var(--sw-c-gray-100);
+        --btn-bg--hover: var(--sw-c-gray-200);
+        --btn-color: var(--sw-c-gray-dark-100);
+        --btn-color--hover: var(--sw-c-gray-dark-200);
+        .dark & {
+            --btn-bg: var(--sw-c-gray-dark-600);
+            --btn-bg--hover: var(--sw-c-gray-dark-500);
+            --btn-color: white;
+            --btn-color--hover: white;
+        }
+    }
+
+    &.--transparent {
+        --btn-bg: transparent;
+        --btn-bg--hover: transparent;
+        --btn-color: var(--sw-c-gray-dark-100);
+        --btn-color--hover: var(--sw-c-gray-dark-200);
+        .dark & {
+            --btn-color: var(--sw-c-gray-100);
+            --btn-color--hover: var(--sw-c-gray-200);
+        }
+    }
+}

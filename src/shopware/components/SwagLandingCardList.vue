@@ -36,6 +36,10 @@ const props = defineProps({
     content: '';
     display: block;
     @apply bg-#f5f7f9 dark:bg-#1e1e20;
+    background-color: var(--sw-c-gray-50);
+    .dark & {
+      background-color: var(--sw-c-gray-dark-800);
+    }
   }
 
   &.--alternative {

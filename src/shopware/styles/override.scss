@@ -8,25 +8,20 @@
   --c-white-100: #f5f7f9;
   --c-white-200: #d3dce4;
 
-  // range from 225-30
-  @for $i from 0 through 20 {
-    --c-gray-#{calc($i*50)}: rgb(#{calc(195 / 20 * (20 - $i) + 30)}, #{calc(195 / 20 * (20 - $i) + 30)}, #{calc(195 / 20 * (20 - $i) + 30)});
-  }
-
   --c-black-1000: #000;
   --c-exposed: #cce0ff;
 }
 
 :root {
   --sw-nav-bg: var(--c-blue-dark);
-  --sw-sidebar-bg: var(--c-white-100);
-  --sw-sidebar-border: var(--c-white-200);
+  --sw-sidebar-bg: var(--sw-c-gray-100);
+  --sw-sidebar-border: var(--sw-c-gray-200);
   --sw-brand: var(--c-blue-brand);
 
   --vt-c-brand: var(--c-blue-brand);
   --vp-c-brand-dark: var(--sw-nav-bg);
 
-  --vp-c-text-2: var(--c-gray-300);
+  --vp-c-text-2: var(--sw-c-gray-900);
 
   --vp-nav-bg-color: var(--sw-nav-bg);
   --vp-c-brand: var(--sw-brand);
@@ -36,16 +31,16 @@
   --vp-nav-height: 80px;
   --vp-custom-block-info-text: var(--sw-nav-bg);
 
-  --sidebar-link-color: var(--c-gray-500);
-  --sidebar-link-color--dark: var(--vp-c-text-2);
+  --sidebar-link-color: var(--sw-c-gray-dark-200);
 
   --sw-outline-link: rgba(60, 60, 60, .333);
   --sw-sidebar-link-color: var(--c-blue-dark2);
-  --sw-sidebar-heading-color: var(--vp-c-text-1);
-  --vp-c-divider: var(--c-gray-0);
+  --sw-sidebar-heading-color: var(--sw-c-gray-600);
+  --vp-c-divider: var(--sw-c-gray-200);
 
-  --c-text: var(--c-gray-500);
-  --c-text-100: var(--c-gray-500);
+  --c-text: var(--sw-c-gray-dark-500);
+  --c-text-light: var(--sw-c-gray-dark-100);
+  --c-text-100: var(--sw-c-gray-500);
 
   --c-link: var(--c-blue-brand);
   --c-link--hover: var(--c-blue-brand-dark);
@@ -54,40 +49,59 @@
   --vp-c-bg-soft: rgba(226, 232, 240, 1);
   --vp-c-bg-soft-mute: rgba(226, 232, 240, 1);
 
-  --sw-heading-divider: var(--c-gray-600);
-  --sw-submenu-divider: var(--c-gray-0);
+  --sw-heading-divider: var(--sw-c-gray-600);
+  --sw-submenu-divider: var(--sw-c-gray-100);
+
+  --vp-code-block-bg: var(--sw-c-gray-dark-750);
 }
 
 html.dark {
-  --sidebar-link-color: var(--sidebar-link-color--dark);
-  --vp-c-text-1: var(--sidebar-link-color--dark);
+  --sidebar-link-color: var(--sw-c-gray-600);
   --vp-c-text-1: #ccc;
 
-  --vp-c-bg: var(--c-gray-1000);
-  --vp-c-bg-soft: var(--c-gray-950);
+  --vp-c-bg: var(--sw-c-gray-dark-750);
+  --vp-c-bg-soft: var(--sw-c-gray-dark-600);
+  --vp-c-bg-soft-up: var(--sw-c-gray-dark-800);
 
-  --sw-nav-bg: var(--vp-c-bg);
+  --sw-nav-bg: var(--sw-c-gray-dark-800);
+  --vp-nav-bg-color: var(--sw-c-gray-dark-800);
 
   --sw-sidebar-bg: var(--vp-c-bg);
-  --vp-sidebar-bg-color: var(--c-gray-1000);
-  --sw-sidebar-link-color: var(--c-gray-150);
-  --sw-sidebar-heading-color: var(--c-gray-600);
-  --sw-sidebar-border: var(--c-gray-900);
+  --vp-sidebar-bg-color: var(--sw-c-gray-dark-800);
+  --sw-sidebar-link-color: var(--sw-c-gray-200);
+  --sw-sidebar-heading-color: var(--sw-c-gray-dark-300);
+  --sw-sidebar-border: var(--sw-c-gray-dark-700);
 
-  --sw-heading-divider: var(--c-gray-850);
+  --sw-heading-divider: var(--sw-c-gray-850);
 
-  --sw-outline-link: var(--c-gray-300);
-  --vp-c-divider: var(--c-gray-900);
-  --vp-c-gutter: var(--c-gray-900);
+  --sw-outline-link: var(--sw-c-gray-300);
+  --vp-c-divider: var(--sw-c-gray-dark-700);
+  --vp-c-gutter: var(--sw-c-gray-dark-600);
 
   --vp-custom-block-info-text: var(--vp-c-text-2);
 
-  --c-text: var(--c-gray-150);
+  --c-text: var(--sw-c-gray-50);
+  --c-text-light: var(--sw-c-gray-400);
   --c-heading-sub: #ddd;
-  --c-exposed: var(--c-gray-800);
+  --c-exposed: var(--sw-c-gray-800);
 
-  --vp-c-bg-soft-mute: var(--c-gray-1000);
-  --sw-submenu-divider: var(--c-gray-900);
+  --vp-c-bg-soft-mute: var(--sw-c-gray-dark-700);
+  --sw-submenu-divider: var(--sw-c-gray-dark-600);
+
+  --vp-c-bg-elv: var(--sw-c-gray-dark-800);
+  --vp-local-nav-bg-color: var(--sw-c-gray-dark-800);
+
+  --vp-code-block-bg: var(--sw-c-gray-dark-800);
+}
+
+body {
+  font-family: "HVD Fonts - BrandonText";
+  font-weight: 300;
+  color: var(--c-text);
+}
+
+h1 {
+  font-size: clamp(35px, 5.5vw, 74px);
 }
 
 .VPMenu {
@@ -103,8 +117,8 @@ html.dark {
 
   .VPNavBarMenuLink,
   .VPNavBarMenuGroup .text {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
   }
 
   .icon svg {
@@ -155,9 +169,6 @@ html.dark {
 }
 
 .nav .VPSidebarItem {
-  //--vp-c-text-2: var(--vp-c-text-1);
-  //--vp-c-text-1: #213547;
-
   --vp-c-text-1: var(--vp-c-text);
   --vp-c-text-2: var(--vp-c-text);
 
@@ -172,7 +183,8 @@ html.dark {
   &.level-1 .text {
     color: var(--sidebar-link-color);
     text-transform: none;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 14px;
   }
 }
 
@@ -200,7 +212,7 @@ html.dark {
     color: var(--sw-sidebar-link-color);
     font-size: 13px;
     line-height: 26px;
-    font-weight: normal;
+    font-weight: 200;
   }
 }
 
@@ -227,7 +239,7 @@ html.dark {
   }
 }
 
-.vp-doc a,
+.vp-doc a:not(.btn),
 .prev-next a,
 .edit-info .edit-link-button,
 .edit-info a,
@@ -241,13 +253,21 @@ html.dark {
   }
 }
 
+.vp-doc a[class] {
+  // reset
+  font-weight: inherit;
+}
+
 .prev-next a:hover .title {
   color: var(--c-blue-brand-dark);
 }
 
 .VPContent {
   overflow-x: hidden;
-  @apply bg-white dark:bg-#222;
+  @apply bg-white;
+  .dark & {
+    background-color: var(--sw-c-gray-dark-750);
+  }
 }
 
 .unstyled {

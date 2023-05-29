@@ -11,10 +11,10 @@
           <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
         </div>
         <div class="flex-1">
-          {{ title }}
+          <span class="PageRef_title">{{ title }}</span>
           <div
             v-if="sub?.length > 0"
-            class="PageRef_sub mt-2 text-gray font-normal text-xs block"
+            class="PageRef_sub mt-2 font-light text-sm block"
           >
             {{ sub }}
           </div>
@@ -32,6 +32,12 @@
     &:hover {
       color: var(--c-link--hover)
     }
+  }
+  &_title {
+    @apply font-normal;
+  }
+  &_sub {
+    color: var(--c-text-light);
   }
 }
 </style>

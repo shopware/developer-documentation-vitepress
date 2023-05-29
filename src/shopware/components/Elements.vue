@@ -34,6 +34,18 @@
             <PageRef :title="loremWords()" :sub="loremSentences(1)" page="/" />
 
             <p>{{ loremSentences() }}</p>
+
+          <a href="#">Standard link</a>
+          <a href="#" class="btn">Default button</a>
+          <a href="#" class="btn --primary">Primary button</a>
+          <a href="#" class="btn --secondary">Secondary button</a>
+          <a href="#" class="btn --subtle">Subtle button</a>
+          <a href="#" class="btn --transparent">Transparent button</a>
+          <a href="#" class="btn --xs">Extra-small button</a>
+          <a href="#" class="btn --sm">Small button</a>
+          <a href="#" class="btn --md">Medium button</a>
+          <a href="#" class="btn --lg">Large button</a>
+          <a href="#" class="btn --xl">Extra-large button</a>
         </div>
     </main>
 </template>
