@@ -12,6 +12,7 @@ import '../node_modules/vitepress/dist/client/theme-default/styles/components/vp
 
 // add shopware styles
 import '../src/shopware/styles/fonts.css'
+import '../src/shopware/styles/fonts-brandon.css'
 import '../src/shopware/styles/variables.css'
 import '../src/shopware/styles/override.scss'
 import '../src/shopware/styles/custom.scss'

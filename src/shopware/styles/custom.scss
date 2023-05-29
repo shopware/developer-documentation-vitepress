@@ -128,5 +128,9 @@ main :not(.grid) > .PageRef {
         --btn-bg--hover: transparent;
         --btn-color: var(--sw-c-gray-dark-100);
         --btn-color--hover: var(--sw-c-gray-dark-200);
+        .dark & {
+            --btn-color: var(--sw-c-gray-100);
+            --btn-color--hover: var(--sw-c-gray-200);
+        }
     }
 }
