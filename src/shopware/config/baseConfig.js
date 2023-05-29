@@ -78,7 +78,11 @@ module.exports = async () => ({
       ),
     ],
     define: {
-      __VUE_OPTIONS_API__: false,
+      /**
+       * Vue options API is required for Algolia search page to work.
+       * Algolia modal works regardless of this option.
+       */
+      __VUE_OPTIONS_API__: true,
     },
     server: {
       host: true,

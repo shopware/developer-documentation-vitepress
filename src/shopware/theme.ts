@@ -5,7 +5,6 @@ import Theme from 'vitepress/theme'
 import {withConfigProvider} from '../shopware/composables/config'
 import {h} from 'vue'
 
-
 /**
  * Component that we want to make globally available.
  */
