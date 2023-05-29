@@ -1,12 +1,13 @@
 <style lang="scss">
 .SwagFooter {
-  color: var(--sw-c-gray-600);
+  color: var(--sw-c-gray-500);
   font-weight: 400;
 
   &_first {
     @apply grid gap-8 pt-24 pb-12;
     background-color: var(--sw-c-blue-midnight);
     background-color: #142332;
+
     .dark & {
       background-color: var(--sw-c-gray-dark-800);
     }
@@ -15,6 +16,7 @@
   &_second {
     @apply py-8;
     background-color: #101d29;
+
     .dark & {
       background-color: var(--sw-c-gray-dark-700);
     }
@@ -72,7 +74,7 @@
 </style>
 
 <template>
-  <div class="SwagFooter">
+  <div class="SwagFooter" v-if="route.path === '/'">
     <div class="SwagFooter_first">
       <div class="container">
         <div class="SwagFooter_columns">
@@ -103,7 +105,7 @@
     </div>
     <div class="SwagFooter_second grid gap-4">
 
-      <VPNavBarSocialLinks class="SwagFooter_links" />
+      <VPNavBarSocialLinks class="SwagFooter_links"/>
 
       <ul class="flex gap-6 justify-center text-sm">
         <li>
@@ -124,10 +126,12 @@
   </div>
 </template>
 <script lang="ts" setup>
-import VPNavBarSocialLinks from "../../../node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
-import {useData} from "vitepress";
+import VPNavBarSocialLinks
+  from "../../../node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
+import {useData, useRoute} from "vitepress";
 
-const { theme } = useData()
+const {theme} = useData();
+const route = useRoute();
 
 const footers = [
   {
