@@ -7,7 +7,7 @@
     @apply bg-#fff transition transition-all;
     @apply hover:shadow-lg hover:border-#e8e8e8;
     @apply dark:border-#444;
-    @apply hover:dark:border-#333 hover:dark:bg-#272727;
+    @apply hover:dark:border-#333;
 
     box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
 
@@ -23,7 +23,6 @@
 }
 
 .accent {
-    //background: linear-gradient(180deg, #0094ff 32.29%, #bbe2ff);
     background: -webkit-linear-gradient(left, #017bff 15%, #01cfff, #017bff);
     background-clip: text;
     -webkit-background-clip: text;
