@@ -70,12 +70,16 @@ export const useData = () => {
     };
 }
 
-export const useRoute = () => ({
+const mockedRoutes = [{
     path: '/my/route.html',
     data: {
         relativePath: 'my/route.md',
     }
-})
+}];
+export const useRoute = () => mockedRoutes[0]
+
+export const mockRoute = (route) => mockedRoutes.unshift(route);
+export const unmockRoute = () => mockedRoutes.shift()
 
 export const useRouter = () => ({})
 

@@ -26,7 +26,9 @@ export const render = (Component, config: {
     template?: string,
     slot?: string,
     unstyled?: boolean,
-    rootClass?: string | null
+    rootClass?: string | null,
+    beforeMount?: Function,
+    unmounted?: Function,
 } = {}) => {
     return (args: any) => ({
         components: {
@@ -41,6 +43,8 @@ export const render = (Component, config: {
                 mockOptions: mockOptions || {}
             }
         },
+        beforeMount: config.beforeMount ?? (() => null),
+        unmounted: config.unmounted ?? (() => null),
         template: config.template || template(Component, config.slot, config.unstyled, typeof config.rootClass === 'undefined' ? 'vp-doc' : config.rootClass)
     })
 }
