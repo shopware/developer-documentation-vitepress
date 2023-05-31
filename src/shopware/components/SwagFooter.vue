@@ -137,83 +137,22 @@ const footers = [
     title: 'Product',
     items: [
       {
-        title: 'Product Tour',
+        title: 'Extensions',
       },
       {
-        title: 'Shopware Cloud',
+        title: 'Headless Storefront',
       },
       {
-        title: 'Technologies',
+        title: 'APIs',
       },
       {
-        title: 'Roadmap',
-      },
-      {
-        title: 'Migration',
-      },
-      {
-        title: 'AI ecommerce',
-      },
-      {
-        title: 'Spatial commerce',
-      },
-      {
-        title: 'Guided Shopping',
-      },
-      {
-        title: 'Flow Builder',
-      },
-      {
-        title: 'Rule Builder',
+        title: 'SDKs',
       },
       {
         title: 'B2B Suite',
       },
       {
-        title: 'Shopping Experiences',
-      },
-    ]
-  },
-  {
-    title: 'Solutions',
-    items: [
-      {
-        title: 'B2B',
-      },
-      {
-        title: 'Omnichannel',
-      },
-      {
-        title: 'Headless Commerce',
-      },
-      {
-        title: 'Automation',
-      },
-      {
-        title: 'Shopware Frontends',
-      },
-      {
-        title: 'Fashion',
-      },
-      {
-        title: 'Food',
-      },
-      {
-        title: 'Interior',
-      },
-    ]
-  },
-  {
-    title: 'Customers',
-    items: [
-      {
-        title: 'Brands',
-      },
-      {
-        title: 'Case Studies',
-      },
-      {
-        title: 'Showcases',
+        title: 'AI ecommerce',
       },
     ]
   },
@@ -221,60 +160,70 @@ const footers = [
     title: 'Resources',
     items: [
       {
-        title: 'Webinars',
+        title: 'E-commerce knowledge',
       },
       {
-        title: 'Webinars & livestreams'
+        title: 'Training & Certification',
       },
       {
-        title: 'Forums',
+        title: 'User Documentation',
       },
       {
-        title: 'Documentation',
+        title: 'Design documentation',
       },
       {
-        title: 'Gartner',
-      },
-      {
-        title: 'Forrester',
-      },
-      {
-        title: 'Find an agency partner',
-      },
-      {
-        title: 'Find a hosting partner',
-      },
-      {
-        title: 'Become a partner',
-      },
-      {
-        title: 'Ecommerce knowledge',
-      },
-      {
-        title: 'How to',
-      },
-      {
-        title: 'Voice of the customer: PhiAcademy',
-      },
-      {
-        title: 'Shopware TV',
+        title: 'Get started as developer',
       },
     ]
   },
   {
-    title: 'Community',
+    title: 'Community & Meetups',
     items: [
-      {
-        title: 'Meetups',
-      },
-      {
-        title: 'Fairs & converences',
-      },
       {
         title: 'Community Day',
       },
       {
-        title: 'Get started as developer',
+        title: 'Forum',
+      },
+      {
+        title: 'Feedback & Issues',
+      },
+      {
+        title: 'StackOverflow',
+      },
+    ]
+  },
+  {
+    title: 'GitHub Channels',
+    items: [
+      {
+        title: 'Development Template',
+      },
+      {
+        title: 'Shopware 5'
+      },
+      {
+        title: 'Shopware 6',
+      },
+      {
+        title: 'Docs to contribute',
+      },
+    ]
+  },
+  {
+    title: 'News & Updates',
+    items: [
+      {
+        title: 'Product Changelog',
+      },
+      {
+        title: 'Blog',
+      },
+      {
+        title: 'Announcements',
+      },
+      {
+        title: 'Newsletter',
       },
     ]
   }
