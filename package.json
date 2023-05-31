@@ -1,6 +1,6 @@
 {
   "name": "vitepress-shopware-docs",
-  "version": "1.0.0-beta.7",
+  "version": "1.0.0-beta.8",
   "description": "Vitepress theme for Shopware",
   "main": "src/index.ts",
   "exports": {
@@ -35,8 +35,6 @@
     "chromatic": "npx chromatic --exit-zero-on-changes"
   },
   "dependencies": {
-    "@docsearch/css": "^3.3.4",
-    "@docsearch/js": "^3.3.4",
     "@iconify-json/carbon": "^1.1.16",
     "@shopware-ag/meteor-icon-kit": "^5.1.0",
     "@stoplight/elements-dev-portal": "^1.10.0",
@@ -49,7 +47,11 @@
     "gray-matter": "^4.0.3",
     "normalize.css": "^8.0.1",
     "shiki": "^0.14.2",
-    "unocss": "^0.51.12",
+    "unocss": "^0.51.12"
+  },
+  "peerDependencies": {
+    "@docsearch/css": "^3.3.4",
+    "@docsearch/js": "^3.3.4",
     "algoliasearch": "^4.17.0",
     "instantsearch.css": "^8.0.0",
     "instantsearch.js": "^4.56.0",
@@ -91,7 +93,7 @@
     "vitest": "^0.31.0",
     "vue": "^3.3.1"
   },
-  "packageManager": "pnpm@8.1.1",
+  "packageManager": "pnpm@8.6.0",
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
