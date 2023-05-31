@@ -20,6 +20,16 @@ import { normalizeLink } from '../support/utils'
 
 export const configSymbol: InjectionKey<Ref<Config>> = Symbol('config')
 
+const requireConfig = () => {
+  let config = inject(configSymbol)
+  if (!config) {
+    const {theme} = useData()
+    config = computed(() => resolveConfig(theme.value))
+  }
+
+  return config;
+}
+
 /**
  * Wrap root App component to provide the resolved theme config
  * so that we reuse the same computed ref across the entire app instead of
@@ -29,8 +39,7 @@ export function withConfigProvider(App: Component) {
   return defineComponent({
     name: 'VPConfigProvider',
     setup(_, { slots }) {
-      const { theme } = useData()
-      const config = computed(() => resolveConfig(theme.value))
+      const config = requireConfig();
       provide(configSymbol, config)
       return () => h(App, null, slots)
     }
@@ -39,7 +48,7 @@ export function withConfigProvider(App: Component) {
 
 export function useConfig() {
   return {
-    config: inject(configSymbol)!
+    config: requireConfig()
   }
 }
 
