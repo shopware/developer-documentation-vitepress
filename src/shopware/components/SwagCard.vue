@@ -1,13 +1,13 @@
 <template>
   <a :href="page"
-     class="SwagCard c-any-card rounded-lg p-5">
+     class="SwagCard c-any-card p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
         <div class="i-carbon-model-alt h-7 w-7 text-shopware"/>
         <slot name="title"></slot>
       </span>
     </div>
-    <div class="SwagCard_description">
+    <div class="SwagCard_description c-any-card_description">
       <slot name="description"></slot>
     </div>
     <!--<p class="mt-4"><a class="text-sm" :href="link">→ learn more</a></p>-->
@@ -25,16 +25,6 @@ const props = defineProps({
 
 <style lang="scss">
 .SwagCard {
-  cursor: pointer;
   @apply flex flex-col content-start flex-wrap;
-  /*display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  flex-wrap: wrap;*/
-
-  &_description {
-    @apply text-sm;
-    color: var(--c-text-light);
-  }
 }
 </style>

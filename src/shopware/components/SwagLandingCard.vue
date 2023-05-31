@@ -1,7 +1,7 @@
 <template>
   <a :href="page" class="SwagLandingCard c-any-card">
     <div class="h-36 overflow-hidden bg-gradient-to-r" :class="gradient">
-      <img :src="image" v-if="image" class="w-full h-full object-cover" />
+      <img v-if="image" :src="image" class="w-full h-full object-cover" />
       <img src="../assets/shopware-placeholder.svg" v-else class="w-full h-full object-cover" />
     </div>
     <div class="flex items-center">
@@ -12,11 +12,11 @@
           </slot>
         </a>
       </div>-->
-      <div class="p-4">
-          <div class="SwagLandingCard_title">
-            <slot name="title">{{ title }}</slot>
-          </div>
-        <div class="SwagLandingCard_description">
+      <div class="p-4 grid gap-2">
+        <div class="SwagLandingCard_title c-any-card_title tracking-tight">
+          <slot name="title">{{ title }}</slot>
+        </div>
+        <div class="SwagLandingCard_description c-any-card_description">
           <slot name="sub">{{ sub }}</slot>
         </div>
       </div>
@@ -26,7 +26,7 @@
 
 <style lang="scss" scoped>
 .SwagLandingCard {
-  @apply border-px border-#eeeeee rounded-md flex flex-col overflow-hidden;
+  @apply flex flex-col;
 
   &_icon {
     background-color: var(--c-link);
@@ -38,16 +38,6 @@
     .SwagLandingCard_icon {
       background-color: var(--c-link--hover);
     }
-  }
-
-  &_title {
-    @apply mb-2 tracking-tight;
-    @apply font-normal;
-  }
-
-  &_description {
-    @apply mt-2 font-light text-sm block;
-    color: var(--c-text-light);
   }
 }
 </style>

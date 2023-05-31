@@ -1,46 +1,26 @@
 <template>
-  <div class="PageRef">
-    <a class="PageRef_link" :href="page" :target="target">
-      <div
-        class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4"
-      >
-        <div v-if="icon" class="flex w-14 items-center">
-          <img :src="icon" class="w-14 h-14 object-cover" />
-        </div>
-        <div v-else-if="video">
-          <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
-        </div>
-        <div class="flex-1">
-          <span class="PageRef_title">{{ title }}</span>
-          <div
-            v-if="sub?.length > 0"
-            class="PageRef_sub mt-2 font-light text-sm block"
-          >
-            {{ sub }}
-          </div>
+  <a class="PageRef" :href="page" :target="target">
+    <div
+      class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4"
+    >
+      <div v-if="icon" class="flex w-14 items-center">
+        <img :src="icon" class="w-14 h-14 object-cover" />
+      </div>
+      <div v-else-if="video">
+        <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
+      </div>
+      <div class="flex-1">
+        <span class="PageRef_title c-any-card_title">{{ title }}</span>
+        <div
+          v-if="sub?.length > 0"
+          class="PageRef_sub c-any-card_description mt-2 block"
+        >
+          {{ sub }}
         </div>
       </div>
-    </a>
-  </div>
+    </div>
+  </a>
 </template>
-
-<style lang="scss">
-.PageRef {
-  &_link {
-    color: var(--c-link);
-    font-weight: 500;
-    &:hover {
-      color: var(--c-link--hover)
-    }
-  }
-  &_title {
-    @apply font-normal;
-  }
-  &_sub {
-    color: var(--c-text-light);
-  }
-}
-</style>
 
 <script setup>
 import {useAttrs, ref} from "vue";

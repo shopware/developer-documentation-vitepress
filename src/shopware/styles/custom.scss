@@ -4,7 +4,7 @@
 }
 
 .c-any-card {
-    @apply bg-#fff transition transition-all;
+    @apply bg-#fff transition transition-all rounded-md overflow-hidden;
     @apply hover:shadow-lg hover:border-#e8e8e8;
     @apply dark:border-#444;
     @apply hover:dark:border-#333;
@@ -19,6 +19,23 @@
         &:hover {
             background-color: var(--sw-c-gray-dark-500);
         }
+    }
+    &:hover {
+        .c-any-card_title {
+            color: var(--c-link--hover)
+        }
+    }
+
+    &_title {
+        @apply font-normal;
+        color: var(--c-link);
+        font-weight: 400;
+    }
+
+    &_description {
+        @apply text-sm;
+        color: var(--c-text-light);
+        font-weight: 200;
     }
 }
 
