@@ -146,7 +146,7 @@ const breadcrumbs = computed(() => {
     }
 
     const tree = getCurrentTree(
-        sidebarConfig['/'] ?? sidebars[key],
+        /*sidebarConfig['/'] ?? */sidebars[key],
         realUrl.value
     );
 
