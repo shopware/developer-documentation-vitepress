@@ -39,6 +39,7 @@ import SwagBreadcrumbs from "./components/SwagBreadcrumbs.vue";
 import SwagAlgoliaAttributes from "./components/SwagAlgoliaAttributes.vue";
 import SwagContentMenu from "./components/SwagContentMenu.vue";
 import SwagFooter from "./components/SwagFooter.vue";
+import SwagScrollToTop from "./components/SwagScrollToTop.vue";
 
 /**
  * Import styles at the end.
@@ -62,7 +63,10 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
                     h(SwagStackOverflow),
                 ],
                 'sidebar-nav-before': () => h(SwagSidebarVersionSwitcher),
-                'layout-bottom': () => h(SwagFooter),
+                'layout-bottom': () => [
+                    h(SwagScrollToTop),
+                    h(SwagFooter)
+                ],
             }
         )
     })(),
