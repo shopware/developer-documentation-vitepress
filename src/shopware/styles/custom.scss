@@ -56,6 +56,12 @@
     &:hover {
         background: linear-gradient(225deg, #0094ff, #bbe2ff);
     }
+    .--apply-bg {
+        @apply bg-white;
+        .dark & {
+            background-color: var(--sw-c-gray-dark-750);
+        }
+    }
 }
 
 .text-subtle {
@@ -89,6 +95,14 @@
         &::before {
             background: linear-gradient(180deg, transparent, rgba(126, 255, 247, .1) 75%);
         }
+    }
+}
+
+.c-exposed {
+    @apply rounded-xl;
+    background-color: var(--sw-c-blue-vivacious-25);
+    .dark & {
+        background-color: var(--sw-c-gray-dark-800);
     }
 }
 
