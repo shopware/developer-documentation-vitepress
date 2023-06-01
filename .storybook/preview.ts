@@ -18,6 +18,7 @@ import '../src/shopware/styles/variables.css'
 import '../src/shopware/styles/override.scss'
 import '../src/shopware/styles/custom.scss'
 import '../src/shopware/styles/buttons.scss'
+import '../src/shopware/styles/forms.scss'
 //import '../src/shopware/styles/_index.scss'
 
 // add custom storybook styles

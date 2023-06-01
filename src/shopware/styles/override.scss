@@ -167,6 +167,9 @@ h1 {
   .quote {
     color: var(--c-text-100);
   }
+  .content {
+    padding-bottom: 0;
+  }
 }
 
 .nav .VPSidebarItem {
@@ -305,24 +308,28 @@ h1 {
 
   h2, h3, h4, h5, h6 {
     color: var(--c-heading-sub);
+    margin-top: 0;
   }
 
-  h1 {
+  > div > h1,
+  h1.styled {
     @apply mb-12;
     font-size: 38px;
     line-height: 1.4;
     letter-spacing: -.02em;
   }
 
-  h2 {
+  > div > h2,
+  h2.styled {
     @apply mt-16 mb-7 pt-7;
   }
 
-  h3 {
+  > div > h3,
+  h3.styled {
     @apply mt-10 mb-4 pt-4;
   }
 
-  p {
+  > div > p {
     @apply mt-0 mb-4 leading-7;
   }
 
