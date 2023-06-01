@@ -174,7 +174,7 @@ const footers = [
         url: "https://docs.shopware.com/en"
       },
       {
-        title: 'Design documentation',
+        title: 'Design Documentation',
         url: "https://shopware.design/beta/"
       },
       {
