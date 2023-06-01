@@ -96,7 +96,7 @@
             <span class="SwagFooter_heading">{{ section.title }}</span>
             <ul>
               <li v-for="item in section.items">
-                <a :href="item.href || '#'">{{ item.title }}</a>
+                <a :href="item.url || '#'" v-bind="itemProps(item)">{{ item.title }}</a>
               </li>
             </ul>
           </div>
@@ -126,11 +126,22 @@
   </div>
 </template>
 <script lang="ts" setup>
-//import VPNavBarSocialLinks from "../../../node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
+import VPNavBarSocialLinks from "../../../node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
 import {useData, useRoute} from "vitepress";
 
 const {theme} = useData();
 const route = useRoute();
+
+const itemProps = (item) => {
+  if (!(item.url?.startsWith('http://') || item.url?.startsWith('https://'))) {
+    return {};
+  }
+
+  return {
+    target: '_blank',
+    rel: 'nofollow noopener noreferrer',
+  };
+}
 
 const footers = [
   {
@@ -184,7 +195,7 @@ const footers = [
     ]
   },
   {
-    title: 'Community & Meetups',
+    title: 'Community',
     items: [
       {
         title: 'Community Day',
