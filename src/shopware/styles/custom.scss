@@ -118,7 +118,8 @@ main:has(.vp-doc > div:empty) {
 }
 
 main :not(.grid) > .PageRef {
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
 }
 
 .font-poppins {
