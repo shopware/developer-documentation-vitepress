@@ -34,8 +34,61 @@
 
     &_description {
         @apply text-sm;
+        font-size: 0.925rem;
         color: var(--c-text-light);
         font-weight: 200;
+    }
+}
+
+.c-border-gradient {
+    @apply position-relative;
+    z-index: 1;
+    overflow: visible;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: -3px;
+        background: linear-gradient(225deg, #bbe2ff, #0094ff);
+        border-radius: inherit;
+        background-clip: padding-box;
+        z-index: -1;
+    }
+    &:hover {
+        background: linear-gradient(225deg, #0094ff, #bbe2ff);
+    }
+}
+
+.text-subtle {
+    color: var(--c-text-light);
+}
+
+.c-outflow {
+    @apply position-relative;
+    z-index: 1;
+    overflow: visible;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: -100vw;
+        right: -100vw;
+        top: 0;
+        bottom: 0;
+        background-color: var(--sw-c-gray-50);
+        .dark & {
+            background-color: var(--sw-c-gray-dark-700);
+        }
+    }
+    &.--gradient {
+        &::before {
+            background-color: transparent;
+            background: linear-gradient(180deg, transparent, rgba(126, 255, 247, .1) 75%);
+        }
+    }
+    .dark &.--gradient {
+        &::before {
+            background: linear-gradient(180deg, transparent, rgba(126, 255, 247, .1) 75%);
+        }
     }
 }
 

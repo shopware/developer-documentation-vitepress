@@ -1,0 +1,31 @@
+.form-control {
+  @apply border border-solid font-normal rounded-4px text-sm px-4 py-3.5 bg-white block w-full;
+  color: var(--c-text-light);
+  font-family: "HVD Fonts - BrandonText";
+}
+
+.form-checkbox {
+  @apply w-4.5 h-4.5 text-blue-600 bg-gray-100 rounded border position-relative;
+  @apply focus:ring-blue-500 focus:ring-2;
+  @apply dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600;
+  .SwagCheckbox input:checked + label & {
+    background-color: var(--sw-c-blue-vivacious-500);
+    &::after {
+      @apply position-absolute;
+      inset: 0;
+      content: '✓';
+      color: white;
+      line-height: 1.2rem;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.form-control,
+.form-checkbox {
+  border-color: var(--sw-c-gray-300);
+  &:focus {
+    border-color: var(--sw-c-blue-vivacious-500);
+  }
+}
