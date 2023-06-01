@@ -252,9 +252,4 @@ const footers = [
     ]
   }
 ];
-
-return {
-      route,
-      footers,
-    };
 </script>
