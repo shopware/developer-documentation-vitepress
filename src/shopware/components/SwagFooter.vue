@@ -137,24 +137,83 @@ const footers = [
     title: 'Product',
     items: [
       {
-        title: 'Extensions',
-        url: "/docs/guides/plugins/"
+        title: 'Product Tour',
       },
       {
-        title: 'Headless Storefront',
-        url: https://frontends.shopware.com/
+        title: 'Shopware Cloud',
       },
       {
-        title: 'APIs',
-        url: /docs/guides/integrations-api
+        title: 'Technologies',
       },
       {
-        title: 'SDKs',
-        url: https://shopware.github.io/admin-extension-sdk/
+        title: 'Roadmap',
+      },
+      {
+        title: 'Migration',
+      },
+      {
+        title: 'AI ecommerce',
+      },
+      {
+        title: 'Spatial commerce',
+      },
+      {
+        title: 'Guided Shopping',
+      },
+      {
+        title: 'Flow Builder',
+      },
+      {
+        title: 'Rule Builder',
       },
       {
         title: 'B2B Suite',
-        url: /docs/products/extensions/b2b-suite/
+      },
+      {
+        title: 'Shopping Experiences',
+      },
+    ]
+  },
+  {
+    title: 'Solutions',
+    items: [
+      {
+        title: 'B2B',
+      },
+      {
+        title: 'Omnichannel',
+      },
+      {
+        title: 'Headless Commerce',
+      },
+      {
+        title: 'Automation',
+      },
+      {
+        title: 'Shopware Frontends',
+      },
+      {
+        title: 'Fashion',
+      },
+      {
+        title: 'Food',
+      },
+      {
+        title: 'Interior',
+      },
+    ]
+  },
+  {
+    title: 'Customers',
+    items: [
+      {
+        title: 'Brands',
+      },
+      {
+        title: 'Case Studies',
+      },
+      {
+        title: 'Showcases',
       },
     ]
   },
@@ -162,101 +221,62 @@ const footers = [
     title: 'Resources',
     items: [
       {
-        title: 'E-commerce knowledge',
-        url : https://www.shopware.com/en/ecom-knowledge/
+        title: 'Webinars',
       },
       {
-        title: 'Training & Certification',
-        url: https://www.shopware.com/en/academy/
+        title: 'Webinars & livestreams'
       },
       {
-        title: 'User Documentation',
-        url: https://docs.shopware.com/en
+        title: 'Forums',
       },
       {
-        title: 'Design documentation',
-        url: https://shopware.design/beta/
+        title: 'Documentation',
       },
       {
-        title: 'Get started as developer',
-        url: https://www.shopware.com/en/community/developers/
-      },
-    ]
-  },
-  {
-    title: 'Community & Meetups',
-    items: [
-      {
-        title: 'Community Day',
-        url: https://scd.shopware.com/en-US/en-US
+        title: 'Gartner',
       },
       {
-        title: 'Forum',
-        url: https://forum.shopware.com/?_gl=1*82v1ve*_ga*MTYwMjc5NTkyNC4xNjY1NzI1MjEw*_ga_9JLJ6GGB76*MTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAxODU5LjAuMC4w
+        title: 'Forrester',
       },
       {
-        title: 'Feedback & Issues',
-        url: https://issues.shopware.com/?_gl=1*pgdzzx*_ga*MTYwMjc5NTkyNC4xNjY1NzI1MjEw*_ga_9JLJ6GGB76*MTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAxODYyLjAuMC4w
+        title: 'Find an agency partner',
       },
       {
-        title: 'StackOverflow',
-        url: https://stackoverflow.com/
-      },
-    ]
-  },
-  {
-    title: 'GitHub Channels',
-    items: [
-      {
-        title: 'Development Template',
-        url: https://github.com/shopware/development/
+        title: 'Find a hosting partner',
       },
       {
-        title: 'Shopware 5'
-        url: https://github.com/shopware/shopware/
+        title: 'Become a partner',
       },
       {
-        title: 'Shopware 6',
-        url: https://github.com/shopware/platform/
+        title: 'Ecommerce knowledge',
       },
       {
-        title: 'Contribute to platform',
-        url: https://github.com/shopware/platform/blob/trunk/CONTRIBUTING.md
+        title: 'How to',
       },
       {
-        title: 'Contribute to docs',
-        url: https://github.com/shopware/docs
-      },
-
-    ]
-  },
-  {
-    title: 'News & Updates',
-    items: [
-      {
-        title: 'Product Changelog',
-        url: https://www.shopware.com/en/changelog/
-      },
-      {
-        title: 'Blog',
-        url: https://www.shopware.com/en/news/developer-insights/
-      },
-      {
-        title: 'Announcements',
-        url: https://www.shopware.com/en/press/press-releases/
+        title: 'Voice of the customer: PhiAcademy',
       },
       {
         title: 'Shopware TV',
-        url: https://tv.shopware.com/en/?_gl=1%2a1gq0fmi%2a_ga%2aMTYwMjc5NTkyNC4xNjY1NzI1MjEw%2a_ga_9JLJ6GGB76%2aMTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAyMzI5LjAuMC4w
+      },
+    ]
+  },
+  {
+    title: 'Community',
+    items: [
+      {
+        title: 'Meetups',
+      },
+      {
+        title: 'Fairs & converences',
+      },
+      {
+        title: 'Community Day',
+      },
+      {
+        title: 'Get started as developer',
       },
     ]
   }
 ];
 </script>
-
-const link = document.createElement("a");
-link.href = jsonData.url;
-link.textContent = jsonData.title;
-
-const container = document.getElementById("documents");
-container.appendChild(link);
