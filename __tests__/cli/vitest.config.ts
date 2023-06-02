@@ -1,0 +1,15 @@
+import { defineConfig } from 'vitest/config'
+
+const timeout = 60_000
+
+export default defineConfig({
+    test: {
+        //root: '../../src/',
+        setupFiles: ['vitestSetup.ts'],
+        globalSetup: ['__tests__/cli/vitestGlobalSetup.ts'],
+        testTimeout: timeout,
+        hookTimeout: timeout,
+        teardownTimeout: timeout,
+        globals: true,
+    },
+})
