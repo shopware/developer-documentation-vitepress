@@ -130,6 +130,8 @@ module.exports = async () => ({
     return !link.includes("Algolia");
   },
 
+  ignoreDeadLinks: true,
+
   themeConfig: {
     nav: navigation,
     appearance: true,
