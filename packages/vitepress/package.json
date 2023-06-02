@@ -1,0 +1,61 @@
+{
+  "name": "@shopware-docs/vitepress",
+  "version": "1.0.0",
+  "description": "Vitepress for Shopware Docs",
+  "main": "src/index.ts",
+  "exports": {
+    "./stoplight": "./src/stoplight.ts"
+  },
+  "files": [
+    "src",
+    "types"
+  ],
+  "keywords": [
+    "vue",
+    "shopware",
+    "vitepress"
+  ],
+  "author": {
+    "name": "Shopware team"
+  },
+  "license": "MIT",
+  "scripts": {
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "unocss": "^0.51.12",
+    "vitepress-shopware-docs": "link:../.."
+  },
+  "peerDependencies": {
+    "@storybook/addon-essentials": "^7.0.10",
+    "@storybook/addon-interactions": "^7.0.10",
+    "@storybook/addon-links": "^7.0.10",
+    "@storybook/addon-styling": "^1.0.6",
+    "@storybook/blocks": "^7.0.10",
+    "@storybook/testing-library": "^0.1.0",
+    "@storybook/vue3": "^7.0.10",
+    "@storybook/vue3-vite": "^7.0.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.62.1",
+    "seedrandom": "^3.0.5",
+    "storybook": "^7.0.10",
+    "storybook-addon-fetch-mock": "^1.0.1",
+    "storybook-addon-pseudo-states": "^2.0.1",
+    "vitepress": "^1.0.0-beta.1"
+  },
+  "devDependencies": {
+    "terser": "^5.17.3",
+    "typescript": "^5.0.4"
+  },
+  "packageManager": "pnpm@8.6.0",
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "react",
+        "react-dom",
+        "@types/react"
+      ]
+    }
+  }
+}
