@@ -176,6 +176,34 @@ h1 {
     }
   }
   // end override @media min-width
+
+  .content-body {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    justify-content: space-between;
+    > * {
+      grid-row: 1;
+    }
+
+    .VPNavBarSearch {
+      grid-column: 6;
+    }
+    .VPNavBarMenu {
+      grid-column: 1;
+    }
+    .VPNavBarAppearance {
+      grid-column: 5;
+    }
+    .VPSocialLinks {
+      display: none;
+    }
+    .VPFlyout {
+
+    }
+    .VPNavBarHamburger {
+
+    }
+  }
 }
 
 .VPContent {
