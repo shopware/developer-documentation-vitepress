@@ -56,4 +56,5 @@ jobs:
       - name: Publish with Lerna
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-        run: npx lerna publish -y from-git
+        run: pnpm -r publish
+        #npx lerna publish -y from-git
