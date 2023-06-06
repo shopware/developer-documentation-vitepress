@@ -57,7 +57,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          
+
+      - run: corepack enable
       - run: pnpm --version
 
       - name: Publish with Lerna
