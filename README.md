@@ -12,11 +12,21 @@ Please follow the:
 
 To publish package add commit to `main` with the following convention:
 
-```
-chore: release x.y.z
+```bash
+$ git commit -m "chore: release x.y.z"
 ```
 
-You need to set this version in a `package.json` file as well.
+You need to set this version in a `package.json` file as well:
+
+```bash
+$ pnpm bump
+```
+
+Push changes to the remote and let the `auto-publish` workflow run the tests and publish new versions:
+
+```bash
+$ git push
+```
 
 ## Versioning
 
