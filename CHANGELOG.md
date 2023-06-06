@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.14](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2023-06-06)
+
+### Bug Fixes
+
+- commit message ([2803e0a](https://github.com/shopware/developer-documentation-vitepress/commit/2803e0a363b67cca6b0bc9f13a4636bdbbf19bfd))
+- license ([37c9e72](https://github.com/shopware/developer-documentation-vitepress/commit/37c9e723a7a1dcc7a3d03cf4b6806a612a890901))
+- pnpm bump ([4c83c4c](https://github.com/shopware/developer-documentation-vitepress/commit/4c83c4c60f6353a2e0fd5faa6664132ba15d9af0))
+- update readme ([02742e2](https://github.com/shopware/developer-documentation-vitepress/commit/02742e2362099d0c7a2d540a6d79eddf4b42fa27))
+
+# [1.0.0-beta.14](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.13...v1.0.0-beta.14) (2023-06-06)
+
+### Bug Fixes
+
+- commit message ([2803e0a](https://github.com/shopware/developer-documentation-vitepress/commit/2803e0a363b67cca6b0bc9f13a4636bdbbf19bfd))
+- license ([37c9e72](https://github.com/shopware/developer-documentation-vitepress/commit/37c9e723a7a1dcc7a3d03cf4b6806a612a890901))
+- pnpm bump ([4c83c4c](https://github.com/shopware/developer-documentation-vitepress/commit/4c83c4c60f6353a2e0fd5faa6664132ba15d9af0))
+- update readme ([02742e2](https://github.com/shopware/developer-documentation-vitepress/commit/02742e2362099d0c7a2d540a6d79eddf4b42fa27))
+
 # [1.0.0-beta.13](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.12...v1.0.0-beta.13) (2023-06-06)
 
 ### Bug Fixes
