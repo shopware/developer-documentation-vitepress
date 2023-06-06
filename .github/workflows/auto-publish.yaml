@@ -54,4 +54,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Publish with Lerna
-        run: npx lerna publish -y from-git
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
+          npx lerna publish -y from-git
