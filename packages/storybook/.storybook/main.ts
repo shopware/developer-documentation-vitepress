@@ -1,8 +1,9 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
 import { mergeConfig } from 'vite';
 import baseConfig from "vitepress-shopware-docs/config";
+import path from "path";
 
-const config: StorybookConfig = {
+const config = ({__dirname, __dirnamePrefix = '..'}) => ({
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
@@ -22,13 +23,14 @@ const config: StorybookConfig = {
     const merged = mergeConfig(mergeConfig(config, (await baseConfig()).vite), {
       resolve: {
         alias: {
-          vitepress: '/__mocks__/vitepress',
+          'vitepress/dist': path.resolve(__dirname, __dirnamePrefix, './node_modules/vitepress/dist'),
+          vitepress: path.resolve(__dirname, __dirnamePrefix, './__mocks__/vitepress'),
         }
       },
     });
     console.log('merged', merged);
     return merged;
   }
-};
+} as StorybookConfig);
 
 export default config;

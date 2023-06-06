@@ -6,7 +6,15 @@
   "exports": {
     ".": "./src/index.ts",
     "./config": "./src/shopware/config/baseConfig.js",
-    "./highlight": "./src/shopware/config/highlight.js"
+    "./highlight": "./src/shopware/config/highlight.js",
+    "./src/*.css": {
+      "import": "./src/*.css",
+      "require": "./src/*.css"
+    },
+    "./src/*.scss": {
+      "import": "./src/*.scss",
+      "require": "./src/*.scss"
+    }
   },
   "files": [
     "src",
