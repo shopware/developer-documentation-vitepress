@@ -66,5 +66,5 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           pnpm config set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN}
-          pnpm -r publish
+          pnpm -r publish --access public
         #npx lerna publish -y from-git
