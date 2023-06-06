@@ -21,5 +21,14 @@ You need to set this version in a `package.json` file as well.
 ## Versioning
 
 There are 2 versions of documentation template available:
- - v0.x (branch `v0`) - hard-forked version of old VueJS theme
- - v1.x (branch `main`) - extended version of the official Vitepress theme
+
+- ~~v0.x (branch `v0`) - hard-forked version of old VueJS theme~~
+- v1.x (branch `main`) - extended version of the official Vitepress theme
+
+## Directory structure
+
+- `src` as 'vitepress-shopware-docs' - Shopware specific Vitepress theme
+- `packages/cli` as `@shopware-docs/cli` - CLI used for embedding repositories
+- `packages/storybook` as `@shopware-docs/storybook` - shared Storybook configuration, including mocks
+- `packages/vitepress` as `@shopware-docs/vitepress` - shared Vitepress plugins and helpers
+- `packages/vitest` as `@shopware-docs/vitest` - shared vitest & Playwright configuration
