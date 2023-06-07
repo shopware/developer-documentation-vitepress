@@ -245,6 +245,7 @@ h1 {
 .VPNavBar {
   .container > .title {
     display: flex;
+    padding-right: 32px;
   }
 }
 
@@ -344,6 +345,24 @@ h1 {
   color: var(--c-link);
 }
 
+.vp-doc > div > h1,
+h1.styled {
+  @apply mb-1em;
+  font-size: 38px;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+
+.vp-doc  > div > h2,
+h2.styled {
+  @apply mt-16 mb-7 pt-7;
+}
+
+.vp-doc > div > h3,
+h3.styled {
+  @apply mt-10 mb-4 pt-4;
+}
+
 .vp-doc {
   h2.isolated {
     border-top: none;
@@ -352,24 +371,6 @@ h1 {
   h2, h3, h4, h5, h6 {
     color: var(--c-heading-sub);
     margin-top: 0;
-  }
-
-  > div > h1,
-  h1.styled {
-    @apply mb-12;
-    font-size: 38px;
-    line-height: 1.4;
-    letter-spacing: -.02em;
-  }
-
-  > div > h2,
-  h2.styled {
-    @apply mt-16 mb-7 pt-7;
-  }
-
-  > div > h3,
-  h3.styled {
-    @apply mt-10 mb-4 pt-4;
   }
 
   > div > p {
