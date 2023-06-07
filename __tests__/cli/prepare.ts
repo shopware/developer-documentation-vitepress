@@ -48,7 +48,6 @@ export const prepareDummySource = (sandbox: Sandbox) => {
         'foo/bar',
     ];
     for (const dir of dirs) {
-        console.log('creating dir', `${sandbox.cwd}/${dir}`)
         fs.mkdirSync(`${sandbox.cwd}/${dir}`, {recursive: true});
     }
 
@@ -60,7 +59,6 @@ export const prepareDummySource = (sandbox: Sandbox) => {
         'foo/bar/baz.md',
     ];
     for (const file of files) {
-        console.log('creating file', `${sandbox.cwd}/${file}`)
         fs.writeFileSync(`${sandbox.cwd}/${file}`, file);
     }
 }
