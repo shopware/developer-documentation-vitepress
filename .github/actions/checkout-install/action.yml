@@ -19,8 +19,11 @@ runs:
       with:
         version: 8
 
-    - run: corepack enable
-    - run: pnpm --version
+    - shell: bash
+      run: corepack enable
+      
+    - shell: bash
+      run: pnpm --version
 
     - name: Install system (Playwright requirements)
       shell: bash
