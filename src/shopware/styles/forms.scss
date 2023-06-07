@@ -1,4 +1,5 @@
-.form-control {
+.form-control,
+.hs-input {
   @apply border border-solid font-normal rounded-4px text-sm px-4 py-3.5 bg-white block w-full;
   color: var(--c-text-light);
   font-family: "HVD Fonts - BrandonText";
@@ -23,9 +24,22 @@
 }
 
 .form-control,
-.form-checkbox {
+.form-checkbox,
+.hs-input {
   border-color: var(--sw-c-gray-300);
   &:focus {
     border-color: var(--sw-c-blue-vivacious-500);
   }
+}
+
+// hubspot
+ul.no-list,
+ul.inputs-list {
+  @apply list-none p-0;
+}
+
+.hs-form-booleancheckbox {
+}
+.hs-form-booleancheckbox-display {
+  @apply flex items-center justify-around;
 }
