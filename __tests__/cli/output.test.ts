@@ -1,4 +1,4 @@
-import {output} from "../../cli/src/output";
+import {output} from "../../packages/cli/src/output";
 import {vi} from "vitest";
 
 describe('output', async () => {

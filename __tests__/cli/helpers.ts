@@ -1,4 +1,4 @@
-import cli from "../../cli/src/cli";
+import cli from "../../packages/cli/src/cli";
 import {exec, ExecOptions} from "child_process";
 import * as path from "path";
 import {v4 as uuid} from 'uuid';

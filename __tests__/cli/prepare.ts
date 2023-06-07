@@ -1,5 +1,5 @@
 import {execSync} from "child_process";
-import {docsSrcDir, repositories} from "../../cli/src/data";
+import {docsSrcDir, repositories} from "../../packages/cli/src/data";
 import fs from "fs-extra";
 import {Sandbox} from "./helpers";
 
