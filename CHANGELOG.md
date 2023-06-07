@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2023-06-07)
+
+### Bug Fixes
+
+- replace node_modules root ([cc16047](https://github.com/shopware/developer-documentation-vitepress/commit/cc16047f889e7620b1970cd6d7334224ec309014))
+
+# [1.0.0-beta.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.18...v1.0.0-beta.19) (2023-06-07)
+
+### Bug Fixes
+
+- replace node_modules root ([cc16047](https://github.com/shopware/developer-documentation-vitepress/commit/cc16047f889e7620b1970cd6d7334224ec309014))
+
 # [1.0.0-beta.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.16...v1.0.0-beta.18) (2023-06-07)
 
 ### Bug Fixes
