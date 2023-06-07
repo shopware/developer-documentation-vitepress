@@ -10,23 +10,13 @@ Please follow the:
 
 ## Collaboration
 
-To publish package add commit to `main` with the following convention:
-
-```bash
-$ git commit -m "chore: release x.y.z"
-```
-
-You need to set this version in a `package.json` file as well:
+To prepare a new release version, run the `pnpm bump` command.
 
 ```bash
 $ pnpm bump
 ```
 
-Push changes to the remote and let the `auto-publish` workflow run the tests and publish new versions:
-
-```bash
-$ git push
-```
+Push changes to the remote and let the `auto-publish` workflow run the tests and publish new versions.
 
 ## Versioning
 
@@ -38,7 +28,7 @@ There are 2 versions of documentation template available:
 ## Directory structure
 
 - `src` as 'vitepress-shopware-docs' - Shopware specific Vitepress theme
-- `packages/cli` as `@shopware-docs/cli` - CLI used for embedding repositories
+- [`packages/cli`](./CLI.md) as `@shopware-docs/cli` - CLI used for embedding repositories
 - `packages/storybook` as `@shopware-docs/storybook` - shared Storybook configuration, including mocks
 - `packages/vitepress` as `@shopware-docs/vitepress` - shared Vitepress plugins and helpers
 - `packages/vitest` as `@shopware-docs/vitest` - shared vitest & Playwright configuration

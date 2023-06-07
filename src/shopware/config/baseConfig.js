@@ -45,7 +45,7 @@ module.exports = async () => ({
       preserveSymlinks: true,
 
       alias: {
-        '@node_modules': path.resolve(__dirname, '..', '..', '..', 'node_modules'),
+        '@node_modules': path.resolve(process.cwd(), 'node_modules'),
         '../composables/edit-link': path.resolve(__dirname, '../composables/edit-link.ts'),
         './VPNavBarTitle.vue': path.resolve(__dirname, '../components/override/VPNavBarTitle.vue'),
         './VPAlgoliaSearchBox.vue': path.resolve(__dirname, '../components/override/VPAlgoliaSearchBox.vue'),
