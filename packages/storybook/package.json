@@ -4,9 +4,9 @@
   "description": "Storybook for Shopware Docs",
   "main": "src/index.ts",
   "exports": {
-    "./main": "./.storybook/main.ts",
-    "./preview": "./.storybook/preview.ts",
-    "./dependencies": "./.storybook/dependencies.ts"
+    "./main": "./src/main.ts",
+    "./preview": "./src/preview.ts",
+    "./dependencies": "./src/dependencies.ts"
   },
   "files": [
     "src",
