@@ -1,7 +1,7 @@
 import {createSandbox, destroySandbox, docsCli, Result, Sandbox, terminates, timeout, withDirConfig} from "../helpers";
 import {prepareDeveloperPortalCheckout, prepareDummySource} from "../prepare";
 import fs from "fs-extra";
-import {docsSrcDir} from "../../../cli/src/data";
+import {docsSrcDir} from "../../../packages/cli/src/data";
 
 describe('cli link', async () => {
     let sandbox: Sandbox;

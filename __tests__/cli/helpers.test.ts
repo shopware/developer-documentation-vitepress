@@ -1,4 +1,4 @@
-import {composeRepository, RepositoryConfigCollection} from "../../cli/src/helpers";
+import {composeRepository, RepositoryConfigCollection} from "../../packages/cli/src/helpers";
 
 describe('composeRepository', async () => {
 

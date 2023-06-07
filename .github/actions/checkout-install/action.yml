@@ -1,0 +1,56 @@
+name: Checkout and Install
+
+inputs:
+  apt:
+    description: 'Install APT packages'
+    required: false
+    default: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.12
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+
+    - shell: bash
+      run: corepack enable
+
+    - shell: bash
+      run: pnpm --version
+
+    - name: Install system (Playwright requirements)
+      shell: bash
+      if: ${{ inputs.apt }}
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libnss3 \
+          libnspr4 \
+          libatk1.0-0 \
+          libatk-bridge2.0-0 \
+          libcups2 \
+          libdrm2 \
+          libatspi2.0-0 \
+          libxcomposite1 \
+          libxdamage1 \
+          libxfixes3 \
+          libxrandr2 \
+          libgbm1 \
+          libxkbcommon0 \
+          libasound2
+
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: "pnpm"
+        cache-dependency-path: "**/pnpm-lock.yaml"
+
+    - name: Install dependencies
+      shell: bash
+      run: pnpm i --frozen-lockfile --prefer-offline
