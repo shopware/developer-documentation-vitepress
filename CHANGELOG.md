@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.21](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2023-06-07)
+
+### Bug Fixes
+
+- move to src folder ([ba9d7a2](https://github.com/shopware/developer-documentation-vitepress/commit/ba9d7a2d065f0901026c3908b8e07c6ed656d12e))
+
+# [1.0.0-beta.21](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.20...v1.0.0-beta.21) (2023-06-07)
+
+### Bug Fixes
+
+- move to src folder ([ba9d7a2](https://github.com/shopware/developer-documentation-vitepress/commit/ba9d7a2d065f0901026c3908b8e07c6ed656d12e))
+
 # [1.0.0-beta.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.19...v1.0.0-beta.20) (2023-06-07)
 
 **Note:** Version bump only for package vitepress-shopware-docs
