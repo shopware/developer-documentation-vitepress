@@ -3,6 +3,7 @@ import {exec, ExecOptions} from "child_process";
 import * as path from "path";
 import {v4 as uuid} from 'uuid';
 import fs from "fs-extra";
+import {rmdirSync} from "fs";
 
 export interface Sandbox {
     projectsPath: string;
@@ -77,7 +78,12 @@ export const createSandbox = (): Sandbox => {
 
 export const destroySandbox = (sandbox: Sandbox) => {
     //console.log(`Removing sandbox: ${sandbox.projectsPath}`);
-    fs.rmSync(sandbox.projectsPath, {recursive: true, force: true});
+    try {
+        fs.rmSync(sandbox.projectsPath, {recursive: true, force: true});
+    } catch (e) {
+        console.error(e);
+        console.log('Manual ./sandbox/ cleanup required')
+    }
     //console.log(`Sandbox removed: ${sandbox.projectsPath}`);
     return undefined;
 }
