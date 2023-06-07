@@ -4,7 +4,7 @@
     <div class="grid grid-cols-3 gap-10">
 
       <div class="flex flex-col col-span-3 xl:col-span-2 leading-7">
-        <h1 class="accent font-black">
+        <h1 class="accent font-black styled">
           <slot name="title" v-if="!title"></slot>
           <template v-else>{{ title }}</template>
         </h1>
@@ -32,7 +32,9 @@
     </div>
 
     <template v-if="exposed" v-for="(section, i) in exposed">
-      <SwagLandingCardList :exposed="section.exposed" :class="i % 2 === 1 ? '--alternative' : ''">
+      <SwagLandingCardList
+          :exposed="section.exposed"
+          :class="i % 2 === 1 ? '--alternative' : ''">
         <template #title>{{ section.title }}</template>
         <template #description>{{ section.description }}</template>
       </SwagLandingCardList>
