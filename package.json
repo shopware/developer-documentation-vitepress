@@ -41,7 +41,10 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --exit-zero-on-changes",
-    "bump": "npx lerna version --no-private"
+    "bump": "npx lerna version --no-private",
+    "cli:dev": "pnpm -C ./packages/cli dev && chmod +x ./packages/cli/dist/docs-cli.js",
+    "cli:build": "pnpm -C ./packages/cli build && chmod +x ./packages/cli/dist/docs-cli.js",
+    "cli:pkg": "pnpm -C ./packages/cli pkg"
   },
   "dependencies": {
     "@iconify-json/carbon": "^1.1.16",

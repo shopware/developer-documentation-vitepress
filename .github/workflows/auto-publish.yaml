@@ -19,24 +19,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
 
-      - run: corepack enable
-      - run: pnpm --version
+      - name: Build (CLI)
+        run: pnpm cli:build
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: "pnpm"
-          cache-dependency-path: "**/pnpm-lock.yaml"
-      - name: install
-        run: pnpm install --frozen-lockfile --prefer-offline
-
-      - name: Test CLI
+      - name: Test (unit)
         run: pnpm test:unit
+
+      - name: Test (CLI)
+        run: pnpm test:cli
 
       - name: Test Chromatic + Storybook
         if: ${{ github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'chromatic') }}
@@ -48,26 +41,24 @@ jobs:
     name: npm-publish
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' }}
-    needs: test
+    needs:
+      - test
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - run: corepack enable
-      - run: pnpm --version
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
 
       - name: Publish with Lerna
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
           DOCS_NPM_TOKEN: ${{ secrets.DOCS_NPM_TOKEN }}
         run: |
+          pnpm -C packages/cli build
           pnpm config set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN}
           pnpm publish --access public
+          
           pnpm config set //registry.npmjs.org/:_authToken ${DOCS_NPM_TOKEN}
           pnpm publish packages/cli --access public
           pnpm publish packages/storybook --access public
