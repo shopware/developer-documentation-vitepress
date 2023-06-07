@@ -15,7 +15,9 @@
 import {ref} from "vue";
 
 const top = ref(true);
-addEventListener('scroll', (e: Event) => top.value = window.scrollY === 0);
+if (typeof window !== 'undefined') {
+  addEventListener('scroll', (e: Event) => top.value = window.scrollY === 0);
+}
 
 const scrollToTop = () => window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 </script>
