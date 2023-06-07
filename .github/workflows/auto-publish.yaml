@@ -64,7 +64,13 @@ jobs:
       - name: Publish with Lerna
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          DOCS_NPM_TOKEN: ${{ secrets.DOCS_NPM_TOKEN }}
         run: |
           pnpm config set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN}
-          pnpm -r publish --access public
+          pnpm publish --access public
+          pnpm config set //registry.npmjs.org/:_authToken ${DOCS_NPM_TOKEN}
+          pnpm publish packages/cli --access public
+          pnpm publish packages/storybook --access public
+          pnpm publish packages/vitepress --access public
+          pnpm publish packages/vitest --access public
         #npx lerna publish -y from-git
