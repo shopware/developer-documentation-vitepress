@@ -35,6 +35,8 @@
     "type": "tsc --noEmit",
     "test": "pnpm run lint && pnpm run type",
     "test:unit": "vitest run -r __tests__/unit --sequence.shuffle",
+    "test:cli": "vitest run -r __tests__/cli --sequence.shuffle",
+    "test:cli:coverage": "vitest run -r __tests__/cli --coverage",
     "dev": "vitepress dev demo",
     "build": "vitepress build demo",
     "serve": "pnpm run build && vitepress serve demo --port 5002",
