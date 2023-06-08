@@ -38,7 +38,10 @@
 
   &_columns {
     @apply grid gap-8;
-    grid-template-columns: 280px repeat(auto-fit, minmax(160px, 1fr));
+    //grid-template-columns: 1fr;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 280px repeat(auto-fit, minmax(160px, 1fr));
+    }
     /*> :first-child {
       grid-column: span 2;
     }*/

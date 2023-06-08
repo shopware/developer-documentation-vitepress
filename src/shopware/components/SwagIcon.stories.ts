@@ -4,7 +4,7 @@ import SwagIcon from "./SwagIcon.vue";
 import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/Icon',
+    title: 'Elements/SwagIcon',
     render: render(SwagIcon),
 } satisfies Meta<typeof SwagIcon>;
 

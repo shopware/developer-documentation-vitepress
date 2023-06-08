@@ -18,8 +18,11 @@
     @apply block;
     &.--visible {
       visibility: visible;
-      opacity: 1;
+      opacity: 0.666;
       z-index: 10;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
   &.SwagScrollToTop {

@@ -5,7 +5,7 @@ import PageRef from "./PageRef.vue";
 import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/ContentMenu',
+    title: 'Layout/SwagContentMenu',
     render: render(SwagContentMenu, {
         components: {PageRef}
     }),

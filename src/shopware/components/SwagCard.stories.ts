@@ -4,7 +4,7 @@ import SwagCard from "./SwagCard.vue";
 import {DarkVariation, loremWords, loremParagraphs, render, HoverVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/Card',
+    title: 'General/Card',
     render: render(SwagCard, {
         slot: `<template #title>${loremWords()}</template><template #description>${loremParagraphs(1, 0, 'plain')}</template>`,
     }),

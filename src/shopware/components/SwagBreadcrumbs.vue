@@ -63,20 +63,28 @@
 }
 
 // workaround - make those colors always available
-.from-blue-500 {
-  @apply from-blue-500;
+.from-sw-blue {
+  @apply from-[var(--sw-c-blue-vivacious-400)];
 }
 
-.to-blue-700 {
-  @apply to-blue-700;
+.to-sw-blue {
+  @apply to-[var(--sw-c-blue-vivacious-900)];
 }
 
-.from-purple-500 {
-  @apply from-purple-500;
+.from-sw-purple {
+  @apply from-[var(--sw-c-purple-500)];
 }
 
-.to-purple-700 {
-  @apply to-purple-700;
+.to-sw-purple {
+  @apply to-[var(--sw-c-purple-900)];
+}
+
+.from-sw-green {
+  @apply from-[var(--sw-c-green-500)];
+}
+
+.to-sw-green {
+  @apply to-[var(--sw-c-green-900)];
 }
 </style>
 
@@ -158,7 +166,7 @@ const breadcrumbs = computed(() => {
     // const filtered = flattened.filter(({link}) => realUrl.value.startsWith(link));
 
     return flattened
-        //.slice(1)
+        .slice(0, flattened.length - 1)
         .map(({link, text}) => ({link, text}))
         .map(breadcrumb => {
             const colorCode = colorCoding.find(colorCode => colorCode.link === breadcrumb.link);

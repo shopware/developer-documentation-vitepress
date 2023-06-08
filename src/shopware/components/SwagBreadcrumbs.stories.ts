@@ -4,7 +4,7 @@ import SwagBreadcrumbs from "./SwagBreadcrumbs.vue";
 import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/Breadcrumbs',
+    title: 'Layout/SwagBreadcrumbs',
     render: render(SwagBreadcrumbs, {
         rootClass: null,
     }),

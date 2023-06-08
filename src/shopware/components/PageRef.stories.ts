@@ -4,7 +4,7 @@ import PageRef from "./PageRef.vue";
 import {DarkVariation, HoverVariation, loremSentences, loremWords, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Default/PageRef',
+    title: 'General/PageRef',
     args: {
         page: 'my-page',
         title: loremWords(),

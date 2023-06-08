@@ -5,7 +5,7 @@ import PageRef from "./PageRef.vue";
 import {DarkVariation, loremWords, loremSentences, render, HoverVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/LandingCard',
+    title: 'SwagLanding/Card',
     render: render(SwagLandingCard, {
         components: {PageRef},
         slot: `<template #title>${loremWords()}</template><template #sub>${loremSentences()}</template>`,

@@ -5,7 +5,7 @@ import Tab from "./Tab.vue";
 import {DarkVariation, loremWords, loremParagraphs, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Default/Tabs',
+    title: 'Components/Tabs',
     render: render(Tabs, {
         components: {Tab},
         slot: [

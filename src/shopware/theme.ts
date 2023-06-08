@@ -54,9 +54,11 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
             withConfigProvider(Theme.Layout),
             null,
             {
+                'doc-top': () => [
+                    h(SwagHeader),
+                ],
                 'doc-before': () => [
                     h(SwagAlgoliaAttributes),
-                    h(SwagHeader),
                     //h(SwagBreadcrumbs),
                 ],
                 'doc-footer-before': () => [

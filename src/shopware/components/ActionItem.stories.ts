@@ -4,7 +4,7 @@ import ActionItem from "./ActionItem.vue";
 import {DarkVariation, loremWords, loremSentences, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Default/ActionItem',
+    title: 'General/ActionItem',
     args: {
         heading: loremWords(),
     },

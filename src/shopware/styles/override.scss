@@ -186,7 +186,7 @@ body .container {
   .content-body {
     @apply flex no-wrap;
     //grid-template-columns: repeat(3, auto);
-    justify-content: space-between;
+    justify-content: center;
     /*> * {
       grid-row: 1;
     */
@@ -194,10 +194,15 @@ body .container {
     .VPNavBarSearch {
       grid-column: 3;
       order: 3;
+      flex-grow: 0;
     }
     .VPNavBarMenu {
       grid-column: 2;
       order: 2;
+      flex-grow: 1;
+      justify-content: center;
+      margin-left: 0;
+      gap: 0.5rem;
     }
     .VPNavBarAppearance {
       grid-column: 3;
@@ -545,4 +550,10 @@ h3.styled {
 nav ul.root li,
 .outline-title {
   padding-left: .5rem;
+}
+
+.VPDocOutlineDropdown {
+  position: absolute;
+  right: 0;
+  top: -100px;
 }

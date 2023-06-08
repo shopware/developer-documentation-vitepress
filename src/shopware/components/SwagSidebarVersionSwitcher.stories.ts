@@ -4,7 +4,7 @@ import SwagSidebarVersionSwitcher from "./SwagSidebarVersionSwitcher.vue";
 import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/SidebarVersionSwitcher',
+    title: 'Sidebar/SwagSidebarVersionSwitcher',
     render: render(SwagSidebarVersionSwitcher),
 } satisfies Meta<typeof SwagSidebarVersionSwitcher>;
 
