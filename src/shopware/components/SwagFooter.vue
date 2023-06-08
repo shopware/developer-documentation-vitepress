@@ -71,10 +71,17 @@
   }
 }
 
+.VPContent.has-sidebar + .SwagFooter,
+.VPContent.has-sidebar + * + .SwagFooter {
+  padding-left: var(--vp-sidebar-width);
+  .container {
+    max-width: calc(1025px + 4rem);
+  }
+}
 </style>
 
 <template>
-  <div class="SwagFooter" v-if="route.path === '/'">
+  <div class="SwagFooter">
     <div class="SwagFooter_first">
       <div class="container">
         <div class="SwagFooter_columns">

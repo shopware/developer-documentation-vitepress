@@ -1,5 +1,5 @@
 <template>
-    <nav class="SwagBreadcrumbs hidden lg:flex mb-10" aria-label="Breadcrumb"
+    <nav class="SwagBreadcrumbs hidden lg:flex" aria-label="Breadcrumb"
          v-if="breadcrumbs.length > 1">
         <ol class="SwagBreadcrumbs_ol">
             <li v-for="(breadcrumb, i) in breadcrumbs" class="SwagBreadcrumbs_li">
