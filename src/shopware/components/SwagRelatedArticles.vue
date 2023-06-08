@@ -18,7 +18,7 @@ import {ref, onMounted, watch} from "vue";
 import {useData, useRoute} from "vitepress";
 import {useConfig} from "../composables/config";
 import {useSidebar} from "../composables/sidebar-vp";
-import { getSidebarsWithMainKey } from '../support/sidebar'
+import {getSidebarsWithMainKey} from '../support/sidebar'
 import PageRef from "./PageRef.vue";
 
 const articles = ref([]);
@@ -76,10 +76,10 @@ const fetchSimilarArticles = async () => {
     );
     const data = await response.json();
     articles.value = data.results.map(({id, heading, description}) => ({
-      page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '/').replace('##', '#/')}`,
-      title: heading,
-      description: description,
-    }));
+        page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '/').replace('##', '#/')}`,
+        title: heading,
+        description: description,
+      }));
   } catch (e) {
     console.error(e);
   }

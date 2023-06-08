@@ -1,6 +1,6 @@
 <template>
   <div class="SwagContentMenu grid md:grid-cols-2 gap-6 mb-8">
-      <PageRef v-for="item in items" v-bind="item" />
+      <PageRef v-for="item in items" v-bind="item" :key="item.page" />
   </div>
 </template>
 

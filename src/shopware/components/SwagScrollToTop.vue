@@ -1,18 +1,40 @@
 <template>
-  <a href="#" class="SwagScrollToTop" @click.prevent="scrollToTop" :class="{'hidden': top}">To the top</a>
+  <a href="#"
+     class="SwagScrollToTop btn --secondary"
+     @click.prevent="scrollToTop"
+     :class="{'--visible': !top}">
+    <SwagIcon class="SwagScrollToTop_icon" icon="double-chevron-up-s" />
+  </a>
 </template>
 
 <style lang="scss">
 .SwagScrollToTop {
-  @apply position-fixed;
+  @apply position-fixed display-none transition transition-all;
   bottom: 1rem;
   right: 1rem;
-  mix-blend-mode: difference;
+  opacity: 0;
+  visibility: hidden;
+  @media screen and (min-width: 960px) {
+    @apply block;
+    &.--visible {
+      visibility: visible;
+      opacity: 1;
+      z-index: 10;
+    }
+  }
+  &.SwagScrollToTop {
+    @apply p-3;
+  }
+  &_icon {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
 }
 </style>
 
 <script setup lang="ts">
 import {ref} from "vue";
+import SwagIcon from "./SwagIcon.vue";
 
 const top = ref(true);
 if (typeof window !== 'undefined') {

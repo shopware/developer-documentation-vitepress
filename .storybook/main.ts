@@ -1,42 +1,19 @@
-import type { StorybookConfig } from "@storybook/vue3-vite";
-import { mergeConfig } from 'vite';
-import baseConfig from "../src/shopware/config/baseConfig";
+import config from "../packages/storybook/src/main";
 
-const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-    'storybook-addon-fetch-mock',
-    'storybook-addon-pseudo-states',
-  ],
-  framework: {
-    name: "@storybook/vue3-vite",
-    options: {},
-  },
-  docs: {
-    autodocs: "tag",
-  },
-  staticDirs: [
-    '../src',
-    '../node_modules/@shopware-ag/meteor-icon-kit',
-  ],
-  viteFinal: async (config, {configType}) => {
-    return mergeConfig(mergeConfig(config, (await baseConfig()).vite), {
-      theme: {
-        editLink: {
-          editLink: 'test',
-          text: 'Edit this page on GitHub',
-        }
-      },
-      resolve: {
-        alias: {
-          vitepress: '/__mocks__/vitepress',
-        }
-      },
-    });
-  }
-};
-
-export default config;
+export default config(
+    {__dirname},
+    {
+        staticDirs: [
+            '../src',
+            '../node_modules/@shopware-ag/meteor-icon-kit',
+        ]
+    },
+    {
+        theme: {
+            editLink: {
+                editLink: 'test',
+                text: 'Edit this page on GitHub',
+            }
+        },
+    }
+);

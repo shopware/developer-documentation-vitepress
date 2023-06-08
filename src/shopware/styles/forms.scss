@@ -1,16 +1,36 @@
 .form-control,
 .hs-input {
-  @apply border border-solid font-normal rounded-4px text-sm px-4 py-3.5 bg-white block w-full;
+  @apply border border-solid font-normal rounded-4px text-sm bg-white;
   color: var(--c-text-light);
   font-family: "HVD Fonts - BrandonText";
 }
 
+.form-control,
+.hs-input {
+  &textarea,
+  &[type="text"],
+  &[type="number"],
+  &[type="email"] {
+    @apply block w-full px-4 py-3.5;
+  }
+}
+
+.hs-input[type="checkbox"],
 .form-checkbox {
-  @apply w-4.5 h-4.5 text-blue-600 bg-gray-100 rounded border position-relative;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+
+  @apply w-4.5 h-4.5 text-blue-600 rounded position-relative;
   @apply focus:ring-blue-500 focus:ring-2;
   @apply dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600;
-  .SwagCheckbox input:checked + label & {
+
+  border: 1px solid var(--sw-c-gray-100);
+  background-color: var(--sw-c-gray-100);
+
+  &:checked {
     background-color: var(--sw-c-blue-vivacious-500);
+    border-color: var(--sw-c-blue-vivacious-500);
     &::after {
       @apply position-absolute;
       inset: 0;
@@ -25,8 +45,7 @@
 
 .form-control,
 .form-checkbox,
-.hs-input {
-  border-color: var(--sw-c-gray-300);
+.hs-input[type="text"] {
   &:focus {
     border-color: var(--sw-c-blue-vivacious-500);
   }
@@ -41,5 +60,14 @@ ul.inputs-list {
 .hs-form-booleancheckbox {
 }
 .hs-form-booleancheckbox-display {
-  @apply flex items-center justify-around;
+  @apply flex items-center justify-start;
+}
+.hs-email {
+  > label {
+    @apply block;
+    margin-bottom: .5rem;
+  }
+}
+.hs-error-msg {
+  color: red;
 }
