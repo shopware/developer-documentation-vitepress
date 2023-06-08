@@ -74,9 +74,6 @@
 .VPContent.has-sidebar + .SwagFooter,
 .VPContent.has-sidebar + * + .SwagFooter {
   padding-left: var(--vp-sidebar-width);
-  .container {
-    max-width: calc(1025px + 4rem);
-  }
 }
 </style>
 
