@@ -291,6 +291,7 @@ body .container {
 }
 
 .VPDocFooter {
+  @apply pb-8;
   .pager-link {
     border: none;
 
@@ -540,4 +541,8 @@ h3.styled {
 .aside-content {
   min-height: auto !important;
   max-height: 100vh;
+}
+nav ul.root li,
+.outline-title {
+  padding-left: .5rem;
 }

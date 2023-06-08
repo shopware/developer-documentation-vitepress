@@ -71,9 +71,11 @@
   }
 }
 
-.VPContent.has-sidebar + .SwagFooter,
-.VPContent.has-sidebar + * + .SwagFooter {
-  padding-left: var(--vp-sidebar-width);
+@media (min-width: 960px) {
+  .VPContent.has-sidebar + .SwagFooter,
+  .VPContent.has-sidebar + * + .SwagFooter {
+    padding-left: var(--vp-sidebar-width);
+  }
 }
 </style>
 

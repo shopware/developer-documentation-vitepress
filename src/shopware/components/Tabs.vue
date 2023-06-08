@@ -52,6 +52,7 @@ provide('activeTitle', activeTitle)
   &_slot {
     @apply rounded-b-md rounded-tr-md overflow-hidden mb-4 border border-gray-300;
     @apply dark:border-gray-600;
+    margin-block-start: 0 !important;
   }
 
   &_button,
