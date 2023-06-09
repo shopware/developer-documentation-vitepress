@@ -23,6 +23,7 @@
 
   & + .container {
     position: relative;
+    --vp-layout-top-height: 180px;
     & main.main {
       > div > div {
         @apply mt-10;
