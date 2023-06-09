@@ -14,8 +14,9 @@ export default {
         output.notice('Installing new packages');
         await pnpm('i', [], {dir: developerPortalPath});
 
-        output.notice('Rebuilding CLI');
-        await pnpm('cli:build', [], {dir: developerPortalPath});
+        // the build is now packaged
+        // output.notice('Rebuilding CLI');
+        // await pnpm('cli:build', [], {dir: developerPortalPath});
 
         output.success('Developer portal up to date');
     }
