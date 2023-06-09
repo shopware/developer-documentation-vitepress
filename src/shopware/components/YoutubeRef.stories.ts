@@ -4,7 +4,7 @@ import YoutubeRef from "./YoutubeRef.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Default/YoutubeRef',
+    title: 'Components/YoutubeRef',
     args: {
         video: 'FgTX3Q5iFNg',
         title: 'Release News: Rules, Flows & more in Shopware 6.5 RC'

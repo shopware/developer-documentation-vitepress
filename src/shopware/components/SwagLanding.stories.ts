@@ -20,7 +20,7 @@ const template = [
 ];
 
 const meta = {
-    title: 'Swag/Landing',
+    title: 'SwagLanding/SwagLanding',
     render: render(SwagLanding, {
         components: {PageRef, SwagLandingCardList, SwagLandingCard},
         slot: template.join(""),

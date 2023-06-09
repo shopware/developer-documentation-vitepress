@@ -13,6 +13,7 @@
 }
 
 :root {
+  --vp-layout-max-width: 100%;
   --sw-nav-bg: var(--c-blue-dark);
   --sw-sidebar-bg: var(--sw-c-gray-100);
   --sw-sidebar-border: var(--sw-c-gray-200);
@@ -102,6 +103,11 @@ h1 {
   font-size: clamp(35px, 5.5vw, 74px);
   line-height: 1.25;
 }
+@media (min-width: 1024px) {
+body .container {
+   max-width: 1024px;
+ }
+}
 
 .VPMenu {
   --vp-c-divider: var(--sw-submenu-divider);
@@ -178,30 +184,40 @@ h1 {
   // end override @media min-width
 
   .content-body {
-    display: grid;
-    grid-template-columns: repeat(6, auto);
-    justify-content: space-between;
-    > * {
+    @apply flex no-wrap;
+    //grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    /*> * {
       grid-row: 1;
-    }
+    */
 
     .VPNavBarSearch {
-      grid-column: 6;
+      grid-column: 3;
+      order: 3;
+      flex-grow: 0;
     }
     .VPNavBarMenu {
-      grid-column: 1;
+      grid-column: 2;
+      order: 2;
+      flex-grow: 1;
+      justify-content: center;
+      margin-left: 0;
+      gap: 0.5rem;
     }
     .VPNavBarAppearance {
-      grid-column: 5;
+      grid-column: 3;
+      order: 3;
     }
     .VPSocialLinks {
       display: none;
     }
-    .VPFlyout {
-
+    .VPNavBarExtra {
+      grid-column: 3;
+      order: 3;
     }
     .VPNavBarHamburger {
-
+      grid-column: 3;
+      order: 3;
     }
   }
 }
@@ -211,7 +227,7 @@ h1 {
     color: var(--c-text-100);
   }
   .content {
-    padding-bottom: 0;
+    padding: 0;
   }
 }
 
@@ -275,9 +291,12 @@ h1 {
   padding-bottom: 0;
   margin-top: var(--vp-nav-height);
   border-right: 1px solid var(--sw-sidebar-border);
+  padding-left: 1.5rem;
+  width: var(--vp-sidebar-width);
 }
 
 .VPDocFooter {
+  @apply pb-8;
   .pager-link {
     border: none;
 
@@ -463,6 +482,7 @@ h3.styled {
   &:not(.has-aside,.has-sidebar) > .container > .content {
     @apply px-0;
   }
+  padding-top: 0;
 
   @media (min-width: 1440px) {
     &:not(.has-sidebar) {
@@ -508,4 +528,32 @@ h3.styled {
   &-Hit-path {
     --docsearch-text-color: var(--c-text);
   }
+}
+
+.Layout .VPSidebar {
+  padding-left: 1.5rem;
+  width: var(--vp-sidebar-width);
+}
+
+.aside-container {
+  z-index: 10;
+  height: auto !important;
+  max-height: 100vh;
+}
+.aside-curtain {
+  display: none;
+}
+.aside-content {
+  min-height: auto !important;
+  max-height: 100vh;
+}
+nav ul.root li,
+.outline-title {
+  padding-left: .5rem;
+}
+
+.VPDocOutlineDropdown {
+  position: absolute;
+  right: 0;
+  top: -100px;
 }

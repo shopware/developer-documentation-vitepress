@@ -31,7 +31,7 @@ describe('cli pull', async () => {
         // debug flaky test
         console.log(result);
 
-        // test "git pull --ff", "pnpm i" and "pnpm cli:build"
+        // test "git pull --ff", "pnpm i" and (not anymore) "pnpm cli:build"
         expect(result.stdout).toContain('Done in ');
         expect(result.stdout).toContain('Developer portal up to date');
     })

@@ -12,6 +12,7 @@
   &[type="number"],
   &[type="email"] {
     @apply block w-full px-4 py-3.5;
+    border: 1px solid var(--sw-c-gray-300);
   }
 }
 
@@ -60,7 +61,10 @@ ul.inputs-list {
 .hs-form-booleancheckbox {
 }
 .hs-form-booleancheckbox-display {
-  @apply flex items-center justify-start;
+  @apply flex items-center justify-start gap-1;
+  > span {
+    @apply flex items-baseline;
+  }
 }
 .hs-email {
   > label {
@@ -68,6 +72,7 @@ ul.inputs-list {
     margin-bottom: .5rem;
   }
 }
-.hs-error-msg {
-  color: red;
+.hs-error-msg,
+body .legal-consent-container .hs-error-msgs label {
+  color: var(--sw-c-pink-900);
 }

@@ -35,8 +35,9 @@ import SwagLandingCardList from "./../shopware/components/SwagLandingCardList.vu
 import SwagRelatedArticles from "../shopware/components/SwagRelatedArticles.vue";
 import SwagSidebarVersionSwitcher from "../shopware/components/SwagSidebarVersionSwitcher.vue";
 import SwagStackOverflow from "../shopware/components/SwagStackOverflow.vue";
-import SwagBreadcrumbs from "./components/SwagBreadcrumbs.vue";
+//import SwagBreadcrumbs from "./components/SwagBreadcrumbs.vue";
 import SwagAlgoliaAttributes from "./components/SwagAlgoliaAttributes.vue";
+import SwagHeader from "./components/SwagHeader.vue";
 import SwagContentMenu from "./components/SwagContentMenu.vue";
 import SwagFooter from "./components/SwagFooter.vue";
 import SwagScrollToTop from "./components/SwagScrollToTop.vue";
@@ -53,9 +54,12 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
             withConfigProvider(Theme.Layout),
             null,
             {
+                'doc-top': () => [
+                    h(SwagHeader),
+                ],
                 'doc-before': () => [
                     h(SwagAlgoliaAttributes),
-                    h(SwagBreadcrumbs),
+                    //h(SwagBreadcrumbs),
                 ],
                 'doc-footer-before': () => [
                     h(SwagContentMenu),

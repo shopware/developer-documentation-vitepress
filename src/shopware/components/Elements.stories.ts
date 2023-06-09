@@ -4,7 +4,7 @@ import Elements from "./Elements.vue";
 import {DarkVariation, render} from "../stories/helpers";
 
 const meta = {
-    title: 'Default/Elements',
+    title: 'General/Elements',
     render: render(Elements),
 } satisfies Meta<typeof Elements>;
 

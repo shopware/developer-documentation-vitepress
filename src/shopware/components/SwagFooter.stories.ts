@@ -7,7 +7,7 @@ import {mockRoute, unmockRoute} from "../../../__mocks__/vitepress";
 
 
 const meta = {
-    title: 'Swag/Footer',
+    title: 'Layout/SwagFooter',
     render: render(SwagFooter, {
         rootClass: null,
         components: {VPNavBarSocialLinks},

@@ -6,7 +6,7 @@ import SwagIcon from "./SwagIcon.vue";
 import {DarkVariation, loremWords, loremParagraphs, render, swagLandingCards} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/LandingCardList',
+    title: 'SwagLanding/CardList',
     render: render(SwagLandingCardList, {
         components: {SwagLandingCard, SwagIcon},
         slot: `<template #title>${loremWords()}</template><template #description>${loremParagraphs(1)}</template><template #cards>${swagLandingCards(4)}</template>`,

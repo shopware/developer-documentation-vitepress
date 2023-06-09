@@ -38,7 +38,10 @@
 
   &_columns {
     @apply grid gap-8;
-    grid-template-columns: 280px repeat(auto-fit, minmax(160px, 1fr));
+    //grid-template-columns: 1fr;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 280px repeat(auto-fit, minmax(160px, 1fr));
+    }
     /*> :first-child {
       grid-column: span 2;
     }*/
@@ -71,10 +74,16 @@
   }
 }
 
+@media (min-width: 960px) {
+  .VPContent.has-sidebar + .SwagFooter,
+  .VPContent.has-sidebar + * + .SwagFooter {
+    padding-left: var(--vp-sidebar-width);
+  }
+}
 </style>
 
 <template>
-  <div class="SwagFooter" v-if="route.path === '/'">
+  <div class="SwagFooter">
     <div class="SwagFooter_first">
       <div class="container">
         <div class="SwagFooter_columns">

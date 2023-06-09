@@ -4,7 +4,7 @@ import SwagSidebarUp from "./SwagSidebarUp.vue";
 import {render, DarkVariation} from "../stories/helpers";
 
 const meta = {
-    title: 'Swag/SidebarUp',
+    title: 'Sidebar/SwagSidebarUp',
     render: render(SwagSidebarUp),
 } satisfies Meta<typeof SwagSidebarUp>;
 
