@@ -13,6 +13,13 @@
   margin-top: -2rem;
   background-color: var(--sw-c-gray-100);
 
+  &::before {
+    border-bottom: 1px solid var(--sw-c-gray-100);
+    .dark & {
+      border-bottom: 1px solid var(--sw-c-gray-dark-700);
+    }
+  }
+
   .container {
     margin: 0 auto;
   }
