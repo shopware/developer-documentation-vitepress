@@ -1,5 +1,6 @@
 <template>
   <a :href="page"
+     v-bind="autoBind"
      class="SwagCard c-any-card p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
@@ -15,12 +16,16 @@
 </template>
 
 <script setup lang="ts">
+import {useExternalLink} from "../composables/external";
+
 const props = defineProps({
   page: {
     type: String,
     required: true,
   }
 });
+
+const autoBind = useExternalLink({page: props.page});
 </script>
 
 <style lang="scss">

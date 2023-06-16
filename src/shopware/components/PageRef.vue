@@ -1,5 +1,7 @@
 <template>
-  <a class="PageRef" :href="page" :target="target">
+  <a class="PageRef"
+     :href="page"
+     v-bind="autoBind">
     <div
       class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4"
     >
@@ -27,6 +29,7 @@ import {useAttrs, ref} from "vue";
 import {useConfig} from "../composables/config";
 import {useRoute} from "vitepress";
 import {getSidebarItem} from "../utils/sidebar";
+import {useExternalLink} from "../composables/external";
 
 const {config} = useConfig();
 const attrs = useAttrs();
@@ -41,4 +44,6 @@ const video = ref(attrs.video === "");
 
 const title = getAttr('title');
 const sub = getAttr('sub');
+
+const autoBind = useExternalLink({target, page: page.value});
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <a :href="page" class="SwagLandingCard c-any-card">
+  <a :href="page" class="SwagLandingCard c-any-card" v-bind="autoBind">
     <div class="h-36 overflow-hidden bg-gradient-to-r" :class="gradient">
       <img v-if="image" :src="image" class="w-full h-full object-cover" />
       <img src="../assets/shopware-placeholder.svg" v-else class="w-full h-full object-cover" />
@@ -43,6 +43,8 @@
 </style>
 
 <script setup lang="ts">
+import {useExternalLink} from "../composables/external";
+
 const props = defineProps({
   page: {
     type: String,
@@ -93,4 +95,5 @@ let childGradients = [
 
 let gradient = childGradients[props?.page?.length % childGradients.length || 0];
 
+const autoBind = useExternalLink({page: props.page});
 </script>
