@@ -1,6 +1,6 @@
 <template>
     <nav class="SwagBreadcrumbs hidden lg:flex" aria-label="Breadcrumb"
-         v-if="breadcrumbs.length > 1">
+         v-if="breadcrumbs.length > 0">
         <ol class="SwagBreadcrumbs_ol">
             <li v-for="(breadcrumb, i) in breadcrumbs" class="SwagBreadcrumbs_li">
                 <svg v-if="i > 0" aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor"
