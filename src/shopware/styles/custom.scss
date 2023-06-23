@@ -144,6 +144,7 @@ main :not(.grid) > .PageRef {
     margin-left: 4rem;
 }
 
-.dark .vp-doc > div > img {
+.dark .vp-doc > div > img,
+.dark .vp-doc > div > p > img, {
     filter: invert(1) hue-rotate(-180deg);
 }
