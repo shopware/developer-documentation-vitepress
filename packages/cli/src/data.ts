@@ -22,6 +22,11 @@ const getPortalJson = () => {
     const portalJsonPath = path.join('.', '.vitepress', 'portal.json');
     output.debug('Reading ' + portalJsonPath);
 
+    if (!fs.existsSync(portalJsonPath)) {
+        output.log('No ' + portalJsonPath);
+        return null;
+    }
+
     return portalJson = JSON.parse(`${fs.readFileSync(portalJsonPath)}`)
 }
 
