@@ -74,6 +74,18 @@
             --btn-color--hover: var(--sw-c-gray-200);
         }
     }
+
+    &.--bordered {
+        color: var(--btn-bg);
+        border: 2px var(--btn-bg) solid;
+        background-color: inherit;
+        line-height: calc(1.429em - 4px);
+        transition: border-color ease-in-out;
+        &:hover {
+            color: var(--btn-bg--hover);
+            border-color: var(--btn-bg--hover);
+        }
+    }
 }
 
 input[type="submit"] {
