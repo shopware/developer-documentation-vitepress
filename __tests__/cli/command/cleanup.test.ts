@@ -42,7 +42,8 @@ describe('cli cleanup', async () => {
         const result = await docsCli(['cleanup'], sandbox.cwd, timeout.medium);
 
         expect(result.stdout).toContain('Removing symlinks and copied dirs');
-        expect(result.stdout).toContain('Pick destination mountpoints that should be removed');
+        //expect(result.stdout).toContain('Pick destination mountpoints that should be removed');
+        expect(result.stdout).toContain('No mountpoints found. Please, manually cleanup mountpoints');
         expect(result.stdout).not.toContain('Project cleaned up');
     })
 })

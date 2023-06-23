@@ -23,7 +23,7 @@ const getPortalJson = () => {
     output.debug('Reading ' + portalJsonPath);
 
     if (!fs.existsSync(portalJsonPath)) {
-        output.log('No ' + portalJsonPath);
+        output.debug('No ' + portalJsonPath);
         return null;
     }
 

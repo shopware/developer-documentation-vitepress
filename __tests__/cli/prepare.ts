@@ -23,6 +23,9 @@ export const prepareDeveloperPortalMounts = (sandbox: Sandbox) => {
         'docs/guides/plugins/themes/',
         'docs/guides/plugins/plugins/',
         'docs/guides/integrations-api/',
+        'docs/v6.4/',
+        'docs/v6.3/',
+        'frontends/',
     ];
     faked.forEach(dir => fs.mkdirSync(`${sandbox.developerPortal}/${docsSrcDir}/${dir}`, {recursive: true}));
 

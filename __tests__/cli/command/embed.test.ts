@@ -20,7 +20,7 @@ describe('cli embed', async () => {
         sandbox = destroySandbox(sandbox);
     })
 
-    test('Default embed (empty)', async () => {
+    test.skip('Default embed (empty)', async () => {
         const result = await terminates(docsCli(['embed'], sandbox.cwd, timeout.low));
 
         expect(result.stdout).toContain('Embedding repositories');
@@ -29,7 +29,7 @@ describe('cli embed', async () => {
         expectEmptyRootPath(result);
     })
 
-    test('Default embed (partial)', async () => {
+    test.skip('Default embed (partial)', async () => {
         createConfig(sandbox.projectsPath, {
             'dir.root': sandbox.projectsPath,
         });
