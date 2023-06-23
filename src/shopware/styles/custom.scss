@@ -143,3 +143,7 @@ main :not(.grid) > .PageRef {
 .VPNavBarMenu {
     margin-left: 4rem;
 }
+
+.dark .vp-doc > div > img {
+    filter: invert(1) hue-rotate(-180deg);
+}
