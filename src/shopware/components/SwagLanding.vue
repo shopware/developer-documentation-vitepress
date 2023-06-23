@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-10">
+  <div class="SwagLanding flex flex-col gap-10">
 
     <div class="grid grid-cols-3 gap-10">
 
