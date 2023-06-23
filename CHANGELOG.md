@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.29](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.27...v1.0.0-beta.29) (2023-06-23)
+
+### Bug Fixes
+
+- add distinct component class ([b428a87](https://github.com/shopware/developer-documentation-vitepress/commit/b428a878573b6163dcb93ebdd1a39ef308ba67bc))
+- css filter for images on dark theme ([97fff02](https://github.com/shopware/developer-documentation-vitepress/commit/97fff026e412c5cc5d4fd43cdc0e9fef918f715c))
+- dark forms, bordered buttons ([9295a3d](https://github.com/shopware/developer-documentation-vitepress/commit/9295a3d419023b08d3b1a7549a7e4d9176b439ae))
+- tests ([7e4bad9](https://github.com/shopware/developer-documentation-vitepress/commit/7e4bad92d77f8fe3038630a19c9deb6856bb0caf))
+- version switcher font ([5b4b0df](https://github.com/shopware/developer-documentation-vitepress/commit/5b4b0df15e0f4e18947d339d6557598f4d84cd54))
+- warn on empty file ([0fada0b](https://github.com/shopware/developer-documentation-vitepress/commit/0fada0bb3d40985945a24cfb4687e8eb4976c7ec))
+
+# [1.0.0-beta.29](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.27...v1.0.0-beta.29) (2023-06-23)
+
+### Bug Fixes
+
+- add distinct component class ([b428a87](https://github.com/shopware/developer-documentation-vitepress/commit/b428a878573b6163dcb93ebdd1a39ef308ba67bc))
+- css filter for images on dark theme ([97fff02](https://github.com/shopware/developer-documentation-vitepress/commit/97fff026e412c5cc5d4fd43cdc0e9fef918f715c))
+- dark forms, bordered buttons ([9295a3d](https://github.com/shopware/developer-documentation-vitepress/commit/9295a3d419023b08d3b1a7549a7e4d9176b439ae))
+- tests ([7e4bad9](https://github.com/shopware/developer-documentation-vitepress/commit/7e4bad92d77f8fe3038630a19c9deb6856bb0caf))
+- version switcher font ([5b4b0df](https://github.com/shopware/developer-documentation-vitepress/commit/5b4b0df15e0f4e18947d339d6557598f4d84cd54))
+- warn on empty file ([0fada0b](https://github.com/shopware/developer-documentation-vitepress/commit/0fada0bb3d40985945a24cfb4687e8eb4976c7ec))
+
 # [1.0.0-beta.28](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2023-06-23)
 
 ### Bug Fixes
