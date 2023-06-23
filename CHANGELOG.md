@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.30](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2023-06-23)
+
+### Bug Fixes
+
+- double the selector ([70f47de](https://github.com/shopware/developer-documentation-vitepress/commit/70f47decc6f22d8d0ae3069f128cefaad056dd41))
+- interfaces ([345faa9](https://github.com/shopware/developer-documentation-vitepress/commit/345faa9b9cb9e5ff52c945ca8b69daaae5b76f1a))
+
+# [1.0.0-beta.30](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2023-06-23)
+
+### Bug Fixes
+
+- double the selector ([70f47de](https://github.com/shopware/developer-documentation-vitepress/commit/70f47decc6f22d8d0ae3069f128cefaad056dd41))
+- interfaces ([345faa9](https://github.com/shopware/developer-documentation-vitepress/commit/345faa9b9cb9e5ff52c945ca8b69daaae5b76f1a))
+
 # [1.0.0-beta.29](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.27...v1.0.0-beta.29) (2023-06-23)
 
 ### Bug Fixes
