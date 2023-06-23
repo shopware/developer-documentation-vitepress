@@ -3,14 +3,24 @@ import path from "path";
 import fs from "fs";
 import {output} from "./output";
 
-export interface Repository {
+export interface BaseRepository {
     name: string;
+    env?: object;
+    skip?: boolean;
+}
+
+export interface RawRepository extends BaseRepository {
     src: string | string[];
     dst: string | string[];
     branch: string | string[];
     org: string | string[];
-    env?: object;
-    skip?: boolean;
+}
+
+export interface Repository extends BaseRepository {
+    src: string;
+    dst: string;
+    branch: string;
+    org: string;
 }
 
 let portalJson: { repositories: Repository[], src?: string } | null = null;
@@ -33,7 +43,7 @@ const getPortalJson = () => {
 const fetchSrc = () => getPortalJson()?.src ?? 'src';
 
 const mappedRepositories = () => (portalJson?.repositories || [])
-    .map((repo: Repository) => {
+    .map((repo: RawRepository) => {
         if (Array.isArray(repo.branch)) {
             repo.branch = repo.branch
                 .map(key => key.startsWith('env.') ? env[key.substring('env.'.length)] : key)
@@ -51,7 +61,7 @@ const mappedRepositories = () => (portalJson?.repositories || [])
             repo.dst = path.join(...repo.dst);
         }
 
-        return repo;
+        return repo as Repository;
     });
 
 export const docsSrcDir = fetchSrc();
