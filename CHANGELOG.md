@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.28](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2023-06-23)
+
+### Bug Fixes
+
+- add distinct component class ([b428a87](https://github.com/shopware/developer-documentation-vitepress/commit/b428a878573b6163dcb93ebdd1a39ef308ba67bc))
+- css filter for images on dark theme ([97fff02](https://github.com/shopware/developer-documentation-vitepress/commit/97fff026e412c5cc5d4fd43cdc0e9fef918f715c))
+- dark forms, bordered buttons ([9295a3d](https://github.com/shopware/developer-documentation-vitepress/commit/9295a3d419023b08d3b1a7549a7e4d9176b439ae))
+- version switcher font ([5b4b0df](https://github.com/shopware/developer-documentation-vitepress/commit/5b4b0df15e0f4e18947d339d6557598f4d84cd54))
+
+# [1.0.0-beta.28](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.27...v1.0.0-beta.28) (2023-06-23)
+
+### Bug Fixes
+
+- add distinct component class ([b428a87](https://github.com/shopware/developer-documentation-vitepress/commit/b428a878573b6163dcb93ebdd1a39ef308ba67bc))
+- css filter for images on dark theme ([97fff02](https://github.com/shopware/developer-documentation-vitepress/commit/97fff026e412c5cc5d4fd43cdc0e9fef918f715c))
+- dark forms, bordered buttons ([9295a3d](https://github.com/shopware/developer-documentation-vitepress/commit/9295a3d419023b08d3b1a7549a7e4d9176b439ae))
+- version switcher font ([5b4b0df](https://github.com/shopware/developer-documentation-vitepress/commit/5b4b0df15e0f4e18947d339d6557598f4d84cd54))
+
 # [1.0.0-beta.26](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.25...v1.0.0-beta.26) (2023-06-16)
 
 **Note:** Version bump only for package vitepress-shopware-docs
