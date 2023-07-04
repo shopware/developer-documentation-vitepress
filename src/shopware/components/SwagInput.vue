@@ -14,6 +14,6 @@ const emit = defineEmits(['update:modelValue'])
 const myValue = ref(props.modelValue);
 
 watch(myValue, () => {
-  emit('update:modelValue', newValue)
+  emit('update:modelValue', myValue.value)
 })
 </script>

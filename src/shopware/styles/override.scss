@@ -94,9 +94,14 @@ html.dark {
 }
 
 body {
-  font-family: "HVD Fonts - BrandonText";
+  font-family: Inter, sans-serif;
   font-weight: 300;
   color: var(--c-text);
+  background-color: var(--vp-c-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Poppins, sans-serif;
 }
 
 h1 {
@@ -223,6 +228,8 @@ body .container {
 }
 
 .VPContent {
+  // fixes any position: sticky
+  overflow-x: initial;
   .quote {
     color: var(--c-text-100);
   }
@@ -481,10 +488,11 @@ h3.styled {
 
   &:not(.has-aside,.has-sidebar) > .container > .content {
     @apply px-0;
+    max-width: 100%;
   }
   padding-top: 0;
 
-  @media (min-width: 1440px) {
+  /*@media (min-width: 1440px) {
     &:not(.has-sidebar) {
       .container.container,
       .content.content {
@@ -500,7 +508,7 @@ h3.styled {
         max-width: 100%;
       }
     }
-  }
+  }*/
 
   .VPDocOutlineDropdown {
     button,

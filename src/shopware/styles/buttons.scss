@@ -1,8 +1,9 @@
 .btn,
 .vp-doc .btn {
     @apply transition transition-all rounded-sm font-normal no-underline;
+    display: inline-block;
 
-    font-family: "HVD Fonts - BrandonText";
+    font-family: Inter, sans-serif;
 
     --btn-color: white;
     --btn-color--hover: white;

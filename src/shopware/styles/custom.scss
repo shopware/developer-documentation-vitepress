@@ -3,22 +3,28 @@
     font-size: 20px;
 }
 
-.c-any-card {
+
+.c-any-card,
+.c-flat-card {
     @apply bg-#fff transition transition-all rounded-md overflow-hidden;
-    @apply hover:shadow-lg hover:border-#e8e8e8;
     @apply dark:border-#444;
-    @apply hover:dark:border-#333;
 
     box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
 
-    &:hover {
-        box-shadow: 0 10px 32px -8px rgb(0 0 0 / 25%);
-    }
     .dark & {
         background-color: var(--sw-c-gray-dark-600);
         &:hover {
             background-color: var(--sw-c-gray-dark-500);
         }
+    }
+}
+
+.c-any-card {
+    @apply hover:shadow-lg hover:border-#e8e8e8;
+    @apply hover:dark:border-#333;
+
+    &:hover {
+        box-shadow: 0 10px 32px -8px rgb(0 0 0 / 25%);
     }
     &:hover {
         .c-any-card_title {
@@ -66,6 +72,12 @@
 
 .text-subtle {
     color: var(--c-text-light);
+}
+
+.h-label {
+    text-transform: uppercase;
+    color: var(--sw-c-blue-vivacious);
+    font-weight: 600;
 }
 
 .c-outflow {
