@@ -10,12 +10,8 @@
     @apply dark:border-#444;
 
     box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
-
     .dark & {
         background-color: var(--sw-c-gray-dark-600);
-        &:hover {
-            background-color: var(--sw-c-gray-dark-500);
-        }
     }
 }
 
@@ -43,6 +39,12 @@
         font-size: 0.925rem;
         color: var(--c-text-light);
         font-weight: 200;
+    }
+
+    .dark & {
+        &:hover {
+            background-color: var(--sw-c-gray-dark-500);
+        }
     }
 }
 
