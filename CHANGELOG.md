@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.31](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2023-07-10)
+
+### Bug Fixes
+
+- storybook ([c615bc1](https://github.com/shopware/developer-documentation-vitepress/commit/c615bc14de118d3284710d591e943103727ac904))
+
+# [1.0.0-beta.31](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2023-07-10)
+
+### Bug Fixes
+
+- storybook ([c615bc1](https://github.com/shopware/developer-documentation-vitepress/commit/c615bc14de118d3284710d591e943103727ac904))
+
 # [1.0.0-beta.30](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.29...v1.0.0-beta.30) (2023-06-23)
 
 ### Bug Fixes
