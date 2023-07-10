@@ -87,7 +87,7 @@ const cli = {
         program
             .name('docs-cli')
             .description('Shopware Docs CLI')
-            .version('0.0.1');
+            .version('1.0.0-beta.31');
 
         // more data
         program.option('--vv', '--verbose');
