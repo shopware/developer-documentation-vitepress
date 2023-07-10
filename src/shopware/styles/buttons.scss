@@ -1,7 +1,9 @@
 .btn,
 .vp-doc .btn {
-    @apply transition transition-all rounded-sm font-normal no-underline;
-    display: inline-block;
+    @apply inline-flex transition transition-all font-normal no-underline items-center;
+
+    gap: .666em;
+    border-radius: .25rem;
 
     font-family: Inter, sans-serif;
 
@@ -12,7 +14,7 @@
 
     color: var(--btn-color);
     background-color: var(--btn-bg);
-    font-weight: 400 !important;
+    font-weight: 500;
 
     &:hover {
         color: var(--btn-color--hover);
@@ -21,24 +23,38 @@
     }
 
     // size variations
-    @apply text-sm px-6 py-3;
+    @apply text-sm px-6;
+    --py: 0.875rem;
     &.--xs {
-        @apply text-xs px-4 py-2;
+        --py: 0.5rem;
+        @apply text-xs px-4;
     }
     &.--sm {
-        @apply text-sm px-6 py-3;
+        --py: 0.625rem;
+        @apply text-sm px-4;
     }
     &.--md {
-        @apply text-md px-8 py-4;
+        --py: 1rem;
+        @apply text-md px-6;
     }
     &.--lg {
-        @apply text-lg px-10 py-5;
+        --py: 1.25rem;
+        @apply text-lg px-8;
     }
     &.--xl {
-        @apply text-xl px-12 py-6;
+        --py: 1.5rem;
+        @apply text-xl px-10;
     }
 
+    /* prepare vars for bordered version */
+    padding-top: calc(var(--py) - var(--border-w, 0px));
+    padding-bottom: calc(var(--py) - var(--border-w, 0px));
+
     // color variations
+    &.--primary {
+        --btn-bg: var(--sw-c-blue-vivacious-900);
+    }
+
     &.--secondary {
         --btn-bg: var(--sw-c-blue-vivacious-50);
         --btn-bg--hover: var(--sw-c-blue-vivacious-100);
@@ -53,11 +69,13 @@
     }
 
     &.--subtle {
+        --btn-border: var(--sw-c-gray-500);
         --btn-bg: var(--sw-c-gray-100);
         --btn-bg--hover: var(--sw-c-gray-200);
         --btn-color: var(--sw-c-gray-dark-100);
         --btn-color--hover: var(--sw-c-gray-dark-200);
         .dark & {
+            --btn-border: var(--sw-c-gray-dark-900);
             --btn-bg: var(--sw-c-gray-dark-600);
             --btn-bg--hover: var(--sw-c-gray-dark-500);
             --btn-color: white;
@@ -77,8 +95,9 @@
     }
 
     &.--bordered {
+        --border-w: 2px;
         color: var(--btn-bg);
-        border: 2px var(--btn-bg) solid;
+        border: var(--border-w) var(--btn-bg) solid;
         background-color: inherit;
         line-height: calc(1.429em - 4px);
         transition: border-color ease-in-out;
@@ -86,6 +105,22 @@
             color: var(--btn-bg--hover);
             border-color: var(--btn-bg--hover);
         }
+    }
+
+    &.--with-border {
+        --border-w: 1px;
+        border: var(--border-w) var(--btn-border) solid;
+    }
+
+    /* alternative button version */
+    &.--compact {
+        @apply rounded-md;
+    }
+
+    /* with icons */
+    .SwagIcon {
+        width: 1em;
+        height: 1em;
     }
 }
 

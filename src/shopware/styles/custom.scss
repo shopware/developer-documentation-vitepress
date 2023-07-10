@@ -77,9 +77,26 @@
 }
 
 .h-label {
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: var(--sw-c-blue-vivacious);
+    font-weight: 700;
+    letter-spacing: 0.0625rem;
+
+    & + .h-homepage {
+        @apply mt-2;
+    }
+}
+
+.h-homepage {
+    font-size: 1.75rem;
+    font-style: normal;
     font-weight: 600;
+    line-height: 2.625rem;
+    letter-spacing: 0.00625rem;
+
+    & + * {
+        @apply mt-7;
+    }
 }
 
 .c-outflow {
@@ -118,6 +135,11 @@
     .dark & {
         background-color: var(--sw-c-gray-dark-800);
     }
+}
+
+.u-gradient-image {
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .accent {
@@ -161,4 +183,12 @@ main :not(.grid) > .PageRef {
 .dark .vp-doc > div > img,
 .dark .vp-doc > div > p > img, {
     filter: invert(1) hue-rotate(-180deg);
+}
+
+hr {
+    border-bottom-color: var(--c-text-light);
+    border-top-color: transparent;
+    border-left: none;
+    border-right: none;
+    opacity: .25;
 }

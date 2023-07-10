@@ -95,7 +95,7 @@ html.dark {
 
 body {
   font-family: Inter, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--c-text);
   background-color: var(--vp-c-bg);
 }
@@ -327,11 +327,6 @@ body .container {
   }
 }
 
-.vp-doc a[class] {
-  // reset
-  font-weight: inherit;
-}
-
 .prev-next a:hover .title {
   color: var(--c-blue-brand-dark);
 }
@@ -404,7 +399,7 @@ h3.styled {
   }
 
   //> div > *:not(:first-child)
-  > div > * + * {
+  > div > *:not([class]) + * {
     margin-block-start: 1em;
   }
 
@@ -564,4 +559,9 @@ nav ul.root li,
   position: absolute;
   right: 0;
   top: -100px;
+}
+
+/* homepage? */
+.VPDoc:not(.has-sidebar) .container {
+  max-width: 1300px !important;
 }
