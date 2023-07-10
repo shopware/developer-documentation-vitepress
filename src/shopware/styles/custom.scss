@@ -3,22 +3,24 @@
     font-size: 20px;
 }
 
-.c-any-card {
+
+.c-any-card,
+.c-flat-card {
     @apply bg-#fff transition transition-all rounded-md overflow-hidden;
-    @apply hover:shadow-lg hover:border-#e8e8e8;
     @apply dark:border-#444;
-    @apply hover:dark:border-#333;
 
     box-shadow: 0 3px 10px 0 rgb(0 0 0 / 10%);
+    .dark & {
+        background-color: var(--sw-c-gray-dark-600);
+    }
+}
+
+.c-any-card {
+    @apply hover:shadow-lg hover:border-#e8e8e8;
+    @apply hover:dark:border-#333;
 
     &:hover {
         box-shadow: 0 10px 32px -8px rgb(0 0 0 / 25%);
-    }
-    .dark & {
-        background-color: var(--sw-c-gray-dark-600);
-        &:hover {
-            background-color: var(--sw-c-gray-dark-500);
-        }
     }
     &:hover {
         .c-any-card_title {
@@ -37,6 +39,12 @@
         font-size: 0.925rem;
         color: var(--c-text-light);
         font-weight: 200;
+    }
+
+    .dark & {
+        &:hover {
+            background-color: var(--sw-c-gray-dark-500);
+        }
     }
 }
 
@@ -66,6 +74,29 @@
 
 .text-subtle {
     color: var(--c-text-light);
+}
+
+.h-label {
+    text-transform: capitalize;
+    color: var(--sw-c-blue-vivacious);
+    font-weight: 700;
+    letter-spacing: 0.0625rem;
+
+    & + .h-homepage {
+        @apply mt-2;
+    }
+}
+
+.h-homepage {
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.625rem;
+    letter-spacing: 0.00625rem;
+
+    & + * {
+        @apply mt-7;
+    }
 }
 
 .c-outflow {
@@ -104,6 +135,11 @@
     .dark & {
         background-color: var(--sw-c-gray-dark-800);
     }
+}
+
+.u-gradient-image {
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
 }
 
 .accent {
@@ -147,4 +183,12 @@ main :not(.grid) > .PageRef {
 .dark .vp-doc > div > img,
 .dark .vp-doc > div > p > img, {
     filter: invert(1) hue-rotate(-180deg);
+}
+
+hr {
+    border-bottom-color: var(--c-text-light);
+    border-top-color: transparent;
+    border-left: none;
+    border-right: none;
+    opacity: .25;
 }

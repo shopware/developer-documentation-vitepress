@@ -46,7 +46,7 @@
   --c-link: var(--c-blue-brand);
   --c-link--hover: var(--c-blue-brand-dark);
 
-  --vp-c-bg: var(--c-white-100);
+  --vp-c-bg: #fff;
   --vp-c-bg-soft: rgba(226, 232, 240, 1);
   --vp-c-bg-soft-mute: rgba(226, 232, 240, 1);
 
@@ -94,9 +94,14 @@ html.dark {
 }
 
 body {
-  font-family: "HVD Fonts - BrandonText";
-  font-weight: 300;
+  font-family: Inter, sans-serif;
+  font-weight: 400;
   color: var(--c-text);
+  background-color: var(--vp-c-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Poppins, sans-serif;
 }
 
 h1 {
@@ -223,6 +228,8 @@ body .container {
 }
 
 .VPContent {
+  // fixes any position: sticky
+  overflow-x: initial;
   .quote {
     color: var(--c-text-100);
   }
@@ -320,11 +327,6 @@ body .container {
   }
 }
 
-.vp-doc a[class] {
-  // reset
-  font-weight: inherit;
-}
-
 .prev-next a:hover .title {
   color: var(--c-blue-brand-dark);
 }
@@ -397,7 +399,7 @@ h3.styled {
   }
 
   //> div > *:not(:first-child)
-  > div > * + * {
+  > div > *:not([class]) + * {
     margin-block-start: 1em;
   }
 
@@ -481,10 +483,11 @@ h3.styled {
 
   &:not(.has-aside,.has-sidebar) > .container > .content {
     @apply px-0;
+    max-width: 100%;
   }
   padding-top: 0;
 
-  @media (min-width: 1440px) {
+  /*@media (min-width: 1440px) {
     &:not(.has-sidebar) {
       .container.container,
       .content.content {
@@ -500,7 +503,7 @@ h3.styled {
         max-width: 100%;
       }
     }
-  }
+  }*/
 
   .VPDocOutlineDropdown {
     button,
@@ -556,4 +559,9 @@ nav ul.root li,
   position: absolute;
   right: 0;
   top: -100px;
+}
+
+/* homepage? */
+.VPDoc:not(.has-sidebar) .container {
+  max-width: 1300px !important;
 }

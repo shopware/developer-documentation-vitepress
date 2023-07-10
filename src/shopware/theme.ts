@@ -48,30 +48,41 @@ import SwagScrollToTop from "./components/SwagScrollToTop.vue";
 import '../shopware/styles/_index.scss'
 import "uno.css";
 
-const SWAGTheme = (myConfig: { enhanceApp?: Function } = {}) => ({
+const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any[]} } = {}) => ({
     Layout: (() => {
+        const slots = {
+            'doc-top': () => [
+                h(SwagHeader),
+            ],
+            'doc-before': () => [
+                h(SwagAlgoliaAttributes),
+                //h(SwagBreadcrumbs),
+            ],
+            'doc-footer-before': () => [
+                h(SwagContentMenu),
+                h(SwagRelatedArticles),
+                h(SwagStackOverflow),
+            ],
+            'sidebar-nav-before': () => h(SwagSidebarVersionSwitcher),
+            'layout-bottom': () => [
+                h(SwagScrollToTop),
+                h(SwagFooter)
+            ],
+        };
+
+        Object.keys(myConfig?.slots || {}).forEach(key => {
+            if (!slots[key]) {
+                slots[key] = [];
+            }
+
+            console.log('pushing to', key);
+            myConfig.slots[key].forEach(component => slots[key].push(component));
+        });
+
         return h(
             withConfigProvider(Theme.Layout),
             null,
-            {
-                'doc-top': () => [
-                    h(SwagHeader),
-                ],
-                'doc-before': () => [
-                    h(SwagAlgoliaAttributes),
-                    //h(SwagBreadcrumbs),
-                ],
-                'doc-footer-before': () => [
-                    h(SwagContentMenu),
-                    h(SwagRelatedArticles),
-                    h(SwagStackOverflow),
-                ],
-                'sidebar-nav-before': () => h(SwagSidebarVersionSwitcher),
-                'layout-bottom': () => [
-                    h(SwagScrollToTop),
-                    h(SwagFooter)
-                ],
-            }
+            slots
         )
     })(),
     //NotFound: VPNotFound,

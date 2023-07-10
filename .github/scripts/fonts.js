@@ -7,12 +7,12 @@
 const { download } = require('google-fonts-helper');
 
 (async () => {
-    const downloader = download('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@800&display=swap', {
+    const downloader = download('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap', {
         base64: false,
         overwriting: false,
-        outputDir: './src/',
-        stylePath: 'vitepress/styles/fonts.css',
-        fontsDir: 'vitepress/fonts',
+        outputDir: './tmp-src/',
+        stylePath: 'shopware/styles/fonts-inter.css',
+        fontsDir: 'shopware/fonts',
         fontsPath: '../fonts'
     })
 
