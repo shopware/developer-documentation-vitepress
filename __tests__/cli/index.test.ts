@@ -46,7 +46,7 @@ describe('CLI', async () => {
         expect(result.code).toBe(0);
         expect(result.error).toBeNull();
         expect(result.stderr).toBe('');
-        expect(result.stdout).toBe('0.0.1');
+        expect(result.stdout).toBe('1.0.0-beta.31');
     })
 
     test('Help', async () => {
