@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.32](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2023-07-12)
+
+### Bug Fixes
+
+- 1px horizontal offset ([b31bf5e](https://github.com/shopware/developer-documentation-vitepress/commit/b31bf5e67d5cf0e4507340c0cfd9b43efbb6fb56))
+- refactor slots ([ee10208](https://github.com/shopware/developer-documentation-vitepress/commit/ee10208599b4dac7fd4929da3f2974e9bc56a3ba))
+- remove changelog ([05d333c](https://github.com/shopware/developer-documentation-vitepress/commit/05d333c81e733ab48aabc224ddb5de392ef72d20))
+- replace font ([d63afc1](https://github.com/shopware/developer-documentation-vitepress/commit/d63afc108de92fe55b9768560518ffc5c1cd17ba))
+- update CLI version in tests ([e96d1d5](https://github.com/shopware/developer-documentation-vitepress/commit/e96d1d522bf13b62543731c38b5544fbc3f33ac6))
+
+### Features
+
+- menu style ([3249e57](https://github.com/shopware/developer-documentation-vitepress/commit/3249e5791cd0765734969c0398cb249c347172ec))
+
+# [1.0.0-beta.32](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.31...v1.0.0-beta.32) (2023-07-12)
+
+### Bug Fixes
+
+- 1px horizontal offset ([b31bf5e](https://github.com/shopware/developer-documentation-vitepress/commit/b31bf5e67d5cf0e4507340c0cfd9b43efbb6fb56))
+- refactor slots ([ee10208](https://github.com/shopware/developer-documentation-vitepress/commit/ee10208599b4dac7fd4929da3f2974e9bc56a3ba))
+- remove changelog ([05d333c](https://github.com/shopware/developer-documentation-vitepress/commit/05d333c81e733ab48aabc224ddb5de392ef72d20))
+- replace font ([d63afc1](https://github.com/shopware/developer-documentation-vitepress/commit/d63afc108de92fe55b9768560518ffc5c1cd17ba))
+- update CLI version in tests ([e96d1d5](https://github.com/shopware/developer-documentation-vitepress/commit/e96d1d522bf13b62543731c38b5544fbc3f33ac6))
+
+### Features
+
+- menu style ([3249e57](https://github.com/shopware/developer-documentation-vitepress/commit/3249e5791cd0765734969c0398cb249c347172ec))
+
 # [1.0.0-beta.31](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.30...v1.0.0-beta.31) (2023-07-10)
 
 ### Bug Fixes
