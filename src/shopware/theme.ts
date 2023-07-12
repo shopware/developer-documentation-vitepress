@@ -49,22 +49,24 @@ import '../shopware/styles/_index.scss'
 import "uno.css";
 
 const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any[]} } = {}) => ({
-    Layout: (() => {
+    Layout() {
         const slots = {
-            'doc-top': () => [
+            'doc-top': [
                 h(SwagHeader),
             ],
-            'doc-before': () => [
+            'doc-before': [
                 h(SwagAlgoliaAttributes),
                 //h(SwagBreadcrumbs),
             ],
-            'doc-footer-before': () => [
+            'doc-footer-before': [
                 h(SwagContentMenu),
                 h(SwagRelatedArticles),
                 h(SwagStackOverflow),
             ],
-            'sidebar-nav-before': () => h(SwagSidebarVersionSwitcher),
-            'layout-bottom': () => [
+            'sidebar-nav-before': [
+                h(SwagSidebarVersionSwitcher),
+            ],
+            'layout-bottom': [
                 h(SwagScrollToTop),
                 h(SwagFooter)
             ],
@@ -75,8 +77,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
                 slots[key] = [];
             }
 
-            console.log('pushing to', key);
-            myConfig.slots[key].forEach(component => slots[key].push(component));
+            myConfig.slots[key].forEach(component => slots[key].push(h(component)));
         });
 
         return h(
@@ -84,7 +85,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
             null,
             slots
         )
-    })(),
+    },
     //NotFound: VPNotFound,
     enhanceApp({app, router, siteData}) {
         // app.component('ActionItem', ActionItem),
