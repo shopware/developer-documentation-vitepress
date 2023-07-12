@@ -18,7 +18,7 @@
     @apply focus:ring-blue-500 focus:border-blue-500;
     @apply dark:bg-[var(--sw-c-gray-dark-800)] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
     @apply focus:dark:ring-blue-500 focus:dark:border-blue-500;
-    font-family: 'HVD Fonts - BrandonText';
+    font-family: "Poppins", sans-serif;
   }
 }
 </style>
