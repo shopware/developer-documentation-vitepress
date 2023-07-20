@@ -4,7 +4,7 @@
      class="SwagCard c-any-card p-5">
     <div class="flex items-center">
       <span class="text-lg font-semibold mt-2 mb-4 accent flex gap-2">
-        <div class="i-carbon-model-alt h-7 w-7 text-shopware"/>
+        <!--<div class="i-carbon-model-alt h-7 w-7 text-shopware"/>-->
         <slot name="title"></slot>
       </span>
     </div>
