@@ -51,22 +51,22 @@ import "uno.css";
 const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any[]} } = {}) => ({
     Layout() {
         const slots = {
-            'doc-top': [
+            'doc-top': () => [
                 h(SwagHeader),
             ],
-            'doc-before': [
+            'doc-before': () => [
                 h(SwagAlgoliaAttributes),
                 //h(SwagBreadcrumbs),
             ],
-            'doc-footer-before': [
+            'doc-footer-before': () => [
                 h(SwagContentMenu),
                 h(SwagRelatedArticles),
                 h(SwagStackOverflow),
             ],
-            'sidebar-nav-before': [
+            'sidebar-nav-before': () => [
                 h(SwagSidebarVersionSwitcher),
             ],
-            'layout-bottom': [
+            'layout-bottom': () => [
                 h(SwagScrollToTop),
                 h(SwagFooter)
             ],
@@ -74,10 +74,13 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
 
         Object.keys(myConfig?.slots || {}).forEach(key => {
             if (!slots[key]) {
-                slots[key] = [];
+                slots[key] = () => [];
             }
 
-            myConfig.slots[key].forEach(component => slots[key].push(h(component)));
+            const currentSlots = slots[key]();
+
+            myConfig.slots[key].forEach(component => currentSlots.push(h(component)));
+            slots[key] = () => currentSlots;
         });
 
         return h(
