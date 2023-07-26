@@ -120,6 +120,13 @@
         "mkdirp",
         "@stoplight/mosaic-code-viewer"
       ]
+    },
+    "overrides": {
+      "@antfu/utils@<0.7.3": ">=0.7.3",
+      "vite@>=4.3.0 <4.3.9": ">=4.3.9",
+      "semver@<5.7.2": ">=5.7.2",
+      "semver@>=6.0.0 <6.3.1": ">=6.3.1",
+      "semver@>=7.0.0 <7.5.2": ">=7.5.2"
     }
   }
 }
