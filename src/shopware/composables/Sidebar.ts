@@ -518,8 +518,11 @@ export const buildSidebarNav = (
             // skip external links
             const isExternal = link?.startsWith('https://') || link?.startsWith('http://');
 
+            // skip non-dir links
+            const isDir = link?.endsWith('/');
+
             // build sidebar
-            if (!isExternal && link) {
+            if (!isExternal && link && isDir) {
                 data.sidebar[link] = transformLinkToSidebar(root, link);
             }
 

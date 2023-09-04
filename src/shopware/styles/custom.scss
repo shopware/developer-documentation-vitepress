@@ -30,15 +30,15 @@
 
     &_title {
         @apply font-normal;
-        color: var(--c-link);
-        font-weight: 400;
+        color: var(--sw-c-blue-vivacious);
+        font-weight: 700;
     }
 
     &_description {
         @apply text-sm;
         font-size: 0.925rem;
         color: var(--c-text-light);
-        font-weight: 200;
+        font-weight: 300;
     }
 
     .dark & {

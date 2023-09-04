@@ -1,12 +1,13 @@
 <template>
   <div class="SwagLandingCardListWrapper relative flex flex-col gap-4 leading-7 py-10">
-    <h3 v-if="$slots.title"><slot name="title"></slot></h3>
+    <h3 v-if="$slots.title" class="SwagLandingCardListWrapper_title"><slot name="title"></slot></h3>
     <slot v-if="$slots.description" name="description"></slot>
     <div class="gap-10 SwagLandingCardList grid sm:grid-cols-2 md:grid-cols-3 pt-5">
       <slot name="cards">
         <SwagLandingCard v-for="item in exposed" v-bind="item"/>
       </slot>
     </div>
+    <slot />
     <slot name="outro"></slot>
   </div>
 </template>
@@ -46,6 +47,10 @@ const props = defineProps({
     &::before {
       display: none;
     }
+  }
+
+  &_title {
+    font-size: 1.5rem;
   }
 }
 </style>

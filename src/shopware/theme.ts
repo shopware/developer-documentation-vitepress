@@ -22,6 +22,7 @@ import SwagLanding from "./../shopware/components/SwagLanding.vue";
 import SwagCard from "./../shopware/components/SwagCard.vue";
 import SwagLandingCard from "./../shopware/components/SwagLandingCard.vue";
 import SwagLandingCardList from "./../shopware/components/SwagLandingCardList.vue";
+import SwagCardSummary from "./../shopware/components/SwagCardSummary.vue";
 
 // broken components
 // import ActionItem from "./../shopware/components/ActionItem.vue";
@@ -105,6 +106,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         app.component("SwagCard", SwagCard);
         app.component("SwagLandingCard", SwagLandingCard);
         app.component("SwagLandingCardList", SwagLandingCardList);
+        app.component("SwagCardSummary", SwagCardSummary);
         app.component("SwagLanding", SwagLanding);
 
         /**
