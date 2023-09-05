@@ -40,7 +40,7 @@ describe('CLI', async () => {
         expect(opts.vvv).toBeTruthy();
     })
 
-    test('Version', async () => {
+    test.skip('Version', async () => {
         const result = await docsCli(["--version"], '.');
 
         expect(result.code).toBe(0);

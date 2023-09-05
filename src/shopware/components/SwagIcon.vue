@@ -14,8 +14,8 @@
 </style>
 
 <script lang="ts" setup>
-// :id="`meteor-icon-kit_${type}-${icon}`"
 import {computed, PropType} from "vue";
+import {meteorPublicPath} from "../utils/meteor";
 
 enum IconTypeEnum {
     REGULAR = "regular",
@@ -34,9 +34,5 @@ const props = defineProps({
     }
 });
 
-const publicPath = import.meta.env.MODE === 'development' && !('STORYBOOK' in import.meta.env)
-    ? `${(new URL(import.meta.url)).pathname.replace('/vitepress-shopware-docs/src/shopware/components/SwagIcon.vue', '/')}@shopware-ag/meteor-icon-kit`
-    : '';
-
-const iconStyle = computed(() => ({'--icon-src': `url("${publicPath}/icons/${props.type}/${props.icon}.svg")`}))
+const iconStyle = computed(() => ({'--icon-src': `url("${meteorPublicPath}/icons/${props.type}/${props.icon}.svg")`}))
 </script>

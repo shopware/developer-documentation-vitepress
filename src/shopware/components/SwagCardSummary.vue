@@ -1,5 +1,5 @@
 <template>
-  <div class="SwagCardSummary c-flat-card">
+  <div class="SwagCardSummary c-flat-card" :style="{'--mask-image': maskImage}">
     <SwagIcon class="SwagCardSummary_icon"
               type="solid"
               :icon="icon" />
@@ -36,7 +36,7 @@
       color: var(--sw-c-blue-vivacious);
       &:after {
         background-color: var(--sw-c-blue-vivacious);
-        mask-image: url(/@fs/www/shopware/developer-portal/node_modules/@shopware-ag/meteor-icon-kit/icons/solid/long-arrow-right.svg);
+        mask-image: var(--mask-image);
         content: '';
         display: block;
         width: .825rem;
@@ -49,10 +49,14 @@
 </style>
 
 <script setup>
+import {meteorPublicPath} from "../utils/meteor";
+import {computed} from "vue";
 const props = defineProps({
   icon: {
     type: String,
     required: true,
   }
 })
+
+const maskImage = computed(() => `url(${meteorPublicPath}/icons/solid/long-arrow-right.svg)`)
 </script>
