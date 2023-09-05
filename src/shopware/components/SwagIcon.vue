@@ -8,8 +8,8 @@
   -webkit-mask: var(--icon-src) no-repeat center;
   mask: var(--icon-src) no-repeat center;
   display: block;
-  width: 2rem;
-  height: 2rem;
+  width: var(--icon-size, 2rem);
+  height: var(--icon-size, 2rem);
 }
 </style>
 

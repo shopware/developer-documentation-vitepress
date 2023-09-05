@@ -1,28 +1,42 @@
 <template>
-  <a class="PageRef"
-     :href="page"
-     v-bind="autoBind">
-    <div
-      class="c-any-card flex gap-3 border-1px border-#eeeeee rounded-md p-4"
-    >
-      <div v-if="icon" class="flex w-14 items-center">
-        <img :src="icon" class="w-14 h-14 object-cover" />
-      </div>
-      <div v-else-if="video">
-        <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
-      </div>
-      <div class="flex-1">
-        <span class="PageRef_title c-any-card_title">{{ title }}</span>
-        <div
-          v-if="sub?.length > 0"
-          class="PageRef_sub c-any-card_description mt-2 block"
-        >
-          {{ sub }}
-        </div>
+  <a
+      :href="page"
+      v-bind="autoBind"
+    class="PageRef c-any-card flex gap-3 border-1px border-#eeeeee rounded-md"
+  >
+    <div v-if="icon" class="flex w-14 items-center">
+      <img :src="icon" class="w-14 h-14 object-cover" />
+    </div>
+    <div v-else-if="video">
+      <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
+    </div>
+    <div class="flex-1">
+      <span class="PageRef_title c-any-card_title">
+        <slot name="title">{{ title }}</slot>
+        <SwagIcon class="PageRef_icon" icon="long-arrow-right" />
+      </span>
+      <div
+        v-if="sub?.length > 0 || $slots.sub"
+        class="PageRef_sub c-any-card_description mt-2 block"
+      >
+        <slot name="sub">{{ sub }}</slot>
       </div>
     </div>
   </a>
 </template>
+
+<style lang="scss">
+.PageRef {
+  @apply p-6;
+  &_icon {
+    --icon-size: 1rem;
+  }
+  &_title {
+    @apply items-center gap-2;
+    display: flex;
+  }
+}
+</style>
 
 <script setup>
 import {useAttrs, ref} from "vue";
