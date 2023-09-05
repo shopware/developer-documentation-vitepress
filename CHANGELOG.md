@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.36](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.35...v1.0.0-beta.36) (2023-09-05)
+
+### Bug Fixes
+
+- icon ([0457198](https://github.com/shopware/developer-documentation-vitepress/commit/04571986e7b0610892358dcb6923015105778146))
+- links ([e24ab6a](https://github.com/shopware/developer-documentation-vitepress/commit/e24ab6a6e15e9bf78622f3b24f9fa0e565239245))
+
+# [1.0.0-beta.36](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.35...v1.0.0-beta.36) (2023-09-05)
+
+### Bug Fixes
+
+- icon ([0457198](https://github.com/shopware/developer-documentation-vitepress/commit/04571986e7b0610892358dcb6923015105778146))
+- links ([e24ab6a](https://github.com/shopware/developer-documentation-vitepress/commit/e24ab6a6e15e9bf78622f3b24f9fa0e565239245))
+
 # [1.0.0-beta.35](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2023-09-05)
 
 ### Bug Fixes
