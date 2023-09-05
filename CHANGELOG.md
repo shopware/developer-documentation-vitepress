@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0-beta.35](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2023-09-05)
+
+### Bug Fixes
+
+- audit, override ([8ccc89e](https://github.com/shopware/developer-documentation-vitepress/commit/8ccc89e8effd2417d6c3d5e75f118789211be136))
+
+# [1.0.0-beta.35](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.34...v1.0.0-beta.35) (2023-09-05)
+
+### Bug Fixes
+
+- audit, override ([8ccc89e](https://github.com/shopware/developer-documentation-vitepress/commit/8ccc89e8effd2417d6c3d5e75f118789211be136))
+
 # [1.0.0-beta.34](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0-beta.33...v1.0.0-beta.34) (2023-07-24)
 
 ### Bug Fixes
