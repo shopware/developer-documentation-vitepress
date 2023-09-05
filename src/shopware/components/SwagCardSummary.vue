@@ -24,13 +24,25 @@
   }
   &_links {
     ul {
-      @apply p-0 m-0 grid gap-0.5;
+      @apply p-0 m-0 mt-2.5 grid;
       list-style: none;
     }
     a {
+      @apply flex items-center;
       font-size: 0.875rem;
       font-style: normal;
       font-weight: 500;
+      flex-direction: row;
+      color: var(--sw-c-blue-vivacious);
+      &:after {
+        background-color: var(--sw-c-blue-vivacious);
+        mask-image: url(/@fs/www/shopware/developer-portal/node_modules/@shopware-ag/meteor-icon-kit/icons/solid/long-arrow-right.svg);
+        content: '';
+        display: block;
+        width: .825rem;
+        height: .5rem;
+        margin-left: .5rem;
+      }
     }
   }
 }
