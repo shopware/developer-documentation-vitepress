@@ -27,7 +27,7 @@
       @apply p-0 m-0 mt-2.5 grid;
       list-style: none;
     }
-    a {
+    .vp-doc & a:not([class]) {
       @apply flex items-center;
       font-size: 0.875rem;
       font-style: normal;

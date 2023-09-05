@@ -314,7 +314,8 @@ body .container {
   }
 }
 
-.vp-doc a:not(.btn),
+a.as-link,
+.vp-doc a:not([class]),
 .prev-next a,
 .edit-info .edit-link-button,
 .edit-info a,
