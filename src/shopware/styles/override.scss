@@ -380,7 +380,17 @@ h1.styled {
 h2.styled,
 .vp-doc > div > h3,
 h3.styled {
-  @apply mt-10 mb-4 pt-4;
+  @apply mt-10 mb-4 pt-0;
+}
+
+.vp-doc > div > h2 {
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.vp-doc > div > h3 {
+  font-size: 20px;
+  line-height: 26px;
 }
 
 .vp-doc {
