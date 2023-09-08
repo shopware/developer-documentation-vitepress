@@ -118,16 +118,16 @@
 
       <ul class="flex gap-6 justify-center text-sm">
         <li>
-          <a href="#">Terms &amp; Conditions</a>
+          <a href="https://www.shopware.com/en/gtc/" target="_blank">Terms &amp; Conditions</a>
         </li>
         <li>
-          <a href="#">Privacy policy</a>
+          <a href="https://www.shopware.com/en/privacy/" target="_blank">Privacy policy</a>
         </li>
         <li>
-          <a href="#">Legal notice</a>
+          <a href="https://www.shopware.com/en/legal-notice/" target="_blank">Legal notice</a>
         </li>
         <li>
-          <a href="#">Cookie settings</a>
+          <a href="#" @click.prevent="openUserCentrics">Cookie settings</a>
         </li>
       </ul>
       <div class="text-center font-extralight text-xs">Copyright © shopware AG - All rights reserved</div>
@@ -151,6 +151,8 @@ const itemProps = (item) => {
     rel: 'nofollow noopener noreferrer',
   };
 }
+
+const openUserCentrics = () => UC_UI.showSecondLayer();
 
 const footers = [
   {
