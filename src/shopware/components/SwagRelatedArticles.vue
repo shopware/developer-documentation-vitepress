@@ -8,6 +8,7 @@
                     :page="link.page"
                     :title="link.title"
                     :sub="link.description || ''"
+                    :show-url="true"
             />
         </div>
     </div>
@@ -40,6 +41,7 @@ const fetchSimilarArticles = async () => {
     return;
   }
   try {
+    articles.value = [];
     let id = route.path.replace(/\.[^/.]+$/, ".md").substring(1);
     if (id.endsWith('/')) {
       id = `${id}index.md`;
