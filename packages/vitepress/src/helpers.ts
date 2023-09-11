@@ -86,7 +86,7 @@ export const createSitemap = async (urls: string[] = []) => {
     const destinationDir = './.vitepress/dist/';
     const limit = 50_000;
     await simpleSitemapAndIndex({
-        hostname: 'https://beta-developer.shopware.com',
+        hostname: 'https://developer.shopware.com',
         destinationDir,
         sourceData,
         limit,
@@ -97,7 +97,7 @@ export const createSitemap = async (urls: string[] = []) => {
     const robots = [
         'User-agent: *',
         'Disallow: /',
-        'Sitemap: https://beta-developer.shopware.com/sitemap.xml'
+        'Sitemap: https://developer.shopware.com/sitemap.xml'
     ].join("\n");
     fs.writeFileSync(`${destinationDir}robots.txt`, robots);
 
