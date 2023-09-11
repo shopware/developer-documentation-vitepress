@@ -159,14 +159,6 @@ const footers = [
     title: 'Product',
     items: [
       {
-        title: 'Extensions',
-        url: "/docs/guides/plugins/"
-      },
-      {
-        title: 'Headless Storefront',
-        url: "https://frontends.shopware.com/"
-      },
-      {
         title: 'APIs',
         url: "/docs/guides/integrations-api"
       },
@@ -178,30 +170,38 @@ const footers = [
         title: 'B2B Suite',
         url: "/docs/products/extensions/b2b-suite/"
       },
+      {
+        title: 'Extensions',
+        url: "/docs/guides/plugins/"
+      },
+      {
+        title: 'Headless Storefront',
+        url: "https://frontends.shopware.com/"
+      },      
     ]
   },
   {
     title: 'Resources',
     items: [
       {
-        title: 'E-commerce knowledge',
-        url : "https://www.shopware.com/en/ecom-knowledge/"
-      },
-      {
-        title: 'Training & Certification',
-        url: "https://www.shopware.com/en/academy/"
-      },
-      {
         title: 'User Documentation',
         url: "https://docs.shopware.com/en"
       },
       {
         title: 'Design Documentation',
-        url: "https://shopware.design/beta/"
+        URL: "https://brand.shopware.com/"
       },
       {
-        title: 'Get started as developer',
+        title: 'E-commerce knowledge',
+        url : "https://www.shopware.com/en/ecom-knowledge/"
+      },
+      {
+        title: 'Jump into development',
         url: "https://www.shopware.com/en/community/developers/"
+      },
+      {
+        title: 'Training & Certification',
+        url: "https://www.shopware.com/en/academy/"
       },
     ]
   },
@@ -209,30 +209,26 @@ const footers = [
     title: 'Community',
     items: [
       {
-        title: 'Community Day',
-        url: "https://scd.shopware.com/en-US/en-US"
-      },
-      {
         title: 'Forum',
         url: "https://forum.shopware.com/?_gl=1*82v1ve*_ga*MTYwMjc5NTkyNC4xNjY1NzI1MjEw*_ga_9JLJ6GGB76*MTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAxODU5LjAuMC4w"
       },
       {
-        title: 'Feedback & Issues',
-        url: "https://issues.shopware.com/?_gl=1*pgdzzx*_ga*MTYwMjc5NTkyNC4xNjY1NzI1MjEw*_ga_9JLJ6GGB76*MTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAxODYyLjAuMC4w"
+        title: 'Community Day',
+        url: "https://scd.shopware.com/en-US/"
       },
       {
-        title: 'StackOverflow',
+        title: 'Stack Overflow',
         url: "https://stackoverflow.com/"
+      },
+      {
+        title: 'Feedback & Issues',
+        url: "https://issues.shopware.com/?_gl=1*pgdzzx*_ga*MTYwMjc5NTkyNC4xNjY1NzI1MjEw*_ga_9JLJ6GGB76*MTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAxODYyLjAuMC4w"
       },
     ]
   },
   {
     title: 'GitHub Channels',
     items: [
-      {
-        title: 'Development Template',
-        url: "https://github.com/shopware/development/"
-      },
       {
         title: 'Shopware 5',
         url: "https://github.com/shopware/shopware/"
@@ -242,35 +238,39 @@ const footers = [
         url: "https://github.com/shopware/platform/"
       },
       {
+        title: 'Development Template',
+        url: "https://developer.shopware.com/docs/guides/installation/template.html"
+      },
+      {
+        title: 'Contribute to the docs',
+        url: "https://github.com/shopware/docs"
+      },
+      {
         title: 'Contribute to platform',
         url: "https://github.com/shopware/platform/blob/trunk/CONTRIBUTING.md"
       },
-      {
-        title: 'Contribute to docs',
-        url: "https://github.com/shopware/docs"
-      },
-
     ]
   },
   {
     title: 'News & Updates',
     items: [
       {
-        title: 'Product Changelog',
-        url: "https://www.shopware.com/en/changelog/"
-      },
-      {
         title: 'Blog',
         url: "https://www.shopware.com/en/news/developer-insights/"
+      },
+      {
+        title: 'Shopware TV',
+        url: "https://tv.shopware.com/en/?_gl=1%2a1gq0fmi%2a_ga%2aMTYwMjc5NTkyNC4xNjY1NzI1MjEw%2a_ga_9JLJ6GGB76%2aMTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAyMzI5LjAuMC4w"
       },
       {
         title: 'Announcements',
         url: "https://www.shopware.com/en/press/press-releases/"
       },
       {
-        title: 'Shopware TV',
-        url: "https://tv.shopware.com/en/?_gl=1%2a1gq0fmi%2a_ga%2aMTYwMjc5NTkyNC4xNjY1NzI1MjEw%2a_ga_9JLJ6GGB76%2aMTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAyMzI5LjAuMC4w"
+        title: 'Product Changelog',
+        url: "https://www.shopware.com/en/changelog/"
       },
+      
     ]
   }
 ];
