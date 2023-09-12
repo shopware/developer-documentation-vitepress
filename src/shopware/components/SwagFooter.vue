@@ -189,7 +189,7 @@ const footers = [
       },
       {
         title: 'Design Documentation',
-        URL: "https://brand.shopware.com/"
+        url: "https://brand.shopware.com/"
       },
       {
         title: 'E-commerce knowledge',
