@@ -192,3 +192,42 @@ hr {
     border-right: none;
     opacity: .25;
 }
+
+.custom-block {
+    --mask-image: url('/icons/regular/3d.svg');
+
+    .custom-block-title {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5em;
+    }
+
+    .custom-block-title::before {
+        background-color: currentColor;
+        mask-image: var(--mask-image);
+        mask-repeat: no-repeat;
+        mask-position: center center;
+        mask-size: contain;
+        content: '';
+        display: block;
+        width: 1.25em;
+        height: 1.25em;
+    }
+
+    &.info .custom-block-title {
+        --mask-image: url('/icons/regular/info-circle.svg');
+    }
+
+    &.tip .custom-block-title {
+        --mask-image: url('/icons/regular/lightbulb.svg');
+    }
+
+    &.warning .custom-block-title {
+        --mask-image: url('/icons/regular/exclamation-triangle.svg');
+    }
+
+    &.danger .custom-block-title {
+        --mask-image: url('/icons/regular/times-circle.svg');
+    }
+}
