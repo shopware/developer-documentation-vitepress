@@ -231,7 +231,7 @@ const footers = [
     items: [
       {
         title: 'Shopware 5',
-        url: "https://github.com/shopware/shopware/"
+        url: "https://github.com/shopware5/shopware/"
       },
       {
         title: 'Shopware 6',
