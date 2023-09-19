@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.2](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.1...v1.0.2) (2023-09-19)
+
+### Bug Fixes
+
+- remove changelog ([4453554](https://github.com/shopware/developer-documentation-vitepress/commit/44535542e4a654758402a3a370070e02384900cb))
+- remove vitest changelog ([84ae129](https://github.com/shopware/developer-documentation-vitepress/commit/84ae1290e90f595e08ae8963a545f2274c12ad4e))
+
+### Features
+
+- add infobox icons ([a1e99d5](https://github.com/shopware/developer-documentation-vitepress/commit/a1e99d53e658c7a26d3230be4c1a0b80736bf295))
+
+## [1.0.2](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.1...v1.0.2) (2023-09-19)
+
+### Bug Fixes
+
+- remove changelog ([4453554](https://github.com/shopware/developer-documentation-vitepress/commit/44535542e4a654758402a3a370070e02384900cb))
+- remove vitest changelog ([84ae129](https://github.com/shopware/developer-documentation-vitepress/commit/84ae1290e90f595e08ae8963a545f2274c12ad4e))
+
+### Features
+
+- add infobox icons ([a1e99d5](https://github.com/shopware/developer-documentation-vitepress/commit/a1e99d53e658c7a26d3230be4c1a0b80736bf295))
+
 ## [1.0.1](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.0...v1.0.1) (2023-09-12)
 
 ### Bug Fixes
