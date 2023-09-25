@@ -3,7 +3,9 @@
  */
 import Theme from 'vitepress/theme'
 import {withConfigProvider} from '../shopware/composables/config'
-import {h} from 'vue'
+import {h, onMounted, watch, nextTick} from 'vue'
+import { useRoute } from 'vitepress'
+import mediumZoom from 'medium-zoom'
 
 /**
  * Component that we want to make globally available.
@@ -113,7 +115,20 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
          * Allow extending from sub-apps.
          */
         myConfig.enhanceApp?.({app, router, siteData});
-    }
+    },
+    setup() {
+        const route = useRoute();
+        const initZoom = () => {
+            mediumZoom('.main img', {background: 'var(--vp-c-bg)'});
+        };
+        onMounted(() => {
+            initZoom();
+        });
+        watch(
+            () => route.path,
+            () => nextTick(() => initZoom())
+        );
+    },
 });
 
 export {SWAGTheme}
