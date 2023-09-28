@@ -10,6 +10,8 @@ const sourceRoot = 'src/';
 interface AssetDir {
     src: string;
     dst: string;
+    filter?: string[];
+    ext?: string[];
 }
 
 export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = []) => {
@@ -34,6 +36,7 @@ export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = [
     publicDirs.forEach(dir => {
         const src = typeof dir === 'string' ? dir : dir.src;
         const dst = typeof dir === 'string' ? dir : dir.dst;
+        const extensions = typeof dir === 'string' ? undefined : dir.ext;
         const dirToCopy = `${process.cwd()}/${sourceRoot}${src}`;
         const distDir = `${process.cwd()}/.vitepress/dist/${dst}`;
 
@@ -48,6 +51,19 @@ export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = [
 
         // copy files
         fs.readdirSync(dirToCopy).forEach((file: string) => {
+            if (extensions) {
+                let skip = true;
+                for (const extension of extensions) {
+                    if (file.endsWith(extension)) {
+                        skip = false;
+                        continue;
+                    }
+                }
+                if (skip) {
+                    return;
+                }
+            }
+
             console.log(`Copying ${dirToCopy}/${file} to ${distDir}/${file}`);
             fs.writeFileSync(`${distDir}/${file}`, fs.readFileSync(`${dirToCopy}/${file}`));
         });
@@ -96,7 +112,7 @@ export const createSitemap = async (urls: string[] = []) => {
     // create robots.txt
     const robots = [
         'User-agent: *',
-        'Disallow: /',
+        'Allow: /',
         'Sitemap: https://developer.shopware.com/sitemap.xml'
     ].join("\n");
     fs.writeFileSync(`${destinationDir}robots.txt`, robots);
@@ -159,7 +175,7 @@ export const storeRedirects = async () => {
         });
 
         const gitbookRedirects: Redirect[] = await new Promise((resolve, reject) => {
-            console.log('Discovering docs.yml for redirects');
+            console.log('Discovering gitbook.yaml for redirects');
             glob("**/.gitbook.yaml", {}, (er, files) => {
                 const redirects = files.reduce((redirects: Redirect[], file: string) => {
                     console.log(`Collecting ${file}`);
@@ -187,7 +203,7 @@ export const storeRedirects = async () => {
     }
 
     // read current vercel.json
-    const data = JSON.parse(fs.readFileSync('./vercel.json'));
+    const data = JSON.parse(`${fs.readFileSync('./vercel.json')}`);
 
     // prepare redirects
     if (!data.redirects) {
@@ -202,7 +218,8 @@ export const storeRedirects = async () => {
     }))
 
     // make unique
-    data.redirects = [...(new Set(data.redirects.map(JSON.stringify)))].map(JSON.parse);
+    data.redirects = [...(new Set(data.redirects.map(value => JSON.stringify(value))))]
+        .map(value => JSON.parse(value as string));
 
     // store new vercel.json
     fs.writeFileSync('./vercel.json', JSON.stringify(data, null, 2));

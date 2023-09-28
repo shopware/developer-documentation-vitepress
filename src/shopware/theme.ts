@@ -117,6 +117,8 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         myConfig.enhanceApp?.({app, router, siteData});
     },
     setup() {
+        // https://github.com/vuejs/vitepress/issues/854
+        // https://github.com/francoischalifour/medium-zoom/issues/184
         const route = useRoute();
         const initZoom = () => {
             mediumZoom('.main img', {background: 'var(--vp-c-bg)'});
@@ -126,7 +128,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         });
         watch(
             () => route.path,
-            () => nextTick(() => initZoom())
+            () => nextTick(() => mediumZoom.refresh())
         );
     },
 });

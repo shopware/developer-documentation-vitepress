@@ -133,6 +133,8 @@ module.exports = async () => ({
 
   ignoreDeadLinks: true,
 
+  metaChunk: true,
+
   themeConfig: {
     nav: navigation,
     appearance: true,

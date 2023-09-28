@@ -59,7 +59,7 @@ importers:
         version: 8.0.0
       instantsearch.js:
         specifier: ^4.56.0
-        version: 4.56.0(algoliasearch@4.17.0)
+        version: 4.56.0(algoliasearch@4.19.1)
       medium-zoom:
         specifier: ^1.0.8
         version: 1.0.8
@@ -74,7 +74,7 @@ importers:
         version: 0.51.12(postcss@8.4.28)
       vue-instantsearch:
         specifier: ^4.10.0
-        version: 4.10.0(algoliasearch@4.17.0)(vue@3.3.1)
+        version: 4.10.0(algoliasearch@4.19.1)(vue@3.3.1)
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^7.0.10
@@ -338,6 +338,9 @@ importers:
       axios:
         specifier: ^1.4.0
         version: 1.4.0
+      sitemap:
+        specifier: ^7.1.1
+        version: 7.1.1
       unocss:
         specifier: ^0.51.12
         version: 0.51.12(postcss@8.4.28)
@@ -5532,6 +5535,10 @@ packages:
   /@types/node@16.18.31:
     resolution: {integrity: sha512-KPXltf4z4g517OlVJO9XQ2357CYw7fvuJ3ZuBynjXC5Jos9i+K7LvFb7bUIwtJXSZj0vTp9Q6NJBSQpkwwO8Zw==}
 
+  /@types/node@17.0.45:
+    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+    dev: false
+
   /@types/node@18.16.7:
     resolution: {integrity: sha512-MFg7ua/bRtnA1hYE3pVyWxGd/r7aMqjNOdHvlSsXV3n8iaeGKkOaPzpJh6/ovf4bEXWcojkeMJpTsq3mzXW4IQ==}
 
@@ -5594,6 +5601,12 @@ packages:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
       '@types/node': 18.16.7
+
+  /@types/sax@1.2.5:
+    resolution: {integrity: sha512-9jWta97bBVC027/MShr3gLab8gPhKy4l6qpb+UJLF5pDm3501NvA7uvqVCW+REFtx00oTi6Cq9JzLwgq6evVgw==}
+    dependencies:
+      '@types/node': 18.16.7
+    dev: false
 
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
@@ -6572,13 +6585,13 @@ packages:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  /algoliasearch-helper@3.13.0(algoliasearch@4.17.0):
+  /algoliasearch-helper@3.13.0(algoliasearch@4.19.1):
     resolution: {integrity: sha512-kV3c1jMQCvkARtGsSDvAwuht4PAMSsQILqPiH4WFiARoa3jXJ/r1TQoBWAjWyWF48rsNYCv7kzxgB4LTxrvvuw==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
     dependencies:
       '@algolia/events': 4.0.1
-      algoliasearch: 4.17.0
+      algoliasearch: 4.19.1
     dev: false
 
   /algoliasearch@4.17.0:
@@ -6751,6 +6764,10 @@ packages:
       delegates: 1.0.0
       readable-stream: 4.4.0
     dev: true
+
+  /arg@5.0.2:
+    resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
+    dev: false
 
   /argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
@@ -9826,7 +9843,7 @@ packages:
     resolution: {integrity: sha512-yU63cF9KdkyFFh7ynYQy39nh1MD1eVDHIaa/gdm8a/O9dTG/5P6hBF1ONoIbKTtjlxxsHS2S8MarCZZ0l31ajg==}
     dev: false
 
-  /instantsearch.js@4.56.0(algoliasearch@4.17.0):
+  /instantsearch.js@4.56.0(algoliasearch@4.19.1):
     resolution: {integrity: sha512-A50GZjcK9c3o3y49fqOX6ghI4leCPAiz0h5xY/yvU7mMXCwwXZw1BsUbOPM02gDvaUdYvibycW7byVQno3DK1g==}
     peerDependencies:
       algoliasearch: '>= 3.1 < 6'
@@ -9838,8 +9855,8 @@ packages:
       '@types/google.maps': 3.53.1
       '@types/hogan.js': 3.0.1
       '@types/qs': 6.9.7
-      algoliasearch: 4.17.0
-      algoliasearch-helper: 3.13.0(algoliasearch@4.17.0)
+      algoliasearch: 4.19.1
+      algoliasearch-helper: 3.13.0(algoliasearch@4.19.1)
       hogan.js: 3.0.2
       htm: 3.1.1
       preact: 10.14.1
@@ -13912,7 +13929,6 @@ packages:
 
   /sax@1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
-    optional: true
 
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
@@ -14132,6 +14148,17 @@ packages:
 
   /sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  /sitemap@7.1.1:
+    resolution: {integrity: sha512-mK3aFtjz4VdJN0igpIJrinf3EO8U8mxOPsTBzSsy06UtjZQJ3YY3o3Xa7zSc5nMqcMrRwlChHZ18Kxg0caiPBg==}
+    engines: {node: '>=12.0.0', npm: '>=5.6.0'}
+    hasBin: true
+    dependencies:
+      '@types/node': 17.0.45
+      '@types/sax': 1.2.5
+      arg: 5.0.2
+      sax: 1.2.4
+    dev: false
 
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -15776,7 +15803,7 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /vue-instantsearch@4.10.0(algoliasearch@4.17.0)(vue@3.3.1):
+  /vue-instantsearch@4.10.0(algoliasearch@4.19.1)(vue@3.3.1):
     resolution: {integrity: sha512-Oqvy/vmJ6oQKZ4M6j2G3kqapciLSAyetjPJzpJAGumOaGD+ChD9VC49dLsjC8NI3p8Gy7dnQvKW+dHLf89iMFA==}
     peerDependencies:
       '@vue/server-renderer': ^3.1.2
@@ -15789,8 +15816,8 @@ packages:
       vue-server-renderer:
         optional: true
     dependencies:
-      algoliasearch: 4.17.0
-      instantsearch.js: 4.56.0(algoliasearch@4.17.0)
+      algoliasearch: 4.19.1
+      instantsearch.js: 4.56.0(algoliasearch@4.19.1)
       mitt: 2.1.0
       vue: 3.3.1
     dev: false
