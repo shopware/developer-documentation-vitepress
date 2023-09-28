@@ -144,7 +144,7 @@ export const generateMarkdownFromStoplight = async ({
 
         if ('properties' in schema) {
             for (const prop of Object.keys(schema.properties)) {
-                const transfer = {name: prop};
+                const transfer = {name: prop, type: null};
                 if ('type' in schema) {
                     transfer.type = schema.type;
                 }
