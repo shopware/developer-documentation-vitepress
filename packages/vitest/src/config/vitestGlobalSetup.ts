@@ -22,7 +22,9 @@ export async function setup() {
     process.env['PORT'] = port.toString()
 
     if (process.env['VITE_TEST_BUILD']) {
-        await build(root)
+        if (process.env['VITE_TEST_FORCE_BUILD']) {
+            await build(root)
+        }
         server = (await serve({ root, port })).server
     } else {
         server = await createServer(root, { port })
