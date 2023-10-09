@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.4...v1.0.5) (2023-10-09)
+
+### Bug Fixes
+
+- reload MediumZoom on route change ([58159d3](https://github.com/shopware/developer-documentation-vitepress/commit/58159d3806734c56d85d4138c97cf4f7c2a6c457))
+- remove node_modules ([b749e74](https://github.com/shopware/developer-documentation-vitepress/commit/b749e7472f0b693f5f9ae5a6ab2a4af8559a4a45))
+
+### Features
+
+- delete alpha migration patches ([e50a9cc](https://github.com/shopware/developer-documentation-vitepress/commit/e50a9cc565f09889487d91a56c12bdf30bccc0c6))
+
+## [1.0.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.4...v1.0.5) (2023-10-09)
+
+### Bug Fixes
+
+- reload MediumZoom on route change ([58159d3](https://github.com/shopware/developer-documentation-vitepress/commit/58159d3806734c56d85d4138c97cf4f7c2a6c457))
+- remove node_modules ([b749e74](https://github.com/shopware/developer-documentation-vitepress/commit/b749e7472f0b693f5f9ae5a6ab2a4af8559a4a45))
+
+### Features
+
+- delete alpha migration patches ([e50a9cc](https://github.com/shopware/developer-documentation-vitepress/commit/e50a9cc565f09889487d91a56c12bdf30bccc0c6))
+
 ## [1.0.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.3...v1.0.4) (2023-09-29)
 
 ### Features
