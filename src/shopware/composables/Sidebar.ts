@@ -348,7 +348,7 @@ function getPosition(data: FrontmatterConfig) {
     // 2 - transform from date
     let date = data?.date;
     if (date) {
-        return parseInt(date.replaceAll('-', ''));
+        return parseInt(`${date}`.replace(/-/g, ''));
     }
 
     return null;
