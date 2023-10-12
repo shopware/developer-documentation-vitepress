@@ -294,13 +294,19 @@ function getTitle(data: FrontmatterConfig, content: string, filename: string) {
         return title;
     }
 
-    // 2 - title from og:title
+    // 2 - title from title frontmatter (ADR)
+    title = data?.title;
+    if (title) {
+        return title;
+    }
+
+    // 3 - title from og:title
     title = (data?.head || []).find(({name}) => name === "og:title")?.content;
     if (title) {
         return title;
     }
 
-    // 3 - first heading from the content
+    // 4 - first heading from the content
     title = content.split("\n").find((line) => line[0] === "#");
     if (title) {
         title = removeMd(title || "").trim();
@@ -332,6 +338,22 @@ function getDescription(data: FrontmatterConfig, content: FrontmatterContent) {
     return description;
 }
 
+function getPosition(data: FrontmatterConfig) {
+    // 1 - nav.position
+    let position = data?.nav?.position;
+    if (position) {
+        return position;
+    }
+
+    // 2 - transform from date
+    let date = data?.date;
+    if (date) {
+        return parseInt(date.replaceAll('-', ''));
+    }
+
+    return null;
+}
+
 function getMeta(folder: string, file: string): ObjectMeta {
     const grayMatter = matter.read(`${folder}${file}`, {
         excerpt: true,
@@ -356,6 +378,14 @@ function getMeta(folder: string, file: string): ObjectMeta {
             <FrontmatterConfig>data,
             <FrontmatterContent>content
         );
+    }
+
+    // read position
+    if (!nav.position) {
+        let position = getPosition(<FrontmatterConfig>data);
+        if (position) {
+            nav.position = position;
+        }
     }
 
     // add custom items
