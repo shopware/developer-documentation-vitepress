@@ -114,7 +114,7 @@ module.exports = async () => ({
 
   markdown: {
     headers: true,
-    highlight: await require("./highlight")(),
+    // highlight: await require("./highlight")(),
   },
 
   vue: {
