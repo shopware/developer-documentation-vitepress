@@ -28,6 +28,7 @@ export interface SwagSectionsConfig {
 
 export interface SwagSimilarArticlesConfig {
   host: string
+  collection: string
   filter: {
     [key: string]: {
       exclude?: string[]

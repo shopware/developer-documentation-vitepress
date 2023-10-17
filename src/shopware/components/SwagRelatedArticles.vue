@@ -56,6 +56,7 @@ const fetchSimilarArticles = async () => {
 
     const payload = {
       id: id,
+      collection: config.value.swag?.similarArticles?.collection,
     };
 
     // filter inclusions and exclusions by sidebar
