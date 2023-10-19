@@ -1,0 +1,59 @@
+.HomepageCard {
+  &_item {
+    @apply rounded-md p-8 border border-solid border-[var(--sw-c-blue-dark-100)] bg-[var(--sw-c-blue-dark-50)];
+    @apply hover:border-[var(--sw-c-blue-dark-200)] hover:bg-[var(--sw-c-blue-dark-100)];
+
+    .dark & {
+      @apply border-[var(--sw-c-gray-dark-700)] bg-[var(--sw-c-gray-dark-600)];
+      @apply hover:border-[var(--sw-c-gray-dark-600)] hover:bg-[var(--sw-c-gray-dark-500)];
+    }
+  }
+
+  &_image-wrapper {
+    margin-right: calc(-2.25rem + 1px);
+  }
+
+  &_image-ratio {
+    /*aspect-ratio: 4/3;*/
+    height: 230px;
+  }
+
+  &_icon {
+    @apply rounded-md flex bg-[var(--sw-c-gray-dark-500)] p-2;
+    color: white;
+    aspect-ratio: 1;
+    height: 28px;
+    box-sizing: content-box;
+    align-items: center;
+    justify-content: center;
+    .SwagIcon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &_heading {
+    @apply flex gap-2 mt-4 items-center;
+    color: var(--neutrals-darkgray-900, #0A0D0F);
+    font-size: 1.25rem;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2.625rem;
+
+    .dark & {
+      color: var(--sw-c-gray-200);
+    }
+
+    .SwagIcon {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: var(--c-text);
+    font-weight: 400;
+  }
+}
