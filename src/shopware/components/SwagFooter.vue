@@ -42,15 +42,13 @@
     @media screen and (min-width: 768px) {
       grid-template-columns: 280px repeat(auto-fit, minmax(160px, 1fr));
     }
-    /*> :first-child {
-      grid-column: span 2;
-    }*/
   }
 
   &_links {
     @apply mt-12;
-    .VPSocialLink {
-      color: inherit;
+    svg {
+      width: 1rem;
+      fill: #fff;
     }
   }
 
