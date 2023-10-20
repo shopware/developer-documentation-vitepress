@@ -124,7 +124,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         // https://github.com/vuejs/vitepress/issues/854
         // https://github.com/francoischalifour/medium-zoom/issues/184
         const route = useRoute();
-        const initZoom = () => mediumZoom('.main img', {background: 'var(--vp-c-bg)'});
+        const initZoom = () => mediumZoom('.main img:not([class])', {background: 'var(--vp-c-bg)'});
         onMounted(() => initZoom());
         watch(
             () => route.path,
