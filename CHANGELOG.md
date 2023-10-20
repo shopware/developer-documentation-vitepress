@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.12](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.11...v1.0.12) (2023-10-20)
+
+### Bug Fixes
+
+- changelog ([118fb76](https://github.com/shopware/developer-documentation-vitepress/commit/118fb765b8016bf5bc663d86916e35bc1a7225b8))
+- footer style ([b848322](https://github.com/shopware/developer-documentation-vitepress/commit/b84832215381918d23cb2d6bd32a67744b496238))
+- margin ([fe66c45](https://github.com/shopware/developer-documentation-vitepress/commit/fe66c45471fced63a7e0144b128a3a58bba8640d))
+- remove log ([450709a](https://github.com/shopware/developer-documentation-vitepress/commit/450709a4954cc0244b2e7ae29cfebc991780ec56))
+
+## [1.0.12](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.11...v1.0.12) (2023-10-20)
+
+### Bug Fixes
+
+- changelog ([118fb76](https://github.com/shopware/developer-documentation-vitepress/commit/118fb765b8016bf5bc663d86916e35bc1a7225b8))
+- footer style ([b848322](https://github.com/shopware/developer-documentation-vitepress/commit/b84832215381918d23cb2d6bd32a67744b496238))
+- margin ([fe66c45](https://github.com/shopware/developer-documentation-vitepress/commit/fe66c45471fced63a7e0144b128a3a58bba8640d))
+- remove log ([450709a](https://github.com/shopware/developer-documentation-vitepress/commit/450709a4954cc0244b2e7ae29cfebc991780ec56))
+
 ## [1.0.11](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.10...v1.0.11) (2023-10-20)
 
 ### Bug Fixes
