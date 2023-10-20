@@ -7,6 +7,12 @@
       @apply border-[var(--sw-c-gray-dark-700)] bg-[var(--sw-c-gray-dark-600)];
       @apply hover:border-[var(--sw-c-gray-dark-600)] hover:bg-[var(--sw-c-gray-dark-500)];
     }
+
+    p {
+      margin: 0;
+      color: var(--c-text);
+      font-weight: 400;
+    }
   }
 
   &_image-wrapper {
@@ -49,11 +55,5 @@
       width: 1rem;
       height: 1rem;
     }
-  }
-
-  p {
-    margin: 0;
-    color: var(--c-text);
-    font-weight: 400;
   }
 }
