@@ -47,8 +47,11 @@
     }*/
   }
 
-  &_links .VPSocialLink {
-    color: inherit;
+  &_links {
+    @apply mt-12;
+    .VPSocialLink {
+      color: inherit;
+    }
   }
 
   .container {
@@ -110,11 +113,13 @@
             </ul>
           </div>
         </div>
+
+        <VPNavBarSocialLinks class="SwagFooter_links"/>
       </div>
     </div>
-    <div class="SwagFooter_second grid gap-4">
+    <div class="SwagFooter_second grid gap-6">
 
-      <VPNavBarSocialLinks class="SwagFooter_links"/>
+      <div class="text-center font-light text-xs">Copyright © shopware AG - All rights reserved</div>
 
       <ul class="flex gap-6 justify-center text-sm">
         <li>
@@ -130,7 +135,6 @@
           <a href="#" @click.prevent="openUserCentrics">Cookie settings</a>
         </li>
       </ul>
-      <div class="text-center font-extralight text-xs">Copyright © shopware AG - All rights reserved</div>
     </div>
   </div>
 </template>
