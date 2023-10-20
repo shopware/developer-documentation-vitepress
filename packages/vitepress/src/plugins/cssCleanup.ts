@@ -47,7 +47,6 @@ export function CssCleanup(options = {cleanup: []}): Plugin {
             // Remove selectors
             foundScope.cleanup.forEach((selector) => {
                 root.nodes = root.nodes.filter(node => {
-                    console.log(node.selector);
                     if (!node.selector) {
                         return true;
                     }
