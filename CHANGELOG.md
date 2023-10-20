@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.11](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.10...v1.0.11) (2023-10-20)
+
+### Bug Fixes
+
+- audit ([0ac55cd](https://github.com/shopware/developer-documentation-vitepress/commit/0ac55cdbd007f2d42e8ee17963d88ebdac054f4d))
+- content bg ([6c7a9e8](https://github.com/shopware/developer-documentation-vitepress/commit/6c7a9e857bfbe51aab6a8eef64ec45b3ae0a30fc))
+- link/content hover color ([b61956f](https://github.com/shopware/developer-documentation-vitepress/commit/b61956f27641da91e8d1eb8933b4b259a6d04480))
+- only apply medium-zoom on non-classed images ([550300c](https://github.com/shopware/developer-documentation-vitepress/commit/550300c3ee287bc967e402ee539f097ae090a11d))
+- remove changelog ([d95d285](https://github.com/shopware/developer-documentation-vitepress/commit/d95d2850514dcc45354fcc4e4f7f6ee5e438293f))
+
+### Features
+
+- extract SwagHero, SwagBtn ([f2540fa](https://github.com/shopware/developer-documentation-vitepress/commit/f2540fa008c925edfa7425ef53a792331fbe2104))
+- rework cleanup, base cleanup ([d6ce0b0](https://github.com/shopware/developer-documentation-vitepress/commit/d6ce0b03076575cbed6b32b9ef086472d6af1266))
+- unify logo, shared (portal) styles ([50eba8a](https://github.com/shopware/developer-documentation-vitepress/commit/50eba8a343773961cc307928781db2557d2e7195))
+- update footer ([e97009a](https://github.com/shopware/developer-documentation-vitepress/commit/e97009aa22c53cc475ac49478cf72321b7df6411))
+
+## [1.0.11](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.10...v1.0.11) (2023-10-20)
+
+### Bug Fixes
+
+- audit ([0ac55cd](https://github.com/shopware/developer-documentation-vitepress/commit/0ac55cdbd007f2d42e8ee17963d88ebdac054f4d))
+- content bg ([6c7a9e8](https://github.com/shopware/developer-documentation-vitepress/commit/6c7a9e857bfbe51aab6a8eef64ec45b3ae0a30fc))
+- link/content hover color ([b61956f](https://github.com/shopware/developer-documentation-vitepress/commit/b61956f27641da91e8d1eb8933b4b259a6d04480))
+- only apply medium-zoom on non-classed images ([550300c](https://github.com/shopware/developer-documentation-vitepress/commit/550300c3ee287bc967e402ee539f097ae090a11d))
+- remove changelog ([d95d285](https://github.com/shopware/developer-documentation-vitepress/commit/d95d2850514dcc45354fcc4e4f7f6ee5e438293f))
+
+### Features
+
+- extract SwagHero, SwagBtn ([f2540fa](https://github.com/shopware/developer-documentation-vitepress/commit/f2540fa008c925edfa7425ef53a792331fbe2104))
+- rework cleanup, base cleanup ([d6ce0b0](https://github.com/shopware/developer-documentation-vitepress/commit/d6ce0b03076575cbed6b32b9ef086472d6af1266))
+- unify logo, shared (portal) styles ([50eba8a](https://github.com/shopware/developer-documentation-vitepress/commit/50eba8a343773961cc307928781db2557d2e7195))
+- update footer ([e97009a](https://github.com/shopware/developer-documentation-vitepress/commit/e97009aa22c53cc475ac49478cf72321b7df6411))
+
 ## [1.0.10](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.9...v1.0.10) (2023-10-18)
 
 ### Bug Fixes
