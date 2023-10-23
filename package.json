@@ -30,10 +30,10 @@
   },
   "license": "MIT",
   "scripts": {
+    "lint:full": "pnpm run lint && pnpm run type",
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
     "type": "tsc --noEmit",
-    "test": "pnpm run lint && pnpm run type",
     "test:unit": "vitest run -r __tests__/unit --sequence.shuffle",
     "test:cli": "vitest run -r __tests__/cli --sequence.shuffle",
     "test:cli:coverage": "vitest run -r __tests__/cli --coverage",
