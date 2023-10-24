@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.13](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.12...v1.0.13) (2023-10-24)
+
+### Bug Fixes
+
+- remove pnpm setting from packages ([69ccab6](https://github.com/shopware/developer-documentation-vitepress/commit/69ccab639d8d5d6bc388aad8a90fd270255c97f4))
+
 ## [1.0.12](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.11...v1.0.12) (2023-10-20)
 
 **Note:** Version bump only for package @shopware-docs/storybook

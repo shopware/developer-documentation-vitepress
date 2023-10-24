@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.13](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.12...v1.0.13) (2023-10-24)
+
+### Bug Fixes
+
+- remove pnpm setting from packages ([69ccab6](https://github.com/shopware/developer-documentation-vitepress/commit/69ccab639d8d5d6bc388aad8a90fd270255c97f4))
+
+### Features
+
+- bump deps ([e1e65d6](https://github.com/shopware/developer-documentation-vitepress/commit/e1e65d62bf723e18411432c6817cec6258d7f3cb))
+- bump lerna ([694ef7e](https://github.com/shopware/developer-documentation-vitepress/commit/694ef7e543c6d9dd3c3bf8d1287b28b397f439e4))
+- lock esbuild ([94e6f5e](https://github.com/shopware/developer-documentation-vitepress/commit/94e6f5e39ecca6853458538ea3d3a5c865eed8b4))
+- remove changelog ([7299cdd](https://github.com/shopware/developer-documentation-vitepress/commit/7299cdd76afbae7c029c440e9f42963329f5eb9a))
+- update deps ([0ad756e](https://github.com/shopware/developer-documentation-vitepress/commit/0ad756e2de3225343b03b74f0eb27a728c0a1756))
+- update pnpm ([3be3996](https://github.com/shopware/developer-documentation-vitepress/commit/3be399661ae83bbecf281952beb975d32e04afb7))
+- update to node v18.18 ([6f3141e](https://github.com/shopware/developer-documentation-vitepress/commit/6f3141efd6b3de06dadc039a0164ccd297cecb55))
+
+## [1.0.13](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.12...v1.0.13) (2023-10-24)
+
+### Bug Fixes
+
+- remove pnpm setting from packages ([69ccab6](https://github.com/shopware/developer-documentation-vitepress/commit/69ccab639d8d5d6bc388aad8a90fd270255c97f4))
+
+### Features
+
+- bump deps ([e1e65d6](https://github.com/shopware/developer-documentation-vitepress/commit/e1e65d62bf723e18411432c6817cec6258d7f3cb))
+- bump lerna ([694ef7e](https://github.com/shopware/developer-documentation-vitepress/commit/694ef7e543c6d9dd3c3bf8d1287b28b397f439e4))
+- lock esbuild ([94e6f5e](https://github.com/shopware/developer-documentation-vitepress/commit/94e6f5e39ecca6853458538ea3d3a5c865eed8b4))
+- remove changelog ([7299cdd](https://github.com/shopware/developer-documentation-vitepress/commit/7299cdd76afbae7c029c440e9f42963329f5eb9a))
+- update deps ([0ad756e](https://github.com/shopware/developer-documentation-vitepress/commit/0ad756e2de3225343b03b74f0eb27a728c0a1756))
+- update pnpm ([3be3996](https://github.com/shopware/developer-documentation-vitepress/commit/3be399661ae83bbecf281952beb975d32e04afb7))
+- update to node v18.18 ([6f3141e](https://github.com/shopware/developer-documentation-vitepress/commit/6f3141efd6b3de06dadc039a0164ccd297cecb55))
+
 ## [1.0.12](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.11...v1.0.12) (2023-10-20)
 
 ### Bug Fixes
