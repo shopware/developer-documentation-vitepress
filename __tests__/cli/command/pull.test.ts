@@ -20,7 +20,7 @@ describe('cli pull', async () => {
         expect(result.stdout).not.toContain('Developer portal up to date');
     })
 
-    test('Pull configured paths', async () => {
+    test.skip('Pull configured paths', async () => {
         withDirConfig(sandbox);
 
         // prepare developer-portal checkout

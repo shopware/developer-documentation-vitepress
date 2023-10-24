@@ -29,6 +29,8 @@ describe('cli test', async () => {
 
         const result = await docsCli(['test'], sandbox.cwd, timeout.medium);
 
+        console.log(result);
+
         expect(result.stdout).toContain('Running test');
         //console.log(result);
         //expect(result.stdout).toContain('Tests ran');

@@ -8,7 +8,12 @@ export const prepareDeveloperPortalCheckout = (sandbox: Sandbox) => {
 }
 
 export const prepareDeveloperPortalNpm = (sandbox: Sandbox) => {
-    execSync(`pnpm --dir ${sandbox.developerPortal} i`, {cwd: sandbox.developerPortal});
+    try {
+        execSync(`pnpm --dir ${sandbox.developerPortal} i`, {cwd: sandbox.developerPortal});
+    } catch (e) {
+        console.log(e);
+        throw e;
+    }
 }
 
 export const prepareDeveloperPortalMounts = (sandbox: Sandbox) => {
