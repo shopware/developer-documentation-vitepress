@@ -141,14 +141,27 @@ export const storeRedirects = async () => {
             return url;
         }
 
-        return `/${prefix}${url}`.replace('/README.md', '/').replace('.md', '.html');
+        return `/${prefix}${url}`
+            .replace('*', ':url*')
+            .replace('/README.md', '/')
+            .replace('.md', '.html');
+    }
+
+    const makeSource = (url: string, prefix: string): string => {
+        if (url.startsWith('http://') || url.startsWith('https://')) {
+            return url;
+        }
+
+        return `/${prefix}${url}`
+            .replace('*', ':url')
+            .replace('.md', '.html');
     }
 
     // transform from key-value to {src: string, dst: string}
     const transformRedirects = (redirects: { [key: string]: string }, prefix: string) => Object
         .keys(redirects ?? {})
         .map(src => ({
-            src: `/${prefix}${src}`,
+            src: makeSource(src, prefix),
             dst: makeDestination(redirects[src], prefix)
         }));
 
