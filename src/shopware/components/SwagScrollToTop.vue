@@ -9,7 +9,7 @@
 
 <style lang="scss">
 .SwagScrollToTop {
-  @apply position-fixed display-none transition transition-all;
+  @apply position-fixed hidden transition transition-all;
   bottom: 1rem;
   right: 1rem;
   opacity: 0;

@@ -35,7 +35,7 @@
       > div > div {
         @apply mt-10;
         > h1:first-child {
-          @apply display-none;
+          @apply hidden;
         }
       }
     }
