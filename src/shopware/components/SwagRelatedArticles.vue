@@ -1,18 +1,42 @@
 <template>
-    <div v-if="articles.length" class="vt-doc --similar-articles mb-8">
-        <h2 class="e-heading">Continue with related topics:</h2>
-        <div class="grid gap-6">
-            <PageRef
-                    v-for="link in articles"
-                    :key="link.page"
-                    :page="link.page"
-                    :title="link.title"
-                    :sub="link.description || ''"
-                    :show-url="true"
-            />
-        </div>
+  <div v-if="articles.length" class="SwagRelatedArticles vt-doc --similar-articles mb-8">
+    <h2 class="e-heading">
+      Continue with related topics:
+      <span class="SwagRelatedArticles_powered-by">
+        Suggestions powered by Copilot
+        <SwagIcon icon="sparkles" type="solid" class="SwagRelatedArticles_copilot" />
+      </span>
+    </h2>
+    <div class="grid gap-6">
+      <PageRef
+          v-for="link in articles"
+          :key="link.page"
+          :page="link.page"
+          :title="link.title"
+          :sub="link.description || ''"
+          :show-url="true"
+      />
     </div>
+  </div>
 </template>
+
+<style lang="scss">
+.SwagRelatedArticles {
+  .e-heading {
+    @apply flex flex-wrap place-content-between gap-4;
+  }
+  &_powered-by {
+    @apply text-sm flex flex-row gap-2 items-center;
+    color: var(--sw-c-gray-600);
+    .dark & {
+      color: var(--sw-c-gray-dark-300);
+    }
+  }
+  &_copilot {
+    --icon-size: 1rem;
+  }
+}
+</style>
 
 <script async setup>
 import {ref, onMounted, watch} from "vue";
@@ -25,17 +49,17 @@ import PageRef from "./PageRef.vue";
 const articles = ref([]);
 const route = useRoute();
 const {config} = useConfig();
-const { sidebar } = useSidebar();
-const { page } = useData();
+const {sidebar} = useSidebar();
+const {page} = useData();
 const similarArticlesHost = config.value.swag?.similarArticles?.host;
-const { frontmatter } = useData()
+const {frontmatter} = useData()
 
 const shouldFetchRelated = () => !frontmatter.value?.swag || !('related' in frontmatter.value.swag) || frontmatter.value.swag.related;
 
 const fetchSimilarArticles = async () => {
   if (!shouldFetchRelated()) {
-      articles.value = [];
-      return;
+    articles.value = [];
+    return;
   }
   if (!similarArticlesHost) {
     return;
@@ -79,10 +103,10 @@ const fetchSimilarArticles = async () => {
     );
     const data = await response.json();
     articles.value = data.results.map(({id, heading, description}) => ({
-        page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '/').replace('##', '#/')}`,
-        title: heading,
-        description: description,
-      }));
+      page: `/${id.replace(/\.[^/.]+$/, ".html").replace('/index.html', '/').replace('##', '#/')}`,
+      title: heading,
+      description: description,
+    }));
   } catch (e) {
     console.error(e);
   }
