@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.16](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.15...v1.0.16) (2023-11-09)
+
+### Bug Fixes
+
+- remove changelog ([8026dce](https://github.com/shopware/developer-documentation-vitepress/commit/8026dcedc924868625e21508f33dcf284b7ed15c))
+
+### Features
+
+- copilot ([ee396c2](https://github.com/shopware/developer-documentation-vitepress/commit/ee396c2fb2277b187a3172b5e597f7a3f0ff4f08))
+- update deps ([5430668](https://github.com/shopware/developer-documentation-vitepress/commit/543066875f73889f85988663a04d6b9e9fdfea1d))
+
+## [1.0.16](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.15...v1.0.16) (2023-11-09)
+
+### Bug Fixes
+
+- remove changelog ([8026dce](https://github.com/shopware/developer-documentation-vitepress/commit/8026dcedc924868625e21508f33dcf284b7ed15c))
+
+### Features
+
+- copilot ([ee396c2](https://github.com/shopware/developer-documentation-vitepress/commit/ee396c2fb2277b187a3172b5e597f7a3f0ff4f08))
+- update deps ([5430668](https://github.com/shopware/developer-documentation-vitepress/commit/543066875f73889f85988663a04d6b9e9fdfea1d))
+
 ## [1.0.15](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.14...v1.0.15) (2023-10-25)
 
 ### Features
