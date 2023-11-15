@@ -185,6 +185,14 @@ main :not(.grid) > .PageRef {
     filter: invert(1) hue-rotate(-180deg);
 }
 
+.vp-doc .has-highlighted-lines .line:not(.highlighted) {
+    filter: blur(2px);
+    transition: all 333ms ease-in-out;
+}
+.vp-doc .has-highlighted-lines:hover .line:not(.highlighted) {
+    filter: none;
+}
+
 hr {
     border-bottom-color: var(--c-text-light);
     border-top-color: transparent;
