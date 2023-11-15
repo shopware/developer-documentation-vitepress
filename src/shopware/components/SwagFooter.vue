@@ -44,14 +44,6 @@
     }
   }
 
-  &_links {
-    @apply mt-12;
-    svg {
-      width: 1rem;
-      fill: #fff;
-    }
-  }
-
   .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -72,6 +64,21 @@
     &:hover {
       @apply text-white;
     }
+  }
+}
+
+.VPSocialLinks,
+.SwagFooter_links {
+  @apply mt-12;
+  svg {
+    width: 1rem;
+    fill: var(--c-text);
+  }
+}
+
+.SwagFooter_links {
+  svg {
+    fill: #fff;
   }
 }
 
