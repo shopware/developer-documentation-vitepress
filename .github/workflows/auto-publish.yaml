@@ -52,7 +52,9 @@ jobs:
   npm-publish:
     name: npm-publish
     runs-on: ubuntu-latest
-    if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/next' }}
+    if: |
+      ${{ github.event.head_commit.message == 'chore: publish'
+      && github.ref == 'refs/heads/main' }}
     needs:
       - test
       - test-cli
