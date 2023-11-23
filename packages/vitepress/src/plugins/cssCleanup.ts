@@ -39,7 +39,7 @@ export function CssCleanup(options = {cleanup: []}): Plugin {
                 return null;
             }
 
-            console.log(`Pre-processing ${id}`, code);
+            console.log(`Pre-processing ${id}`);
             const {root} = await postcss().process(code, {
                 from: undefined,
             });
