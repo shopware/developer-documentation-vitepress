@@ -10,7 +10,6 @@ const sourceRoot = 'src/';
 interface AssetDir {
     src: string;
     dst: string;
-    filter?: string[];
     ext?: string[];
 }
 

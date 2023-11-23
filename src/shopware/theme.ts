@@ -18,6 +18,7 @@ import Tab from "./../shopware/components/Tab.vue";
 import SwagIcon from "./../shopware/components/SwagIcon.vue";
 import SwagBtn from "./../shopware/components/SwagBtn.vue";
 import SwagHero from "./../shopware/components/SwagHero.vue";
+import SwagLabel from "./../shopware/components/SwagLabel.vue";
 
 /**
  * Shared cards and lists.
@@ -107,6 +108,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         app.component("Tab", Tab);
         app.component("SwagIcon", SwagIcon);
         app.component("SwagBtn", SwagBtn);
+        app.component("SwagLabel", SwagLabel);
         app.component("SwagHero", SwagHero);
 
         app.component("SwagCard", SwagCard);

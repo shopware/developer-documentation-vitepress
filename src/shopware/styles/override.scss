@@ -368,6 +368,10 @@ a.as-link,
 
 .as-link {
   color: var(--c-link);
+  &.--with-icon {
+    @apply flex items-center gap-1.5;
+    --icon-size: .875rem;
+  }
 }
 
 .vp-doc > div > h1,

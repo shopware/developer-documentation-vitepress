@@ -219,6 +219,7 @@ const reduceTree = (as: string, dirPath: string, depth = 1) => {
                     position: metas[file]?.position || 999,
                     description: metas[file]?.description,
                     collapsed: getCollapsed(depth, []),
+                    meta: metas[file]?.meta || {}
                 });
 
                 return reduced;
@@ -238,6 +239,7 @@ const reduceTree = (as: string, dirPath: string, depth = 1) => {
                 position: metas[file]?.position || 999,
                 description: metas[file]?.description,
                 collapsed: getCollapsed(depth, subItems),
+                meta: metas[file]?.meta || {}
             });
 
             // push link when linked
@@ -391,6 +393,9 @@ function getMeta(folder: string, file: string): ObjectMeta {
     // add custom items
     nav.items = data.items || [];
 
+    // add custom meta
+    nav.meta = data.meta || {};
+
     return nav;
 }
 
@@ -460,6 +465,7 @@ export function transformLinkToSidebar(root: string, link: string) {
                             text: getTitleFromFilename(as),
                             items: items,
                             collapsed: getCollapsed(0, items),
+                            meta: metas['index.md']?.meta || {},
                         };
                     } else {
                         // special handle root links
@@ -468,6 +474,7 @@ export function transformLinkToSidebar(root: string, link: string) {
                             text: metas[file].title || getTitleFromFilename(file),
                             items: [],
                             collapsed: getCollapsed(0, []),
+                            meta: metas[file]?.meta || {},
                         });
                     }
 
@@ -488,6 +495,7 @@ export function transformLinkToSidebar(root: string, link: string) {
                         // @ts-ignore
                         items: links,
                         collapsed: getCollapsed(0, links),
+                        meta: metas[file]?.meta || {},
                     }));
                 }
 
@@ -503,6 +511,7 @@ export function transformLinkToSidebar(root: string, link: string) {
             text: getTitleFromFilename(as),
             items: [],
             collapsed: getCollapsed(1, inIndex),
+            meta: {},
         });
     }
 
