@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.17...v1.0.18) (2023-11-23)
+
+### Bug Fixes
+
+- remove changelog ([221faae](https://github.com/shopware/developer-documentation-vitepress/commit/221faae20d24a0782935a9df245477e012cbd8a5))
+- social links color ([55d515a](https://github.com/shopware/developer-documentation-vitepress/commit/55d515ab2e0ea9dae1a05059064ba2e73d29bf6c))
+- workflow condition ([68c46dc](https://github.com/shopware/developer-documentation-vitepress/commit/68c46dc3585e08d05de896a237d5d0c789829923))
+
+### Features
+
+- dependabot ([7abaad9](https://github.com/shopware/developer-documentation-vitepress/commit/7abaad93abf3de346c2d22812ec6021fb81517c4))
+- label component, custom meta (releases) ([d66197b](https://github.com/shopware/developer-documentation-vitepress/commit/d66197bc07342dae0e0c96933d22f8eabc2287b9))
+
+## [1.0.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.17...v1.0.18) (2023-11-23)
+
+### Bug Fixes
+
+- remove changelog ([221faae](https://github.com/shopware/developer-documentation-vitepress/commit/221faae20d24a0782935a9df245477e012cbd8a5))
+- social links color ([55d515a](https://github.com/shopware/developer-documentation-vitepress/commit/55d515ab2e0ea9dae1a05059064ba2e73d29bf6c))
+- workflow condition ([68c46dc](https://github.com/shopware/developer-documentation-vitepress/commit/68c46dc3585e08d05de896a237d5d0c789829923))
+
+### Features
+
+- dependabot ([7abaad9](https://github.com/shopware/developer-documentation-vitepress/commit/7abaad93abf3de346c2d22812ec6021fb81517c4))
+- label component, custom meta (releases) ([d66197b](https://github.com/shopware/developer-documentation-vitepress/commit/d66197bc07342dae0e0c96933d22f8eabc2287b9))
+
 ## [1.0.17](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.16...v1.0.17) (2023-11-15)
 
 ### Bug Fixes
