@@ -3,7 +3,7 @@
     <div class="container">
       <div class="SwagHeader_row">
         <h1 class="styled">{{ title }}</h1>
-        <div class="flex gap-2 mt-2" v-if="$frontmatter?.meta?.label || date">
+        <div class="flex gap-2 mt-2" v-if="$frontmatter?.meta?.label || $frontmatter?.meta?.date">
           <SwagLabel v-if="$frontmatter?.meta?.label" :type="$frontmatter?.meta?.label" />
           <SwagLabel v-if="transformedDate($frontmatter?.meta?.date)">{{ transformedDate($frontmatter?.meta?.date) }}</SwagLabel>
         </div>
