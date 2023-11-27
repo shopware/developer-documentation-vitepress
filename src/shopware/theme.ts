@@ -79,14 +79,20 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         };
 
         Object.keys(myConfig?.slots || {}).forEach(key => {
-            if (!slots[key]) {
-                slots[key] = () => [];
+            let realKey = key;
+            let mode = 'push';
+            if (key.includes(':')) {
+                [realKey, mode] = key.split(':');
             }
 
-            const currentSlots = slots[key]();
+            if (!slots[realKey]) {
+                slots[realKey] = () => [];
+            }
 
-            myConfig.slots[key].forEach(component => currentSlots.push(h(component)));
-            slots[key] = () => currentSlots;
+            const currentSlots = slots[realKey]();
+
+            myConfig.slots[realKey].forEach(component => currentSlots[mode](h(component)));
+            slots[realKey] = () => currentSlots;
         });
 
         return h(
