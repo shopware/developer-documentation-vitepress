@@ -2,6 +2,28 @@
 .SwagFooter {
   color: var(--sw-c-gray-500);
   font-weight: 400;
+  --bottom-bg: #101d29;
+  --bottom-bg--light: var(--sw-c-gray-dark-500);
+  .dark & {
+    --bottom-bg: var(--sw-c-gray-dark-700);
+    --bottom-bg--light: var(--sw-c-gray-dark-500);
+  }
+
+  ul {
+    list-style-type: none;
+    @apply m-0 p-0;
+    li {
+      @apply mb-2;
+    }
+  }
+
+  a {
+    @apply transition-all;
+    font-size: 15px;
+    &:hover {
+      @apply text-white;
+    }
+  }
 
   &_first {
     @apply grid gap-8 pt-24 pb-12;
@@ -19,6 +41,10 @@
 
     .dark & {
       background-color: var(--sw-c-gray-dark-700);
+    }
+
+    a {
+      @apply text-xs;
     }
   }
 
@@ -40,30 +66,21 @@
     @apply grid gap-8;
     //grid-template-columns: 1fr;
     @media screen and (min-width: 768px) {
-      grid-template-columns: 280px repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+      > div {
+        grid-column: span 2;
+        &:last-child {
+          grid-column: span 3;
+        }
+      }
     }
   }
 
   .container {
-    max-width: 1440px;
+    max-width: 1600px;
     margin: 0 auto;
     padding-left: 2rem;
     padding-right: 2rem;
-  }
-
-  ul {
-    list-style-type: none;
-    @apply m-0 p-0;
-    li {
-      @apply mb-2;
-    }
-  }
-
-  a {
-    @apply transition-all;
-    &:hover {
-      @apply text-white;
-    }
   }
 }
 
@@ -105,7 +122,7 @@
                 <a href="mailto:info@shopware.com">info@shopware.com</a>
               </li>
               <li>
-                <a href="tel:0080074676260">Worldwide: 00 800 746 7626 0</a>
+                <a href="tel:0080074676260">00 800 746 7626 0</a>
               </li>
             </ul>
           </div>
@@ -116,6 +133,10 @@
                 <a :href="item.url || '#'" v-bind="itemProps(item)">{{ item.title }}</a>
               </li>
             </ul>
+          </div>
+          <div>
+            <span class="SwagFooter_heading">Newsletter</span>
+            <SwagNewsletter />
           </div>
         </div>
 
@@ -146,6 +167,7 @@
 <script lang="ts" setup>
 import VPNavBarSocialLinks from "@node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
 import {useData, useRoute} from "vitepress";
+import SwagNewsletter from "./SwagNewsletter.vue";
 
 const {theme} = useData();
 const route = useRoute();
@@ -186,7 +208,7 @@ const footers = [
       {
         title: 'Headless Storefront',
         url: "https://frontends.shopware.com/"
-      },      
+      },
     ]
   },
   {
@@ -279,7 +301,7 @@ const footers = [
         title: 'Product Changelog',
         url: "https://www.shopware.com/en/changelog/"
       },
-      
+
     ]
   }
 ];
