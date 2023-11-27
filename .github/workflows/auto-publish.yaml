@@ -53,8 +53,7 @@ jobs:
     name: npm-publish
     runs-on: ubuntu-latest
     if: |
-      ${{ github.event.head_commit.message == 'chore: publish'
-      && github.ref == 'refs/heads/main' }}
+      ${{ github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'chore: publish') }}
     needs:
       - test
       - test-cli
