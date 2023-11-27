@@ -1,0 +1,50 @@
+name: Test
+on:
+  push:
+    branches:
+      - main
+      - next
+  pull_request:
+    branches:
+      - main
+      - next
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
+
+      - name: Test (unit)
+        run: pnpm test:unit
+
+      - name: Test Chromatic + Storybook
+        if: ${{ github.ref == 'refs/heads/main' || contains(github.event.head_commit.message, 'chromatic') }}
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        run: pnpm chromatic
+
+  test-cli:
+    name: Test CLI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Prepare
+        uses: ./.github/actions/checkout-install
+
+      - name: Build (CLI)
+        run: pnpm cli:build
+
+      - name: Test (CLI)
+        run: pnpm test:cli
