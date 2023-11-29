@@ -1,5 +1,5 @@
 <template>
-  <div class="SwagHeader c-outflow" v-if="title" ref="element">
+  <div class="SwagHeader" v-if="title" ref="element">
     <div class="container">
       <div class="SwagHeader_row">
         <h1 class="styled">{{ title }}</h1>
@@ -15,23 +15,29 @@
 
 <style lang="scss">
 .SwagHeader {
-  @apply pt-10 pb-4;
+  @apply pt-10 pb-4 position-relative;
   margin-top: -2rem;
   background-color: var(--sw-c-gray-100);
-
+  z-index: 1;
+  overflow: visible;
   &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: -32px;
+    right: -32px;
+    top: 0;
+    bottom: 0;
+    background-color: var(--sw-c-gray-50);
     border-bottom: 1px solid var(--sw-c-gray-100);
     .dark & {
+      background-color: var(--sw-c-gray-dark-700);
       border-bottom: 1px solid var(--sw-c-gray-dark-700);
     }
   }
 
   .container {
     margin: 0 auto;
-  }
-
-  &.c-outflow {
-    z-index: 0;
   }
 
   &_row {
@@ -49,12 +55,6 @@
         }
       }
     }
-
-    /*& .aside-container {
-      padding-top: 2.5rem;
-      position: sticky;
-      top: 0;
-    }*/
   }
 }
 </style>

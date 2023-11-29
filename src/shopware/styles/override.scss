@@ -232,7 +232,9 @@ body .container {
 
 .VPContent {
   // fixes any position: sticky
+  // also needed for floating table headings
   overflow-x: initial;
+  overflow-y: initial;
   .quote {
     color: var(--c-text-100);
   }
@@ -333,14 +335,6 @@ a.as-link,
 
 .prev-next a:hover .title {
   color: var(--c-blue-brand-dark);
-}
-
-.VPContent {
-  overflow-x: hidden;
-  //@apply bg-white;
-  .dark & {
-    //background-color: var(--sw-c-gray-dark-750);
-  }
 }
 
 .unstyled {
@@ -573,4 +567,10 @@ nav ul.root li,
 /* homepage? */
 .VPDoc:not(.has-sidebar) .container {
   max-width: 1300px !important;
+}
+
+.aside-container.aside-container {
+  padding-top: 2.5rem;
+  position: sticky;
+  top: 88px;
 }
