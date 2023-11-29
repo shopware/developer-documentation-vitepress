@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.24](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.23...v1.0.24) (2023-11-29)
+
+### Bug Fixes
+
+- remove changelog ([f8d93cd](https://github.com/shopware/developer-documentation-vitepress/commit/f8d93cdd6d66c06fd69f4bf8be6044401b0cd6be))
+
+### Features
+
+- sidebar orientation ([80d2153](https://github.com/shopware/developer-documentation-vitepress/commit/80d21538e019db43fe528f79a0060d609de7fb0e))
+- sticky tables, sticky outline ([92ed7a5](https://github.com/shopware/developer-documentation-vitepress/commit/92ed7a55e0c03a3b4a28a91cc45816ad6d700091))
+
+## [1.0.24](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.23...v1.0.24) (2023-11-29)
+
+### Bug Fixes
+
+- remove changelog ([f8d93cd](https://github.com/shopware/developer-documentation-vitepress/commit/f8d93cdd6d66c06fd69f4bf8be6044401b0cd6be))
+
+### Features
+
+- sidebar orientation ([80d2153](https://github.com/shopware/developer-documentation-vitepress/commit/80d21538e019db43fe528f79a0060d609de7fb0e))
+- sticky tables, sticky outline ([92ed7a5](https://github.com/shopware/developer-documentation-vitepress/commit/92ed7a55e0c03a3b4a28a91cc45816ad6d700091))
+
 ## [1.0.23](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.22...v1.0.23) (2023-11-27)
 
 ### Bug Fixes
