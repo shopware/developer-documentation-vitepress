@@ -515,13 +515,26 @@ export function transformLinkToSidebar(root: string, link: string) {
         });
     }
 
+    if (items && index?.meta?.orientation === 'descending') {
+        const makeDescending = items => items
+            .sort((a, b) => b.text.localeCompare(a.text))
+            .map(item => {
+                item.items = makeDescending(item.items);
+                return item;
+            });
+        items = makeDescending(items);
+    }
+
     if (!index) {
         return items;
     }
 
-    // when index has hardcoded links, skip auto-generated ones
+    // when index has hardcoded links, prepend auto-generated ones
     if (index.items.length) {
-        return index.items;
+        return [
+            ...items,
+            ...index.items,
+        ];
     }
 
     //let hardcoded = index.items;
