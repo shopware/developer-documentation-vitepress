@@ -4,6 +4,7 @@ on:
     workflows: [ "Test" ]
     branches:
       - main
+      - DX-frontends
     types:
       - completed
 
