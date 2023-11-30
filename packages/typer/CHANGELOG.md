@@ -1,3 +1,15 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [1.1.0-alpha](https://github.com/shopware/frontends/compare/v1.0.24...v1.1.0-alpha) (2023-11-30)
+
+### Features
+
+- move typer from frontends, tweak ([59d3479](https://github.com/shopware/frontends/commit/59d3479f1eeaf8c854e97d7737552ab537200ad5))
+- remove package ([86df1d2](https://github.com/shopware/frontends/commit/86df1d2fab75a694e1944a6e4f81d84a4220f9ad))
+
 # @shopware-pwa/typer
 
 ## 0.1.11
