@@ -46,7 +46,6 @@ export async function SourceResolver({
   rootDir: string;
   sourcePaths: SourcePath[];
 }): Promise<SourceResolverReturn> {
-  console.log('resolving', filename, rootDir, sourcePaths);
   const metadata = await getTypesMetadata();
   if (!metadata?.activeConfig || !metadata?.typesMetadata) {
     return {} as SourceResolverReturn;
@@ -63,7 +62,6 @@ export async function SourceResolver({
     for (const sourcePath of sourcePaths) {
       let path = `${sourcePath.functions}/${filename}.ts`;
 
-      console.log(path);
       if (filename === "index" || !existsSync(path)) {
         // try to resolve index file
 
