@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.4...v1.1.0-alpha.5) (2023-11-30)
+
+**Note:** Version bump only for package @shopware-docs/vitepress
+
 # [1.1.0-alpha.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.3...v1.1.0-alpha.4) (2023-11-30)
 
 **Note:** Version bump only for package @shopware-docs/vitepress

@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.4...v1.1.0-alpha.5) (2023-11-30)
+
+### Features
+
+- add prefix option ([f4ffd6a](https://github.com/shopware/developer-documentation-vitepress/commit/f4ffd6a219490f81ae613c59a5ab7f600574185d))
+
+# [1.1.0-alpha.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.4...v1.1.0-alpha.5) (2023-11-30)
+
+### Features
+
+- add prefix option ([f4ffd6a](https://github.com/shopware/developer-documentation-vitepress/commit/f4ffd6a219490f81ae613c59a5ab7f600574185d))
+
 # [1.1.0-alpha.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.3...v1.1.0-alpha.4) (2023-11-30)
 
 ### Features
