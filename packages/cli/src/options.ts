@@ -13,3 +13,7 @@ export const optionCI = {
     name: 'ci',
     defaultValue: false
 };
+export const optionKeep = {
+    name: 'keep',
+    defaultValue: false
+};
