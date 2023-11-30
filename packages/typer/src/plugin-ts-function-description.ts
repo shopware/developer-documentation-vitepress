@@ -20,13 +20,13 @@ function getDeprecationMessage(fn: DeclarationReflection): string {
   return tag?.content?.find((c) => c.kind == "text")?.text || "";
 }
 
-export function TableOfFunctions(rootDir: string = '../..'): Plugin {
+export function TableOfFunctions({rootDir, prefix}: {rootDir: string, prefix: string}): Plugin {
   return {
     name: "vueuse-md-transform",
     enforce: "pre",
     async transform(code, id) {
       if (!id.match(/\.md\b/)) return null;
-      const [pkg, fileName] = id.split("/").slice(-2);
+      const [pkg, fileName] = id.substring(prefix.length).split("/").slice(-2);
       const composableName = fileName.replace(/\.md$/, "");
 
       if (pkg !== "packages") {
