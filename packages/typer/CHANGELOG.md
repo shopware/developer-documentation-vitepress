@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.3](https://github.com/shopware/frontends/compare/v1.1.0-alpha.2...v1.1.0-alpha.3) (2023-11-30)
+
+### Features
+
+- remove debug ([1a42b92](https://github.com/shopware/frontends/commit/1a42b9299fe78788b2366164f6c17a26bc186fd0))
+
 # [1.1.0-alpha.2](https://github.com/shopware/frontends/compare/v1.0.24...v1.1.0-alpha.2) (2023-11-30)
 
 ### Features
