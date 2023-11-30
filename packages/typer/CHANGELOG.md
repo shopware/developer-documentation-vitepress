@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.4](https://github.com/shopware/frontends/compare/v1.1.0-alpha.3...v1.1.0-alpha.4) (2023-11-30)
+
+### Features
+
+- root dir ([bd6e025](https://github.com/shopware/frontends/commit/bd6e025e6d8d86cf1d418fec4374cf1af95e3a3f))
+
 # [1.1.0-alpha.3](https://github.com/shopware/frontends/compare/v1.1.0-alpha.2...v1.1.0-alpha.3) (2023-11-30)
 
 ### Features
