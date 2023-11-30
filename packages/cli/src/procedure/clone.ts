@@ -16,6 +16,7 @@ export const clone = async ({
                                 src, // 3
                                 dst, // 4
                                 ci,
+                                keep,
                                 options
                             }: { repository: string, branch: string, src: string, dst: string, ci: boolean | undefined, options: { env?: object } }) => {
     // prepare variables
@@ -80,6 +81,11 @@ export const clone = async ({
         // create a new symlink
         output.notice(`Copying ${src} to ${dst}`);
         await run('cp', ['-ra', `${src}/.`, `${dst}/`], {dir: tmpDir});
+
+        // make sure the source is available for further processing (frontends)
+        if (keep) {
+            await run('cp', ['-ra', `.`, `${dst}/_source/`], {dir: tmpDir});
+        }
 
         // copy additional config
         await copyConfig(tmpDir, dst);
