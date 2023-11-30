@@ -10,7 +10,7 @@
     <div v-else-if="video">
       <div class="i-carbon-logo-youtube h-7 w-7 text-shopware" />
     </div>
-    <div class="flex-1 w-full">
+    <div class="flex-1">
       <span class="PageRef_title c-any-card_title">
         <slot name="title">{{ title }}</slot>
         <SwagIcon class="PageRef_icon" icon="long-arrow-right" />
@@ -28,7 +28,7 @@
 
 <style lang="scss">
 .PageRef {
-  @apply p-6;
+  @apply p-6 flex gap-6;
   &_icon {
     --icon-size: 1rem;
   }
