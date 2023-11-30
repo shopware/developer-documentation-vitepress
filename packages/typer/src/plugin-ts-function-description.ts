@@ -46,7 +46,7 @@ export function TableOfFunctions(rootDir: string = '../..'): Plugin {
 
       const app = await TypeDoc.Application.bootstrap(
         {
-          basePath: "../../",
+          basePath: `${rootDir}/`,
           entryPoints: [
             resolve(`${rootDir}/packages/${composableName}/src/index.ts`),
           ],
