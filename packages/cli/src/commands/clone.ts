@@ -61,7 +61,8 @@ export default {
         user?: string,
         pass?: string,
         git?: string,
-        ci?: boolean
+        ci?: boolean,
+        keep?: boolean
     }) => {
         if (!repository) {
             output.error('Repository is required');
