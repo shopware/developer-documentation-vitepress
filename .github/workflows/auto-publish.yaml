@@ -17,7 +17,9 @@ jobs:
       contains(github.event.workflow_run.head_commit.message, 'chore: publish')
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
 
       - name: Prepare
         uses: ./.github/actions/checkout-install
