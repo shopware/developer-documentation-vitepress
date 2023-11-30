@@ -380,17 +380,30 @@ h1.styled {
 h2.styled,
 .vp-doc > div > h3,
 h3.styled {
-  @apply mt-10 mb-4 pt-0;
+  padding-top: 1em;
+  /* interferes with margin-block-start */
+  margin-top: 2em !important;
+  margin-bottom: 1em;
+}
+
+.vp-doc  > div > h2,
+h2.styled {
+  border-top: 1px solid var(--vp-c-bg-soft);
 }
 
 .vp-doc > div > h2 {
-  font-size: 26px;
-  line-height: 32px;
+  font-size: 24px;
+  line-height: 30px;
 }
 
 .vp-doc > div > h3 {
   font-size: 20px;
   line-height: 26px;
+}
+
+.vp-doc > div > h4 {
+  font-size: 18px;
+  line-height: 24px;
 }
 
 .vp-doc {
@@ -562,6 +575,10 @@ nav ul.root li,
   position: absolute;
   right: 0;
   top: -100px;
+}
+
+.nested.nested {
+  padding-left: 0;
 }
 
 /* homepage? */

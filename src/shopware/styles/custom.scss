@@ -137,9 +137,16 @@ main:has(.vp-doc > div:empty) {
     text-overflow: ellipsis;
 }
 
-main :not(.grid) > .PageRef {
+/*main :not(.grid) > .PageRef*/
+.vp-doc > div > .PageRef {
     margin-bottom: 1.5rem;
-    display: block;
+}
+
+.vp-doc > div > p:nth-child(2) {
+    &,
+    & + ul {
+        font-weight: 500;
+    }
 }
 
 .font-poppins {
