@@ -150,9 +150,14 @@ main :not(.grid) > .PageRef {
     margin-left: 4rem;
 }
 
-.dark .vp-doc > div > img,
-.dark .vp-doc > div > p > img, {
-    filter: invert(1) hue-rotate(-180deg);
+.vp-doc > div > img,
+.vp-doc > div > p > img, {
+    margin: 0 auto;
+    max-width: 768px;
+    max-height: 576px;
+    .dark & {
+        filter: invert(1) hue-rotate(-180deg);
+    }
 }
 
 .vp-doc .has-highlighted-lines .line:not(.highlighted) {
