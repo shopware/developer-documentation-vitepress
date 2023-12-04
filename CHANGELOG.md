@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.25](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.24...v1.0.25) (2023-12-04)
+
+### Bug Fixes
+
+- remove changelog ([08407c7](https://github.com/shopware/developer-documentation-vitepress/commit/08407c7f9e1b3a97d251b66c105d94ef627b1565))
+
+### Features
+
+- auto publish from alternative branch ([f17bd7b](https://github.com/shopware/developer-documentation-vitepress/commit/f17bd7b96a1ddf9bbaaf9b1eb058bf7fb3c2ae85))
+- build ([c58bf04](https://github.com/shopware/developer-documentation-vitepress/commit/c58bf046dbbee163e95a427504eddd5de2674577))
+- image size and position ([085fa3f](https://github.com/shopware/developer-documentation-vitepress/commit/085fa3fc34ef2f89cbd96e869a2da756f0093b61))
+- use --no-git-checks ([3d6859f](https://github.com/shopware/developer-documentation-vitepress/commit/3d6859f953be15bbc051c013d7364c129c8e3054))
+- use head branch ([d652913](https://github.com/shopware/developer-documentation-vitepress/commit/d65291338ecd4331b5a91fb5ca74348c1e76c05b))
+
+## [1.0.25](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.24...v1.0.25) (2023-12-04)
+
+### Bug Fixes
+
+- remove changelog ([08407c7](https://github.com/shopware/developer-documentation-vitepress/commit/08407c7f9e1b3a97d251b66c105d94ef627b1565))
+
+### Features
+
+- auto publish from alternative branch ([f17bd7b](https://github.com/shopware/developer-documentation-vitepress/commit/f17bd7b96a1ddf9bbaaf9b1eb058bf7fb3c2ae85))
+- build ([c58bf04](https://github.com/shopware/developer-documentation-vitepress/commit/c58bf046dbbee163e95a427504eddd5de2674577))
+- image size and position ([085fa3f](https://github.com/shopware/developer-documentation-vitepress/commit/085fa3fc34ef2f89cbd96e869a2da756f0093b61))
+- use --no-git-checks ([3d6859f](https://github.com/shopware/developer-documentation-vitepress/commit/3d6859f953be15bbc051c013d7364c129c8e3054))
+- use head branch ([d652913](https://github.com/shopware/developer-documentation-vitepress/commit/d65291338ecd4331b5a91fb5ca74348c1e76c05b))
+
 ## [1.0.24](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.23...v1.0.24) (2023-11-29)
 
 ### Bug Fixes
