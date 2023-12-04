@@ -178,15 +178,22 @@ const nullifyLink = item => {
     return item;
 }
 
-const reduceTree = (as: string, dirPath: string, depth = 1) => {
+const reduceTree = (as: string, dirPath: string, depth = 1, ignore: string[] = []) => {
     // use metas to sort items correctly
     const {
         meta: metas,
         tree
     } = getMetas(dirPath);
 
-    const reduced = Object.keys(tree)
+    const reduced = ignore.includes(`/${as}/`)
+        ? [] // hide ignored
+        : Object.keys(tree)
         .reduce((reduced: ItemLink[], file, i) => {
+            // hide node_modules
+            if (file === 'node_modules') {
+                return reduced;
+            }
+
             // hide entry
             if (metas[file]?.hidden) {
                 return reduced;
@@ -229,7 +236,7 @@ const reduceTree = (as: string, dirPath: string, depth = 1) => {
             const {
                 metas: subMetas,
                 items: subItems,
-            } = reduceTree(`${endWithSlash(as)}${file}`, `${dirPath}${file}/`, depth + 1);
+            } = reduceTree(`${endWithSlash(as)}${file}`, `${dirPath}${file}/`, depth + 1, ignore);
 
             // directory
             const newItem: ItemLink = nullifyLink({
@@ -399,7 +406,7 @@ function getMeta(folder: string, file: string): ObjectMeta {
     return nav;
 }
 
-export function transformLinkToSidebar(root: string, link: string) {
+export function transformLinkToSidebar(root: string, link: string, ignore: string[] = []) {
     // usually, this starts with alpha and ends with alpha character
     // except for when the link is "/"
     const as = link === '/'
@@ -485,7 +492,7 @@ export function transformLinkToSidebar(root: string, link: string) {
 
                 // collect links
                 const dirPath = `${folder}${file}/`;
-                const {items: links} = reduceTree(`${endWithSlash(as)}${file}`, dirPath);
+                const {items: links} = reduceTree(`${endWithSlash(as)}${file}`, dirPath, 1, ignore);
 
                 // skip empty sections
                 if (links.length || hasIndex) {
@@ -554,11 +561,12 @@ export function transformLinkToSidebar(root: string, link: string) {
 export const buildSidebarNav = (
     root: string,
     links: { link?: string; text: string; items?: []; repo?: string }[],
-    sublinks?: string[]
+    sublinks?: string[],
+    ignore?: string[]
 ) => {
     // build custom links
     const sidebar = (sublinks || []).reduce((sidebar, link: string) => {
-        sidebar[link] = transformLinkToSidebar(root, link);
+        sidebar[link] = transformLinkToSidebar(root, link, ignore);
         return sidebar;
     }, {});
 
@@ -575,7 +583,7 @@ export const buildSidebarNav = (
 
             // build sidebar
             if (!isExternal && link && isDir) {
-                data.sidebar[link] = transformLinkToSidebar(root, link);
+                data.sidebar[link] = transformLinkToSidebar(root, link, ignore);
             }
 
             // add to navigation
