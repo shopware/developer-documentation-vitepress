@@ -536,12 +536,17 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
         return items;
     }
 
-    // when index has hardcoded links, prepend auto-generated ones
+    // when index has hardcoded links, replace the "generate: true" item with auto-generated items
     if (index.items.length) {
-        return [
-            ...items,
-            ...index.items,
-        ];
+        return index.items.reduce((reduced, item) => {
+            if (item.generate) {
+                reduced.push(...items);
+            } else {
+                reduced.push(item);
+            }
+
+            return reduced;
+        }, []);
     }
 
     //let hardcoded = index.items;
