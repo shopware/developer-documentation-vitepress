@@ -6,7 +6,7 @@ export default defineConfig({
     test: {
         //root: '../../src/',
         setupFiles: ['vitestSetup.ts'],
-        globalSetup: ['__tests__/cli/vitestGlobalSetup.ts'],
+        globalSetup: ['vitestGlobalSetup.ts'],
         testTimeout: timeout,
         hookTimeout: timeout,
         teardownTimeout: timeout,
