@@ -13,7 +13,7 @@ export default ({__dirname, __dirnamePrefix = ''}: { __dirname: string, __dirnam
         test: {
             //root: '../../src/',
             setupFiles: ['vitestSetup.ts'],
-            globalSetup: ['__tests__/e2e/vitestGlobalSetup.ts'],
+            globalSetup: ['vitestGlobalSetup.ts'],
             testTimeout: timeout,
             hookTimeout: timeout,
             teardownTimeout: timeout,
