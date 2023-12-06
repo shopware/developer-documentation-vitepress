@@ -131,7 +131,7 @@ module.exports = async () => ({
     return !link.includes("Algolia");
   },
 
-  ignoreDeadLinks: true,
+  ignoreDeadLinks: 'localhostLinks',
 
   metaChunk: true,
 
