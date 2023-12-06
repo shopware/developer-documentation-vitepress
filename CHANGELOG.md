@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.6](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.5...v1.1.0-alpha.6) (2023-12-06)
+
+
+### Bug Fixes
+
+* partially defined menu item ([d62d9b9](https://github.com/shopware/developer-documentation-vitepress/commit/d62d9b9f64fe64807d53c5a6fae734fe84347872))
+* type keep ([8860841](https://github.com/shopware/developer-documentation-vitepress/commit/8860841477be37fdeb1b24a2402dc9b9958cf5e7))
+
+
+### Features
+
+* width ([44c43b6](https://github.com/shopware/developer-documentation-vitepress/commit/44c43b6f2f89fbb83c93695cf254d7e897752be8))
+
+
+
+
+
+# [1.1.0-alpha.6](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.5...v1.1.0-alpha.6) (2023-12-06)
+
+
+### Bug Fixes
+
+* partially defined menu item ([d62d9b9](https://github.com/shopware/developer-documentation-vitepress/commit/d62d9b9f64fe64807d53c5a6fae734fe84347872))
+* type keep ([8860841](https://github.com/shopware/developer-documentation-vitepress/commit/8860841477be37fdeb1b24a2402dc9b9958cf5e7))
+
+
+### Features
+
+* width ([44c43b6](https://github.com/shopware/developer-documentation-vitepress/commit/44c43b6f2f89fbb83c93695cf254d7e897752be8))
+
+
+
+
+
 # [1.1.0-alpha.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.0-alpha.4...v1.1.0-alpha.5) (2023-11-30)
 
 ### Features
