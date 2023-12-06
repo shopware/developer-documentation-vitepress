@@ -71,7 +71,7 @@ function normalizeMenuItem<T extends MenuItem | MenuItemChild>(item: T): T {
       link: normalizeLink(item.link)
     })
   } else {
-    return Object.assign({}, item, { items: item.items.map(normalizeMenuItem) })
+    return Object.assign({}, item, { items: (item.items || []).map(normalizeMenuItem) })
   }
 }
 
