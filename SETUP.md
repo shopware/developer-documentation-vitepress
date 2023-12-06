@@ -13,7 +13,7 @@ Your `package.json` should look similar to this
 ```
 {
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
     "dev": "vitepress",
