@@ -47,7 +47,7 @@
 
 <style lang="scss" scoped>
 .SwagLanding {
-  max-width: 960px;
+  max-width: 1024px;
   margin: 0 auto;
 
   &_description {

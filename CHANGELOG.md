@@ -3,6 +3,50 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.7](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.30...v1.1.0-alpha.7) (2023-12-07)
+
+### Bug Fixes
+
+- partially defined menu item ([1f40df4](https://github.com/shopware/developer-documentation-vitepress/commit/1f40df4733d6263b78511060dfd6dd6fe7b55e31))
+- type keep ([e5db1e2](https://github.com/shopware/developer-documentation-vitepress/commit/e5db1e295a70c7f5b52785234836edce037610b8))
+
+### Features
+
+- add prefix option ([85e7089](https://github.com/shopware/developer-documentation-vitepress/commit/85e7089dbab4f4143274ab319eab228aad80c1c5))
+- align with frontends ([b165371](https://github.com/shopware/developer-documentation-vitepress/commit/b1653719f33eb68e8149d276397b56817dbc24a1))
+- keep source option ([fa90368](https://github.com/shopware/developer-documentation-vitepress/commit/fa90368d68ee16b0b5d653450bc4665d3b4ae6e0))
+- move typer from frontends, tweak ([dfbdd22](https://github.com/shopware/developer-documentation-vitepress/commit/dfbdd22fc06ff2192b7f096676d94fd8a48a01c7))
+- new workspace package ([bf5aca7](https://github.com/shopware/developer-documentation-vitepress/commit/bf5aca776d1879cd46f4b7c71105b61c1f6a8113))
+- remove debug ([6c84d6c](https://github.com/shopware/developer-documentation-vitepress/commit/6c84d6c1b344881081b32f6ace7f35eceb9585f6))
+- remove package ([97900cd](https://github.com/shopware/developer-documentation-vitepress/commit/97900cd656b786f4fc2d4758c9b0fa4be07fe27c))
+- remove useWorkspaces ([f82ffd1](https://github.com/shopware/developer-documentation-vitepress/commit/f82ffd1aa9caabc6c8a38fb61959306800d8c105))
+- root dir ([88f90f8](https://github.com/shopware/developer-documentation-vitepress/commit/88f90f827d1ac2069ebdceecb355d98d9fb84211))
+- temp deactivate allowBranch config ([bef32f2](https://github.com/shopware/developer-documentation-vitepress/commit/bef32f288142ff7f5172b1e32e699bc045bf0856))
+- unbuild ([be9b493](https://github.com/shopware/developer-documentation-vitepress/commit/be9b493eee1bb4573c6148c537e6dd27ee789e50))
+- width ([dd32c44](https://github.com/shopware/developer-documentation-vitepress/commit/dd32c444444adff99a548096913329af534faf1d))
+
+# [1.1.0-alpha.7](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.30...v1.1.0-alpha.7) (2023-12-07)
+
+### Bug Fixes
+
+- partially defined menu item ([1f40df4](https://github.com/shopware/developer-documentation-vitepress/commit/1f40df4733d6263b78511060dfd6dd6fe7b55e31))
+- type keep ([e5db1e2](https://github.com/shopware/developer-documentation-vitepress/commit/e5db1e295a70c7f5b52785234836edce037610b8))
+
+### Features
+
+- add prefix option ([85e7089](https://github.com/shopware/developer-documentation-vitepress/commit/85e7089dbab4f4143274ab319eab228aad80c1c5))
+- align with frontends ([b165371](https://github.com/shopware/developer-documentation-vitepress/commit/b1653719f33eb68e8149d276397b56817dbc24a1))
+- keep source option ([fa90368](https://github.com/shopware/developer-documentation-vitepress/commit/fa90368d68ee16b0b5d653450bc4665d3b4ae6e0))
+- move typer from frontends, tweak ([dfbdd22](https://github.com/shopware/developer-documentation-vitepress/commit/dfbdd22fc06ff2192b7f096676d94fd8a48a01c7))
+- new workspace package ([bf5aca7](https://github.com/shopware/developer-documentation-vitepress/commit/bf5aca776d1879cd46f4b7c71105b61c1f6a8113))
+- remove debug ([6c84d6c](https://github.com/shopware/developer-documentation-vitepress/commit/6c84d6c1b344881081b32f6ace7f35eceb9585f6))
+- remove package ([97900cd](https://github.com/shopware/developer-documentation-vitepress/commit/97900cd656b786f4fc2d4758c9b0fa4be07fe27c))
+- remove useWorkspaces ([f82ffd1](https://github.com/shopware/developer-documentation-vitepress/commit/f82ffd1aa9caabc6c8a38fb61959306800d8c105))
+- root dir ([88f90f8](https://github.com/shopware/developer-documentation-vitepress/commit/88f90f827d1ac2069ebdceecb355d98d9fb84211))
+- temp deactivate allowBranch config ([bef32f2](https://github.com/shopware/developer-documentation-vitepress/commit/bef32f288142ff7f5172b1e32e699bc045bf0856))
+- unbuild ([be9b493](https://github.com/shopware/developer-documentation-vitepress/commit/be9b493eee1bb4573c6148c537e6dd27ee789e50))
+- width ([dd32c44](https://github.com/shopware/developer-documentation-vitepress/commit/dd32c444444adff99a548096913329af534faf1d))
+
 ## [1.0.30](https://github.com/shopware/developer-documentation-vitepress/compare/v1.0.29...v1.0.30) (2023-12-06)
 
 ### Features

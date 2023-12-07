@@ -1,5 +1,5 @@
 import {composeRepository, requireParam, sh} from "../helpers";
-import {optionDst, optionSrc, optionCI} from "../options";
+import {optionDst, optionSrc, optionCI, optionKeep} from "../options";
 import {output} from "../output";
 import {repositories} from "../data";
 import inquirer from "inquirer";
@@ -39,6 +39,7 @@ export default {
             name: 'g --git <git>',
         },
         optionCI,
+        optionKeep,
     ],
     handler: async ({
                         repository,
@@ -49,7 +50,8 @@ export default {
                         user,
                         pass,
                         git,
-                        ci
+                        ci,
+                        keep,
                     }: {
         repository: string,
         branch: string,
@@ -59,7 +61,8 @@ export default {
         user?: string,
         pass?: string,
         git?: string,
-        ci?: boolean
+        ci?: boolean,
+        keep?: boolean
     }) => {
         if (!repository) {
             output.error('Repository is required');
@@ -134,6 +137,7 @@ export default {
             src,
             dst,
             ci,
+            keep,
             options: {env: myEnv}
         });
 
