@@ -28,3 +28,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 ### Features
 
 - activate deadlink detection ([6b48c73](https://github.com/shopware/developer-documentation-vitepress/commit/6b48c736254a8f21a6bfd1817d16d4988873949e))
+

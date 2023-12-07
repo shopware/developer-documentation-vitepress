@@ -148,6 +148,7 @@ module.exports = async () => ({
       pattern: 'https://github.com/shopware/developer-portal',
       text: "Edit this page on GitHub",
     },
+    outline: [2, 3],
     swag: {}
   }
 });

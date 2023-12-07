@@ -230,6 +230,19 @@ hr {
     z-index: 21;
 }
 
+.group + .group.group {
+    padding-top: 16px;
+}
+
+.VPSidebarItem.level-0.level-0 {
+    padding-bottom: 16px;
+}
+
+.caret.caret {
+    width: 12px;
+    height: 12px;
+}
+
 .pre-table {
     &.--sticky {
         margin-top: var(--vp-nav-height);

@@ -7,10 +7,10 @@ Enhance your VitePress documentation with TypeScript types inside your monorepo.
 Add the package as `devDependency` using your favorite package manager:
 
 ```sh
-pnpm add -D @shopware-pwa/typer
+pnpm add -D @shopware-docs/typer
 ```
 
-Then, extend your's `vitepress` configuration by adding the vite plugins:
+Then, extend your `vitepress` configuration by adding the vite plugins:
 
 ```ts
 // vitepress config.js file
