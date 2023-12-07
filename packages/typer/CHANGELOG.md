@@ -3,13 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-alpha.7](https://github.com/shopware/frontends/compare/v1.0.30...v1.1.0-alpha.7) (2023-12-07)
+
+### Features
+
+- add prefix option ([85e7089](https://github.com/shopware/frontends/commit/85e7089dbab4f4143274ab319eab228aad80c1c5))
+- move typer from frontends, tweak ([dfbdd22](https://github.com/shopware/frontends/commit/dfbdd22fc06ff2192b7f096676d94fd8a48a01c7))
+- remove debug ([6c84d6c](https://github.com/shopware/frontends/commit/6c84d6c1b344881081b32f6ace7f35eceb9585f6))
+- remove package ([97900cd](https://github.com/shopware/frontends/commit/97900cd656b786f4fc2d4758c9b0fa4be07fe27c))
+- root dir ([88f90f8](https://github.com/shopware/frontends/commit/88f90f827d1ac2069ebdceecb355d98d9fb84211))
+
 # [1.1.0-alpha.6](https://github.com/shopware/frontends/compare/v1.1.0-alpha.5...v1.1.0-alpha.6) (2023-12-06)
 
 **Note:** Version bump only for package @shopware-docs/typer
-
-
-
-
 
 # [1.1.0-alpha.5](https://github.com/shopware/frontends/compare/v1.1.0-alpha.4...v1.1.0-alpha.5) (2023-11-30)
 
