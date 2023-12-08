@@ -107,14 +107,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Poppins, sans-serif;
 }
 
-h1 {
-  font-size: clamp(35px, 5.5vw, 74px);
-  line-height: 1.25;
-}
 @media (min-width: 1024px) {
-body .container {
-   max-width: 1024px;
- }
+  body .container {
+    max-width: 1024px;
+  }
 }
 
 .VPMenu {
@@ -369,41 +365,46 @@ a.as-link,
 }
 
 .vp-doc > div > h1,
-h1.styled {
-  @apply mb-1em;
-  font-size: 38px;
-  line-height: 1.4;
-  letter-spacing: -.02em;
-}
-
-.vp-doc  > div > h2,
-h2.styled,
+.vp-doc > div > h2,
 .vp-doc > div > h3,
-h3.styled {
+.vp-doc > div > h4,
+.vp-doc > div > h5,
+.vp-doc > div > h6,
+h1.styled,
+h2.styled,
+h3.styled,
+h4.styled,
+h5.styled,
+h6.styled {
   padding-top: 1em;
   /* interferes with margin-block-start */
   margin-top: 2em !important;
   margin-bottom: 1em;
+  letter-spacing: -.02em;
+  line-height: 1.333;
 }
 
-.vp-doc  > div > h2,
+.vp-doc > div > h1,
+h1.styled {
+  font-size: 36px;
+  margin-top: 0 !important;
+  padding-top: 0;
+}
+
+.vp-doc > div > h2,
 h2.styled {
+  font-size: 24px;
   border-top: 1px solid var(--vp-c-bg-soft);
 }
 
-.vp-doc > div > h2 {
-  font-size: 24px;
-  line-height: 30px;
-}
-
-.vp-doc > div > h3 {
+.vp-doc > div > h3,
+h3.styled {
   font-size: 20px;
-  line-height: 26px;
 }
 
-.vp-doc > div > h4 {
+.vp-doc > div > h4,
+h4.styled {
   font-size: 18px;
-  line-height: 24px;
 }
 
 .vp-doc {
@@ -414,6 +415,14 @@ h2.styled {
   h2, h3, h4, h5, h6 {
     color: var(--c-heading-sub);
     margin-top: 0;
+  }
+
+  h1 .header-anchor {
+    top: 0;
+  }
+
+  .header-anchor {
+    top: 1em;
   }
 
   > div > p {
