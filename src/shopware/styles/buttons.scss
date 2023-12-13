@@ -83,6 +83,21 @@
         }
     }
 
+    &.--subtle-2 {
+        --btn-border: var(--sw-c-gray-600);
+        --btn-bg: var(--sw-c-gray-200);
+        --btn-bg--hover: var(--sw-c-gray-300);
+        --btn-color: var(--sw-c-gray-dark-200);
+        --btn-color--hover: var(--sw-c-gray-dark-300);
+        .dark & {
+            --btn-border: var(--sw-c-gray-dark-800);
+            --btn-bg: var(--sw-c-gray-dark-500);
+            --btn-bg--hover: var(--sw-c-gray-dark-400);
+            --btn-color: white;
+            --btn-color--hover: white;
+        }
+    }
+
     &.--transparent {
         --btn-bg: transparent;
         --btn-bg--hover: transparent;

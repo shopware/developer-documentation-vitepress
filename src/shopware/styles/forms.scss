@@ -7,13 +7,17 @@
 
 .form-control,
 .hs-input {
-  &textarea,
   &[type="text"],
   &[type="number"],
   &[type="email"] {
     @apply block w-full px-4 py-3.5;
     border: 1px solid var(--sw-c-gray-300);
   }
+}
+
+textarea.form-control {
+  @apply block w-full px-4 py-3.5;
+  border: 1px solid var(--sw-c-gray-300);
 }
 
 .hs-input[type="checkbox"],
