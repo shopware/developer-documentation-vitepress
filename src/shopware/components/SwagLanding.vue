@@ -1,7 +1,7 @@
 <template>
-  <div class="SwagLanding flex flex-col gap-10">
+  <div class="SwagLanding flex flex-col">
 
-    <div class="grid grid-cols-3 gap-10">
+    <div class="grid grid-cols-3 gap-10 mb-10">
 
       <div class="flex flex-col col-span-3 xl:col-span-2 leading-7 gap-6">
         <h1 class="SwagLanding_heading accent font-black styled">
@@ -21,7 +21,7 @@
         </div>
       </div>
 
-      <div>
+      <div v-if="image">
         <slot name="image">
             <img :src="image" :alt="title" class="w-100" />
         </slot>
