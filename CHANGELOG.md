@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.1...v1.1.3) (2023-12-13)
+
+### Bug Fixes
+
+- style regression ([6ddc656](https://github.com/shopware/developer-documentation-vitepress/commit/6ddc656e79e86aed415aa755fd92d1fa20afe5d1))
+
+### Features
+
+- textarea and subtle buttons style ([2db1e13](https://github.com/shopware/developer-documentation-vitepress/commit/2db1e13b953ce481e8b0682328cce649f216836e))
+
+## [1.1.3](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.1...v1.1.3) (2023-12-13)
+
+### Bug Fixes
+
+- style regression ([6ddc656](https://github.com/shopware/developer-documentation-vitepress/commit/6ddc656e79e86aed415aa755fd92d1fa20afe5d1))
+
+### Features
+
+- textarea and subtle buttons style ([2db1e13](https://github.com/shopware/developer-documentation-vitepress/commit/2db1e13b953ce481e8b0682328cce649f216836e))
+
 ## [1.1.2](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.1...v1.1.2) (2023-12-08)
 
 ### Bug Fixes
