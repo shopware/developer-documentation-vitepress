@@ -69,7 +69,7 @@ import render from "./markdown";
 
 const props = defineProps({
   collection: {
-    type: 'string',
+    type: String,
   }
 });
 
