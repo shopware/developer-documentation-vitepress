@@ -65,13 +65,15 @@
 <script lang="ts" setup>
 import {watch, ref} from "vue";
 import {qa} from "./ml";
-import render from "./markdown";
 
 const props = defineProps({
   collection: {
     type: String,
-  }
+  },
+  render: {}
 });
+
+const render = props.render;
 
 const {
   query,
