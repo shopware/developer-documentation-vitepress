@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.10](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.9...v1.1.10) (2023-12-20)
+
+### Bug Fixes
+
+- lock ([ef28589](https://github.com/shopware/developer-documentation-vitepress/commit/ef2858983b94ea2e11ff83bd53e4c85abaa641df))
+
+## [1.1.10](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.9...v1.1.10) (2023-12-20)
+
+### Bug Fixes
+
+- lock ([ef28589](https://github.com/shopware/developer-documentation-vitepress/commit/ef2858983b94ea2e11ff83bd53e4c85abaa641df))
+
 ## [1.1.9](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.8...v1.1.9) (2023-12-20)
 
 ### Features
