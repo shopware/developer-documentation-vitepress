@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.6...v1.1.7) (2023-12-20)
+
+### Features
+
+- move renderer to props ([b0a155c](https://github.com/shopware/developer-documentation-vitepress/commit/b0a155c3434cdebd1ffd57c382da3c510829cb3a))
+
+## [1.1.7](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.6...v1.1.7) (2023-12-20)
+
+### Features
+
+- move renderer to props ([b0a155c](https://github.com/shopware/developer-documentation-vitepress/commit/b0a155c3434cdebd1ffd57c382da3c510829cb3a))
+
 ## [1.1.6](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.5...v1.1.6) (2023-12-19)
 
 ### Features
