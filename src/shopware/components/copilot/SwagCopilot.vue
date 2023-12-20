@@ -4,7 +4,7 @@
 
     <SwagIcon icon="sparkles" type="solid" class="SwagCopilot_icon-copilot --animation-up"/>
 
-    <h3 class="SwagCopilot_heading --animation-up">AI Copilots</h3>
+    <h3 class="SwagCopilot_heading --animation-up">AI Copilot</h3>
 
     <div v-if="!state" class="SwagCopilot_container">
       <p class="--animation-top --animation-delay-1">Instead of searching, you can ask AI Copilot to find what you are
