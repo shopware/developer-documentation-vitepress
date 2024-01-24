@@ -452,7 +452,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                 }
 
                 // skip versioned folders
-                const versionRegex = /^v\d+\.\d+$/;
+                const versionRegex = /^v\d+\.\d+(rc)?$/;
                 if (file.match(versionRegex)) {
                     return reduced;
                 }
