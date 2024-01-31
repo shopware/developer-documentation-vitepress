@@ -59,6 +59,17 @@
                 placeholder="Enter the question"></textarea>
       <button type="button" class="btn --primary --xs" @click.prevent="requestAnswer">Ask</button>
     </div>
+
+    <div class="SwagCopilot_searchbox-wrapper --animation-top"
+         :class="`--animation-delay-${state === 'done' ? '1' : '4'}`"
+         v-if="state !== 'pending' && Object.keys(collections).length">
+      <template v-if="advanced">
+        <select v-model="myCollection" class="form-control">
+          <option v-for="collection in Object.keys(collections)" :value="collection">{{ collections[collection] }} ({{ collection }})</option>
+        </select>
+      </template>
+      <span v-else @click.prevent.stop="advanced = true" class="as-link text-xs">Choose a different collection</span>
+    </div>
   </div>
 </template>
 
@@ -70,8 +81,19 @@ const props = defineProps({
   collection: {
     type: String,
   },
+  collections: {
+    type: Array,
+    required: false,
+    default: () => ({}),
+  },
   render: {}
 });
+
+// collection selector
+const myCollection = ref(props.collection);
+const advanced = ref(false);
+watch(() => props.collection, () => myCollection.value = props.collection);
+watch(myCollection, () => setCollection(myCollection.value));
 
 const render = props.render;
 
@@ -85,7 +107,8 @@ const {
   requestAnswer,
   marked,
   stop,
-} = qa(props.collection);
+  setCollection,
+} = qa(myCollection.value);
 
 const examples = [
   'What is the code for adding a primary button?',
