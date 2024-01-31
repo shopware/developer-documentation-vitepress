@@ -13,7 +13,7 @@ export const qa = (initialCollection) => {
     let stopping = ref(false);
 
     let collection = ref(initialCollection);
-    const setCollection = newCollection => collection = newCollection;
+    const setCollection = newCollection => collection.value = newCollection;
 
     let requestAnswer = () => {
         pending.value = true;
