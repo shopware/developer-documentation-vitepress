@@ -1,7 +1,7 @@
 import {ref} from "vue";
 import { marked } from 'marked';
 
-export const qa = (collection) => {
+export const qa = (initialCollection) => {
     let query = ref(null);
     let pending = ref(false);
     let question = ref(null);
@@ -11,6 +11,9 @@ export const qa = (collection) => {
     let errorText = ref(false);
     let state = ref(null);
     let stopping = ref(false);
+
+    let collection = ref(initialCollection);
+    const setCollection = newCollection => collection.value = newCollection;
 
     let requestAnswer = () => {
         pending.value = true;
@@ -24,7 +27,7 @@ export const qa = (collection) => {
             },
             body: JSON.stringify({
                 q: query.value,
-                collection: collection,
+                collection: collection.value,
             })
         })
             .then(response => response.json())
@@ -63,5 +66,6 @@ export const qa = (collection) => {
         marked,
         state,
         stop,
+        setCollection,
     };
 }

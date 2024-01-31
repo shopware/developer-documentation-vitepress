@@ -364,6 +364,7 @@ a.as-link,
 
 .as-link {
   color: var(--c-link);
+  cursor: pointer;
   &.--with-icon {
     @apply flex items-center gap-1.5;
     --icon-size: .875rem;
@@ -516,7 +517,7 @@ h4.styled {
     @apply px-0;
     max-width: 100%;
   }
-  
+
   &.VPDoc {
     padding-top: 32px;
   }
