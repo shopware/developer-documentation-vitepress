@@ -2,6 +2,12 @@
 import { useAttrs, computed, ref, onMounted, inject } from 'vue'
 
 const attrs = useAttrs();
+const props = defineProps({
+  icon: {
+    type: String,
+    required: false
+  }
+});
 
 const title = ref(attrs.title);
 
@@ -14,8 +20,8 @@ const isActive = computed(() => title.value == activeTitle.value);
 onMounted(() => 
     registerTab({
         title: title.value,
-        icon: attrs.icon
-    })
+        icon: props.icon,
+    }, attrs.id)
 );
 </script>
 

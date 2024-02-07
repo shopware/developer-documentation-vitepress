@@ -2,12 +2,22 @@
 
 import { provide, computed, ref } from 'vue'
 
-const tabs = ref([]);
+const tabs = ref({});
 
-const active = ref(0)
+const active = ref(null)
 
-const registerTab = function (tab) {
-    tabs.value.push(tab);
+const registerTab = function (tab, id) {
+    if (!id) {
+        id = `${Object.keys(tabs.value).length}`;
+    } else {
+        tab.id = id;
+    }
+
+    if (!Object.keys(tabs.value).length || id === window.location.hash.substring(1)) {
+        active.value = id;
+    }
+
+    tabs.value[id] = tab;
 }
 
 const activeTitle = computed(() => tabs.value[active.value]?.title);
@@ -20,14 +30,16 @@ provide('activeTitle', activeTitle)
 
 <template>
     <div class="Tabs_buttons">
-        <button
+        <component
+            :is="tab.id ? 'a' : 'button'"
+            v-bind="tab.id ? {href: `#${index}`} : {}"
             v-for="(tab, index) in tabs"
-            @click="active = index"
+            @click.prevent.stop="active = index"
             class="Tabs_button"
-            v-bind:class="[index == active ? '--active' : '']">
+            :class="[index === active ? '--active' : '']">
             <SwagIcon v-if="tab.icon" :icon="tab.icon" />
             {{ tab.title }}
-        </button>
+        </component>
     </div>
 
     <div class="Tabs_slot">
