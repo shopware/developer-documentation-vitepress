@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.16](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.15...v1.1.16) (2024-02-07)
+
+### Features
+
+- better default size ([54c0741](https://github.com/shopware/developer-documentation-vitepress/commit/54c074181a4d8fc433df84385e720c9b61791d7f))
+- linkable tabs ([ee77b53](https://github.com/shopware/developer-documentation-vitepress/commit/ee77b536ee59e48aa735db772ddf19beada5fa10))
+- tab icon ([e37afd0](https://github.com/shopware/developer-documentation-vitepress/commit/e37afd0768b0150274f3bf876ab4cc26bd76d977))
+
+## [1.1.16](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.15...v1.1.16) (2024-02-07)
+
+### Features
+
+- better default size ([54c0741](https://github.com/shopware/developer-documentation-vitepress/commit/54c074181a4d8fc433df84385e720c9b61791d7f))
+- linkable tabs ([ee77b53](https://github.com/shopware/developer-documentation-vitepress/commit/ee77b536ee59e48aa735db772ddf19beada5fa10))
+- tab icon ([e37afd0](https://github.com/shopware/developer-documentation-vitepress/commit/e37afd0768b0150274f3bf876ab4cc26bd76d977))
+
 ## [1.1.15](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.14...v1.1.15) (2024-01-31)
 
 ### Features
