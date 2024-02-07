@@ -14,6 +14,7 @@ const isActive = computed(() => title.value == activeTitle.value);
 onMounted(() => 
     registerTab({
         title: title.value,
+        icon: attrs.icon
     })
 );
 </script>

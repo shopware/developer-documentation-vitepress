@@ -25,6 +25,7 @@ provide('activeTitle', activeTitle)
             @click="active = index"
             class="Tabs_button"
             v-bind:class="[index == active ? '--active' : '']">
+            <SwagIcon v-if="tab.icon" :icon="tab.icon" />
             {{ tab.title }}
         </button>
     </div>
@@ -42,6 +43,7 @@ provide('activeTitle', activeTitle)
   &_button {
     @apply rounded-t-md px-4 py-3 text-sm border-t border-l border-r transition;
     @apply text-gray-400 dark:text-gray-500 border-transparent;
+    @apply flex items-center gap-[1em];
 
     &.--active {
       @apply text-gray-900 dark:text-gray-200 border-gray-300 mb--1px;
