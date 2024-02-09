@@ -152,7 +152,7 @@ export default {
             output.notice(`Keeping source available under ${dst}/_source`);
             try {
                 const dst_source = path.join(dst, '_source');
-                const response = execSync(`ln -s ${src} ${dst_source}`);
+                const response = execSync(`ln -s ${cwdDir} ${dst_source}`);
                 output.log(`${response}`);
             } catch (e) {
                 throw `Error symlinking ${src}`;
