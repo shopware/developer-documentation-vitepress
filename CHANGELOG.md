@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.18...v1.1.19) (2024-02-09)
+
+
+### Features
+
+* custom domain ([6949595](https://github.com/shopware/developer-documentation-vitepress/commit/6949595ea8e03b69a94dcab9b30d720cc9f8f544))
+
+
+
+
+
+## [1.1.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.18...v1.1.19) (2024-02-09)
+
+
+### Features
+
+* custom domain ([6949595](https://github.com/shopware/developer-documentation-vitepress/commit/6949595ea8e03b69a94dcab9b30d720cc9f8f544))
+
+
+
+
+
 ## [1.1.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.17...v1.1.18) (2024-02-09)
 
 
