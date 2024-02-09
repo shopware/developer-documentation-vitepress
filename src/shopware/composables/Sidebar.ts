@@ -178,6 +178,14 @@ const nullifyLink = item => {
     return item;
 }
 
+const isFileExcluded = (file: string) => {
+    const versionRegex = /^v\d+\.\d+(rc)?$/;
+
+    return file === 'node_modules'
+        || ['.', '_'].includes(file.substring(0, 1))
+        || file.match(versionRegex);
+}
+
 const reduceTree = (as: string, dirPath: string, depth = 1, ignore: string[] = []) => {
     // use metas to sort items correctly
     const {
@@ -189,8 +197,8 @@ const reduceTree = (as: string, dirPath: string, depth = 1, ignore: string[] = [
         ? [] // hide ignored
         : Object.keys(tree)
         .reduce((reduced: ItemLink[], file, i) => {
-            // hide node_modules
-            if (file === 'node_modules') {
+            // hide common files
+            if (isFileExcluded(file)) {
                 return reduced;
             }
 
@@ -442,18 +450,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                 reduced: Array<MenuItemWithLink | AdditionalMenuItemWithContext>,
                 file
             ) => {
-                // skip files/dirs starting with . or _
-                if (file[0] === "." || file[0] === "_") {
-                    return reduced;
-                }
-
-                if (file === "node_modules") {
-                    return reduced;
-                }
-
-                // skip versioned folders
-                const versionRegex = /^v\d+\.\d+(rc)?$/;
-                if (file.match(versionRegex)) {
+                if (isFileExcluded(file)) {
                     return reduced;
                 }
 
