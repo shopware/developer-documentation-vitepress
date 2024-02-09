@@ -70,7 +70,7 @@ export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = [
 
 }
 
-export const createSitemap = async (urls: string[] = []) => {
+export const createSitemap = async (urls: string[] = [], domain: string) => {
     console.log('Discovering *.html');
     const files: string[] = await new Promise((resolve) => {
         glob("./.vitepress/dist/**/*.html", {}, (er, files) => {
@@ -101,7 +101,7 @@ export const createSitemap = async (urls: string[] = []) => {
     const destinationDir = './.vitepress/dist/';
     const limit = 50_000;
     await simpleSitemapAndIndex({
-        hostname: 'https://developer.shopware.com',
+        hostname: `https://${domain}`,
         destinationDir,
         sourceData,
         limit,
@@ -112,7 +112,7 @@ export const createSitemap = async (urls: string[] = []) => {
     const robots = [
         'User-agent: *',
         'Allow: /',
-        'Sitemap: https://developer.shopware.com/sitemap.xml'
+        `Sitemap: https://${domain}/sitemap.xml`
     ].join("\n");
     fs.writeFileSync(`${destinationDir}robots.txt`, robots);
 
