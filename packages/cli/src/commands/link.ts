@@ -1,5 +1,5 @@
 import {getDeveloperPortalPath, requireParam, sh} from "../helpers";
-import {optionDst, optionSrc} from "../options";
+import {optionDst, optionKeep, optionSrc} from "../options";
 import {output} from "../output";
 import fs from "fs";
 import {execSync} from "child_process";
@@ -27,7 +27,8 @@ export default {
         {
             name: 'wd --wd',
             description: 'Use custom in-repo working directory (devcontainer)'
-        }
+        },
+        optionKeep,
     ],
     handler: async ({
                         src,
@@ -36,7 +37,8 @@ export default {
                         rsync,
                         copy,
                         wd,
-                    }: { src?: string, dst?: string, symlink?: boolean, rsync?: boolean, copy?: boolean, wd?: string }) => {
+                        keep,
+                    }: { src?: string, dst?: string, symlink?: boolean, rsync?: boolean, copy?: boolean, wd?: string, keep?: boolean }) => {
         // validate strategy
         if (((symlink ? 1 : 0) + (rsync ? 1 : 0) + (copy ? 1 : 0)) > 1) {
             output.error('You can use only one link strategy - symlink, rsync or copy');
@@ -143,6 +145,18 @@ export default {
         // copy additional config
         if (!symlink) {
             await copyConfig(src, dst);
+        }
+
+        // keep source directory
+        if (keep) {
+            output.notice(`Keeping source available under ${dst}/_source`);
+            try {
+                const dst_source = path.join(dst, '_source');
+                const response = execSync(`ln -s ${src} ${dst_source}`);
+                output.log(`${response}`);
+            } catch (e) {
+                throw `Error symlinking ${src}`;
+            }
         }
 
         output.success('Docs directory linked');
