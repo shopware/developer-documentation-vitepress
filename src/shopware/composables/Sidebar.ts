@@ -434,7 +434,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                 return [];
             }
         } catch (e) {
-            console.error(`WARNING: Missing directory ${folder}\n`, e);
+            console.error(`WARNING: Missing directory ${folder}\n`);
             return [];
         }
     }
