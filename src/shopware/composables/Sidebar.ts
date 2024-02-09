@@ -47,6 +47,8 @@ interface ItemLink {
     description?: string;
     position?: Number;
     items: ItemLink[];
+    collapsed?: boolean|null;
+    meta?: object;
 }
 
 interface NavConfig {
