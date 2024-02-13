@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.22](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.20...v1.1.22) (2024-02-13)
+
+### Bug Fixes
+
+- keep origin ([b614540](https://github.com/shopware/developer-documentation-vitepress/commit/b6145401c3102db172749b3ce18383a2c0a17187))
+
+### Features
+
+- allow full-width images ([b9f3be1](https://github.com/shopware/developer-documentation-vitepress/commit/b9f3be1f87de966f2477d349c781a62db0ca90f6))
+
+## [1.1.22](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.20...v1.1.22) (2024-02-13)
+
+### Bug Fixes
+
+- keep origin ([b614540](https://github.com/shopware/developer-documentation-vitepress/commit/b6145401c3102db172749b3ce18383a2c0a17187))
+
+### Features
+
+- allow full-width images ([b9f3be1](https://github.com/shopware/developer-documentation-vitepress/commit/b9f3be1f87de966f2477d349c781a62db0ca90f6))
+
 ## [1.1.21](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.20...v1.1.21) (2024-02-13)
 
 ### Bug Fixes
