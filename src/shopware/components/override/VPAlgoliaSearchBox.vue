@@ -101,13 +101,14 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
 }
 
 function getRelativePath(absoluteUrl: string) {
-    const { pathname, hash } = new URL(absoluteUrl)
-    return (
-        pathname.replace(
-            /\.html$/,
-            site.value.cleanUrls ? '' : '.html'
-        ) + hash
-    )
+    const { pathname, hash, origin } = new URL(absoluteUrl)
+    const cleanPath = pathname.replace(
+        /\.html$/,
+        site.value.cleanUrls ? '' : '.html'
+    );
+    const finalOrigin = origin === window.location.origin ? '' : origin;
+
+    return `${finalOrigin}${cleanPath}${hash}`
 }
 </script>
 
