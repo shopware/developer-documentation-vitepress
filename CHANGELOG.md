@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
+
+
+### Bug Fixes
+
+* medium-zoom sidebar ([7ee26f3](https://github.com/shopware/developer-documentation-vitepress/commit/7ee26f3a836e38fe6ca43157bb517ee86bd3e25f))
+* remove max-height ([93e0811](https://github.com/shopware/developer-documentation-vitepress/commit/93e08111b96fdfc9f3810465723052af13fdeec9))
+
+
+
+
+
+## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
+
+
+### Bug Fixes
+
+* medium-zoom sidebar ([7ee26f3](https://github.com/shopware/developer-documentation-vitepress/commit/7ee26f3a836e38fe6ca43157bb517ee86bd3e25f))
+* remove max-height ([93e0811](https://github.com/shopware/developer-documentation-vitepress/commit/93e08111b96fdfc9f3810465723052af13fdeec9))
+
+
+
+
+
 ## [1.1.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.18...v1.1.19) (2024-02-09)
 
 

@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.20](https://github.com/shopware/frontends/compare/v1.1.19...v1.1.20) (2024-02-13)
+
+**Note:** Version bump only for package @shopware-docs/typer
+
+
+
+
+
 ## [1.1.19](https://github.com/shopware/frontends/compare/v1.1.18...v1.1.19) (2024-02-09)
 
 **Note:** Version bump only for package @shopware-docs/typer
