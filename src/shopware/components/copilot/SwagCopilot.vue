@@ -111,7 +111,7 @@ const {
 } = qa(myCollection.value);
 
 const examples = [
-  'What is the code for adding a primary button?',
+  'Should I create a plugin or an app?',
   'What icons can I use to represent the shopping cart?',
   'List me the slots of the SW-Card',
 ];
