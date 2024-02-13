@@ -267,3 +267,7 @@ hr {
         }
     }
 }
+
+body:has(.medium-zoom-image--opened) aside.VPSidebar {
+    display: none;
+}
