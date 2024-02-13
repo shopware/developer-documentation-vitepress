@@ -3,37 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
+## [1.1.21](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.20...v1.1.21) (2024-02-13)
 
 **Note:** Version bump only for package @shopware-docs/vitest
 
+## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
 
-
-
+**Note:** Version bump only for package @shopware-docs/vitest
 
 ## [1.1.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.18...v1.1.19) (2024-02-09)
 
 **Note:** Version bump only for package @shopware-docs/vitest
 
-
-
-
-
 ## [1.1.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.17...v1.1.18) (2024-02-09)
 
 **Note:** Version bump only for package @shopware-docs/vitest
 
-
-
-
-
 ## [1.1.17](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.16...v1.1.17) (2024-02-09)
 
 **Note:** Version bump only for package @shopware-docs/vitest
-
-
-
-
 
 ## [1.1.16](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.15...v1.1.16) (2024-02-07)
 

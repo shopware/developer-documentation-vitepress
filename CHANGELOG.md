@@ -3,89 +3,63 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
-
-
-### Bug Fixes
-
-* medium-zoom sidebar ([7ee26f3](https://github.com/shopware/developer-documentation-vitepress/commit/7ee26f3a836e38fe6ca43157bb517ee86bd3e25f))
-* remove max-height ([93e0811](https://github.com/shopware/developer-documentation-vitepress/commit/93e08111b96fdfc9f3810465723052af13fdeec9))
-
-
-
-
-
-## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
-
+## [1.1.21](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.20...v1.1.21) (2024-02-13)
 
 ### Bug Fixes
 
-* medium-zoom sidebar ([7ee26f3](https://github.com/shopware/developer-documentation-vitepress/commit/7ee26f3a836e38fe6ca43157bb517ee86bd3e25f))
-* remove max-height ([93e0811](https://github.com/shopware/developer-documentation-vitepress/commit/93e08111b96fdfc9f3810465723052af13fdeec9))
+- keep origin ([9559dcc](https://github.com/shopware/developer-documentation-vitepress/commit/9559dcc144808e04dab92cf5fa0f9e1e63bbba64))
 
+## [1.1.21](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.20...v1.1.21) (2024-02-13)
 
+### Bug Fixes
 
+- keep origin ([9559dcc](https://github.com/shopware/developer-documentation-vitepress/commit/9559dcc144808e04dab92cf5fa0f9e1e63bbba64))
 
+## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
+
+### Bug Fixes
+
+- medium-zoom sidebar ([7ee26f3](https://github.com/shopware/developer-documentation-vitepress/commit/7ee26f3a836e38fe6ca43157bb517ee86bd3e25f))
+- remove max-height ([93e0811](https://github.com/shopware/developer-documentation-vitepress/commit/93e08111b96fdfc9f3810465723052af13fdeec9))
+
+## [1.1.20](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.19...v1.1.20) (2024-02-13)
+
+### Bug Fixes
+
+- medium-zoom sidebar ([7ee26f3](https://github.com/shopware/developer-documentation-vitepress/commit/7ee26f3a836e38fe6ca43157bb517ee86bd3e25f))
+- remove max-height ([93e0811](https://github.com/shopware/developer-documentation-vitepress/commit/93e08111b96fdfc9f3810465723052af13fdeec9))
 
 ## [1.1.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.18...v1.1.19) (2024-02-09)
 
-
 ### Features
 
-* custom domain ([6949595](https://github.com/shopware/developer-documentation-vitepress/commit/6949595ea8e03b69a94dcab9b30d720cc9f8f544))
-
-
-
-
+- custom domain ([6949595](https://github.com/shopware/developer-documentation-vitepress/commit/6949595ea8e03b69a94dcab9b30d720cc9f8f544))
 
 ## [1.1.19](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.18...v1.1.19) (2024-02-09)
 
-
 ### Features
 
-* custom domain ([6949595](https://github.com/shopware/developer-documentation-vitepress/commit/6949595ea8e03b69a94dcab9b30d720cc9f8f544))
-
-
-
-
+- custom domain ([6949595](https://github.com/shopware/developer-documentation-vitepress/commit/6949595ea8e03b69a94dcab9b30d720cc9f8f544))
 
 ## [1.1.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.17...v1.1.18) (2024-02-09)
 
-
 ### Bug Fixes
 
-* use root path ([c9ed7a1](https://github.com/shopware/developer-documentation-vitepress/commit/c9ed7a1a892d685115be11e5441224c45fdc52fe))
-
-
-
-
+- use root path ([c9ed7a1](https://github.com/shopware/developer-documentation-vitepress/commit/c9ed7a1a892d685115be11e5441224c45fdc52fe))
 
 ## [1.1.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.17...v1.1.18) (2024-02-09)
 
-
 ### Bug Fixes
 
-* use root path ([c9ed7a1](https://github.com/shopware/developer-documentation-vitepress/commit/c9ed7a1a892d685115be11e5441224c45fdc52fe))
-
-
-
-
+- use root path ([c9ed7a1](https://github.com/shopware/developer-documentation-vitepress/commit/c9ed7a1a892d685115be11e5441224c45fdc52fe))
 
 ## [1.1.17](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.16...v1.1.17) (2024-02-09)
 
 **Note:** Version bump only for package vitepress-shopware-docs
 
-
-
-
-
 ## [1.1.17](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.16...v1.1.17) (2024-02-09)
 
 **Note:** Version bump only for package vitepress-shopware-docs
-
-
-
-
 
 ## [1.1.16](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.15...v1.1.16) (2024-02-07)
 
