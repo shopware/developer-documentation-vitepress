@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.23](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.23) (2024-02-21)
+
+### Features
+
+- escape monorepo for local storage ([d7ba35a](https://github.com/shopware/developer-documentation-vitepress/commit/d7ba35a718e318e2e59d06ea8cf6222dd9022391))
+- extract keepSource and docsAfterClone procedures ([5b88378](https://github.com/shopware/developer-documentation-vitepress/commit/5b8837840d9c8b23ba4be63397d8dce84fb2649b))
+- first-level itemSorter ([52543dd](https://github.com/shopware/developer-documentation-vitepress/commit/52543ddc1a2914698166fed727ccda0d431582d5))
+
+## [1.1.23](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.23) (2024-02-21)
+
+### Features
+
+- escape monorepo for local storage ([d7ba35a](https://github.com/shopware/developer-documentation-vitepress/commit/d7ba35a718e318e2e59d06ea8cf6222dd9022391))
+- extract keepSource and docsAfterClone procedures ([5b88378](https://github.com/shopware/developer-documentation-vitepress/commit/5b8837840d9c8b23ba4be63397d8dce84fb2649b))
+- first-level itemSorter ([52543dd](https://github.com/shopware/developer-documentation-vitepress/commit/52543ddc1a2914698166fed727ccda0d431582d5))
+
 ## [1.1.22](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.20...v1.1.22) (2024-02-13)
 
 ### Bug Fixes
