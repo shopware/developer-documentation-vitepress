@@ -7,6 +7,7 @@ import {v4 as uuid} from 'uuid';
 import inquirer from "inquirer";
 import cloneCommand from "../commands/clone";
 import {copyConfig} from "./copyConfig";
+import {docsAfterClone} from "./docsAfterClone";
 import path from "path";
 import {docsSrcDir} from "../data";
 
@@ -60,19 +61,7 @@ export const clone = async ({
         output.log(`${gitCloneOutput}`);
 
         // special flows
-        const docsAfterClone = '.github/scripts/docs-after-clone.sh';
-        const fullDocsAfterClone = path.join(tmpDir, docsAfterClone);
-        if (fs.existsSync(fullDocsAfterClone) && fs.lstatSync(fullDocsAfterClone).isFile()) {
-            output.notice('Running additional steps');
-            // make executable
-            fs.chmodSync(fullDocsAfterClone, 0o777);
-
-            // run after-clone script
-            await run(fullDocsAfterClone, [tmpDir], {
-                dir: tmpDir,
-                env: options.env
-            });
-        }
+        await docsAfterClone(tmpDir, { env: options.env });
 
         // create deep dir
         output.notice(`Creating deep dir ${dst}`);

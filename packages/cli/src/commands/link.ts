@@ -5,6 +5,8 @@ import fs from "fs";
 import {execSync} from "child_process";
 import {copyConfig} from "../procedure/copyConfig";
 import path from "path";
+import {docsAfterClone} from "../procedure/docsAfterClone";
+import {keepSource} from "../procedure/keepSource";
 
 export default {
     name: 'link',
@@ -139,6 +141,9 @@ export default {
             fs.rmSync(dst, {recursive: true, force: true});
         }
 
+        // special flows
+        await docsAfterClone(cwdDir);
+
         // rsync into destination
         await strategy({src, dst});
 
@@ -149,14 +154,7 @@ export default {
 
         // keep source directory
         if (keep) {
-            output.notice(`Keeping source available under ${dst}/_source`);
-            try {
-                const dst_source = path.join(dst, '_source');
-                const response = execSync(`ln -s ${cwdDir} ${dst_source}`);
-                output.log(`${response}`);
-            } catch (e) {
-                throw `Error symlinking ${src}`;
-            }
+            keepSource(cwdDir, src, dst);
         }
 
         output.success('Docs directory linked');
