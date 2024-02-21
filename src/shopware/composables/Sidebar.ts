@@ -537,7 +537,6 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                 });
             items = makeDescending(items);
         } else {
-            console.log('sorting!', items);
             items = items.sort(itemsSorter);
         }
     }
