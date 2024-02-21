@@ -172,13 +172,34 @@ const getMetas = (folder: string): MetaWithTree => {
     };
 };
 
+const itemsSorter = (a: ItemLink, b: ItemLink) => {
+    let aPosition = a.position || 999;
+    let bPosition = b.position || 999;
+
+    // move directories to the top
+    if (a.link?.endsWith('#') || a.link?.endsWith('/')) {
+        aPosition -= 2000;
+    }
+    if (b.link?.endsWith('#') || b.link?.endsWith('/')) {
+        bPosition -= 2000;
+    }
+
+    if (aPosition < bPosition) {
+        return -1;
+    } else if (aPosition > bPosition) {
+        return 1;
+    }
+
+    return 0;
+};
+
 const nullifyLink = item => {
     if (item.link === '#') {
         delete item.link;
     }
 
     return item;
-}
+};
 
 const isFileExcluded = (file: string) => {
     const versionRegex = /^v\d+\.\d+(rc)?$/;
@@ -186,7 +207,7 @@ const isFileExcluded = (file: string) => {
     return file === 'node_modules'
         || ['.', '_'].includes(file.substring(0, 1))
         || file.match(versionRegex);
-}
+};
 
 const reduceTree = (as: string, dirPath: string, depth = 1, ignore: string[] = []) => {
     // use metas to sort items correctly
@@ -275,26 +296,7 @@ const reduceTree = (as: string, dirPath: string, depth = 1, ignore: string[] = [
 
     // sort reduced by metas?
     const items = reduced
-        .sort((a: ItemLink, b: ItemLink) => {
-            let aPosition = a.position || 999;
-            let bPosition = b.position || 999;
-
-            // move directories to the top
-            if (a.link?.endsWith('#') || a.link?.endsWith('/')) {
-                aPosition -= 2000;
-            }
-            if (b.link?.endsWith('#') || b.link?.endsWith('/')) {
-                bPosition -= 2000;
-            }
-
-            if (aPosition < bPosition) {
-                return -1;
-            } else if (aPosition > bPosition) {
-                return 1;
-            }
-
-            return 0;
-        })
+        .sort(itemsSorter)
         .map(({position, ...item}) => item);
 
     return {
@@ -472,6 +474,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                             items: items,
                             collapsed: getCollapsed(0, items),
                             meta: metas['index.md']?.meta || {},
+                            position: metas['index.md']?.position,
                         };
                     } else {
                         // special handle root links
@@ -481,6 +484,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                             items: [],
                             collapsed: getCollapsed(0, []),
                             meta: metas[file]?.meta || {},
+                            position: metas[file]?.position,
                         });
                     }
 
@@ -502,6 +506,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                         items: links,
                         collapsed: getCollapsed(0, links),
                         meta: metas[file]?.meta || {},
+                        position: metas[file]?.position,
                     }));
                 }
 
@@ -518,17 +523,23 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
             items: [],
             collapsed: getCollapsed(1, inIndex),
             meta: {},
+            position: 0,
         });
     }
 
-    if (items && index?.meta?.orientation === 'descending') {
-        const makeDescending = items => items
-            .sort((a, b) => b.text.localeCompare(a.text))
-            .map(item => {
-                item.items = makeDescending(item.items);
-                return item;
-            });
-        items = makeDescending(items);
+    if (items) {
+        if (index?.meta?.orientation === 'descending') {
+            const makeDescending = items => items
+                .sort((a, b) => b.text.localeCompare(a.text))
+                .map(item => {
+                    item.items = makeDescending(item.items);
+                    return item;
+                });
+            items = makeDescending(items);
+        } else {
+            console.log('sorting!', items);
+            items = items.sort(itemsSorter);
+        }
     }
 
     if (!index) {
