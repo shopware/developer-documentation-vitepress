@@ -1,15 +1,22 @@
 import {JSONStorage} from "node-localstorage";
 import {output} from "./output";
 import {resolve} from "path";
-import process from "process";
 
 let localStorage: JSONStorage;
 
 export const storage = {
     storage() {
         if (!localStorage) {
-            const myPath = '../.docs-cli';
-            output.log(`Using ${resolve(myPath)} as local storage`)
+            let myPath = '../.docs-cli';
+            let resolved = resolve(myPath);
+
+            // escape out of the monorepo
+            if (resolved.endsWith('/packages/.docs-cli')) {
+                myPath = '../../../.docs-cli';
+                resolved = resolve(myPath);
+            }
+
+            output.log(`Using ${resolved} as local storage`)
             localStorage = new JSONStorage(myPath);
         }
 
