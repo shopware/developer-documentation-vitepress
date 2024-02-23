@@ -18,7 +18,7 @@ export const optionKeep = {
     defaultValue: false
 };
 export const optionRoot = {
-    name: 'r --root <root>',
+    name: 'ro --root <root>',
     defaultValue: null,
     example: '../..',
 };
