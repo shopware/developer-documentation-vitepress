@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.25](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.24...v1.1.25) (2024-02-23)
+
+### Features
+
+- --root option for linking ([99c6efd](https://github.com/shopware/developer-documentation-vitepress/commit/99c6efdc13acd5ff01ed0b5292d4a8baf437654d))
+
 ## [1.1.24](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.24) (2024-02-23)
 
 ### Features
