@@ -17,3 +17,8 @@ export const optionKeep = {
     name: 'keep',
     defaultValue: false
 };
+export const optionRoot = {
+    name: 'r --root <root>',
+    defaultValue: null,
+    example: '../..',
+};

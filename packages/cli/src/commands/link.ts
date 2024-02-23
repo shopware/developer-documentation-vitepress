@@ -1,5 +1,5 @@
 import {getDeveloperPortalPath, requireParam, sh} from "../helpers";
-import {optionDst, optionKeep, optionSrc} from "../options";
+import {optionDst, optionKeep, optionRoot, optionSrc} from "../options";
 import {output} from "../output";
 import fs from "fs";
 import {execSync} from "child_process";
@@ -31,6 +31,7 @@ export default {
             description: 'Use custom in-repo working directory (devcontainer)'
         },
         optionKeep,
+        optionRoot,
     ],
     handler: async ({
                         src,
@@ -40,7 +41,8 @@ export default {
                         copy,
                         wd,
                         keep,
-                    }: { src?: string, dst?: string, symlink?: boolean, rsync?: boolean, copy?: boolean, wd?: string, keep?: boolean }) => {
+                        root,
+                    }: { src?: string, dst?: string, symlink?: boolean, rsync?: boolean, copy?: boolean, wd?: string, keep?: boolean, root?: string | false }) => {
         // validate strategy
         if (((symlink ? 1 : 0) + (rsync ? 1 : 0) + (copy ? 1 : 0)) > 1) {
             output.error('You can use only one link strategy - symlink, rsync or copy');
@@ -142,7 +144,7 @@ export default {
         }
 
         // special flows
-        await docsAfterClone(cwdDir);
+        await docsAfterClone(root ? path.join(cwdDir, root) : cwdDir);
 
         // rsync into destination
         await strategy({src, dst});
