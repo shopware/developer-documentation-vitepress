@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.24](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.24) (2024-02-23)
+
+### Bug Fixes
+
+- remove log ([cd5f097](https://github.com/shopware/developer-documentation-vitepress/commit/cd5f097cba6658ee0b6f97964d64eaddd3133696))
+
+### Features
+
+- escape monorepo for local storage ([116ca29](https://github.com/shopware/developer-documentation-vitepress/commit/116ca29a9168a6d86b60b4527d58cc64c584d1ac))
+- extract keepSource and docsAfterClone procedures ([148d44b](https://github.com/shopware/developer-documentation-vitepress/commit/148d44b595373eca57d31d8ce8120b4483620d50))
+- extract userCentricsHead vitepress helper ([221e258](https://github.com/shopware/developer-documentation-vitepress/commit/221e2588f9c3d9c57c5f0e3b8346f332399bcac3))
+- first-level itemSorter ([cdc3d7d](https://github.com/shopware/developer-documentation-vitepress/commit/cdc3d7d8574b674da1b8b62d58d38d005ab3336e))
+
+## [1.1.24](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.24) (2024-02-23)
+
+### Bug Fixes
+
+- remove log ([cd5f097](https://github.com/shopware/developer-documentation-vitepress/commit/cd5f097cba6658ee0b6f97964d64eaddd3133696))
+
+### Features
+
+- escape monorepo for local storage ([116ca29](https://github.com/shopware/developer-documentation-vitepress/commit/116ca29a9168a6d86b60b4527d58cc64c584d1ac))
+- extract keepSource and docsAfterClone procedures ([148d44b](https://github.com/shopware/developer-documentation-vitepress/commit/148d44b595373eca57d31d8ce8120b4483620d50))
+- extract userCentricsHead vitepress helper ([221e258](https://github.com/shopware/developer-documentation-vitepress/commit/221e2588f9c3d9c57c5f0e3b8346f332399bcac3))
+- first-level itemSorter ([cdc3d7d](https://github.com/shopware/developer-documentation-vitepress/commit/cdc3d7d8574b674da1b8b62d58d38d005ab3336e))
+
 ## [1.1.23](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.23) (2024-02-21)
 
 ### Features

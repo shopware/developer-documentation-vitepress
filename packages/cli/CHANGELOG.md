@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.24](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.24) (2024-02-23)
+
+### Features
+
+- escape monorepo for local storage ([116ca29](https://github.com/shopware/developer-documentation-vitepress/commit/116ca29a9168a6d86b60b4527d58cc64c584d1ac))
+- extract keepSource and docsAfterClone procedures ([148d44b](https://github.com/shopware/developer-documentation-vitepress/commit/148d44b595373eca57d31d8ce8120b4483620d50))
+
 ## [1.1.23](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.22...v1.1.23) (2024-02-21)
 
 ### Features
