@@ -2,14 +2,16 @@
   "name": "@shopware-docs/vitepress",
   "version": "1.1.26",
   "description": "Vitepress for Shopware Docs",
-  "main": "src/main.ts",
-  "module": "./src/main.ts",
+  "type": "module",
   "exports": {
-    ".": "./src/main.ts"
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
   },
+  "main": "./dist/index.cjs",
   "files": [
-    "src",
-    "types"
+    "dist"
   ],
   "keywords": [
     "vue",
@@ -20,7 +22,9 @@
     "name": "Shopware team"
   },
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "unbuild"
+  },
   "dependencies": {
     "axios": "^1.6.2",
     "prettier": "^3.1.0",
@@ -32,8 +36,10 @@
     "vitepress": "^1.0.0-rc.31"
   },
   "devDependencies": {
+    "rollup": "^4.6.1",
     "terser": "^5.25.0",
-    "typescript": "^5.3.2"
+    "typescript": "^5.3.2",
+    "unbuild": "^2.0.0"
   },
   "packageManager": "pnpm@8.11.0"
 }
