@@ -30,7 +30,7 @@ jobs:
         run: |
           pnpm -C packages/cli build
           [ -d "packages/typer" ] && pnpm -C packages/typer build || true
-          [ -d "packages/vitepress" ] && pnpm -C packages/typer build || true
+          [ -d "packages/vitepress" ] && pnpm -C packages/vitepress build || true
           
           pnpm config set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN}
           pnpm publish --access public --no-git-checks
