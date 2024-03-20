@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.27](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.26...v1.1.27) (2024-03-20)
+
+### Features
+
+- server-side gtm, hotjar ([ed228ac](https://github.com/shopware/developer-documentation-vitepress/commit/ed228ac8f61c1094d96f267d47413f88a8940cfc))
+
+## [1.1.27](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.26...v1.1.27) (2024-03-20)
+
+### Features
+
+- server-side gtm, hotjar ([ed228ac](https://github.com/shopware/developer-documentation-vitepress/commit/ed228ac8f61c1094d96f267d47413f88a8940cfc))
+
 ## [1.1.26](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.25...v1.1.26) (2024-02-23)
 
 ### Bug Fixes
