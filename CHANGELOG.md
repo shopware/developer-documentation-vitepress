@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.28](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.27...v1.1.28) (2024-03-20)
+
+### Bug Fixes
+
+- downgrade storybook ([3a14271](https://github.com/shopware/developer-documentation-vitepress/commit/3a1427121912389cb9643e81ed69e1af18722c9c))
+
+## [1.1.28](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.27...v1.1.28) (2024-03-20)
+
+### Bug Fixes
+
+- downgrade storybook ([3a14271](https://github.com/shopware/developer-documentation-vitepress/commit/3a1427121912389cb9643e81ed69e1af18722c9c))
+
 ## [1.1.27](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.26...v1.1.27) (2024-03-20)
 
 ### Features
