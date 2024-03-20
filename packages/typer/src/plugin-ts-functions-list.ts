@@ -43,6 +43,7 @@ export type PluginDirConfig = {
 export type PluginConfig = {
   rootDir: string;
   dirs: PluginDirConfig[];
+  applyTo?: string;
 };
 
 export function MdTypesTransformer(config: PluginConfig): Plugin {
@@ -52,6 +53,9 @@ export function MdTypesTransformer(config: PluginConfig): Plugin {
 
     async transform(code, id) {
       if (!isFileMd(id)) {
+        return null;
+      }
+      if (config.applyTo && !id.startsWith(config.applyTo)) {
         return null;
       }
       const functionName = getFunctionNameFromFilePath(id);
