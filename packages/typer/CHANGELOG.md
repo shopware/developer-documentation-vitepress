@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.34](https://github.com/shopware/frontends/compare/v1.1.33...v1.1.34) (2024-03-20)
+
+### Bug Fixes
+
+- reuse rootDir ([111cba3](https://github.com/shopware/frontends/commit/111cba39b8a89a0b82d840837317e0c885be5a0f))
+
 ## [1.1.33](https://github.com/shopware/frontends/compare/v1.1.32...v1.1.33) (2024-03-20)
 
 ### Features
