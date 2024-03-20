@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.31](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.30...v1.1.31) (2024-03-20)
+
+### Bug Fixes
+
+- vitepress path ([83fe45e](https://github.com/shopware/developer-documentation-vitepress/commit/83fe45ec5b8277f02a77fd47c64d0afa94514fd3))
+
+## [1.1.31](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.30...v1.1.31) (2024-03-20)
+
+### Bug Fixes
+
+- vitepress path ([83fe45e](https://github.com/shopware/developer-documentation-vitepress/commit/83fe45ec5b8277f02a77fd47c64d0afa94514fd3))
+
 ## [1.1.30](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.29...v1.1.30) (2024-03-20)
 
 ### Bug Fixes
