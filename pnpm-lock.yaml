@@ -3948,7 +3948,7 @@ packages:
       estree-walker: 2.0.2
       glob: 8.1.0
       is-reference: 1.2.1
-      magic-string: 0.30.8
+      magic-string: 0.30.5
       rollup: 3.29.4
     dev: true
 
@@ -17901,7 +17901,7 @@ packages:
       debug: 4.3.4
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.0.13(@types/node@20.11.30)(less@4.2.0)(sass@1.72.0)(terser@5.29.2)
+      vite: 5.1.6(@types/node@20.11.30)(less@4.2.0)(sass@1.72.0)(terser@5.29.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -17976,45 +17976,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
-
-  /vite@5.0.13(@types/node@20.11.30)(less@4.2.0)(sass@1.72.0)(terser@5.29.2):
-    resolution: {integrity: sha512-/9ovhv2M2dGTuA+dY93B9trfyWMDRQw2jdVBhHNP6wr0oF34wG2i/N55801iZIpgUpnHDm4F/FabGQLyc+eOgg==}
-    engines: {node: ^18.0.0 || >=20.0.0}
-    hasBin: true
-    peerDependencies:
-      '@types/node': ^18.0.0 || >=20.0.0
-      less: '*'
-      lightningcss: ^1.21.0
-      sass: '*'
-      stylus: '*'
-      sugarss: '*'
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      '@types/node': 20.11.30
-      esbuild: 0.19.12
-      less: 4.2.0
-      postcss: 8.4.37
-      rollup: 4.13.0
-      sass: 1.72.0
-      terser: 5.29.2
-    optionalDependencies:
-      fsevents: 2.3.3
-    dev: true
 
   /vite@5.1.6(@types/node@20.10.5)(less@4.2.0)(sass@1.72.0)(terser@5.29.2):
     resolution: {integrity: sha512-yYIAZs9nVfRJ/AiOLCA91zzhjsHUgMjB+EigzFb6W2XTLO8JixBCKCjvhKZaye+NKYHCrkv3Oh50dH9EdLU2RA==}
@@ -18496,7 +18457,7 @@ packages:
       strip-literal: 2.0.0
       tinybench: 2.6.0
       tinypool: 0.8.2
-      vite: 5.0.13(@types/node@20.11.30)(less@4.2.0)(sass@1.72.0)(terser@5.29.2)
+      vite: 5.1.6(@types/node@20.11.30)(less@4.2.0)(sass@1.72.0)(terser@5.29.2)
       vite-node: 1.4.0(@types/node@20.11.30)(less@4.2.0)(sass@1.72.0)(terser@5.29.2)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
