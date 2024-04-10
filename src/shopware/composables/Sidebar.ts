@@ -209,6 +209,16 @@ const isFileExcluded = (file: string) => {
         || file.match(versionRegex);
 };
 
+const isFileGloballyExcluded = (file: string, dir: string, ignore = []) => {
+    return ignore.find(match => {
+        const reg = new RegExp(match.replace('*', '(.*)'));
+
+        return match.endsWith('/')
+            ? reg.test(dir)
+            : reg.test(`${dir}${file}`);
+    })
+};
+
 const reduceTree = (as: string, dirPath: string, depth = 1, ignore: string[] = []) => {
     // use metas to sort items correctly
     const {
@@ -222,6 +232,11 @@ const reduceTree = (as: string, dirPath: string, depth = 1, ignore: string[] = [
         .reduce((reduced: ItemLink[], file, i) => {
             // hide common files
             if (isFileExcluded(file)) {
+                return reduced;
+            }
+
+            if (isFileGloballyExcluded(file, endWithSlash(as), ignore)) {
+                console.log('EXCLUDED', as, file);
                 return reduced;
             }
 
@@ -455,6 +470,11 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                 file
             ) => {
                 if (isFileExcluded(file)) {
+                    return reduced;
+                }
+
+                if (isFileGloballyExcluded(file, folder, ignore)) {
+                    console.log('EXCLUDED', folder, file);
                     return reduced;
                 }
 
