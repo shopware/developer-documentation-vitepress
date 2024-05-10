@@ -22,7 +22,7 @@ importers:
         version: 5.3.0
       '@stoplight/elements-dev-portal':
         specifier: ^2.0.0
-        version: 2.1.5(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1)
+        version: 2.1.6(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1)
       '@stoplight/json-schema-generator':
         specifier: ^1.0.2
         version: 1.0.2
@@ -3467,7 +3467,7 @@ packages:
       '@octokit/request-error': 3.0.3
       '@octokit/types': 9.3.2
       is-plain-object: 5.0.0
-      node-fetch: 2.6.7
+      node-fetch: 2.7.0
       universal-user-agent: 6.0.1
     transitivePeerDependencies:
       - encoding
@@ -5603,8 +5603,8 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@stoplight/elements-core@8.1.3(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-aEzF81jHTP9KYWQWAGkOuGOkk45Kd4w+ubL+QE0wFfEstRatkTnUoqmsPpPoKS59GzPTP/EmiDprN1UebXUiVQ==}
+  /@stoplight/elements-core@8.1.4(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-fN0YXbep0HNInWeNFO825L3/Olum3ooM+6BSVbov4MMAKlSxgwAG0Hdhn8jPlCJFIJDtFpFubMkrHYydnpNeSw==}
     engines: {node: '>=14.13'}
     peerDependencies:
       react: '>=16.8'
@@ -5620,7 +5620,7 @@ packages:
       '@stoplight/json-schema-ref-parser': 9.2.7
       '@stoplight/json-schema-sampler': 0.2.3
       '@stoplight/json-schema-tree': 4.0.0
-      '@stoplight/json-schema-viewer': 4.16.0(@babel/core@7.24.5)(@stoplight/markdown-viewer@5.7.0)(@stoplight/mosaic-code-viewer@1.53.2)(@stoplight/mosaic@1.53.2)(react-dom@18.3.1)(react@18.3.1)
+      '@stoplight/json-schema-viewer': 4.16.1(@babel/core@7.24.5)(@stoplight/markdown-viewer@5.7.0)(@stoplight/mosaic-code-viewer@1.53.2)(@stoplight/mosaic@1.53.2)(react-dom@18.3.1)(react@18.3.1)
       '@stoplight/markdown-viewer': 5.7.0(@stoplight/mosaic-code-viewer@1.53.2)(@stoplight/mosaic@1.53.2)(react-dom@18.3.1)(react@18.3.1)
       '@stoplight/mosaic': 1.53.2(react-dom@18.3.1)(react@18.3.1)
       '@stoplight/mosaic-code-editor': 1.53.2(react-dom@18.3.1)(react@18.3.1)
@@ -5668,8 +5668,8 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/elements-dev-portal@2.1.5(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-DzaZTWRn55t6r1yeZNsYzMgehLJa59Gpn69epM6fElDg/qO/l8qTYEsEqRphZGqkcCMuEeQq36n/lOYVJtNqiA==}
+  /@stoplight/elements-dev-portal@2.1.6(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-gukqPI2NvN300JXr+9U2ai+nJdSyRs+mrMGvt3MADh6AqgjKnvgt9YYZAvAKmhzzllpyxQhHFF/kTw3BT4VXeQ==}
     engines: {node: '>=14.13'}
     peerDependencies:
       react: '>=16.8'
@@ -5680,7 +5680,7 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/elements-core': 8.1.3(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1)
+      '@stoplight/elements-core': 8.1.4(@babel/core@7.24.5)(react-dom@18.3.1)(react@18.3.1)
       '@stoplight/markdown-viewer': 5.7.0(@stoplight/mosaic-code-viewer@1.53.2)(@stoplight/mosaic@1.53.2)(react-dom@18.3.1)(react@18.3.1)
       '@stoplight/mosaic': 1.53.2(react-dom@18.3.1)(react@18.3.1)
       '@stoplight/path': 1.3.2
@@ -5789,8 +5789,8 @@ packages:
       magic-error: 0.0.1
     dev: false
 
-  /@stoplight/json-schema-viewer@4.16.0(@babel/core@7.24.5)(@stoplight/markdown-viewer@5.7.0)(@stoplight/mosaic-code-viewer@1.53.2)(@stoplight/mosaic@1.53.2)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-5IYPI7sEbyQq2QyDhU9MqDGi9/KhNvaKsG+VOVelTcSqs56Vg9ASbSr/U6dISi5FK0FEfTh6FUggToUAzpr4NQ==}
+  /@stoplight/json-schema-viewer@4.16.1(@babel/core@7.24.5)(@stoplight/markdown-viewer@5.7.0)(@stoplight/mosaic-code-viewer@1.53.2)(@stoplight/mosaic@1.53.2)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-gQ1v9/Dj1VP43zERuZoFMOr7RQDBZlgfF7QFh+R0sadP6W30oYFJtD7y2PG2gIQDohKElVuPjhFUbVH/81MnSg==}
     engines: {node: '>=16'}
     peerDependencies:
       '@stoplight/markdown-viewer': ^5
@@ -7155,7 +7155,7 @@ packages:
       find-cache-dir: 3.3.2
       find-up: 5.0.0
       fs-extra: 11.2.0
-      glob: 10.3.10
+      glob: 10.3.14
       handlebars: 4.7.8
       lazy-universal-dotenv: 4.0.0
       node-fetch: 2.7.0
@@ -7186,7 +7186,7 @@ packages:
       find-cache-dir: 3.3.2
       find-up: 5.0.0
       fs-extra: 11.2.0
-      glob: 10.3.12
+      glob: 10.3.14
       handlebars: 4.7.8
       lazy-universal-dotenv: 4.0.0
       node-fetch: 2.7.0
@@ -7194,7 +7194,7 @@ packages:
       pkg-dir: 5.0.0
       pretty-hrtime: 1.0.3
       resolve-from: 5.0.0
-      semver: 7.6.0
+      semver: 7.6.2
       tempy: 1.0.1
       tiny-invariant: 1.3.3
       ts-dedent: 2.2.0
@@ -7928,7 +7928,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.27(typescript@5.3.3)
-      vue-component-type-helpers: 2.0.16
+      vue-component-type-helpers: 2.0.17
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -7949,7 +7949,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.27(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.16
+      vue-component-type-helpers: 2.0.17
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -9994,7 +9994,7 @@ packages:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.3
-      glob: 10.3.12
+      glob: 10.3.14
       lru-cache: 7.18.3
       minipass: 7.1.0
       minipass-collect: 1.0.2
@@ -10012,7 +10012,7 @@ packages:
     dependencies:
       '@npmcli/fs': 3.1.0
       fs-minipass: 3.0.3
-      glob: 10.3.12
+      glob: 10.3.14
       lru-cache: 10.2.2
       minipass: 7.0.4
       minipass-collect: 2.0.1
@@ -10718,7 +10718,7 @@ packages:
       postcss-modules-scope: 3.0.0(postcss@8.4.38)
       postcss-modules-values: 4.0.0(postcss@8.4.38)
       postcss-value-parser: 4.2.0
-      semver: 7.6.0
+      semver: 7.6.2
       webpack: 5.91.0(esbuild@0.18.20)
 
   /css-select@5.1.0:
@@ -12302,8 +12302,8 @@ packages:
   /glob-to-regexp@0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
 
-  /glob@10.3.10:
-    resolution: {integrity: sha512-fa46+tv1Ak0UPK1TOy/pZrIybNNt4HCv7SDzwyfiOZkvZLEbjsZkJBPtDHVshZjbecAoAGSC20MjLDG/qr679g==}
+  /glob@10.3.14:
+    resolution: {integrity: sha512-4fkAqu93xe9Mk7le9v0y3VrPDqLKHarNi2s4Pv7f2yOvfhWfhc7hRPHC/JyqMqb8B/Dt/eGS4n7ykwf3fOsl8g==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
@@ -12311,19 +12311,7 @@ packages:
       jackspeak: 2.3.6
       minimatch: 9.0.4
       minipass: 7.0.4
-      path-scurry: 1.10.1
-
-  /glob@10.3.12:
-    resolution: {integrity: sha512-TCNv8vJ+xz4QiqTpfOJA7HvYv+tNIRHKfUWw/q+v2jdgN4ebz+KY9tGx5J4rHP0o84mNP+ApH66HRX8us3Khqg==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    hasBin: true
-    dependencies:
-      foreground-child: 3.1.1
-      jackspeak: 2.3.6
-      minimatch: 9.0.4
-      minipass: 7.0.4
-      path-scurry: 1.10.2
-    dev: true
+      path-scurry: 1.11.0
 
   /glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
@@ -12353,7 +12341,7 @@ packages:
       fs.realpath: 1.0.0
       minimatch: 8.0.4
       minipass: 4.2.8
-      path-scurry: 1.10.1
+      path-scurry: 1.11.0
     dev: true
 
   /globals@11.12.0:
@@ -15172,7 +15160,7 @@ packages:
     dependencies:
       env-paths: 2.2.1
       exponential-backoff: 3.1.1
-      glob: 10.3.12
+      glob: 10.3.14
       graceful-fs: 4.2.11
       make-fetch-happen: 13.0.0
       nopt: 7.2.0
@@ -15855,20 +15843,12 @@ packages:
   /path-parse@1.0.7:
     resolution: {integrity: sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==}
 
-  /path-scurry@1.10.1:
-    resolution: {integrity: sha512-MkhCqzzBEpPvxxQ71Md0b1Kk51W01lrYvlMzSUaIzNsODdd7mqhiimSZlr+VegAz5Z6Vzt9Xg2ttE//XBhH3EQ==}
+  /path-scurry@1.11.0:
+    resolution: {integrity: sha512-LNHTaVkzaYaLGlO+0u3rQTz7QrHTFOuKyba9JMTQutkmtNew8dw8wOD7mTU/5fCPZzCWpfW0XnQKzY61P0aTaw==}
     engines: {node: '>=16 || 14 >=14.17'}
     dependencies:
       lru-cache: 10.2.2
       minipass: 7.0.4
-
-  /path-scurry@1.10.2:
-    resolution: {integrity: sha512-7xTavNy5RQXnsjANvVvMkEjvloOinkAjv/Z6Ildz9v2RinZ4SBKTWFOVRbaF8p0vpHnyjV/UwNDdKuUv6M5qcA==}
-    engines: {node: '>=16 || 14 >=14.17'}
-    dependencies:
-      lru-cache: 10.2.2
-      minipass: 7.0.4
-    dev: true
 
   /path-to-regexp@0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
@@ -15973,7 +15953,7 @@ packages:
       https-proxy-agent: 5.0.1
       node-fetch: 2.7.0
       progress: 2.0.3
-      semver: 7.6.0
+      semver: 7.6.2
       tar-fs: 2.1.1
       yargs: 16.2.0
     transitivePeerDependencies:
@@ -16147,7 +16127,7 @@ packages:
       cosmiconfig: 8.3.6(typescript@5.3.3)
       jiti: 1.21.0
       postcss: 8.4.38
-      semver: 7.6.0
+      semver: 7.6.2
       webpack: 5.91.0(esbuild@0.18.20)
     transitivePeerDependencies:
       - typescript
@@ -16163,7 +16143,7 @@ packages:
       cosmiconfig: 8.3.6(typescript@5.4.5)
       jiti: 1.21.0
       postcss: 8.4.38
-      semver: 7.6.0
+      semver: 7.6.2
       webpack: 5.91.0(esbuild@0.21.1)
     transitivePeerDependencies:
       - typescript
@@ -17193,7 +17173,7 @@ packages:
     resolution: {integrity: sha512-AEtWXYfopBj2z5N5PbkAOeNHRPUg5q+Nen7QLxV8M2zJq1ym6/lCz3fYNTCXe19puu2d06jfHhrP7v/S2PtMMw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
     dependencies:
-      glob: 10.3.12
+      glob: 10.3.14
       json-parse-even-better-errors: 3.0.1
       normalize-package-data: 5.0.0
       npm-normalize-package-bin: 3.0.1
@@ -17203,7 +17183,7 @@ packages:
     resolution: {integrity: sha512-uL4Z10OKV4p6vbdvIXB+OzhInYtIozl/VxUBPgNkBuUi2DeRonnuspmaVAMcrkmfjKGNmRndyQAbE7/AmzGwFg==}
     engines: {node: ^16.14.0 || >=18.0.0}
     dependencies:
-      glob: 10.3.12
+      glob: 10.3.14
       json-parse-even-better-errors: 3.0.1
       normalize-package-data: 6.0.0
       npm-normalize-package-bin: 3.0.1
@@ -17839,7 +17819,6 @@ packages:
     resolution: {integrity: sha512-FNAIBWCx9qcRhoHcgcJ0gvU7SN1lYU2ZXuSfl04bSC5OpvDHFyJCjdNHomPXxjQlCBU67YW64PzY7/VIEH7F2w==}
     engines: {node: '>=10'}
     hasBin: true
-    dev: true
 
   /send@0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
@@ -20357,6 +20336,10 @@ packages:
 
   /vue-component-type-helpers@2.0.16:
     resolution: {integrity: sha512-qisL/iAfdO++7w+SsfYQJVPj6QKvxp4i1MMxvsNO41z/8zu3KuAw9LkhKUfP/kcOWGDxESp+pQObWppXusejCA==}
+    dev: true
+
+  /vue-component-type-helpers@2.0.17:
+    resolution: {integrity: sha512-2car49m8ciqg/JjgMBkx7o/Fd2A7fHESxNqL/2vJYFLXm4VwYO4yH0rexOi4a35vwNgDyvt17B07Vj126l9rAQ==}
 
   /vue-demi@0.14.7(vue@3.4.27):
     resolution: {integrity: sha512-EOG8KXDQNwkJILkx/gPcoL/7vH+hORoBaKgGe+6W7VFMvCYJfmF2dGbvgDroVnI8LU7/kTu8mbjRZGBU1z9NTA==}
