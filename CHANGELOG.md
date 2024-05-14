@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.36](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.1.36) (2024-05-14)
+
+### Features
+
+- semver ([80e7d57](https://github.com/shopware/developer-documentation-vitepress/commit/80e7d573bf5ec655b43dcf19c2c6e7b0d5dc95b8))
+
+## [1.1.36](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.1.36) (2024-05-14)
+
+### Features
+
+- semver ([80e7d57](https://github.com/shopware/developer-documentation-vitepress/commit/80e7d573bf5ec655b43dcf19c2c6e7b0d5dc95b8))
+
 ## [1.1.35](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.34...v1.1.35) (2024-04-10)
 
 ### Features
