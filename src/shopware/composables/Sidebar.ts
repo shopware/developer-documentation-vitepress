@@ -3,6 +3,7 @@ import matter from "gray-matter";
 import removeMd from "remove-markdown";
 import {AdditionalMenuItemWithContext} from "../../vitepress/config";
 import {MenuItemWithLink} from "vitepress-shopware-docs";
+import semver from 'semver'
 
 interface ObjectOfFiles {
     [key: string]: string | ObjectOfFiles;
@@ -550,7 +551,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
     if (items) {
         if (index?.meta?.orientation === 'descending') {
             const makeDescending = items => items
-                .sort((a, b) => b.text.localeCompare(a.text))
+                .sort((a, b) => semver.valid(a.text) && semver.valid(b.text) ? semver.gt(a.text, b.text) : a.text.localeCompare(b.text))
                 .map(item => {
                     item.items = makeDescending(item.items);
                     return item;
