@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0-alpha.1](https://github.com/shopware/developer-documentation-vitepress/compare/v1.2.0-alpha...v1.2.0-alpha.1) (2024-05-14)
+
+### Features
+
+- soft skip ([9329b72](https://github.com/shopware/developer-documentation-vitepress/commit/9329b724ce0fc9609e6210ec589961d43d14c669))
+
+# [1.2.0-alpha.1](https://github.com/shopware/developer-documentation-vitepress/compare/v1.2.0-alpha...v1.2.0-alpha.1) (2024-05-14)
+
+### Features
+
+- soft skip ([9329b72](https://github.com/shopware/developer-documentation-vitepress/commit/9329b724ce0fc9609e6210ec589961d43d14c669))
+
 # [1.2.0-alpha](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.2.0-alpha) (2024-05-14)
 
 **Note:** Version bump only for package vitepress-shopware-docs
