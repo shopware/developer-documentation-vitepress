@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0-alpha.3](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.2.0-alpha.3) (2024-05-23)
+
+### Bug Fixes
+
+- execa ([527ce30](https://github.com/shopware/developer-documentation-vitepress/commit/527ce3071cc73a54836c7fec6971f9c9cb83bdaf))
+
+### Features
+
+- semver ([80e7d57](https://github.com/shopware/developer-documentation-vitepress/commit/80e7d573bf5ec655b43dcf19c2c6e7b0d5dc95b8))
+- upgrade deps, es imports ([5b8cce5](https://github.com/shopware/developer-documentation-vitepress/commit/5b8cce51c7b9a127bd8bb7b1afb7fccae93fac6a))
+
+# [1.2.0-alpha.3](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.2.0-alpha.3) (2024-05-23)
+
+### Bug Fixes
+
+- execa ([527ce30](https://github.com/shopware/developer-documentation-vitepress/commit/527ce3071cc73a54836c7fec6971f9c9cb83bdaf))
+
+### Features
+
+- semver ([80e7d57](https://github.com/shopware/developer-documentation-vitepress/commit/80e7d573bf5ec655b43dcf19c2c6e7b0d5dc95b8))
+- upgrade deps, es imports ([5b8cce5](https://github.com/shopware/developer-documentation-vitepress/commit/5b8cce51c7b9a127bd8bb7b1afb7fccae93fac6a))
+
 ## [1.1.36](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.1.36) (2024-05-14)
 
 ### Features
