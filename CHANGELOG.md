@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0-alpha.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.2.0-alpha.3...v1.2.0-alpha.4) (2024-05-23)
+
+### Features
+
+- bump ([469a524](https://github.com/shopware/developer-documentation-vitepress/commit/469a524f10abba0b4bd2e3a4dfa232b60f50d32f))
+
+# [1.2.0-alpha.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.2.0-alpha.3...v1.2.0-alpha.4) (2024-05-23)
+
+### Features
+
+- bump ([469a524](https://github.com/shopware/developer-documentation-vitepress/commit/469a524f10abba0b4bd2e3a4dfa232b60f50d32f))
+
 # [1.2.0-alpha.3](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.2.0-alpha.3) (2024-05-23)
 
 ### Bug Fixes
