@@ -1,5 +1,5 @@
 import process from "process";
-import {execa, ExecaChildProcess} from "execa";
+import {execa} from "execa";
 import inquirer from "inquirer";
 import {storage} from "./storage";
 import path from "path";
@@ -27,7 +27,7 @@ export interface RepositoryConfigCollection {
     [key: string]: RepositoryConfig;
 }
 
-const pipe = (subprocess: ExecaChildProcess) => {
+const pipe = (subprocess) => {
     subprocess.stdout?.pipe(process.stdout);
     subprocess.stderr?.pipe(process.stderr);
 
