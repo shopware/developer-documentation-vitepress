@@ -23,12 +23,12 @@ export default {
                 type: 'checkbox',
                 name: 'selectedRepositories',
                 message: 'Select repositories to manage',
-                choices: repositories.map(({name, branch}) => ({name: `${name} (${branch})`, value: `${name}@${branch}`})),
+                choices: repositories.map(({name, branch, dst}) => ({name: `${name} (${branch} - ${dst})`, value: `${name}@${branch}@${dst}`})),
             }
         ]);
 
         for (const repo of repositories) {
-            if (!selectedRepositories.includes(`${repo.name}@${repo.branch}`)) {
+            if (!selectedRepositories.includes(`${repo.name}@${repo.branch}@${repo.dst}`)) {
                 continue;
             }
 
