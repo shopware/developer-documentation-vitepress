@@ -551,7 +551,11 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
     if (items) {
         if (index?.meta?.orientation === 'descending') {
             const makeDescending = items => items
-                .sort((a, b) => semver.valid(a.text) && semver.valid(b.text) ? semver.gt(a.text, b.text) : a.text.localeCompare(b.text))
+                .sort((a, b) => {
+                    const first = a.text.substring('v6.'.length)
+                    const second = b.text.substring('v6.'.length)
+                    return semver.valid(first) && semver.valid(second) ? (semver.lt(first, second) ? 1 : -1) : -a.text.localeCompare(b.text)
+                })
                 .map(item => {
                     item.items = makeDescending(item.items);
                     return item;
