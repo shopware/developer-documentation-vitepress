@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.41](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.40...v1.1.41) (2024-06-11)
+
+### Bug Fixes
+
+- monorepo ([9dafe0b](https://github.com/shopware/developer-documentation-vitepress/commit/9dafe0b102a9783c7368ebdf65e920de1702c820))
+
 ## [1.1.40](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.35...v1.1.40) (2024-05-23)
 
 **Note:** Version bump only for package @shopware-docs/cli
