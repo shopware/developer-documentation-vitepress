@@ -95,7 +95,7 @@
 
 .SwagFooter_links {
   svg {
-    fill: #fff;
+    fill: currentColor;
   }
 }
 
