@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.2](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.1...v1.3.0-alpha.2) (2024-08-20)
+
+### Bug Fixes
+
+- skip tests ([e520b02](https://github.com/shopware/developer-documentation-vitepress/commit/e520b0214c72356614eb85087d2b1b6c9678f8dd))
+
+### Features
+
+- deps ([6b61ae2](https://github.com/shopware/developer-documentation-vitepress/commit/6b61ae2bf428594005c898b563e9005dbf0af6d4))
+- export ([b1c67a4](https://github.com/shopware/developer-documentation-vitepress/commit/b1c67a44694799928c5b17e3ccb15dec1ab23157))
+
+# [1.3.0-alpha.2](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.1...v1.3.0-alpha.2) (2024-08-20)
+
+### Bug Fixes
+
+- skip tests ([e520b02](https://github.com/shopware/developer-documentation-vitepress/commit/e520b0214c72356614eb85087d2b1b6c9678f8dd))
+
+### Features
+
+- deps ([6b61ae2](https://github.com/shopware/developer-documentation-vitepress/commit/6b61ae2bf428594005c898b563e9005dbf0af6d4))
+- export ([b1c67a4](https://github.com/shopware/developer-documentation-vitepress/commit/b1c67a44694799928c5b17e3ccb15dec1ab23157))
+
 # [1.3.0-alpha.1](https://github.com/shopware/developer-documentation-vitepress/compare/v1.1.41...v1.3.0-alpha.1) (2024-08-20)
 
 **Note:** Version bump only for package vitepress-shopware-docs
