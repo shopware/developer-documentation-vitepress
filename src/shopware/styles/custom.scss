@@ -266,6 +266,10 @@ hr {
     }
 }
 
+pre {
+    overflow-y: auto;
+}
+
 body:has(.medium-zoom-image--opened) aside.VPSidebar {
     display: none;
 }
