@@ -47,10 +47,10 @@ export default async () => ({
 
       alias: {
         '@node_modules': resolve(process.cwd(), 'node_modules'),
-        '../composables/edit-link': resolve(__dirname, '../composables/edit-link.ts'),
-        './VPNavBarTitle.vue': resolve(__dirname, '../components/override/VPNavBarTitle.vue'),
-        './VPAlgoliaSearchBox.vue': resolve(__dirname, '../components/override/VPAlgoliaSearchBox.vue'),
-        '../NotFound.vue': resolve(__dirname, '../components/override/NotFound.vue'),
+        '../composables/edit-link': resolve(__dirname, './composables/edit-link.ts'),
+        './VPNavBarTitle.vue': resolve(__dirname, './components/override/VPNavBarTitle.vue'),
+        './VPAlgoliaSearchBox.vue': resolve(__dirname, './components/override/VPAlgoliaSearchBox.vue'),
+        '../NotFound.vue': resolve(__dirname, './components/override/NotFound.vue'),
       }
     },
     // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?
