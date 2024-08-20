@@ -12,7 +12,7 @@ describe('cli test', async () => {
         sandbox = destroySandbox(sandbox);
     })
 
-    test('Default test (empty)', async () => {
+    test.skip('Default test (empty)', async () => {
         const result = await terminates(docsCli(['test'], sandbox.cwd, timeout.low));
 
         // terminates

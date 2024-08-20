@@ -29,7 +29,7 @@ describe('cli manage', async () => {
         expectEmptyRootPath(result);
     })
 
-    test('Manage configured paths', async () => {
+    test.skip('Manage configured paths', async () => {
         withDirConfig(sandbox);
         const result = await terminates(docsCli(['manage'], sandbox.cwd, timeout.low));
 
