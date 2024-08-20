@@ -33,11 +33,15 @@ export default defineConfigWithTheme<ThemeConfig>({
     }
   },
 
-  build: {
-    rollupOptions: {
-      external: [
-          'fsevents'
-      ]
+  vite: {
+    build: {
+      rollupOptions: {
+        external: [
+          'fsevents',
+          'vue-instantsearch/vue3/es',
+          'instantsearch.css/themes/algolia-min.css',
+        ]
+      }
     }
   }
 });

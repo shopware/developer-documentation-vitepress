@@ -16,15 +16,19 @@
     background-color: var(--btn-bg);
     font-weight: 500;
 
+    // size variations
+    @apply text-sm px-6;
+    --py: 0.875rem;
+
+    /* prepare vars for bordered version */
+    padding-top: calc(var(--py) - var(--border-w, 0px));
+    padding-bottom: calc(var(--py) - var(--border-w, 0px));
+
     &:hover {
         color: var(--btn-color--hover);
         background-color: var(--btn-bg--hover);
         text-decoration: none;
     }
-
-    // size variations
-    @apply text-sm px-6;
-    --py: 0.875rem;
     &.--xs {
         --py: 0.5rem;
         @apply text-xs px-4;
@@ -45,10 +49,6 @@
         --py: 1.5rem;
         @apply text-xl px-10;
     }
-
-    /* prepare vars for bordered version */
-    padding-top: calc(var(--py) - var(--border-w, 0px));
-    padding-bottom: calc(var(--py) - var(--border-w, 0px));
 
     // color variations
     &.--primary {

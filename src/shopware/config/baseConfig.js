@@ -4,14 +4,15 @@
  *
  * It runs in Node.js.
  */
-const Unocss = require("unocss/vite");
-const {
+import Unocss from "unocss/vite";
+import {
   defineConfig,
   presetIcons,
   presetUno,
   transformerDirectives,
-} = require("unocss");
-const path = require("path");
+} from "unocss";
+import {resolve} from "path";
+import {readFileSync} from "fs";
 
 const iconStackoverflow = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">\n' +
     '    <path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" />\n' +
@@ -45,11 +46,11 @@ module.exports = async () => ({
       preserveSymlinks: true,
 
       alias: {
-        '@node_modules': path.resolve(process.cwd(), 'node_modules'),
-        '../composables/edit-link': path.resolve(__dirname, '../composables/edit-link.ts'),
-        './VPNavBarTitle.vue': path.resolve(__dirname, '../components/override/VPNavBarTitle.vue'),
-        './VPAlgoliaSearchBox.vue': path.resolve(__dirname, '../components/override/VPAlgoliaSearchBox.vue'),
-        '../NotFound.vue': path.resolve(__dirname, '../components/override/NotFound.vue'),
+        '@node_modules': resolve(process.cwd(), 'node_modules'),
+        '../composables/edit-link': resolve(__dirname, '../composables/edit-link.ts'),
+        './VPNavBarTitle.vue': resolve(__dirname, '../components/override/VPNavBarTitle.vue'),
+        './VPAlgoliaSearchBox.vue': resolve(__dirname, '../components/override/VPAlgoliaSearchBox.vue'),
+        '../NotFound.vue': resolve(__dirname, '../components/override/NotFound.vue'),
       }
     },
     // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?
@@ -63,7 +64,7 @@ module.exports = async () => ({
       }
     },
     plugins: [
-      Unocss.default(
+      Unocss(
         defineConfig({
           shortcuts: [["text-shopware", "text-#0489EA"]],
           presets: [
@@ -102,8 +103,8 @@ module.exports = async () => ({
     [
       "script",
       {},
-      require("fs").readFileSync(
-        require("path").resolve(
+      readFileSync(
+        resolve(
             __dirname,
             "./inlined-scripts/applyDarkMode.js"
         ),
@@ -115,6 +116,9 @@ module.exports = async () => ({
   markdown: {
     headers: true,
     // highlight: await require("./highlight")(),
+    image: {
+      lazyLoading: true,
+    }
   },
 
   vue: {
