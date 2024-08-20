@@ -29,7 +29,7 @@ const deps = ["vitepress-shopware-docs", "@vueuse/core", "body-scroll-lock", "fs
 /**
  * @type {() => Promise<import('vitepress').UserConfig>}
  */
-module.exports = async () => ({
+export default async () => ({
   lang: "en-US",
   srcDir: ".",
   scrollOffset: "header",
@@ -155,4 +155,4 @@ module.exports = async () => ({
     outline: [2, 3],
     swag: {}
   }
-});
+})
