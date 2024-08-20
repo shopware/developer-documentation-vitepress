@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.4...v1.3.0-alpha.5) (2024-08-20)
+
+### Features
+
+- rewrite ([91605ca](https://github.com/shopware/developer-documentation-vitepress/commit/91605caddf697ea8bca83d9dc633a5fdc99349cc))
+
 # [1.3.0-alpha.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.3...v1.3.0-alpha.4) (2024-08-20)
 
 **Note:** Version bump only for package @shopware-docs/storybook
