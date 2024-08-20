@@ -1,6 +1,6 @@
 import type {StorybookConfig} from "@storybook/vue3-vite";
 import {mergeConfig} from 'vite';
-import baseConfig from "vitepress-shopware-docs/config";
+import {baseConfig} from "@shopware-docs/vitepress";
 import path from "path";
 
 const config = ({__dirname, __dirnamePrefix = '..'}: {

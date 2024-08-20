@@ -6,7 +6,7 @@ import type {
   SwagSimilarArticlesConfig,
   SwagVersionSwitcherConfig
 } from "../../src/shopware/config";
-import baseConfig from "../../src/shopware/config/baseConfig";
+import { baseConfig } from "@shopware-docs/vitepress";
 
 import navigation from "./navigation";
 

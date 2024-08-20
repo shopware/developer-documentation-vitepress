@@ -33,6 +33,7 @@ jobs:
           [ -d "packages/vitepress" ] && pnpm -C packages/vitepress build || true
           
           pnpm config set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN}
+
           pnpm publish --access public --no-git-checks
           
           pnpm config set //registry.npmjs.org/:_authToken ${DOCS_NPM_TOKEN}

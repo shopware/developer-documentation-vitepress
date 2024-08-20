@@ -103,13 +103,16 @@ export default async () => ({
     [
       "script",
       {},
-      readFileSync(
-        resolve(
-            __dirname,
-            "./inlined-scripts/applyDarkMode.js"
-        ),
-        "utf-8"
-      ),
+      `;(() => {
+        const saved = localStorage.getItem('vue-theme-appearance')
+        if (
+          !saved || saved === 'auto'
+            ? window.matchMedia(`(prefers-color-scheme: dark)`).matches
+            : saved === 'dark'
+        ) {
+          document.documentElement.classList.add('dark')
+        }
+      })()`
     ],
   ],
 
