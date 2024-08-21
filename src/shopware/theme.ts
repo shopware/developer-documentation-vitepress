@@ -66,11 +66,10 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
             ],
             'doc-footer-before': () => [
                 h(SwagContentMenu),
-                h(SwagRelatedArticles),
                 h(SwagStackOverflow),
             ],
             'doc-after': () => [
-
+                h(SwagRelatedArticles),
             ],
             'sidebar-nav-before': () => [
                 h(SwagSidebarVersionSwitcher),
