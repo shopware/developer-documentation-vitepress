@@ -11,8 +11,8 @@ import {
   presetUno,
   transformerDirectives,
 } from "unocss";
-import {resolve} from "path";
-import {readFileSync} from "fs";
+import { resolve } from "path";
+import { existsSync } from "fs";
 
 const iconStackoverflow = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">\n' +
     '    <path d="M28.16 32H2.475V20.58H5.32v8.575h19.956V20.58h2.884z" />\n' +
@@ -46,11 +46,11 @@ export default async () => ({
       preserveSymlinks: true,
 
       alias: {
-        '@node_modules': resolve(process.cwd(), 'node_modules'),
-        '../composables/edit-link': resolve(__dirname, './composables/edit-link.ts'),
-        './VPNavBarTitle.vue': resolve(__dirname, './components/override/VPNavBarTitle.vue'),
-        './VPAlgoliaSearchBox.vue': resolve(__dirname, './components/override/VPAlgoliaSearchBox.vue'),
-        '../NotFound.vue': resolve(__dirname, './components/override/NotFound.vue'),
+        '../composables/edit-link': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/composables/edit-link.ts'),
+        './VPNavBarTitle.vue': resolve(__dirname, '../node_modules/@shopware-docs/vitepress/src/components/override/VPNavBarTitle.vue'),
+        './VPAlgoliaSearchBox.vue': resolve(__dirname, '../node_modules/@shopware-docs/vitepress/src/components/override/VPAlgoliaSearchBox.vue'),
+        '../NotFound.vue': resolve(__dirname, '../node_modules/@shopware-docs/vitepress/src/components/override/NotFound.vue'),
+        '../SwagRelatedArticles.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/SwagRelatedArticles.vue'),
       }
     },
     // https://www.npmjs.com/package/@rollup/plugin-node-resolve ?

@@ -3,7 +3,7 @@ import type { DefaultTheme } from 'vitepress/theme'
 import docsearch from '@docsearch/js'
 import { onMounted, watch, computed } from 'vue'
 import { useRouter, useRoute, useData } from 'vitepress'
-import {getEmbeddingPoint} from "../../composables/repos";
+import { getEmbeddingPoint } from "vitepress-shopware-docs";
 
 const props = defineProps<{
     algolia: DefaultTheme.AlgoliaSearchOptions

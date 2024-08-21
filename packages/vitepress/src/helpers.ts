@@ -1,5 +1,5 @@
 import fs from "fs-extra";
-import * as glob from "glob";
+import { glob } from "glob";
 import yaml from "js-yaml";
 import path from "path";
 import {simpleSitemapAndIndex, SitemapItemLoose, EnumChangefreq} from "sitemap";
