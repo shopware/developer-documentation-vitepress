@@ -1,5 +1,4 @@
 import {ref} from "vue";
-import { marked } from 'marked';
 
 export const qa = (initialCollection) => {
     let query = ref(null);
@@ -63,7 +62,6 @@ export const qa = (initialCollection) => {
         query,
         question,
         errorText,
-        marked,
         state,
         stop,
         setCollection,

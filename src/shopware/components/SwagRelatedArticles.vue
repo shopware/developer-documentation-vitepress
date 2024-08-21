@@ -1,5 +1,5 @@
 <template>
-  <div v-if="articles.length" class="SwagRelatedArticles vt-doc --similar-articles mb-8">
+  <div v-if="articles.length" class="SwagRelatedArticles vt-doc mb-8">
     <h2 class="e-heading">
       Continue with related topics:
       <span class="SwagRelatedArticles_powered-by">

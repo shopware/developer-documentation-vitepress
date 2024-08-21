@@ -105,7 +105,6 @@ const {
   response,
   errorText,
   requestAnswer,
-  marked,
   stop,
   setCollection,
 } = qa(myCollection.value);
