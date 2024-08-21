@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.8](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.7...v1.3.0-alpha.8) (2024-08-21)
+
+### Bug Fixes
+
+- default aliases ([fd5db43](https://github.com/shopware/developer-documentation-vitepress/commit/fd5db43b8bf9c985151cc1229bdf509092a2ab98))
+
+# [1.3.0-alpha.8](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.7...v1.3.0-alpha.8) (2024-08-21)
+
+### Bug Fixes
+
+- default aliases ([fd5db43](https://github.com/shopware/developer-documentation-vitepress/commit/fd5db43b8bf9c985151cc1229bdf509092a2ab98))
+
 # [1.3.0-alpha.7](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.6...v1.3.0-alpha.7) (2024-08-20)
 
 ### Features
