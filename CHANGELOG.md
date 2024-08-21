@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.11](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.10...v1.3.0-alpha.11) (2024-08-21)
+
+### Features
+
+- remove marked ([3b67fbe](https://github.com/shopware/developer-documentation-vitepress/commit/3b67fbe1ee56f673ad9e2c7d3b91cc13991390be))
+
+# [1.3.0-alpha.11](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.10...v1.3.0-alpha.11) (2024-08-21)
+
+### Features
+
+- remove marked ([3b67fbe](https://github.com/shopware/developer-documentation-vitepress/commit/3b67fbe1ee56f673ad9e2c7d3b91cc13991390be))
+
 # [1.3.0-alpha.10](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.9...v1.3.0-alpha.10) (2024-08-21)
 
 ### Features
