@@ -47,9 +47,9 @@ export default async () => ({
 
       alias: {
         '../composables/edit-link': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/composables/edit-link.ts'),
-        './VPNavBarTitle.vue': resolve(__dirname, '../node_modules/@shopware-docs/vitepress/src/components/override/VPNavBarTitle.vue'),
-        './VPAlgoliaSearchBox.vue': resolve(__dirname, '../node_modules/@shopware-docs/vitepress/src/components/override/VPAlgoliaSearchBox.vue'),
-        '../NotFound.vue': resolve(__dirname, '../node_modules/@shopware-docs/vitepress/src/components/override/NotFound.vue'),
+        './VPNavBarTitle.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/VPNavBarTitle.vue'),
+        './VPAlgoliaSearchBox.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/VPAlgoliaSearchBox.vue'),
+        '../NotFound.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/override/NotFound.vue'),
         '../SwagRelatedArticles.vue': resolve(__dirname, '../node_modules/vitepress-shopware-docs/src/shopware/components/SwagRelatedArticles.vue'),
       }
     },
