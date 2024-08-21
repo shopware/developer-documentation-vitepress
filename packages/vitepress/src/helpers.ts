@@ -1,5 +1,5 @@
 import fs from "fs-extra";
-import { glob } from "glob";
+import { globSync } from "glob";
 import yaml from "js-yaml";
 import path from "path";
 import {simpleSitemapAndIndex, SitemapItemLoose, EnumChangefreq} from "sitemap";
@@ -14,22 +14,18 @@ interface AssetDir {
 }
 
 export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = []) => {
-    const publicDirs: (string | AssetDir)[] = await new Promise((resolve, reject) => {
-        console.log('Discovering docs.yml');
-        glob("**/docs.yml", {}, (er, files) => {
-            const directories: (string | AssetDir)[] = files.reduce((reduced, file) => {
-                const content = yaml.load(fs.readFileSync(file))
-                const filesToCopy = content?.['build-end']?.['copy-additional-assets'] ?? [];
-                const dirName = path.dirname(file);
+    console.log('Discovering docs.yml');
+    const publicDirs: (string | AssetDir)[] = globSync("**/docs.yml")
+    .reduce((reduced, file) => {
+        const content = yaml.load(fs.readFileSync(file))
+        const filesToCopy = content?.['build-end']?.['copy-additional-assets'] ?? [];
+        const dirName = path.dirname(file);
 
-                return [
-                    ...reduced,
-                    ...filesToCopy.map((fileToCopy: string) => `${dirName.substring(sourceRoot.length)}/${fileToCopy}`)
-                ];
-            }, customDirs);
-            resolve(directories)
-        });
-    });
+        return [
+            ...reduced,
+            ...filesToCopy.map((fileToCopy: string) => `${dirName.substring(sourceRoot.length)}/${fileToCopy}`)
+        ];
+    }, customDirs);
 
     console.log(`Copying non-standard static assets from ${process.cwd()}/${sourceRoot} to ${process.cwd()}/.vitepress/dist/`);
     publicDirs.forEach(dir => {
@@ -72,16 +68,12 @@ export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = [
 
 export const createSitemap = async (urls: string[] = [], domain: string) => {
     console.log('Discovering *.html');
-    const files: string[] = await new Promise((resolve) => {
-        glob("./.vitepress/dist/**/*.html", {}, (er, files) => {
-            const urls = files.map(file => file.substring('./.vitepress/dist'.length))
-                .map(file => file.endsWith('/index.html')
-                    ? file.substring(0, file.length - 'index.html'.length)
-                    : file)
-                .filter(file => file !== '/404.html');
-            resolve(urls);
-        });
-    });
+    const files: string[] = globSync("./.vitepress/dist/**/*.html")
+    .map(file => file.substring('./.vitepress/dist'.length))
+        .map(file => file.endsWith('/index.html')
+            ? file.substring(0, file.length - 'index.html'.length)
+            : file)
+        .filter(file => file !== '/404.html');
 
     const priorities = {
         2: 1.0,
@@ -169,39 +161,30 @@ export const storeRedirects = async () => {
         const cwd = process.cwd();
         console.log('cwd', cwd);
 
-        const docsYmlRedirects: Redirect[] = await new Promise((resolve, reject) => {
-            console.log('Discovering docs.yml for redirects');
-            glob("**/docs.yml", {}, (er, files) => {
-                const directories = files.reduce((reduced: Redirect[], file: string) => {
-                    console.log(`Collecting ${file}`);
-                    const content = yaml.load(fs.readFileSync(file))
-                    const prefix = file.substring(sourceRoot.length, file.length - '.docs.yml'.length);
+        console.log('Discovering docs.yml for redirects');
+        const docsYmlRedirects: Redirect[] = globSync("**/docs.yml")
+        .reduce((reduced: Redirect[], file: string) => {
+            console.log(`Collecting ${file}`);
+            const content = yaml.load(fs.readFileSync(file))
+            const prefix = file.substring(sourceRoot.length, file.length - '.docs.yml'.length);
 
-                    return [
-                        ...reduced,
-                        ...transformRedirects(content?.redirects ?? {}, prefix)
-                    ];
-                }, []);
-                resolve(directories)
-            });
-        });
+            return [
+                ...reduced,
+                ...transformRedirects(content?.redirects ?? {}, prefix)
+            ];
+        }, []);
 
-        const gitbookRedirects: Redirect[] = await new Promise((resolve, reject) => {
-            console.log('Discovering gitbook.yaml for redirects');
-            glob("**/.gitbook.yaml", {}, (er, files) => {
-                const redirects = files.reduce((redirects: Redirect[], file: string) => {
-                    console.log(`Collecting ${file}`);
-                    const content = yaml.load(fs.readFileSync(file))
-                    const prefix = file.substring(sourceRoot.length, file.length - '.gitbook.yaml'.length);
+        console.log('Discovering gitbook.yaml for redirects');
+        const gitbookRedirects: Redirect[] = globSync("**/.gitbook.yaml").reduce((redirects: Redirect[], file: string) => {
+            console.log(`Collecting ${file}`);
+            const content = yaml.load(fs.readFileSync(file))
+            const prefix = file.substring(sourceRoot.length, file.length - '.gitbook.yaml'.length);
 
-                    return [
-                        ...redirects,
-                        ...transformRedirects(content?.redirects ?? {}, prefix),
-                    ];
-                }, []);
-                resolve(redirects)
-            });
-        });
+            return [
+                ...redirects,
+                ...transformRedirects(content?.redirects ?? {}, prefix),
+            ];
+        }, [])
 
         resolve([
             ...docsYmlRedirects,

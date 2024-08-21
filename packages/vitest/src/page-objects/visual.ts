@@ -1,6 +1,6 @@
 import {expect, Page} from "@playwright/test";
 import slugify from "slugify";
-import glob from "glob";
+import { globSync } from "glob";
 
 export class Visual {
     readonly page: Page;
@@ -14,10 +14,8 @@ export class Visual {
     }
 
     async getAllPages() {
-        return await new Promise<string[]>((resolve, reject) => {
-            const dir = `${process.cwd()}/.vitepress/dist`;
-            glob(`${dir}/**/**.html`, {}, (er, files) => resolve(files.map(file => file.substring(dir.length))));
-        })
+        const dir = `${process.cwd()}/.vitepress/dist`;
+        return globSync(`${dir}/**/**.html`).map(file => file.substring(dir.length))
     }
 
     // https://github.com/americanexpress/jest-image-snapshot#%EF%B8%8F-api
