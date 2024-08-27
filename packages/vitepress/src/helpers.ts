@@ -68,8 +68,8 @@ export const copyAdditionalAssets = async (customDirs: (string | AssetDir)[] = [
 
 export const createSitemap = async (urls: string[] = [], domain: string) => {
     console.log('Discovering *.html');
-    const files: string[] = globSync("./.vitepress/dist/**/*.html")
-    .map(file => file.substring('./.vitepress/dist'.length))
+    const files: string[] = globSync(".vitepress/dist/**/*.html")
+    .map(file => file.substring('.vitepress/dist'.length))
         .map(file => file.endsWith('/index.html')
             ? file.substring(0, file.length - 'index.html'.length)
             : file)
@@ -90,7 +90,7 @@ export const createSitemap = async (urls: string[] = [], domain: string) => {
         }));
 
     console.log('Writing sitemap.xml');
-    const destinationDir = './.vitepress/dist/';
+    const destinationDir = '.vitepress/dist/';
     const limit = 50_000;
     await simpleSitemapAndIndex({
         hostname: `https://${domain}`,
