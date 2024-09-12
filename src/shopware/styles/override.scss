@@ -10,6 +10,8 @@
 
   --c-black-1000: #000;
   --c-exposed: #cce0ff;
+
+  --vp-sidebar-width: 300px;
 }
 
 :root {
@@ -457,23 +459,23 @@ h4.styled {
   }
 
   .level-1 .text {
-    max-width: 12.833rem;
+    max-width: 14.833rem;
   }
 
   .level-2 .text {
-    max-width: 11.666rem;
+    max-width: 13.666rem;
   }
 
   .level-3 .text {
-    max-width: 10.5rem;
+    max-width: 12.5rem;
   }
 
   .level-4 .text {
-    max-width: 9.333rem;
+    max-width: 11.333rem;
   }
 
   .level-5 .text {
-    max-width: 8.166rem;
+    max-width: 10.166rem;
   }
 }
 
@@ -566,11 +568,6 @@ h4.styled {
   &-Hit-path {
     --docsearch-text-color: var(--c-text);
   }
-}
-
-.Layout .VPSidebar {
-  padding-left: 1.5rem;
-  width: var(--vp-sidebar-width);
 }
 
 .aside-container {
