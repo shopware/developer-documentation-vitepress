@@ -93,6 +93,11 @@ export default async () => ({
         // for when developing with locally linked theme
         allow: ["../.."],
       },
+      watch: {
+        ignored: (p) => {
+          return p.includes('_source') || p.includes('node_modules');
+        }
+      },
     },
     json: {
       stringify: true,

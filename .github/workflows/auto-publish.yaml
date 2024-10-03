@@ -29,7 +29,6 @@ jobs:
           DOCS_NPM_TOKEN: ${{ secrets.DOCS_NPM_TOKEN }}
         run: |
           pnpm -C packages/cli build
-          [ -d "packages/typer" ] && pnpm -C packages/typer build || true
           [ -d "packages/vitepress" ] && pnpm -C packages/vitepress build || true
           
           pnpm config set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN}
@@ -41,5 +40,4 @@ jobs:
           pnpm publish packages/storybook --access public --no-git-checks
           pnpm publish packages/vitepress --access public --no-git-checks
           pnpm publish packages/vitest --access public --no-git-checks
-          [ -d "packages/typer" ] && pnpm publish packages/typer --access public --no-git-checks || true
         #npx lerna publish -y from-git
