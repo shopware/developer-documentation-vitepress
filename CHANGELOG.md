@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-alpha.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.17...v1.3.0-alpha.18) (2024-10-04)
+
+### Features
+
+- async enhanceApp ([63d3d6a](https://github.com/shopware/developer-documentation-vitepress/commit/63d3d6a869afff17ef8ab5a5c55bdbdcd661a86e))
+- remove typer, update base config ([26a22b6](https://github.com/shopware/developer-documentation-vitepress/commit/26a22b6b188b3a4f6f3a4bb835fe6f3c744336fb))
+
+# [1.3.0-alpha.18](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.17...v1.3.0-alpha.18) (2024-10-04)
+
+### Features
+
+- async enhanceApp ([63d3d6a](https://github.com/shopware/developer-documentation-vitepress/commit/63d3d6a869afff17ef8ab5a5c55bdbdcd661a86e))
+- remove typer, update base config ([26a22b6](https://github.com/shopware/developer-documentation-vitepress/commit/26a22b6b188b3a4f6f3a4bb835fe6f3c744336fb))
+
 # [1.3.0-alpha.17](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-alpha.16...v1.3.0-alpha.17) (2024-09-12)
 
 ### Bug Fixes
