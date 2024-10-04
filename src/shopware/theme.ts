@@ -104,7 +104,7 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         )
     },
     //NotFound: VPNotFound,
-    enhanceApp({app, router, siteData}) {
+    enhanceApp: async ({app, router, siteData}) => {
         // app.component('ActionItem', ActionItem),
         // app.component('RegistrationForm', RegistrationForm),
         // app.component('LandingWrapper', LandingWrapper),
@@ -128,7 +128,9 @@ const SWAGTheme = (myConfig: { enhanceApp?: Function, slots?: {[key: string]:any
         /**
          * Allow extending from sub-apps.
          */
-        myConfig.enhanceApp?.({app, router, siteData});
+        if (myConfig.enhanceApp) {
+            await myConfig.enhanceApp({app, router, siteData});
+        }
     },
     setup() {
         // https://github.com/vuejs/vitepress/issues/854

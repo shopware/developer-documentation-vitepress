@@ -442,7 +442,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
         link.substring(1, link.length - 1);
 
     const folder = `${root}${as.length ? endWithSlash(as) : as}`;
-    console.log(`Creating sidebar ${folder}`);
+    console.log(`\nCreating sidebar ${folder}`);
 
     // allow missing mount points in dev env
     if (process.env.SHOPWARE_DEV) {
