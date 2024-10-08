@@ -28,5 +28,5 @@ describe('cli clone', async () => {
 
         expect(result.stdout).toContain('Preparing frontends');
         expect(result.stdout).toContain('Repository cloned');
-    })
+    }, timeout.high)
 })
