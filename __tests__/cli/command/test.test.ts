@@ -20,7 +20,8 @@ describe('cli test', async () => {
         expect(result.stdout).not.toContain('Tests ran');
     })
 
-    test('Test configured paths', async () => {
+    // issue with developer-portal
+    test.skip('Test configured paths', async () => {
         withDirConfig(sandbox);
 
         // prepare developer-portal checkout

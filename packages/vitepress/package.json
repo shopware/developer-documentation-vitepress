@@ -28,19 +28,19 @@
     "build": "unbuild --failOnWarn=false"
   },
   "dependencies": {
-    "axios": "^1.6.2",
-    "prettier": "^3.1.0",
+    "axios": "^1.7.7",
+    "prettier": "^3.3.3",
     "sitemap": "^8.0.0",
-    "unocss": "^0.63.1",
+    "unocss": "^0.63.4",
     "vitepress-shopware-docs": "link:../.."
   },
   "peerDependencies": {
-    "vitepress": "^1.0.0-rc.31"
+    "vitepress": "^1.4.0"
   },
   "devDependencies": {
-    "rollup": "^4.22.4",
-    "terser": "^5.25.0",
-    "typescript": "^5.3.2",
+    "rollup": "^4.24.0",
+    "terser": "^5.34.1",
+    "typescript": "^5.6.2",
     "unbuild": "^2.0.0"
   },
   "packageManager": "pnpm@8.11.0"
