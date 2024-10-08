@@ -24,7 +24,7 @@ describe('cli clone', async () => {
         // prepare developer-portal checkout
         prepareDeveloperPortalCheckout(sandbox);
 
-        const result = await docsCli(['clone', '--repository', 'frontends', '--src', 'apps/docs/src', '--dst', 'frontends'], sandbox.cwd, timeout.medium);
+        const result = await docsCli(['clone', '--repository', 'frontends', '--src', 'apps/docs/src', '--dst', 'frontends'], sandbox.cwd, timeout.high);
 
         expect(result.stdout).toContain('Preparing frontends');
         expect(result.stdout).toContain('Repository cloned');
