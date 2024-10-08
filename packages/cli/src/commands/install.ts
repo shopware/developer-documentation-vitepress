@@ -72,7 +72,7 @@ export default {
                 let response = await inquirer.prompt(options.map((option: { name: string, description?: string, defaultValue?: string | boolean, example?: string }) => {
                     const name = option.name.split('<')[1].split('>')[0];
                     const message = option.description || name;
-                    const defaultValue = option.defaultValue || option.example || null;
+                    const defaultValue = option.defaultValue || option.example || '';
 
                     return {
                         type: 'input',
@@ -80,7 +80,7 @@ export default {
                         message,
                         default: defaultValue,
                     };
-                }));
+                }) as { type: 'input', name: string, message: string, default: string }[]);
 
                 // append options, filter empty and escape values
                 Object.keys(response || {})
