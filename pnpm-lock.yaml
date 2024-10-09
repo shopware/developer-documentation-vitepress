@@ -83,7 +83,7 @@ importers:
         version: 8.3.5(react@18.3.1)(storybook@8.3.5)
       '@storybook/addon-styling':
         specifier: ^1.3.7
-        version: 1.3.7(less@4.2.0)(postcss@8.4.47)(react-dom@18.3.1)(react@18.3.1)(sass@1.79.4)(typescript@5.6.2)(webpack@5.95.0)
+        version: 1.3.7(less@4.2.0)(postcss@8.4.47)(react-dom@18.3.1)(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)(webpack@5.95.0)
       '@storybook/blocks':
         specifier: ^8.2.9
         version: 8.3.5(react-dom@18.3.1)(react@18.3.1)(storybook@8.3.5)
@@ -116,13 +116,13 @@ importers:
         version: 0.3.4
       '@vitejs/plugin-vue':
         specifier: ^5.1.4
-        version: 5.1.4(vite@5.4.8)(vue@3.5.11)
+        version: 5.1.4(vue@3.5.11)
       '@vueuse/shared':
         specifier: 11.1.0
         version: 11.1.0(vue@3.5.11)
       chromatic:
         specifier: ^11.12.0
-        version: 11.12.0
+        version: 11.12.4
       esbuild:
         specifier: ^0.24.0
         version: 0.24.0
@@ -170,19 +170,19 @@ importers:
         version: 5.34.1
       typescript:
         specifier: ^5.6.2
-        version: 5.6.2
+        version: 5.6.3
       unbuild:
         specifier: ^2.0.0
-        version: 2.0.0(sass@1.79.4)(typescript@5.6.2)
+        version: 2.0.0(sass@1.79.4)(typescript@5.6.3)
       vitepress:
         specifier: 1.4.0
-        version: 1.4.0(@types/node@22.7.5)(axios@1.7.7)(less@4.2.0)(postcss@8.4.47)(react-dom@18.3.1)(react@18.3.1)(sass@1.79.4)(search-insights@2.17.2)(terser@5.34.1)(typescript@5.6.2)
+        version: 1.4.0(@types/node@22.7.5)(axios@1.7.7)(less@4.2.0)(postcss@8.4.47)(react-dom@18.3.1)(react@18.3.1)(sass@1.79.4)(search-insights@2.17.2)(terser@5.34.1)(typescript@5.6.3)
       vitest:
         specifier: ^2.1.2
         version: 2.1.2(@types/node@22.7.5)(less@4.2.0)(sass@1.79.4)(terser@5.34.1)
       vue:
         specifier: ^3.5.11
-        version: 3.5.11(typescript@5.6.2)
+        version: 3.5.11(typescript@5.6.3)
 
   packages/cli:
     devDependencies:
@@ -3354,7 +3354,7 @@ packages:
   /@juggle/resize-observer@3.4.0:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
 
-  /@lerna/create@8.1.8(typescript@5.6.2):
+  /@lerna/create@8.1.8(typescript@5.6.3):
     resolution: {integrity: sha512-wi72R01tgjBjzG2kjRyTHl4yCTKDfDMIXRyKz9E/FBa9SkFvUOAE4bdyY9MhEsRZmSWL7+CYE8Flv/HScRpBbA==}
     engines: {node: '>=18.0.0'}
     dependencies:
@@ -3374,7 +3374,7 @@ packages:
       console-control-strings: 1.1.0
       conventional-changelog-core: 5.0.1
       conventional-recommended-bump: 7.0.1
-      cosmiconfig: 8.3.6(typescript@5.6.2)
+      cosmiconfig: 8.3.6(typescript@5.6.3)
       dedent: 1.5.3
       execa: 5.0.0
       fs-extra: 11.2.0
@@ -6187,6 +6187,65 @@ packages:
       - sass-embedded
       - supports-color
       - typescript
+    dev: false
+
+  /@storybook/addon-styling@1.3.7(less@4.2.0)(postcss@8.4.47)(react-dom@18.3.1)(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)(webpack@5.95.0):
+    resolution: {integrity: sha512-JSBZMOrSw/3rlq5YoEI7Qyq703KSNP0Jd+gxTWu3/tP6245mpjn2dXnR8FvqVxCi+FG4lt2kQyPzgsuwEw1SSA==}
+    deprecated: 'This package has been split into @storybook/addon-styling-webpack and @storybook/addon-themes. More info: https://github.com/storybookjs/addon-styling'
+    hasBin: true
+    peerDependencies:
+      less: ^3.5.0 || ^4.0.0
+      postcss: ^7.0.0 || ^8.0.1
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      less:
+        optional: true
+      postcss:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      webpack:
+        optional: true
+    dependencies:
+      '@babel/template': 7.25.7
+      '@babel/types': 7.25.7
+      '@storybook/api': 7.6.17(react-dom@18.3.1)(react@18.3.1)
+      '@storybook/components': 7.6.20(react-dom@18.3.1)(react@18.3.1)
+      '@storybook/core-common': 7.6.20
+      '@storybook/core-events': 7.6.20
+      '@storybook/manager-api': 7.6.20(react-dom@18.3.1)(react@18.3.1)
+      '@storybook/node-logger': 7.6.20
+      '@storybook/preview-api': 7.6.20
+      '@storybook/theming': 7.6.20(react-dom@18.3.1)(react@18.3.1)
+      '@storybook/types': 7.6.20
+      css-loader: 6.11.0(webpack@5.95.0)
+      less: 4.2.0
+      less-loader: 11.1.4(less@4.2.0)(webpack@5.95.0)
+      postcss: 8.4.47
+      postcss-loader: 7.3.4(postcss@8.4.47)(typescript@5.6.3)(webpack@5.95.0)
+      prettier: 2.8.8
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      resolve-url-loader: 5.0.0
+      sass-loader: 13.3.3(sass@1.79.4)(webpack@5.95.0)
+      style-loader: 3.3.4(webpack@5.95.0)
+      webpack: 5.95.0(esbuild@0.24.0)
+    transitivePeerDependencies:
+      - '@rspack/core'
+      - '@types/react'
+      - '@types/react-dom'
+      - encoding
+      - fibers
+      - node-sass
+      - sass
+      - sass-embedded
+      - supports-color
+      - typescript
+    dev: true
 
   /@storybook/addon-toolbars@7.6.20:
     resolution: {integrity: sha512-5Btg4i8ffWTDHsU72cqxC8nIv9N3E3ObJAc6k0llrmPBG/ybh3jxmRfs8fNm44LlEXaZ5qrK/petsXX3UbpIFg==}
@@ -6362,7 +6421,7 @@ packages:
       - webpack-sources
     dev: false
 
-  /@storybook/builder-vite@8.3.5(storybook@8.3.5)(typescript@5.6.2):
+  /@storybook/builder-vite@8.3.5(storybook@8.3.5)(typescript@5.6.3):
     resolution: {integrity: sha512-paGX8tEmAeAKFU5Cnwkq3RAi3LFCnmjAxMJikT09jUi6jDpNa0VzH8jbLxKdjsPMAsz0Wv3mrLvL2b8hyxLWAw==}
     peerDependencies:
       '@preact/preset-vite': '*'
@@ -6390,7 +6449,7 @@ packages:
       magic-string: 0.30.11
       storybook: 8.3.5
       ts-dedent: 2.2.0
-      typescript: 5.6.2
+      typescript: 5.6.3
     transitivePeerDependencies:
       - supports-color
       - webpack-sources
@@ -7022,13 +7081,13 @@ packages:
       vite:
         optional: true
     dependencies:
-      '@storybook/builder-vite': 8.3.5(storybook@8.3.5)(typescript@5.6.2)
+      '@storybook/builder-vite': 8.3.5(storybook@8.3.5)(typescript@5.6.3)
       '@storybook/vue3': 8.3.5(storybook@8.3.5)(vue@3.5.11)
       find-package-json: 1.2.0
       magic-string: 0.30.11
       storybook: 8.3.5
-      typescript: 5.6.2
-      vue-component-meta: 2.1.6(typescript@5.6.2)
+      typescript: 5.6.3
+      vue-component-meta: 2.1.6(typescript@5.6.3)
       vue-docgen-api: 4.79.2(vue@3.5.11)
     transitivePeerDependencies:
       - '@preact/preset-vite'
@@ -7076,7 +7135,7 @@ packages:
       storybook: 8.3.5
       ts-dedent: 2.2.0
       type-fest: 2.19.0
-      vue: 3.5.11(typescript@5.6.2)
+      vue: 3.5.11(typescript@5.6.3)
       vue-component-type-helpers: 2.1.6
     dev: true
 
@@ -7829,6 +7888,19 @@ packages:
       vite: 5.4.8(@types/node@22.7.5)(less@4.2.0)(sass@1.79.4)(terser@5.34.1)
       vue: 3.5.11(typescript@5.6.2)
 
+  /@vitejs/plugin-vue@5.1.4(vue@3.5.11):
+    resolution: {integrity: sha512-N2XSI2n3sQqp5w7Y/AN/L2XDjBIRGqXko+eDp42sydYSBeJuSm5a1sLf8zakmo8u7tA8NmBgoDLA1HeOESjp9A==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    peerDependencies:
+      vite: ^5.0.0
+      vue: ^3.2.25
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      vue: 3.5.11(typescript@5.6.3)
+    dev: true
+
   /@vitest/coverage-c8@0.33.0(vitest@2.1.2):
     resolution: {integrity: sha512-DaF1zJz4dcOZS4k/neiQJokmOWqsGXwhthfmUdPGorXIQHjdPvV6JQSYhQDI41MyI8c+IieQUdIDs5XAMHtDDw==}
     deprecated: v8 coverage is moved to @vitest/coverage-v8 package
@@ -8008,7 +8080,7 @@ packages:
     dependencies:
       rfdc: 1.4.1
 
-  /@vue/language-core@2.1.6(typescript@5.6.2):
+  /@vue/language-core@2.1.6(typescript@5.6.3):
     resolution: {integrity: sha512-MW569cSky9R/ooKMh6xa2g1D0AtRKbL56k83dzus/bx//RDJk24RHWkMzbAlXjMdDNyxAaagKPRquBIxkxlCkg==}
     peerDependencies:
       typescript: '*'
@@ -8024,7 +8096,7 @@ packages:
       minimatch: 9.0.5
       muggle-string: 0.4.1
       path-browserify: 1.0.1
-      typescript: 5.6.2
+      typescript: 5.6.3
     dev: true
 
   /@vue/reactivity@3.5.11:
@@ -9080,8 +9152,8 @@ packages:
         optional: true
     dev: false
 
-  /chromatic@11.12.0:
-    resolution: {integrity: sha512-7nHjFrGoRcGVNSGUmVdAGfWDN97z74D4Q5da48IAt4CcougEffVr+WWmJYqJ/WUa7by0/Ny5iYyX3FMz40juxw==}
+  /chromatic@11.12.4:
+    resolution: {integrity: sha512-cHEp9cx4C9nGg5ICqx5gOs9VTAnELrY/NJah8GBXCIJ2vftn1vmScVmiwyZi1jSBQ9MRz+nwOErfiQkVYBXtOw==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -9523,6 +9595,23 @@ packages:
       parse-json: 5.2.0
       path-type: 4.0.0
       typescript: 5.6.2
+    dev: false
+
+  /cosmiconfig@8.3.6(typescript@5.6.3):
+    resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      import-fresh: 3.3.0
+      js-yaml: 4.1.0
+      parse-json: 5.2.0
+      path-type: 4.0.0
+      typescript: 5.6.3
+    dev: true
 
   /cross-fetch@3.1.8:
     resolution: {integrity: sha512-cvA+JwZoU0Xq+h6WkMvAUqPEYy92Obet6UdKLfW60qn99ftItKjB5T+BkyWOFWe2pUyfQ+IJHmpOTznqk1M6Kg==}
@@ -12728,7 +12817,7 @@ packages:
     engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
-      '@lerna/create': 8.1.8(typescript@5.6.2)
+      '@lerna/create': 8.1.8(typescript@5.6.3)
       '@npmcli/arborist': 7.5.4
       '@npmcli/package-json': 5.2.0
       '@npmcli/run-script': 8.1.0
@@ -12746,7 +12835,7 @@ packages:
       conventional-changelog-angular: 7.0.0
       conventional-changelog-core: 5.0.1
       conventional-recommended-bump: 7.0.1
-      cosmiconfig: 8.3.6(typescript@5.6.2)
+      cosmiconfig: 8.3.6(typescript@5.6.3)
       dedent: 1.5.3
       envinfo: 7.13.0
       execa: 5.0.0
@@ -12799,7 +12888,7 @@ packages:
       strong-log-transformer: 2.1.0
       tar: 6.2.1
       temp-dir: 1.0.0
-      typescript: 5.6.2
+      typescript: 5.6.3
       upath: 2.0.1
       uuid: 10.0.0
       validate-npm-package-license: 3.0.4
@@ -13697,6 +13786,38 @@ packages:
       semver: 7.6.3
       tinyglobby: 0.2.9
       typescript: 5.6.2
+    dev: true
+
+  /mkdist@1.6.0(sass@1.79.4)(typescript@5.6.3):
+    resolution: {integrity: sha512-nD7J/mx33Lwm4Q4qoPgRBVA9JQNKgyE7fLo5vdPWVDdjz96pXglGERp/fRnGPCTB37Kykfxs5bDdXa9BWOT9nw==}
+    hasBin: true
+    peerDependencies:
+      sass: ^1.78.0
+      typescript: '>=5.5.4'
+      vue-tsc: ^1.8.27 || ^2.0.21
+    peerDependenciesMeta:
+      sass:
+        optional: true
+      typescript:
+        optional: true
+      vue-tsc:
+        optional: true
+    dependencies:
+      autoprefixer: 10.4.20(postcss@8.4.47)
+      citty: 0.1.6
+      cssnano: 7.0.6(postcss@8.4.47)
+      defu: 6.1.4
+      esbuild: 0.24.0
+      jiti: 1.21.6
+      mlly: 1.7.2
+      pathe: 1.1.2
+      pkg-types: 1.2.1
+      postcss: 8.4.47
+      postcss-nested: 6.2.0(postcss@8.4.47)
+      sass: 1.79.4
+      semver: 7.6.3
+      tinyglobby: 0.2.9
+      typescript: 5.6.3
     dev: true
 
   /mlly@1.7.2:
@@ -14801,6 +14922,23 @@ packages:
       webpack: 5.95.0(esbuild@0.23.1)
     transitivePeerDependencies:
       - typescript
+    dev: false
+
+  /postcss-loader@7.3.4(postcss@8.4.47)(typescript@5.6.3)(webpack@5.95.0):
+    resolution: {integrity: sha512-iW5WTTBSC5BfsBJ9daFMPVrLT36MrNiC6fqOZTTaHjBNX6Pfd5p+hSBqe/fEeNd7pc13QiAyGt7VdGMw4eRC4A==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      postcss: ^7.0.0 || ^8.0.1
+      webpack: ^5.0.0
+    dependencies:
+      cosmiconfig: 8.3.6(typescript@5.6.3)
+      jiti: 1.21.6
+      postcss: 8.4.47
+      semver: 7.6.3
+      webpack: 5.95.0(esbuild@0.24.0)
+    transitivePeerDependencies:
+      - typescript
+    dev: true
 
   /postcss-merge-longhand@7.0.4(postcss@8.4.47):
     resolution: {integrity: sha512-zer1KoZA54Q8RVHKOY5vMke0cCdNxMP3KBfDerjH/BYHh4nCIh+1Yy0t1pAEQF18ac/4z3OFclO+ZVH8azjR4A==}
@@ -16063,6 +16201,20 @@ packages:
       '@babel/code-frame': 7.25.7
     dev: true
 
+  /rollup-plugin-dts@6.1.1(rollup@3.29.5)(typescript@5.6.3):
+    resolution: {integrity: sha512-aSHRcJ6KG2IHIioYlvAOcEq6U99sVtqDDKVhnwt70rW6tsz3tv5OSjEiWcgzfsHdLyGXZ/3b/7b/+Za3Y6r1XA==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      rollup: ^3.29.4 || ^4
+      typescript: ^4.5 || ^5.0
+    dependencies:
+      magic-string: 0.30.11
+      rollup: 3.29.5
+      typescript: 5.6.3
+    optionalDependencies:
+      '@babel/code-frame': 7.25.7
+    dev: true
+
   /rollup-pluginutils@2.8.2:
     resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
     dependencies:
@@ -16969,6 +17121,31 @@ packages:
       terser: 5.34.1
       webpack: 5.95.0(esbuild@0.23.1)
 
+  /terser-webpack-plugin@5.3.10(esbuild@0.24.0)(webpack@5.95.0):
+    resolution: {integrity: sha512-BKFPWlPDndPs+NGGCr1U59t0XScL5317Y0UReNrHaw9/FwhPENlq6bfgs+4yPfyP51vqC1bQ4rp1EfXW5ZSH9w==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      '@swc/core': '*'
+      esbuild: '*'
+      uglify-js: '*'
+      webpack: ^5.1.0
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      esbuild:
+        optional: true
+      uglify-js:
+        optional: true
+    dependencies:
+      '@jridgewell/trace-mapping': 0.3.25
+      esbuild: 0.24.0
+      jest-worker: 27.5.1
+      schema-utils: 3.3.0
+      serialize-javascript: 6.0.2
+      terser: 5.34.1
+      webpack: 5.95.0(esbuild@0.24.0)
+    dev: true
+
   /terser@5.34.1:
     resolution: {integrity: sha512-FsJZ7iZLd/BXkz+4xrRTGJ26o/6VTjQytUk8b8OxkwcD2I+79VPJlz7qss1+zE7h8GNIScFqXcDyJ/KqBYZFVA==}
     engines: {node: '>=10'}
@@ -17228,6 +17405,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  /typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   /ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
 
@@ -17271,6 +17453,46 @@ packages:
       rollup-plugin-dts: 6.1.1(rollup@3.29.5)(typescript@5.6.2)
       scule: 1.3.0
       typescript: 5.6.2
+      untyped: 1.5.1
+    transitivePeerDependencies:
+      - sass
+      - supports-color
+      - vue-tsc
+    dev: true
+
+  /unbuild@2.0.0(sass@1.79.4)(typescript@5.6.3):
+    resolution: {integrity: sha512-JWCUYx3Oxdzvw2J9kTAp+DKE8df/BnH/JTSj6JyA4SH40ECdFu7FoJJcrm8G92B7TjofQ6GZGjJs50TRxoH6Wg==}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.1.6
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@rollup/plugin-alias': 5.1.1(rollup@3.29.5)
+      '@rollup/plugin-commonjs': 25.0.8(rollup@3.29.5)
+      '@rollup/plugin-json': 6.1.0(rollup@3.29.5)
+      '@rollup/plugin-node-resolve': 15.3.0(rollup@3.29.5)
+      '@rollup/plugin-replace': 5.0.7(rollup@3.29.5)
+      '@rollup/pluginutils': 5.1.2(rollup@3.29.5)
+      chalk: 5.3.0
+      citty: 0.1.6
+      consola: 3.2.3
+      defu: 6.1.4
+      esbuild: 0.19.12
+      globby: 13.2.2
+      hookable: 5.5.3
+      jiti: 1.21.6
+      magic-string: 0.30.11
+      mkdist: 1.6.0(sass@1.79.4)(typescript@5.6.3)
+      mlly: 1.7.2
+      pathe: 1.1.2
+      pkg-types: 1.2.1
+      pretty-bytes: 6.1.1
+      rollup: 3.29.5
+      rollup-plugin-dts: 6.1.1(rollup@3.29.5)(typescript@5.6.3)
+      scule: 1.3.0
+      typescript: 5.6.3
       untyped: 1.5.1
     transitivePeerDependencies:
       - sass
@@ -17961,6 +18183,66 @@ packages:
       - terser
       - typescript
       - universal-cookie
+    dev: false
+
+  /vitepress@1.4.0(@types/node@22.7.5)(axios@1.7.7)(less@4.2.0)(postcss@8.4.47)(react-dom@18.3.1)(react@18.3.1)(sass@1.79.4)(search-insights@2.17.2)(terser@5.34.1)(typescript@5.6.3):
+    resolution: {integrity: sha512-JXCv4EsKTDyAFb6C/UjZr7nsGAzZ6mafVk2rx7rG5o8N+B/4QstIk+iEOe/9dKoU6V624UIC6g1pZ+K63rxhlw==}
+    hasBin: true
+    peerDependencies:
+      markdown-it-mathjax3: ^4
+      postcss: ^8
+    peerDependenciesMeta:
+      markdown-it-mathjax3:
+        optional: true
+      postcss:
+        optional: true
+    dependencies:
+      '@docsearch/css': 3.6.2
+      '@docsearch/js': 3.6.2(react-dom@18.3.1)(react@18.3.1)(search-insights@2.17.2)
+      '@shikijs/core': 1.22.0
+      '@shikijs/transformers': 1.22.0
+      '@shikijs/types': 1.22.0
+      '@types/markdown-it': 14.1.2
+      '@vitejs/plugin-vue': 5.1.4(vite@5.4.8)(vue@3.5.11)
+      '@vue/devtools-api': 7.4.6
+      '@vue/shared': 3.5.11
+      '@vueuse/core': 11.1.0(vue@3.5.11)
+      '@vueuse/integrations': 11.1.0(axios@1.7.7)(focus-trap@7.6.0)(vue@3.5.11)
+      focus-trap: 7.6.0
+      mark.js: 8.11.1
+      minisearch: 7.1.0
+      postcss: 8.4.47
+      shiki: 1.22.0
+      vite: 5.4.8(@types/node@22.7.5)(less@4.2.0)(sass@1.79.4)(terser@5.34.1)
+      vue: 3.5.11(typescript@5.6.3)
+    transitivePeerDependencies:
+      - '@algolia/client-search'
+      - '@types/node'
+      - '@types/react'
+      - '@vue/composition-api'
+      - async-validator
+      - axios
+      - change-case
+      - drauu
+      - fuse.js
+      - idb-keyval
+      - jwt-decode
+      - less
+      - lightningcss
+      - nprogress
+      - qrcode
+      - react
+      - react-dom
+      - sass
+      - sass-embedded
+      - search-insights
+      - sortablejs
+      - stylus
+      - sugarss
+      - terser
+      - typescript
+      - universal-cookie
+    dev: true
 
   /vitest@2.1.2(@types/node@22.7.5)(less@4.2.0)(sass@1.79.4)(terser@5.34.1):
     resolution: {integrity: sha512-veNjLizOMkRrJ6xxb+pvxN6/QAWg95mzcRjtmkepXdN87FNfxAss9RKe2far/G9cQpipfgP2taqg0KiWsquj8A==}
@@ -18026,7 +18308,7 @@ packages:
     resolution: {integrity: sha512-AyFQ0EVmsOZOlAnxoFOGOq1SQDWAB7C6aqMGS23svWAllfOaxbuFvcT8D1i8z3Gyn8fraVeZNNmN6e9bxxXkKw==}
     dev: true
 
-  /vue-component-meta@2.1.6(typescript@5.6.2):
+  /vue-component-meta@2.1.6(typescript@5.6.3):
     resolution: {integrity: sha512-N5zReatWQTNqULhatFib69K82g5UhDERVobeqrT5S6Uk2QoCeYbsSY8nHRUwJFywE2iXRFN4B+XPhI+piZfC6w==}
     peerDependencies:
       typescript: '*'
@@ -18035,9 +18317,9 @@ packages:
         optional: true
     dependencies:
       '@volar/typescript': 2.4.6
-      '@vue/language-core': 2.1.6(typescript@5.6.2)
+      '@vue/language-core': 2.1.6(typescript@5.6.3)
       path-browserify: 1.0.1
-      typescript: 5.6.2
+      typescript: 5.6.3
       vue-component-type-helpers: 2.1.6
     dev: true
 
@@ -18056,7 +18338,7 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      vue: 3.5.11(typescript@5.6.2)
+      vue: 3.5.11(typescript@5.6.3)
 
   /vue-docgen-api@4.79.2(vue@3.5.11):
     resolution: {integrity: sha512-n9ENAcs+40awPZMsas7STqjkZiVlIjxIKgiJr5rSohDP0/JCrD9VtlzNojafsA1MChm/hz2h3PDtUedx3lbgfA==}
@@ -18101,7 +18383,7 @@ packages:
       instantsearch-ui-components: 0.9.0
       instantsearch.js: 4.74.2(algoliasearch@4.24.0)
       mitt: 2.1.0
-      vue: 3.5.11(typescript@5.6.2)
+      vue: 3.5.11(typescript@5.6.3)
     dev: false
 
   /vue@3.5.11(typescript@5.6.2):
@@ -18118,6 +18400,21 @@ packages:
       '@vue/server-renderer': 3.5.11(vue@3.5.11)
       '@vue/shared': 3.5.11
       typescript: 5.6.2
+
+  /vue@3.5.11(typescript@5.6.3):
+    resolution: {integrity: sha512-/8Wurrd9J3lb72FTQS7gRMNQD4nztTtKPmuDuPuhqXmmpD6+skVjAeahNpVzsuky6Sy9gy7wn8UadqPtt9SQIg==}
+    peerDependencies:
+      typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/compiler-dom': 3.5.11
+      '@vue/compiler-sfc': 3.5.11
+      '@vue/runtime-dom': 3.5.11
+      '@vue/server-renderer': 3.5.11(vue@3.5.11)
+      '@vue/shared': 3.5.11
+      typescript: 5.6.3
 
   /walk-up-path@3.0.1:
     resolution: {integrity: sha512-9YlCL/ynK3CTlrSRrDxZvUauLzAswPCrsaCgilqFevUYpeEW0/3ScEjaa3kbW/T0ghhkEr7mv+fpjqn1Y1YuTA==}
@@ -18200,6 +18497,45 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
+
+  /webpack@5.95.0(esbuild@0.24.0):
+    resolution: {integrity: sha512-2t3XstrKULz41MNMBF+cJ97TyHdyQ8HCt//pqErqDvNjU9YQBnZxIHa11VXsi7F3mb5/aO2tuDxdeTPdU7xu9Q==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    peerDependencies:
+      webpack-cli: '*'
+    peerDependenciesMeta:
+      webpack-cli:
+        optional: true
+    dependencies:
+      '@types/estree': 1.0.6
+      '@webassemblyjs/ast': 1.12.1
+      '@webassemblyjs/wasm-edit': 1.12.1
+      '@webassemblyjs/wasm-parser': 1.12.1
+      acorn: 8.12.1
+      acorn-import-attributes: 1.9.5(acorn@8.12.1)
+      browserslist: 4.24.0
+      chrome-trace-event: 1.0.4
+      enhanced-resolve: 5.17.1
+      es-module-lexer: 1.5.4
+      eslint-scope: 5.1.1
+      events: 3.3.0
+      glob-to-regexp: 0.4.1
+      graceful-fs: 4.2.11
+      json-parse-even-better-errors: 2.3.1
+      loader-runner: 4.3.0
+      mime-types: 2.1.35
+      neo-async: 2.6.2
+      schema-utils: 3.3.0
+      tapable: 2.2.1
+      terser-webpack-plugin: 5.3.10(esbuild@0.24.0)(webpack@5.95.0)
+      watchpack: 2.4.2
+      webpack-sources: 3.2.3
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+    dev: true
 
   /whatwg-fetch@3.6.20:
     resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
