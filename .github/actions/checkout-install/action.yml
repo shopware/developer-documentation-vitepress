@@ -17,33 +17,13 @@ runs:
     - name: Install pnpm
       uses: pnpm/action-setup@v3
       with:
-        version: 8
+        version: 9
 
     - shell: bash
       run: corepack enable
 
     - shell: bash
       run: pnpm --version
-
-    - name: Install system (Playwright requirements)
-      shell: bash
-      if: ${{ inputs.apt }}
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libnss3 \
-          libnspr4 \
-          libatk1.0-0 \
-          libatk-bridge2.0-0 \
-          libcups2 \
-          libdrm2 \
-          libatspi2.0-0 \
-          libxcomposite1 \
-          libxdamage1 \
-          libxfixes3 \
-          libxrandr2 \
-          libgbm1 \
-          libxkbcommon0 \
-          libasound2
 
     - uses: actions/setup-node@v4
       with:
@@ -54,3 +34,11 @@ runs:
     - name: Install dependencies
       shell: bash
       run: pnpm i
+
+    - name: Install system (Playwright requirements)
+      shell: bash
+      if: ${{ inputs.apt }}
+      run: |
+        sudo apt-get update
+        pnpm exec playwright install-deps
+        pnpm exec playwright install
