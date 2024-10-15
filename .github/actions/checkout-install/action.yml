@@ -30,20 +30,8 @@ runs:
       if: ${{ inputs.apt }}
       run: |
         sudo apt-get update
-        sudo apt-get install -y libnss3 \
-          libnspr4 \
-          libatk1.0-0 \
-          libatk-bridge2.0-0 \
-          libcups2 \
-          libdrm2 \
-          libatspi2.0-0 \
-          libxcomposite1 \
-          libxdamage1 \
-          libxfixes3 \
-          libxrandr2 \
-          libgbm1 \
-          libxkbcommon0 \
-          libasound2
+        pnpm exec playwright install-deps
+        pnpm exec playwright install
 
     - uses: actions/setup-node@v4
       with:
