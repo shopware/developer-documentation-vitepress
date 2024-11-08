@@ -125,7 +125,7 @@ importers:
         version: 11.2.0(vue@3.5.12)
       chromatic:
         specifier: ^11.12.0
-        version: 11.17.0
+        version: 11.18.0
       esbuild:
         specifier: ^0.24.0
         version: 0.24.0
@@ -9183,8 +9183,8 @@ packages:
         optional: true
     dev: false
 
-  /chromatic@11.17.0:
-    resolution: {integrity: sha512-xe8Cd1e1ZODUPwd6dnU7RJhYdPiPUlX+fpNNtsClNFWQSLNTiUiXGl1ryF3Udynxv2CGY9sLCTji+StAeLE+HQ==}
+  /chromatic@11.18.0:
+    resolution: {integrity: sha512-3o9Frn1oIS1hFLsJxVH9yVJ1O7+TCYoyL7OZzUorL/DCYduhXr5LDSBfpUsp7EdCPb64ufkbyFzSRNbt/xy9kg==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -12138,6 +12138,7 @@ packages:
   /is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
 
   /is-fullwidth-code-point@2.0.0:
     resolution: {integrity: sha512-VHskAKYM8RfSFXwee5t5cbN5PZeq1Wrh6qd5bkyiXIf6UQcN6w/A0eXM9r6t8d+GYOh+o6ZhiEnb88LN/Y8m2w==}
