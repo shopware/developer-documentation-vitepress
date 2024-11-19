@@ -1,4 +1,4 @@
-export const resourcesMenu = {
+export const resourcesMenu = ({ design, developer } = { design: 'https://shopware.design/', developer: 'https://developer.shopware.com/' }) => ({
     text: "Resources",
     activeMatch: `^/(api)`,
     items: [
@@ -20,35 +20,43 @@ export const resourcesMenu = {
             ]
         },
         {
-            text: "Administration",
+            text: "Meteor",
             items: [
                 {
-                    text: "Admin Extension SDK",
+                    text: "Meteor Admin SDK",
                     // link: "/resources/admin-extension-sdk/",
                     link: 'https://shopware.github.io/admin-extension-sdk/',
-                    repo: 'shopware/admin-extension-sdk',
+                    repo: 'shopware/meteor',
                 },
                 {
-                    text: "Component Library",
+                    text: "Meteor Component Library",
                     // link: "/resources/meteor-component-library/",
                     link: 'https://shopware.github.io/meteor-component-library/',
-                    repo: 'shopware/meteor-component-library',
-                }
+                    repo: 'shopware/meteor',
+                },
+                {
+                    text: "Meteor Icon Kit",
+                    //link: "/resources/meteor-icon-kit/",
+                    link: `${developer}resources/meteor-icon-kit/`,
+                    repo: 'shopware/meteor',
+                },
             ]
         },
         {
             text:"Design",
             items: [
                 {
-                    text: "Meteor Icon Kit",
-                    //link: "/resources/meteor-icon-kit/",
-                    link: 'https://shopware.github.io/meteor-icon-kit/',
-                    repo: 'shopware/meteor-icon-kit',
-                },
-                {
                     text: "shopware.design",
-                    //link: "/resources/meteor-icon-kit/",
-                    link: 'https://shopware.design/beta/',
+                    link: design,
+                },
+            ]
+        },
+        {
+            text: "Releases",
+            items: [
+                {
+                    text: "Release notes",
+                    link: `${developer}release-notes/`,
                 },
             ]
         },
@@ -70,4 +78,4 @@ export const resourcesMenu = {
             ]
         }
     ]
-};
+});
