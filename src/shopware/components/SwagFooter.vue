@@ -191,7 +191,7 @@ const footers = [
     items: [
       {
         title: 'APIs',
-        url: "/docs/guides/integrations-api"
+        url: "https://developer.shopware.com/docs/guides/integrations-api"
       },
       {
         title: 'SDKs',
@@ -199,15 +199,15 @@ const footers = [
       },
       {
         title: 'B2B Suite',
-        url: "/docs/products/extensions/b2b-suite/"
+        url: "https://developer.shopware.com/docs/products/extensions/b2b-suite/"
       },
       {
         title: 'Extensions',
-        url: "/docs/guides/plugins/"
+        url: "https://developer.shopware.com/docs/guides/plugins/"
       },
       {
         title: 'Headless Storefront',
-        url: "https://frontends.shopware.com/"
+        url: "https://developer.shopware.com/frontends/"
       },
     ]
   },
