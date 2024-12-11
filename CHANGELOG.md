@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0-beta.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-beta.4...v1.3.0-beta.5) (2024-12-11)
+
+### Bug Fixes
+
+- mermaid ([8d26452](https://github.com/shopware/developer-documentation-vitepress/commit/8d264525c21fed5d2e47a8ef17b578a18b1e4d2a))
+
+# [1.3.0-beta.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-beta.4...v1.3.0-beta.5) (2024-12-11)
+
+### Bug Fixes
+
+- mermaid ([8d26452](https://github.com/shopware/developer-documentation-vitepress/commit/8d264525c21fed5d2e47a8ef17b578a18b1e4d2a))
+
 # [1.3.0-beta.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.0-beta.3...v1.3.0-beta.4) (2024-12-11)
 
 ### Bug Fixes
