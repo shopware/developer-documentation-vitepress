@@ -28,7 +28,7 @@ onMounted(() =>
 <style lang="scss">
 .Tab_slot {
   @apply px-5 pt-3 pb-1;
-  background-color: var(--sw-sidebar-bg);
+  background-color: var(--vp-c-gutter);
 }
 </style>
 

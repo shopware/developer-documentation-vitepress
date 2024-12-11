@@ -71,7 +71,7 @@ provide('activeTitle', activeTitle)
 
   &_button,
   &_slot {
-    background-color: var(--sw-sidebar-bg);
+    background-color: var(--vp-c-gutter);
   }
 }
 </style>
