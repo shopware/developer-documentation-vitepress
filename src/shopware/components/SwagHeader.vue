@@ -43,19 +43,6 @@
   &_row {
     @apply flex flex-col md:flex-row gap-2 items-start justify-between;
   }
-
-  & + .container {
-    position: relative;
-    --vp-layout-top-height: 180px;
-    & main.main {
-      > div > div {
-        @apply mt-10;
-        > h1:first-child {
-          @apply hidden;
-        }
-      }
-    }
-  }
 }
 </style>
 
