@@ -241,6 +241,8 @@ export const addOGImage = (head: HeadConfig[], context: TransformContext) => {
             content: `https://shopware-docs-og.vercel.app/api/og?title=${encodeURIComponent(title)}`,
         }
     ]);
+
+    return head
 }
 
 export const userCentricsHead = (options: { usercentrics: string, hotjar?: string, gtm?: string, rollbar?: string } = {}) => {
