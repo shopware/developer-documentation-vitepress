@@ -24,8 +24,7 @@ export const resourcesMenu = ({ design, developer } = { design: 'https://shopwar
             items: [
                 {
                     text: "Meteor Admin SDK",
-                    // link: "/resources/admin-extension-sdk/",
-                    link: 'https://shopware.github.io/admin-extension-sdk/',
+                    link: `${developer}resources/admin-extension-sdk/`,
                     repo: 'shopware/meteor',
                 },
                 {
