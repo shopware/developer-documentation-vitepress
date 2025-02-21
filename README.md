@@ -6,7 +6,7 @@ Please follow the:
 
 - [setup instructions](./SETUP.md) for more information on how to use this theme.
 - [features](./FEATURES.md) for more information on globally available features.
-- [`developer-portal`](/shopware/developer-portal) for the actual implementation of this library.
+- [`developer-portal`](/shopware/developer-portal) and [`design-portal`](/shopware/design-portal) for the actual implementation of this repo.
 
 ## Collaboration
 
