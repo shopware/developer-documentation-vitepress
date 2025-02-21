@@ -115,7 +115,7 @@ export const requireParam = async (param: string | undefined, option: {
             type: 'input',
             name: 'param',
             message: option.description || option.name,
-            default: defaultValue ?? null,
+            default: defaultValue ?? '',
         }
     ]);
 

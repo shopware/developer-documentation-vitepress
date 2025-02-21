@@ -97,13 +97,13 @@ export const cloneCustom = async (repo: { name: string, src: string, dst: string
     if (configure) {
         const response = await inquirer.prompt([
             {
-                type: 'text',
+                type: 'input',
                 name: 'branch',
                 message: 'Branch',
                 default: branch,
             },
             {
-                type: 'text',
+                type: 'input',
                 name: 'org',
                 message: 'Organization (fork)',
                 default: org,
