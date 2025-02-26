@@ -1,5 +1,5 @@
 <template>
-  <a href="/chat.html" class="SwagCopilotMenu">
+  <a href="/chat.html" class="SwagCopilotMenu" aria-label="Ask AI Copilot">
     <SwagIcon icon="sparkles" type="solid" />
     <span class="hidden xl:block">Ask AI Copilot</span>
   </a>

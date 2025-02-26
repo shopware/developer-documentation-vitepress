@@ -114,7 +114,7 @@
         <div class="SwagFooter_columns">
           <div>
             <span class="SwagFooter_heading">
-              <img src="../assets/shopware-logo.svg" class="SwagFooter_logo"/>
+              <img src="../assets/shopware-logo.svg" class="SwagFooter_logo" alt="Official Shopware logo"/>
             </span>
 
             <ul>
