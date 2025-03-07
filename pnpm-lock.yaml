@@ -31,10 +31,10 @@ importers:
         version: 12.8.2(typescript@5.8.2)
       algoliasearch:
         specifier: ^4.20.0
-        version: 5.20.3
+        version: 4.24.0
       axios:
         specifier: ^1.7.7
-        version: 1.8.1
+        version: 1.8.2
       body-scroll-lock:
         specifier: ^3.1.5
         version: 3.1.5
@@ -182,7 +182,7 @@ importers:
         version: 3.5.0(sass@1.85.1)(typescript@5.8.2)(vue@3.5.13)
       vitepress:
         specifier: 1.6.3
-        version: 1.6.3(@types/node@22.13.9)(axios@1.8.1)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
+        version: 1.6.3(@types/node@22.13.9)(axios@1.8.2)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
       vitest:
         specifier: ^3.0.3
         version: 3.0.8(@types/node@22.13.9)(less@4.2.2)(sass@1.85.1)(terser@5.39.0)
@@ -299,7 +299,7 @@ importers:
         version: 7.6.20(typescript@5.8.2)(vue@3.5.13)
       axios:
         specifier: ^1.4.0
-        version: 1.8.1
+        version: 1.8.2
       chromatic:
         specifier: ^10.0.0
         version: 10.9.6
@@ -329,7 +329,7 @@ importers:
         version: 66.0.0(postcss@8.5.3)(vue@3.5.13)
       vitepress:
         specifier: ^1.4.0
-        version: 1.6.3(@types/node@22.13.9)(axios@1.8.1)(less@4.2.2)(postcss@8.5.3)(react-dom@18.3.1)(react@18.3.1)(sass@1.85.0)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
+        version: 1.6.3(@types/node@22.13.9)(axios@1.8.2)(less@4.2.2)(postcss@8.5.3)(react-dom@18.3.1)(react@18.3.1)(sass@1.85.0)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
       vitepress-shopware-docs:
         specifier: link:../..
         version: link:../..
@@ -345,7 +345,7 @@ importers:
     dependencies:
       axios:
         specifier: ^1.7.7
-        version: 1.8.1
+        version: 1.8.2
       prettier:
         specifier: ^3.3.3
         version: 3.5.3
@@ -357,7 +357,7 @@ importers:
         version: 66.0.0(postcss@8.5.3)(vue@3.5.13)
       vitepress:
         specifier: ^1.4.0
-        version: 1.6.3(@types/node@22.13.9)(axios@1.8.1)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
+        version: 1.6.3(@types/node@22.13.9)(axios@1.8.2)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
       vitepress-shopware-docs:
         specifier: link:../..
         version: link:../..
@@ -385,7 +385,7 @@ importers:
         version: 0.33.0(vitest@2.1.9)
       axios:
         specifier: ^1.7.7
-        version: 1.8.1
+        version: 1.8.2
       get-port:
         specifier: ^7.1.0
         version: 7.1.0
@@ -403,7 +403,7 @@ importers:
         version: 0.8.9(rollup@4.34.9)
       vitepress:
         specifier: ^1.4.0
-        version: 1.6.3(@types/node@22.13.9)(axios@1.8.1)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
+        version: 1.6.3(@types/node@22.13.9)(axios@1.8.2)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2)
       vitepress-shopware-docs:
         specifier: link:../..
         version: link:../..
@@ -2018,6 +2018,7 @@ packages:
     cpu: [ppc64]
     os: [aix]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm64@0.18.20:
@@ -2051,6 +2052,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm@0.18.20:
@@ -2084,6 +2086,7 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-x64@0.18.20:
@@ -2117,6 +2120,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-arm64@0.18.20:
@@ -2150,6 +2154,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-x64@0.18.20:
@@ -2183,6 +2188,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64@0.18.20:
@@ -2216,6 +2222,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-x64@0.18.20:
@@ -2249,6 +2256,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm64@0.18.20:
@@ -2282,6 +2290,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm@0.18.20:
@@ -2315,6 +2324,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ia32@0.18.20:
@@ -2348,6 +2358,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.18.20:
@@ -2381,6 +2392,7 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-mips64el@0.18.20:
@@ -2414,6 +2426,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ppc64@0.18.20:
@@ -2447,6 +2460,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-riscv64@0.18.20:
@@ -2480,6 +2494,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-s390x@0.18.20:
@@ -2513,6 +2528,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-x64@0.18.20:
@@ -2546,6 +2562,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/netbsd-arm64@0.24.2:
@@ -2563,6 +2580,7 @@ packages:
     cpu: [arm64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/netbsd-x64@0.18.20:
@@ -2596,6 +2614,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openbsd-arm64@0.24.2:
@@ -2613,6 +2632,7 @@ packages:
     cpu: [arm64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openbsd-x64@0.18.20:
@@ -2646,6 +2666,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/sunos-x64@0.18.20:
@@ -2679,6 +2700,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-arm64@0.18.20:
@@ -2712,6 +2734,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-ia32@0.18.20:
@@ -2745,6 +2768,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-x64@0.18.20:
@@ -2778,6 +2802,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@faker-js/faker@5.5.3:
@@ -8687,7 +8712,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.4.14(@types/node@22.13.9)(less@4.2.2)(sass@1.85.1)(terser@5.39.0)
+      vite: 5.4.14(@types/node@22.13.9)(less@4.2.2)(sass@1.85.0)(terser@5.39.0)
       vue: 3.5.13(typescript@5.8.2)
 
   /@vitest/coverage-c8@0.33.0(vitest@2.1.9):
@@ -9004,7 +9029,7 @@ packages:
     transitivePeerDependencies:
       - typescript
 
-  /@vueuse/integrations@12.7.0(axios@1.8.1)(focus-trap@7.6.4)(typescript@5.8.2):
+  /@vueuse/integrations@12.7.0(axios@1.8.2)(focus-trap@7.6.4)(typescript@5.8.2):
     resolution: {integrity: sha512-IEq7K4bCl7mn3uKJaWtNXnd1CAPaHLUMuyj5K1/k/pVcItt0VONZW8xiGxdIovJcQjkzOHjImhX5t6gija+0/g==}
     peerDependencies:
       async-validator: ^4
@@ -9047,7 +9072,7 @@ packages:
     dependencies:
       '@vueuse/core': 12.7.0(typescript@5.8.2)
       '@vueuse/shared': 12.7.0(typescript@5.8.2)
-      axios: 1.8.1
+      axios: 1.8.2
       focus-trap: 7.6.4
       vue: 3.5.13(typescript@5.8.2)
     transitivePeerDependencies:
@@ -9580,8 +9605,8 @@ packages:
     dependencies:
       possible-typed-array-names: 1.1.0
 
-  /axios@1.8.1:
-    resolution: {integrity: sha512-NN+fvwH/kV01dYUQ3PTOZns4LWtWhOFCAhQ/pHb88WQ1hNe5V/dvFwc4VJcDL11LT9xSX0QtsR8sWUuyOuOq7g==}
+  /axios@1.8.2:
+    resolution: {integrity: sha512-ls4GYBm5aig9vWx8AWDSGLpnpDQRtWAfrjU+EuytuODrFBkqesN2RkOQCBzrA1RQNHw1SmRMSDDDSwzNAYQ6Rg==}
     dependencies:
       follow-redirects: 1.15.9
       form-data: 4.0.2
@@ -10569,7 +10594,7 @@ packages:
       postcss-modules-values: 4.0.0(postcss@8.5.3)
       postcss-value-parser: 4.2.0
       semver: 7.7.1
-      webpack: 5.98.0(esbuild@0.25.0)
+      webpack: 5.98.0(esbuild@0.18.20)
 
   /css-select@5.1.0:
     resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
@@ -11398,6 +11423,7 @@ packages:
       '@esbuild/win32-arm64': 0.25.0
       '@esbuild/win32-ia32': 0.25.0
       '@esbuild/win32-x64': 0.25.0
+    dev: true
 
   /escalade@3.2.0:
     resolution: {integrity: sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==}
@@ -13754,7 +13780,7 @@ packages:
       webpack: ^5.0.0
     dependencies:
       less: 4.2.2
-      webpack: 5.98.0(esbuild@0.25.0)
+      webpack: 5.98.0(esbuild@0.18.20)
 
   /less@4.2.2:
     resolution: {integrity: sha512-tkuLHQlvWUTeQ3doAqnHbNn8T6WX1KA8yvbKG9x4VtKtIjHsVKQZCH11zRgAfbDAXC2UNIg/K9BYAAcEzUIrNg==}
@@ -15010,7 +15036,7 @@ packages:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.8.1
+      axios: 1.8.2
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -15756,7 +15782,7 @@ packages:
       jiti: 1.21.7
       postcss: 8.5.3
       semver: 7.7.1
-      webpack: 5.98.0(esbuild@0.25.0)
+      webpack: 5.98.0(esbuild@0.18.20)
     transitivePeerDependencies:
       - typescript
 
@@ -17249,7 +17275,6 @@ packages:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
-    dev: false
 
   /sass@1.85.1:
     resolution: {integrity: sha512-Uk8WpxM5v+0cMR0XjX9KfRIacmSG86RH4DCCZjLU2rFh5tyutt9siAXJ7G+YfxQ99Q6wrRMbMlVl6KqUms71ag==}
@@ -17944,7 +17969,7 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      webpack: 5.98.0(esbuild@0.25.0)
+      webpack: 5.98.0(esbuild@0.18.20)
 
   /style-to-object@0.4.4:
     resolution: {integrity: sha512-HYNoHZa2GorYNyqiCaBgsxvcJIn7OHq6inEga+E6Ke3m5JkoqpQbnFssk4jwe+K7AhGa2fcha4wSOf1Kn01dMg==}
@@ -18105,7 +18130,6 @@ packages:
       serialize-javascript: 6.0.2
       terser: 5.39.0
       webpack: 5.98.0(esbuild@0.18.20)
-    dev: false
 
   /terser-webpack-plugin@5.3.14(esbuild@0.25.0)(webpack@5.98.0):
     resolution: {integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==}
@@ -18130,6 +18154,7 @@ packages:
       serialize-javascript: 6.0.2
       terser: 5.39.0
       webpack: 5.98.0(esbuild@0.25.0)
+    dev: true
 
   /terser@5.39.0:
     resolution: {integrity: sha512-LBAhFyLho16harJoWMg/nZsQYgTrg5jXOn2nCYjRUcZZEdE3qa2zb8QEDRUGVZBW4rlazf2fxkg8tztybTaqWw==}
@@ -19099,7 +19124,6 @@ packages:
       terser: 5.39.0
     optionalDependencies:
       fsevents: 2.3.3
-    dev: false
 
   /vite@5.4.14(@types/node@22.13.9)(less@4.2.2)(sass@1.85.1)(terser@5.39.0):
     resolution: {integrity: sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA==}
@@ -19193,7 +19217,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.6.3(@types/node@22.13.9)(axios@1.8.1)(less@4.2.2)(postcss@8.5.3)(react-dom@18.3.1)(react@18.3.1)(sass@1.85.0)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2):
+  /vitepress@1.6.3(@types/node@22.13.9)(axios@1.8.2)(less@4.2.2)(postcss@8.5.3)(react-dom@18.3.1)(react@18.3.1)(sass@1.85.0)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2):
     resolution: {integrity: sha512-fCkfdOk8yRZT8GD9BFqusW3+GggWYZ/rYncOfmgcDtP3ualNHCAg+Robxp2/6xfH1WwPHtGpPwv7mbA3qomtBw==}
     hasBin: true
     peerDependencies:
@@ -19216,7 +19240,7 @@ packages:
       '@vue/devtools-api': 7.7.2
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.8.2(typescript@5.8.2)
-      '@vueuse/integrations': 12.7.0(axios@1.8.1)(focus-trap@7.6.4)(typescript@5.8.2)
+      '@vueuse/integrations': 12.7.0(axios@1.8.2)(focus-trap@7.6.4)(typescript@5.8.2)
       focus-trap: 7.6.4
       mark.js: 8.11.1
       minisearch: 7.1.2
@@ -19252,7 +19276,7 @@ packages:
       - universal-cookie
     dev: false
 
-  /vitepress@1.6.3(@types/node@22.13.9)(axios@1.8.1)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2):
+  /vitepress@1.6.3(@types/node@22.13.9)(axios@1.8.2)(less@4.2.2)(postcss@8.5.3)(react-dom@19.0.0)(react@19.0.0)(sass@1.85.1)(search-insights@2.17.3)(terser@5.39.0)(typescript@5.8.2):
     resolution: {integrity: sha512-fCkfdOk8yRZT8GD9BFqusW3+GggWYZ/rYncOfmgcDtP3ualNHCAg+Robxp2/6xfH1WwPHtGpPwv7mbA3qomtBw==}
     hasBin: true
     peerDependencies:
@@ -19275,7 +19299,7 @@ packages:
       '@vue/devtools-api': 7.7.2
       '@vue/shared': 3.5.13
       '@vueuse/core': 12.8.2(typescript@5.8.2)
-      '@vueuse/integrations': 12.7.0(axios@1.8.1)(focus-trap@7.6.4)(typescript@5.8.2)
+      '@vueuse/integrations': 12.7.0(axios@1.8.2)(focus-trap@7.6.4)(typescript@5.8.2)
       focus-trap: 7.6.4
       mark.js: 8.11.1
       minisearch: 7.1.2
@@ -19608,7 +19632,6 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
-    dev: false
 
   /webpack@5.98.0(esbuild@0.25.0):
     resolution: {integrity: sha512-UFynvx+gM44Gv9qFgj0acCQK2VE1CtdfwFdimkapco3hlPCJ/zeq73n2yVKimVbtm+TnApIugGhLJnkU6gjYXA==}
@@ -19647,6 +19670,7 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
+    dev: true
 
   /whatwg-fetch@3.6.20:
     resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
