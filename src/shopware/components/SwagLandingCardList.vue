@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import SwagLandingCard from "./SwagLandingCard.vue";
 
-const props = defineProps({
+defineProps({
   exposed: {
     type: Array,
     required: true,
@@ -25,30 +25,6 @@ const props = defineProps({
 
 <style lang="scss">
 .SwagLandingCardListWrapper {
-  isolation: isolate;
-
-  &::before {
-    @apply bg-#f5f7f9 dark:bg-#1e1e20;
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -1000%;
-    right: -1000%;
-    content: '';
-    display: block;
-    background-color: var(--sw-c-gray-50);
-    .dark & {
-      background-color: var(--sw-c-gray-dark-800);
-    }
-  }
-
-  &.--alternative {
-    &::before {
-      display: none;
-    }
-  }
-
   &_title {
     font-size: 1.5rem;
   }
