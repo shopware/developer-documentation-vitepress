@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.4...v1.3.5) (2025-04-16)
+
+### Bug Fixes
+
+- meteor component library domain ([1d3e6d0](https://github.com/shopware/developer-documentation-vitepress/commit/1d3e6d0402ec13171dec7d55ec3cc41e3483a989))
+- remove before effect (overflow) ([87e7ce1](https://github.com/shopware/developer-documentation-vitepress/commit/87e7ce1bb580c477e27074e6d311c026da92c33b))
+
+## [1.3.5](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.4...v1.3.5) (2025-04-16)
+
+### Bug Fixes
+
+- meteor component library domain ([1d3e6d0](https://github.com/shopware/developer-documentation-vitepress/commit/1d3e6d0402ec13171dec7d55ec3cc41e3483a989))
+- remove before effect (overflow) ([87e7ce1](https://github.com/shopware/developer-documentation-vitepress/commit/87e7ce1bb580c477e27074e6d311c026da92c33b))
+
 ## [1.3.4](https://github.com/shopware/developer-documentation-vitepress/compare/v1.3.3...v1.3.4) (2025-02-21)
 
 ### Bug Fixes
