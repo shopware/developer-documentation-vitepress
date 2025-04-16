@@ -30,7 +30,7 @@ export const resourcesMenu = ({ design, developer } = { design: 'https://shopwar
                 {
                     text: "Meteor Component Library",
                     // link: "/resources/meteor-component-library/",
-                    link: 'https://shopware.github.io/meteor-component-library/',
+                    link: 'https://meteor.shopware.com/',
                     repo: 'shopware/meteor',
                 },
                 {
