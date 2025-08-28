@@ -53,14 +53,12 @@ function initialize(userOptions: DefaultTheme.AlgoliaSearchOptions) {
 
         navigator: {
             navigate({ itemUrl }) {
-                const { pathname: hitPathname } = new URL(
-                    window.location.origin + itemUrl
-                )
+                const { pathname: hitPathname, origin: hitOrigin } = new URL(itemUrl, window.location.origin)
 
                 // router doesn't handle same-page navigation so we use the native
                 // browser location API for anchor navigation
-                if (route.path === hitPathname) {
-                    window.location.assign(window.location.origin + itemUrl)
+                if (route.path === hitPathname || hitOrigin !== window.location.origin) {
+                    window.location.assign(itemUrl)
                 } else {
                     router.go(itemUrl)
                 }
