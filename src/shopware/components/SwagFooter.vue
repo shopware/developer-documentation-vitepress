@@ -290,10 +290,6 @@ const footers = [
         url: "https://www.shopware.com/en/news/developer-insights/"
       },
       {
-        title: 'Shopware TV',
-        url: "https://tv.shopware.com/en/?_gl=1%2a1gq0fmi%2a_ga%2aMTYwMjc5NTkyNC4xNjY1NzI1MjEw%2a_ga_9JLJ6GGB76%2aMTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAyMzI5LjAuMC4w"
-      },
-      {
         title: 'Announcements',
         url: "https://www.shopware.com/en/press/press-releases/"
       },
