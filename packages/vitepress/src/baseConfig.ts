@@ -153,7 +153,7 @@ export default async () => ({
     socialLinks: [
       {icon: "github", link: "https://github.com/shopware/"},
       {icon: "twitter", link: "https://twitter.com/ShopwareDevs"},
-      {icon: "slack", link: "https://slack.shopware.com"},
+      {icon: "discord", link: "https://discord.com/invite/shopware"},
       {icon: {svg: iconStackoverflow}, link: "https://stackoverflow.com/questions/tagged/shopware"}
     ],
     editLink: {
