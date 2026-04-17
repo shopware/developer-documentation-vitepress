@@ -22,7 +22,7 @@ importers:
         version: 5.6.0(typescript@6.0.2)
       '@stoplight/elements-dev-portal':
         specifier: ^3.0.0
-        version: 3.0.18(@babel/core@7.28.3)(react-dom@19.2.5)(react@19.2.5)
+        version: 3.0.19(@babel/core@7.28.3)(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/json-schema-generator':
         specifier: ^1.0.2
         version: 1.0.2
@@ -67,7 +67,7 @@ importers:
         version: 4.0.2
       unocss:
         specifier: ^66.0.0
-        version: 66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+        version: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       vue-instantsearch:
         specifier: ^4.19.5
         version: 4.21.2(algoliasearch@4.25.2)(vue@3.5.32)
@@ -326,7 +326,7 @@ importers:
         version: 2.2.1(@storybook/components@7.6.24)(@storybook/core-events@7.6.24)(@storybook/manager-api@7.6.24)(@storybook/preview-api@7.6.24)(@storybook/theming@7.6.24)(react-dom@18.3.1)(react@18.3.1)
       unocss:
         specifier: ^66.0.0
-        version: 66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+        version: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       vitepress:
         specifier: ^1.4.0
         version: 1.6.4(@types/node@25.6.0)(axios@1.15.0)(less@4.6.4)(postcss@8.5.10)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.1)(typescript@6.0.2)
@@ -354,7 +354,7 @@ importers:
         version: 9.0.1
       unocss:
         specifier: ^66.0.0
-        version: 66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+        version: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       vitepress:
         specifier: ^1.4.0
         version: 1.6.4(@types/node@25.6.0)(axios@1.15.0)(less@4.6.4)(postcss@8.5.8)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.1)(typescript@6.0.2)
@@ -397,7 +397,7 @@ importers:
         version: 1.6.6
       unocss:
         specifier: ^66.0.0
-        version: 66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+        version: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       vite-plugin-inspect:
         specifier: ^0.8.7
         version: 0.8.9(rollup@4.60.1)
@@ -423,6 +423,63 @@ packages:
   /@adobe/css-tools@4.4.4:
     resolution: {integrity: sha512-Elp+iwUx5rN5+Y8xLt5/GRoG20WGoDCQ/1Fb+1LiGtvwbDavuSk0jhD/eZdckHAuzcDzccnkv+rEjyWfRx18gg==}
     dev: true
+
+  /@adobe/react-spectrum-ui@1.2.1(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-wcrbEE2O/9WnEn6avBnaVRRx88S5PLFsPLr4wffzlbMfXeQsy+RMQwaJd3cbzrn18/j04Isit7f7Emfn0dhrJA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
+  /@adobe/react-spectrum-workflow@2.3.5(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-b53VIPwPWKb/T5gzE3qs+QlGP5gVrw/LnWV3xMksDU+CRl3rzOKUwxIGiZO8ICyYh1WiyqY4myGlPU/nAynBUg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
+  /@adobe/react-spectrum@3.47.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-EDQuMzz0kUeiMUUlxoeLFQyyxOXaAC7qlBw2PYOUfFLYd87xcV7VVV0JxiYx8zGk1IIY3UgQHgXrS1fv7CgezQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@internationalized/date': 3.12.1
+      '@react-types/shared': 3.34.0(react@19.2.5)
+      '@spectrum-icons/ui': 3.7.0(@adobe/react-spectrum@3.47.0)(react-dom@19.2.5)(react@19.2.5)
+      '@spectrum-icons/workflow': 4.3.0(@adobe/react-spectrum@3.47.0)(react-dom@19.2.5)(react@19.2.5)
+      '@swc/helpers': 0.5.21
+      client-only: 0.0.1
+      clsx: 2.1.1
+      react: 19.2.5
+      react-aria: 3.48.0(react-dom@19.2.5)(react@19.2.5)
+      react-aria-components: 1.17.0(react-dom@19.2.5)(react@19.2.5)
+      react-dom: 19.2.5(react@19.2.5)
+      react-stately: 3.46.0(react@19.2.5)
+      react-transition-group: 4.4.5(react-dom@19.2.5)(react@19.2.5)
+      use-sync-external-store: 1.6.0(react@19.2.5)
+    dev: false
 
   /@algolia/abtesting@1.2.0:
     resolution: {integrity: sha512-Z6Liq7US5CpdHExZLfPMBPxQHHUObV587kGvCLniLr1UTx0fGFIeGNWd005WIqQXqEda9GyAi7T2e7DUupVv0g==}
@@ -2036,6 +2093,14 @@ packages:
     transitivePeerDependencies:
       - '@algolia/client-search'
 
+  /@emnapi/core@1.10.0:
+    resolution: {integrity: sha512-yq6OkJ4p82CAfPl0u9mQebQHKPJkY7WrIuk205cTYnYe+k2Z8YBh11FrbRG/H6ihirqcacOgl2BIO8oyMQLeXw==}
+    dependencies:
+      '@emnapi/wasi-threads': 1.2.1
+      tslib: 2.8.1
+    dev: false
+    optional: true
+
   /@emnapi/core@1.9.1:
     resolution: {integrity: sha512-mukuNALVsoix/w1BJwFzwXBN/dHeejQtuVzcDsfOEsdpCumXb/E9j8w11h5S54tT1xhifGfbbSm/ICrObRb3KA==}
     dependencies:
@@ -2043,10 +2108,9 @@ packages:
       tslib: 2.8.1
     dev: true
 
-  /@emnapi/core@1.9.2:
-    resolution: {integrity: sha512-UC+ZhH3XtczQYfOlu3lNEkdW/p4dsJ1r/bP7H8+rhao3TTTMO1ATq/4DdIi23XuGoFY+Cz0JmCbdVl0hz9jZcA==}
+  /@emnapi/runtime@1.10.0:
+    resolution: {integrity: sha512-ewvYlk86xUoGI0zQRNq/mC+16R1QeDlKQy21Ki3oSYXNgLb45GV1P6A0M+/s6nyCuNDqe5VpaY84BzXGwVbwFA==}
     dependencies:
-      '@emnapi/wasi-threads': 1.2.1
       tslib: 2.8.1
     dev: false
     optional: true
@@ -2056,13 +2120,6 @@ packages:
     dependencies:
       tslib: 2.8.1
     dev: true
-
-  /@emnapi/runtime@1.9.2:
-    resolution: {integrity: sha512-3U4+MIWHImeyu1wnmVygh5WlgfYDtyf0k8AbLhMFxOipihf6nrWC4syIm/SwEeec0mNSafiiNnMJwbza/Is6Lw==}
-    dependencies:
-      tslib: 2.8.1
-    dev: false
-    optional: true
 
   /@emnapi/wasi-threads@1.2.0:
     resolution: {integrity: sha512-N10dEJNSsUx41Z6pZsXU8FjPjpBEplgH24sfkmITrBED1/U2Esum9F3lfLrMjKHHjmi557zQn7kR9R+XWXu5Rg==}
@@ -3732,6 +3789,24 @@ packages:
       '@types/node': 25.6.0
     dev: true
 
+  /@internationalized/date@3.12.1:
+    resolution: {integrity: sha512-6IedsVWXyq4P9Tj+TxuU8WGWM70hYLl12nbYU8jkikVpa6WXapFazPUcHUMDMoWftIDE2ILDkFFte6W2nFCkRQ==}
+    dependencies:
+      '@swc/helpers': 0.5.21
+    dev: false
+
+  /@internationalized/number@3.6.6:
+    resolution: {integrity: sha512-iFgmQaXHE0vytNfpLZWOC2mEJCBRzcUxt53Xf/yCXG93lRvqas237i3r7X4RKMwO3txiyZD4mQjKAByFv6UGSQ==}
+    dependencies:
+      '@swc/helpers': 0.5.21
+    dev: false
+
+  /@internationalized/string@3.2.8:
+    resolution: {integrity: sha512-NdbMQUSfXLYIQol5VyMtinm9pZDciiMfN7RtmSuSB78io1hqwJ0naYfxyW6vgxWBkzWymQa/3uLDlbfmshtCaA==}
+    dependencies:
+      '@swc/helpers': 0.5.21
+    dev: false
+
   /@isaacs/cliui@8.0.2:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
@@ -3919,15 +3994,15 @@ packages:
       '@tybys/wasm-util': 0.9.0
     dev: true
 
-  /@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
+  /@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
     resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
     requiresBuild: true
     peerDependencies:
       '@emnapi/core': ^1.7.1
       '@emnapi/runtime': ^1.7.1
     dependencies:
-      '@emnapi/core': 1.9.2
-      '@emnapi/runtime': 1.9.2
+      '@emnapi/core': 1.10.0
+      '@emnapi/runtime': 1.10.0
       '@tybys/wasm-util': 0.10.1
     dev: false
     optional: true
@@ -4520,13 +4595,13 @@ packages:
     dev: false
     optional: true
 
-  /@oxc-parser/binding-wasm32-wasi@0.124.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
+  /@oxc-parser/binding-wasm32-wasi@0.124.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
     resolution: {integrity: sha512-LWuq4Dl9tff7n+HjJcqoBjDlVCtruc0shgtdtGM+rTUIE9aFxHA/P+wCYR+aWMjN8m9vNaRME/sKXErmhmeKrA==}
     engines: {node: '>=14.0.0'}
     cpu: [wasm32]
     requiresBuild: true
     dependencies:
-      '@napi-rs/wasm-runtime': 1.1.4(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      '@napi-rs/wasm-runtime': 1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
     transitivePeerDependencies:
       - '@emnapi/core'
       - '@emnapi/runtime'
@@ -6255,6 +6330,40 @@ packages:
     dependencies:
       '@babel/runtime': 7.29.2
 
+  /@react-aria/checkbox@3.17.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-UqB5CnYkwWhNIVSPwQngMyr7LT5ftSfkdYfDzhMAzzG3jpOwVk4yieKOsAIYP7pab7FqOObhJ/p+hHeU4/0Hlg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-aria: 3.48.0(react-dom@19.2.5)(react@19.2.5)
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
+  /@react-aria/toggle@3.13.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-fU3r8XGUBjD1yNfxeLkI3I29Z/hR9QqoApA1ctOmcPYXJ2mnO0lf5jKyNSKeImCxVpHS0eMfaoo68a9PsYKb5A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-aria: 3.48.0(react-dom@19.2.5)(react@19.2.5)
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
   /@react-hook/debounce@3.0.0(react@19.2.5):
     resolution: {integrity: sha512-ir/kPrSfAzY12Gre0sOHkZ2rkEmM4fS5M5zFxCi4BnCeXh2nvx9Ujd+U4IGpKCuPA+EQD0pg1eK2NGLvfWejag==}
     peerDependencies:
@@ -6353,6 +6462,74 @@ packages:
       react: 19.2.5
     dev: false
 
+  /@react-spectrum/checkbox@3.11.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-76jDNkUcMUJO8ukXnn2fsNwLT7z0x/T++UwFH4dNymInKCLxSve2uJrgIDvWBQBwYUwLbPZ3tS5lJEIkpCGRSg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@adobe/react-spectrum': 3.47.0(react-dom@19.2.5)(react@19.2.5)
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
+  /@react-spectrum/provider@3.11.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-W2Gxbj8AcG5OR2K5Ua3K8qQqxdsiytEiz+2rhr6oQyBM8VafEgDcNPYSOTtfjrQM3snl2Uhp8LzwN0jwQe/6nQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@adobe/react-spectrum': 3.47.0(react-dom@19.2.5)(react@19.2.5)
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
+  /@react-stately/checkbox@3.8.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-cH5Pod6lky2TToMwiwDoHAUXkUMMe9wzfoDJpWDW1+fcAnFgSEm2ztavVTDBCuaURv2m3b4UK9cNYiY9pq4img==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+      react-stately: 3.46.0(react@19.2.5)
+    dev: false
+
+  /@react-stately/toggle@3.10.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-gb50aVW9y+8gW82KyDJNSCnGtTftUDMuoz0YYlaiUJktQQkZ4eNg+ANKqZiZiKj0dwr9NalLCR/3EuNnO6qYWA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+      react-stately: 3.46.0(react@19.2.5)
+    dev: false
+
   /@react-types/button@3.4.1(react@19.2.5):
     resolution: {integrity: sha512-B54M84LxdEppwjXNlkBEJyMfe9fd+bvFV7R6+NJvupGrZm/LuFNYjFcHk7yjMKWTdWm6DbpIuQz54n5qTW7Vlg==}
     peerDependencies:
@@ -6361,20 +6538,30 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.33.1(react@19.2.5)
+      '@react-types/shared': 3.34.0(react@19.2.5)
       react: 19.2.5
     dev: false
 
-  /@react-types/checkbox@3.10.4(react@19.2.5):
-    resolution: {integrity: sha512-tYCG0Pd1usEz5hjvBEYcqcA0youx930Rss1QBIse9TgMekA1c2WmPDNupYV8phpO8Zuej3DL1WfBeXcgavK8aw==}
+  /@react-types/checkbox@3.11.0(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-VXacLw/pKBcxgwejr2p4uPZtG/XXBnTb6pJCdFtUL6OuFIIOFt/9eTHD+8x2HRPLxWkmo1DD3bFBOinQ7vfu2g==}
     peerDependencies:
+      '@react-spectrum/provider': ^3.0.0
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
     peerDependenciesMeta:
       react:
         optional: true
+      react-dom:
+        optional: true
     dependencies:
-      '@react-types/shared': 3.33.1(react@19.2.5)
+      '@react-aria/checkbox': 3.17.0(react-dom@19.2.5)(react@19.2.5)
+      '@react-aria/toggle': 3.13.0(react-dom@19.2.5)(react@19.2.5)
+      '@react-spectrum/checkbox': 3.11.0(react-dom@19.2.5)(react@19.2.5)
+      '@react-spectrum/provider': 3.11.0(react-dom@19.2.5)(react@19.2.5)
+      '@react-stately/checkbox': 3.8.0(react-dom@19.2.5)(react@19.2.5)
+      '@react-stately/toggle': 3.10.0(react-dom@19.2.5)(react@19.2.5)
       react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
     dev: false
 
   /@react-types/radio@3.1.2(react@19.2.5):
@@ -6385,12 +6572,12 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.33.1(react@19.2.5)
+      '@react-types/shared': 3.34.0(react@19.2.5)
       react: 19.2.5
     dev: false
 
-  /@react-types/shared@3.33.1(react@19.2.5):
-    resolution: {integrity: sha512-oJHtjvLG43VjwemQDadlR5g/8VepK56B/xKO2XORPHt9zlW6IZs3tZrYlvH29BMvoqC7RtE7E5UjgbnbFtDGag==}
+  /@react-types/shared@3.34.0(react@19.2.5):
+    resolution: {integrity: sha512-gp6xo/s2lX54AlTjOiqwDnxA7UW79BNvI9dB9pr3LZTzRKCd1ZA+ZbgKw/ReIiWuvvVw/8QFJpnqeeFyLocMcQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
     peerDependenciesMeta:
@@ -6411,7 +6598,7 @@ packages:
       react: 19.2.5
     dev: false
 
-  /@react-types/switch@3.1.2(react@19.2.5):
+  /@react-types/switch@3.1.2(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5):
     resolution: {integrity: sha512-EaYWoLvUCpOnt//Ov8VBxOjbs4hBpYE/rBAzzIknXaFvKOu867iZBFL7FJbcemOgC8/dwyaj6GUZ1Gw3Z1g59w==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0-rc.1
@@ -6419,9 +6606,12 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/checkbox': 3.10.4(react@19.2.5)
-      '@react-types/shared': 3.33.1(react@19.2.5)
+      '@react-types/checkbox': 3.11.0(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@react-types/shared': 3.34.0(react@19.2.5)
       react: 19.2.5
+    transitivePeerDependencies:
+      - '@react-spectrum/provider'
+      - react-dom
     dev: false
 
   /@react-types/textfield@3.3.0(react@19.2.5):
@@ -6432,7 +6622,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@react-types/shared': 3.33.1(react@19.2.5)
+      '@react-types/shared': 3.34.0(react@19.2.5)
       react: 19.2.5
     dev: false
 
@@ -7046,8 +7236,47 @@ packages:
     engines: {node: '>=18'}
     dev: true
 
-  /@stoplight/elements-core@9.0.18(@babel/core@7.28.3)(react-dom@19.2.5)(react@19.2.5):
-    resolution: {integrity: sha512-jS37GyLjfQlBC5/YeeulGGnGNxxPEc8KWi2Bw+ZxadyV3G+7NEX8L9qsQQBf79QQ6Urd+c6o+s/NdT6jc0a6dA==}
+  /@spectrum-icons/ui@3.7.0(@adobe/react-spectrum@3.47.0)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-86iQSDfJb3Ama1WSJ/mEiFy4DJT7e/v4pSmEuX4aKKMzbNYft+O40N18S2POUnmblrb7MQneLC/pgIp1SDBwEQ==}
+    peerDependencies:
+      '@adobe/react-spectrum': ^3.47.0
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@adobe/react-spectrum': 3.47.0(react-dom@19.2.5)(react@19.2.5)
+      '@adobe/react-spectrum-ui': 1.2.1(react-dom@19.2.5)(react@19.2.5)
+      '@babel/runtime': 7.29.2
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
+  /@spectrum-icons/workflow@4.3.0(@adobe/react-spectrum@3.47.0)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-ILuhgWh9jMXaEVMRuOYgTAjMc22cKyvCtUDyZmc8OEMfOYuejj+Gcp5t6DhaCfE0M9rORtVxCrRgsO2WyEgfUw==}
+    peerDependencies:
+      '@adobe/react-spectrum': ^3.47.0
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@adobe/react-spectrum': 3.47.0(react-dom@19.2.5)(react@19.2.5)
+      '@adobe/react-spectrum-workflow': 2.3.5(react-dom@19.2.5)(react@19.2.5)
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
+
+  /@stoplight/elements-core@9.0.19(@babel/core@7.28.3)(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-wg5J/XZEwIC1vUrCUnuFsk1Tns3i9RL2t7Xe68PB8I/xzSffWu9VTiNcNdYWP7mEZ1cUvB4+NdrMofKefMYXIw==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>=16.8'
@@ -7065,9 +7294,9 @@ packages:
       '@stoplight/json-schema-tree': 4.0.0
       '@stoplight/json-schema-viewer': 4.16.3(@babel/core@7.28.3)(@stoplight/markdown-viewer@5.7.1)(@stoplight/mosaic-code-viewer@1.53.5)(@stoplight/mosaic@1.53.5)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/markdown-viewer': 5.7.1(@stoplight/mosaic-code-viewer@1.53.5)(@stoplight/mosaic@1.53.5)(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic': 1.53.5(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic-code-editor': 1.53.5(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic-code-viewer': 1.53.5(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic-code-editor': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic-code-viewer': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/path': 1.3.2
       '@stoplight/react-error-boundary': 3.0.0(react@19.2.5)
       '@stoplight/types': 14.1.1
@@ -7090,6 +7319,7 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
+      - '@react-spectrum/provider'
       - '@urql/core'
       - encoding
       - immer
@@ -7110,8 +7340,8 @@ packages:
       - xstate
     dev: false
 
-  /@stoplight/elements-dev-portal@3.0.18(@babel/core@7.28.3)(react-dom@19.2.5)(react@19.2.5):
-    resolution: {integrity: sha512-rJ6leT09i8vOCK2vhadcRLDGzy+LbTk1YS/jGhlPr2tPxlM3jTSoAVnGijgKUKLtvoNz+CcSigJK6QgauY5FQg==}
+  /@stoplight/elements-dev-portal@3.0.19(@babel/core@7.28.3)(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-0rVg8a6EvZiZmH0WCCmwcktNrAmky72nGMCatM4ZnSf2dhZMGRQgz/VLzZLQspRyBSY/SNnDoaV3Kkw36yqXEw==}
     engines: {node: '>=16'}
     peerDependencies:
       react: '>=16.8'
@@ -7122,9 +7352,9 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@stoplight/elements-core': 9.0.18(@babel/core@7.28.3)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/elements-core': 9.0.19(@babel/core@7.28.3)(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/markdown-viewer': 5.7.1(@stoplight/mosaic-code-viewer@1.53.5)(@stoplight/mosaic@1.53.5)(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic': 1.53.5(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/path': 1.3.2
       '@stoplight/types': 14.1.1
       classnames: 2.5.1
@@ -7137,6 +7367,7 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - '@babel/template'
+      - '@react-spectrum/provider'
       - '@stoplight/mosaic-code-viewer'
       - '@urql/core'
       - encoding
@@ -7251,8 +7482,8 @@ packages:
       '@stoplight/json': 3.21.7
       '@stoplight/json-schema-tree': 4.0.0
       '@stoplight/markdown-viewer': 5.7.1(@stoplight/mosaic-code-viewer@1.53.5)(@stoplight/mosaic@1.53.5)(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic': 1.53.5(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic-code-viewer': 1.53.5(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic-code-viewer': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/react-error-boundary': 2.0.0(react-dom@19.2.5)(react@19.2.5)
       '@types/json-schema': 7.0.15
       classnames: 2.5.1
@@ -7313,8 +7544,8 @@ packages:
     dependencies:
       '@rehooks/component-size': 1.0.3(react@19.2.5)
       '@stoplight/markdown': 3.2.0
-      '@stoplight/mosaic': 1.53.5(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic-code-viewer': 1.53.5(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic-code-viewer': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/react-error-boundary': 2.0.0(react-dom@19.2.5)(react@19.2.5)
       deepmerge: 4.3.1
       hast-to-hyperscript: 10.0.3
@@ -7355,7 +7586,7 @@ packages:
       - supports-color
     dev: false
 
-  /@stoplight/mosaic-code-editor@1.53.5(react-dom@19.2.5)(react@19.2.5):
+  /@stoplight/mosaic-code-editor@1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5):
     resolution: {integrity: sha512-vButrfGwA9EV4mM87hrgZrR17yLFptPoa8tmM19vnM4iEj/QXq5RGnRQzg5FOn6YA+1SBui+K/WtxVsg/2bmag==}
     peerDependencies:
       react: '>= 16.14'
@@ -7369,9 +7600,9 @@ packages:
       '@react-hook/window-size': 3.1.1(react@19.2.5)
       '@react-types/radio': 3.1.2(react@19.2.5)
       '@react-types/shared': 3.9.0(react@19.2.5)
-      '@react-types/switch': 3.1.2(react@19.2.5)
-      '@stoplight/mosaic': 1.53.5(react-dom@19.2.5)(react@19.2.5)
-      '@stoplight/mosaic-code-viewer': 1.53.5(react-dom@19.2.5)(react@19.2.5)
+      '@react-types/switch': 3.1.2(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic-code-viewer': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/types': 13.20.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
@@ -7389,10 +7620,11 @@ packages:
       use-resize-observer: 9.1.0(react-dom@19.2.5)(react@19.2.5)
       zustand: 3.7.2(react@19.2.5)
     transitivePeerDependencies:
+      - '@react-spectrum/provider'
       - react-dom
     dev: false
 
-  /@stoplight/mosaic-code-viewer@1.53.5(react-dom@19.2.5)(react@19.2.5):
+  /@stoplight/mosaic-code-viewer@1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5):
     resolution: {integrity: sha512-UrYyzagh1XgjjjjyifctyT6u8Urrqtp/rPVVE9IL/YA0xkVqMAMlyT13AuvTxohdV6SdgHt4h/oDsgRptuscnw==}
     peerDependencies:
       react: '>= 16.14'
@@ -7406,8 +7638,8 @@ packages:
       '@react-hook/window-size': 3.1.1(react@19.2.5)
       '@react-types/radio': 3.1.2(react@19.2.5)
       '@react-types/shared': 3.9.0(react@19.2.5)
-      '@react-types/switch': 3.1.2(react@19.2.5)
-      '@stoplight/mosaic': 1.53.5(react-dom@19.2.5)(react@19.2.5)
+      '@react-types/switch': 3.1.2(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
+      '@stoplight/mosaic': 1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@stoplight/types': 13.20.0
       clsx: 1.2.1
       copy-to-clipboard: 3.3.3
@@ -7425,10 +7657,11 @@ packages:
       use-resize-observer: 9.1.0(react-dom@19.2.5)(react@19.2.5)
       zustand: 3.7.2(react@19.2.5)
     transitivePeerDependencies:
+      - '@react-spectrum/provider'
       - react-dom
     dev: false
 
-  /@stoplight/mosaic@1.53.5(react-dom@19.2.5)(react@19.2.5):
+  /@stoplight/mosaic@1.53.5(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5):
     resolution: {integrity: sha512-2wyzp69mVKbwxxJ9XmOh2gmt8GPmJnYt223YUihKJSUTV2Ark9sfAwaDhg6myha4cGwjHGT0u9+KD7pC9oroAg==}
     peerDependencies:
       react: '>= 16.14'
@@ -7443,7 +7676,7 @@ packages:
       '@react-types/button': 3.4.1(react@19.2.5)
       '@react-types/radio': 3.1.2(react@19.2.5)
       '@react-types/shared': 3.9.0(react@19.2.5)
-      '@react-types/switch': 3.1.2(react@19.2.5)
+      '@react-types/switch': 3.1.2(@react-spectrum/provider@3.11.0)(react-dom@19.2.5)(react@19.2.5)
       '@react-types/textfield': 3.3.0(react@19.2.5)
       '@stoplight/types': 13.20.0
       '@types/react': 17.0.91
@@ -7462,6 +7695,7 @@ packages:
       use-resize-observer: 9.1.0(react-dom@19.2.5)(react@19.2.5)
       zustand: 3.7.2(react@19.2.5)
     transitivePeerDependencies:
+      - '@react-spectrum/provider'
       - react-dom
     dev: false
 
@@ -9031,6 +9265,12 @@ packages:
       - supports-color
     dev: false
 
+  /@swc/helpers@0.5.21:
+    resolution: {integrity: sha512-jI/VAmtdjB/RnI8GTnokyX7Ug8c+g+ffD6QRLa6XQewtnGyukKkKSk3wLTM3b5cjt1jNh9x0jfVlagdN2gDKQg==}
+    dependencies:
+      tslib: 2.8.1
+    dev: false
+
   /@t3-oss/env-core@0.12.0(typescript@6.0.2)(zod@3.25.76):
     resolution: {integrity: sha512-lOPj8d9nJJTt81mMuN9GMk8x5veOt7q9m11OSnCBJhwp1QrL/qR+M8Y467ULBSm9SunosryWNbmQQbgoiMgcdw==}
     peerDependencies:
@@ -9522,7 +9762,7 @@ packages:
   /@types/sax@1.2.7:
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
     dependencies:
-      '@types/node': 25.6.0
+      '@types/node': 24.12.2
     dev: false
 
   /@types/scheduler@0.16.8:
@@ -9762,11 +10002,11 @@ packages:
       magic-string: 0.30.21
     dev: false
 
-  /@unocss/transformer-attributify-jsx@66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
+  /@unocss/transformer-attributify-jsx@66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
     resolution: {integrity: sha512-g+7lvm+8V1MnJ21ialTxFBonCTtenn/KcZQbm0JfvQjgG+KuuSnt3BGEcXAHQZu3eBDGuJuasTHiXWwzCYIRBQ==}
     dependencies:
       '@unocss/core': 66.6.8
-      oxc-parser: 0.124.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      oxc-parser: 0.124.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       oxc-walker: 0.7.0(oxc-parser@0.124.0)
     transitivePeerDependencies:
       - '@emnapi/core'
@@ -10997,7 +11237,7 @@ packages:
     dependencies:
       baseline-browser-mapping: 2.10.19
       caniuse-lite: 1.0.30001788
-      electron-to-chromium: 1.5.337
+      electron-to-chromium: 1.5.339
       node-releases: 2.0.37
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
@@ -11383,6 +11623,10 @@ packages:
     engines: {node: '>= 12'}
     dev: true
 
+  /client-only@0.0.1:
+    resolution: {integrity: sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==}
+    dev: false
+
   /cliui@7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
     dependencies:
@@ -11414,6 +11658,11 @@ packages:
 
   /clsx@1.2.1:
     resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+    engines: {node: '>=6'}
+    dev: false
+
+  /clsx@2.1.1:
+    resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
     dev: false
 
@@ -12234,6 +12483,13 @@ packages:
       '@babel/runtime': 7.29.2
     dev: false
 
+  /dom-helpers@5.2.1:
+    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
+    dependencies:
+      '@babel/runtime': 7.29.2
+      csstype: 3.2.3
+    dev: false
+
   /dom-serializer@2.0.0:
     resolution: {integrity: sha512-wIkAryiqt/nV5EQKqQpo3SToSOV9J0DnbJqwK7Wv/Trc92zIAYZ4FlMu+JPFW1DfGFt81ZTCGgDEabffXeLyJg==}
     dependencies:
@@ -12326,8 +12582,8 @@ packages:
   /electron-to-chromium@1.5.211:
     resolution: {integrity: sha512-IGBvimJkotaLzFnwIVgW9/UD/AOJ2tByUmeOrtqBfACSbAw5b1G0XpvdaieKyc7ULmbwXVx+4e4Be8pOPBrYkw==}
 
-  /electron-to-chromium@1.5.337:
-    resolution: {integrity: sha512-15gKW9mRUNP9RdzhedJNypFUxtYWSXohFz2nTLzM272xbRXHws68kNDzyATG3qej+vUj/7Sn9hf5XTDh0XK6/w==}
+  /electron-to-chromium@1.5.339:
+    resolution: {integrity: sha512-Is+0BBHJ4NrdpAYiperrmp53pLywG/yV/6lIMTAnhxvzj/Cmn5Q/ogSHC6AKe7X+8kPLxxFk0cs5oc/3j/fxIg==}
 
   /emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -16732,7 +16988,7 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /oxc-parser@0.124.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
+  /oxc-parser@0.124.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
     resolution: {integrity: sha512-h07SFj/tp2U3cf3+LFX6MmOguQiM9ahwpGs0ZK5CGhgL8p4kk24etrJKsEzhXAvo7mfvoKTZooZ5MLKAPRmJ1g==}
     engines: {node: ^20.19.0 || >=22.12.0}
     dependencies:
@@ -16754,7 +17010,7 @@ packages:
       '@oxc-parser/binding-linux-x64-gnu': 0.124.0
       '@oxc-parser/binding-linux-x64-musl': 0.124.0
       '@oxc-parser/binding-openharmony-arm64': 0.124.0
-      '@oxc-parser/binding-wasm32-wasi': 0.124.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      '@oxc-parser/binding-wasm32-wasi': 0.124.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       '@oxc-parser/binding-win32-arm64-msvc': 0.124.0
       '@oxc-parser/binding-win32-ia32-msvc': 0.124.0
       '@oxc-parser/binding-win32-x64-msvc': 0.124.0
@@ -16769,7 +17025,7 @@ packages:
       oxc-parser: '>=0.98.0'
     dependencies:
       magic-regexp: 0.10.0
-      oxc-parser: 0.124.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      oxc-parser: 0.124.0(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
     dev: false
 
   /p-finally@1.0.0:
@@ -18077,6 +18333,51 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
+  /react-aria-components@1.17.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-0EyisMgvsFJ2aML3crDYv2tW5vT2Ryf8PGzY/g63JjDdCbLshlwazhS8JNtPF1vkTkungJJ6sVJbKyX+YKSoFA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@internationalized/date': 3.12.1
+      '@react-types/shared': 3.34.0(react@19.2.5)
+      '@swc/helpers': 0.5.21
+      client-only: 0.0.1
+      react: 19.2.5
+      react-aria: 3.48.0(react-dom@19.2.5)(react@19.2.5)
+      react-dom: 19.2.5(react@19.2.5)
+      react-stately: 3.46.0(react@19.2.5)
+    dev: false
+
+  /react-aria@3.48.0(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-jQjd4rBEIMqecBaAKYJbVGK6EqIHLa5znVQ7jwFyK5vCyljoj6KhgtiahmcIPsG5vG5vEDLw+ba+bEWn6A2P4w==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+      react-dom: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@internationalized/date': 3.12.1
+      '@internationalized/number': 3.6.6
+      '@internationalized/string': 3.2.8
+      '@react-types/shared': 3.34.0(react@19.2.5)
+      '@swc/helpers': 0.5.21
+      aria-hidden: 1.2.6
+      clsx: 2.1.1
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+      react-stately: 3.46.0(react@19.2.5)
+      use-sync-external-store: 1.6.0(react@19.2.5)
+    dev: false
+
   /react-colorful@5.6.1(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==}
     peerDependencies:
@@ -18272,6 +18573,23 @@ packages:
       react: 19.2.5
     dev: false
 
+  /react-stately@3.46.0(react@19.2.5):
+    resolution: {integrity: sha512-OdxhWvHgs2L4OJGIs7hnuTr5WjjMM6enhNEAMRqiekhF8+ITvA2LRwNftOZwcogaoCslGYq5S2VQTQwnm0GbCA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      '@internationalized/date': 3.12.1
+      '@internationalized/number': 3.6.6
+      '@internationalized/string': 3.2.8
+      '@react-types/shared': 3.34.0(react@19.2.5)
+      '@swc/helpers': 0.5.21
+      react: 19.2.5
+      use-sync-external-store: 1.6.0(react@19.2.5)
+    dev: false
+
   /react-style-singleton@2.2.3(react@18.3.1):
     resolution: {integrity: sha512-b6jSvxvVnyptAiLjbkWLE/lOnR4lfTtDAl+eUC7RZy+QQWc6wRzIV2CE6xBuMmDxc2qIihtDCZD5NPOFl7fRBQ==}
     engines: {node: '>=10'}
@@ -18305,6 +18623,25 @@ packages:
       react: 19.2.5
       tslib: 2.8.1
     dev: true
+
+  /react-transition-group@4.4.5(react-dom@19.2.5)(react@19.2.5):
+    resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
+    peerDependencies:
+      react: '>=16.6.0'
+      react-dom: '>=16.6.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.29.2
+      dom-helpers: 5.2.1
+      loose-envify: 1.4.0
+      prop-types: 15.8.1
+      react: 19.2.5
+      react-dom: 19.2.5(react@19.2.5)
+    dev: false
 
   /react-universal-interface@0.6.2(react@19.2.5)(tslib@2.8.1):
     resolution: {integrity: sha512-dg8yXdcQmvgR13RIlZbTRQOoUrDciFVoSBZILwjE2LFISxZZ8loVJKAkuzswl5js8BHda79bIb2b84ehU8IjXw==}
@@ -20408,7 +20745,7 @@ packages:
       detect-node: 2.1.0
     dev: false
 
-  /unocss@66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2):
+  /unocss@66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0):
     resolution: {integrity: sha512-stq9FbxedTDkoWrxnNQNnPQXOaM6L2Lobq8HzjXdR2tMc55gtfqDArqL7TESfnN7qeZsIocNYCHLNA4DXq50YQ==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -20435,7 +20772,7 @@ packages:
       '@unocss/preset-wind': 66.6.8
       '@unocss/preset-wind3': 66.6.8
       '@unocss/preset-wind4': 66.6.8
-      '@unocss/transformer-attributify-jsx': 66.6.8(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)
+      '@unocss/transformer-attributify-jsx': 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       '@unocss/transformer-compile-class': 66.6.8
       '@unocss/transformer-directives': 66.6.8
       '@unocss/transformer-variant-group': 66.6.8
@@ -20638,7 +20975,6 @@ packages:
         optional: true
     dependencies:
       react: 19.2.5
-    dev: true
 
   /util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
