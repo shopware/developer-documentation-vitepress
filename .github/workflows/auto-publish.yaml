@@ -37,7 +37,6 @@ jobs:
           
           pnpm config set //registry.npmjs.org/:_authToken ${DOCS_NPM_TOKEN}
           pnpm publish packages/cli --access public --no-git-checks
-          pnpm publish packages/storybook --access public --no-git-checks
           pnpm publish packages/vitepress --access public --no-git-checks
           pnpm publish packages/vitest --access public --no-git-checks
         #npx lerna publish -y from-git
