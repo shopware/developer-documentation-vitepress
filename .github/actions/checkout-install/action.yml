@@ -27,6 +27,10 @@ runs:
 #    - shell: bash
 #      run: pnpm --version
 
+    - name: Install dependencies
+      shell: bash
+      run: pnpm i
+
     - name: Update apt
       shell: bash
       if: ${{ inputs.playwright == 'true' || inputs.apt == 'true' }}
