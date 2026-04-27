@@ -31,7 +31,7 @@ importers:
         version: 14.2.1(vue@3.5.33)
       algoliasearch:
         specifier: ^4.20.0
-        version: 5.36.0
+        version: 4.25.2
       axios:
         specifier: ^1.7.7
         version: 1.15.2
@@ -86,7 +86,7 @@ importers:
         version: 10.3.5(react@19.2.5)(storybook@10.3.5)
       '@storybook/addon-styling':
         specifier: ^1.3.7
-        version: 1.3.7(less@4.6.4)(postcss@8.5.10)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2)
+        version: 1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2)
       '@storybook/blocks':
         specifier: ^8.2.9
         version: 8.6.14(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.5)
@@ -182,7 +182,7 @@ importers:
         version: 3.6.1(sass@1.99.0)(typescript@6.0.3)(vue@3.5.33)
       vitepress:
         specifier: 1.6.4
-        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.10)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
+        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
       vitest:
         specifier: ^3.0.3
         version: 3.2.4(@types/node@25.6.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.2)
@@ -284,7 +284,7 @@ importers:
         version: 7.6.20(react@18.3.1)
       '@storybook/addon-styling':
         specifier: ^1.3.7
-        version: 1.3.7(less@4.6.4)(postcss@8.5.10)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2)
+        version: 1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2)
       '@storybook/blocks':
         specifier: ^7.6.3
         version: 7.6.20(react-dom@18.3.1)(react@18.3.1)
@@ -329,7 +329,7 @@ importers:
         version: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       vitepress:
         specifier: ^1.4.0
-        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.10)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
+        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
       vitepress-shopware-docs:
         specifier: link:../..
         version: link:../..
@@ -403,7 +403,7 @@ importers:
         version: 0.8.9(rollup@4.60.2)
       vitepress:
         specifier: ^1.4.0
-        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.10)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
+        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
       vitepress-shopware-docs:
         specifier: link:../..
         version: link:../..
@@ -2189,6 +2189,7 @@ packages:
     cpu: [ppc64]
     os: [aix]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm64@0.18.20:
@@ -2231,6 +2232,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-arm@0.18.20:
@@ -2273,6 +2275,7 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/android-x64@0.18.20:
@@ -2315,6 +2318,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-arm64@0.18.20:
@@ -2357,6 +2361,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/darwin-x64@0.18.20:
@@ -2399,6 +2404,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-arm64@0.18.20:
@@ -2441,6 +2447,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/freebsd-x64@0.18.20:
@@ -2483,6 +2490,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm64@0.18.20:
@@ -2525,6 +2533,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-arm@0.18.20:
@@ -2567,6 +2576,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ia32@0.18.20:
@@ -2609,6 +2619,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.18.20:
@@ -2651,6 +2662,7 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-mips64el@0.18.20:
@@ -2693,6 +2705,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-ppc64@0.18.20:
@@ -2735,6 +2748,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-riscv64@0.18.20:
@@ -2777,6 +2791,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-s390x@0.18.20:
@@ -2819,6 +2834,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/linux-x64@0.18.20:
@@ -2861,6 +2877,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/netbsd-arm64@0.25.12:
@@ -2887,6 +2904,7 @@ packages:
     cpu: [arm64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/netbsd-x64@0.18.20:
@@ -2929,6 +2947,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openbsd-arm64@0.25.12:
@@ -2955,6 +2974,7 @@ packages:
     cpu: [arm64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openbsd-x64@0.18.20:
@@ -2997,6 +3017,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/openharmony-arm64@0.25.12:
@@ -3023,6 +3044,7 @@ packages:
     cpu: [arm64]
     os: [openharmony]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/sunos-x64@0.18.20:
@@ -3065,6 +3087,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-arm64@0.18.20:
@@ -3107,6 +3130,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-ia32@0.18.20:
@@ -3149,6 +3173,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@esbuild/win32-x64@0.18.20:
@@ -3191,6 +3216,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
+    dev: true
     optional: true
 
   /@faker-js/faker@5.5.3:
@@ -8037,7 +8063,7 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.10)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2):
+  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2):
     resolution: {integrity: sha512-JSBZMOrSw/3rlq5YoEI7Qyq703KSNP0Jd+gxTWu3/tP6245mpjn2dXnR8FvqVxCi+FG4lt2kQyPzgsuwEw1SSA==}
     deprecated: 'This package has been split into @storybook/addon-styling-webpack and @storybook/addon-themes. More info: https://github.com/storybookjs/addon-styling'
     hasBin: true
@@ -8073,8 +8099,8 @@ packages:
       css-loader: 6.11.0(webpack@5.106.2)
       less: 4.6.4
       less-loader: 11.1.4(less@4.6.4)(webpack@5.106.2)
-      postcss: 8.5.10
-      postcss-loader: 7.3.4(postcss@8.5.10)(typescript@6.0.3)(webpack@5.106.2)
+      postcss: 8.5.12
+      postcss-loader: 7.3.4(postcss@8.5.12)(typescript@6.0.3)(webpack@5.106.2)
       prettier: 2.8.8
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -8095,7 +8121,7 @@ packages:
       - typescript
     dev: false
 
-  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.10)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2):
+  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2):
     resolution: {integrity: sha512-JSBZMOrSw/3rlq5YoEI7Qyq703KSNP0Jd+gxTWu3/tP6245mpjn2dXnR8FvqVxCi+FG4lt2kQyPzgsuwEw1SSA==}
     deprecated: 'This package has been split into @storybook/addon-styling-webpack and @storybook/addon-themes. More info: https://github.com/storybookjs/addon-styling'
     hasBin: true
@@ -8131,8 +8157,8 @@ packages:
       css-loader: 6.11.0(webpack@5.106.2)
       less: 4.6.4
       less-loader: 11.1.4(less@4.6.4)(webpack@5.106.2)
-      postcss: 8.5.10
-      postcss-loader: 7.3.4(postcss@8.5.10)(typescript@6.0.3)(webpack@5.106.2)
+      postcss: 8.5.12
+      postcss-loader: 7.3.4(postcss@8.5.12)(typescript@6.0.3)(webpack@5.106.2)
       prettier: 2.8.8
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
@@ -10049,7 +10075,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.2)
+      vite: 5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.91.0)(terser@5.46.2)
       vue: 3.5.33(typescript@6.0.3)
 
   /@vitejs/plugin-vue@6.0.6(vue@3.5.33):
@@ -11063,8 +11089,8 @@ packages:
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  /baseline-browser-mapping@2.10.21:
-    resolution: {integrity: sha512-Q+rUQ7Uz8AHM7DEaNdwvfFCTq7a43lNTzuS94eiWqwyxfV/wJv+oUivef51T91mmRY4d4A1u9rcSvkeufCVXlA==}
+  /baseline-browser-mapping@2.10.23:
+    resolution: {integrity: sha512-xwVXGqevyKPsiuQdLj+dZMVjidjJV508TBqexND5HrF89cGdCYCJFB3qhcxRHSeMctdCfbR1jrxBajhDy7o29g==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -11209,8 +11235,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      baseline-browser-mapping: 2.10.21
-      caniuse-lite: 1.0.30001790
+      baseline-browser-mapping: 2.10.23
+      caniuse-lite: 1.0.30001791
       electron-to-chromium: 1.5.344
       node-releases: 2.0.38
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
@@ -11361,8 +11387,8 @@ packages:
   /caniuse-lite@1.0.30001737:
     resolution: {integrity: sha512-BiloLiXtQNrY5UyF0+1nSJLXUENuhka2pzy2Fx5pGxqavdrxSCW4U6Pn/PoG3Efspi2frRbHpBV2XsrPE6EDlw==}
 
-  /caniuse-lite@1.0.30001790:
-    resolution: {integrity: sha512-bOoxfJPyYo+ds6W0YfptaCWbFnJYjh2Y1Eow5lRv+vI2u8ganPZqNm1JwNh0t2ELQCqIWg4B3dWEusgAmsoyOw==}
+  /caniuse-lite@1.0.30001791:
+    resolution: {integrity: sha512-yk0l/YSrOnFZk3UROpDLQD9+kC1l4meK/wed583AXrzoarMGJcbRi2Q4RaUYbKxYAsZ8sWmaSa/DsLmdBeI1vQ==}
 
   /ccount@1.1.0:
     resolution: {integrity: sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==}
@@ -12055,7 +12081,7 @@ packages:
       postcss-modules-values: 4.0.0(postcss@8.5.6)
       postcss-value-parser: 4.2.0
       semver: 7.7.4
-      webpack: 5.106.2(esbuild@0.28.0)
+      webpack: 5.106.2(esbuild@0.18.20)
 
   /css-select@5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
@@ -12699,8 +12725,8 @@ packages:
   /es-module-lexer@1.7.0:
     resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
 
-  /es-module-lexer@2.0.0:
-    resolution: {integrity: sha512-5POEcUuZybH7IdmGsD8wlf0AI55wMecM9rVBTI/qEAy2c1kTOm3DjFYjrBdI2K3BaJjJYfYFeRtM0t9ssnRuxw==}
+  /es-module-lexer@2.1.0:
+    resolution: {integrity: sha512-n27zTYMjYu1aj4MjCWzSP7G9r75utsaoc8m61weK+W8JMBGGQybd43GstCXZ3WNmSFtGT9wi59qQTW6mhTR5LQ==}
 
   /es-object-atoms@1.1.1:
     resolution: {integrity: sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==}
@@ -12926,6 +12952,7 @@ packages:
       '@esbuild/win32-arm64': 0.28.0
       '@esbuild/win32-ia32': 0.28.0
       '@esbuild/win32-x64': 0.28.0
+    dev: true
 
   /escalade@3.2.0:
     resolution: {integrity: sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA==}
@@ -14226,7 +14253,6 @@ packages:
 
   /immutable@5.1.3:
     resolution: {integrity: sha512-+chQdDfvscSF1SJqv2gn4SRO2ZyS3xL3r7IW/wWEEzrzLisnOlKiQu5ytC/BVNcS15C39WT2Hg/bjKjDMcu+zg==}
-    dev: false
 
   /immutable@5.1.5:
     resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
@@ -15358,7 +15384,7 @@ packages:
       webpack: ^5.0.0
     dependencies:
       less: 4.6.4
-      webpack: 5.106.2(esbuild@0.28.0)
+      webpack: 5.106.2(esbuild@0.18.20)
 
   /less@4.6.4:
     resolution: {integrity: sha512-OJmO5+HxZLLw0RLzkqaNHzcgEAQG7C0y3aMbwtCzIUFZsLMNNq/1IdAdHEycQ58CwUO3jPTHmoN+tE5I7FQxNg==}
@@ -17595,7 +17621,7 @@ packages:
       postcss: 8.5.10
     dev: true
 
-  /postcss-loader@7.3.4(postcss@8.5.10)(typescript@6.0.3)(webpack@5.106.2):
+  /postcss-loader@7.3.4(postcss@8.5.12)(typescript@6.0.3)(webpack@5.106.2):
     resolution: {integrity: sha512-iW5WTTBSC5BfsBJ9daFMPVrLT36MrNiC6fqOZTTaHjBNX6Pfd5p+hSBqe/fEeNd7pc13QiAyGt7VdGMw4eRC4A==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -17604,9 +17630,9 @@ packages:
     dependencies:
       cosmiconfig: 8.3.6(typescript@6.0.3)
       jiti: 1.21.7
-      postcss: 8.5.10
+      postcss: 8.5.12
       semver: 7.7.4
-      webpack: 5.106.2(esbuild@0.28.0)
+      webpack: 5.106.2(esbuild@0.18.20)
     transitivePeerDependencies:
       - typescript
 
@@ -17881,6 +17907,14 @@ packages:
 
   /postcss@8.5.10:
     resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.11
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  /postcss@8.5.12:
+    resolution: {integrity: sha512-W62t/Se6rA0Az3DfCL0AqJwXuKwBeYg6nOaIgzP+xZ7N5BFCI7DYi1qs6ygUYT6rvfi6t9k65UMLJC+PHZpDAA==}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.11
@@ -19204,7 +19238,6 @@ packages:
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.6
-    dev: false
 
   /sass@1.99.0:
     resolution: {integrity: sha512-kgW13M54DUB7IsIRM5LvJkNlpH+WhMpooUcaWGFARkF1Tc82v9mIWkCbCYf+MBvpIUBSeSOTilpZjEPr2VYE6Q==}
@@ -19949,7 +19982,7 @@ packages:
     peerDependencies:
       webpack: ^5.0.0
     dependencies:
-      webpack: 5.106.2(esbuild@0.28.0)
+      webpack: 5.106.2(esbuild@0.18.20)
 
   /style-to-object@0.4.4:
     resolution: {integrity: sha512-HYNoHZa2GorYNyqiCaBgsxvcJIn7OHq6inEga+E6Ke3m5JkoqpQbnFssk4jwe+K7AhGa2fcha4wSOf1Kn01dMg==}
@@ -20117,7 +20150,6 @@ packages:
       schema-utils: 4.3.3
       terser: 5.46.2
       webpack: 5.106.2(esbuild@0.18.20)
-    dev: false
 
   /terser-webpack-plugin@5.5.0(esbuild@0.28.0)(webpack@5.106.2):
     resolution: {integrity: sha512-UYhptBwhWvfIjKd/UuFo6D8uq9xpGLDK+z8EDsj/zWhrTaH34cKEbrkMKfV5YWqGBvAYA3tlzZbs2R+qYrbQJA==}
@@ -20141,6 +20173,7 @@ packages:
       schema-utils: 4.3.3
       terser: 5.46.2
       webpack: 5.106.2(esbuild@0.28.0)
+    dev: true
 
   /terser@5.46.2:
     resolution: {integrity: sha512-uxfo9fPcSgLDYob/w1FuL0c99MWiJDnv+5qXSQc5+Ki5NjVNsYi66INnMFBjf6uFz6OnX12piJQPF4IpjJTNTw==}
@@ -21196,7 +21229,6 @@ packages:
       terser: 5.46.2
     optionalDependencies:
       fsevents: 2.3.3
-    dev: false
 
   /vite@5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.2):
     resolution: {integrity: sha512-qO3aKv3HoQC8QKiNSTuUM1l9o/XX3+c+VTgLHbJWHZGeTPVAg2XwazI9UWzoxjIJCGCV2zU60uqMzjeLZuULqA==}
@@ -21293,7 +21325,66 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.10)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
+  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.10)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
+    resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
+    hasBin: true
+    peerDependencies:
+      markdown-it-mathjax3: ^4
+      postcss: ^8
+    peerDependenciesMeta:
+      markdown-it-mathjax3:
+        optional: true
+      postcss:
+        optional: true
+    dependencies:
+      '@docsearch/css': 3.8.2
+      '@docsearch/js': 3.8.2(react-dom@19.2.5)(react@19.2.5)(search-insights@2.17.3)
+      '@iconify-json/simple-icons': 1.2.49
+      '@shikijs/core': 2.5.0
+      '@shikijs/transformers': 2.5.0
+      '@shikijs/types': 2.5.0
+      '@types/markdown-it': 14.1.2
+      '@vitejs/plugin-vue': 5.2.4(vite@5.4.19)(vue@3.5.33)
+      '@vue/devtools-api': 7.7.7
+      '@vue/shared': 3.5.20
+      '@vueuse/core': 12.8.2(typescript@6.0.3)
+      '@vueuse/integrations': 12.8.2(axios@1.15.2)(focus-trap@7.6.5)(typescript@6.0.3)
+      focus-trap: 7.6.5
+      mark.js: 8.11.1
+      minisearch: 7.1.2
+      postcss: 8.5.10
+      shiki: 2.5.0
+      vite: 5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.2)
+      vue: 3.5.33(typescript@6.0.3)
+    transitivePeerDependencies:
+      - '@algolia/client-search'
+      - '@types/node'
+      - '@types/react'
+      - async-validator
+      - axios
+      - change-case
+      - drauu
+      - fuse.js
+      - idb-keyval
+      - jwt-decode
+      - less
+      - lightningcss
+      - nprogress
+      - qrcode
+      - react
+      - react-dom
+      - sass
+      - sass-embedded
+      - search-insights
+      - sortablejs
+      - stylus
+      - sugarss
+      - terser
+      - typescript
+      - universal-cookie
+    dev: false
+
+  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
     resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
     hasBin: true
     peerDependencies:
@@ -21320,7 +21411,7 @@ packages:
       focus-trap: 7.6.5
       mark.js: 8.11.1
       minisearch: 7.1.2
-      postcss: 8.5.10
+      postcss: 8.5.12
       shiki: 2.5.0
       vite: 5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.91.0)(terser@5.46.2)
       vue: 3.5.33(typescript@6.0.3)
@@ -21352,7 +21443,7 @@ packages:
       - universal-cookie
     dev: false
 
-  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.10)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
+  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
     resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
     hasBin: true
     peerDependencies:
@@ -21379,7 +21470,7 @@ packages:
       focus-trap: 7.6.5
       mark.js: 8.11.1
       minisearch: 7.1.2
-      postcss: 8.5.10
+      postcss: 8.5.12
       shiki: 2.5.0
       vite: 5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.2)
       vue: 3.5.33(typescript@6.0.3)
@@ -21700,7 +21791,7 @@ packages:
       browserslist: 4.28.2
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.21.0
-      es-module-lexer: 2.0.0
+      es-module-lexer: 2.1.0
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
@@ -21717,7 +21808,6 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
-    dev: false
 
   /webpack@5.106.2(esbuild@0.28.0):
     resolution: {integrity: sha512-wGN3qcrBQIFmQ/c0AiOAQBvrZ5lmY8vbbMv4Mxfgzqd/B6+9pXtLo73WuS1dSGXM5QYY3hZnIbvx+K1xxe6FyA==}
@@ -21740,7 +21830,7 @@ packages:
       browserslist: 4.28.2
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.21.0
-      es-module-lexer: 2.0.0
+      es-module-lexer: 2.1.0
       eslint-scope: 5.1.1
       events: 3.3.0
       glob-to-regexp: 0.4.1
@@ -21757,6 +21847,7 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
+    dev: true
 
   /whatwg-fetch@3.6.20:
     resolution: {integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==}
