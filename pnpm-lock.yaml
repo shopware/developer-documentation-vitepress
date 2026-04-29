@@ -125,7 +125,7 @@ importers:
         version: 14.2.1(vue@3.5.33)
       chromatic:
         specifier: ^16.0.0
-        version: 16.6.0
+        version: 16.6.1
       esbuild:
         specifier: ^0.28.0
         version: 0.28.0
@@ -11089,8 +11089,8 @@ packages:
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  /baseline-browser-mapping@2.10.23:
-    resolution: {integrity: sha512-xwVXGqevyKPsiuQdLj+dZMVjidjJV508TBqexND5HrF89cGdCYCJFB3qhcxRHSeMctdCfbR1jrxBajhDy7o29g==}
+  /baseline-browser-mapping@2.10.24:
+    resolution: {integrity: sha512-I2NkZOOrj2XuguvWCK6OVh9GavsNjZjK908Rq3mIBK25+GD8vPX5w2WdxVqnQ7xx3SrZJiCiZFu+/Oz50oSYSA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -11235,7 +11235,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      baseline-browser-mapping: 2.10.23
+      baseline-browser-mapping: 2.10.24
       caniuse-lite: 1.0.30001791
       electron-to-chromium: 1.5.344
       node-releases: 2.0.38
@@ -11523,8 +11523,8 @@ packages:
         optional: true
     dev: false
 
-  /chromatic@16.6.0:
-    resolution: {integrity: sha512-cxRHMa3HJYrQtuL1F3J2x6wuVvfP+d7frUzltS7SiCVE8HbUBQTejH6TzveTKAHzErgrMrXjxvjD37bOTi4Mhw==}
+  /chromatic@16.6.1:
+    resolution: {integrity: sha512-QlrPBFFrMtR9LlP1FcnIsmIiMSQ055K94i/cDNHd8opo405AHO2oMEPPSfi1cKC2GyB3bEpXPZ+MW5bCHMcrLA==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
