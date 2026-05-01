@@ -28,7 +28,7 @@ importers:
         version: 1.0.2
       '@vueuse/core':
         specifier: ^14.1.0
-        version: 14.2.1(vue@3.5.33)
+        version: 14.3.0(vue@3.5.33)
       algoliasearch:
         specifier: ^4.20.0
         version: 4.25.2
@@ -86,7 +86,7 @@ importers:
         version: 10.3.6(react@19.2.5)(storybook@10.3.6)
       '@storybook/addon-styling':
         specifier: ^1.3.7
-        version: 1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2)
+        version: 1.3.7(less@4.6.4)(postcss@8.5.13)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2)
       '@storybook/blocks':
         specifier: ^8.2.9
         version: 8.6.14(react-dom@19.2.5)(react@19.2.5)(storybook@10.3.6)
@@ -121,11 +121,11 @@ importers:
         specifier: ^6.0.0
         version: 6.0.6(vue@3.5.33)
       '@vueuse/shared':
-        specifier: 14.2.1
-        version: 14.2.1(vue@3.5.33)
+        specifier: 14.3.0
+        version: 14.3.0(vue@3.5.33)
       chromatic:
         specifier: ^16.0.0
-        version: 16.6.1
+        version: 16.6.3
       esbuild:
         specifier: ^0.28.0
         version: 0.28.0
@@ -182,7 +182,7 @@ importers:
         version: 3.6.1(sass@1.99.0)(typescript@6.0.3)(vue@3.5.33)
       vitepress:
         specifier: 1.6.4
-        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
+        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.13)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
       vitest:
         specifier: ^3.0.3
         version: 3.2.4(@types/node@25.6.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.2)
@@ -284,7 +284,7 @@ importers:
         version: 7.6.20(react@18.3.1)
       '@storybook/addon-styling':
         specifier: ^1.3.7
-        version: 1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2)
+        version: 1.3.7(less@4.6.4)(postcss@8.5.13)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2)
       '@storybook/blocks':
         specifier: ^7.6.3
         version: 7.6.20(react-dom@18.3.1)(react@18.3.1)
@@ -329,7 +329,7 @@ importers:
         version: 66.6.8(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       vitepress:
         specifier: ^1.4.0
-        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
+        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.13)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
       vitepress-shopware-docs:
         specifier: link:../..
         version: link:../..
@@ -403,7 +403,7 @@ importers:
         version: 0.8.9(rollup@4.60.2)
       vitepress:
         specifier: ^1.4.0
-        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
+        version: 1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.13)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3)
       vitepress-shopware-docs:
         specifier: link:../..
         version: link:../..
@@ -8063,7 +8063,7 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2):
+  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.13)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(typescript@6.0.3)(webpack@5.106.2):
     resolution: {integrity: sha512-JSBZMOrSw/3rlq5YoEI7Qyq703KSNP0Jd+gxTWu3/tP6245mpjn2dXnR8FvqVxCi+FG4lt2kQyPzgsuwEw1SSA==}
     deprecated: 'This package has been split into @storybook/addon-styling-webpack and @storybook/addon-themes. More info: https://github.com/storybookjs/addon-styling'
     hasBin: true
@@ -8099,8 +8099,8 @@ packages:
       css-loader: 6.11.0(webpack@5.106.2)
       less: 4.6.4
       less-loader: 11.1.4(less@4.6.4)(webpack@5.106.2)
-      postcss: 8.5.12
-      postcss-loader: 7.3.4(postcss@8.5.12)(typescript@6.0.3)(webpack@5.106.2)
+      postcss: 8.5.13
+      postcss-loader: 7.3.4(postcss@8.5.13)(typescript@6.0.3)(webpack@5.106.2)
       prettier: 2.8.8
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
@@ -8121,7 +8121,7 @@ packages:
       - typescript
     dev: false
 
-  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2):
+  /@storybook/addon-styling@1.3.7(less@4.6.4)(postcss@8.5.13)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(typescript@6.0.3)(webpack@5.106.2):
     resolution: {integrity: sha512-JSBZMOrSw/3rlq5YoEI7Qyq703KSNP0Jd+gxTWu3/tP6245mpjn2dXnR8FvqVxCi+FG4lt2kQyPzgsuwEw1SSA==}
     deprecated: 'This package has been split into @storybook/addon-styling-webpack and @storybook/addon-themes. More info: https://github.com/storybookjs/addon-styling'
     hasBin: true
@@ -8157,8 +8157,8 @@ packages:
       css-loader: 6.11.0(webpack@5.106.2)
       less: 4.6.4
       less-loader: 11.1.4(less@4.6.4)(webpack@5.106.2)
-      postcss: 8.5.12
-      postcss-loader: 7.3.4(postcss@8.5.12)(typescript@6.0.3)(webpack@5.106.2)
+      postcss: 8.5.13
+      postcss-loader: 7.3.4(postcss@8.5.13)(typescript@6.0.3)(webpack@5.106.2)
       prettier: 2.8.8
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
@@ -10411,14 +10411,14 @@ packages:
     transitivePeerDependencies:
       - typescript
 
-  /@vueuse/core@14.2.1(vue@3.5.33):
-    resolution: {integrity: sha512-3vwDzV+GDUNpdegRY6kzpLm4Igptq+GA0QkJ3W61Iv27YWwW/ufSlOfgQIpN6FZRMG0mkaz4gglJRtq5SeJyIQ==}
+  /@vueuse/core@14.3.0(vue@3.5.33):
+    resolution: {integrity: sha512-aHfz47g0ZhMtTVHmIzMVpJy8ePhhOy68GY5bv110+5DVtZ+W7BsOx+m61UNQqfrWyPztIHIanWa3E2tib3NFIw==}
     peerDependencies:
       vue: ^3.5.0
     dependencies:
       '@types/web-bluetooth': 0.0.21
-      '@vueuse/metadata': 14.2.1
-      '@vueuse/shared': 14.2.1(vue@3.5.33)
+      '@vueuse/metadata': 14.3.0
+      '@vueuse/shared': 14.3.0(vue@3.5.33)
       vue: 3.5.33(typescript@6.0.3)
     dev: false
 
@@ -10474,8 +10474,8 @@ packages:
   /@vueuse/metadata@12.8.2:
     resolution: {integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==}
 
-  /@vueuse/metadata@14.2.1:
-    resolution: {integrity: sha512-1ButlVtj5Sb/HDtIy1HFr1VqCP4G6Ypqt5MAo0lCgjokrk2mvQKsK2uuy0vqu/Ks+sHfuHo0B9Y9jn9xKdjZsw==}
+  /@vueuse/metadata@14.3.0:
+    resolution: {integrity: sha512-BwxmbAzwAVF50+MW57GXOUEV61nFBGnlBvrTqj49PqWJu3uw7hdu72ztXeZ33RdZtDY6kO+bfCAE1PCn88Tktw==}
     dev: false
 
   /@vueuse/shared@12.8.2(typescript@6.0.3):
@@ -10485,8 +10485,8 @@ packages:
     transitivePeerDependencies:
       - typescript
 
-  /@vueuse/shared@14.2.1(vue@3.5.33):
-    resolution: {integrity: sha512-shTJncjV9JTI4oVNyF1FQonetYAiTBd+Qj7cY89SWbXSkx7gyhrgtEdF2ZAVWS1S3SHlaROO6F2IesJxQEkZBw==}
+  /@vueuse/shared@14.3.0(vue@3.5.33):
+    resolution: {integrity: sha512-bZpge9eSXwa4ToSiqJ7j6KRwhAsneMFoSz3LMWKQDkqimm3D/tbFlrklrs/IOqC8tEcYmXQZJ6N0UrjhBirVCg==}
     peerDependencies:
       vue: ^3.5.0
     dependencies:
@@ -11089,8 +11089,8 @@ packages:
   /base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  /baseline-browser-mapping@2.10.24:
-    resolution: {integrity: sha512-I2NkZOOrj2XuguvWCK6OVh9GavsNjZjK908Rq3mIBK25+GD8vPX5w2WdxVqnQ7xx3SrZJiCiZFu+/Oz50oSYSA==}
+  /baseline-browser-mapping@2.10.25:
+    resolution: {integrity: sha512-QO/VHsXCQdnzADMfmkeOPvHdIAkoB7i0/rGjINPJEetLx75hNttVWGQ/jycHUDP9zZ9rupbm60WRxcwViB0MiA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -11235,9 +11235,9 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      baseline-browser-mapping: 2.10.24
+      baseline-browser-mapping: 2.10.25
       caniuse-lite: 1.0.30001791
-      electron-to-chromium: 1.5.344
+      electron-to-chromium: 1.5.348
       node-releases: 2.0.38
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
 
@@ -11523,8 +11523,8 @@ packages:
         optional: true
     dev: false
 
-  /chromatic@16.6.1:
-    resolution: {integrity: sha512-QlrPBFFrMtR9LlP1FcnIsmIiMSQ055K94i/cDNHd8opo405AHO2oMEPPSfi1cKC2GyB3bEpXPZ+MW5bCHMcrLA==}
+  /chromatic@16.6.3:
+    resolution: {integrity: sha512-N9WCRuezqrxujRvgnAlE9XKxXcF6q2kowKH2Ba82FYkRc4xlY9g8r+ESEph9jLv500s43/9oDmB/kZ9r24BcgQ==}
     hasBin: true
     peerDependencies:
       '@chromatic-com/cypress': ^0.*.* || ^1.0.0
@@ -12584,8 +12584,8 @@ packages:
   /electron-to-chromium@1.5.211:
     resolution: {integrity: sha512-IGBvimJkotaLzFnwIVgW9/UD/AOJ2tByUmeOrtqBfACSbAw5b1G0XpvdaieKyc7ULmbwXVx+4e4Be8pOPBrYkw==}
 
-  /electron-to-chromium@1.5.344:
-    resolution: {integrity: sha512-4MxfbmNDm+KPh066EZy+eUnkcDPcZ35wNmOWzFuh/ijvHsve6kbLTLURy88uCNK5FbpN+yk2nQY6BYh1GEt+wg==}
+  /electron-to-chromium@1.5.348:
+    resolution: {integrity: sha512-QC2X59nRlycQQMc4ZXjSVBX+tSgJfgRtcrYHbIZLgOV2dCvefoQGegLR7lLXKgpPpSuVmJU19LMzGrSa2C7k3Q==}
 
   /emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -16443,6 +16443,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
+  /nanoid@3.3.12:
+    resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+
   /napi-build-utils@1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
     dev: true
@@ -17621,7 +17626,7 @@ packages:
       postcss: 8.5.10
     dev: true
 
-  /postcss-loader@7.3.4(postcss@8.5.12)(typescript@6.0.3)(webpack@5.106.2):
+  /postcss-loader@7.3.4(postcss@8.5.13)(typescript@6.0.3)(webpack@5.106.2):
     resolution: {integrity: sha512-iW5WTTBSC5BfsBJ9daFMPVrLT36MrNiC6fqOZTTaHjBNX6Pfd5p+hSBqe/fEeNd7pc13QiAyGt7VdGMw4eRC4A==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -17630,7 +17635,7 @@ packages:
     dependencies:
       cosmiconfig: 8.3.6(typescript@6.0.3)
       jiti: 1.21.7
-      postcss: 8.5.12
+      postcss: 8.5.13
       semver: 7.7.4
       webpack: 5.106.2(esbuild@0.18.20)
     transitivePeerDependencies:
@@ -17918,6 +17923,14 @@ packages:
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.3.11
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  /postcss@8.5.13:
+    resolution: {integrity: sha512-qif0+jGGZoLWdHey3UFHHWP0H7Gbmsk8T5VEqyYFbWqPr1XqvLGBbk/sl8V5exGmcYJklJOhOQq1pV9IcsiFag==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.12
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
@@ -21398,7 +21411,7 @@ packages:
       - universal-cookie
     dev: false
 
-  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
+  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.13)(react-dom@18.3.1)(react@18.3.1)(sass@1.91.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
     resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
     hasBin: true
     peerDependencies:
@@ -21425,7 +21438,7 @@ packages:
       focus-trap: 7.6.5
       mark.js: 8.11.1
       minisearch: 7.1.2
-      postcss: 8.5.12
+      postcss: 8.5.13
       shiki: 2.5.0
       vite: 5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.91.0)(terser@5.46.2)
       vue: 3.5.33(typescript@6.0.3)
@@ -21457,7 +21470,7 @@ packages:
       - universal-cookie
     dev: false
 
-  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.12)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
+  /vitepress@1.6.4(@types/node@25.6.0)(axios@1.15.2)(less@4.6.4)(postcss@8.5.13)(react-dom@19.2.5)(react@19.2.5)(sass@1.99.0)(search-insights@2.17.3)(terser@5.46.2)(typescript@6.0.3):
     resolution: {integrity: sha512-+2ym1/+0VVrbhNyRoFFesVvBvHAVMZMK0rw60E3X/5349M1GuVdKeazuksqopEdvkKwKGs21Q729jX81/bkBJg==}
     hasBin: true
     peerDependencies:
@@ -21484,7 +21497,7 @@ packages:
       focus-trap: 7.6.5
       mark.js: 8.11.1
       minisearch: 7.1.2
-      postcss: 8.5.12
+      postcss: 8.5.13
       shiki: 2.5.0
       vite: 5.4.19(@types/node@25.6.0)(less@4.6.4)(sass@1.99.0)(terser@5.46.2)
       vue: 3.5.33(typescript@6.0.3)
