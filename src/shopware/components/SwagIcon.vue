@@ -14,7 +14,7 @@
 </style>
 
 <script lang="ts" setup>
-import {computed, PropType} from "vue";
+import {computed, type PropType} from "vue";
 import {meteorPublicPath} from "../utils/meteor";
 
 enum IconTypeEnum {
