@@ -195,7 +195,7 @@ const footers = [
       },
       {
         title: 'SDKs',
-        url: "https://shopware.github.io/admin-extension-sdk/"
+        url: "https://developer.shopware.com/resources/admin-extension-sdk/"
       },
       {
         title: 'B2B Suite',
@@ -240,8 +240,12 @@ const footers = [
     title: 'Community',
     items: [
       {
+        title: 'Community Hub',
+        url: "https://hub.shopware.com/"
+      },
+      {
         title: 'Forum',
-        url: "https://forum.shopware.com/?_gl=1*82v1ve*_ga*MTYwMjc5NTkyNC4xNjY1NzI1MjEw*_ga_9JLJ6GGB76*MTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAxODU5LjAuMC4w"
+        url: "https://forum.shopware.com/"
       },
       {
         title: 'Community Day',
@@ -253,7 +257,7 @@ const footers = [
       },
       {
         title: 'Feedback & Issues',
-        url: "https://issues.shopware.com/?_gl=1*pgdzzx*_ga*MTYwMjc5NTkyNC4xNjY1NzI1MjEw*_ga_9JLJ6GGB76*MTY4NTYwMDc3MS4xMjAuMS4xNjg1NjAxODYyLjAuMC4w"
+        url: "https://issues.shopware.com/"
       },
     ]
   },
@@ -261,12 +265,8 @@ const footers = [
     title: 'GitHub Channels',
     items: [
       {
-        title: 'Shopware 5',
-        url: "https://github.com/shopware5/shopware/"
-      },
-      {
         title: 'Shopware 6',
-        url: "https://github.com/shopware/platform/"
+        url: "https://github.com/shopware/shopware/"
       },
       {
         title: 'Development Template',
