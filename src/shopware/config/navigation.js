@@ -54,8 +54,8 @@ const nav = [
           text: "Learning",
           items: [
               {
-                  text: "Academy",
-                  link: "https://academy.shopware.com/",
+                  text: "Community Hub",
+                  link: "https://hub.shopware.com/",
               },
               {
                 text: "YouTube",
