@@ -90,7 +90,7 @@ export const clone = async ({
     }
 }
 
-export const cloneCustom = async (repo: { name: string, src: string, dst: string, branch: string, org: string }, configure: boolean | null, ci: boolean) => {
+export const cloneCustom = async (repo: { name: string, src: string, dst: string, branch: string, org: string, keep?: boolean }, configure: boolean | null, ci: boolean) => {
     // allow custom branch (features) and organization (forks)
     let branch = repo.branch;
     let org = repo.org;
@@ -122,6 +122,7 @@ export const cloneCustom = async (repo: { name: string, src: string, dst: string
         branch,
         org,
         ci,
+        keep: repo.keep,
     });
 
     output.success(`Processed ${repo.name}`);
