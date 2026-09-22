@@ -522,7 +522,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                 if (links.length || hasIndex) {
                     reduced.push(nullifyLink({
                         link: hasIndex ? `${surroundWithSlash(as)}${file}/` : '#',
-                        text: getTitleFromFilename(file),
+                        text: metas[file]?.title || getTitleFromFilename(file),
                         // @ts-ignore
                         items: links,
                         collapsed: getCollapsed(0, links),

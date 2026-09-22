@@ -73,7 +73,7 @@ describe('builds sidebar', async () => {
             "    },\n" +
             "    {\n" +
             "      \"link\": \"/foo/bar/\",\n" +
-            "      \"text\": \"Bar\",\n" +
+            "      \"text\": \"Custom nav title\",\n" +
             "      \"items\": [\n" +
             "        {\n" +
             "          \"text\": \"Bar1 custom title\",\n" +
