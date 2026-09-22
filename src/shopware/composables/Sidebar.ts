@@ -491,7 +491,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                         const items = metas['index.md']?.items || [];
                         index = {
                             link: surroundWithSlash(as),
-                            text: getTitleFromFilename(as),
+                            text: metas[file]?.title || getTitleFromFilename(as),
                             items: items,
                             collapsed: getCollapsed(0, items),
                             meta: metas['index.md']?.meta || {},
@@ -501,7 +501,7 @@ export function transformLinkToSidebar(root: string, link: string, ignore: strin
                         // special handle root links
                         inIndex.push({
                             link: `${surroundWithSlash(as)}${removeExtension(file)}.html`,
-                            text: metas[file].title || getTitleFromFilename(file),
+                            text: metas[file]?.title || getTitleFromFilename(file),
                             items: [],
                             collapsed: getCollapsed(0, []),
                             meta: metas[file]?.meta || {},
