@@ -33,6 +33,7 @@
   --vp-sidebar-bg-color: var(--sw-sidebar-bg);
   --vp-sidebar-bg-color--dark: transparent;
   --vp-nav-height: 80px;
+  --vp-ribbon-height: 32px;
   --vp-custom-block-info-text: var(--sw-nav-bg);
 
   --sidebar-link-color: var(--sw-c-gray-dark-200);
@@ -305,7 +306,7 @@ h1, h2, h3, h4, h5, h6 {
 .Layout .VPSidebar {
   padding-top: 1.5rem;
   padding-bottom: 0;
-  margin-top: var(--vp-nav-height);
+  //margin-top: calc(var(--vp-nav-height) + var(--vp-ribbon-height));
   border-right: 1px solid var(--sw-sidebar-border);
   padding-left: 1.5rem;
   width: var(--vp-sidebar-width);
