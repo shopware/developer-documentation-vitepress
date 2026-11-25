@@ -4844,9 +4844,6 @@ packages:
   '@types/node@26.6.6':
     resolution: {integrity: sha512-MzQj+8Kx3XI40OmUAE6Qoh58ZMNstNNMwn2nfd3qWsfe7nDNSqJNzes4njhz6AHwrSHOffSLwXU6yb474Q4aog==}
 
-  '@types/node@26.6.9':
-    resolution: {integrity: sha512-MkLVXFazHKL5/3lkiYqaSti6Ohv0Vi6z2bPwUQAs/aXUuuY8go4hR3mz8Kvu0lBC2HH0Zn+ON2G9hTglqDD48A==}
-
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
@@ -13504,7 +13501,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       '@types/yargs': 16.0.11
       chalk: 4.1.2
 
@@ -13513,7 +13510,7 @@ snapshots:
       '@jest/schemas': 29.6.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       '@types/yargs': 17.0.35
       chalk: 4.1.2
 
@@ -16791,7 +16788,7 @@ snapshots:
   '@types/body-parser@1.19.6':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/body-scroll-lock@3.1.2': {}
 
@@ -16804,11 +16801,11 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/cross-spawn@6.0.6':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/deep-eql@4.0.2': {}
 
@@ -16826,7 +16823,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.19.9':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       '@types/qs': 6.15.1
       '@types/range-parser': 1.2.7
       '@types/send': 1.2.1
@@ -16843,13 +16840,13 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/google.maps@3.67.0': {}
 
   '@types/graceful-fs@4.1.9':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/har-format@1.2.16': {}
 
@@ -16888,7 +16885,7 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/linkify-it@5.0.0': {}
 
@@ -16921,12 +16918,12 @@ snapshots:
 
   '@types/node-fetch@2.6.13':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       form-data: 4.0.6
 
   '@types/node-localstorage@1.3.3':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/node@18.19.130':
     dependencies:
@@ -16937,10 +16934,6 @@ snapshots:
       undici-types: 7.24.6
 
   '@types/node@26.6.6':
-    dependencies:
-      undici-types: 8.9.0
-
-  '@types/node@26.6.9':
     dependencies:
       undici-types: 8.9.0
 
@@ -16976,7 +16969,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/scheduler@0.16.8': {}
 
@@ -16985,16 +16978,16 @@ snapshots:
   '@types/send@0.17.6':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/send@1.2.1':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/serve-static@1.15.10':
     dependencies:
       '@types/http-errors': 2.0.5
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       '@types/send': 0.17.6
 
   '@types/shell-escape@0.2.3': {}
@@ -17003,11 +16996,11 @@ snapshots:
 
   '@types/through@0.0.33':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/type-is@1.6.7':
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   '@types/unist@2.0.11': {}
 
@@ -20359,7 +20352,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@types/graceful-fs': 4.1.9
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       anymatch: 3.1.3
       fb-watchman: 2.0.4
       graceful-fs: 4.2.12
@@ -20374,14 +20367,14 @@ snapshots:
   jest-mock@27.5.1:
     dependencies:
       '@jest/types': 27.5.1
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
 
   jest-regex-util@29.6.3: {}
 
   jest-util@29.7.0:
     dependencies:
       '@jest/types': 29.6.3
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.12
@@ -20395,7 +20388,7 @@ snapshots:
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 26.6.9
+      '@types/node': 26.6.6
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
