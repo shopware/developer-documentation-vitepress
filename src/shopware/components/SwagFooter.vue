@@ -165,7 +165,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import VPNavBarSocialLinks from "@node_modules/vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
+import VPNavBarSocialLinks from "vitepress/dist/client/theme-default/components/VPNavBarSocialLinks.vue";
 import {useData, useRoute} from "vitepress";
 import SwagNewsletter from "./SwagNewsletter.vue";
 

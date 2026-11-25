@@ -18,6 +18,7 @@ export default defineConfigWithTheme<ThemeConfig>({
   description: "Documentation for Shopware developers",
 
   themeConfig: {
+    logo: '/img/logo.svg',
     // sidebar and nav
     ...navigation,
     // @ts-ignore

@@ -28,6 +28,9 @@
     "name": "Shopware team"
   },
   "license": "MIT",
+  "engines": {
+    "node": ">=26"
+  },
   "scripts": {
     "lint:full": "pnpm run lint && pnpm run type",
     "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.{ts,mts}\"",
@@ -73,6 +76,7 @@
     "vue-instantsearch": "^4.19.5"
   },
   "devDependencies": {
+    "@changesets/cli": "^3.0.3",
     "@playwright/test": "1.60.0",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/addon-interactions": "^8.2.9",
@@ -86,7 +90,7 @@
     "@types/estree": "^1.0.6",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^25.0.3",
+    "@types/node": "26.6.6",
     "@types/remove-markdown": "^0.3.4",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vueuse/shared": "14.3.0",
@@ -113,18 +117,5 @@
     "vitest": "^3.0.3",
     "vue": "^3.5.11"
   },
-  "packageManager": "pnpm@8.11.0",
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search",
-        "react",
-        "react-dom",
-        "vite",
-        "@types/react",
-        "mkdirp",
-        "@stoplight/mosaic-code-viewer"
-      ]
-    }
-  }
+  "packageManager": "pnpm@12.23.0"
 }

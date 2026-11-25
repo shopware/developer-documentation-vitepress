@@ -4,3 +4,24 @@ packages:
   - "packages/vitepress"
   - "packages/vitest"
   - "."
+
+shamefullyHoist: true
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@scarf/scarf': false
+  core-js: false
+  es5-ext: false
+  esbuild: true
+  nx: true
+  playwright-chromium: true
+
+peerDependencyRules:
+  ignoreMissing:
+    - "@algolia/client-search"
+    - "react"
+    - "react-dom"
+    - "vite"
+    - "@types/react"
+    - "mkdirp"
+    - "@stoplight/mosaic-code-viewer"
