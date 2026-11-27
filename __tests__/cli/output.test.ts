@@ -5,6 +5,7 @@ describe('output', async () => {
     let myLog = [];
     let log;
     beforeEach(() => {
+        vi.stubEnv('NO_COLOR', undefined);
         myLog = [];
         log = mockLog();
     });
@@ -12,6 +13,7 @@ describe('output', async () => {
         myLog = [];
         log = null;
         vi.restoreAllMocks();
+        vi.unstubAllEnvs();
     });
 
     const mockLog = () => {

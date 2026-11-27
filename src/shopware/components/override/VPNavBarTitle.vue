@@ -2,7 +2,7 @@
   <div class="flex items-center">
     <a class="VPNavBarTitle" :href="withBase('/')">
       <img
-          src="/logo.svg"
+          :src="withBase(typeof theme.logo === 'string' ? theme.logo : '/logo.svg')"
           alt="Shopware"
           class="VPNavBarImage"
       />
@@ -14,7 +14,9 @@
 </template>
 
 <script setup>
-import { withBase } from "vitepress";
+import { useData, withBase } from "vitepress";
+
+const { theme } = useData();
 </script>
 
 <style scoped>
